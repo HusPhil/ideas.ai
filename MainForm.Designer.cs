@@ -37,22 +37,30 @@
             this.btn_history = new System.Windows.Forms.Button();
             this.btn_unde = new System.Windows.Forms.Button();
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
-            this.lbl_currentPage = new System.Windows.Forms.Label();
             this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_currentPage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             this.pnl_pageTabs.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // kryptonPalette1
             // 
+            this.kryptonPalette1.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
             this.kryptonPalette1.FormStyles.FormMain.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(245)))), ((int)(((byte)(118)))));
             this.kryptonPalette1.FormStyles.FormMain.StateActive.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(245)))), ((int)(((byte)(118)))));
+            this.kryptonPalette1.FormStyles.FormMain.StateActive.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(245)))), ((int)(((byte)(118)))));
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(245)))), ((int)(((byte)(118)))));
+            this.kryptonPalette1.HeaderStyles.HeaderForm.StateNormal.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.LabelStyles.LabelCommon.StateNormal.ShortText.Color1 = System.Drawing.Color.White;
             this.kryptonPalette1.LabelStyles.LabelCommon.StateNormal.ShortText.Font = new System.Drawing.Font("Cascadia Code Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonPalette1.LabelStyles.LabelCommon.StateNormal.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.kryptonPalette1.LabelStyles.LabelCommon.StateNormal.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.kryptonPalette1.PanelStyles.PanelCommon.StateNormal.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
+            this.kryptonPalette1.PanelStyles.PanelCommon.StateNormal.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             // 
             // kryptonPanel1
             // 
@@ -167,26 +175,40 @@
             this.kryptonLabel1.TabIndex = 0;
             this.kryptonLabel1.Values.Text = "Ideas.ai";
             // 
-            // lbl_currentPage
-            // 
-            this.lbl_currentPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
-            this.lbl_currentPage.Font = new System.Drawing.Font("Cascadia Code", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_currentPage.Location = new System.Drawing.Point(364, 27);
-            this.lbl_currentPage.Name = "lbl_currentPage";
-            this.lbl_currentPage.Padding = new System.Windows.Forms.Padding(12);
-            this.lbl_currentPage.Size = new System.Drawing.Size(872, 74);
-            this.lbl_currentPage.TabIndex = 2;
-            this.lbl_currentPage.Text = "Page 1";
-            this.lbl_currentPage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // kryptonPalette2
             // 
             this.kryptonPalette2.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue;
             this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.OverrideDefault.Back.Color1 = System.Drawing.Color.Red;
             this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.OverrideDefault.Back.Color2 = System.Drawing.Color.Black;
+            this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.OverrideDefault.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.StateNormal.Back.Color1 = System.Drawing.Color.Red;
             this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.StateNormal.Back.Color2 = System.Drawing.Color.Red;
+            this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.StateNormal.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.StatePressed.Back.Color1 = System.Drawing.Color.Red;
+            this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.StatePressed.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lbl_currentPage);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(320, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(15);
+            this.panel1.Size = new System.Drawing.Size(960, 720);
+            this.panel1.TabIndex = 3;
+            // 
+            // lbl_currentPage
+            // 
+            this.lbl_currentPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
+            this.lbl_currentPage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbl_currentPage.Font = new System.Drawing.Font("Cascadia Code", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_currentPage.Location = new System.Drawing.Point(15, 15);
+            this.lbl_currentPage.Name = "lbl_currentPage";
+            this.lbl_currentPage.Padding = new System.Windows.Forms.Padding(12);
+            this.lbl_currentPage.Size = new System.Drawing.Size(930, 74);
+            this.lbl_currentPage.TabIndex = 3;
+            this.lbl_currentPage.Text = "Page 1";
+            this.lbl_currentPage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
@@ -194,7 +216,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(28)))));
             this.ClientSize = new System.Drawing.Size(1280, 720);
-            this.Controls.Add(this.lbl_currentPage);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.kryptonPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MainForm";
@@ -205,6 +227,7 @@
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();
             this.pnl_pageTabs.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -215,12 +238,13 @@
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
         private System.Windows.Forms.FlowLayoutPanel pnl_pageTabs;
-        private System.Windows.Forms.Label lbl_currentPage;
         private ComponentFactory.Krypton.Toolkit.KryptonPalette kryptonPalette2;
         private System.Windows.Forms.Button btn_workspace;
         private System.Windows.Forms.Button btn_history;
         private System.Windows.Forms.Button btn_unde;
         private System.Windows.Forms.Button btn_home;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lbl_currentPage;
     }
 }
 

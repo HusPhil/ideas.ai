@@ -1,0 +1,12 @@
+C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\IdeasAi\bin\Debug\WinformDemo3.exe.config
+C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\IdeasAi\bin\Debug\WinformDemo3.exe
+C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\IdeasAi\bin\Debug\WinformDemo3.pdb
+C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\IdeasAi\bin\Debug\ComponentFactory.Krypton.Toolkit.pdb
+C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\IdeasAi\obj\Debug\IdeasAi.csproj.AssemblyReference.cache
+C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\IdeasAi\obj\Debug\WinformDemo3.MainForm.resources
+C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\IdeasAi\obj\Debug\WinformDemo3.Properties.Resources.resources
+C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\IdeasAi\obj\Debug\IdeasAi.csproj.GenerateResource.cache
+C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\IdeasAi\obj\Debug\IdeasAi.csproj.CoreCompileInputs.cache
+C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\IdeasAi\obj\Debug\IdeasAi.csproj.CopyComplete
+C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\IdeasAi\obj\Debug\WinformDemo3.exe
+C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\IdeasAi\obj\Debug\WinformDemo3.pdb
