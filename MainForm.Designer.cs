@@ -1,4 +1,6 @@
-﻿namespace WinformDemo3
+﻿
+
+namespace WinformDemo3
 {
     partial class MainForm
     {
@@ -39,6 +41,7 @@
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pnl_content = new System.Windows.Forms.Panel();
             this.lbl_currentPage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
@@ -189,6 +192,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pnl_content);
             this.panel1.Controls.Add(this.lbl_currentPage);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(320, 0);
@@ -196,6 +200,17 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(15);
             this.panel1.Size = new System.Drawing.Size(960, 720);
             this.panel1.TabIndex = 3;
+            // 
+            // pnl_content
+            // 
+            this.pnl_content.BackColor = System.Drawing.Color.White;
+            this.pnl_content.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_content.Location = new System.Drawing.Point(15, 89);
+            this.pnl_content.Margin = new System.Windows.Forms.Padding(12);
+            this.pnl_content.Name = "pnl_content";
+            this.pnl_content.Padding = new System.Windows.Forms.Padding(12);
+            this.pnl_content.Size = new System.Drawing.Size(930, 616);
+            this.pnl_content.TabIndex = 4;
             // 
             // lbl_currentPage
             // 
@@ -245,6 +260,7 @@
         private System.Windows.Forms.Button btn_home;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_currentPage;
+        private System.Windows.Forms.Panel pnl_content;
     }
 }
 

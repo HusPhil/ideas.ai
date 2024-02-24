@@ -10,3 +10,4 @@ C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\IdeasAi\obj\Debug\IdeasAi.cs
 C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\IdeasAi\obj\Debug\IdeasAi.csproj.CopyComplete
 C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\IdeasAi\obj\Debug\WinformDemo3.exe
 C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\IdeasAi\obj\Debug\WinformDemo3.pdb
+C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\IdeasAi\obj\Debug\WinformDemo3.PageForms_test.testForm.resources

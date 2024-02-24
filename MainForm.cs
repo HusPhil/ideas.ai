@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
+using WinformDemo3.PageForms_test;
 
 namespace WinformDemo3
 {
@@ -17,6 +18,7 @@ namespace WinformDemo3
         Button btn_active;
         Color color_active = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
         Color color_inactive = System.Drawing.Color.Transparent;
+        testForm tF = new testForm();
 
         public MainForm()
         {
@@ -54,6 +56,11 @@ namespace WinformDemo3
         private void btn_home_Click(object sender, EventArgs e)
         {
             setActiveBtn(sender);
+            tF.TopLevel = false;
+            pnl_content.Controls.Add(tF);
+            tF.BringToFront();
+            tF.Dock = DockStyle.Fill;
+            tF.Show();
         }
 
         private void btn_workspace_Click(object sender, EventArgs e)
