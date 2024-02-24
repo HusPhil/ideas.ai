@@ -1,0 +1,13 @@
+C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\WinformDemo3\bin\Debug\WinformDemo3.exe.config
+C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\WinformDemo3\bin\Debug\WinformDemo3.exe
+C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\WinformDemo3\bin\Debug\WinformDemo3.pdb
+C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\WinformDemo3\bin\Debug\ComponentFactory.Krypton.Toolkit.dll
+C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\WinformDemo3\bin\Debug\ComponentFactory.Krypton.Toolkit.pdb
+C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\WinformDemo3\obj\Debug\WinformDemo3.csproj.AssemblyReference.cache
+C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\WinformDemo3\obj\Debug\WinformDemo3.Properties.Resources.resources
+C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\WinformDemo3\obj\Debug\WinformDemo3.csproj.GenerateResource.cache
+C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\WinformDemo3\obj\Debug\WinformDemo3.csproj.CoreCompileInputs.cache
+C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\WinformDemo3\obj\Debug\WinformDemo3.csproj.CopyComplete
+C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\WinformDemo3\obj\Debug\WinformDemo3.exe
+C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\WinformDemo3\obj\Debug\WinformDemo3.pdb
+C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\WinformDemo3\obj\Debug\WinformDemo3.MainForm.resources
