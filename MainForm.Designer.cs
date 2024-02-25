@@ -1,6 +1,6 @@
 ﻿
 
-namespace WinformDemo3
+namespace IdeasAi
 {
     partial class MainForm
     {
@@ -42,28 +42,28 @@ namespace WinformDemo3
             this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnl_content = new System.Windows.Forms.Panel();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.lbl_currentPage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             this.pnl_pageTabs.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.pnl_content.SuspendLayout();
             this.SuspendLayout();
             // 
             // kryptonPalette1
             // 
-            this.kryptonPalette1.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
+            this.kryptonPalette1.FormStyles.FormCommon.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(245)))), ((int)(((byte)(118)))));
+            this.kryptonPalette1.FormStyles.FormCommon.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(245)))), ((int)(((byte)(118)))));
             this.kryptonPalette1.FormStyles.FormMain.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(245)))), ((int)(((byte)(118)))));
             this.kryptonPalette1.FormStyles.FormMain.StateActive.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(245)))), ((int)(((byte)(118)))));
-            this.kryptonPalette1.FormStyles.FormMain.StateActive.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
+            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(245)))), ((int)(((byte)(118)))));
+            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(245)))), ((int)(((byte)(118)))));
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(245)))), ((int)(((byte)(118)))));
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(245)))), ((int)(((byte)(118)))));
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateNormal.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.LabelStyles.LabelCommon.StateNormal.ShortText.Color1 = System.Drawing.Color.White;
             this.kryptonPalette1.LabelStyles.LabelCommon.StateNormal.ShortText.Font = new System.Drawing.Font("Cascadia Code Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonPalette1.LabelStyles.LabelCommon.StateNormal.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.kryptonPalette1.LabelStyles.LabelCommon.StateNormal.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.kryptonPalette1.PanelStyles.PanelCommon.StateNormal.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
-            this.kryptonPalette1.PanelStyles.PanelCommon.StateNormal.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             // 
             // kryptonPanel1
             // 
@@ -183,12 +183,9 @@ namespace WinformDemo3
             this.kryptonPalette2.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue;
             this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.OverrideDefault.Back.Color1 = System.Drawing.Color.Red;
             this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.OverrideDefault.Back.Color2 = System.Drawing.Color.Black;
-            this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.OverrideDefault.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.StateNormal.Back.Color1 = System.Drawing.Color.Red;
             this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.StateNormal.Back.Color2 = System.Drawing.Color.Red;
-            this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.StateNormal.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.StatePressed.Back.Color1 = System.Drawing.Color.Red;
-            this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.StatePressed.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             // 
             // panel1
             // 
@@ -203,7 +200,8 @@ namespace WinformDemo3
             // 
             // pnl_content
             // 
-            this.pnl_content.BackColor = System.Drawing.Color.White;
+            this.pnl_content.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(28)))));
+            this.pnl_content.Controls.Add(this.webBrowser1);
             this.pnl_content.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_content.Location = new System.Drawing.Point(15, 89);
             this.pnl_content.Margin = new System.Windows.Forms.Padding(12);
@@ -211,6 +209,15 @@ namespace WinformDemo3
             this.pnl_content.Padding = new System.Windows.Forms.Padding(12);
             this.pnl_content.Size = new System.Drawing.Size(930, 616);
             this.pnl_content.TabIndex = 4;
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(12, 12);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(906, 592);
+            this.webBrowser1.TabIndex = 0;
             // 
             // lbl_currentPage
             // 
@@ -243,6 +250,7 @@ namespace WinformDemo3
             this.kryptonPanel1.PerformLayout();
             this.pnl_pageTabs.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.pnl_content.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -261,6 +269,7 @@ namespace WinformDemo3
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_currentPage;
         private System.Windows.Forms.Panel pnl_content;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }
 
