@@ -42,13 +42,11 @@ namespace IdeasAi
             this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnl_content = new System.Windows.Forms.Panel();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.lbl_currentPage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             this.pnl_pageTabs.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.pnl_content.SuspendLayout();
             this.SuspendLayout();
             // 
             // kryptonPalette1
@@ -201,7 +199,6 @@ namespace IdeasAi
             // pnl_content
             // 
             this.pnl_content.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(28)))));
-            this.pnl_content.Controls.Add(this.webBrowser1);
             this.pnl_content.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_content.Location = new System.Drawing.Point(15, 89);
             this.pnl_content.Margin = new System.Windows.Forms.Padding(12);
@@ -209,15 +206,6 @@ namespace IdeasAi
             this.pnl_content.Padding = new System.Windows.Forms.Padding(12);
             this.pnl_content.Size = new System.Drawing.Size(930, 616);
             this.pnl_content.TabIndex = 4;
-            // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(12, 12);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(906, 592);
-            this.webBrowser1.TabIndex = 0;
             // 
             // lbl_currentPage
             // 
@@ -250,7 +238,6 @@ namespace IdeasAi
             this.kryptonPanel1.PerformLayout();
             this.pnl_pageTabs.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.pnl_content.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -269,7 +256,6 @@ namespace IdeasAi
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_currentPage;
         private System.Windows.Forms.Panel pnl_content;
-        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }
 

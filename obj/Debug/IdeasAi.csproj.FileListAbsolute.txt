@@ -24,3 +24,7 @@ C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\IdeasAi\bin\Debug\System.Num
 C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\IdeasAi\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\IdeasAi\obj\Debug\IdeasAi.PageForms.frm_home.resources
 C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\IdeasAi\obj\Debug\IdeasAi.PageForms.frm_settings.resources
+C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\IdeasAi\bin\Debug\Newtonsoft.Json.dll
+C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\IdeasAi\bin\Debug\Newtonsoft.Json.xml
+C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\IdeasAi\bin\Debug\Gemini_AI\Scripts\gemini.py
+C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\IdeasAi\bin\Debug\Gemini_AI\settings.json
