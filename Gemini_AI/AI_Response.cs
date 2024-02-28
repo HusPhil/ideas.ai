@@ -4,7 +4,7 @@ namespace IdeasAi.Gemini_AI
 {
     internal abstract class AI_Response
     {
-        public Guid UUID { get; private set; }
+        public Guid UUID { get; set; }
         public AI_Response()
         {
             UUID = Guid.NewGuid();

@@ -13,7 +13,7 @@ namespace IdeasAi.Gemini_AI
     {
         public static string runScript(string scriptName, string prompt)
         {
-            string jsonString = File.ReadAllText("Gemini_AI\\settings.json");
+            string jsonString = File.ReadAllText("settings.json");
 
             var appSettings = JsonConvert.DeserializeObject<AppSettings>(jsonString);
             var pythonModule = appSettings.PythonModule;
