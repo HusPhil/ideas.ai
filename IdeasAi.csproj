@@ -76,8 +76,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Gemini_AI\AI_Response.cs" />
     <Compile Include="Gemini_AI\AppSetting.cs" />
     <Compile Include="Gemini_AI\ScriptRunner.cs" />
+    <Compile Include="Ideas\Idea.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

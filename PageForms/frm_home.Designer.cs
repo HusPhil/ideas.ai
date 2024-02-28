@@ -32,7 +32,7 @@
             this.wb_container = new System.Windows.Forms.WebBrowser();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_send = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +61,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(28)))));
             this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.btn_send);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -84,20 +84,20 @@
             this.textBox1.Text = "Enter an interesting topic.";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // button1
+            // btn_send
             // 
-            this.button1.AllowDrop = true;
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(245)))), ((int)(((byte)(118)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::IdeasAi.Properties.Resources.send;
-            this.button1.Location = new System.Drawing.Point(859, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 70);
-            this.button1.TabIndex = 8;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_send.AllowDrop = true;
+            this.btn_send.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(245)))), ((int)(((byte)(118)))));
+            this.btn_send.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_send.FlatAppearance.BorderSize = 0;
+            this.btn_send.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_send.Image = global::IdeasAi.Properties.Resources.send;
+            this.btn_send.Location = new System.Drawing.Point(859, 15);
+            this.btn_send.Name = "btn_send";
+            this.btn_send.Size = new System.Drawing.Size(75, 70);
+            this.btn_send.TabIndex = 8;
+            this.btn_send.UseVisualStyleBackColor = false;
+            this.btn_send.Click += new System.EventHandler(this.btn_send_Click);
             // 
             // frm_home
             // 
@@ -124,6 +124,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.WebBrowser wb_container;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_send;
     }
 }

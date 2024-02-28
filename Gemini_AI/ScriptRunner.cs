@@ -36,7 +36,7 @@ namespace IdeasAi.Gemini_AI
                 result = process.StandardOutput.ReadToEnd();
                 error = process.StandardError.ReadToEnd();
             }
-            Console.WriteLine(result);
+            //Console.WriteLine(result);
             Console.WriteLine(error);
 
             return result;
