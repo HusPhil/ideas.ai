@@ -1,17 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Markdig;
-using System.Threading.Tasks;
 using IdeasAi.Gemini_AI;
-using System.Net.Http;
-using System.Xml;
+using IdeasAi.Ideas;
 
 namespace IdeasAi.PageForms
 {
@@ -58,7 +50,6 @@ namespace IdeasAi.PageForms
             var pipeline = new MarkdownPipelineBuilder().UseAdvancedExtensions().Build();
             return Markdig.Markdown.ToHtml(markdownText, pipeline);
         }
-
         private void displayResult(string markdownText)
         {
             
@@ -101,9 +92,9 @@ namespace IdeasAi.PageForms
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
         }
-
-        private async void button1_Click(object sender, EventArgs e)
+        private async void btn_send_Click(object sender, EventArgs e)
         {
+            var idea = new Idea();
             wb_container.DocumentText = @"
                     <!DOCTYPE html>
                     <html>
@@ -137,18 +128,12 @@ namespace IdeasAi.PageForms
             await Task.Delay(500);
 
             var topic = this.textBox1.Text;
-            Console.WriteLine(topic);
-            var prompt = "Pretend you are an expert about providing useful ideas. " +
-                "If the topic is not valid or vague, suggest other topics to explore instead. " +
-                "Make a table, and make a column for each subtopic." +
-                "The rows of each columns must provide brief information, significance, project ideas, and research ideas about the subtopics." +
-                "Below the table, supply further information and explain the topic and its subtopic as if you are speaking to a child." +
-                "Finally, make an outline about the topic as well as some references on where the user can learn more." +
-                $"The topic supplied: {topic}";
 
-            string response = ScriptRunner.runScript("Gemini_AI\\Scripts\\gemini.py", prompt);
-            Console.WriteLine(response);
+            Console.WriteLine(topic);
+            idea.Input = topic;
+            string response = idea.Content;
             displayResult(response);
+            Console.WriteLine($"ID AY ITO: {idea.UUID}\nINPUT IS ITO: {idea.Input}\nDATE IS ITO: {idea.DateCreated}");
         }
     }
 }
