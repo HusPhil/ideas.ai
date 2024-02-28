@@ -135,6 +135,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\icons\send.png" />
     <Content Include="Gemini_AI\Scripts\gemini.py">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

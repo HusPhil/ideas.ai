@@ -11,6 +11,7 @@ using Markdig;
 using System.Threading.Tasks;
 using IdeasAi.Gemini_AI;
 using System.Net.Http;
+using System.Xml;
 
 namespace IdeasAi.PageForms
 {
@@ -19,8 +20,37 @@ namespace IdeasAi.PageForms
         public frm_home()
         {
             InitializeComponent();
-            displayResult("| Feature | Description | Benefits | Drawbacks | Considerations |\r\n|---|---|---|---|---|\r\n| Topic-based suggestions | App suggests ideas based on a topic entered by the user. | Provides personalized and relevant ideas. | May be limited to topics with enough data. | Requires a large database of ideas and topics. |\r\n| AI-powered generation | App uses AI algorithms to generate new and unique ideas. | Offers a wide range of diverse and creative ideas. | Results may be unpredictable or nonsensical. | Requires a sophisticated AI model. |\r\n| Collaborative brainstorming | App allows users to collaborate and share ideas with others. | Encourages teamwork and collective thinking. | May lead to disagreements or conflicts. | Requires a social platform or messaging system. |\r\n| Idea evaluation | App provides users with tools to evaluate and refine their ideas. | Helps users identify the most promising ideas. | May introduce bias or subjectivity. | Requires a structured evaluation framework. |\r\n| Idea implementation | App offers resources and guidance to help users implement their ideas. | Increases the likelihood of idea success. | May require additional fees or services. | Requires partnerships with service providers or resources. |\r\n");
-            
+            wb_container.DocumentText = @"
+            <!DOCTYPE html>
+            <html lang=""en"">
+            <head>
+            <meta charset=""UTF-8"">
+            <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
+            <title>Centered Container</title>
+            <style>
+              body {
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+              }
+              .container {
+                text-align: center;
+                padding: 20px;
+                height: 100%;
+              }
+            </style>
+            </head>
+            <body>
+
+            <div class=""container"">
+              <h1>Ask me something</h1>
+            </div>
+
+            </body>
+            </html>
+            ";
         }
         private string ConvertMarkdownToHtml(string markdownText)
         {
@@ -37,35 +67,32 @@ namespace IdeasAi.PageForms
             string htmlText = ConvertMarkdownToHtml(markdownText);
 
             string htmlContent = @"
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-    body {
-        background-color: black;
-        color: white;
-    }
-    table {
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-    th, td {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-    }
-
-    th {
-        background-color: black;
-    }
-</style>
-</head>
-<body>
-" + htmlText + @"
-</body>
-</html>
-";
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                    <style>
+                        table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }
+  tr:nth-child(even) {
+    background-color: rgb(173, 197, 199);
+  }
+  th {
+    background-color: rgb(173, 197, 199);
+  }
+                    </style>
+                    </head>
+                    <body>
+                    " + htmlText + @"
+                    </body>
+                    </html>
+                    ";
 
             Console.WriteLine(htmlText);
             // Set the HTML content to the WebBrowser control
@@ -77,15 +104,51 @@ namespace IdeasAi.PageForms
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            wb_container.DocumentText = "Getting a response for you!";
+            wb_container.DocumentText = @"
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                    <style>
+                        body {
+                            background-color: black;
+                            color: white;
+                        }
+                        table {
+                            border-collapse: collapse;
+                            width: 100%;
+                        }
+
+                        th, td {
+                            border: 1px solid #dddddd;
+                            text-align: left;
+                            padding: 8px;
+                        }
+
+                        th {
+                            background-color: black;
+                        }
+                    </style>
+                    </head>
+                    <body>
+                    " + "Getting a Response for You!" + @"
+                    </body>
+                    </html>
+                    "; ;
             await Task.Delay(500);
 
-            var idea = this.textBox1.Text;
-            Console.WriteLine(idea);
-            var prompt = $"Pretend you are an expert with a vast knowledge about everything. You are to suggest useful ideas to the users about the supplied topic. Make a table of related suggestions/ideas about a topic. Make columns for each suggestion/idea. IT IS VERY IMPORTANT THAT YOU RESPOND WITH ONLY Atleast OF FIVE COLUMNS and at least 3 rows. The title of each column should be about the name of the idea being suggested. If the topic supplied is cannot be considered as a topic, tell the user to try again, else output only the TABLE and nothing . The topic supplied: {idea}. If you are not able to give the user suggestions about a topic, tell them the reason why and suggest spefic topics that they can ask instead. PLEASE GIVE THE TABLE ONLY AND NO OTHER TEXT";
-            string hi = ScriptRunner.runScript("Gemini_AI\\Scripts\\gemini.py", prompt);
-            Console.WriteLine(hi);
-            displayResult(hi);
+            var topic = this.textBox1.Text;
+            Console.WriteLine(topic);
+            var prompt = "Pretend you are an expert about providing useful ideas. " +
+                "If the topic is not valid or vague, suggest other topics to explore instead. " +
+                "Make a table, and make a column for each subtopic." +
+                "The rows of each columns must provide brief information, significance, project ideas, and research ideas about the subtopics." +
+                "Below the table, supply further information and explain the topic and its subtopic as if you are speaking to a child." +
+                "Finally, make an outline about the topic as well as some references on where the user can learn more." +
+                $"The topic supplied: {topic}";
+
+            string response = ScriptRunner.runScript("Gemini_AI\\Scripts\\gemini.py", prompt);
+            Console.WriteLine(response);
+            displayResult(response);
         }
     }
 }
