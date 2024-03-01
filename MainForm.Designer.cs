@@ -43,6 +43,7 @@ namespace IdeasAi
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnl_content = new System.Windows.Forms.Panel();
             this.lbl_currentPage = new System.Windows.Forms.Label();
+            this.btn_notebook = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             this.pnl_pageTabs.SuspendLayout();
@@ -80,6 +81,7 @@ namespace IdeasAi
             // 
             this.pnl_pageTabs.BackColor = System.Drawing.Color.Transparent;
             this.pnl_pageTabs.Controls.Add(this.btn_home);
+            this.pnl_pageTabs.Controls.Add(this.btn_notebook);
             this.pnl_pageTabs.Controls.Add(this.btn_workspace);
             this.pnl_pageTabs.Controls.Add(this.btn_history);
             this.pnl_pageTabs.Controls.Add(this.btn_unde);
@@ -119,7 +121,7 @@ namespace IdeasAi
             this.btn_workspace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_workspace.Font = new System.Drawing.Font("Cascadia Code Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_workspace.ForeColor = System.Drawing.Color.White;
-            this.btn_workspace.Location = new System.Drawing.Point(4, 69);
+            this.btn_workspace.Location = new System.Drawing.Point(4, 134);
             this.btn_workspace.Name = "btn_workspace";
             this.btn_workspace.Padding = new System.Windows.Forms.Padding(5);
             this.btn_workspace.Size = new System.Drawing.Size(269, 59);
@@ -138,7 +140,7 @@ namespace IdeasAi
             this.btn_history.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_history.Font = new System.Drawing.Font("Cascadia Code Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_history.ForeColor = System.Drawing.Color.White;
-            this.btn_history.Location = new System.Drawing.Point(4, 134);
+            this.btn_history.Location = new System.Drawing.Point(4, 199);
             this.btn_history.Name = "btn_history";
             this.btn_history.Padding = new System.Windows.Forms.Padding(5);
             this.btn_history.Size = new System.Drawing.Size(269, 59);
@@ -157,7 +159,7 @@ namespace IdeasAi
             this.btn_unde.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_unde.Font = new System.Drawing.Font("Cascadia Code Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_unde.ForeColor = System.Drawing.Color.White;
-            this.btn_unde.Location = new System.Drawing.Point(4, 199);
+            this.btn_unde.Location = new System.Drawing.Point(4, 264);
             this.btn_unde.Name = "btn_unde";
             this.btn_unde.Padding = new System.Windows.Forms.Padding(5);
             this.btn_unde.Size = new System.Drawing.Size(269, 59);
@@ -221,6 +223,25 @@ namespace IdeasAi
             this.lbl_currentPage.Text = "Page 1";
             this.lbl_currentPage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btn_notebook
+            // 
+            this.btn_notebook.BackColor = System.Drawing.Color.Transparent;
+            this.btn_notebook.FlatAppearance.BorderSize = 0;
+            this.btn_notebook.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
+            this.btn_notebook.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
+            this.btn_notebook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_notebook.Font = new System.Drawing.Font("Cascadia Code Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_notebook.ForeColor = System.Drawing.Color.White;
+            this.btn_notebook.Location = new System.Drawing.Point(4, 69);
+            this.btn_notebook.Name = "btn_notebook";
+            this.btn_notebook.Padding = new System.Windows.Forms.Padding(5);
+            this.btn_notebook.Size = new System.Drawing.Size(269, 59);
+            this.btn_notebook.TabIndex = 5;
+            this.btn_notebook.Text = "Notebook";
+            this.btn_notebook.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_notebook.UseVisualStyleBackColor = false;
+            this.btn_notebook.Click += new System.EventHandler(this.btn_notebook_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -233,6 +254,7 @@ namespace IdeasAi
             this.Name = "MainForm";
             this.Palette = this.kryptonPalette1;
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
@@ -257,6 +279,7 @@ namespace IdeasAi
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_currentPage;
         private System.Windows.Forms.Panel pnl_content;
+        private System.Windows.Forms.Button btn_notebook;
     }
 }
 

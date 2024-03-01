@@ -106,6 +106,13 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="modals\frm_modal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modals\frm_modal.Designer.cs">
+      <DependentUpon>frm_modal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modals\Modal.cs" />
     <Compile Include="pages\frm_home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,8 +130,14 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="modals\frm_modal.resx">
+      <DependentUpon>frm_modal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="pages\frm_home.resx">
       <DependentUpon>frm_home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\frm_notebook.resx">
+      <DependentUpon>frm_notebook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pages\frm_settings.resx">
       <DependentUpon>frm_settings.cs</DependentUpon>
@@ -164,6 +177,9 @@
     <Content Include="gemini_AI\Scripts\gemini.py">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Compile Include="pages\frm_notebook.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

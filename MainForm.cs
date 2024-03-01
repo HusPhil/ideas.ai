@@ -1,31 +1,43 @@
 ﻿using System;
 using System.Drawing;
+using System.IO.Ports;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
+using IdeasAi.modals;
 using IdeasAi.PageForms;
+using IdeasAi.pages;
 
 namespace IdeasAi
 {
     public partial class MainForm : KryptonForm
     {
         // PAGE FORMS
-        frm_home frm_home = new frm_home();
+        frm_home frm_home;
         frm_settings frm_settings = new frm_settings();
+        frm_notebook frm_notebook = new frm_notebook();
         //
+
+
 
         Button btn_active;
         Color color_active = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
         Color color_inactive = System.Drawing.Color.Transparent;
 
+       
 
         public MainForm()
         {
             InitializeComponent();
+            frm_home =  new frm_home();
             setActiveBtn((object)this.btn_home);
             btn_active = this.btn_home;
             lbl_currentPage.Text = btn_active.Text;
             loadForm(frm_home, pnl_content);
 
+            
+
+            frm_home.parentX = this.Location.X;
+            frm_home.parentY = this.Location.Y;
 
         }
 
@@ -33,6 +45,7 @@ namespace IdeasAi
         private void loadForm(Form frm, Control container)
         {
             removeForm(frm, container);
+            frm.Owner = this;
             frm.TopLevel = false;
             container.Controls.Add(frm);
             frm.BringToFront();
@@ -47,6 +60,7 @@ namespace IdeasAi
                 if (control is Form form)
                 {
                     container.Controls.Remove(control);
+
                     break;
                 }
             }
@@ -78,6 +92,8 @@ namespace IdeasAi
         private void btn_home_Click(object sender, EventArgs e)
         {
             setActiveBtn(sender);
+            
+            
             loadForm(frm_home, pnl_content);
         }
 
@@ -96,6 +112,12 @@ namespace IdeasAi
 
             setActiveBtn(sender);
             loadForm(frm_settings, pnl_content);
+        }
+
+        private void btn_notebook_Click(object sender, EventArgs e)
+        {
+            setActiveBtn(sender);
+            loadForm(frm_notebook, pnl_content);
         }
     }
 }

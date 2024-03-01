@@ -4,12 +4,15 @@ using System.Windows.Forms;
 using Markdig;
 using IdeasAi.Gemini_AI;
 using IdeasAi.Ideas;
+using IdeasAi.modals;
 using IdeasAi.db;
+using System.Drawing;
 
 namespace IdeasAi.PageForms
 {
     public partial class frm_home : Form
     {
+        public static int parentX, parentY;
         public frm_home()
         {
             InitializeComponent();
@@ -152,6 +155,39 @@ namespace IdeasAi.PageForms
             //    Console.WriteLine();
             //}
 
+        }
+
+       
+
+        private void frm_home_Load(object sender, EventArgs e)
+        {
+            Console.WriteLine($"X: { this.Owner.Size}; Y: {parentY}");
+        }
+
+        public void openModal()
+        {
+            Form modalBG = new Form();
+            using (frm_modal modal = new frm_modal())
+            {
+                modalBG.Owner = this;
+                modalBG.StartPosition = FormStartPosition.Manual;
+                modalBG.FormBorderStyle = FormBorderStyle.None;
+                modalBG.Opacity = .50d;
+                modalBG.BackColor = Color.Black;
+                modalBG.Size = Owner.Size;
+                modalBG.Location = Owner.Location;
+                modalBG.ShowInTaskbar = false;
+                modalBG.Show();
+                modal.Owner = modalBG;
+
+                modal.ShowDialog();
+                modalBG.Dispose();
+            }
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            openModal();
         }
     }
 }
