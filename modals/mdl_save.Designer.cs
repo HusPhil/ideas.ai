@@ -1,6 +1,6 @@
 ﻿namespace IdeasAi.modals
 {
-    partial class frm_modal
+    partial class mdl_save
     {
         /// <summary>
         /// Required designer variable.
@@ -33,12 +33,12 @@
             this.tmr_animation = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -86,6 +86,48 @@
             this.panel2.Size = new System.Drawing.Size(593, 322);
             this.panel2.TabIndex = 3;
             // 
+            // kryptonTextBox1
+            // 
+            this.kryptonTextBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.kryptonTextBox1.Location = new System.Drawing.Point(62, 89);
+            this.kryptonTextBox1.Multiline = true;
+            this.kryptonTextBox1.Name = "kryptonTextBox1";
+            this.kryptonTextBox1.Size = new System.Drawing.Size(469, 38);
+            this.kryptonTextBox1.StateActive.Content.Font = new System.Drawing.Font("Cascadia Code", 12F);
+            this.kryptonTextBox1.StateActive.Content.Padding = new System.Windows.Forms.Padding(8, 2, 2, 2);
+            this.kryptonTextBox1.TabIndex = 10;
+            this.kryptonTextBox1.Text = "My Note #1";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.IndianRed;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(62, 180);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(469, 35);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Cancel";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(62, 215);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(469, 10);
+            this.panel4.TabIndex = 8;
+            // 
+            // panel3
+            // 
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(62, 79);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(469, 10);
+            this.panel3.TabIndex = 5;
+            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -113,49 +155,7 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Give this note a title:";
             // 
-            // panel3
-            // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(62, 79);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(469, 10);
-            this.panel3.TabIndex = 5;
-            // 
-            // panel4
-            // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(62, 215);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(469, 10);
-            this.panel4.TabIndex = 8;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.IndianRed;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(62, 180);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(469, 35);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // kryptonTextBox1
-            // 
-            this.kryptonTextBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonTextBox1.Location = new System.Drawing.Point(62, 89);
-            this.kryptonTextBox1.Multiline = true;
-            this.kryptonTextBox1.Name = "kryptonTextBox1";
-            this.kryptonTextBox1.Size = new System.Drawing.Size(469, 38);
-            this.kryptonTextBox1.StateActive.Content.Font = new System.Drawing.Font("Cascadia Code", 12F);
-            this.kryptonTextBox1.StateActive.Content.Padding = new System.Windows.Forms.Padding(8, 2, 2, 2);
-            this.kryptonTextBox1.TabIndex = 10;
-            this.kryptonTextBox1.Text = "My Note #1";
-            // 
-            // frm_modal
+            // mdl_save
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -164,7 +164,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frm_modal";
+            this.Name = "mdl_save";
             this.Opacity = 0D;
             this.Text = "frm_modal";
             this.Load += new System.EventHandler(this.frm_modal_Load);

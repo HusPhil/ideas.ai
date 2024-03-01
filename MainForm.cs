@@ -12,11 +12,12 @@ namespace IdeasAi
     public partial class MainForm : KryptonForm
     {
         // PAGE FORMS
-        frm_home frm_home;
-        frm_settings frm_settings = new frm_settings();
-        frm_notebook frm_notebook = new frm_notebook();
+        public frm_home frm_home;
+        public frm_settings frm_settings = new frm_settings();
+        public frm_notebook frm_notebook = new frm_notebook();
         //
 
+        public static MainForm instance;
 
 
         Button btn_active;
@@ -33,11 +34,9 @@ namespace IdeasAi
             btn_active = this.btn_home;
             lbl_currentPage.Text = btn_active.Text;
             loadForm(frm_home, pnl_content);
-
+            instance = this;
             
 
-            frm_home.parentX = this.Location.X;
-            frm_home.parentY = this.Location.Y;
 
         }
 

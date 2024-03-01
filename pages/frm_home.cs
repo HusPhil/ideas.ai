@@ -12,10 +12,22 @@ namespace IdeasAi.PageForms
 {
     public partial class frm_home : Form
     {
-        public static int parentX, parentY;
+        //PROPERTIES
+        public ModalSetter modal_save;
+        public Guid id_holder;
+        public string content_holder;
+        public string input_holder;
+        public DateTime date_holder;
+
+        /// <summary>
+        /// ////////////////////////////////////////////
+        /// </summary>
+        /// 
+
         public frm_home()
         {
             InitializeComponent();
+            modal_save = new ModalSetter(this, typeof(mdl_save));
             wb_container.DocumentText = @"
             <!DOCTYPE html>
             <html lang=""en"">
@@ -98,7 +110,8 @@ namespace IdeasAi.PageForms
         }
         private async void btn_send_Click(object sender, EventArgs e)
         {
-            var idea = new Idea();
+            btn_save.Enabled = false;
+            var idea_obj = new Idea();
             wb_container.DocumentText = @"
                     <!DOCTYPE html>
                     <html>
@@ -133,16 +146,20 @@ namespace IdeasAi.PageForms
             var topic = this.textBox1.Text;
 
             Console.WriteLine(topic);
-            idea.Input = topic;
-            idea.Content = await idea.GetResponse(); 
+            idea_obj.Input = topic;
+            idea_obj.Content = await idea_obj.GetResponse(); 
 
-            displayResult(idea.Content);
+            displayResult(idea_obj.Content);
 
-            Console.WriteLine($"ID AY ITO: {idea.UUID}\nINPUT IS ITO: {idea.Input}\nDATE IS ITO: {idea.DateCreated}");
+            id_holder = idea_obj.UUID;
+            input_holder = idea_obj.Input;
+            content_holder = idea_obj.Content;
+            date_holder = idea_obj.DateCreated;
 
-            var dbManager = new DatabaseManager("sqlite.db");
-            dbManager.SaveObject(idea);
-            var ideas = dbManager.GetAllIdeas();
+            btn_save.Enabled = true;
+            Console.WriteLine($"ID AY ITO: {idea_obj.UUID}\nINPUT IS ITO: {idea_obj.Input}\nDATE IS ITO: {idea_obj.DateCreated}");
+
+           
 
             //Display the retrieved ideas
             //Console.WriteLine("Retrieved Ideas:");
@@ -157,37 +174,12 @@ namespace IdeasAi.PageForms
 
         }
 
-       
-
         private void frm_home_Load(object sender, EventArgs e)
         {
-            Console.WriteLine($"X: { this.Owner.Size}; Y: {parentY}");
         }
-
-        public void openModal()
-        {
-            Form modalBG = new Form();
-            using (frm_modal modal = new frm_modal())
-            {
-                modalBG.Owner = this;
-                modalBG.StartPosition = FormStartPosition.Manual;
-                modalBG.FormBorderStyle = FormBorderStyle.None;
-                modalBG.Opacity = .50d;
-                modalBG.BackColor = Color.Black;
-                modalBG.Size = Owner.Size;
-                modalBG.Location = Owner.Location;
-                modalBG.ShowInTaskbar = false;
-                modalBG.Show();
-                modal.Owner = modalBG;
-
-                modal.ShowDialog();
-                modalBG.Dispose();
-            }
-        }
-
         private void btn_save_Click(object sender, EventArgs e)
         {
-            openModal();
+            modal_save.openModal();
         }
     }
 }

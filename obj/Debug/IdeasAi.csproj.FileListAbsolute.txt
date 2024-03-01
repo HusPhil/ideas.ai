@@ -68,4 +68,4 @@ C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\bin\Debug\System.Data.SQLite.xm
 C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\bin\Debug\settings.json
 C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\bin\Debug\db\sqlite.db
 C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\obj\Debug\IdeasAi.pages.frm_notebook.resources
-C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\obj\Debug\IdeasAi.modals.frm_modal.resources
+C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\obj\Debug\IdeasAi.modals.mdl_save.resources

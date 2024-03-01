@@ -4,7 +4,7 @@ using IdeasAi.Gemini_AI;
 
 namespace IdeasAi.Ideas
 {
-    internal class Idea : AI_Response
+    public class Idea : AI_Response
     {
         public string Title { get; set; }
         public override async Task<string> GetResponse()

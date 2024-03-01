@@ -106,13 +106,13 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="modals\frm_modal.cs">
+    <Compile Include="modals\mdl_save.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="modals\frm_modal.Designer.cs">
-      <DependentUpon>frm_modal.cs</DependentUpon>
+    <Compile Include="modals\mdl_save.Designer.cs">
+      <DependentUpon>mdl_save.cs</DependentUpon>
     </Compile>
-    <Compile Include="modals\Modal.cs" />
+    <Compile Include="modals\ModalSetter.cs" />
     <Compile Include="pages\frm_home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,8 +130,8 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="modals\frm_modal.resx">
-      <DependentUpon>frm_modal.cs</DependentUpon>
+    <EmbeddedResource Include="modals\mdl_save.resx">
+      <DependentUpon>mdl_save.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pages\frm_home.resx">
       <DependentUpon>frm_home.cs</DependentUpon>
