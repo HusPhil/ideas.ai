@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace IdeasAi.Gemini_AI
 {
-    internal abstract class AI_Response
+    public abstract class AI_Response
     {
         public Guid UUID { get; set; }
         

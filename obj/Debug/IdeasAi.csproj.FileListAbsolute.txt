@@ -67,3 +67,5 @@ C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\bin\Debug\EntityFramework.SqlSe
 C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\bin\Debug\System.Data.SQLite.xml
 C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\bin\Debug\settings.json
 C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\bin\Debug\db\sqlite.db
+C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\obj\Debug\IdeasAi.pages.frm_notebook.resources
+C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\obj\Debug\IdeasAi.modals.mdl_save.resources

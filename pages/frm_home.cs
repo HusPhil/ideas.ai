@@ -4,15 +4,30 @@ using System.Windows.Forms;
 using Markdig;
 using IdeasAi.Gemini_AI;
 using IdeasAi.Ideas;
+using IdeasAi.modals;
 using IdeasAi.db;
+using System.Drawing;
 
 namespace IdeasAi.PageForms
 {
     public partial class frm_home : Form
     {
+        //PROPERTIES
+        public ModalSetter modal_save;
+        public Guid id_holder;
+        public string content_holder;
+        public string input_holder;
+        public DateTime date_holder;
+
+        /// <summary>
+        /// ////////////////////////////////////////////
+        /// </summary>
+        /// 
+
         public frm_home()
         {
             InitializeComponent();
+            modal_save = new ModalSetter(this, typeof(mdl_save));
             wb_container.DocumentText = @"
             <!DOCTYPE html>
             <html lang=""en"">
@@ -95,7 +110,8 @@ namespace IdeasAi.PageForms
         }
         private async void btn_send_Click(object sender, EventArgs e)
         {
-            var idea = new Idea();
+            btn_save.Enabled = false;
+            var idea_obj = new Idea();
             wb_container.DocumentText = @"
                     <!DOCTYPE html>
                     <html>
@@ -130,16 +146,20 @@ namespace IdeasAi.PageForms
             var topic = this.textBox1.Text;
 
             Console.WriteLine(topic);
-            idea.Input = topic;
-            idea.Content = await idea.GetResponse(); 
+            idea_obj.Input = topic;
+            idea_obj.Content = await idea_obj.GetResponse(); 
 
-            displayResult(idea.Content);
+            displayResult(idea_obj.Content);
 
-            Console.WriteLine($"ID AY ITO: {idea.UUID}\nINPUT IS ITO: {idea.Input}\nDATE IS ITO: {idea.DateCreated}");
+            id_holder = idea_obj.UUID;
+            input_holder = idea_obj.Input;
+            content_holder = idea_obj.Content;
+            date_holder = idea_obj.DateCreated;
 
-            var dbManager = new DatabaseManager("sqlite.db");
-            dbManager.SaveObject(idea);
-            var ideas = dbManager.GetAllIdeas();
+            btn_save.Enabled = true;
+            Console.WriteLine($"ID AY ITO: {idea_obj.UUID}\nINPUT IS ITO: {idea_obj.Input}\nDATE IS ITO: {idea_obj.DateCreated}");
+
+           
 
             //Display the retrieved ideas
             //Console.WriteLine("Retrieved Ideas:");
@@ -152,6 +172,14 @@ namespace IdeasAi.PageForms
             //    Console.WriteLine();
             //}
 
+        }
+
+        private void frm_home_Load(object sender, EventArgs e)
+        {
+        }
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            modal_save.openModal();
         }
     }
 }
