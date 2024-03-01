@@ -44,5 +44,35 @@ namespace IdeasAi.Gemini_AI
 
 
         }
+
+        public static async Task<string> RunScriptAsync(string scriptName, string prompt)
+        {
+            string jsonString = File.ReadAllText("settings.json");
+
+            var appSettings = JsonConvert.DeserializeObject<AppSettings>(jsonString);
+            var pythonModule = appSettings.PythonModule;
+            var apiKey = appSettings.ApiKey;
+
+            var psi = new ProcessStartInfo();
+            psi.FileName = pythonModule;
+            psi.Arguments = $"\"{scriptName}\" \"{prompt}\" \"{apiKey}\"";
+
+            psi.UseShellExecute = false;
+            psi.CreateNoWindow = true;
+            psi.RedirectStandardError = true;
+            psi.RedirectStandardOutput = true;
+
+            var result = "";
+            var error = "";
+            Console.WriteLine(prompt);
+            using (var process = Process.Start(psi))
+            {
+                result = await process.StandardOutput.ReadToEndAsync();
+                error = await process.StandardError.ReadToEndAsync();
+            }
+            Console.WriteLine(error);
+
+            return result;
+        }
     }
 }

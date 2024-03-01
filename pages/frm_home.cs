@@ -126,30 +126,31 @@ namespace IdeasAi.PageForms
                     </body>
                     </html>
                     "; ;
-            await Task.Delay(500);
 
             var topic = this.textBox1.Text;
 
             Console.WriteLine(topic);
             idea.Input = topic;
-            string response = idea.Content;
-            displayResult(response);
+            idea.Content = await idea.GetResponse(); 
+
+            displayResult(idea.Content);
+
             Console.WriteLine($"ID AY ITO: {idea.UUID}\nINPUT IS ITO: {idea.Input}\nDATE IS ITO: {idea.DateCreated}");
+
             var dbManager = new DatabaseManager("sqlite.db");
             dbManager.SaveObject(idea);
-
             var ideas = dbManager.GetAllIdeas();
 
-            // Display the retrieved ideas
-            Console.WriteLine("Retrieved Ideas:");
-            foreach (var idea_var in ideas)
-            {
-                Console.WriteLine($"UUID: {idea_var.UUID}");
-                Console.WriteLine($"Title: {idea_var.Title}");
-                Console.WriteLine($"Content: {idea_var.Content}");
-                Console.WriteLine($"Date Created: {idea_var.DateCreated}");
-                Console.WriteLine();
-            }
+            //Display the retrieved ideas
+            //Console.WriteLine("Retrieved Ideas:");
+            //foreach (var idea_var in ideas)
+            //{
+            //    Console.WriteLine($"UUID: {idea_var.UUID}");
+            //    Console.WriteLine($"Title: {idea_var.Title}");
+            //    Console.WriteLine($"Content: {idea_var.Content}");
+            //    Console.WriteLine($"Date Created: {idea_var.DateCreated}");
+            //    Console.WriteLine();
+            //}
 
         }
     }
