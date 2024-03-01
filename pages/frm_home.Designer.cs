@@ -100,7 +100,6 @@
             this.textBox1.Size = new System.Drawing.Size(844, 70);
             this.textBox1.TabIndex = 9;
             this.textBox1.Text = "Enter an interesting topic.";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btn_send
             // 
@@ -129,7 +128,6 @@
             this.Name = "frm_home";
             this.Padding = new System.Windows.Forms.Padding(15);
             this.Text = "frm_home";
-            this.Load += new System.EventHandler(this.frm_home_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

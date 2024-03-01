@@ -66,11 +66,8 @@ namespace IdeasAi.PageForms
             var pipeline = new MarkdownPipelineBuilder().UseAdvancedExtensions().Build();
             return Markdig.Markdown.ToHtml(markdownText, pipeline);
         }
-        private void displayResult(string markdownText)
+        public void displayResult(string markdownText)
         {
-            
-
-
             string htmlText = ConvertMarkdownToHtml(markdownText);
 
             string htmlContent = @"
@@ -104,9 +101,6 @@ namespace IdeasAi.PageForms
             Console.WriteLine(htmlText);
             // Set the HTML content to the WebBrowser control
             wb_container.DocumentText = htmlContent;
-        }
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
         }
         private async void btn_send_Click(object sender, EventArgs e)
         {
@@ -172,10 +166,6 @@ namespace IdeasAi.PageForms
             //    Console.WriteLine();
             //}
 
-        }
-
-        private void frm_home_Load(object sender, EventArgs e)
-        {
         }
         private void btn_save_Click(object sender, EventArgs e)
         {

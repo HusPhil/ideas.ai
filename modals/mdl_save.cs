@@ -1,14 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using IdeasAi.PageForms;
-using IdeasAi.modals;
 using IdeasAi.db;
 using IdeasAi.Ideas;
 
@@ -17,7 +9,7 @@ namespace IdeasAi.modals
     public partial class mdl_save : Form
     {
         public Dictionary<string, string> data = new Dictionary<string, string>();
-        DatabaseManager dbManager = new DatabaseManager("sqlite.db");
+        DatabaseManager dbManager = new DBManager_Idea();
         
         public mdl_save()
         {

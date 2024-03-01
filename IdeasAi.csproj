@@ -96,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="db\DatabaseManager.cs" />
+    <Compile Include="db\DBManager_Idea.cs" />
     <Compile Include="gemini_AI\AI_Response.cs" />
     <Compile Include="AppSetting.cs" />
     <Compile Include="gemini_AI\ScriptRunner.cs" />

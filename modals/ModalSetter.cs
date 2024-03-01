@@ -13,11 +13,7 @@ namespace IdeasAi.modals
     {
         public Form OwnerForm { get; set; }
         public Type ModalFormType { get; set; } 
-
         public Form ModalForm { get; set; }
-
-        public Dictionary<string, string> SentInfo = new Dictionary<string, string>();
-
         public ModalSetter(Form _owner, Type _frm_modal)
         {
             this.OwnerForm = _owner;

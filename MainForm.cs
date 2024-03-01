@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Drawing;
-using System.IO.Ports;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
-using IdeasAi.modals;
 using IdeasAi.PageForms;
 using IdeasAi.pages;
 
@@ -12,7 +10,7 @@ namespace IdeasAi
     public partial class MainForm : KryptonForm
     {
         // PAGE FORMS
-        public frm_home frm_home;
+        public frm_home frm_home = new frm_home();
         public frm_settings frm_settings = new frm_settings();
         public frm_notebook frm_notebook = new frm_notebook();
         //
@@ -24,24 +22,22 @@ namespace IdeasAi
         Color color_active = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
         Color color_inactive = System.Drawing.Color.Transparent;
 
-       
+
 
         public MainForm()
         {
             InitializeComponent();
-            frm_home =  new frm_home();
             setActiveBtn((object)this.btn_home);
+            loadForm(frm_home, pnl_content);
+
             btn_active = this.btn_home;
             lbl_currentPage.Text = btn_active.Text;
-            loadForm(frm_home, pnl_content);
-            instance = this;
             
-
-
+            instance = this;
         }
 
 
-        private void loadForm(Form frm, Control container)
+        public void loadForm(Form frm, Control container)
         {
             removeForm(frm, container);
             frm.Owner = this;
@@ -65,7 +61,7 @@ namespace IdeasAi
             }
         }
 
-        private void setActiveBtn(object btn)
+        public void setActiveBtn(object btn)
         {
             removeActiveBtn();
             if ((Button)btn != btn_active)
@@ -91,8 +87,8 @@ namespace IdeasAi
         private void btn_home_Click(object sender, EventArgs e)
         {
             setActiveBtn(sender);
-            
-            
+
+
             loadForm(frm_home, pnl_content);
         }
 
@@ -117,6 +113,10 @@ namespace IdeasAi
         {
             setActiveBtn(sender);
             loadForm(frm_notebook, pnl_content);
+
+            
+
+            frm_notebook.displaySavedIdeas();
         }
     }
 }
