@@ -1,23 +1,14 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace IdeasAi.Gemini_AI
 {
     internal abstract class AI_Response
     {
-        public Guid UUID { get; private set; }
-        public AI_Response()
-        {
-            UUID = Guid.NewGuid();
-        }
+        public Guid UUID { get; set; }
+        
 
-        private string input;
-        public string Input {
-            get { return input; }
-            set {
-                input = value;
-                Content = GetResponse(input);
-            }
-        }
+        public string Input { get; set; }
         public string Content { get; set; }
 
         private DateTime _dateCreated;
@@ -29,8 +20,11 @@ namespace IdeasAi.Gemini_AI
                 _dateCreated = value;
             }
         }
-
-        public abstract string GetResponse(string input);
+        public AI_Response()
+        {
+            UUID = Guid.NewGuid();
+        }
+        public abstract Task<string> GetResponse();
         public abstract void SaveData();
     }
 }
