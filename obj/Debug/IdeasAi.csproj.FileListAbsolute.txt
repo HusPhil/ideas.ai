@@ -29,8 +29,6 @@ C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\IdeasAi\bin\Debug\Newtonsoft
 C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\IdeasAi\bin\Debug\Gemini_AI\Scripts\gemini.py
 C:\MyFiles\Projects\C# Visual Studio\Winforms_Demos\IdeasAi\bin\Debug\Gemini_AI\settings.json
 C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\bin\Debug\Gemini_AI\Scripts\gemini.py
-C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\bin\Debug\IdeasAi.exe.config
-C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\bin\Debug\IdeasAi.exe
 C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\bin\Debug\IdeasAi.pdb
 C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\bin\Debug\Markdig.dll
 C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\bin\Debug\MarkdownSharp.dll
@@ -55,7 +53,6 @@ C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\obj\Debug\IdeasAi.Properties.Re
 C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\obj\Debug\IdeasAi.csproj.GenerateResource.cache
 C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\obj\Debug\IdeasAi.csproj.CoreCompileInputs.cache
 C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\obj\Debug\IdeasAi.csproj.CopyComplete
-C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\obj\Debug\IdeasAi.exe
 C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\obj\Debug\IdeasAi.pdb
 C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\bin\Debug\EntityFramework.dll
 C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\bin\Debug\EntityFramework.SqlServer.dll
@@ -69,3 +66,6 @@ C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\bin\Debug\settings.json
 C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\bin\Debug\db\sqlite.db
 C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\obj\Debug\IdeasAi.pages.frm_notebook.resources
 C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\obj\Debug\IdeasAi.modals.mdl_save.resources
+C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\bin\Debug\IdeasAi.exe.config
+C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\bin\Debug\IdeasAi.exe
+C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\obj\Debug\IdeasAi.exe

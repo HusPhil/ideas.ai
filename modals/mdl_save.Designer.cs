@@ -85,6 +85,7 @@
             this.panel2.Padding = new System.Windows.Forms.Padding(62);
             this.panel2.Size = new System.Drawing.Size(593, 322);
             this.panel2.TabIndex = 3;
+            this.panel2.Leave += new System.EventHandler(this.panel2_Leave);
             // 
             // kryptonTextBox1
             // 
@@ -166,6 +167,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "mdl_save";
             this.Opacity = 0D;
+            this.ShowInTaskbar = false;
             this.Text = "frm_modal";
             this.Load += new System.EventHandler(this.frm_modal_Load);
             this.panel1.ResumeLayout(false);

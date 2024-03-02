@@ -36,6 +36,10 @@ namespace IdeasAi
             instance = this;
         }
 
+        public ref Button getNottebookBtn()
+        {
+            return ref btn_notebook;
+        }
 
         public void loadForm(Form frm, Control container)
         {
@@ -63,9 +67,9 @@ namespace IdeasAi
 
         public void setActiveBtn(object btn)
         {
-            removeActiveBtn();
             if ((Button)btn != btn_active)
             {
+            removeActiveBtn();
                 btn_active = (Button)btn;
                 btn_active.BackColor = color_active;
                 lbl_currentPage.Text = btn_active.Text;
@@ -118,5 +122,10 @@ namespace IdeasAi
 
             frm_notebook.displaySavedIdeas();
         }
+
+        private void MainForm_SizeChanged(object sender, EventArgs e)
+        {
+            frm_notebook.displaySavedIdeas();
+;        }
     }
 }

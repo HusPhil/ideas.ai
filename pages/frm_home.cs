@@ -19,6 +19,8 @@ namespace IdeasAi.PageForms
         public string input_holder;
         public DateTime date_holder;
 
+        public mdl_save modalSave= new mdl_save();
+
         /// <summary>
         /// ////////////////////////////////////////////
         /// </summary>
@@ -167,7 +169,29 @@ namespace IdeasAi.PageForms
             //}
 
         }
-        private void btn_save_Click(object sender, EventArgs e)
+        private void openModal()
+        {
+
+            Form modalBG = new Form();
+            using (var modal = new mdl_save())
+            {
+                modalBG.Owner = this; 
+                modalBG.StartPosition = FormStartPosition.Manual;
+                modalBG.FormBorderStyle = FormBorderStyle.None;
+                modalBG.Opacity = .50d;
+                modalBG.BackColor = Color.Black;
+                modalBG.Size = this.Size;
+                modalBG.Location = this.Location;
+                modalBG.ShowInTaskbar = false;
+                modalBG.Show();
+                modal.Owner = modalBG;
+                
+                modal.ShowDialog();
+                modalBG.Dispose();
+            }
+        }
+        
+        private void btn_save_Click_1(object sender, EventArgs e)
         {
             modal_save.openModal();
         }
