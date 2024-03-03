@@ -11,24 +11,11 @@ namespace IdeasAi.modals
 {
     public class ModalSetter
     {
-        public Form OwnerForm { get; set; }
-        public Type ModalFormType { get; set; } 
-
-        public Form ModalForm { get; set; }
-
-        public Dictionary<string, string> SentInfo = new Dictionary<string, string>();
-
-        public ModalSetter(Form _owner, Type _frm_modal)
-        {
-            this.OwnerForm = _owner;
-            this.ModalFormType = _frm_modal;
-        }
-
-        public void openModal()
+        public void OpenModal(Form OwnerForm, Type ModalFormType, params object[] args)
         {
 
             Form modalBG = new Form();
-            using (var modal = (Form)Activator.CreateInstance(ModalFormType))
+            using (var modal = (Form)Activator.CreateInstance(ModalFormType, args))
             {
                 modalBG.Owner = OwnerForm;
                 modalBG.StartPosition = FormStartPosition.Manual;
@@ -41,7 +28,7 @@ namespace IdeasAi.modals
                 modalBG.Show();
                 modal.Owner = modalBG;
 
-                foreach(var c in modal.Controls)
+                foreach (var c in modal.Controls)
                 {
 
                 }
@@ -60,5 +47,5 @@ namespace IdeasAi.modals
         }
     }
 
-    
+
 }

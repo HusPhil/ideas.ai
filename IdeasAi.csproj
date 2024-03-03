@@ -6,7 +6,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>IdeasAi</RootNamespace>
     <AssemblyName>IdeasAi</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -96,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="db\DatabaseManager.cs" />
+    <Compile Include="db\DBManager_Idea.cs" />
     <Compile Include="gemini_AI\AI_Response.cs" />
     <Compile Include="AppSetting.cs" />
     <Compile Include="gemini_AI\ScriptRunner.cs" />

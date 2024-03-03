@@ -12,9 +12,11 @@ namespace IdeasAi.PageForms
 {
     public partial class frm_settings : Form
     {
-        public frm_settings()
+        public MainForm mainForm;
+        public frm_settings(MainForm _mainForm)
         {
             InitializeComponent();
+            this.mainForm = _mainForm;
         }
     }
 }

@@ -12,22 +12,21 @@ namespace IdeasAi.PageForms
 {
     public partial class frm_home : Form
     {
+        public MainForm mainForm;
+
         //PROPERTIES
-        public ModalSetter modal_save;
         public Guid id_holder;
         public string content_holder;
         public string input_holder;
         public DateTime date_holder;
-
         /// <summary>
         /// ////////////////////////////////////////////
         /// </summary>
         /// 
 
-        public frm_home()
+        public frm_home(MainForm _mainForm)
         {
             InitializeComponent();
-            modal_save = new ModalSetter(this, typeof(mdl_save));
             wb_container.DocumentText = @"
             <!DOCTYPE html>
             <html lang=""en"">
@@ -59,6 +58,7 @@ namespace IdeasAi.PageForms
             </body>
             </html>
             ";
+            this.mainForm = _mainForm;
         }
         private string ConvertMarkdownToHtml(string markdownText)
         {
@@ -66,11 +66,8 @@ namespace IdeasAi.PageForms
             var pipeline = new MarkdownPipelineBuilder().UseAdvancedExtensions().Build();
             return Markdig.Markdown.ToHtml(markdownText, pipeline);
         }
-        private void displayResult(string markdownText)
+        public void displayResult(string markdownText)
         {
-            
-
-
             string htmlText = ConvertMarkdownToHtml(markdownText);
 
             string htmlContent = @"
@@ -105,11 +102,9 @@ namespace IdeasAi.PageForms
             // Set the HTML content to the WebBrowser control
             wb_container.DocumentText = htmlContent;
         }
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-        }
         private async void btn_send_Click(object sender, EventArgs e)
         {
+            btn_send.Enabled = false;
             btn_save.Enabled = false;
             var idea_obj = new Idea();
             wb_container.DocumentText = @"
@@ -157,6 +152,7 @@ namespace IdeasAi.PageForms
             date_holder = idea_obj.DateCreated;
 
             btn_save.Enabled = true;
+            btn_send.Enabled = true;
             Console.WriteLine($"ID AY ITO: {idea_obj.UUID}\nINPUT IS ITO: {idea_obj.Input}\nDATE IS ITO: {idea_obj.DateCreated}");
 
            
@@ -173,13 +169,10 @@ namespace IdeasAi.PageForms
             //}
 
         }
-
-        private void frm_home_Load(object sender, EventArgs e)
+        
+        private void btn_save_Click_1(object sender, EventArgs e)
         {
-        }
-        private void btn_save_Click(object sender, EventArgs e)
-        {
-            modal_save.openModal();
+            mainForm.mdl_setter.OpenModal(this, typeof(mdl_save), mainForm);
         }
     }
 }

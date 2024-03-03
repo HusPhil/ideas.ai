@@ -30,10 +30,10 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.wb_container = new System.Windows.Forms.WebBrowser();
-            this.btn_save = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_send = new System.Windows.Forms.Button();
+            this.btn_save = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -56,24 +56,8 @@
             this.wb_container.Location = new System.Drawing.Point(0, 100);
             this.wb_container.MinimumSize = new System.Drawing.Size(20, 20);
             this.wb_container.Name = "wb_container";
-            this.wb_container.Size = new System.Drawing.Size(949, 381);
+            this.wb_container.Size = new System.Drawing.Size(949, 373);
             this.wb_container.TabIndex = 7;
-            // 
-            // btn_save
-            // 
-            this.btn_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
-            this.btn_save.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btn_save.Enabled = false;
-            this.btn_save.FlatAppearance.BorderSize = 0;
-            this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_save.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Location = new System.Drawing.Point(0, 481);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(949, 41);
-            this.btn_save.TabIndex = 0;
-            this.btn_save.Text = "SAVE";
-            this.btn_save.UseVisualStyleBackColor = false;
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // panel2
             // 
@@ -100,7 +84,6 @@
             this.textBox1.Size = new System.Drawing.Size(844, 70);
             this.textBox1.TabIndex = 9;
             this.textBox1.Text = "Enter an interesting topic.";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btn_send
             // 
@@ -117,6 +100,22 @@
             this.btn_send.UseVisualStyleBackColor = false;
             this.btn_send.Click += new System.EventHandler(this.btn_send_Click);
             // 
+            // btn_save
+            // 
+            this.btn_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
+            this.btn_save.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_save.Enabled = false;
+            this.btn_save.FlatAppearance.BorderSize = 0;
+            this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_save.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_save.Location = new System.Drawing.Point(0, 473);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(949, 49);
+            this.btn_save.TabIndex = 10;
+            this.btn_save.Text = "SAVE";
+            this.btn_save.UseVisualStyleBackColor = false;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click_1);
+            // 
             // frm_home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -129,7 +128,6 @@
             this.Name = "frm_home";
             this.Padding = new System.Windows.Forms.Padding(15);
             this.Text = "frm_home";
-            this.Load += new System.EventHandler(this.frm_home_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
