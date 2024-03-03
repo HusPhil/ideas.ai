@@ -12,24 +12,21 @@ namespace IdeasAi.PageForms
 {
     public partial class frm_home : Form
     {
+        public MainForm mainForm;
+
         //PROPERTIES
-        public ModalSetter modal_save;
         public Guid id_holder;
         public string content_holder;
         public string input_holder;
         public DateTime date_holder;
-
-        public mdl_save modalSave= new mdl_save();
-
         /// <summary>
         /// ////////////////////////////////////////////
         /// </summary>
         /// 
 
-        public frm_home()
+        public frm_home(MainForm _mainForm)
         {
             InitializeComponent();
-            modal_save = new ModalSetter(this, typeof(mdl_save));
             wb_container.DocumentText = @"
             <!DOCTYPE html>
             <html lang=""en"">
@@ -61,6 +58,7 @@ namespace IdeasAi.PageForms
             </body>
             </html>
             ";
+            this.mainForm = _mainForm;
         }
         private string ConvertMarkdownToHtml(string markdownText)
         {
@@ -106,6 +104,7 @@ namespace IdeasAi.PageForms
         }
         private async void btn_send_Click(object sender, EventArgs e)
         {
+            btn_send.Enabled = false;
             btn_save.Enabled = false;
             var idea_obj = new Idea();
             wb_container.DocumentText = @"
@@ -153,6 +152,7 @@ namespace IdeasAi.PageForms
             date_holder = idea_obj.DateCreated;
 
             btn_save.Enabled = true;
+            btn_send.Enabled = true;
             Console.WriteLine($"ID AY ITO: {idea_obj.UUID}\nINPUT IS ITO: {idea_obj.Input}\nDATE IS ITO: {idea_obj.DateCreated}");
 
            
@@ -169,31 +169,10 @@ namespace IdeasAi.PageForms
             //}
 
         }
-        private void openModal()
-        {
-
-            Form modalBG = new Form();
-            using (var modal = new mdl_save())
-            {
-                modalBG.Owner = this; 
-                modalBG.StartPosition = FormStartPosition.Manual;
-                modalBG.FormBorderStyle = FormBorderStyle.None;
-                modalBG.Opacity = .50d;
-                modalBG.BackColor = Color.Black;
-                modalBG.Size = this.Size;
-                modalBG.Location = this.Location;
-                modalBG.ShowInTaskbar = false;
-                modalBG.Show();
-                modal.Owner = modalBG;
-                
-                modal.ShowDialog();
-                modalBG.Dispose();
-            }
-        }
         
         private void btn_save_Click_1(object sender, EventArgs e)
         {
-            modal_save.openModal();
+            mainForm.mdl_setter.OpenModal(this, typeof(mdl_save), mainForm);
         }
     }
 }

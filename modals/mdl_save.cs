@@ -9,14 +9,12 @@ namespace IdeasAi.modals
 {
     public partial class mdl_save : Form
     {
-        public Dictionary<string, string> data = new Dictionary<string, string>();
-        DatabaseManager dbManager = new DBManager_Idea();
-        
-        public mdl_save()
+        public MainForm mainForm;
+        public mdl_save(MainForm _mainForm)
         {
             InitializeComponent();
+            this.mainForm = _mainForm;
         }
-
         private void tmr_animation_Tick(object sender, EventArgs e)
         {
             if(Opacity >= 1)
@@ -28,45 +26,39 @@ namespace IdeasAi.modals
                 Opacity += .05;
             }
         }
-
         private void frm_modal_Load(object sender, EventArgs e)
         {
-            kryptonTextBox1.Text = MainForm.instance.frm_home.input_holder;
+            txb_setNoteTitle.Text =mainForm.frm_home.input_holder;
             var ownerForm = Owner.Owner.Owner;
             this.Location = ModalSetter.CenterLocation(ownerForm.Width, ownerForm.Height, this.Width, this.Height, ownerForm.Location.X, ownerForm.Location.Y);
         }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_save_Click(object sender, EventArgs e)
         {
             
             var idea_save_obj = new Idea();
-            idea_save_obj.UUID = MainForm.instance.frm_home.id_holder;
-            idea_save_obj.Title = kryptonTextBox1.Text;
-            idea_save_obj.Input = MainForm.instance.frm_home.input_holder;
-            idea_save_obj.Content = MainForm.instance.frm_home.content_holder;
-            idea_save_obj.DateCreated = MainForm.instance.frm_home.date_holder;
+            idea_save_obj.UUID = mainForm.frm_home.id_holder;
+            idea_save_obj.Title = txb_setNoteTitle.Text;
+            idea_save_obj.Input = mainForm.frm_home.input_holder;
+            idea_save_obj.Content = mainForm.frm_home.content_holder;
+            idea_save_obj.DateCreated = mainForm.frm_home.date_holder;
 
-            dbManager.SaveObject(idea_save_obj);
+            mainForm.dbManager_Idea.SaveObject(idea_save_obj);
 
-            MainForm.instance.loadForm(MainForm.instance.frm_notebook, MainForm.instance.pnl_content);
-            MainForm.instance.setActiveBtn(MainForm.instance.getNottebookBtn());
-            MainForm.instance.frm_notebook.displaySavedIdeas();
+            mainForm.loadForm(mainForm.frm_notebook,mainForm.pnl_content);
+            mainForm.setActiveBtn(mainForm.getNottebookBtn());
+            mainForm.frm_notebook.displaySavedIdeas();
 
             // Load the notebook form into the content panel
-            MainForm.instance.BringToFront();
+            mainForm.BringToFront();
             this.Hide();
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_cancel_Click(object sender, EventArgs e)
         {
             this.Owner.BringToFront();
             this.Hide();
         }
 
-        private void panel2_Leave(object sender, EventArgs e)
-        {
-            Console.WriteLine("close");
-        }
     }
 }

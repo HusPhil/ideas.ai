@@ -12,7 +12,7 @@ using Newtonsoft.Json;
 
 namespace IdeasAi.db
 {
-    abstract class DatabaseManager
+    public abstract class DatabaseManager
     {
         protected string dbFilePath { get; set; }
 

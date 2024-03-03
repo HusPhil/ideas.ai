@@ -4,36 +4,44 @@ using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 using IdeasAi.PageForms;
 using IdeasAi.pages;
+using IdeasAi.modals;
+using IdeasAi.db;
 
 namespace IdeasAi
 {
     public partial class MainForm : KryptonForm
     {
         // PAGE FORMS
-        public frm_home frm_home = new frm_home();
-        public frm_settings frm_settings = new frm_settings();
-        public frm_notebook frm_notebook = new frm_notebook();
+        public frm_home frm_home;
+        public frm_settings frm_settings;
+        public frm_notebook frm_notebook;
         //
+        // MODALS
+        public mdl_save mdl_save;
+        public ModalSetter mdl_setter;
 
-        public static MainForm instance;
+        public DBManager_Idea dbManager_Idea= new DBManager_Idea();
 
 
         Button btn_active;
         Color color_active = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
         Color color_inactive = System.Drawing.Color.Transparent;
 
-
-
         public MainForm()
         {
             InitializeComponent();
+            frm_home = new frm_home(this);
+            frm_notebook =  new frm_notebook(this);
+            frm_settings = new frm_settings(this);
+
+            mdl_save = new mdl_save(this);
+            mdl_setter = new ModalSetter();
+
             setActiveBtn((object)this.btn_home);
             loadForm(frm_home, pnl_content);
 
             btn_active = this.btn_home;
             lbl_currentPage.Text = btn_active.Text;
-            
-            instance = this;
         }
 
         public ref Button getNottebookBtn()

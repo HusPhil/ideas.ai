@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace IdeasAi.db
 {
-    internal class DBManager_Idea : DatabaseManager
+    public class DBManager_Idea : DatabaseManager
     {
 
         public override void SaveObject(Idea obj)
