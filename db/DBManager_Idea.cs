@@ -31,7 +31,7 @@ namespace IdeasAi.db
             }
         }
 
-        public List<Idea> GetAllIdeas()
+        public List<Idea> getAllIdeas()
         {
             List<Idea> ideas = new List<Idea>();
 
@@ -64,5 +64,52 @@ namespace IdeasAi.db
             return ideas;
         }
 
+        public void modifyField(Guid id, string fieldName, object newValue)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection($"Data Source={dbFilePath};Version=3;"))
+            {
+                connection.Open();
+
+                string query = $"UPDATE Idea SET {fieldName} = @NewValue WHERE ID = @Id";
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@NewValue", newValue);
+                    command.Parameters.AddWithValue("@Id", id);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("Field modified successfully.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("No rows were affected. The ID might not exist in the database.");
+                    }
+                }
+            }
+        }
+        public void deleteRecord(Guid id)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection($"Data Source={dbFilePath};Version=3;"))
+            {
+                connection.Open();
+
+                string query = "DELETE FROM Idea WHERE ID = @Id";
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Id", id);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("Record deleted successfully.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("No rows were affected. The ID might not exist in the database.");
+                    }
+                }
+            }
+        }
     }
 }

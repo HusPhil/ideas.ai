@@ -8,21 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using IdeasAi.db;
+using IdeasAi.modals;
 
 namespace IdeasAi.pages
 {
     public partial class frm_notebook: Form
     {
+        public string current_title;
+        public Guid current_id;
         public MainForm mainForm;
         private Panel panel1;
-        private Label label1;
         private Label label2;
         private Panel panel2;
         private Button button2;
         private Button button1;
         private Button button3;
         private Panel panel3;
-        private Button button4;
         private FlowLayoutPanel pnl_container;
 
         public frm_notebook(MainForm _mainForm)
@@ -34,18 +35,15 @@ namespace IdeasAi.pages
         {
             this.pnl_container = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
             this.pnl_container.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_container
@@ -72,6 +70,15 @@ namespace IdeasAi.pages
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(344, 224);
             this.panel1.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(344, 63);
+            this.panel3.TabIndex = 11;
             // 
             // panel2
             // 
@@ -135,39 +142,6 @@ namespace IdeasAi.pages
             this.label2.Text = "DATE CREATED: 2004-09-9867";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(344, 63);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Title of My Note Here";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel3.Controls.Add(this.button4);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(344, 63);
-            this.panel3.TabIndex = 11;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button4.Location = new System.Drawing.Point(309, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(35, 63);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "...";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
             // frm_notebook
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
@@ -181,7 +155,6 @@ namespace IdeasAi.pages
             this.pnl_container.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -198,7 +171,7 @@ namespace IdeasAi.pages
         public void displaySavedIdeas()
         {
             pnl_container.Controls.Clear();
-            var saved_ideas = mainForm.dbManager_Idea.GetAllIdeas();
+            var saved_ideas = mainForm.dbManager_Idea.getAllIdeas();
 
             Console.WriteLine($"OLD: {pnl_container.DisplayRectangle.Height}::{pnl_container.VerticalScroll.Visible}");
 
@@ -212,6 +185,24 @@ namespace IdeasAi.pages
                 pnl_idea.Size = new Size((pnl_container.Width / 3) - 6, 200);
                 pnl_idea.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
 
+                Panel pnl_header = new Panel();
+                pnl_header.BorderStyle = BorderStyle.None;
+                pnl_header.Dock = DockStyle.Top;
+                pnl_header.Size = new Size(50,50);
+                pnl_header.Padding = new Padding(0, 0, 20, 0);
+
+
+                Button btn_edit = new Button();
+                btn_edit.Image = global::IdeasAi.Properties.Resources.more;
+                btn_edit.Click += (sender, e) => btn_showMore_click(idea.Title, idea.UUID);
+                btn_edit.BackColor = Color.Transparent;
+                btn_edit.AutoSize = false;
+                btn_edit.Size = new Size(32, 32);
+                btn_edit.Dock = DockStyle.Right;
+                btn_edit.FlatStyle = FlatStyle.Flat;
+                btn_edit.FlatAppearance.BorderSize = 0;
+                btn_edit.Margin = new Padding(0,0,20,0);
+
                 Label titleLabel = new Label();
                 titleLabel.Text = idea.Title;
                 titleLabel.Dock = DockStyle.Top;
@@ -220,6 +211,9 @@ namespace IdeasAi.pages
                 titleLabel.AutoEllipsis = true;
                 titleLabel.Font = new System.Drawing.Font("Cascadia Code", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 pnl_idea.Controls.Add(titleLabel);
+                pnl_header.Controls.Add(btn_edit);
+
+                pnl_idea.Controls.Add(pnl_header);
 
                 Panel pnl_btns = new Panel();
                 pnl_btns.Dock = DockStyle.Bottom;
@@ -233,29 +227,13 @@ namespace IdeasAi.pages
                 btn_view.Dock = DockStyle.Fill;
                 btn_view.FlatStyle = FlatStyle.Flat;
 
-                Button btn_edit = new Button();
-                btn_edit.Text = "Edit";
-                btn_edit.Click += (sender, e) => displayNote_click(idea.Content);
-                btn_edit.Dock = DockStyle.Fill;
-                btn_edit.FlatStyle = FlatStyle.Flat;
-
-                Button btn_delete = new Button();
-                btn_delete.Text = "Delete";
-                btn_delete.Click += (sender, e) => displayNote_click(idea.Content);
-                btn_delete.Dock = DockStyle.Fill;
-                btn_delete.FlatStyle = FlatStyle.Flat;
-
                 pnl_btns.Controls.Add(btn_view);
-                pnl_btns.Controls.Add(btn_delete);
-                pnl_btns.Controls.Add(btn_edit);
                 pnl_idea.Controls.Add(pnl_btns);
                 pnl_btns.Padding = new System.Windows.Forms.Padding(15,0,15,0);
 
                 int BtnSize = ((pnl_btns.Width) / 3);
 
                 btn_view.Size = new Size(BtnSize, pnl_btns.Height - 8) ;
-                btn_edit.Size = new Size(BtnSize, pnl_btns.Height - 8) ;
-                btn_delete.Size = new Size(BtnSize, pnl_btns.Height - 8) ;
 
                 Label dateLabel = new Label();
                 dateLabel.Text = $"Date Created: {idea.DateCreated.Date.ToString("yyyy-MM-dd")}";
@@ -289,12 +267,18 @@ namespace IdeasAi.pages
             Console.WriteLine($"NEW: {pnl_container.DisplayRectangle.Height}::{pnl_container.VerticalScroll.Visible}");
         }
 
-
+        private void btn_showMore_click(string current_title, Guid current_id)
+        {
+            this.current_title = current_title;
+            this.current_id = current_id;
+            mainForm.mdl_setter.OpenModal(this, typeof(mdl_editNotes), mainForm);
+        }
         private void displayNote_click(string content)
         {
-            mainForm.loadForm(mainForm.frm_home,mainForm.pnl_content);
-            mainForm.setActiveBtn(mainForm.btn_home);
+            mainForm.loadForm(mainForm.frm_home,mainForm.getPnlContent());
+            mainForm.setActiveBtn(mainForm.getBtnHome());
             mainForm.frm_home.displayResult(content);
+            mainForm.frm_home.getSaveBtn().Enabled = false;
         }
         private void frm_notebook_Load(object sender, EventArgs e)
         {

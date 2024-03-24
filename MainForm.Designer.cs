@@ -287,10 +287,10 @@ namespace IdeasAi
         private System.Windows.Forms.Button btn_workspace;
         private System.Windows.Forms.Button btn_history;
         private System.Windows.Forms.Button btn_unde;
-        public System.Windows.Forms.Button btn_home;
+        private System.Windows.Forms.Button btn_home;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_currentPage;
-        public System.Windows.Forms.Panel pnl_content;
+        private System.Windows.Forms.Panel pnl_content;
         private System.Windows.Forms.Button btn_notebook;
     }
 }

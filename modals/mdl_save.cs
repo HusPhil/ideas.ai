@@ -28,8 +28,8 @@ namespace IdeasAi.modals
         }
         private void frm_modal_Load(object sender, EventArgs e)
         {
-            txb_setNoteTitle.Text =mainForm.frm_home.input_holder;
-            var ownerForm = Owner.Owner.Owner;
+            txb_setNoteTitle.Text = mainForm.frm_home.input_holder;
+            var ownerForm = mainForm;
             this.Location = ModalSetter.CenterLocation(ownerForm.Width, ownerForm.Height, this.Width, this.Height, ownerForm.Location.X, ownerForm.Location.Y);
         }
         private void btn_save_Click(object sender, EventArgs e)
@@ -44,8 +44,8 @@ namespace IdeasAi.modals
 
             mainForm.dbManager_Idea.SaveObject(idea_save_obj);
 
-            mainForm.loadForm(mainForm.frm_notebook,mainForm.pnl_content);
-            mainForm.setActiveBtn(mainForm.getNottebookBtn());
+            mainForm.loadForm(mainForm.frm_notebook,mainForm.getPnlContent());
+            mainForm.setActiveBtn(mainForm.getBtnNotebook());
             mainForm.frm_notebook.displaySavedIdeas();
 
             // Load the notebook form into the content panel
@@ -53,7 +53,6 @@ namespace IdeasAi.modals
             this.Hide();
 
         }
-
         private void btn_cancel_Click(object sender, EventArgs e)
         {
             this.Owner.BringToFront();

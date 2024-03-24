@@ -174,5 +174,11 @@ namespace IdeasAi.PageForms
         {
             mainForm.mdl_setter.OpenModal(this, typeof(mdl_save), mainForm);
         }
+
+        //GETTERS
+        public ref Button getSaveBtn()
+        {
+            return ref btn_save;
+        }
     }
 }

@@ -6,7 +6,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>IdeasAi</RootNamespace>
     <AssemblyName>IdeasAi</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -107,6 +107,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="modals\mdl_editNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modals\mdl_editNotes.Designer.cs">
+      <DependentUpon>mdl_editNotes.cs</DependentUpon>
+    </Compile>
     <Compile Include="modals\mdl_save.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modals\mdl_editNotes.resx">
+      <DependentUpon>mdl_editNotes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modals\mdl_save.resx">
       <DependentUpon>mdl_save.cs</DependentUpon>
@@ -181,6 +190,7 @@
     <Compile Include="pages\frm_notebook.cs">
       <SubType>Form</SubType>
     </Compile>
+    <None Include="Resources\menu-dots-vertical.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
