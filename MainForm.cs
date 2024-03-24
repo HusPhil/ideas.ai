@@ -18,6 +18,7 @@ namespace IdeasAi
         //
         // MODALS
         public mdl_save mdl_save;
+        public mdl_editNotes mdl_editNotes;
         public ModalSetter mdl_setter;
 
         public DBManager_Idea dbManager_Idea= new DBManager_Idea();
@@ -35,6 +36,7 @@ namespace IdeasAi
             frm_settings = new frm_settings(this);
 
             mdl_save = new mdl_save(this);
+            mdl_editNotes = new mdl_editNotes(this);
             mdl_setter = new ModalSetter();
 
             setActiveBtn((object)this.btn_home);
@@ -44,10 +46,7 @@ namespace IdeasAi
             lbl_currentPage.Text = btn_active.Text;
         }
 
-        public ref Button getNottebookBtn()
-        {
-            return ref btn_notebook;
-        }
+        
 
         public void loadForm(Form frm, Control container)
         {
@@ -135,5 +134,21 @@ namespace IdeasAi
         {
             frm_notebook.displaySavedIdeas();
 ;        }
+
+        //GETTERS
+        public ref Button getBtnNotebook()
+        {
+            return ref btn_notebook;
+        }
+        public ref Button getBtnHome()
+        {
+            return ref btn_home;
+        }
+        public ref Panel getPnlContent()
+        {
+            return ref pnl_content;
+        }
+
+
     }
 }
