@@ -13,6 +13,7 @@ namespace IdeasAi
     {
         // PAGE FORMS
         public frm_home frm_home;
+        public frm_workspace frm_workspace;
         public frm_settings frm_settings;
         public frm_notebook frm_notebook;
         //
@@ -34,6 +35,7 @@ namespace IdeasAi
             frm_home = new frm_home(this);
             frm_notebook =  new frm_notebook(this);
             frm_settings = new frm_settings(this);
+            frm_workspace = new frm_workspace(this);
 
             mdl_save = new mdl_save(this);
             mdl_editNotes = new mdl_editNotes(this);
@@ -106,6 +108,7 @@ namespace IdeasAi
         private void btn_workspace_Click(object sender, EventArgs e)
         {
             setActiveBtn(sender);
+            loadForm(frm_workspace, pnl_content);
         }
 
         private void btn_history_Click(object sender, EventArgs e)

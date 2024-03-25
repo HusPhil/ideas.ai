@@ -111,3 +111,4 @@ C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.csproj.Up2Date
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.exe
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.pdb
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.modals.mdl_editNotes.resources
+C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.pages.frm_workspace.resources
