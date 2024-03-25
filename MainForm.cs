@@ -39,7 +39,7 @@ namespace IdeasAi
 
             mdl_save = new mdl_save(this);
             mdl_editNotes = new mdl_editNotes(this);
-            mdl_setter = new ModalSetter();
+            mdl_setter = new ModalSetter(this);
 
             setActiveBtn((object)this.btn_home);
             loadForm(frm_home, pnl_content);

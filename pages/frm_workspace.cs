@@ -23,5 +23,10 @@ namespace IdeasAi.pages
         {
 
         }
+
+        private void pnl_textEditor_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

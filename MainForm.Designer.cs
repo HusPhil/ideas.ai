@@ -52,26 +52,18 @@ namespace IdeasAi
             // 
             // kryptonPalette1
             // 
-            this.kryptonPalette1.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
             this.kryptonPalette1.FormStyles.FormCommon.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
             this.kryptonPalette1.FormStyles.FormCommon.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
             this.kryptonPalette1.FormStyles.FormCommon.StateCommon.Back.ColorAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Local;
-            this.kryptonPalette1.FormStyles.FormCommon.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.FormStyles.FormMain.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
             this.kryptonPalette1.FormStyles.FormMain.StateActive.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
-            this.kryptonPalette1.FormStyles.FormMain.StateActive.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateNormal.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.LabelStyles.LabelCommon.StateNormal.ShortText.Color1 = System.Drawing.Color.White;
             this.kryptonPalette1.LabelStyles.LabelCommon.StateNormal.ShortText.Font = new System.Drawing.Font("Cascadia Code Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonPalette1.LabelStyles.LabelCommon.StateNormal.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.kryptonPalette1.LabelStyles.LabelCommon.StateNormal.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.kryptonPalette1.PanelStyles.PanelCommon.StateNormal.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
-            this.kryptonPalette1.PanelStyles.PanelCommon.StateNormal.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             // 
             // kryptonPanel1
             // 
@@ -211,12 +203,9 @@ namespace IdeasAi
             this.kryptonPalette2.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue;
             this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.OverrideDefault.Back.Color1 = System.Drawing.Color.Red;
             this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.OverrideDefault.Back.Color2 = System.Drawing.Color.Black;
-            this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.OverrideDefault.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.StateNormal.Back.Color1 = System.Drawing.Color.Red;
             this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.StateNormal.Back.Color2 = System.Drawing.Color.Red;
-            this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.StateNormal.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.StatePressed.Back.Color1 = System.Drawing.Color.Red;
-            this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.StatePressed.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             // 
             // panel1
             // 
@@ -236,7 +225,7 @@ namespace IdeasAi
             this.pnl_content.Location = new System.Drawing.Point(15, 89);
             this.pnl_content.Margin = new System.Windows.Forms.Padding(12);
             this.pnl_content.Name = "pnl_content";
-            this.pnl_content.Padding = new System.Windows.Forms.Padding(12);
+            this.pnl_content.Padding = new System.Windows.Forms.Padding(0, 12, 0, 12);
             this.pnl_content.Size = new System.Drawing.Size(930, 616);
             this.pnl_content.TabIndex = 4;
             // 

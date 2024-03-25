@@ -11,11 +11,16 @@ namespace IdeasAi.modals
 {
     public class ModalSetter
     {
+        MainForm mainForm;
+        public ModalSetter(MainForm mainForm)
+        {
+            this.mainForm = mainForm;
+        }
         public void OpenModal(Form OwnerForm, Type ModalFormType, params object[] args)
         {
 
             Form modalBG = new Form();
-            using (var modal = (Form)Activator.CreateInstance(ModalFormType, args))
+            using (var modal = (Form) Activator.CreateInstance(ModalFormType, args))
             {
                 modalBG.Owner = OwnerForm;
                 modalBG.StartPosition = FormStartPosition.Manual;
@@ -28,12 +33,9 @@ namespace IdeasAi.modals
                 modalBG.Show();
                 modal.Owner = modalBG;
 
-                foreach (var c in modal.Controls)
-                {
-
-                }
                 modal.ShowDialog();
                 modalBG.Dispose();
+                mainForm.Focus();
             }
         }
 

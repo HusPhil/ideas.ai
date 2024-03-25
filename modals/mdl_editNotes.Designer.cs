@@ -32,13 +32,13 @@
             this.lbl_title = new System.Windows.Forms.Label();
             this.tmr_animation = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_save = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btn_delete = new System.Windows.Forms.Button();
             this.txb_setNoteTitle = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbl_noteTitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_delete = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btn_save = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -58,6 +58,7 @@
             // 
             this.tmr_animation.Enabled = true;
             this.tmr_animation.Interval = 1;
+            this.tmr_animation.Tick += new System.EventHandler(this.tmr_animation_Tick);
             // 
             // panel2
             // 
@@ -76,6 +77,43 @@
             this.panel2.Size = new System.Drawing.Size(593, 322);
             this.panel2.TabIndex = 5;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // btn_save
+            // 
+            this.btn_save.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_save.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btn_save.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_save.FlatAppearance.BorderSize = 0;
+            this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_save.Location = new System.Drawing.Point(62, 180);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(469, 35);
+            this.btn_save.TabIndex = 14;
+            this.btn_save.Text = "Save";
+            this.btn_save.UseVisualStyleBackColor = false;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(62, 215);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(469, 10);
+            this.panel4.TabIndex = 13;
+            // 
+            // btn_delete
+            // 
+            this.btn_delete.BackColor = System.Drawing.Color.IndianRed;
+            this.btn_delete.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_delete.FlatAppearance.BorderSize = 0;
+            this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_delete.Location = new System.Drawing.Point(62, 225);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(469, 35);
+            this.btn_delete.TabIndex = 11;
+            this.btn_delete.Text = "Delete";
+            this.btn_delete.UseVisualStyleBackColor = false;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // txb_setNoteTitle
             // 
@@ -120,42 +158,6 @@
             this.panel1.Size = new System.Drawing.Size(593, 60);
             this.panel1.TabIndex = 4;
             // 
-            // btn_delete
-            // 
-            this.btn_delete.BackColor = System.Drawing.Color.IndianRed;
-            this.btn_delete.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btn_delete.FlatAppearance.BorderSize = 0;
-            this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_delete.Location = new System.Drawing.Point(62, 225);
-            this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(469, 35);
-            this.btn_delete.TabIndex = 11;
-            this.btn_delete.Text = "Delete";
-            this.btn_delete.UseVisualStyleBackColor = false;
-            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(62, 215);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(469, 10);
-            this.panel4.TabIndex = 13;
-            // 
-            // btn_save
-            // 
-            this.btn_save.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btn_save.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btn_save.FlatAppearance.BorderSize = 0;
-            this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_save.Location = new System.Drawing.Point(62, 180);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(469, 35);
-            this.btn_save.TabIndex = 14;
-            this.btn_save.Text = "Save";
-            this.btn_save.UseVisualStyleBackColor = false;
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
-            // 
             // mdl_editNotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -168,15 +170,12 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "mdl_editNotes";
             this.Opacity = 0D;
+            this.ShowInTaskbar = false;
             this.Text = "mdl_editNotes";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
-
-            this.tmr_animation.Enabled = true;
-            this.tmr_animation.Interval = 1;
-            this.tmr_animation.Tick += new System.EventHandler(this.tmr_animation_Tick);
 
         }
 

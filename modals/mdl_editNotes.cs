@@ -51,7 +51,8 @@ namespace IdeasAi.modals
         {
             mainForm.dbManager_Idea.modifyField(mainForm.frm_notebook.current_id, "Title", txb_setNoteTitle.Text);
             mainForm.frm_notebook.displaySavedIdeas();
-            this.Hide();
+            mainForm.Focus();
+
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
@@ -65,7 +66,9 @@ namespace IdeasAi.modals
                 confirm_count = 0;
                 btn_delete.Text = "Delete";
                 mainForm.frm_notebook.displaySavedIdeas();
-                this.Hide();
+
+                this.Visible = false ;
+                mainForm.Focus();
             }
 
             btn_delete.Text = "Click again to confirm.";
