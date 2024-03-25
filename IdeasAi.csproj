@@ -132,6 +132,12 @@
     <Compile Include="pages\frm_settings.Designer.cs">
       <DependentUpon>frm_settings.cs</DependentUpon>
     </Compile>
+    <Compile Include="pages\frm_workspace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\frm_workspace.Designer.cs">
+      <DependentUpon>frm_workspace.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pages\frm_settings.resx">
       <DependentUpon>frm_settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\frm_workspace.resx">
+      <DependentUpon>frm_workspace.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
