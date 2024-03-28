@@ -2,6 +2,7 @@
 {
     partial class frm_home
     {
+
         /// <summary>
         /// Required designer variable.
         /// </summary>

@@ -103,7 +103,6 @@ C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.MainForm.resources
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.modals.mdl_save.resources
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.PageForms.frm_home.resources
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.pages.frm_notebook.resources
-C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.PageForms.frm_settings.resources
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.Properties.Resources.resources
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.csproj.GenerateResource.cache
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.csproj.CoreCompileInputs.cache
@@ -112,3 +111,19 @@ C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.exe
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.pdb
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.modals.mdl_editNotes.resources
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.pages.frm_workspace.resources
+C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.PageForms.MindMapControl.resources
+C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\Microsoft.Extensions.Options.dll
+C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\Microsoft.Extensions.Logging.xml
+C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\Microsoft.Extensions.Options.xml
+C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\PlantUml.Net.dll

@@ -7,9 +7,17 @@ using IdeasAi.Ideas;
 using IdeasAi.modals;
 using IdeasAi.db;
 using System.Drawing;
+using System.IO;
+using PlantUml.Net;
+
 
 namespace IdeasAi.PageForms
 {
+    //public class MyClass
+    //{
+    //    public string Name { get; set; }
+    //    public int Age { get; set; }
+    //}
     public partial class frm_home : Form
     {
         public MainForm mainForm;
@@ -23,6 +31,7 @@ namespace IdeasAi.PageForms
         /// ////////////////////////////////////////////
         /// </summary>
         /// 
+
 
         public frm_home(MainForm _mainForm)
         {
@@ -59,6 +68,7 @@ namespace IdeasAi.PageForms
             </html>
             ";
             this.mainForm = _mainForm;
+            tryTest();
         }
         private string ConvertMarkdownToHtml(string markdownText)
         {
@@ -106,6 +116,7 @@ namespace IdeasAi.PageForms
         {
             btn_send.Enabled = false;
             btn_save.Enabled = false;
+
             var idea_obj = new Idea();
             wb_container.DocumentText = @"
                     <!DOCTYPE html>
@@ -142,7 +153,7 @@ namespace IdeasAi.PageForms
 
             Console.WriteLine(topic);
             idea_obj.Input = topic;
-            idea_obj.Content = await idea_obj.GetResponse(); 
+            idea_obj.Content = await idea_obj.GetResponse();
 
             displayResult(idea_obj.Content);
 
@@ -155,7 +166,7 @@ namespace IdeasAi.PageForms
             btn_send.Enabled = true;
             Console.WriteLine($"ID AY ITO: {idea_obj.UUID}\nINPUT IS ITO: {idea_obj.Input}\nDATE IS ITO: {idea_obj.DateCreated}");
 
-           
+
 
             //Display the retrieved ideas
             //Console.WriteLine("Retrieved Ideas:");
@@ -169,7 +180,63 @@ namespace IdeasAi.PageForms
             //}
 
         }
-        
+
+        public async void tryTest() {
+
+            var factory = new RendererFactory();
+
+            var renderer = factory.CreateRenderer(new PlantUmlSettings());
+
+            var content = @"
+```
+@startmindmap
+* World War 1 na hakdog si  Hitler
+** Causes
+*** Imperialism
+*** Nationalism
+*** Militarism
+*** Alliances
+** Key Battles
+*** Battle of the Marne
+*** Battle of Verdun
+*** Battle of the Somme
+*** Battle of Passchendaele
+** Major Powers Involved
+*** Central Powers
+**** Germany
+**** Austria-Hungary
+**** Ottoman Empire
+*** Allied Powers
+**** Great Britain
+**** France
+**** Russian Empire
+**** United States
+** Impact
+*** Casualties
+**** Over 10 million dead
+*** Political Changes
+**** Collapse of empires
+**** Rise of new nations
+*** Social Changes
+**** Women's suffrage
+**** Labor movements
+@endmindmap
+```";
+            try
+            {
+                var bytes = await renderer.RenderAsync(content, OutputFormat.Png);
+                File.WriteAllBytes("out.png", bytes);
+                Console.WriteLine($"Successfully generated a Mindmap.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+                // You can choose to log the error, retry, or handle it based on your application's requirements.
+            }
+
+
+        }
+
         private void btn_save_Click_1(object sender, EventArgs e)
         {
             mainForm.mdl_setter.OpenModal(this, typeof(mdl_save), mainForm);
@@ -181,4 +248,5 @@ namespace IdeasAi.PageForms
             return ref btn_save;
         }
     }
+    
 }

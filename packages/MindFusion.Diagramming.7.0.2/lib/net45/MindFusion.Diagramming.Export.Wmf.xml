@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MindFusion.Diagramming.Export.Wmf</name>
+    </assembly>
+    <members>
+        <member name="T:MindFusion.Diagramming.Export.WmfExporter">
+            <summary>
+            Creates WMF (Windows MetaFile) images from MindFusion.Diagramming diagrams.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.WmfExporter.#ctor">
+            <summary>
+            Initializes a new instance of the WmfExporter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.WmfExporter.Export(MindFusion.Diagramming.Diagram,System.String)">
+            <summary>
+            Creates a WMF file representing the specified diagram.
+            </summary>
+            <param name="diagram">A reference to the diagram that will be exported.</param>
+            <param name="filePath">The full path to the WMF file.</param>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.WmfExporter.Export(MindFusion.Diagramming.Diagram,System.IO.Stream)">
+            <summary>
+            Creates a WMF file representing the specified diagram.
+            </summary>
+            <param name="diagram">A reference to the diagram that will be exported.</param>
+            <param name="stream">Output stream to which to write the WMF data.</param>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.WmfExporter.Description">
+            <summary>
+            Gets or sets a description string associated with the metafile.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.WmfExporter.RenderOptions">
+            <summary>
+            Gets a RenderOptions instance that provides various settings for
+            configuring the appearance of exported diagrams.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MindFusion.Diagramming.Export.Svg</name>
+    </assembly>
+    <members>
+        <member name="T:MindFusion.Diagramming.Export.SvgExporter">
+            <summary>
+            Creates SVG (Scalable Vector Graphics) files from MindFusion.Diagramming diagrams.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.SvgExporter.#ctor">
+            <summary>
+            Initializes a new instance of the SvgExporter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.SvgExporter.Export(MindFusion.Diagramming.Diagram,System.String)">
+            <summary>
+            Creates an SVG file representing the specified MindFusion.Diagramming diagram.
+            </summary>
+            <param name="diagram">
+            A reference to the diagram to be exported.
+            </param>
+            <param name="filePath">
+            A full path to the .svg file.
+            </param>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.SvgExporter.Export(MindFusion.Diagramming.Diagram,System.IO.Stream)">
+            <summary>
+            Saves an SVG representing the specified MindFusion.Diagramming diagram to a stream.
+            </summary>
+            <param name="diagram">
+            A reference to the diagram to be exported.
+            </param>
+            <param name="stream">
+            The output stream.
+            </param>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.SvgExporter.HyperLinkTarget">
+            <summary>
+            Specify the value of the Target attribute generated for the HyperLink property of items.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.SvgExporter.HyperLinkStyle">
+            <summary>
+            Specifies what kind of hyperlinks should be generated for the HyperLink property of items.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.SvgExporter.ExternalImages">
+            <summary>
+            Specifies whether images displayed by diagram items should be exported to external files.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.SvgExporter.GZipCompression">
+            <summary>
+            Specifies whether to create GZip compressed SVG.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.SvgExporter.RenderOptions">
+            <summary>
+            Gets a RenderOptions instance that provides various settings for
+            configuring the appearance of exported diagrams.
+            </summary>
+        </member>
+    </members>
+</doc>

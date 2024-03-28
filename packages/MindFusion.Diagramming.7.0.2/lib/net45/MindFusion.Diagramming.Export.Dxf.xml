@@ -1,0 +1,487 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MindFusion.Diagramming.Export.Dxf</name>
+    </assembly>
+    <members>
+        <member name="T:MindFusion.Diagramming.Export.ArrowUtils">
+            <summary>
+            A helper class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.ArrowUtils.#ctor(MindFusion.Diagramming.LinkShape,MindFusion.Diagramming.PointCollection)">
+            <summary>
+            Initializes a new instance of the ArrowUtils class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.ArrowUtils.GetLongestSegment">
+            <summary>
+            returns the index of a segment that has the longest length
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.ArrowUtils.GetSegmentCenter(System.Int32)">
+            <summary>
+            Returns the center point of a segment.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.Export.DrawTextHintEx">
+            <summary>
+            Contains extended formatted text rendering information.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DrawTextHintEx.#ctor(MindFusion.Drawing.IGraphics,System.Drawing.Font,System.Drawing.Brush,System.Drawing.StringFormat,System.Boolean,System.Xml.XmlNode,System.Drawing.RectangleF,System.Int64,System.Int64,System.Single)">
+            <summary>
+            Initializes a new instance of the DrawTextHintEx class.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.Export.DxfExporter">
+            <summary>
+            Exports MindFusion.Diagramming diagrams to AutoDesk Drawing
+            Exchange Format (DXF) files.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfExporter.#ctor">
+            <summary>
+            Initializes a new instance of the DxfExporter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfExporter.Export(MindFusion.Diagramming.Diagram,System.String)">
+            <summary>
+            Creates a DXF file representing the specified MindFusion.Diagramming diagram.
+            </summary>
+            <param name="diagram">
+            A reference to the diagram to be exported.
+            </param>
+            <param name="filePath">
+            The full path to the .dxf file.
+            </param>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.DxfExporter.ExportImages">
+            <summary>
+            Gets or sets a value indicating whether the images that are
+            displayed inside diagram nodes should be exported.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.DxfExporter.ExportTextAsMultiline">
+            <summary>
+            Gets or sets a value indicating whether item labels should
+            be exported to DXF MTEXT entities.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.Export.DxfHelper">
+            <summary>
+            Helper class intended to perform all operation 
+            of DXF file elements creation.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.Export.DxfHelper.UnitFormatter">
+            <summary>
+            Helper class intended for formatting strings for DXF groups.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.UnitFormatter.#ctor(System.Single,System.String)">
+            <summary>
+            Initializes a new instance of the UnitFormatter class.
+            </summary>
+            <param name="scale">
+            Scale factor for unit conversion.
+            </param>
+            <param name="separator">
+            Decimal separator.
+            </param>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.UnitFormatter.ControlTracking(System.Boolean)">
+            <summary>
+            Call the method to start collecting handle IDs.
+            </summary>
+            <param name="start">
+            true to start collecting; otherwise false.
+            </param>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.UnitFormatter.GetFormat(System.Type)">
+            <summary>
+            This method returns an object that implements
+            ICustomFormatter to do the formatting.
+            </summary>
+            <param name="argType">
+            Type of the argument to be formatted.
+            </param>
+            <returns>
+            Formatting object for the type passed.
+            </returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.UnitFormatter.GetNextId">
+            <summary>
+            Returns the next unique long utilized by 'handle'.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.UnitFormatter.IsNumericType(System.Type)">
+            <summary>
+            Checks whether type passed is numeric one.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.UnitFormatter.Format(System.String,System.Object,System.IFormatProvider)">
+            <summary>
+            This method does the custom formatting if it recognizes the 
+            format specification.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.Export.DxfHelper.DxLineType">
+            <summary>
+            Enum consist of possible line types (used by Ps2String).
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.Export.DxfHelper.EArrowHeadElement">
+            <summary>
+            Enum consists of possible arrow head element types.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.#ctor(System.String,MindFusion.Diagramming.Diagram,System.Boolean,System.Boolean,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the DxfHelper class.
+            </summary>
+            <param name="filePath">
+            Path of the DXF file.
+            </param>
+            <param name="diagram">
+            A Diagram reference.
+            </param>
+            <param name="exportTextAsMultiline">
+            ExportTextAsMultiline property value.
+            </param>
+            <param name="exportExternalImages">
+            ExportExternalImages property value.
+            </param>
+            <param name="namePattern">
+            Image files name pattern.
+            </param>
+            <param name="imagePath">
+            Path for image files saving.
+            </param>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.Color2Aci(System.Drawing.Color)">
+            <summary>
+            Static method converts Color into ACI
+            </summary>
+            <param name="cr">Color value</param>
+            <returns>Corresponded autocad color index value</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.Save">
+            <summary>
+            Saves content of the temporarily XML into output DXF file
+            </summary>
+            <returns>true if succeded otherwise false</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.IsValid">
+            <summary>
+            Check whether class instance if valid
+            </summary>
+            <returns>true if valid otherwise false</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.GetStatus">
+            <summary>
+            Returns class instance status
+            </summary>
+            <returns>Status value</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.Pt2String(System.Drawing.PointF[],System.Drawing.Color,System.String,MindFusion.Diagramming.Export.DxfHelper.DxLineType,System.Drawing.Drawing2D.DashStyle,System.Single)">
+            <summary>
+            Produces DXF output from various type of lines
+            </summary>
+            <param name="pt">Point array of the line points</param>
+            <param name="crLine">Line color</param>
+            <param name="LayerName">Name of the layer to place the line</param>
+            <param name="dlt">Line type according to DxLineType enum</param>
+            <param name="dash">Line dash style</param>
+            <param name="LineWidth">Used for bezier curves ( if 8 - points, 16 - controls points )</param>
+            <returns>DXF output string</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.PtColl2Pts(MindFusion.Diagramming.PointCollection)">
+            <summary>
+            Converts PointCollection object into point array
+            </summary>
+            <param name="ptc">PointCollection to be converted</param>
+            <returns>Corresponded point array</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.IsPredefined(System.Xml.XmlNode)">
+            <summary>
+            Check whether temporarily XML node is pre-defined sub-root
+            </summary>
+            <param name="node">Node name</param>
+            <returns>true if node is sub-root</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.ChartObject2String(MindFusion.Diagramming.DiagramItem)">
+            <summary>
+            Common method converts any MindFusion.Diagramming object into corresponded
+            DXF string
+            </summary>
+            <param name="co">a diagram item</param>
+            <returns>Corresponded DXF string</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.AddEntity(System.String,System.String)">
+            <summary>
+            Method inserts DXF string definition for the entity into temporarily XML
+            </summary>
+            <param name="Name">Definition name</param>
+            <param name="Value">Definition value</param>
+            <returns>true if successfull otherwise false</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.AddObject(System.String,System.String)">
+            <summary>
+            Method inserts DXF string definition for the object into temporarily XML
+            </summary>
+            <param name="Name">Definition name</param>
+            <param name="Value">Definition value</param>
+            <returns>true if successfull otherwise false</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.AddNode(System.String,System.String,System.Xml.XmlNode)">
+            <summary>
+            Method inserts DXF string definition into temporarily XML
+            </summary>
+            <param name="Name">Definition name</param>
+            <param name="Value">Definition value</param>
+            <param name="ParentNode">Parent XML node name</param>
+            <returns>true if successfull otherwise false</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.Attr2String(System.Xml.XmlNode,System.String)">
+            <summary>
+            Get attributes' value of XML node
+            </summary>
+            <param name="node">Node name</param>
+            <param name="AttrName">Attribute name</param>
+            <returns>Attribute value as string</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.CountChilds(System.Xml.XmlNode)">
+            <summary>
+            Counts child node of the XML node to eliminate 'empty' nodes
+            </summary>
+            <param name="node">Node name</param>
+            <returns>Childs count</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.ProcessNode(System.Xml.XmlNode)">
+            <summary>
+            Process node of the temporarily XML saving it into  DXF file
+            </summary>
+            <param name="node">Node name</param>
+            <returns>true if successful otherwise false</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.SetParam(System.Xml.XmlNode,System.String,System.String)">
+            <summary>
+            Set XML node param's value
+            </summary>
+            <param name="node">Node name</param>
+            <param name="ParamName">Param name</param>
+            <param name="ParamValue"></param>
+            <returns>true if successful otherwise false</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.AddText(System.Object)">
+            <summary>
+            Methods produces DXF string for text of the MindFusion.Diagramming object
+            </summary>
+            <param name="co">MindFusion.Diagramming object to extract text from</param>
+            <returns>true if successful otherwise false</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.AddText(System.Object,System.Object,System.Drawing.RectangleF)">
+            <summary>
+            Methods produces DXF string for text of the MindFusion.Diagramming object
+            </summary>
+            <param name="co">MindFusion.Diagramming object to extract text from</param>
+            <param name="po">Parent object if any exist</param>
+            <param name="rect">Object's rectangle if applicable</param>
+            <returns>true if successful otherwise false</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.TextCallback(System.String,System.Drawing.RectangleF,MindFusion.Text.DrawTextHint)">
+            <summary>
+            Callback routine for word-by-word text processing
+            </summary>
+            <param name="text">Text word as 'plain-text'</param>
+            <param name="dest">Text word's rectangle</param>
+            <param name="hint">DrawTextHint object</param>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.AddText(System.Int64,System.Drawing.RectangleF,System.String,System.Drawing.Color,System.Drawing.Font,System.Drawing.StringFormat,System.Boolean,System.Single,System.Boolean)">
+            <summary>
+            Methods directly produces DXF string for text of the diagram items
+            </summary>
+            <param name="TextID">Id of the text tag</param>
+            <param name="rect">Text's rectangle</param>
+            <param name="sText">Text string</param>
+            <param name="crText">Text color</param>
+            <param name="fnText">Text font</param>
+            <param name="sft">Text format</param>
+            <param name="Multiline">true if text is multi-lined</param>
+            <param name="RA">Rotation angle of the text</param>
+            <param name="IsArrowText">true if text is on arrow ( not used )</param>
+            <returns>true if succesfull otherwise false</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.IsTransparent(System.Drawing.Color,MindFusion.Diagramming.DiagramItem)">
+            <summary>
+            Check whether color passed is transparent
+            </summary>
+            <param name="cr">Color value</param>
+            <param name="co">Object of the color</param>
+            <returns>true if color is transparent false otherwise</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.docToLocal(System.Drawing.PointF[],System.Drawing.RectangleF)">
+            <summary>
+            Transforms points' coordinates by Rectangle's dimensions
+            </summary>
+            <param name="points">Point array</param>
+            <param name="rect">Rectangle for transformation</param>
+            <returns>Modified point array</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.ApproxColors(System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Approximate two color of gradient to get corresponded ACI
+            </summary>
+            <param name="cr1">Color 1 of gradient</param>
+            <param name="cr2">Color 2 of gradient</param>
+            <returns></returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.GetTextRect(System.Drawing.Graphics,MindFusion.Diagramming.LinkShape,MindFusion.Diagramming.LinkTextStyle,MindFusion.Diagramming.PointCollection,System.Drawing.Color,System.Int32,System.String,System.Drawing.Font,System.Single@)">
+            <summary>
+            Gets rectangle of the arrow text
+            </summary>
+            <param name="g">GraphicsPath</param>
+            <param name="style">Style of the arrow</param>
+            <param name="textStyle">Style of the arrow text</param>
+            <param name="points">DiagramLink's point collection</param>
+            <param name="textColor">Text color</param>
+            <param name="segmentCount">DiagramLink segments count</param>
+            <param name="text">DiagramLink's text itself</param>
+            <param name="textFont">DiagramLink's text font</param>
+            <param name="a">Text's rotation angle to be returned</param>
+            <returns>DiagramLink text's rectangle</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.TextBox2Path(MindFusion.Diagramming.ShapeNode,System.Single,System.Drawing.Drawing2D.GraphicsPath@)">
+            <summary>
+            Gets GraphicsPath of the ShapeNode's TextArea
+            </summary>
+            <param name="shapeNode">A ShapeNode instance.</param>
+            <param name="Offset">ShapeNode offset if necessary</param>
+            <param name="gr">Graphics path to be assigned</param>
+            <returns>true if successfull otherwise false</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.TextRect2Path(System.Drawing.RectangleF,System.Drawing.Drawing2D.GraphicsPath@)">
+            <summary>
+            Gets GraphicsPath from Rectangle
+            </summary>
+            <param name="rect">Rectangle</param>
+            <param name="gr">Graphics path to be assigned</param>
+            <returns>true if successfull otherwise false</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.ShapeNode2Str(MindFusion.Diagramming.ShapeNode,System.Single,System.Drawing.Drawing2D.GraphicsPath@,System.String@,MindFusion.Diagramming.ElementTemplate[],System.Drawing.Color,System.Int32)">
+            <summary>
+            Produces DXF output for a ShapeNode
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.Shape2Str(System.Drawing.RectangleF,System.Boolean,MindFusion.Diagramming.ElementTemplate[],System.Drawing.Color,System.Single,System.Drawing.Drawing2D.DashStyle,System.Single,System.Single,System.Boolean,System.Drawing.Drawing2D.GraphicsPath@,System.String@,System.String,System.Drawing.PointF)">
+            <summary>
+            Produces DXF output for a diagram shape
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.TranslateCoords(System.Single,System.Drawing.PointF,System.Boolean,System.Drawing.Drawing2D.GraphicsPath@)">
+            <summary>
+            Translates coordinates of the Graphics path applying rotation if it's necessary
+            </summary>
+            <param name="WCS2UCS">if true then translate from UCS to WCS </param>
+            <param name="rotation">Specifies the rotation angle.</param>
+            <param name="rotationPoint">Specifies the rotation pivot.</param>
+            <param name="gr">GraphicsPath to be processed</param>
+            <returns>true if succesfull otherwise false</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.RotatePoints(System.Single,System.Drawing.PointF,System.Drawing.Drawing2D.GraphicsPath)">
+            <summary>
+            Rotates GraphicsPath using specified rotation angle and rotation point
+            </summary>
+            <param name="Rotation">Rotation angle</param>
+            <param name="RotationPoint">Point of the rotation</param>
+            <param name="gr">GraphicsPath to be processed</param>
+            <returns>Array of the rotated points</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.AddImage(System.Drawing.RectangleF,System.Drawing.Image,System.Int64)">
+            <summary>
+            Adds embedded image to DXF output
+            </summary>
+            <param name="rect1">Image bounding rect</param>
+            <param name="oImage">Image itself</param>
+            <param name="ImageID">Uniques ID of the image</param>
+            <returns>true if succesfull otherwsie false</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.AddImage(System.Drawing.RectangleF,System.Drawing.Image,System.Int64,MindFusion.Drawing.ImageAlign,System.Drawing.Color)">
+            <summary>
+            Adds embedded image to DXF output
+            </summary>
+            <param name="rect1">Image bounding rect</param>
+            <param name="oImage">Image itself</param>
+            <param name="ImageID">Uniques ID of the image</param>
+            <param name="ia">Image alignment</param>
+            <param name="Color2Repl">Color that to be replace transparent one in the image</param>
+            <returns>true if succesfull otherwsie false</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.HashNode(System.String,System.Xml.XmlNode@)">
+            <summary>
+            Intended for hashing some XML nodes
+            </summary>
+            <param name="NodeName">Node name</param>
+            <param name="nodeOut">Variable for saving node</param>
+            <returns>true if succesfull otherwise false</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.GetNextId">
+            <summary>
+            Gets the next unique Id.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.AddRect(System.Drawing.RectangleF,System.Int64,System.Drawing.Color,System.Drawing.Color,System.Drawing.Drawing2D.DashStyle)">
+            <summary>
+            Produces DXF output for Rectangle with its fill
+            </summary>
+            <param name="rect">Rectangle to be processed</param>
+            <param name="RectID">Unique id of the rectangle</param>
+            <param name="crLine">Line color</param>
+            <param name="crFill">Fill color</param>
+            <param name="dst">Line style</param>
+            <returns>Produced DXf string</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.IsLineClosed(System.Drawing.PointF[])">
+            <summary>
+            Returns true if the line is closed ( start = end points are equal )
+            </summary>
+            <param name="pts">Line points</param>
+            <returns>Returns true if the line is closed ( start = end points are equal )</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.GetImageDim(System.Drawing.Image,System.Drawing.RectangleF,MindFusion.Drawing.ImageAlign,System.Single@,System.Single@,System.Single@,System.Single@)">
+            <summary>
+            Returns new dimensions of the image's bounding rect according to
+            the specified parameters.
+            </summary>
+            <param name="pict">Image reference</param>
+            <param name="rect">Image bounding rect</param>
+            <param name="ppos">Image alignment</param>
+            <param name="picw">New image's width value</param>
+            <param name="pich">New image's height value</param>
+            <param name="xoff">Image's X offset</param>
+            <param name="yoff">Image's Y offset</param>
+            <returns>true if successfull otherwise false</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.DeviceContext.GetDeviceCaps(System.IntPtr,System.Int32)">
+            <summary>
+            GetDeviceCaps import.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.DeviceContext.GetActiveWindow">
+            <summary>
+            GetActiveWindow import.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.DeviceContext.GetDC(System.IntPtr)">
+            <summary>
+            GetDC import.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DxfHelper.DeviceContext.ReleaseDC(System.IntPtr,System.IntPtr)">
+            <summary>
+            ReleaseDC import.
+            </summary>
+        </member>
+    </members>
+</doc>
