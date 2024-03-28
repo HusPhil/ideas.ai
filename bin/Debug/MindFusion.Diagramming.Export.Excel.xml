@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MindFusion.Diagramming.Export.Excel</name>
+    </assembly>
+    <members>
+        <member name="T:MindFusion.Diagramming.Export.ExcelExporter">
+            <summary>
+            Exports MindFusion.Diagramming diagrams to Excel Open XML Format (XLSX) files.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.ExcelExporter.#ctor">
+            <summary>
+            Initializes a new instance of the ExcelExporter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.ExcelExporter.Export(MindFusion.Diagramming.Diagram,System.String)">
+            <summary>
+            Creates an XLSX file representing the specified diagram.
+            </summary>
+            <param name="diagram">
+            A reference to the Diagram that will be exported.
+            </param>
+            <param name="filePath">
+            The full path to the XLSX file.
+            </param>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.ExcelExporter.Export(MindFusion.Diagramming.Diagram,System.IO.Stream)">
+            <summary>
+            Creates an XLSX file representing the specified diagram.
+            </summary>
+            <param name="diagram">
+            A reference to the Diagram that will be exported.
+            </param>
+            <param name="stream">
+            Output stream to which to write the Excel data.
+            </param>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.ExcelExporter.Export(MindFusion.Diagramming.DiagramDocument,System.String)">
+            <summary>
+            Creates an XLSX file representing the specified DiagramDocument.
+            </summary>
+            <param name="document">A reference to the DiagramDocument that will be exported.</param>
+            <param name="filePath">The full path to the XLSX file.</param>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.ExcelExporter.Export(MindFusion.Diagramming.DiagramDocument,System.IO.Stream)">
+            <summary>
+            Creates an XLSX file representing the specified DiagramDocument.
+            </summary>
+            <param name="document">
+            A reference to the DiagramDocument that will be exported.
+            </param>
+            <param name="stream">
+            Output stream to which to write the Excel data.
+            </param>
+        </member>
+    </members>
+</doc>

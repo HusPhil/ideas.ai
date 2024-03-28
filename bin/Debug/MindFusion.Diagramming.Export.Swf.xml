@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MindFusion.Diagramming.Export.Swf</name>
+    </assembly>
+    <members>
+        <member name="T:MindFusion.Diagramming.Export.SwfExporter">
+            <summary>
+            Creates Adobe Flash files representing the content of a diagram.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.SwfExporter.Export(MindFusion.Diagramming.Diagram,System.String)">
+            <summary>
+            Creates an SWF file representing the specified diagram.
+            </summary>
+            <param name="diagram">
+            A reference to the diagram that will be exported.
+            </param>
+            <param name="filePath">
+            The full path to the SWF file.
+            </param>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.SwfExporter.CreateHtmlPage">
+            <summary>
+            Specifies whether to create an html page to host the SWF file.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.SwfExporter.TextTransformsAsImages">
+            <summary>
+            Specify whether to use bitmap images to render text with unsupported text transforms.
+            </summary>
+        </member>
+    </members>
+</doc>

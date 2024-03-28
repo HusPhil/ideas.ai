@@ -7,6 +7,14 @@ using IdeasAi.Ideas;
 using IdeasAi.modals;
 using IdeasAi.db;
 using System.Drawing;
+using PuppeteerSharp;
+using System.IO;
+using MindFusion.Diagramming;
+using System.Diagnostics;
+using System.Drawing.Imaging;
+using MindFusion.Diagramming.WinForms;
+using System.Xml.Linq;
+using NPlant;
 
 namespace IdeasAi.PageForms
 {
@@ -23,6 +31,7 @@ namespace IdeasAi.PageForms
         /// ////////////////////////////////////////////
         /// </summary>
         /// 
+
 
         public frm_home(MainForm _mainForm)
         {
@@ -106,6 +115,7 @@ namespace IdeasAi.PageForms
         {
             btn_send.Enabled = false;
             btn_save.Enabled = false;
+
             var idea_obj = new Idea();
             wb_container.DocumentText = @"
                     <!DOCTYPE html>
@@ -142,7 +152,7 @@ namespace IdeasAi.PageForms
 
             Console.WriteLine(topic);
             idea_obj.Input = topic;
-            idea_obj.Content = await idea_obj.GetResponse(); 
+            idea_obj.Content = await idea_obj.GetResponse();
 
             displayResult(idea_obj.Content);
 
@@ -155,7 +165,7 @@ namespace IdeasAi.PageForms
             btn_send.Enabled = true;
             Console.WriteLine($"ID AY ITO: {idea_obj.UUID}\nINPUT IS ITO: {idea_obj.Input}\nDATE IS ITO: {idea_obj.DateCreated}");
 
-           
+
 
             //Display the retrieved ideas
             //Console.WriteLine("Retrieved Ideas:");
@@ -169,7 +179,18 @@ namespace IdeasAi.PageForms
             //}
 
         }
-        
+
+        public void tryTest() { 
+
+        }
+        static string ParsePlantUMLFromMarkdown(string markdownContent)
+        {
+            // Here you would implement the logic to parse the markdown string
+            // and extract the PlantUML code. This could involve using regular
+            // expressions, a markdown parser, or any other suitable method.
+            // For this example, we'll simply return the markdown content as-is.
+            return markdownContent;
+        }
         private void btn_save_Click_1(object sender, EventArgs e)
         {
             mainForm.mdl_setter.OpenModal(this, typeof(mdl_save), mainForm);

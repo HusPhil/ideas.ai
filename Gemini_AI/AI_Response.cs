@@ -6,8 +6,6 @@ namespace IdeasAi.Gemini_AI
     public abstract class AI_Response
     {
         public Guid UUID { get; set; }
-        
-
         public string Input { get; set; }
         public string Content { get; set; }
 
@@ -25,6 +23,5 @@ namespace IdeasAi.Gemini_AI
             UUID = Guid.NewGuid();
         }
         public abstract Task<string> GetResponse();
-        public abstract void SaveData();
     }
 }

@@ -1,0 +1,415 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MindFusion.Diagramming.Export.Visio</name>
+    </assembly>
+    <members>
+        <member name="T:MindFusion.Diagramming.Export.ArrowUtils">
+            <summary>
+            A helper class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.ArrowUtils.#ctor(MindFusion.Diagramming.LinkShape,MindFusion.Diagramming.PointCollection,System.Int32)">
+            <summary>
+            Initializes a new instance of the ArrowUtils class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.ArrowUtils.GetLongestSegment">
+            <summary>
+            returns the index of a segment that has the longest length
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.ArrowUtils.GetSegmentCenter(System.Int32)">
+            <summary>
+            Returns the center point of a segment.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DeviceContext.GetDeviceCaps(System.IntPtr,System.Int32)">
+            <summary>
+            GetDeviceCaps import.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DeviceContext.GetActiveWindow">
+            <summary>
+            GetActiveWindow import.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DeviceContext.GetDC(System.IntPtr)">
+            <summary>
+            GetDC import.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.DeviceContext.ReleaseDC(System.IntPtr,System.IntPtr)">
+            <summary>
+            ReleaseDC import.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.Export.ExportLanes">
+            <summary>
+            Defines values that indicate how the LaneGrid should be exported to Visio.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Diagramming.Export.ExportLanes.None">
+            <summary>
+            Do not export the swimlane grid.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Diagramming.Export.ExportLanes.Horizontal">
+            <summary>
+            Export the grid as horizontal functional band shapes.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Diagramming.Export.ExportLanes.Vertical">
+            <summary>
+            Export the grid as vertical functional band shapes.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.Export.UserFieldInfo">
+            <summary>
+            Intended for internal use only
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.Export.Visio2013Exporter">
+            <summary>
+            Exports the contents of Diagram or DiagramDocument objects to Visio 2013 XML drawing files (*.vsdx).
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.Visio2013Exporter.#ctor">
+            <summary>
+            Initializes a new instance of the Visio2013Exporter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.Visio2013Exporter.Export(MindFusion.Diagramming.Diagram,System.String)">
+            <summary>
+            Creates a Visio .vsdx file representing the specified Diagram.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.Visio2013Exporter.Export(MindFusion.Diagramming.Diagram,System.IO.Stream)">
+            <summary>
+            Creates a Visio .vsdx file representing the specified Diagram.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.Visio2013Exporter.Export(MindFusion.Diagramming.DiagramDocument,System.String)">
+            <summary>
+            Creates a Visio .vsdx file representing the specified DiagramDocument.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.Visio2013Exporter.Export(MindFusion.Diagramming.DiagramDocument,System.IO.Stream)">
+            <summary>
+            Creates a Visio .vsdx file representing the specified DiagramDocument.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.Visio2013Exporter.TemplatePath">
+            <summary>
+            Gets or sets the full path to the 'Visio2013.vxt' template file.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.Export.VisioExporter">
+            <summary>
+            Exports MindFusion.Diagramming diagrams to Visio 2003 XML Drawing files (*.vdx).
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.VisioExporter.#ctor">
+            <summary>
+            Initializes a new instance of the VisioExporter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.VisioExporter.Export(MindFusion.Diagramming.Diagram,System.String)">
+            <summary>
+            Creates a Visio XML Drawing file representing the specified
+            MindFusion.Diagramming diagram.
+            </summary>
+            <param name="diagram">
+            A reference to the diagram to be exported.
+            </param>
+            <param name="vdxPathName">
+            Full path to the exported Visio .vdx file.
+            </param>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.VisioExporter.Export(MindFusion.Diagramming.DiagramDocument,System.String)">
+            <summary>
+            Creates a Visio XML Drawing file representing the specified
+            DiagramDocument object.
+            </summary>
+            <param name="diagramDoc">
+            A reference to the document to be exported.
+            </param>
+            <param name="vdxPathName">
+            Full path to the exported Visio .vdx file.
+            </param>
+            <remarks>
+            Each DiagramPage in the document is exported to an individual
+            Visio page. The title of the Visio page is set to DiagramPage.Title.
+            </remarks>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.VisioExporter.Export(MindFusion.Diagramming.Diagram,System.IO.Stream)">
+            <summary>
+            Creates a Visio XML Drawing file representing the specified
+            MindFusion.Diagramming diagram.
+            </summary>
+            <param name="diagram">
+            A reference to the diagram to be exported.
+            </param>
+            <param name="outStream">
+            The stream to write to.
+            </param>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.VisioExporter.Export(MindFusion.Diagramming.DiagramDocument,System.IO.Stream)">
+            <summary>
+            Creates a Visio XML Drawing file representing the specified
+            DiagramDocument object.
+            </summary>
+            <param name="diagramDoc">
+            A reference to the document to be exported.
+            </param>
+            <param name="outStream">
+            The stream to write to.
+            </param>
+            <remarks>
+            Each DiagramPage in the document is exported to an individual
+            Visio page. The title of the Visio page is set to DiagramPage.Title.
+            </remarks>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.VisioExporter.ExportDiagram(MindFusion.Diagramming.Diagram,System.Int32,System.String)">
+            <summary>
+            Creates a Visio XML Drawing file representing the specified
+            MindFusion.Diagramming diagram.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.VisioExporter.ExportPage(MindFusion.Diagramming.Diagram,System.Int32,System.String)">
+            <summary>
+            Creates a Visio XML Drawing file representing the specified
+            MindFusion.Diagramming diagram.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.VisioExporter.NextID">
+            <summary>
+            Intended for getting unique ID
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.VisioExporter.ResetID">
+            <summary>
+             Intended for reset unique ID
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.VisioExporter.RemoveNode(System.Xml.XmlNode,System.String,System.Boolean)">
+            <summary>
+            Removing XML child node from VDX structure
+            </summary>
+            <param name="node">XML node reference</param>
+            <param name="childName">Name of the child to be removed</param>
+            <param name="isNode">Bool flag: If [true] child is a node , if [false] the child is an attribute</param>
+            <returns>[true] if successfull [false] otherwise</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.VisioExporter.ArrowheadToString(MindFusion.Diagramming.Shape)">
+            <summary>
+            Returns a Visio VDX arrow type corresponding to an arrowhead Shape.
+            </summary>
+            <param name="arrowhead">An arrowhead Shape.</param>
+            <returns>Visio arrowhead type string</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.VisioExporter.Color2Str(System.Drawing.Color)">
+            <summary>
+            Converts System.Drawing.Color into #RGB string color
+            </summary>
+            <param name="cr">System.Drawing.Color value to be converted</param>
+            <returns>#RGB string for passed System.Drawing.Color value</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.VisioExporter.SetText(System.Xml.XmlNode,System.String,System.Boolean,System.Drawing.Font,System.Drawing.StringAlignment)">
+            <summary>
+            Used for setting text from the MindFusion.Diagramming node into VDX [Text] node using font specified
+            </summary>
+            <param name="node">VDX node reference</param>
+            <param name="text">string contining text to be set</param>
+            <param name="isStyled">If [true] text is Styled otherwise not</param>
+            <param name="nodeFont">Font object to be used for text settings</param>
+            <param name="sa">Specifies the string alignment.</param>
+            <returns>[true] if successfull [false] otherwise</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.VisioExporter.GetGUID">
+            <summary>
+            Generate GUID to be used in Visio's [UniqueID] attribute
+            </summary>
+            <returns>String GUID</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.VisioExporter.DashStyle2String(System.Drawing.Drawing2D.DashStyle)">
+            <summary>
+            Converts [DashStyle] to corresponded Visio line style
+            </summary>
+            <param name="dStyle">[DashStyle] to be converted</param>
+            <returns>VDX line style as string</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.VisioExporter.SetShapeFont(System.Xml.XmlNode,System.Drawing.Font)">
+            <summary>
+            Methods is intended for setting VDX node font parameters
+            </summary>
+            <param name="Node">VDX node reference</param>
+            <param name="Font">Font object reference</param>
+            <returns>[true] if successfull [false] otherwise</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.VisioExporter.SetShapeColor(System.Xml.XmlNode,System.String,System.Drawing.Color)">
+            <summary>
+            Method is for setting VDX node colors
+            </summary>
+            <param name="Node">VDX node reference</param>
+            <param name="ColorName">String name of the color to set</param>
+            <param name="crColor">[Color] object reference</param>
+            <returns>[true] if successfull [false] otherwise</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.VisioExporter.SetShapeAttr(System.String,System.String,System.Xml.XmlNode,System.String)">
+            <summary>
+            Setting VDX node attribute or text
+            </summary>
+            <param name="AttrPath">String XPath expression to found child node of the [shape]</param>
+            <param name="AttrName">String Name of the attribute or "" for [Text]</param>
+            <param name="shape">Parent node reference or [null] if root node is parent</param>
+            <param name="newValue">String value to be set</param>
+            <returns>[true] if successfull [false] otherwise</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.VisioExporter.AddSizeElement(System.Xml.XmlNode,System.String,System.Double,System.Boolean,System.Boolean)">
+            <summary>
+            Method is intended for setting shape's dimensions
+            </summary>
+            <param name="Node">VDX node reference</param>
+            <param name="elementName">Dimension name</param>
+            <param name="size">Dimension value</param>
+            <param name="supressFormula">Bool flag: if [true] [Formula] attribute of the [Node] will be overlapped with 'No formula'</param>
+            <param name="noUnitConversion">Specifies that the value should not be converted t</param>
+            <returns>[true] if successfull [false] otherwise</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.VisioExporter.SetMasterID(System.Xml.XmlNode,MindFusion.Diagramming.Shape,System.Boolean)">
+            <summary>
+            Intended to set 'Master' attribute of the [Shape]
+            </summary>
+            <param name="shapeElement">The Visio XML element for this shape.</param>
+            <param name="shape">The shape definition.</param>
+            <param name="rectangle">Use a simple rectangle instead of shape.</param>
+            <returns>Visio shape name</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.VisioExporter.Image2String(System.Drawing.Image)">
+            <summary>
+            Converts image to base64 encoded string
+            </summary>
+            <param name="image">[Image] object reference</param>
+            <returns>Base64 encoded string BMP content of the image</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.VisioExporter.AddLink(MindFusion.Diagramming.DiagramLink)">
+            <summary>
+            Inserts a MindFusion.Diagramming link as an XML node into VDX.
+            </summary>
+            <param name="link">A MindFusion.Diagramming link.</param>
+            <returns>[true] if successfull [false] otherwise</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.VisioExporter.AddShapeNode(MindFusion.Diagramming.ShapeNode,MindFusion.Diagramming.DiagramItem,System.Boolean)">
+            <summary>
+            Adds a shape node as a XML node into VDX.
+            </summary>
+            <param name="node">a MindFusion.Diagramming shape node</param>
+            <param name="mainItem">Main group item if the node is attached to the group, set to [null] otherwise </param>
+            <param name="isGroup">Bool flag: set to [true] if the node is main group frame</param>
+            <returns>[true] if successfull [false] otherwise</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.VisioExporter.AddTable(MindFusion.Diagramming.TableNode)">
+            <summary>
+            Add MindFusion.Diagramming table as a XML node into VDX
+            </summary>
+            <param name="newTable">MindFusion.Diagramming table node</param>
+            <returns>[true] if successfull [false] otherwise</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.VisioExporter.ApproxColors(System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Approximate two color of gradient to get corresponded ACI.
+            </summary>
+            <param name="cr1">Color 1 of gradient</param>
+            <param name="cr2">Color 2 of gradient</param>
+            <returns></returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.VisioExporter.Unit2Inch(MindFusion.Diagramming.MeasureUnit,System.Double)">
+            <summary>
+            Converts measure in GraphicsUnit into INCHES
+            </summary>
+            <param name="iUnit">GraphicsUnit</param>
+            <param name="dValue">Value in GraphicsUnit</param>
+            <returns>Returns value in INCHES</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.VisioExporter.GetTextRect(MindFusion.Diagramming.Diagram,System.Drawing.Graphics,MindFusion.Diagramming.LinkShape,MindFusion.Diagramming.LinkTextStyle,MindFusion.Diagramming.PointCollection,System.Drawing.Color,System.Int32,System.String,System.Drawing.Font,System.Single@)">
+            <summary>
+            Gets the rectangle that bounds the link text
+            </summary>
+            <param name="diagram">An instance of the Diagram class.</param>
+            <param name="g">GraphicsPath</param>
+            <param name="style">Style of the arrow</param>
+            <param name="textStyle">Style of the arrow text</param>
+            <param name="points">DiagramLink's point collection</param>
+            <param name="textColor">Text color</param>
+            <param name="segmentCount">DiagramLink segments count</param>
+            <param name="text">DiagramLink's text itself</param>
+            <param name="textFont">DiagramLink's text font</param>
+            <param name="a">Text's rotation angle to be returned</param>
+            <returns>DiagramLink text's rectangle</returns>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.VisioExporter.CreateVisioGroups">
+            <summary>
+            Gets or sets a value indicating whether Visio groups are created
+            from the MindFusion.Diagramming groups.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.VisioExporter.LaneGridTitle">
+            <summary>
+            Gets or sets the title of the functional band container
+            created when exporting the diagram's swimlane grid.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.VisioExporter.ExportLanes">
+            <summary>
+            Gets or sets a value specifying whether the LaneGrid should be exported to Visio.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.VisioExporter.ExportImagesAsGroups">
+            <summary>
+            Gets or sets a value indicating whether a node that contains
+            an image should be exported as a Visio group of a shape,
+            picture and text objects.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.VisioExporter.ExportTablesAsGroups">
+            <summary>
+            Gets or sets a value indicating whether MindFusion.Diagramming TableNode
+            objects should be exported as groups of Visio rectangular shapes.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.VisioExporter.TemplatePath">
+            <summary>
+            Gets or sets the full path to the 'VisioExport.vxt' template file.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.VisioExporter.ExportInvisibleItems">
+            <summary>
+            Gets or sets a value indicating whether to export invisible items.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.VisioExporter.DynamicsOff">
+            <summary>
+            Gets or sets whether Visio connector rerouting should be disabled.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.VisioGraphics.ToNurbs(System.Drawing.PointF[])">
+            <summary>
+            Produces B-spline formula, like:  NURBS(knotLast, degree, xType, yType, x1, y1, knot1, weight1, ...)
+            <see href="https://msdn.microsoft.com/en-us/library/office/aa224197(v=office.11).aspx">NURBS() description</see>
+            <para>
+                knotLast The last knot.
+                degree The spline's degree.
+                xType Specifies how to interpret the x input data.If xType is 0, all x input data are interpreted as a percentage of Width. If xType is 1, all x input data are interpreted as local coordinates.
+                yType Specifies how to interpret the y input data.If yType is 0, all y input data are interpreted as a percentage of Height.If yType is 1, all y input data are interpreted as local coordinates.
+                x1 An x-coordinate.
+                y1 A y-coordinate.
+                knot1 A knot on the B-spline.
+                weight1 A weight on the B-spline.
+            </para>
+            </summary>
+            <param name="points">Control points of Bezier curve</param>
+            <returns>NURBS(knotLast, degree, xType, yType, x1, y1, knot1, weight1, ...) <see href="https://msdn.microsoft.com/en-us/library/office/aa224197(v=office.11).aspx">NURBS() description</see></returns>
+        </member>
+    </members>
+</doc>

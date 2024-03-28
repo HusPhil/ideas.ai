@@ -1,10 +1,13 @@
-﻿using System;
+﻿using IdeasAi.ai_responses;
+using Markdig;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,6 +15,12 @@ namespace IdeasAi.pages
 {
     public partial class frm_workspace : Form
     {
+        //GETTERS
+        public Guid id_holder;
+        public string content_holder;
+        public string input_holder;
+        public DateTime date_holder;
+        //
         MainForm mainForm;
         public frm_workspace(MainForm mainForm)
         {
@@ -26,6 +35,44 @@ namespace IdeasAi.pages
 
         private void pnl_textEditor_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+        private static string ConvertMarkdownToPlainText(string markdown)
+        {
+            // Replace Markdown heading syntax with plain text equivalent
+            markdown = Regex.Replace(markdown, @"^#+\s*(.*?)\s*#*[\r\n]*", "$1\n\n", RegexOptions.Multiline);
+
+            // Replace Markdown bold syntax with plain text equivalent
+            markdown = Regex.Replace(markdown, @"\*\*(.*?)\*\*", "$1");
+
+            // Replace Markdown italic syntax with plain text equivalent
+            markdown = Regex.Replace(markdown, @"\*(.*?)\*", "$1");
+
+            // Replace Markdown code block syntax with plain text equivalent
+            markdown = Regex.Replace(markdown, @"```(.+?)```", "$1");
+
+            // Replace Markdown inline code syntax with plain text equivalent
+            markdown = Regex.Replace(markdown, @"`(.+?)`", "$1");
+
+            // Replace Markdown list syntax with plain text equivalent
+            markdown = Regex.Replace(markdown, @"^\s*\*\s*(.*?)\s*", "- $1\n", RegexOptions.Multiline);
+
+            return markdown;
+        }
+        private async void btn_organizeIdea_Click(object sender, EventArgs e)
+        {
+            btn_organizeIdea.Enabled = false;
+            txb_textEditor.ReadOnly = true;
+
+            var orgIdea_obj = new OrganizedIdea();
+            orgIdea_obj.Input = txb_textEditor.Text;
+            orgIdea_obj.Content = await orgIdea_obj.GetResponse();
+
+            var pipeline = new MarkdownPipelineBuilder().UseAdvancedExtensions().Build();
+
+            txb_textEditor.Text = ConvertMarkdownToPlainText(orgIdea_obj.Content);
+            btn_organizeIdea.Enabled = true;
+            txb_textEditor.ReadOnly = false;
 
         }
     }

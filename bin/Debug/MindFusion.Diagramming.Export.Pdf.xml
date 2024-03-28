@@ -1,0 +1,237 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MindFusion.Diagramming.Export.Pdf</name>
+    </assembly>
+    <members>
+        <member name="T:MindFusion.Diagramming.Export.AutoScale">
+            <summary>
+            Specifies the auto-scale mode when exporting to a PDF document.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Diagramming.Export.AutoScale.None">
+            <summary>
+            No automatic scaling.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Diagramming.Export.AutoScale.FitToPage">
+            <summary>
+            Scales the chart (aspect ratio is preserved) to
+            fit the page bounds if the document is too large.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Diagramming.Export.AutoScale.FitToPageNoUpScale">
+            <summary>
+            Scales down the chart (aspect ratio is preserved) to
+            fit the page bounds if the document is too large.
+            Otherwise chart's size is left untouched.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Diagramming.Export.AutoScale.FitToWidth">
+            <summary>
+            Scales down the chart (aspect ratio is preserved) to
+            make sure that the width of the chart is less than the
+            width of the PDF page.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.Export.PdfExporter">
+            <summary>
+            Exports MindFusion.Diagramming diagrams to Adobe Portable Document Format (PDF) files.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.PdfExporter.#ctor">
+            <summary>
+            Initializes a new instance of the PdfExporter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.PdfExporter.Export(MindFusion.Diagramming.DiagramDocument,System.String)">
+            <summary>
+            Creates a PDF file representing the specified DiagramDocument.
+            </summary>
+            <param name="diagramDoc">
+            A reference to the DiagramDocument that will be exported.
+            </param>
+            <param name="filePath">
+            The full path to the PDF file.
+            </param>
+            <remarks>
+            If PageSize is set to DiagramSize, the number of pages in the output
+            PDF is equal to DiagramDocument.Pages.Count and each PDF page is as large as
+            the respective DiagramPage.Bounds.
+            Otherwise, all diagram pages are paginated using the specified PDF page size (A4 etc).
+            </remarks>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.PdfExporter.Export(MindFusion.Diagramming.DiagramDocument,System.IO.Stream)">
+            <summary>
+            Creates a PDF file representing the specified DiagramDocument.
+            </summary>
+            <param name="diagramDoc">
+            A reference to the DiagramDocument that will be exported.
+            </param>
+            <param name="stream">
+            Output stream to which to write the PDF data.
+            </param>
+            <remarks>
+            If PageSize is set to DiagramSize, the number of pages in the output
+            PDF is equal to DiagramDocument.Pages.Count and each PDF page is as large as
+            the respective DiagramPage.Bounds.
+            Otherwise, all diagram pages are paginated using the specified PDF page size (A4 etc).
+            </remarks>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.PdfExporter.Export(MindFusion.Diagramming.Diagram,System.String)">
+            <summary>
+            Creates a PDF file representing the specified MindFusion.Diagramming diagram.
+            </summary>
+            <param name="diagram">
+            A reference to the diagram that will be exported.
+            </param>
+            <param name="filePath">
+            The full path to the PDF file.
+            </param>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.PdfExporter.Export(MindFusion.Diagramming.Diagram,System.IO.Stream)">
+            <summary>
+            Creates a PDF file representing the specified MindFusion.Diagramming diagram.
+            </summary>
+            <param name="diagram">
+            A reference to the diagram that will be exported.
+            </param>
+            <param name="stream">
+            Output stream to which to write the PDF data.
+            </param>
+        </member>
+        <member name="M:MindFusion.Diagramming.Export.PdfExporter.Export(MindFusion.Diagramming.Diagram,MindFusion.Pdf.PdfGraphics,System.Drawing.RectangleF)">
+            <summary>
+            Creates a PDF file representing the specified MindFusion.Diagramming diagram.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.PdfExporter.Margins">
+            <summary>
+            Gets or sets the margins for the PDF pages.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.PdfExporter.AutoScale">
+            <summary>
+            Specifies whether the diagram should be scaled to fit one
+            or more pages of the PDF document.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.PdfExporter.Scale">
+            <summary>
+            Gets or sets the scale of the PDF output relatively
+            to the original on-screen size of the diagram.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.PdfExporter.InvisibleItems">
+            <summary>
+            Gets or sets a value indicating whether invisible items should be exporter.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.PdfExporter.PageOrientation">
+            <summary>
+            Gets or sets page orientation that is set to the resulting PDF pages.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.PdfExporter.PageSize">
+            <summary>
+            Gets or sets PDF page size.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.PdfExporter.HyperLinkStyle">
+            <summary>
+            Specifies what kind of hyperlinks should be generated for the HyperLink property of items.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.PdfExporter.EnableBackground">
+            <summary>
+            Specifies whether to fill the background with color.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.PdfExporter.DisableTextClipping">
+            <summary>
+            A work-around for Adobe Reader V9 issue when printing to Postscript printers.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.PdfExporter.JpegImageEncoding">
+            <summary>
+            Specifies whether images embedded in PDF should be encoded in Jpeg format.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.PdfExporter.JpegImageQuality">
+            <summary>
+            Specifies the image quality of Jpeg images.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.PdfExporter.SuppressUnmanagedCode">
+            <summary>
+            Suppress usage of unmanaged code.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.PdfExporter.FontCachePath">
+            <summary>
+            Specifies the path to a file that contains font metrics records.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.PdfExporter.EnableGrid">
+            <summary>
+            Gets or sets a value indicating whether the alignment grid is rendered.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.PdfExporter.RenderOptions">
+            <summary>
+            Gets a RenderOptions instance that provides various settings for
+            configuring the appearance of exported diagrams.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.PdfExporter.HeaderFormat">
+            <summary>
+            Gets or sets a string specifying the content of page headers.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.PdfExporter.HeaderFont">
+            <summary>
+            Gets or sets the font used to draw page headers.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.PdfExporter.FooterFormat">
+            <summary>
+            Gets or sets a string specifying the content of page footers.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.PdfExporter.FooterFont">
+            <summary>
+            Gets or sets the font used to draw page footers.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.PdfExporter.DefaultEncoding">
+            <summary>
+            Specifies what encoding to use if the encoding for a string cannot be recognized automatically.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.Export.PdfExporter.AutoDetectEncoding">
+            <summary>
+            Specifies whether character encoding should be detected automatically.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Diagramming.Export.PdfExporter.drawInvisible">
+            <summary>
+            Specifies whether invisible items should be drawn.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Diagramming.Export.PdfExporter.orientation">
+            <summary>
+            Specifies pages orientation.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Diagramming.Export.PdfExporter.autoSize">
+            <summary>
+            Specifies currently used auto-sizing mode.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Diagramming.Export.PdfExporter.pageSizeEnum">
+            <summary>
+            Specifies PDF page size.
+            </summary>
+        </member>
+    </members>
+</doc>
