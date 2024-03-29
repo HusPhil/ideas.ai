@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using IdeasAi.db;
+using IdeasAi.Ideas;
 using IdeasAi.modals;
 
 namespace IdeasAi.pages
@@ -17,130 +12,103 @@ namespace IdeasAi.pages
         public string current_title;
         public Guid current_id;
         public MainForm mainForm;
-        private Panel panel1;
-        private Label label2;
-        private Panel panel2;
-        private Button button2;
-        private Button button1;
-        private Button button3;
-        private Panel panel3;
+        private Panel pnl_tabSelect;
+        private TableLayoutPanel tbpnl_tabs;
+        private Button btn_docsTab;
+        private Button btn_notesTab;
         private FlowLayoutPanel pnl_container;
+        private Button btn_activeTab;
 
         public frm_notebook(MainForm _mainForm)
         {
             InitializeComponent();
             mainForm = _mainForm;
+
+            this.setActiveBtn(btn_notesTab, tbpnl_tabs);
         }
         private void InitializeComponent()
         {
             this.pnl_container = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pnl_container.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnl_tabSelect = new System.Windows.Forms.Panel();
+            this.tbpnl_tabs = new System.Windows.Forms.TableLayoutPanel();
+            this.btn_docsTab = new System.Windows.Forms.Button();
+            this.btn_notesTab = new System.Windows.Forms.Button();
+            this.pnl_tabSelect.SuspendLayout();
+            this.tbpnl_tabs.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_container
             // 
             this.pnl_container.AutoScroll = true;
-            this.pnl_container.Controls.Add(this.panel1);
             this.pnl_container.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_container.Location = new System.Drawing.Point(20, 20);
+            this.pnl_container.Location = new System.Drawing.Point(20, 86);
             this.pnl_container.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_container.Name = "pnl_container";
-            this.pnl_container.Size = new System.Drawing.Size(1052, 506);
+            this.pnl_container.Size = new System.Drawing.Size(1052, 440);
             this.pnl_container.TabIndex = 0;
-            this.pnl_container.AutoSizeChanged += new System.EventHandler(this.pnl_container_AutoSizeChanged);
-            this.pnl_container.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
-            // panel1
+            // pnl_tabSelect
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(1, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(1, 2, 3, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(344, 224);
-            this.panel1.TabIndex = 0;
+            this.pnl_tabSelect.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_tabSelect.Controls.Add(this.tbpnl_tabs);
+            this.pnl_tabSelect.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_tabSelect.Location = new System.Drawing.Point(20, 20);
+            this.pnl_tabSelect.Name = "pnl_tabSelect";
+            this.pnl_tabSelect.Padding = new System.Windows.Forms.Padding(10);
+            this.pnl_tabSelect.Size = new System.Drawing.Size(1052, 66);
+            this.pnl_tabSelect.TabIndex = 1;
             // 
-            // panel3
+            // tbpnl_tabs
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(344, 63);
-            this.panel3.TabIndex = 11;
+            this.tbpnl_tabs.ColumnCount = 2;
+            this.tbpnl_tabs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tbpnl_tabs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tbpnl_tabs.Controls.Add(this.btn_docsTab, 0, 0);
+            this.tbpnl_tabs.Controls.Add(this.btn_notesTab, 0, 0);
+            this.tbpnl_tabs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbpnl_tabs.Location = new System.Drawing.Point(10, 10);
+            this.tbpnl_tabs.Name = "tbpnl_tabs";
+            this.tbpnl_tabs.RowCount = 1;
+            this.tbpnl_tabs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tbpnl_tabs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tbpnl_tabs.Size = new System.Drawing.Size(1032, 46);
+            this.tbpnl_tabs.TabIndex = 3;
             // 
-            // panel2
+            // btn_docsTab
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 141);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(344, 54);
-            this.panel2.TabIndex = 10;
+            this.btn_docsTab.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_docsTab.BackColor = System.Drawing.Color.Transparent;
+            this.btn_docsTab.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
+            this.btn_docsTab.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_docsTab.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
+            this.btn_docsTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_docsTab.Font = new System.Drawing.Font("Cascadia Code Light", 9.5F);
+            this.btn_docsTab.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_docsTab.Location = new System.Drawing.Point(697, 3);
+            this.btn_docsTab.Name = "btn_docsTab";
+            this.btn_docsTab.Size = new System.Drawing.Size(153, 40);
+            this.btn_docsTab.TabIndex = 4;
+            this.btn_docsTab.Text = "Documents";
+            this.btn_docsTab.UseVisualStyleBackColor = false;
+            this.btn_docsTab.Click += new System.EventHandler(this.btn_docsTab_Click);
             // 
-            // button2
+            // btn_notesTab
             // 
-            this.button2.BackColor = System.Drawing.Color.Gray;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Cascadia Code", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(226, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 54);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "View";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Gray;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Cascadia Code", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(106, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 54);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "View";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Gray;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Cascadia Code", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(0, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(106, 54);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "View";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // label2
-            // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label2.Font = new System.Drawing.Font("Cascadia Code", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(0, 195);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(344, 29);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "DATE CREATED: 2004-09-9867";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_notesTab.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_notesTab.BackColor = System.Drawing.Color.Transparent;
+            this.btn_notesTab.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
+            this.btn_notesTab.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_notesTab.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
+            this.btn_notesTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_notesTab.Font = new System.Drawing.Font("Cascadia Code Light", 9.5F);
+            this.btn_notesTab.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_notesTab.Location = new System.Drawing.Point(181, 3);
+            this.btn_notesTab.Name = "btn_notesTab";
+            this.btn_notesTab.Size = new System.Drawing.Size(153, 40);
+            this.btn_notesTab.TabIndex = 3;
+            this.btn_notesTab.Text = "Notes";
+            this.btn_notesTab.UseVisualStyleBackColor = false;
+            this.btn_notesTab.Click += new System.EventHandler(this.btn_notesTab_Click);
             // 
             // frm_notebook
             // 
@@ -148,32 +116,22 @@ namespace IdeasAi.pages
             this.ClientSize = new System.Drawing.Size(1092, 546);
             this.ControlBox = false;
             this.Controls.Add(this.pnl_container);
+            this.Controls.Add(this.pnl_tabSelect);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_notebook";
             this.Padding = new System.Windows.Forms.Padding(20);
             this.Load += new System.EventHandler(this.frm_notebook_Load);
-            this.pnl_container.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.pnl_tabSelect.ResumeLayout(false);
+            this.tbpnl_tabs.ResumeLayout(false);
             this.ResumeLayout(false);
 
-        }
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
-        private bool HasScrollBar(Control control)
-        {
-            // Check if the control's client size is smaller than its display rectangle
-            return control.ClientSize.Width < control.DisplayRectangle.Width ||
-                   control.ClientSize.Height < control.DisplayRectangle.Height;
         }
         public void displaySavedIdeas()
         {
             pnl_container.Controls.Clear();
             var saved_ideas = mainForm.dbManager_Idea.getAllIdeas();
 
-            Console.WriteLine($"OLD: {pnl_container.DisplayRectangle.Height}::{pnl_container.VerticalScroll.Visible}");
+            Console.WriteLine(saved_ideas);
 
             bool verticalScrollBarVisible = false;
 
@@ -264,9 +222,29 @@ namespace IdeasAi.pages
                 }
             }
 
-            Console.WriteLine($"NEW: {pnl_container.DisplayRectangle.Height}::{pnl_container.VerticalScroll.Visible}");
         }
 
+        private void setActiveBtn(object btn, TableLayoutPanel pnl)
+        {
+            if ((Button)btn != btn_activeTab)
+            {
+                removeActiveBtn(pnl);
+                btn_activeTab = (Button)btn;
+                btn_activeTab.BackColor = btn_notesTab.FlatAppearance.MouseOverBackColor;
+            }
+        }
+
+        private void removeActiveBtn(TableLayoutPanel pnl)
+        {
+            foreach (var btn in pnl.Controls)
+            {
+                if ((Button)btn == btn_activeTab)
+                {
+                    btn_activeTab.BackColor = btn_notesTab.FlatAppearance.MouseDownBackColor;
+                    break;
+                }
+            }
+        }
         private void btn_showMore_click(string current_title, Guid current_id)
         {
             this.current_title = current_title;
@@ -276,7 +254,7 @@ namespace IdeasAi.pages
         private void displayNote_click(string content)
         {
             mainForm.loadForm(mainForm.frm_home,mainForm.getPnlContent());
-            mainForm.setActiveBtn(mainForm.getBtnHome());
+            mainForm.setActiveBtn(mainForm.getBtnHome(), mainForm.getPnlPageTabs());
             mainForm.frm_home.displayResult(content);
             mainForm.frm_home.getSaveBtn().Enabled = false;
         }
@@ -284,11 +262,16 @@ namespace IdeasAi.pages
         {
             displaySavedIdeas();
         }
-
-        private void pnl_container_AutoSizeChanged(object sender, EventArgs e)
+        
+        private void btn_notesTab_Click(object sender, EventArgs e)
         {
+            this.setActiveBtn(sender, tbpnl_tabs);
         }
+        
+        private void btn_docsTab_Click(object sender, EventArgs e)
+        {
+            this.setActiveBtn(sender, tbpnl_tabs); 
 
-       
+        }
     }
 }

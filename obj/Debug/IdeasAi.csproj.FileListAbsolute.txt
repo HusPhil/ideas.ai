@@ -100,7 +100,6 @@ C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\System.Numerics.Vectors.xml
 C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.csproj.AssemblyReference.cache
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.MainForm.resources
-C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.modals.mdl_save.resources
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.PageForms.frm_home.resources
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.pages.frm_notebook.resources
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.Properties.Resources.resources
@@ -128,3 +127,5 @@ C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\Microsoft.Extensions.Primitives.xml
 C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\PlantUml.Net.dll
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.pages.frm_mindmap.resources
+C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.modals.mdl_saveNotes.resources
+C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.modals.mdl_saveDocs.resources

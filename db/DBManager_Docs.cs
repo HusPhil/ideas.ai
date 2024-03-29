@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
-using System.IO;
-using IdeasAi.Gemini_AI;
 using IdeasAi.Ideas;
-using Newtonsoft.Json;
 
 namespace IdeasAi.db
 {
-    public class DBManager_Idea : DatabaseManager
+    public class DBManager_Docs : DatabaseManager
     {
+        public DBManager_Docs()
+        {
+            table = "Note";
+        }
 
         public override void SaveObject(Idea obj)
         {
@@ -17,7 +18,7 @@ namespace IdeasAi.db
             {
                 connection.Open();
 
-                string query = "INSERT INTO Idea (Id, Title, Input, Content, Date_created) VALUES (@Id, @Title, @Input, @Content, @Date_created)";
+                string query = $"INSERT INTO {this.table} (Id, Title, Input, Content, Date_created) VALUES (@Id, @Title, @Input, @Content, @Date_created)";
                 using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Id", obj.UUID);
@@ -40,7 +41,7 @@ namespace IdeasAi.db
             {
                 connection.Open();
 
-                string query = "SELECT ID, Title, Input, Content, Date_created FROM Idea";
+                string query = $"SELECT ID, Title, Input, Content, Date_created FROM {this.table}";
                 using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {
                     using (SQLiteDataReader reader = command.ExecuteReader())
@@ -70,7 +71,7 @@ namespace IdeasAi.db
             {
                 connection.Open();
 
-                string query = $"UPDATE Idea SET {fieldName} = @NewValue WHERE ID = @Id";
+                string query = $"UPDATE {this.table} SET {fieldName} = @NewValue WHERE ID = @Id";
                 using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@NewValue", newValue);
@@ -94,7 +95,7 @@ namespace IdeasAi.db
             {
                 connection.Open();
 
-                string query = "DELETE FROM Idea WHERE ID = @Id";
+                string query = $"DELETE FROM {this.table} WHERE ID = @Id";
                 using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Id", id);

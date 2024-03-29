@@ -1,4 +1,5 @@
 ﻿using IdeasAi.ai_responses;
+using IdeasAi.modals;
 using Markdig;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace IdeasAi.pages
         //GETTERS
         public Guid id_holder;
         public string content_holder;
+        public string title_holder;
         public string input_holder;
         public DateTime date_holder;
         //
@@ -76,7 +78,18 @@ namespace IdeasAi.pages
 
         }
 
-        private async void button2_Click(object sender, EventArgs e)
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            title_holder = txb_docsTitle.Text;
+            mainForm.mdl_setter.OpenModal(this, typeof(mdl_saveDocs), mainForm);
+        }
+
+        private void btn_openFile_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void btn_createMindmap_Click(object sender, EventArgs e)
         {
             var mindmap_obj = new Mindmap();
             mindmap_obj.Input = ConvertMarkdownToPlainText(txb_textEditor.Text);
@@ -86,8 +99,7 @@ namespace IdeasAi.pages
             mainForm.frm_mindmap.generateMindmap(mindmap_obj.Content);
 
             mainForm.loadForm(mainForm.frm_mindmap, mainForm.getPnlContent());
-            mainForm.setActiveBtn(mainForm.getBtnMindmap());
-
+            mainForm.setActiveBtn(mainForm.getBtnMindmap(), mainForm.getPnlPageTabs());
         }
     }
 }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
+﻿using System.IO;
 using System.Data.SQLite;
 using IdeasAi.Ideas;
 using IdeasAi.Gemini_AI;
@@ -15,6 +10,7 @@ namespace IdeasAi.db
     public abstract class DatabaseManager
     {
         protected string dbFilePath { get; set; }
+        protected string table { get; set; }
 
         public DatabaseManager()
         {

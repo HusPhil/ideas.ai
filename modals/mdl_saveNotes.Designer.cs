@@ -1,6 +1,6 @@
 ﻿namespace IdeasAi.modals
 {
-    partial class mdl_save
+    partial class mdl_saveNotes
     {
         /// <summary>
         /// Required designer variable.
@@ -155,7 +155,7 @@
             this.lbl_noteTitle.TabIndex = 3;
             this.lbl_noteTitle.Text = "Give this note a title:";
             // 
-            // mdl_save
+            // mdl_saveNotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -164,7 +164,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "mdl_save";
+            this.Name = "mdl_saveNotes";
             this.Opacity = 0D;
             this.ShowInTaskbar = false;
             this.Text = "frm_modal";
