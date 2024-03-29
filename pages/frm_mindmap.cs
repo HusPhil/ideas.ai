@@ -148,10 +148,6 @@ namespace IdeasAi.pages
 
         }
 
-        private async void txb_markdownInput_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
         public static string ConvertMarkdownToPlantUML(string markdown)
         {
             // Define patterns for markdown elements

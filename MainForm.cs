@@ -25,7 +25,8 @@ namespace IdeasAi
         public mdl_editNotes mdl_editNotes;
         public ModalSetter mdl_setter;
 
-        public DBManager_Note dbManager_Idea = new DBManager_Note();
+        public DBManager_Note dbManager_Note = new DBManager_Note();
+        public DBManager_Docs dbManager_Docs = new DBManager_Docs();
 
 
         Button btn_active;
@@ -135,9 +136,16 @@ namespace IdeasAi
             setActiveBtn(sender, pnl_pageTabs);
             loadForm(frm_notebook, pnl_content);
 
-            
+            if (frm_notebook.btn_activeTab == frm_notebook.getBtnNotesTab())
+            {
+                frm_notebook.displaySavedIdeas(dbManager_Note);
+            }
+            else if (frm_notebook.btn_activeTab == frm_notebook.getBtnDocsTab())
+            {
+                frm_notebook.displaySavedIdeas(dbManager_Docs);
+            }
 
-            frm_notebook.displaySavedIdeas();
+
         }
 
         private void btn_mindmap_Click(object sender, EventArgs e)
@@ -148,13 +156,17 @@ namespace IdeasAi
 
         private void MainForm_SizeChanged(object sender, EventArgs e)
         {
-            frm_notebook.displaySavedIdeas();
+            frm_notebook.displaySavedIdeas(dbManager_Note);
 ;        }
 
         //GETTERS
         public ref Button getBtnNotebook()
         {
             return ref btn_notebook;
+        }
+        public ref Button getBtnWorkspace()
+        {
+            return ref btn_workspace;
         }
         public ref Button getBtnHome()
         {

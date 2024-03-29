@@ -9,10 +9,10 @@ namespace IdeasAi.db
     {
         public DBManager_Docs()
         {
-            table = "Note";
+            table = "Document";
         }
 
-        public override void SaveObject(Idea obj)
+        public override void SaveObject(DBObjectManager obj)
         {
             using (SQLiteConnection connection = new SQLiteConnection($"Data Source={dbFilePath};Version=3;"))
             {
@@ -32,85 +32,5 @@ namespace IdeasAi.db
             }
         }
 
-        public List<Idea> getAllIdeas()
-        {
-            List<Idea> ideas = new List<Idea>();
-
-            // Accessing the dbFilePath parameter directly instead of base.dbFilePath
-            using (SQLiteConnection connection = new SQLiteConnection($"Data Source={dbFilePath};Version=3;"))
-            {
-                connection.Open();
-
-                string query = $"SELECT ID, Title, Input, Content, Date_created FROM {this.table}";
-                using (SQLiteCommand command = new SQLiteCommand(query, connection))
-                {
-                    using (SQLiteDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            Idea idea = new Idea
-                            {
-                                UUID = Guid.Parse(reader["ID"].ToString()),
-                                Title = reader["Title"].ToString(),
-                                Input = reader["Input"].ToString(),
-                                Content = reader["Content"].ToString(),
-                                DateCreated = DateTime.Parse(reader["Date_created"].ToString())
-                            };
-                            ideas.Add(idea);
-                        }
-                    }
-                }
-            }
-
-            return ideas;
-        }
-
-        public void modifyField(Guid id, string fieldName, object newValue)
-        {
-            using (SQLiteConnection connection = new SQLiteConnection($"Data Source={dbFilePath};Version=3;"))
-            {
-                connection.Open();
-
-                string query = $"UPDATE {this.table} SET {fieldName} = @NewValue WHERE ID = @Id";
-                using (SQLiteCommand command = new SQLiteCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@NewValue", newValue);
-                    command.Parameters.AddWithValue("@Id", id);
-
-                    int rowsAffected = command.ExecuteNonQuery();
-                    if (rowsAffected > 0)
-                    {
-                        Console.WriteLine("Field modified successfully.");
-                    }
-                    else
-                    {
-                        Console.WriteLine("No rows were affected. The ID might not exist in the database.");
-                    }
-                }
-            }
-        }
-        public void deleteRecord(Guid id)
-        {
-            using (SQLiteConnection connection = new SQLiteConnection($"Data Source={dbFilePath};Version=3;"))
-            {
-                connection.Open();
-
-                string query = $"DELETE FROM {this.table} WHERE ID = @Id";
-                using (SQLiteCommand command = new SQLiteCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@Id", id);
-
-                    int rowsAffected = command.ExecuteNonQuery();
-                    if (rowsAffected > 0)
-                    {
-                        Console.WriteLine("Record deleted successfully.");
-                    }
-                    else
-                    {
-                        Console.WriteLine("No rows were affected. The ID might not exist in the database.");
-                    }
-                }
-            }
-        }
     }
 }

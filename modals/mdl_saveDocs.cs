@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IdeasAi.db;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -45,7 +46,30 @@ namespace IdeasAi.modals
 
         private void btn_save_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void btn_notebookSave_Click(object sender, EventArgs e)
+        {
+            var saver_obj = new DBObjectManager();
+            saver_obj.Title = mainForm.frm_workspace.title_holder;
+            saver_obj.Content = mainForm.frm_workspace.content_holder;
+            
+
+            mainForm.dbManager_Docs.SaveObject(saver_obj);
+
+            mainForm.loadForm(mainForm.frm_notebook, mainForm.getPnlContent());
+            mainForm.setActiveBtn(mainForm.getBtnNotebook(), mainForm.getPnlPageTabs());
+            mainForm.frm_notebook.displaySavedIdeas(mainForm.dbManager_Note);
+
+            // Load the notebook form into the content panel
+            mainForm.BringToFront();
             this.Hide();
+        }
+
+        private void btn_fileSave_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

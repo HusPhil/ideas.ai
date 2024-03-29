@@ -30,34 +30,75 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txb_setNoteTitle = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.btn_cancel = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.btn_notebookSave = new System.Windows.Forms.Button();
+            this.txb_setNoteTitle = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btn_save = new System.Windows.Forms.Button();
+            this.btn_fileSave = new System.Windows.Forms.Button();
             this.lbl_noteTitle = new System.Windows.Forms.Label();
             this.lbl_title = new System.Windows.Forms.Label();
             this.tmr_animation = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.txb_setNoteTitle);
             this.panel2.Controls.Add(this.btn_cancel);
+            this.panel2.Controls.Add(this.panel6);
+            this.panel2.Controls.Add(this.btn_notebookSave);
+            this.panel2.Controls.Add(this.txb_setNoteTitle);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.btn_save);
+            this.panel2.Controls.Add(this.btn_fileSave);
             this.panel2.Controls.Add(this.lbl_noteTitle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 60);
             this.panel2.Margin = new System.Windows.Forms.Padding(80);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(62);
-            this.panel2.Size = new System.Drawing.Size(593, 322);
+            this.panel2.Size = new System.Drawing.Size(593, 390);
             this.panel2.TabIndex = 5;
+            // 
+            // btn_cancel
+            // 
+            this.btn_cancel.BackColor = System.Drawing.Color.IndianRed;
+            this.btn_cancel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_cancel.FlatAppearance.BorderSize = 0;
+            this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cancel.Location = new System.Drawing.Point(62, 203);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Size = new System.Drawing.Size(469, 35);
+            this.btn_cancel.TabIndex = 15;
+            this.btn_cancel.Text = "Cancel";
+            this.btn_cancel.UseVisualStyleBackColor = false;
+            // 
+            // panel6
+            // 
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel6.Location = new System.Drawing.Point(62, 238);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(469, 10);
+            this.panel6.TabIndex = 14;
+            // 
+            // btn_notebookSave
+            // 
+            this.btn_notebookSave.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_notebookSave.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_notebookSave.FlatAppearance.BorderSize = 0;
+            this.btn_notebookSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_notebookSave.Location = new System.Drawing.Point(62, 248);
+            this.btn_notebookSave.Name = "btn_notebookSave";
+            this.btn_notebookSave.Size = new System.Drawing.Size(469, 35);
+            this.btn_notebookSave.TabIndex = 13;
+            this.btn_notebookSave.Text = "Save to Notebook";
+            this.btn_notebookSave.UseVisualStyleBackColor = false;
+            this.btn_notebookSave.Click += new System.EventHandler(this.btn_notebookSave_Click);
             // 
             // txb_setNoteTitle
             // 
@@ -71,27 +112,22 @@
             this.txb_setNoteTitle.TabIndex = 10;
             this.txb_setNoteTitle.Text = "My Docs #1";
             // 
-            // btn_cancel
-            // 
-            this.btn_cancel.BackColor = System.Drawing.Color.IndianRed;
-            this.btn_cancel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btn_cancel.FlatAppearance.BorderSize = 0;
-            this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cancel.Location = new System.Drawing.Point(62, 180);
-            this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.Size = new System.Drawing.Size(469, 35);
-            this.btn_cancel.TabIndex = 9;
-            this.btn_cancel.Text = "Cancel";
-            this.btn_cancel.UseVisualStyleBackColor = false;
-            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
-            // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.panel5);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(62, 215);
+            this.panel4.Location = new System.Drawing.Point(62, 283);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(469, 10);
             this.panel4.TabIndex = 8;
+            // 
+            // panel5
+            // 
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(469, 10);
+            this.panel5.TabIndex = 9;
             // 
             // panel3
             // 
@@ -101,19 +137,19 @@
             this.panel3.Size = new System.Drawing.Size(469, 10);
             this.panel3.TabIndex = 5;
             // 
-            // btn_save
+            // btn_fileSave
             // 
-            this.btn_save.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btn_save.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btn_save.FlatAppearance.BorderSize = 0;
-            this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_save.Location = new System.Drawing.Point(62, 225);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(469, 35);
-            this.btn_save.TabIndex = 2;
-            this.btn_save.Text = "Save";
-            this.btn_save.UseVisualStyleBackColor = false;
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            this.btn_fileSave.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_fileSave.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_fileSave.FlatAppearance.BorderSize = 0;
+            this.btn_fileSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_fileSave.Location = new System.Drawing.Point(62, 293);
+            this.btn_fileSave.Name = "btn_fileSave";
+            this.btn_fileSave.Size = new System.Drawing.Size(469, 35);
+            this.btn_fileSave.TabIndex = 2;
+            this.btn_fileSave.Text = "Save as a File";
+            this.btn_fileSave.UseVisualStyleBackColor = false;
+            this.btn_fileSave.Click += new System.EventHandler(this.btn_fileSave_Click);
             // 
             // lbl_noteTitle
             // 
@@ -160,7 +196,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(593, 382);
+            this.ClientSize = new System.Drawing.Size(593, 450);
             this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -171,6 +207,7 @@
             this.Load += new System.EventHandler(this.frm_modal_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -180,13 +217,16 @@
 
         private System.Windows.Forms.Panel panel2;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txb_setNoteTitle;
-        private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.Button btn_fileSave;
         private System.Windows.Forms.Label lbl_noteTitle;
         private System.Windows.Forms.Label lbl_title;
         private System.Windows.Forms.Timer tmr_animation;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btn_cancel;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button btn_notebookSave;
+        private System.Windows.Forms.Panel panel5;
     }
 }

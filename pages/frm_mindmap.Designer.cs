@@ -168,7 +168,6 @@
             this.txb_markdownInput.Size = new System.Drawing.Size(136, 397);
             this.txb_markdownInput.TabIndex = 0;
             this.txb_markdownInput.Text = "";
-            this.txb_markdownInput.TextChanged += new System.EventHandler(this.txb_markdownInput_TextChanged);
             // 
             // spl_mindmap
             // 

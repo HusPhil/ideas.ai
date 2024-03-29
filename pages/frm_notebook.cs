@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using IdeasAi.db;
 using IdeasAi.Ideas;
 using IdeasAi.modals;
 
@@ -17,7 +18,7 @@ namespace IdeasAi.pages
         private Button btn_docsTab;
         private Button btn_notesTab;
         private FlowLayoutPanel pnl_container;
-        private Button btn_activeTab;
+        public Button btn_activeTab;
 
         public frm_notebook(MainForm _mainForm)
         {
@@ -126,10 +127,10 @@ namespace IdeasAi.pages
             this.ResumeLayout(false);
 
         }
-        public void displaySavedIdeas()
+        public void displaySavedIdeas(DatabaseManager db)
         {
             pnl_container.Controls.Clear();
-            var saved_ideas = mainForm.dbManager_Idea.getAllIdeas();
+            var saved_ideas = db.retrieveDBRecords();
 
             Console.WriteLine(saved_ideas);
 
@@ -181,7 +182,7 @@ namespace IdeasAi.pages
 
                 Button btn_view = new Button();
                 btn_view.Text = "View";
-                btn_view.Click += (sender, e) => displayNote_click(idea.Content);
+                btn_view.Click += (sender, e) => displayNote_click(idea, db);
                 btn_view.Dock = DockStyle.Fill;
                 btn_view.FlatStyle = FlatStyle.Flat;
 
@@ -251,27 +252,51 @@ namespace IdeasAi.pages
             this.current_id = current_id;
             mainForm.mdl_setter.OpenModal(this, typeof(mdl_editNotes), mainForm);
         }
-        private void displayNote_click(string content)
+        private void displayNote_click(DBObjectManager dom, DatabaseManager db)
         {
+            if (db.GetType().Equals(typeof(DBManager_Note)))
+            {
             mainForm.loadForm(mainForm.frm_home,mainForm.getPnlContent());
             mainForm.setActiveBtn(mainForm.getBtnHome(), mainForm.getPnlPageTabs());
-            mainForm.frm_home.displayResult(content);
+            mainForm.frm_home.displayResult(dom.Content);
             mainForm.frm_home.getSaveBtn().Enabled = false;
+
+            }
+            else if (db.GetType().Equals(typeof(DBManager_Docs)))
+            {
+                mainForm.loadForm(mainForm.frm_workspace, mainForm.getPnlContent());
+                mainForm.setActiveBtn(mainForm.getBtnWorkspace(), mainForm.getPnlPageTabs());
+                mainForm.frm_workspace.getTxbEditor().Text = dom.Content;
+                mainForm.frm_workspace.getTxbDocsTitle().Text = dom.Title; 
+
+            }
         }
         private void frm_notebook_Load(object sender, EventArgs e)
         {
-            displaySavedIdeas();
+            displaySavedIdeas(mainForm.dbManager_Note);
         }
         
         private void btn_notesTab_Click(object sender, EventArgs e)
         {
+            mainForm.frm_notebook.displaySavedIdeas(mainForm.dbManager_Note);
             this.setActiveBtn(sender, tbpnl_tabs);
         }
         
         private void btn_docsTab_Click(object sender, EventArgs e)
         {
+            mainForm.frm_notebook.displaySavedIdeas(mainForm.dbManager_Docs);
             this.setActiveBtn(sender, tbpnl_tabs); 
 
+        }
+
+        //GETTERS
+        public ref Button getBtnNotesTab()
+        {
+            return ref btn_notesTab;
+        }
+        public ref Button getBtnDocsTab()
+        {
+            return ref btn_docsTab;
         }
     }
 }

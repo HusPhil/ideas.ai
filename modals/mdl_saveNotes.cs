@@ -37,18 +37,18 @@ namespace IdeasAi.modals
         private void btn_save_Click(object sender, EventArgs e)
         {
             
-            var idea_save_obj = new Idea();
+            var idea_save_obj = new DBObjectManager();
             idea_save_obj.UUID = mainForm.frm_home.id_holder;
             idea_save_obj.Title = txb_setNoteTitle.Text;
             idea_save_obj.Input = mainForm.frm_home.input_holder;
             idea_save_obj.Content = mainForm.frm_home.content_holder;
             idea_save_obj.DateCreated = mainForm.frm_home.date_holder;
 
-            mainForm.dbManager_Idea.SaveObject(idea_save_obj);
+            mainForm.dbManager_Note.SaveObject(idea_save_obj);
 
             mainForm.loadForm(mainForm.frm_notebook,mainForm.getPnlContent());
             mainForm.setActiveBtn(mainForm.getBtnNotebook(), mainForm.getPnlPageTabs());
-            mainForm.frm_notebook.displaySavedIdeas();
+            mainForm.frm_notebook.displaySavedIdeas(mainForm.dbManager_Note);
 
             // Load the notebook form into the content panel
             mainForm.BringToFront();

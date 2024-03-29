@@ -1,4 +1,5 @@
-﻿using IdeasAi.ai_responses;
+﻿using ComponentFactory.Krypton.Toolkit;
+using IdeasAi.ai_responses;
 using IdeasAi.modals;
 using Markdig;
 using System;
@@ -81,6 +82,8 @@ namespace IdeasAi.pages
         private void btn_save_Click(object sender, EventArgs e)
         {
             title_holder = txb_docsTitle.Text;
+            content_holder = txb_textEditor.Text;
+            
             mainForm.mdl_setter.OpenModal(this, typeof(mdl_saveDocs), mainForm);
         }
 
@@ -100,6 +103,18 @@ namespace IdeasAi.pages
 
             mainForm.loadForm(mainForm.frm_mindmap, mainForm.getPnlContent());
             mainForm.setActiveBtn(mainForm.getBtnMindmap(), mainForm.getPnlPageTabs());
+        }
+
+
+        //GETTERS
+        public ref KryptonTextBox getTxbDocsTitle()
+        {
+            return ref txb_docsTitle;
+        }
+
+        public ref KryptonTextBox getTxbEditor()
+        {
+            return ref txb_textEditor;
         }
     }
 }

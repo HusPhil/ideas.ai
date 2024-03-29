@@ -49,8 +49,8 @@ namespace IdeasAi.modals
         }
         private void btn_save_Click(object sender, EventArgs e)
         {
-            mainForm.dbManager_Idea.modifyField(mainForm.frm_notebook.current_id, "Title", txb_setNoteTitle.Text);
-            mainForm.frm_notebook.displaySavedIdeas();
+            mainForm.dbManager_Note.modifyField(mainForm.frm_notebook.current_id, "Title", txb_setNoteTitle.Text);
+            mainForm.frm_notebook.displaySavedIdeas(mainForm.dbManager_Note);
             mainForm.Focus();
 
         }
@@ -62,10 +62,10 @@ namespace IdeasAi.modals
 
             if(confirm_count == 2)
             {
-                mainForm.dbManager_Idea.deleteRecord(mainForm.frm_notebook.current_id);
+                mainForm.dbManager_Note.deleteRecord(mainForm.frm_notebook.current_id);
                 confirm_count = 0;
                 btn_delete.Text = "Delete";
-                mainForm.frm_notebook.displaySavedIdeas();
+                mainForm.frm_notebook.displaySavedIdeas(mainForm.dbManager_Note);
 
                 this.Visible = false ;
                 mainForm.Focus();
