@@ -127,3 +127,4 @@ C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\Microsoft.Extensions.Options.xml
 C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\Microsoft.Extensions.Primitives.xml
 C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\PlantUml.Net.dll
+C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.pages.frm_mindmap.resources

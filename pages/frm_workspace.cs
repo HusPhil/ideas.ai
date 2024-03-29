@@ -75,5 +75,19 @@ namespace IdeasAi.pages
             txb_textEditor.ReadOnly = false;
 
         }
+
+        private async void button2_Click(object sender, EventArgs e)
+        {
+            var mindmap_obj = new Mindmap();
+            mindmap_obj.Input = ConvertMarkdownToPlainText(txb_textEditor.Text);
+            mindmap_obj.Content = await mindmap_obj.GetResponse();
+
+            mainForm.frm_mindmap.getTxbMarkdownInput().Text = mindmap_obj.Content;
+            mainForm.frm_mindmap.generateMindmap(mindmap_obj.Content);
+
+            mainForm.loadForm(mainForm.frm_mindmap, mainForm.getPnlContent());
+            mainForm.setActiveBtn(mainForm.getBtnMindmap());
+
+        }
     }
 }

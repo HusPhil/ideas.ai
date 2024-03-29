@@ -154,6 +154,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ai_responses\Mindmap.cs" />
     <Compile Include="ai_responses\OrganizedIdea.cs" />
     <Compile Include="db\DatabaseManager.cs" />
     <Compile Include="db\DBManager_Idea.cs" />
@@ -186,6 +187,12 @@
     <Compile Include="pages\frm_home.Designer.cs">
       <DependentUpon>frm_home.cs</DependentUpon>
     </Compile>
+    <Compile Include="pages\frm_mindmap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\frm_mindmap.Designer.cs">
+      <DependentUpon>frm_mindmap.cs</DependentUpon>
+    </Compile>
     <Compile Include="pages\frm_settings.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -211,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pages\frm_home.resx">
       <DependentUpon>frm_home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\frm_mindmap.resx">
+      <DependentUpon>frm_mindmap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pages\frm_notebook.resx">
       <DependentUpon>frm_notebook.cs</DependentUpon>
@@ -253,6 +263,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\icons\send.png" />
+    <None Include="bin\Debug\out.png" />
     <Content Include="gemini_AI\Scripts\gemini.py">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
