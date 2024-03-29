@@ -184,7 +184,7 @@ namespace IdeasAi.PageForms
 
         private void btn_save_Click_1(object sender, EventArgs e)
         {
-            mainForm.mdl_setter.OpenModal(this, typeof(mdl_save), mainForm);
+            mainForm.mdl_setter.OpenModal(this, typeof(mdl_saveNotes), mainForm);
         }
 
         //GETTERS

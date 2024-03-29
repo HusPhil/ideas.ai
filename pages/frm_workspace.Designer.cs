@@ -30,9 +30,8 @@
         {
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this.kryptonTextBox2 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.txb_docsTitle = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.pnl_btns = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.btn_organizeIdea = new System.Windows.Forms.Button();
             this.pnl_textEditor = new System.Windows.Forms.Panel();
             this.txb_textEditor = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
@@ -42,6 +41,9 @@
             this.pnl_quickSearch = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.btn_createMindmap = new System.Windows.Forms.Button();
+            this.btn_save = new System.Windows.Forms.Button();
+            this.btn_openFile = new System.Windows.Forms.Button();
             this.pnl_btns.SuspendLayout();
             this.pnl_textEditor.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -49,52 +51,43 @@
             this.pnl_quickSearch.SuspendLayout();
             this.SuspendLayout();
             // 
-            // kryptonTextBox2
+            // txb_docsTitle
             // 
-            this.kryptonTextBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.kryptonTextBox2.Location = new System.Drawing.Point(25, 15);
-            this.kryptonTextBox2.Name = "kryptonTextBox2";
-            this.kryptonTextBox2.Size = new System.Drawing.Size(750, 37);
-            this.kryptonTextBox2.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
-            this.kryptonTextBox2.StateCommon.Border.Color1 = System.Drawing.Color.WhiteSmoke;
-            this.kryptonTextBox2.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.txb_docsTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txb_docsTitle.Location = new System.Drawing.Point(25, 15);
+            this.txb_docsTitle.Name = "txb_docsTitle";
+            this.txb_docsTitle.Size = new System.Drawing.Size(750, 37);
+            this.txb_docsTitle.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
+            this.txb_docsTitle.StateCommon.Border.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.txb_docsTitle.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonTextBox2.StateCommon.Content.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonTextBox2.StateCommon.Content.Padding = new System.Windows.Forms.Padding(5, 10, 5, 5);
-            this.kryptonTextBox2.TabIndex = 4;
-            this.kryptonTextBox2.Text = "Untitled 1";
-            this.kryptonTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txb_docsTitle.StateCommon.Content.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txb_docsTitle.StateCommon.Content.Padding = new System.Windows.Forms.Padding(5, 10, 5, 5);
+            this.txb_docsTitle.TabIndex = 4;
+            this.txb_docsTitle.Text = "Untitled 1";
+            this.txb_docsTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pnl_btns
             // 
             this.pnl_btns.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
-            this.pnl_btns.Controls.Add(this.button2);
+            this.pnl_btns.Controls.Add(this.btn_openFile);
+            this.pnl_btns.Controls.Add(this.btn_save);
+            this.pnl_btns.Controls.Add(this.btn_createMindmap);
             this.pnl_btns.Controls.Add(this.btn_organizeIdea);
             this.pnl_btns.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnl_btns.Location = new System.Drawing.Point(25, 403);
             this.pnl_btns.Name = "pnl_btns";
-            this.pnl_btns.Padding = new System.Windows.Forms.Padding(0, 0, 5, 10);
+            this.pnl_btns.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.pnl_btns.Size = new System.Drawing.Size(750, 47);
             this.pnl_btns.TabIndex = 7;
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button2.Location = new System.Drawing.Point(80, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(80, 37);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Save";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btn_organizeIdea
             // 
             this.btn_organizeIdea.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btn_organizeIdea.Location = new System.Drawing.Point(0, 0);
+            this.btn_organizeIdea.Location = new System.Drawing.Point(0, 10);
             this.btn_organizeIdea.Name = "btn_organizeIdea";
-            this.btn_organizeIdea.Size = new System.Drawing.Size(80, 37);
+            this.btn_organizeIdea.Size = new System.Drawing.Size(80, 27);
             this.btn_organizeIdea.TabIndex = 3;
             this.btn_organizeIdea.Text = "Organize";
             this.btn_organizeIdea.UseVisualStyleBackColor = true;
@@ -114,6 +107,7 @@
             // 
             // txb_textEditor
             // 
+            this.txb_textEditor.AcceptsReturn = true;
             this.txb_textEditor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txb_textEditor.Location = new System.Drawing.Point(0, 5);
             this.txb_textEditor.Multiline = true;
@@ -193,6 +187,39 @@
             this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // btn_createMindmap
+            // 
+            this.btn_createMindmap.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_createMindmap.Location = new System.Drawing.Point(80, 10);
+            this.btn_createMindmap.Name = "btn_createMindmap";
+            this.btn_createMindmap.Size = new System.Drawing.Size(174, 27);
+            this.btn_createMindmap.TabIndex = 5;
+            this.btn_createMindmap.Text = "Create Mindmap";
+            this.btn_createMindmap.UseVisualStyleBackColor = true;
+            this.btn_createMindmap.Click += new System.EventHandler(this.btn_createMindmap_Click);
+            // 
+            // btn_save
+            // 
+            this.btn_save.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_save.Location = new System.Drawing.Point(670, 10);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(80, 27);
+            this.btn_save.TabIndex = 6;
+            this.btn_save.Text = "Save";
+            this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            // 
+            // btn_openFile
+            // 
+            this.btn_openFile.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_openFile.Location = new System.Drawing.Point(590, 10);
+            this.btn_openFile.Name = "btn_openFile";
+            this.btn_openFile.Size = new System.Drawing.Size(80, 27);
+            this.btn_openFile.TabIndex = 7;
+            this.btn_openFile.Text = "Open";
+            this.btn_openFile.UseVisualStyleBackColor = true;
+            this.btn_openFile.Click += new System.EventHandler(this.btn_openFile_Click);
+            // 
             // frm_workspace
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -203,7 +230,7 @@
             this.Controls.Add(this.pnl_textEditor);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnl_btns);
-            this.Controls.Add(this.kryptonTextBox2);
+            this.Controls.Add(this.txb_docsTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_workspace";
             this.Padding = new System.Windows.Forms.Padding(25, 15, 25, 0);
@@ -223,9 +250,8 @@
         #endregion
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox2;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txb_docsTitle;
         private System.Windows.Forms.Panel pnl_btns;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn_organizeIdea;
         private System.Windows.Forms.Panel pnl_textEditor;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txb_textEditor;
@@ -235,5 +261,8 @@
         private System.Windows.Forms.Panel pnl_quickSearch;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_openFile;
+        private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.Button btn_createMindmap;
     }
 }

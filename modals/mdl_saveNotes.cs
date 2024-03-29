@@ -7,13 +7,15 @@ using IdeasAi.Ideas;
 
 namespace IdeasAi.modals
 {
-    public partial class mdl_save : Form
+    public partial class mdl_saveNotes : Form
     {
         public MainForm mainForm;
-        public mdl_save(MainForm _mainForm)
+        public mdl_saveNotes(MainForm _mainForm)
         {
             InitializeComponent();
             this.mainForm = _mainForm;
+
+
         }
         private void tmr_animation_Tick(object sender, EventArgs e)
         {
@@ -35,18 +37,18 @@ namespace IdeasAi.modals
         private void btn_save_Click(object sender, EventArgs e)
         {
             
-            var idea_save_obj = new Idea();
+            var idea_save_obj = new DBObjectManager();
             idea_save_obj.UUID = mainForm.frm_home.id_holder;
             idea_save_obj.Title = txb_setNoteTitle.Text;
             idea_save_obj.Input = mainForm.frm_home.input_holder;
             idea_save_obj.Content = mainForm.frm_home.content_holder;
             idea_save_obj.DateCreated = mainForm.frm_home.date_holder;
 
-            mainForm.dbManager_Idea.SaveObject(idea_save_obj);
+            mainForm.dbManager_Note.SaveObject(idea_save_obj);
 
             mainForm.loadForm(mainForm.frm_notebook,mainForm.getPnlContent());
-            mainForm.setActiveBtn(mainForm.getBtnNotebook());
-            mainForm.frm_notebook.displaySavedIdeas();
+            mainForm.setActiveBtn(mainForm.getBtnNotebook(), mainForm.getPnlPageTabs());
+            mainForm.frm_notebook.displaySavedIdeas(mainForm.dbManager_Note);
 
             // Load the notebook form into the content panel
             mainForm.BringToFront();
