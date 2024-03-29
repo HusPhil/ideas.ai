@@ -28,7 +28,31 @@ namespace IdeasAi.db
             }
         }
 
-        public abstract void SaveObject(DBObjectManager obj);
+        public bool recordExist(Guid id)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection($"Data Source={dbFilePath};Version=3;"))
+            {
+                connection.Open();
+
+                string query = $"SELECT ID FROM {this.table}";
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                {
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            if (Guid.Parse(reader["ID"].ToString()).Equals(id))
+                            {
+                                return true;
+                            }
+                        }
+                    }
+                }
+                return false;
+            }
+        }
+
+        public abstract void saveObject(DBObjectManager obj);
 
         public List<DBObjectManager> retrieveDBRecords()
         {

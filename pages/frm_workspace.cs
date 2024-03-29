@@ -116,5 +116,12 @@ namespace IdeasAi.pages
         {
             return ref txb_textEditor;
         }
+
+        private void btn_new_Click(object sender, EventArgs e)
+        {
+            id_holder = Guid.NewGuid();
+            txb_docsTitle.Text = "Untitled Docs";
+            txb_textEditor.Text = "";
+        }
     }
 }

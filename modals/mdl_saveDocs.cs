@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -54,13 +55,23 @@ namespace IdeasAi.modals
             var saver_obj = new DBObjectManager();
             saver_obj.Title = mainForm.frm_workspace.title_holder;
             saver_obj.Content = mainForm.frm_workspace.content_holder;
+            saver_obj.UUID = mainForm.frm_workspace.id_holder;
+
+            if (!mainForm.dbManager_Docs.recordExist(saver_obj.UUID))
+            {
+                mainForm.dbManager_Docs.saveObject(saver_obj);
+            }
+            else
+            {
+                mainForm.dbManager_Docs.modifyField(saver_obj.UUID, "Content", saver_obj.Content);
+                Console.WriteLine("already exist");
+            }
             
 
-            mainForm.dbManager_Docs.SaveObject(saver_obj);
 
             mainForm.loadForm(mainForm.frm_notebook, mainForm.getPnlContent());
             mainForm.setActiveBtn(mainForm.getBtnNotebook(), mainForm.getPnlPageTabs());
-            mainForm.frm_notebook.displaySavedIdeas(mainForm.dbManager_Note);
+            mainForm.frm_notebook.displaySavedIdeas(mainForm.dbManager_Docs);
 
             // Load the notebook form into the content panel
             mainForm.BringToFront();

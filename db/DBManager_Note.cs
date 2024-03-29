@@ -12,7 +12,7 @@ namespace IdeasAi.db
             table = "Note";
         }
 
-        public override void SaveObject(DBObjectManager obj)
+        public override void saveObject(DBObjectManager obj)
         {
             using (SQLiteConnection connection = new SQLiteConnection($"Data Source={dbFilePath};Version=3;"))
             {

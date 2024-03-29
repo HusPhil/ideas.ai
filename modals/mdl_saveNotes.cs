@@ -44,7 +44,7 @@ namespace IdeasAi.modals
             idea_save_obj.Content = mainForm.frm_home.content_holder;
             idea_save_obj.DateCreated = mainForm.frm_home.date_holder;
 
-            mainForm.dbManager_Note.SaveObject(idea_save_obj);
+            mainForm.dbManager_Note.saveObject(idea_save_obj);
 
             mainForm.loadForm(mainForm.frm_notebook,mainForm.getPnlContent());
             mainForm.setActiveBtn(mainForm.getBtnNotebook(), mainForm.getPnlPageTabs());

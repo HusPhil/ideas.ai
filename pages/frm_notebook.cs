@@ -266,6 +266,7 @@ namespace IdeasAi.pages
             {
                 mainForm.loadForm(mainForm.frm_workspace, mainForm.getPnlContent());
                 mainForm.setActiveBtn(mainForm.getBtnWorkspace(), mainForm.getPnlPageTabs());
+                mainForm.frm_workspace.id_holder = dom.UUID;
                 mainForm.frm_workspace.getTxbEditor().Text = dom.Content;
                 mainForm.frm_workspace.getTxbDocsTitle().Text = dom.Title; 
 
