@@ -20,7 +20,7 @@ namespace IdeasAi.PageForms
     //}
     public partial class frm_home : Form
     {
-        public MainForm mainForm;
+        private MainForm mainForm;
 
         //PROPERTIES
         public Guid id_holder;
@@ -68,7 +68,6 @@ namespace IdeasAi.PageForms
             </html>
             ";
             this.mainForm = _mainForm;
-            tryTest();
         }
         private string ConvertMarkdownToHtml(string markdownText)
         {
@@ -181,61 +180,7 @@ namespace IdeasAi.PageForms
 
         }
 
-        public async void tryTest() {
-
-            var factory = new RendererFactory();
-
-            var renderer = factory.CreateRenderer(new PlantUmlSettings());
-
-            var content = @"
-```
-@startmindmap
-* World War 1 na hakdog si  Hitler
-** Causes
-*** Imperialism
-*** Nationalism
-*** Militarism
-*** Alliances
-** Key Battles
-*** Battle of the Marne
-*** Battle of Verdun
-*** Battle of the Somme
-*** Battle of Passchendaele
-** Major Powers Involved
-*** Central Powers
-**** Germany
-**** Austria-Hungary
-**** Ottoman Empire
-*** Allied Powers
-**** Great Britain
-**** France
-**** Russian Empire
-**** United States
-** Impact
-*** Casualties
-**** Over 10 million dead
-*** Political Changes
-**** Collapse of empires
-**** Rise of new nations
-*** Social Changes
-**** Women's suffrage
-**** Labor movements
-@endmindmap
-```";
-            try
-            {
-                var bytes = await renderer.RenderAsync(content, OutputFormat.Png);
-                File.WriteAllBytes("out.png", bytes);
-                Console.WriteLine($"Successfully generated a Mindmap.");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"An error occurred: {ex.Message}");
-                // You can choose to log the error, retry, or handle it based on your application's requirements.
-            }
-
-
-        }
+        
 
         private void btn_save_Click_1(object sender, EventArgs e)
         {

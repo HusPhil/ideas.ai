@@ -16,6 +16,7 @@ namespace IdeasAi
         public frm_workspace frm_workspace;
         public frm_settings frm_settings;
         public frm_notebook frm_notebook;
+        public frm_mindmap frm_mindmap;
         //
         // MODALS
         public mdl_save mdl_save;
@@ -36,6 +37,7 @@ namespace IdeasAi
             frm_notebook =  new frm_notebook(this);
             frm_settings = new frm_settings(this);
             frm_workspace = new frm_workspace(this);
+            frm_mindmap = new frm_mindmap(this);
 
             mdl_save = new mdl_save(this);
             mdl_editNotes = new mdl_editNotes(this);
@@ -133,6 +135,12 @@ namespace IdeasAi
             frm_notebook.displaySavedIdeas();
         }
 
+        private void btn_mindmap_Click(object sender, EventArgs e)
+        {
+            setActiveBtn(sender);
+            loadForm(frm_mindmap, pnl_content);
+        }
+
         private void MainForm_SizeChanged(object sender, EventArgs e)
         {
             frm_notebook.displaySavedIdeas();
@@ -150,6 +158,10 @@ namespace IdeasAi
         public ref Panel getPnlContent()
         {
             return ref pnl_content;
+        }
+        public ref Button getBtnMindmap()
+        {
+            return ref btn_mindmap; 
         }
 
 

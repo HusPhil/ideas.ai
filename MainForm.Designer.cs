@@ -37,8 +37,9 @@ namespace IdeasAi
             this.btn_home = new System.Windows.Forms.Button();
             this.btn_notebook = new System.Windows.Forms.Button();
             this.btn_workspace = new System.Windows.Forms.Button();
-            this.btn_history = new System.Windows.Forms.Button();
+            this.btn_mindmap = new System.Windows.Forms.Button();
             this.btn_unde = new System.Windows.Forms.Button();
+            this.btn_history = new System.Windows.Forms.Button();
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
@@ -83,14 +84,15 @@ namespace IdeasAi
             this.pnl_pageTabs.Controls.Add(this.btn_home);
             this.pnl_pageTabs.Controls.Add(this.btn_notebook);
             this.pnl_pageTabs.Controls.Add(this.btn_workspace);
-            this.pnl_pageTabs.Controls.Add(this.btn_history);
+            this.pnl_pageTabs.Controls.Add(this.btn_mindmap);
             this.pnl_pageTabs.Controls.Add(this.btn_unde);
+            this.pnl_pageTabs.Controls.Add(this.btn_history);
             this.pnl_pageTabs.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.pnl_pageTabs.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pnl_pageTabs.Location = new System.Drawing.Point(20, 150);
             this.pnl_pageTabs.Name = "pnl_pageTabs";
             this.pnl_pageTabs.Padding = new System.Windows.Forms.Padding(1);
-            this.pnl_pageTabs.Size = new System.Drawing.Size(280, 367);
+            this.pnl_pageTabs.Size = new System.Drawing.Size(280, 448);
             this.pnl_pageTabs.TabIndex = 1;
             // 
             // btn_home
@@ -150,24 +152,24 @@ namespace IdeasAi
             this.btn_workspace.UseVisualStyleBackColor = false;
             this.btn_workspace.Click += new System.EventHandler(this.btn_workspace_Click);
             // 
-            // btn_history
+            // btn_mindmap
             // 
-            this.btn_history.BackColor = System.Drawing.Color.Transparent;
-            this.btn_history.FlatAppearance.BorderSize = 0;
-            this.btn_history.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
-            this.btn_history.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
-            this.btn_history.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_history.Font = new System.Drawing.Font("Cascadia Code Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_history.ForeColor = System.Drawing.Color.White;
-            this.btn_history.Location = new System.Drawing.Point(4, 199);
-            this.btn_history.Name = "btn_history";
-            this.btn_history.Padding = new System.Windows.Forms.Padding(5);
-            this.btn_history.Size = new System.Drawing.Size(269, 59);
-            this.btn_history.TabIndex = 2;
-            this.btn_history.Text = "History";
-            this.btn_history.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_history.UseVisualStyleBackColor = false;
-            this.btn_history.Click += new System.EventHandler(this.btn_history_Click);
+            this.btn_mindmap.BackColor = System.Drawing.Color.Transparent;
+            this.btn_mindmap.FlatAppearance.BorderSize = 0;
+            this.btn_mindmap.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
+            this.btn_mindmap.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
+            this.btn_mindmap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_mindmap.Font = new System.Drawing.Font("Cascadia Code Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_mindmap.ForeColor = System.Drawing.Color.White;
+            this.btn_mindmap.Location = new System.Drawing.Point(4, 199);
+            this.btn_mindmap.Name = "btn_mindmap";
+            this.btn_mindmap.Padding = new System.Windows.Forms.Padding(5);
+            this.btn_mindmap.Size = new System.Drawing.Size(269, 59);
+            this.btn_mindmap.TabIndex = 6;
+            this.btn_mindmap.Text = "Mindmap";
+            this.btn_mindmap.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_mindmap.UseVisualStyleBackColor = false;
+            this.btn_mindmap.Click += new System.EventHandler(this.btn_mindmap_Click);
             // 
             // btn_unde
             // 
@@ -187,6 +189,25 @@ namespace IdeasAi
             this.btn_unde.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_unde.UseVisualStyleBackColor = false;
             this.btn_unde.Click += new System.EventHandler(this.btn_unde_Click);
+            // 
+            // btn_history
+            // 
+            this.btn_history.BackColor = System.Drawing.Color.Transparent;
+            this.btn_history.FlatAppearance.BorderSize = 0;
+            this.btn_history.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
+            this.btn_history.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
+            this.btn_history.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_history.Font = new System.Drawing.Font("Cascadia Code Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_history.ForeColor = System.Drawing.Color.White;
+            this.btn_history.Location = new System.Drawing.Point(4, 329);
+            this.btn_history.Name = "btn_history";
+            this.btn_history.Padding = new System.Windows.Forms.Padding(5);
+            this.btn_history.Size = new System.Drawing.Size(269, 59);
+            this.btn_history.TabIndex = 2;
+            this.btn_history.Text = "History";
+            this.btn_history.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_history.UseVisualStyleBackColor = false;
+            this.btn_history.Click += new System.EventHandler(this.btn_history_Click);
             // 
             // kryptonLabel1
             // 
@@ -250,7 +271,6 @@ namespace IdeasAi
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.kryptonPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MainForm";
             this.Palette = this.kryptonPalette1;
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
@@ -281,6 +301,7 @@ namespace IdeasAi
         private System.Windows.Forms.Label lbl_currentPage;
         private System.Windows.Forms.Panel pnl_content;
         private System.Windows.Forms.Button btn_notebook;
+        private System.Windows.Forms.Button btn_mindmap;
     }
 }
 
