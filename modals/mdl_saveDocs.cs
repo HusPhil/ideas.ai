@@ -15,10 +15,15 @@ namespace IdeasAi.modals
     public partial class mdl_saveDocs : Form
     {
         MainForm mainForm;
-        public mdl_saveDocs(MainForm mainForm)
+        DBObjectManager saver_obj;
+        public mdl_saveDocs(MainForm mainForm) 
         {
             InitializeComponent();
             this.mainForm = mainForm;
+
+            this.tmr_animation.Enabled = true;
+            this.tmr_animation.Interval = 1;
+            this.tmr_animation.Tick += new System.EventHandler(this.tmr_animation_Tick);
         }
 
         private void tmr_animation_Tick(object sender, EventArgs e)
@@ -32,30 +37,25 @@ namespace IdeasAi.modals
                 Opacity += .05;
             }
         }
-
         private void frm_modal_Load(object sender, EventArgs e)
         {
-            txb_setNoteTitle.Text = mainForm.frm_workspace.title_holder;
             var ownerForm = mainForm;
             this.Location = ModalSetter.CenterLocation(ownerForm.Width, ownerForm.Height, this.Width, this.Height, ownerForm.Location.X, ownerForm.Location.Y);
-        }
 
+            txb_setNoteTitle.Text = mainForm.frm_workspace.title_holder;
+            saver_obj = new DBObjectManager();
+
+            saver_obj.Title = txb_setNoteTitle.Text;
+            saver_obj.Content = mainForm.frm_workspace.content_holder;
+            saver_obj.UUID = mainForm.frm_workspace.id_holder;
+        }
         private void btn_cancel_Click(object sender, EventArgs e)
         {
             this.Hide();
         }
-
-        private void btn_save_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btn_notebookSave_Click(object sender, EventArgs e)
         {
-            var saver_obj = new DBObjectManager();
-            saver_obj.Title = mainForm.frm_workspace.title_holder;
-            saver_obj.Content = mainForm.frm_workspace.content_holder;
-            saver_obj.UUID = mainForm.frm_workspace.id_holder;
+            
 
             if (!mainForm.dbManager_Docs.recordExist(saver_obj.UUID))
             {
@@ -64,6 +64,7 @@ namespace IdeasAi.modals
             else
             {
                 mainForm.dbManager_Docs.modifyField(saver_obj.UUID, "Content", saver_obj.Content);
+                mainForm.dbManager_Docs.modifyField(saver_obj.UUID, "Title", txb_setNoteTitle.Text);
                 Console.WriteLine("already exist");
             }
             
@@ -71,16 +72,41 @@ namespace IdeasAi.modals
 
             mainForm.loadForm(mainForm.frm_notebook, mainForm.getPnlContent());
             mainForm.setActiveBtn(mainForm.getBtnNotebook(), mainForm.getPnlPageTabs());
+            mainForm.frm_notebook.setActiveBtn(mainForm.frm_notebook.getBtnDocsTab(), mainForm.frm_notebook.getTbpnlTabs());
             mainForm.frm_notebook.displaySavedIdeas(mainForm.dbManager_Docs);
+            
+            mainForm.frm_workspace.getTxbDocsTitle().Text = txb_setNoteTitle.Text;
 
-            // Load the notebook form into the content panel
-            mainForm.BringToFront();
+            this.Hide();
+        }
+        private void btn_fileSave_Click(object sender, EventArgs e)
+        {
+            string filePath = "";
+
+            using (SaveFileDialog saveFileDialog1 = new SaveFileDialog())
+            {
+                saveFileDialog1.InitialDirectory = @"Documents";
+                saveFileDialog1.FileName = txb_setNoteTitle.Text;
+                saveFileDialog1.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+                DialogResult result = saveFileDialog1.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    filePath = saveFileDialog1.FileName;
+                    Console.WriteLine("Selected file: " + filePath);
+                }
+            } 
+
+            if (filePath != "")
+            {
+                DatabaseManager.SaveStringAsTextFile(filePath, saver_obj.Content);
+            }
             this.Hide();
         }
 
-        private void btn_fileSave_Click(object sender, EventArgs e)
+        private void btn_cancel_Click_1(object sender, EventArgs e)
         {
-
+            Hide();
         }
     }
 }

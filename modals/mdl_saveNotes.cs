@@ -48,6 +48,7 @@ namespace IdeasAi.modals
 
             mainForm.loadForm(mainForm.frm_notebook,mainForm.getPnlContent());
             mainForm.setActiveBtn(mainForm.getBtnNotebook(), mainForm.getPnlPageTabs());
+            mainForm.frm_notebook.setActiveBtn(mainForm.frm_notebook.getBtnNotesTab(), mainForm.frm_notebook.getTbpnlTabs());
             mainForm.frm_notebook.displaySavedIdeas(mainForm.dbManager_Note);
 
             // Load the notebook form into the content panel

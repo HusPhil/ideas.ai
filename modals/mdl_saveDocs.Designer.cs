@@ -40,8 +40,8 @@
             this.btn_fileSave = new System.Windows.Forms.Button();
             this.lbl_noteTitle = new System.Windows.Forms.Label();
             this.lbl_title = new System.Windows.Forms.Label();
-            this.tmr_animation = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tmr_animation = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -77,6 +77,7 @@
             this.btn_cancel.TabIndex = 15;
             this.btn_cancel.Text = "Cancel";
             this.btn_cancel.UseVisualStyleBackColor = false;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click_1);
             // 
             // panel6
             // 
@@ -175,12 +176,6 @@
             this.lbl_title.Text = "Do you want to save this in your notebook?";
             this.lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tmr_animation
-            // 
-            this.tmr_animation.Enabled = true;
-            this.tmr_animation.Interval = 1;
-            this.tmr_animation.Tick += new System.EventHandler(this.tmr_animation_Tick);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -190,6 +185,11 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(593, 60);
             this.panel1.TabIndex = 4;
+            // 
+            // tmr_animation
+            // 
+            this.tmr_animation.Enabled = true;
+            this.tmr_animation.Interval = 1;
             // 
             // mdl_saveDocs
             // 
@@ -222,11 +222,12 @@
         private System.Windows.Forms.Button btn_fileSave;
         private System.Windows.Forms.Label lbl_noteTitle;
         private System.Windows.Forms.Label lbl_title;
-        private System.Windows.Forms.Timer tmr_animation;
+        //private System.Windows.Forms.Timer tmr_animation;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button btn_notebookSave;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Timer tmr_animation;
     }
 }

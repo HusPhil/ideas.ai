@@ -45,7 +45,7 @@ namespace IdeasAi.pages
             this.pnl_container.Location = new System.Drawing.Point(20, 86);
             this.pnl_container.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_container.Name = "pnl_container";
-            this.pnl_container.Size = new System.Drawing.Size(1052, 440);
+            this.pnl_container.Size = new System.Drawing.Size(890, 510);
             this.pnl_container.TabIndex = 0;
             // 
             // pnl_tabSelect
@@ -56,7 +56,7 @@ namespace IdeasAi.pages
             this.pnl_tabSelect.Location = new System.Drawing.Point(20, 20);
             this.pnl_tabSelect.Name = "pnl_tabSelect";
             this.pnl_tabSelect.Padding = new System.Windows.Forms.Padding(10);
-            this.pnl_tabSelect.Size = new System.Drawing.Size(1052, 66);
+            this.pnl_tabSelect.Size = new System.Drawing.Size(890, 66);
             this.pnl_tabSelect.TabIndex = 1;
             // 
             // tbpnl_tabs
@@ -72,7 +72,7 @@ namespace IdeasAi.pages
             this.tbpnl_tabs.RowCount = 1;
             this.tbpnl_tabs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tbpnl_tabs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tbpnl_tabs.Size = new System.Drawing.Size(1032, 46);
+            this.tbpnl_tabs.Size = new System.Drawing.Size(870, 46);
             this.tbpnl_tabs.TabIndex = 3;
             // 
             // btn_docsTab
@@ -85,7 +85,7 @@ namespace IdeasAi.pages
             this.btn_docsTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_docsTab.Font = new System.Drawing.Font("Cascadia Code Light", 9.5F);
             this.btn_docsTab.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_docsTab.Location = new System.Drawing.Point(697, 3);
+            this.btn_docsTab.Location = new System.Drawing.Point(576, 3);
             this.btn_docsTab.Name = "btn_docsTab";
             this.btn_docsTab.Size = new System.Drawing.Size(153, 40);
             this.btn_docsTab.TabIndex = 4;
@@ -103,7 +103,7 @@ namespace IdeasAi.pages
             this.btn_notesTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_notesTab.Font = new System.Drawing.Font("Cascadia Code Light", 9.5F);
             this.btn_notesTab.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_notesTab.Location = new System.Drawing.Point(181, 3);
+            this.btn_notesTab.Location = new System.Drawing.Point(141, 3);
             this.btn_notesTab.Name = "btn_notesTab";
             this.btn_notesTab.Size = new System.Drawing.Size(153, 40);
             this.btn_notesTab.TabIndex = 3;
@@ -114,7 +114,7 @@ namespace IdeasAi.pages
             // frm_notebook
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(1092, 546);
+            this.ClientSize = new System.Drawing.Size(930, 616);
             this.ControlBox = false;
             this.Controls.Add(this.pnl_container);
             this.Controls.Add(this.pnl_tabSelect);
@@ -225,7 +225,7 @@ namespace IdeasAi.pages
 
         }
 
-        private void setActiveBtn(object btn, TableLayoutPanel pnl)
+        public void setActiveBtn(object btn, TableLayoutPanel pnl)
         {
             if ((Button)btn != btn_activeTab)
             {
@@ -291,6 +291,10 @@ namespace IdeasAi.pages
         }
 
         //GETTERS
+        public ref TableLayoutPanel getTbpnlTabs()
+        {
+            return ref tbpnl_tabs;
+        }
         public ref Button getBtnNotesTab()
         {
             return ref btn_notesTab;

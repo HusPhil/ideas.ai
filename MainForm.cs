@@ -35,17 +35,19 @@ namespace IdeasAi
 
         public MainForm()
         {
+
             InitializeComponent();
             frm_home = new frm_home(this);
             frm_notebook =  new frm_notebook(this);
             frm_settings = new frm_settings(this);
-            frm_workspace = new frm_workspace(this);
             frm_mindmap = new frm_mindmap(this);
+            frm_workspace = new frm_workspace(this);
 
             mdl_save = new mdl_saveNotes(this);
             mdl_saveDocs = new mdl_saveDocs(this);
             mdl_editNotes = new mdl_editNotes(this);
             mdl_setter = new ModalSetter(this);
+            //modalManager = new ModalManager(this);
 
             setActiveBtn((object)this.btn_home, pnl_pageTabs);
             loadForm(frm_home, pnl_content);
@@ -128,7 +130,7 @@ namespace IdeasAi
             setActiveBtn(sender, pnl_pageTabs);
             loadForm(frm_settings, pnl_content);
 
-            mdl_setter.OpenModal(this, typeof(mdl_saveDocs), this);
+            //mdl_setter.OpenModal(this, typeof(mdl_saveDocs), this);
         }
 
         private void btn_notebook_Click(object sender, EventArgs e)

@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -27,8 +28,9 @@ namespace IdeasAi.pages
         MainForm mainForm;
         public frm_workspace(MainForm mainForm)
         {
-            this.mainForm = mainForm;
             InitializeComponent();
+            this.mainForm = mainForm;
+            id_holder = Guid.NewGuid();
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -89,7 +91,31 @@ namespace IdeasAi.pages
 
         private void btn_openFile_Click(object sender, EventArgs e)
         {
+            using (OpenFileDialog openFileDialog1 = new OpenFileDialog())
+            {
+                // Set initial directory (optional)
+                openFileDialog1.InitialDirectory = @"C:\";
 
+                // Set the file dialog filter
+                openFileDialog1.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+
+                // Allow multiple files to be selected (optional)
+                openFileDialog1.Multiselect = false;
+
+                // Show the dialog and capture the result
+                DialogResult result = openFileDialog1.ShowDialog();
+
+                // Check if the user clicked OK
+                if (result == DialogResult.OK)
+                {
+                    // Get the selected file path
+                    string filePath = openFileDialog1.FileName;
+                    txb_textEditor.Text = File.ReadAllText(filePath);
+                    txb_docsTitle.Text = Path.GetFileNameWithoutExtension(filePath);
+
+                    // Now you can do something with the selected file path
+                }
+            }
         }
 
         private async void btn_createMindmap_Click(object sender, EventArgs e)
