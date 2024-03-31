@@ -55,9 +55,9 @@
             this.pnl_viewerSide.Controls.Add(this.pnl_mindmapViewer);
             this.pnl_viewerSide.Controls.Add(this.pnl_viewSettings);
             this.pnl_viewerSide.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_viewerSide.Location = new System.Drawing.Point(20, 0);
+            this.pnl_viewerSide.Location = new System.Drawing.Point(318, 25);
             this.pnl_viewerSide.Name = "pnl_viewerSide";
-            this.pnl_viewerSide.Size = new System.Drawing.Size(910, 616);
+            this.pnl_viewerSide.Size = new System.Drawing.Size(587, 566);
             this.pnl_viewerSide.TabIndex = 3;
             // 
             // pnl_mindmapViewer
@@ -67,7 +67,7 @@
             this.pnl_mindmapViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_mindmapViewer.Location = new System.Drawing.Point(0, 0);
             this.pnl_mindmapViewer.Name = "pnl_mindmapViewer";
-            this.pnl_mindmapViewer.Size = new System.Drawing.Size(910, 557);
+            this.pnl_mindmapViewer.Size = new System.Drawing.Size(587, 507);
             this.pnl_mindmapViewer.TabIndex = 2;
             // 
             // pbx_mindmap
@@ -90,9 +90,9 @@
             this.pnl_viewSettings.Controls.Add(this.btn_zoomIn);
             this.pnl_viewSettings.Controls.Add(this.btn_zoomOut);
             this.pnl_viewSettings.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnl_viewSettings.Location = new System.Drawing.Point(0, 557);
+            this.pnl_viewSettings.Location = new System.Drawing.Point(0, 507);
             this.pnl_viewSettings.Name = "pnl_viewSettings";
-            this.pnl_viewSettings.Size = new System.Drawing.Size(910, 59);
+            this.pnl_viewSettings.Size = new System.Drawing.Size(587, 59);
             this.pnl_viewSettings.TabIndex = 1;
             // 
             // lbl_errorIndicator
@@ -154,27 +154,26 @@
             this.pnl_inputSide.Controls.Add(this.txb_markdownInput);
             this.pnl_inputSide.Controls.Add(this.btn_generateMindmap);
             this.pnl_inputSide.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnl_inputSide.Location = new System.Drawing.Point(0, 0);
+            this.pnl_inputSide.Location = new System.Drawing.Point(25, 25);
             this.pnl_inputSide.Name = "pnl_inputSide";
-            this.pnl_inputSide.Padding = new System.Windows.Forms.Padding(10);
-            this.pnl_inputSide.Size = new System.Drawing.Size(10, 616);
+            this.pnl_inputSide.Size = new System.Drawing.Size(283, 566);
             this.pnl_inputSide.TabIndex = 4;
             // 
             // txb_markdownInput
             // 
             this.txb_markdownInput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txb_markdownInput.Location = new System.Drawing.Point(10, 10);
+            this.txb_markdownInput.Location = new System.Drawing.Point(0, 0);
             this.txb_markdownInput.Name = "txb_markdownInput";
-            this.txb_markdownInput.Size = new System.Drawing.Size(0, 563);
+            this.txb_markdownInput.Size = new System.Drawing.Size(283, 533);
             this.txb_markdownInput.TabIndex = 0;
             this.txb_markdownInput.Text = "";
             // 
             // btn_generateMindmap
             // 
             this.btn_generateMindmap.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btn_generateMindmap.Location = new System.Drawing.Point(10, 573);
+            this.btn_generateMindmap.Location = new System.Drawing.Point(0, 533);
             this.btn_generateMindmap.Name = "btn_generateMindmap";
-            this.btn_generateMindmap.Size = new System.Drawing.Size(0, 33);
+            this.btn_generateMindmap.Size = new System.Drawing.Size(283, 33);
             this.btn_generateMindmap.TabIndex = 2;
             this.btn_generateMindmap.Text = "Generate";
             this.btn_generateMindmap.UseVisualStyleBackColor = true;
@@ -182,10 +181,10 @@
             // 
             // spl_mindmap
             // 
-            this.spl_mindmap.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.spl_mindmap.Location = new System.Drawing.Point(10, 0);
+            this.spl_mindmap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
+            this.spl_mindmap.Location = new System.Drawing.Point(308, 25);
             this.spl_mindmap.Name = "spl_mindmap";
-            this.spl_mindmap.Size = new System.Drawing.Size(10, 616);
+            this.spl_mindmap.Size = new System.Drawing.Size(10, 566);
             this.spl_mindmap.TabIndex = 6;
             this.spl_mindmap.TabStop = false;
             // 
@@ -193,6 +192,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(930, 616);
             this.ControlBox = false;
             this.Controls.Add(this.pnl_viewerSide);
@@ -200,6 +200,7 @@
             this.Controls.Add(this.pnl_inputSide);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_mindmap";
+            this.Padding = new System.Windows.Forms.Padding(25);
             this.Text = "frm_mindmap";
             this.Load += new System.EventHandler(this.frm_mindmap_Load);
             this.pnl_viewerSide.ResumeLayout(false);

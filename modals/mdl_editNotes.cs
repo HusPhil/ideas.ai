@@ -8,6 +8,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows.Forms;
 
 namespace IdeasAi.modals
@@ -18,6 +19,7 @@ namespace IdeasAi.modals
         public MainForm mainForm;
         public Guid obj_id;
         public string current_title;
+        private string oldTitle;
         public mdl_editNotes(MainForm _mainForm)
         {
             this.mainForm = _mainForm;
@@ -27,6 +29,7 @@ namespace IdeasAi.modals
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
             txb_setNoteTitle.Text = mainForm.frm_notebook.current_title;
+            oldTitle = txb_setNoteTitle.Text;
             var ownerForm = mainForm;
             this.Location = ModalSetter.CenterLocation(ownerForm.Width, ownerForm.Height, this.Width, this.Height, ownerForm.Location.X, ownerForm.Location.Y);
         }
@@ -49,7 +52,15 @@ namespace IdeasAi.modals
         }
         private void btn_save_Click(object sender, EventArgs e)
         {
+            
+
             mainForm.dbManager_Note.modifyField(mainForm.frm_notebook.current_id, "Title", txb_setNoteTitle.Text);
+
+            if (!txb_setNoteTitle.Text.Equals(oldTitle))
+            {
+                mainForm.dbManager_Note.modifyField(mainForm.frm_notebook.current_id, "Date_modified", DateTime.Now);
+            }
+            
             mainForm.frm_notebook.displaySavedIdeas(mainForm.dbManager_Note);
             mainForm.Focus();
 

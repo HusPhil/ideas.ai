@@ -195,7 +195,7 @@ namespace IdeasAi.pages
                 btn_view.Size = new Size(BtnSize, pnl_btns.Height - 8) ;
 
                 Label dateLabel = new Label();
-                dateLabel.Text = $"Date Created: {idea.DateCreated.Date.ToString("yyyy-MM-dd")}";
+                dateLabel.Text = $"Date Modified: {idea.DateCreated.Date.ToString("yyyy-MM-dd")}";
                 dateLabel.Dock = DockStyle.Bottom;
                 dateLabel.TextAlign = ContentAlignment.MiddleCenter;
                 dateLabel.Location = new Point(10, 50); // Adjust location as needed

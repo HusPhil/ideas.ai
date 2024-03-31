@@ -65,6 +65,7 @@ namespace IdeasAi.modals
             {
                 mainForm.dbManager_Docs.modifyField(saver_obj.UUID, "Content", saver_obj.Content);
                 mainForm.dbManager_Docs.modifyField(saver_obj.UUID, "Title", txb_setNoteTitle.Text);
+                mainForm.dbManager_Docs.modifyField(saver_obj.UUID, "Date_modified", DateTime.Now);
                 Console.WriteLine("already exist");
             }
             

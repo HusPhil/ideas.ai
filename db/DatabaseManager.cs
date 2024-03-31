@@ -109,7 +109,7 @@ namespace IdeasAi.db
             {
                 connection.Open();
 
-                string query = $"SELECT ID, Title, Input, Content, Date_created FROM {this.table}";
+                string query = $"SELECT ID, Title, Input, Content, Date_modified FROM {this.table} ORDER BY Date_modified DESC";
                 using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {
                     using (SQLiteDataReader reader = command.ExecuteReader())
@@ -122,7 +122,7 @@ namespace IdeasAi.db
                                 Title = reader["Title"].ToString(),
                                 Input = reader["Input"].ToString(),
                                 Content = reader["Content"].ToString(),
-                                DateCreated = DateTime.Parse(reader["Date_created"].ToString())
+                                DateCreated = DateTime.Parse(reader["Date_modified"].ToString())
                             };
                             ideas.Add(idea);
                         }

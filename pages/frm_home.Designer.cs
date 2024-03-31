@@ -129,6 +129,7 @@
             this.Name = "frm_home";
             this.Padding = new System.Windows.Forms.Padding(25);
             this.Text = "frm_home";
+            this.Load += new System.EventHandler(this.frm_home_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

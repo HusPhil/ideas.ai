@@ -38,13 +38,13 @@
             this.pnl_textEditor = new System.Windows.Forms.Panel();
             this.txb_textEditor = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.pln_splitCont = new System.Windows.Forms.Panel();
+            this.splitter2 = new System.Windows.Forms.Splitter();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnl_quickSearch = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.pnl_quickSearchRes = new System.Windows.Forms.Panel();
             this.wb_quickSearchRes = new System.Windows.Forms.WebBrowser();
-            this.splitter2 = new System.Windows.Forms.Splitter();
             this.pnl_btns.SuspendLayout();
             this.pnl_textEditor.SuspendLayout();
             this.pln_splitCont.SuspendLayout();
@@ -149,7 +149,7 @@
             this.pnl_textEditor.Location = new System.Drawing.Point(0, 0);
             this.pnl_textEditor.Name = "pnl_textEditor";
             this.pnl_textEditor.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.pnl_textEditor.Size = new System.Drawing.Size(418, 517);
+            this.pnl_textEditor.Size = new System.Drawing.Size(602, 517);
             this.pnl_textEditor.TabIndex = 10;
             // 
             // txb_textEditor
@@ -161,7 +161,7 @@
             this.txb_textEditor.Name = "txb_textEditor";
             this.txb_textEditor.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txb_textEditor.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txb_textEditor.Size = new System.Drawing.Size(418, 507);
+            this.txb_textEditor.Size = new System.Drawing.Size(602, 507);
             this.txb_textEditor.StateCommon.Content.Font = new System.Drawing.Font("Courier New", 11.5F);
             this.txb_textEditor.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 10, 0, 10);
             this.txb_textEditor.StateNormal.Content.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -181,6 +181,15 @@
             this.pln_splitCont.Size = new System.Drawing.Size(880, 517);
             this.pln_splitCont.TabIndex = 0;
             // 
+            // splitter2
+            // 
+            this.splitter2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.splitter2.Location = new System.Drawing.Point(602, 0);
+            this.splitter2.Name = "splitter2";
+            this.splitter2.Size = new System.Drawing.Size(10, 517);
+            this.splitter2.TabIndex = 12;
+            this.splitter2.TabStop = false;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
@@ -188,9 +197,9 @@
             this.panel1.Controls.Add(this.pnl_quickSearchRes);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(428, 0);
+            this.panel1.Location = new System.Drawing.Point(612, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(452, 517);
+            this.panel1.Size = new System.Drawing.Size(268, 517);
             this.panel1.TabIndex = 11;
             // 
             // pnl_quickSearch
@@ -202,7 +211,7 @@
             this.pnl_quickSearch.Location = new System.Drawing.Point(0, 0);
             this.pnl_quickSearch.Name = "pnl_quickSearch";
             this.pnl_quickSearch.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.pnl_quickSearch.Size = new System.Drawing.Size(452, 40);
+            this.pnl_quickSearch.Size = new System.Drawing.Size(268, 40);
             this.pnl_quickSearch.TabIndex = 1;
             // 
             // textBox1
@@ -213,14 +222,14 @@
             this.textBox1.Location = new System.Drawing.Point(0, 5);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(377, 30);
+            this.textBox1.Size = new System.Drawing.Size(193, 30);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "Quick search";
             // 
             // button1
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.Location = new System.Drawing.Point(377, 5);
+            this.button1.Location = new System.Drawing.Point(193, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 30);
             this.button1.TabIndex = 0;
@@ -235,7 +244,7 @@
             this.pnl_quickSearchRes.Location = new System.Drawing.Point(0, 0);
             this.pnl_quickSearchRes.Name = "pnl_quickSearchRes";
             this.pnl_quickSearchRes.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.pnl_quickSearchRes.Size = new System.Drawing.Size(452, 517);
+            this.pnl_quickSearchRes.Size = new System.Drawing.Size(268, 517);
             this.pnl_quickSearchRes.TabIndex = 2;
             // 
             // wb_quickSearchRes
@@ -244,17 +253,8 @@
             this.wb_quickSearchRes.Location = new System.Drawing.Point(0, 0);
             this.wb_quickSearchRes.MinimumSize = new System.Drawing.Size(20, 20);
             this.wb_quickSearchRes.Name = "wb_quickSearchRes";
-            this.wb_quickSearchRes.Size = new System.Drawing.Size(452, 512);
+            this.wb_quickSearchRes.Size = new System.Drawing.Size(268, 512);
             this.wb_quickSearchRes.TabIndex = 0;
-            // 
-            // splitter2
-            // 
-            this.splitter2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.splitter2.Location = new System.Drawing.Point(418, 0);
-            this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(10, 517);
-            this.splitter2.TabIndex = 12;
-            this.splitter2.TabStop = false;
             // 
             // frm_workspace
             // 
