@@ -30,6 +30,16 @@ namespace IdeasAi.pages
             cb_viewSelector.SelectedIndex = 0;
             pbx_mindmap.Image = null;
 
+            this.txb_markdownInput.Text = "@startmindmap\n" +
+                "* Main Topic\n" +
+                "** Subtopic 1\n" +
+                "*** Details 1.1\n" +
+                "*** Details 1.2\n" +
+                "** Subtopic 2\n" +
+                "*** Details 2.1\n" +
+                "**** Additional Details 2.1.1\n" +
+                "@endmindmap";
+            generateMindmap(txb_markdownInput.Text);
         }
 
         public async Task<Image> markdownToMindmap(string markdown)

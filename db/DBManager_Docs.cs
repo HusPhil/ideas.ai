@@ -18,14 +18,14 @@ namespace IdeasAi.db
             {
                 connection.Open();
 
-                string query = $"INSERT INTO {this.table} (Id, Title, Input, Content, Date_created) VALUES (@Id, @Title, @Input, @Content, @Date_created)";
+                string query = $"INSERT INTO {this.table} (Id, Title, Input, Content, Date_modified) VALUES (@Id, @Title, @Input, @Content, @Date_modified)";
                 using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Id", obj.UUID);
                     command.Parameters.AddWithValue("@Title", obj.Title);
                     command.Parameters.AddWithValue("@Input", obj.Input);
                     command.Parameters.AddWithValue("@Content", obj.Content);
-                    command.Parameters.AddWithValue("@Date_created", obj.DateCreated);
+                    command.Parameters.AddWithValue("@Date_modified", obj.DateCreated);
 
                     command.ExecuteNonQuery();
                 }

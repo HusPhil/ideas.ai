@@ -60,6 +60,10 @@ namespace IdeasAi.modals
             if (!mainForm.dbManager_Docs.recordExist(saver_obj.UUID))
             {
                 mainForm.dbManager_Docs.saveObject(saver_obj);
+                mainForm.loadForm(mainForm.frm_notebook, mainForm.getPnlContent());
+                mainForm.setActiveBtn(mainForm.getBtnNotebook(), mainForm.getPnlPageTabs());
+                mainForm.frm_notebook.setActiveBtn(mainForm.frm_notebook.getBtnDocsTab(), mainForm.frm_notebook.getTbpnlTabs());
+                mainForm.frm_notebook.displaySavedIdeas(mainForm.dbManager_Docs);
             }
             else
             {
@@ -68,14 +72,7 @@ namespace IdeasAi.modals
                 mainForm.dbManager_Docs.modifyField(saver_obj.UUID, "Date_modified", DateTime.Now);
                 Console.WriteLine("already exist");
             }
-            
 
-
-            mainForm.loadForm(mainForm.frm_notebook, mainForm.getPnlContent());
-            mainForm.setActiveBtn(mainForm.getBtnNotebook(), mainForm.getPnlPageTabs());
-            mainForm.frm_notebook.setActiveBtn(mainForm.frm_notebook.getBtnDocsTab(), mainForm.frm_notebook.getTbpnlTabs());
-            mainForm.frm_notebook.displaySavedIdeas(mainForm.dbManager_Docs);
-            
             mainForm.frm_workspace.getTxbDocsTitle().Text = txb_setNoteTitle.Text;
 
             this.Hide();
