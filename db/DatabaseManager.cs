@@ -28,8 +28,78 @@ namespace IdeasAi.db
             }
         }
 
-        public abstract void SaveObject(DBObjectManager obj);
+        //STATIC METHODS
+        public static string OpenTextFile(string filePath)
+        {
+            try
+            {
+                // Check if the file exists
+                if (File.Exists(filePath))
+                {
+                    // Read all text from the file and return it
+                    using (StreamReader reader = new StreamReader(filePath))
+                    {
+                        return reader.ReadToEnd();
+                    }
+                }
+                else
+                {
+                    // File doesn't exist
+                    Console.WriteLine("The specified file does not exist.");
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Exception occurred while reading the file
+                Console.WriteLine($"An error occurred while reading the file: {ex.Message}");
+                return null;
+            }
+        }
+        public static bool SaveStringAsTextFile(string filePath, string content)
+        {
+            try
+            {
+                // Write the content to the specified file path
+                using (StreamWriter writer = new StreamWriter(filePath))
+                {
+                    writer.Write(content);
+                }
+                return true; // File saved successfully
+            }
+            catch (Exception ex)
+            {
+                // Exception occurred while writing to the file
+                Console.WriteLine($"An error occurred while saving the file: {ex.Message}");
+                return false; // File saving failed
+            }
+        }
+        //
+        //
+        public bool recordExist(Guid id)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection($"Data Source={dbFilePath};Version=3;"))
+            {
+                connection.Open();
 
+                string query = $"SELECT ID FROM {this.table}";
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                {
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            if (Guid.Parse(reader["ID"].ToString()).Equals(id))
+                            {
+                                return true;
+                            }
+                        }
+                    }
+                }
+                return false;
+            }
+        }
+        public abstract void saveObject(DBObjectManager obj);
         public List<DBObjectManager> retrieveDBRecords()
         {
             List<DBObjectManager> ideas = new List<DBObjectManager>();
@@ -39,7 +109,7 @@ namespace IdeasAi.db
             {
                 connection.Open();
 
-                string query = $"SELECT ID, Title, Input, Content, Date_created FROM {this.table}";
+                string query = $"SELECT ID, Title, Input, Content, Date_modified FROM {this.table} ORDER BY Date_modified DESC";
                 using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {
                     using (SQLiteDataReader reader = command.ExecuteReader())
@@ -52,7 +122,7 @@ namespace IdeasAi.db
                                 Title = reader["Title"].ToString(),
                                 Input = reader["Input"].ToString(),
                                 Content = reader["Content"].ToString(),
-                                DateCreated = DateTime.Parse(reader["Date_created"].ToString())
+                                DateCreated = DateTime.Parse(reader["Date_modified"].ToString())
                             };
                             ideas.Add(idea);
                         }
@@ -109,5 +179,6 @@ namespace IdeasAi.db
                 }
             }
         }
+        
     }
 }

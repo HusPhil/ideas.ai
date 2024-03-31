@@ -192,6 +192,11 @@ namespace IdeasAi.PageForms
         {
             return ref btn_save;
         }
+
+        private void frm_home_Load(object sender, EventArgs e)
+        {
+
+        }
     }
     
 }
