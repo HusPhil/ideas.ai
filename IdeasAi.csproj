@@ -155,7 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ai_responses\Mindmap.cs" />
-    <Compile Include="ai_responses\OrganizedIdea.cs" />
+    <Compile Include="ai_responses\IdeaOrganizer.cs" />
     <Compile Include="db\DatabaseManager.cs" />
     <Compile Include="db\DBManager_Docs.cs" />
     <Compile Include="db\DBManager_Note.cs" />
@@ -170,11 +170,17 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="modals\mdl_editNotes.cs">
+    <Compile Include="modals\mdl_DocsOptions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="modals\mdl_editNotes.Designer.cs">
-      <DependentUpon>mdl_editNotes.cs</DependentUpon>
+    <Compile Include="modals\mdl_DocsOptions.Designer.cs">
+      <DependentUpon>mdl_DocsOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modals\mdl_NotesOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modals\mdl_NotesOptions.Designer.cs">
+      <DependentUpon>mdl_NotesOptions.cs</DependentUpon>
     </Compile>
     <Compile Include="modals\mdl_saveNotes.cs">
       <SubType>Form</SubType>
@@ -218,8 +224,11 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="modals\mdl_editNotes.resx">
-      <DependentUpon>mdl_editNotes.cs</DependentUpon>
+    <EmbeddedResource Include="modals\mdl_DocsOptions.resx">
+      <DependentUpon>mdl_DocsOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modals\mdl_NotesOptions.resx">
+      <DependentUpon>mdl_NotesOptions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modals\mdl_saveNotes.resx">
       <DependentUpon>mdl_saveNotes.cs</DependentUpon>

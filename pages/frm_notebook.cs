@@ -153,7 +153,17 @@ namespace IdeasAi.pages
 
                 Button btn_edit = new Button();
                 btn_edit.Image = global::IdeasAi.Properties.Resources.more;
-                btn_edit.Click += (sender, e) => btn_showMore_click(idea.Title, idea.UUID);
+
+
+                if (db.GetType().Equals(typeof(DBManager_Note)))
+                {
+                    btn_edit.Click += (sender, e) => btn_showMoreNotes_click(idea.Title, idea.UUID);
+                }
+                else if (db.GetType().Equals(typeof(DBManager_Docs)))
+                {
+                    btn_edit.Click += (sender, e) => btn_showMoreDocs_click(idea.Title, idea.UUID);
+                }
+
                 btn_edit.BackColor = Color.Transparent;
                 btn_edit.AutoSize = false;
                 btn_edit.Size = new Size(32, 32);
@@ -246,11 +256,19 @@ namespace IdeasAi.pages
                 }
             }
         }
-        private void btn_showMore_click(string current_title, Guid current_id)
+        private void btn_showMoreNotes_click(string current_title, Guid current_id)
         {
             this.current_title = current_title;
             this.current_id = current_id;
-            mainForm.mdl_setter.OpenModal(this, typeof(mdl_editNotes), mainForm);
+            mainForm.mdl_setter.OpenModal(this, typeof(mdl_NotesOptions), mainForm);
+
+        }
+        private void btn_showMoreDocs_click(string current_title, Guid current_id)
+        {
+            this.current_title = current_title;
+            this.current_id = current_id;
+            mainForm.mdl_setter.OpenModal(this, typeof(mdl_DocsOptions), mainForm);
+
         }
         private void displayNote_click(DBObjectManager dom, DatabaseManager db)
         {
@@ -266,7 +284,7 @@ namespace IdeasAi.pages
             {
                 mainForm.loadForm(mainForm.frm_workspace, mainForm.getPnlContent());
                 mainForm.setActiveBtn(mainForm.getBtnWorkspace(), mainForm.getPnlPageTabs());
-                mainForm.frm_workspace.id_holder = dom.UUID;
+                mainForm.frm_workspace.getSaverObj().UUID = dom.UUID;
                 mainForm.frm_workspace.getTxbEditor().Text = dom.Content;
                 mainForm.frm_workspace.getTxbDocsTitle().Text = dom.Title; 
 

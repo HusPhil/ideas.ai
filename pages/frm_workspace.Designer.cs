@@ -70,6 +70,8 @@
             this.txb_docsTitle.TabIndex = 4;
             this.txb_docsTitle.Text = "Untitled 1";
             this.txb_docsTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txb_docsTitle.TextChanged += new System.EventHandler(this.txb_textEditor_TextChanged);
+            this.txb_docsTitle.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_textEditor_KeyDown);
             // 
             // pnl_btns
             // 
@@ -168,6 +170,8 @@
             this.txb_textEditor.StateNormal.Content.Padding = new System.Windows.Forms.Padding(5);
             this.txb_textEditor.TabIndex = 5;
             this.txb_textEditor.Text = "Type your ideas..";
+            this.txb_textEditor.TextChanged += new System.EventHandler(this.txb_textEditor_TextChanged);
+            this.txb_textEditor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_textEditor_KeyDown);
             // 
             // pln_splitCont
             // 

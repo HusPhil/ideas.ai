@@ -22,7 +22,7 @@ namespace IdeasAi
         //
         public mdl_saveNotes mdl_save;
         public mdl_saveDocs mdl_saveDocs;
-        public mdl_editNotes mdl_editNotes;
+        public mdl_NotesOptions mdl_editNotes;
         public ModalSetter mdl_setter;
 
         public DBManager_Note dbManager_Note = new DBManager_Note();
@@ -45,7 +45,7 @@ namespace IdeasAi
 
             mdl_save = new mdl_saveNotes(this);
             mdl_saveDocs = new mdl_saveDocs(this);
-            mdl_editNotes = new mdl_editNotes(this);
+            mdl_editNotes = new mdl_NotesOptions(this);
             mdl_setter = new ModalSetter(this);
             //modalManager = new ModalManager(this);
 

@@ -1,6 +1,6 @@
 ﻿namespace IdeasAi.modals
 {
-    partial class mdl_editNotes
+    partial class mdl_DocsOptions
     {
         /// <summary>
         /// Required designer variable.
@@ -75,7 +75,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(62);
             this.panel2.Size = new System.Drawing.Size(593, 322);
-            this.panel2.TabIndex = 5;
+            this.panel2.TabIndex = 7;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // btn_save
@@ -117,6 +117,9 @@
             // 
             // txb_setNoteTitle
             // 
+            this.txb_setNoteTitle.AcceptsReturn = true;
+            this.txb_setNoteTitle.AcceptsTab = true;
+            this.txb_setNoteTitle.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.txb_setNoteTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.txb_setNoteTitle.Location = new System.Drawing.Point(62, 89);
             this.txb_setNoteTitle.Multiline = true;
@@ -126,6 +129,7 @@
             this.txb_setNoteTitle.StateActive.Content.Padding = new System.Windows.Forms.Padding(8, 2, 2, 2);
             this.txb_setNoteTitle.TabIndex = 10;
             this.txb_setNoteTitle.Text = "My Title";
+            this.txb_setNoteTitle.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_setNoteTitle_KeyDown);
             // 
             // panel3
             // 
@@ -144,9 +148,9 @@
             this.lbl_noteTitle.Location = new System.Drawing.Point(62, 62);
             this.lbl_noteTitle.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.lbl_noteTitle.Name = "lbl_noteTitle";
-            this.lbl_noteTitle.Size = new System.Drawing.Size(56, 17);
+            this.lbl_noteTitle.Size = new System.Drawing.Size(96, 17);
             this.lbl_noteTitle.TabIndex = 3;
-            this.lbl_noteTitle.Text = "Title:";
+            this.lbl_noteTitle.Text = "Docs title:";
             // 
             // panel1
             // 
@@ -156,22 +160,21 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(593, 60);
-            this.panel1.TabIndex = 4;
+            this.panel1.TabIndex = 6;
             // 
-            // mdl_editNotes
+            // mdl_DocsOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(593, 382);
             this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "mdl_editNotes";
+            this.Name = "mdl_DocsOptions";
             this.Opacity = 0D;
             this.ShowInTaskbar = false;
-            this.Text = "mdl_editNotes";
+            this.Text = "mdl_DocsOprions";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -184,12 +187,12 @@
         private System.Windows.Forms.Label lbl_title;
         private System.Windows.Forms.Timer tmr_animation;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btn_delete;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txb_setNoteTitle;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lbl_noteTitle;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn_save;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button btn_delete;
     }
 }

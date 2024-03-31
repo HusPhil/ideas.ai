@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace IdeasAi.ai_responses
 {
-    internal class OrganizedIdea : AI_Response
+    internal class IdeaOrganizer : AI_Response
     {
         public string Title { get; set; }
         public override async Task<string> GetResponse()
