@@ -11,6 +11,9 @@ namespace IdeasAi
 {
     public partial class MainForm : KryptonForm
     {
+        //loading states
+        public const int state_loadMindmap = 1;
+
         // PAGE FORMS
         public frm_home frm_home;
         public frm_workspace frm_workspace;
@@ -20,9 +23,11 @@ namespace IdeasAi
         //
         // MODALS
         //
+        public Form modalBG; 
         public mdl_saveNotes mdl_save;
         public mdl_saveDocs mdl_saveDocs;
-        public mdl_editNotes mdl_editNotes;
+        public mdl_NotesOptions mdl_editNotes;
+        public mdl_loading mdl_loading;
         public ModalSetter mdl_setter;
 
         public DBManager_Note dbManager_Note = new DBManager_Note();
@@ -45,19 +50,33 @@ namespace IdeasAi
 
             mdl_save = new mdl_saveNotes(this);
             mdl_saveDocs = new mdl_saveDocs(this);
-            mdl_editNotes = new mdl_editNotes(this);
+            mdl_editNotes = new mdl_NotesOptions(this);
+            mdl_loading = new mdl_loading(this);
+            modalBG = new Form();
             mdl_setter = new ModalSetter(this);
             //modalManager = new ModalManager(this);
 
             setActiveBtn((object)this.btn_home, pnl_pageTabs);
             loadForm(frm_home, pnl_content);
-
+            
             btn_active = this.btn_home;
             lbl_currentPage.Text = btn_active.Text;
+
         }
 
         
-
+        public void setModalBackground(Form callerForm)
+        {
+            modalBG.Owner = this;
+            modalBG.StartPosition = FormStartPosition.Manual;
+            modalBG.FormBorderStyle = FormBorderStyle.None;
+            modalBG.Opacity = .50d;
+            modalBG.BackColor = Color.Black;
+            modalBG.Size = this.Size;
+            modalBG.Location = callerForm.Owner.Location;
+            modalBG.ShowInTaskbar = false;
+            modalBG.Show();
+        }
         public void loadForm(Form frm, Control container)
         {
             removeForm(frm, container);
@@ -128,7 +147,7 @@ namespace IdeasAi
         {
 
             setActiveBtn(sender, pnl_pageTabs);
-            loadForm(frm_settings, pnl_content);
+            loadForm(mdl_loading, pnl_content);
 
             //mdl_setter.OpenModal(this, typeof(mdl_saveDocs), this);
         }

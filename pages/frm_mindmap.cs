@@ -30,6 +30,16 @@ namespace IdeasAi.pages
             cb_viewSelector.SelectedIndex = 0;
             pbx_mindmap.Image = null;
 
+            this.txb_markdownInput.Text = "@startmindmap\n" +
+                "* Main Topic\n" +
+                "** Subtopic 1\n" +
+                "*** Details 1.1\n" +
+                "*** Details 1.2\n" +
+                "** Subtopic 2\n" +
+                "*** Details 2.1\n" +
+                "**** Additional Details 2.1.1\n" +
+                "@endmindmap";
+            generateMindmap(txb_markdownInput.Text);
         }
 
         public async Task<Image> markdownToMindmap(string markdown)
@@ -202,6 +212,54 @@ namespace IdeasAi.pages
         public ref KryptonRichTextBox getTxbMarkdownInput()
         {
             return ref txb_markdownInput;
+        }
+
+        private void btn_saveAsImage_Click(object sender, EventArgs e)
+        {
+            // Create save file dialog
+            SaveFileDialog saveDialog = new SaveFileDialog();
+            saveDialog.Filter = "JPEG Image|*.jpg|PNG Image|*.png|Bitmap Image|*.bmp";
+            saveDialog.Title = "Save Image";
+            saveDialog.FileName = "image"; // Default filename
+
+            // Show save file dialog and get the result
+            DialogResult result = saveDialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                // Get the filename entered by the user
+                string fileName = saveDialog.FileName;
+
+                // Get the image from the PictureBox
+                Image image = pbx_mindmap.Image;
+
+                if (image != null)
+                {
+                    // Get the file extension from the selected filter
+                    string extension = System.IO.Path.GetExtension(fileName);
+
+                    // Save the image in the selected format
+                    switch (extension.ToLower())
+                    {
+                        case ".jpg":
+                            image.Save(fileName, System.Drawing.Imaging.ImageFormat.Jpeg);
+                            break;
+                        case ".png":
+                            image.Save(fileName, System.Drawing.Imaging.ImageFormat.Png);
+                            break;
+                        case ".bmp":
+                            image.Save(fileName, System.Drawing.Imaging.ImageFormat.Bmp);
+                            break;
+                        default:
+                            MessageBox.Show("Unsupported file format");
+                            break;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No image to save");
+                }
+            }
         }
     }
 }

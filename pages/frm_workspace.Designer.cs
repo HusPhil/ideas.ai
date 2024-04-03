@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_workspace));
             this.txb_docsTitle = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.pnl_btns = new System.Windows.Forms.Panel();
             this.btn_new = new System.Windows.Forms.Button();
@@ -40,17 +41,19 @@
             this.pln_splitCont = new System.Windows.Forms.Panel();
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pnl_quickSearch = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.pnl_quickSearchRes = new System.Windows.Forms.Panel();
-            this.wb_quickSearchRes = new System.Windows.Forms.WebBrowser();
+            this.txb_qsearchRes = new System.Windows.Forms.TextBox();
+            this.pnl_quickSearch = new System.Windows.Forms.Panel();
+            this.txb_QSearch = new System.Windows.Forms.TextBox();
+            this.btn_QSearch = new System.Windows.Forms.Button();
+            this.pbx_loading = new System.Windows.Forms.PictureBox();
             this.pnl_btns.SuspendLayout();
             this.pnl_textEditor.SuspendLayout();
             this.pln_splitCont.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.pnl_quickSearch.SuspendLayout();
             this.pnl_quickSearchRes.SuspendLayout();
+            this.pnl_quickSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_loading)).BeginInit();
             this.SuspendLayout();
             // 
             // txb_docsTitle
@@ -70,10 +73,13 @@
             this.txb_docsTitle.TabIndex = 4;
             this.txb_docsTitle.Text = "Untitled 1";
             this.txb_docsTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txb_docsTitle.TextChanged += new System.EventHandler(this.txb_textEditor_TextChanged);
+            this.txb_docsTitle.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_textEditor_KeyDown);
             // 
             // pnl_btns
             // 
             this.pnl_btns.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
+            this.pnl_btns.Controls.Add(this.pbx_loading);
             this.pnl_btns.Controls.Add(this.btn_new);
             this.pnl_btns.Controls.Add(this.btn_openFile);
             this.pnl_btns.Controls.Add(this.btn_save);
@@ -149,7 +155,7 @@
             this.pnl_textEditor.Location = new System.Drawing.Point(0, 0);
             this.pnl_textEditor.Name = "pnl_textEditor";
             this.pnl_textEditor.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.pnl_textEditor.Size = new System.Drawing.Size(602, 517);
+            this.pnl_textEditor.Size = new System.Drawing.Size(630, 517);
             this.pnl_textEditor.TabIndex = 10;
             // 
             // txb_textEditor
@@ -161,13 +167,16 @@
             this.txb_textEditor.Name = "txb_textEditor";
             this.txb_textEditor.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txb_textEditor.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txb_textEditor.Size = new System.Drawing.Size(602, 507);
+            this.txb_textEditor.Size = new System.Drawing.Size(630, 507);
             this.txb_textEditor.StateCommon.Content.Font = new System.Drawing.Font("Courier New", 11.5F);
             this.txb_textEditor.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 10, 0, 10);
             this.txb_textEditor.StateNormal.Content.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txb_textEditor.StateNormal.Content.Padding = new System.Windows.Forms.Padding(5);
             this.txb_textEditor.TabIndex = 5;
             this.txb_textEditor.Text = "Type your ideas..";
+            this.txb_textEditor.TextChanged += new System.EventHandler(this.txb_textEditor_TextChanged);
+            this.txb_textEditor.Click += new System.EventHandler(this.txb_textEditor_Click);
+            this.txb_textEditor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_textEditor_KeyDown);
             // 
             // pln_splitCont
             // 
@@ -184,7 +193,7 @@
             // splitter2
             // 
             this.splitter2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.splitter2.Location = new System.Drawing.Point(602, 0);
+            this.splitter2.Location = new System.Drawing.Point(630, 0);
             this.splitter2.Name = "splitter2";
             this.splitter2.Size = new System.Drawing.Size(10, 517);
             this.splitter2.TabIndex = 12;
@@ -193,68 +202,86 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Controls.Add(this.pnl_quickSearch);
             this.panel1.Controls.Add(this.pnl_quickSearchRes);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(612, 0);
+            this.panel1.Location = new System.Drawing.Point(640, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(268, 517);
+            this.panel1.Size = new System.Drawing.Size(240, 517);
             this.panel1.TabIndex = 11;
-            // 
-            // pnl_quickSearch
-            // 
-            this.pnl_quickSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
-            this.pnl_quickSearch.Controls.Add(this.textBox1);
-            this.pnl_quickSearch.Controls.Add(this.button1);
-            this.pnl_quickSearch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_quickSearch.Location = new System.Drawing.Point(0, 0);
-            this.pnl_quickSearch.Name = "pnl_quickSearch";
-            this.pnl_quickSearch.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.pnl_quickSearch.Size = new System.Drawing.Size(268, 40);
-            this.pnl_quickSearch.TabIndex = 1;
-            // 
-            // textBox1
-            // 
-            this.textBox1.AcceptsReturn = true;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Font = new System.Drawing.Font("Cascadia Code SemiLight", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(0, 5);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(193, 30);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Quick search";
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.Location = new System.Drawing.Point(193, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 30);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // pnl_quickSearchRes
             // 
             this.pnl_quickSearchRes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
-            this.pnl_quickSearchRes.Controls.Add(this.wb_quickSearchRes);
+            this.pnl_quickSearchRes.Controls.Add(this.txb_qsearchRes);
+            this.pnl_quickSearchRes.Controls.Add(this.pnl_quickSearch);
             this.pnl_quickSearchRes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_quickSearchRes.Location = new System.Drawing.Point(0, 0);
             this.pnl_quickSearchRes.Name = "pnl_quickSearchRes";
             this.pnl_quickSearchRes.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.pnl_quickSearchRes.Size = new System.Drawing.Size(268, 517);
+            this.pnl_quickSearchRes.Size = new System.Drawing.Size(240, 517);
             this.pnl_quickSearchRes.TabIndex = 2;
             // 
-            // wb_quickSearchRes
+            // txb_qsearchRes
             // 
-            this.wb_quickSearchRes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.wb_quickSearchRes.Location = new System.Drawing.Point(0, 0);
-            this.wb_quickSearchRes.MinimumSize = new System.Drawing.Size(20, 20);
-            this.wb_quickSearchRes.Name = "wb_quickSearchRes";
-            this.wb_quickSearchRes.Size = new System.Drawing.Size(268, 512);
-            this.wb_quickSearchRes.TabIndex = 0;
+            this.txb_qsearchRes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txb_qsearchRes.Font = new System.Drawing.Font("Cascadia Code", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txb_qsearchRes.Location = new System.Drawing.Point(0, 40);
+            this.txb_qsearchRes.Multiline = true;
+            this.txb_qsearchRes.Name = "txb_qsearchRes";
+            this.txb_qsearchRes.ReadOnly = true;
+            this.txb_qsearchRes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txb_qsearchRes.Size = new System.Drawing.Size(240, 472);
+            this.txb_qsearchRes.TabIndex = 3;
+            // 
+            // pnl_quickSearch
+            // 
+            this.pnl_quickSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
+            this.pnl_quickSearch.Controls.Add(this.txb_QSearch);
+            this.pnl_quickSearch.Controls.Add(this.btn_QSearch);
+            this.pnl_quickSearch.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_quickSearch.Location = new System.Drawing.Point(0, 0);
+            this.pnl_quickSearch.Name = "pnl_quickSearch";
+            this.pnl_quickSearch.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.pnl_quickSearch.Size = new System.Drawing.Size(240, 40);
+            this.pnl_quickSearch.TabIndex = 2;
+            // 
+            // txb_QSearch
+            // 
+            this.txb_QSearch.AcceptsReturn = true;
+            this.txb_QSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txb_QSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txb_QSearch.Font = new System.Drawing.Font("Cascadia Code SemiLight", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txb_QSearch.ForeColor = System.Drawing.Color.DarkGray;
+            this.txb_QSearch.Location = new System.Drawing.Point(0, 5);
+            this.txb_QSearch.Multiline = true;
+            this.txb_QSearch.Name = "txb_QSearch";
+            this.txb_QSearch.Size = new System.Drawing.Size(165, 30);
+            this.txb_QSearch.TabIndex = 0;
+            this.txb_QSearch.Text = "Quick search";
+            this.txb_QSearch.Click += new System.EventHandler(this.txb_QSearch_Click);
+            // 
+            // btn_QSearch
+            // 
+            this.btn_QSearch.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_QSearch.Location = new System.Drawing.Point(165, 5);
+            this.btn_QSearch.Name = "btn_QSearch";
+            this.btn_QSearch.Size = new System.Drawing.Size(75, 30);
+            this.btn_QSearch.TabIndex = 0;
+            this.btn_QSearch.Text = "Search";
+            this.btn_QSearch.UseVisualStyleBackColor = true;
+            this.btn_QSearch.Click += new System.EventHandler(this.btn_QSearch_Click);
+            // 
+            // pbx_loading
+            // 
+            this.pbx_loading.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbx_loading.Image = ((System.Drawing.Image)(resources.GetObject("pbx_loading.Image")));
+            this.pbx_loading.Location = new System.Drawing.Point(254, 10);
+            this.pbx_loading.Name = "pbx_loading";
+            this.pbx_loading.Size = new System.Drawing.Size(386, 27);
+            this.pbx_loading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbx_loading.TabIndex = 9;
+            this.pbx_loading.TabStop = false;
             // 
             // frm_workspace
             // 
@@ -275,9 +302,11 @@
             this.pnl_textEditor.PerformLayout();
             this.pln_splitCont.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.pnl_quickSearchRes.ResumeLayout(false);
+            this.pnl_quickSearchRes.PerformLayout();
             this.pnl_quickSearch.ResumeLayout(false);
             this.pnl_quickSearch.PerformLayout();
-            this.pnl_quickSearchRes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_loading)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,10 +325,11 @@
         private System.Windows.Forms.Panel pln_splitCont;
         private System.Windows.Forms.Splitter splitter2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel pnl_quickSearch;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel pnl_quickSearchRes;
-        private System.Windows.Forms.WebBrowser wb_quickSearchRes;
+        private System.Windows.Forms.Panel pnl_quickSearch;
+        private System.Windows.Forms.TextBox txb_QSearch;
+        private System.Windows.Forms.Button btn_QSearch;
+        private System.Windows.Forms.TextBox txb_qsearchRes;
+        private System.Windows.Forms.PictureBox pbx_loading;
     }
 }

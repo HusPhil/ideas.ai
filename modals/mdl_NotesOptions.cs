@@ -13,14 +13,14 @@ using System.Windows.Forms;
 
 namespace IdeasAi.modals
 {
-    public partial class mdl_editNotes : Form
+    public partial class mdl_NotesOptions : Form
     {
         int confirm_count = 0;
         public MainForm mainForm;
         public Guid obj_id;
         public string current_title;
         private string oldTitle;
-        public mdl_editNotes(MainForm _mainForm)
+        public mdl_NotesOptions(MainForm _mainForm)
         {
             this.mainForm = _mainForm;
             InitializeComponent();
@@ -33,12 +33,6 @@ namespace IdeasAi.modals
             var ownerForm = mainForm;
             this.Location = ModalSetter.CenterLocation(ownerForm.Width, ownerForm.Height, this.Width, this.Height, ownerForm.Location.X, ownerForm.Location.Y);
         }
-
-        //GETTERS
-        public ref KryptonTextBox getTxbTitle()
-        {
-            return ref txb_setNoteTitle;
-        }
         private void tmr_animation_Tick(object sender, EventArgs e)
         {
             if (Opacity >= 1)
@@ -50,6 +44,7 @@ namespace IdeasAi.modals
                 Opacity += .05;
             }
         }
+
         private void btn_save_Click(object sender, EventArgs e)
         {
             
@@ -65,7 +60,6 @@ namespace IdeasAi.modals
             mainForm.Focus();
 
         }
-
         private void btn_delete_Click(object sender, EventArgs e)
         {
             
@@ -83,6 +77,24 @@ namespace IdeasAi.modals
             }
 
             btn_delete.Text = "Click again to confirm.";
+        }
+        private void txb_setNoteTitle_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Call your save method here
+                btn_save_Click(sender, e);
+
+                // Prevent the default behavior (e.g., beep sound)
+                e.SuppressKeyPress = true;
+                Hide();
+            }
+        }
+
+        //GETTERS
+        public ref KryptonTextBox getTxbTitle()
+        {
+            return ref txb_setNoteTitle;
         }
     }
 }

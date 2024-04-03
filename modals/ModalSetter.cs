@@ -20,6 +20,7 @@ namespace IdeasAi.modals
         {
 
             Form modalBG = new Form();
+
             using (var modal = (Form) Activator.CreateInstance(ModalFormType, args))
             {
                 modalBG.Owner = OwnerForm;

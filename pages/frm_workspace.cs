@@ -1,6 +1,8 @@
 ﻿using ComponentFactory.Krypton.Toolkit;
 using IdeasAi.ai_responses;
+using IdeasAi.db;
 using IdeasAi.modals;
+using IdeasAi.Properties;
 using Markdig;
 using System;
 using System.Collections.Generic;
@@ -19,18 +21,23 @@ namespace IdeasAi.pages
     public partial class frm_workspace : Form
     {
         //GETTERS
-        public Guid id_holder;
-        public string content_holder;
-        public string title_holder;
-        public string input_holder;
-        public DateTime date_holder;
+        //public Guid id_holder;
+        //public string content_holder;
+        //public string title_holder;
+        //public string input_holder;
+        //public DateTime date_holder;
+        private DBObjectManager saver_obj;
         //
         MainForm mainForm;
         public frm_workspace(MainForm mainForm)
         {
             InitializeComponent();
             this.mainForm = mainForm;
-            id_holder = Guid.NewGuid();
+            saver_obj = new DBObjectManager();
+            saver_obj.UUID = Guid.NewGuid();
+            saver_obj.Content = txb_textEditor.Text;
+            saver_obj.Title = txb_docsTitle.Text;
+            pbx_loading.Image = null;
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -69,7 +76,7 @@ namespace IdeasAi.pages
             btn_organizeIdea.Enabled = false;
             txb_textEditor.ReadOnly = true;
 
-            var orgIdea_obj = new OrganizedIdea();
+            var orgIdea_obj = new IdeaOrganizer();
             orgIdea_obj.Input = txb_textEditor.Text;
             orgIdea_obj.Content = await orgIdea_obj.GetResponse();
 
@@ -83,8 +90,8 @@ namespace IdeasAi.pages
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            title_holder = txb_docsTitle.Text;
-            content_holder = txb_textEditor.Text;
+            saver_obj.Title = txb_docsTitle.Text;
+            saver_obj.Content = txb_textEditor.Text;
             
             mainForm.mdl_setter.OpenModal(this, typeof(mdl_saveDocs), mainForm);
         }
@@ -120,6 +127,15 @@ namespace IdeasAi.pages
 
         private async void btn_createMindmap_Click(object sender, EventArgs e)
         {
+            mainForm.setModalBackground(this);
+            mainForm.mdl_loading.state = MainForm.state_loadMindmap;
+            mainForm.mdl_loading.getLblLoadInfo().Text = "Generating your Mindmap..";
+            mainForm.mdl_loading.ShowDialog();
+
+        }
+
+        public async void loadMindmap()
+        {
             var mindmap_obj = new Mindmap();
             mindmap_obj.Input = ConvertMarkdownToPlainText(txb_textEditor.Text);
             mindmap_obj.Content = await mindmap_obj.GetResponse();
@@ -129,7 +145,85 @@ namespace IdeasAi.pages
 
             mainForm.loadForm(mainForm.frm_mindmap, mainForm.getPnlContent());
             mainForm.setActiveBtn(mainForm.getBtnMindmap(), mainForm.getPnlPageTabs());
+
+            mainForm.mdl_loading.Close();
+            mainForm.modalBG.Hide();
         }
+
+        private void btn_new_Click(object sender, EventArgs e)
+        {
+            saver_obj.UUID = Guid.NewGuid();
+            txb_docsTitle.Text = "Untitled Docs";
+            txb_textEditor.Text = "";
+            saver_obj.Content = txb_textEditor.Text;
+            saver_obj.Title = txb_docsTitle.Text;
+        }
+
+        private void txb_textEditor_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Control && e.KeyCode == Keys.S)
+            {
+                saver_obj.Content = saver_obj.Content;
+                saver_obj.Title = txb_docsTitle.Text;
+                saver_obj.DateCreated = DateTime.Now;
+
+                if (!mainForm.dbManager_Docs.recordExist(saver_obj.UUID))
+                {
+                    mainForm.dbManager_Docs.saveObject(saver_obj);
+                    mainForm.loadForm(mainForm.frm_notebook, mainForm.getPnlContent());
+                    mainForm.setActiveBtn(mainForm.getBtnNotebook(), mainForm.getPnlPageTabs());
+                    mainForm.frm_notebook.setActiveBtn(mainForm.frm_notebook.getBtnDocsTab(), mainForm.frm_notebook.getTbpnlTabs());
+                    mainForm.frm_notebook.displaySavedIdeas(mainForm.dbManager_Docs);
+                }
+                else
+                {
+                    mainForm.dbManager_Docs.modifyField(saver_obj.UUID, "Content", saver_obj.Content);
+                    mainForm.dbManager_Docs.modifyField(saver_obj.UUID, "Title", saver_obj.Title);
+                    mainForm.dbManager_Docs.modifyField(saver_obj.UUID, "Date_modified", saver_obj.DateCreated);
+                    Console.WriteLine("already exist");
+                }
+                e.SuppressKeyPress = true;
+            }
+
+        }
+
+        private void txb_textEditor_TextChanged(object sender, EventArgs e)
+        {
+            saver_obj.Content = txb_textEditor.Text;
+        }
+
+        private async void btn_QSearch_Click(object sender, EventArgs e)
+        {
+            // make a new instance of Ai response responsible for quick search
+            var qsearch_obj = new QuickSearch();
+            qsearch_obj.Input = txb_QSearch.Text;
+            pbx_loading.Image = Resources.dot_loading;
+            qsearch_obj.Content = await qsearch_obj.GetResponse();
+            txb_qsearchRes.Text = ConvertMarkdownToPlainText(qsearch_obj.Content);
+            pbx_loading.Image = null;
+            // set its INput
+        }
+
+        private void txb_QSearch_Click(object sender, EventArgs e)
+        {
+            if (txb_QSearch.Text.Equals("Quick search"))
+            {
+
+                txb_QSearch.Text = "";
+            }
+            txb_QSearch.ForeColor = Color.Black;
+        }
+
+        private void txb_textEditor_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("natawag");
+            //txb_textEditor.Text = "";
+
+        }
+
+
+
+
 
 
         //GETTERS
@@ -143,11 +237,12 @@ namespace IdeasAi.pages
             return ref txb_textEditor;
         }
 
-        private void btn_new_Click(object sender, EventArgs e)
+        public ref DBObjectManager getSaverObj()
         {
-            id_holder = Guid.NewGuid();
-            txb_docsTitle.Text = "Untitled Docs";
-            txb_textEditor.Text = "";
+            return ref saver_obj;
         }
+
+       
+
     }
 }

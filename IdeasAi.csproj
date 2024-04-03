@@ -155,7 +155,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ai_responses\Mindmap.cs" />
-    <Compile Include="ai_responses\OrganizedIdea.cs" />
+    <Compile Include="ai_responses\IdeaOrganizer.cs" />
+    <Compile Include="ai_responses\QuickSearch.cs" />
     <Compile Include="db\DatabaseManager.cs" />
     <Compile Include="db\DBManager_Docs.cs" />
     <Compile Include="db\DBManager_Note.cs" />
@@ -170,11 +171,23 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="modals\mdl_editNotes.cs">
+    <Compile Include="modals\mdl_DocsOptions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="modals\mdl_editNotes.Designer.cs">
-      <DependentUpon>mdl_editNotes.cs</DependentUpon>
+    <Compile Include="modals\mdl_DocsOptions.Designer.cs">
+      <DependentUpon>mdl_DocsOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modals\mdl_loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modals\mdl_loading.Designer.cs">
+      <DependentUpon>mdl_loading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modals\mdl_NotesOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modals\mdl_NotesOptions.Designer.cs">
+      <DependentUpon>mdl_NotesOptions.cs</DependentUpon>
     </Compile>
     <Compile Include="modals\mdl_saveNotes.cs">
       <SubType>Form</SubType>
@@ -218,8 +231,14 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="modals\mdl_editNotes.resx">
-      <DependentUpon>mdl_editNotes.cs</DependentUpon>
+    <EmbeddedResource Include="modals\mdl_DocsOptions.resx">
+      <DependentUpon>mdl_DocsOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modals\mdl_loading.resx">
+      <DependentUpon>mdl_loading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modals\mdl_NotesOptions.resx">
+      <DependentUpon>mdl_NotesOptions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modals\mdl_saveNotes.resx">
       <DependentUpon>mdl_saveNotes.cs</DependentUpon>
@@ -244,14 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="db\sqlite.db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -263,6 +277,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -274,6 +293,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\icons\send.png" />
+    <None Include="Resources\mini_loading1.gif" />
+    <None Include="Resources\Moving train.gif" />
+    <None Include="Resources\loadingv2.gif" />
+    <None Include="Resources\loading.gif" />
     <None Include="bin\Debug\out.png" />
     <Content Include="gemini_AI\Scripts\gemini.py">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
