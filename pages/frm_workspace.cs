@@ -2,6 +2,7 @@
 using IdeasAi.ai_responses;
 using IdeasAi.db;
 using IdeasAi.modals;
+using IdeasAi.Properties;
 using Markdig;
 using System;
 using System.Collections.Generic;
@@ -36,6 +37,7 @@ namespace IdeasAi.pages
             saver_obj.UUID = Guid.NewGuid();
             saver_obj.Content = txb_textEditor.Text;
             saver_obj.Title = txb_docsTitle.Text;
+            pbx_loading.Image = null;
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -125,6 +127,15 @@ namespace IdeasAi.pages
 
         private async void btn_createMindmap_Click(object sender, EventArgs e)
         {
+            mainForm.setModalBackground(this);
+            mainForm.mdl_loading.state = MainForm.state_loadMindmap;
+            mainForm.mdl_loading.getLblLoadInfo().Text = "Generating your Mindmap..";
+            mainForm.mdl_loading.ShowDialog();
+
+        }
+
+        public async void loadMindmap()
+        {
             var mindmap_obj = new Mindmap();
             mindmap_obj.Input = ConvertMarkdownToPlainText(txb_textEditor.Text);
             mindmap_obj.Content = await mindmap_obj.GetResponse();
@@ -134,9 +145,10 @@ namespace IdeasAi.pages
 
             mainForm.loadForm(mainForm.frm_mindmap, mainForm.getPnlContent());
             mainForm.setActiveBtn(mainForm.getBtnMindmap(), mainForm.getPnlPageTabs());
+
+            mainForm.mdl_loading.Close();
+            mainForm.modalBG.Hide();
         }
-
-
 
         private void btn_new_Click(object sender, EventArgs e)
         {
@@ -151,6 +163,10 @@ namespace IdeasAi.pages
         {
             if(e.Control && e.KeyCode == Keys.S)
             {
+                saver_obj.Content = saver_obj.Content;
+                saver_obj.Title = txb_docsTitle.Text;
+                saver_obj.DateCreated = DateTime.Now;
+
                 if (!mainForm.dbManager_Docs.recordExist(saver_obj.UUID))
                 {
                     mainForm.dbManager_Docs.saveObject(saver_obj);
@@ -162,22 +178,54 @@ namespace IdeasAi.pages
                 else
                 {
                     mainForm.dbManager_Docs.modifyField(saver_obj.UUID, "Content", saver_obj.Content);
-                    mainForm.dbManager_Docs.modifyField(saver_obj.UUID, "Title", txb_docsTitle.Text);
-                    mainForm.dbManager_Docs.modifyField(saver_obj.UUID, "Date_modified", DateTime.Now);
+                    mainForm.dbManager_Docs.modifyField(saver_obj.UUID, "Title", saver_obj.Title);
+                    mainForm.dbManager_Docs.modifyField(saver_obj.UUID, "Date_modified", saver_obj.DateCreated);
                     Console.WriteLine("already exist");
                 }
                 e.SuppressKeyPress = true;
             }
 
         }
-        
-        
-        
-        
-        
-        
-        
-        
+
+        private void txb_textEditor_TextChanged(object sender, EventArgs e)
+        {
+            saver_obj.Content = txb_textEditor.Text;
+        }
+
+        private async void btn_QSearch_Click(object sender, EventArgs e)
+        {
+            // make a new instance of Ai response responsible for quick search
+            var qsearch_obj = new QuickSearch();
+            qsearch_obj.Input = txb_QSearch.Text;
+            pbx_loading.Image = Resources.dot_loading;
+            qsearch_obj.Content = await qsearch_obj.GetResponse();
+            txb_qsearchRes.Text = ConvertMarkdownToPlainText(qsearch_obj.Content);
+            pbx_loading.Image = null;
+            // set its INput
+        }
+
+        private void txb_QSearch_Click(object sender, EventArgs e)
+        {
+            if (txb_QSearch.Text.Equals("Quick search"))
+            {
+
+                txb_QSearch.Text = "";
+            }
+            txb_QSearch.ForeColor = Color.Black;
+        }
+
+        private void txb_textEditor_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("natawag");
+            //txb_textEditor.Text = "";
+
+        }
+
+
+
+
+
+
         //GETTERS
         public ref KryptonTextBox getTxbDocsTitle()
         {
@@ -194,9 +242,7 @@ namespace IdeasAi.pages
             return ref saver_obj;
         }
 
-        private void txb_textEditor_TextChanged(object sender, EventArgs e)
-        {
-            saver_obj.Content = txb_textEditor.Text;
-        }
+       
+
     }
 }
