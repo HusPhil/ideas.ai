@@ -42,7 +42,7 @@ namespace IdeasAi.pages
             generateMindmap(txb_markdownInput.Text);
         }
 
-        public async Task<Image> markdownToMindmap(string markdown)
+        public async Task<Image> markdownToMindmap(string markdown, bool auto)
         {
 
             var factory = new RendererFactory();
@@ -65,13 +65,18 @@ namespace IdeasAi.pages
             }
             catch (Exception ex)
             {
-                // Handle the exception as needed, for example, logging the error
+                if (auto)
+                {
+                    mainForm.mdl_error.lbl_errorInfo.Text = ex.Message;
+                    mainForm.setModalBackground(this);
+                    mainForm.mdl_error.ShowDialog();
+                }
                 Console.WriteLine($"An error occurreds: {ex.Message}");
-                
+
                 lbl_errorIndicator.ForeColor = Color.Red;
                 lbl_errorIndicator.Text = ex.Message;
                 
-                return null; // Or throw the exception if you prefer
+                return null; 
             }
 
 
@@ -189,7 +194,16 @@ namespace IdeasAi.pages
         {
             var cleanedInput = ConvertMarkdownToPlantUML(input);
             Console.WriteLine(cleanedInput);
-            pbx_mindmap.Image = await markdownToMindmap(cleanedInput);
+            pbx_mindmap.Image = await markdownToMindmap(cleanedInput, false);
+            scaleFactor = defaultScaleFactor;
+            ApplyZoom();
+        }
+
+        public async void generateMindmap(string input, bool auto)
+        {
+            var cleanedInput = ConvertMarkdownToPlantUML(input);
+            Console.WriteLine(cleanedInput);
+            pbx_mindmap.Image = await markdownToMindmap(cleanedInput, auto);
             scaleFactor = defaultScaleFactor;
             ApplyZoom();
         }

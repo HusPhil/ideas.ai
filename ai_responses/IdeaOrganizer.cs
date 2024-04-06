@@ -14,7 +14,7 @@ namespace IdeasAi.ai_responses
         {
             var prompt = "Organize, elaborate, and expand the inputted idea, with correct grammar and format of sentences." +
                 "If the input is not substantial or does not make sense for a scratch of an idea, tell the user to try again." +
-                $"The input supplied: {this.Input}.";
+                $"The input supplied: {this.Input.Replace("\"", "'")}.";
 
             string response = await ScriptRunner.RunScriptAsync("Gemini_AI\\Scripts\\gemini.py", prompt);
             this.DateCreated = DateTime.Now;

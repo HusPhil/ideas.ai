@@ -12,8 +12,9 @@ namespace IdeasAi.ai_responses
         public string Title { get; set; }
         public override async Task<string> GetResponse()
         {
-            var prompt = "Given an input, your goal is to organize an output based on the instructions given: " +
-                "Expand the topic supplied and its subtopic then and Generate an text about them for copy pasting. " +
+            var prompt = "Act like an automatic system text generator for a mindmap that follows a strict syntax. " +
+                "Given an input, your goal is to organize an output based on the instructions given: " +
+                "Expand the topic supplied and its subtopic then and generate a text about them for copy pasting. " +
                 "The syntax for creating a mind map involves starting with @startmindmap and ending with @endmindmap. " +
                 "Within this structure, asterisks (*) denote main topics or branches, double asterisks (**) represent sub-topics or sub-branches, " +
                 "and triple asterisks (***) signify further sub-levels or details under each sub-topic. " +
@@ -33,7 +34,7 @@ namespace IdeasAi.ai_responses
                 "There is always a space between * and the topics. " +
                 "Follow the sytax strictly or the system will crash. " +
                 "Most importantly, never use indentation." +
-                $"The input supplied: {this.Input}.";
+                $"The input supplied: {this.Input.Replace("\"", "'")}.";
 
             string response = await ScriptRunner.RunScriptAsync("Gemini_AI\\Scripts\\gemini.py", prompt);
             this.DateCreated = DateTime.Now;

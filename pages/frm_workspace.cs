@@ -125,7 +125,7 @@ namespace IdeasAi.pages
             }
         }
 
-        private async void btn_createMindmap_Click(object sender, EventArgs e)
+        private void btn_createMindmap_Click(object sender, EventArgs e)
         {
             mainForm.setModalBackground(this);
             mainForm.mdl_loading.state = MainForm.state_loadMindmap;
@@ -141,7 +141,7 @@ namespace IdeasAi.pages
             mindmap_obj.Content = await mindmap_obj.GetResponse();
 
             mainForm.frm_mindmap.getTxbMarkdownInput().Text = mindmap_obj.Content;
-            mainForm.frm_mindmap.generateMindmap(mindmap_obj.Content);
+            mainForm.frm_mindmap.generateMindmap(mindmap_obj.Content, true);
 
             mainForm.loadForm(mainForm.frm_mindmap, mainForm.getPnlContent());
             mainForm.setActiveBtn(mainForm.getBtnMindmap(), mainForm.getPnlPageTabs());
@@ -196,7 +196,7 @@ namespace IdeasAi.pages
         {
             // make a new instance of Ai response responsible for quick search
             var qsearch_obj = new QuickSearch();
-            qsearch_obj.Input = txb_QSearch.Text;
+            qsearch_obj.Input = ConvertMarkdownToPlainText(txb_QSearch.Text);
             pbx_loading.Image = Resources.dot_loading;
             qsearch_obj.Content = await qsearch_obj.GetResponse();
             txb_qsearchRes.Text = ConvertMarkdownToPlainText(qsearch_obj.Content);

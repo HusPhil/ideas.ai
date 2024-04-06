@@ -28,6 +28,7 @@ namespace IdeasAi
         public mdl_saveDocs mdl_saveDocs;
         public mdl_NotesOptions mdl_editNotes;
         public mdl_loading mdl_loading;
+        public mdl_error mdl_error;
         public ModalSetter mdl_setter;
 
         public DBManager_Note dbManager_Note = new DBManager_Note();
@@ -52,6 +53,7 @@ namespace IdeasAi
             mdl_saveDocs = new mdl_saveDocs(this);
             mdl_editNotes = new mdl_NotesOptions(this);
             mdl_loading = new mdl_loading(this);
+            mdl_error = new mdl_error(this);
             modalBG = new Form();
             mdl_setter = new ModalSetter(this);
             //modalManager = new ModalManager(this);
@@ -147,7 +149,7 @@ namespace IdeasAi
         {
 
             setActiveBtn(sender, pnl_pageTabs);
-            loadForm(mdl_loading, pnl_content);
+            //loadForm(mdl_loading, pnl_content);
 
             //mdl_setter.OpenModal(this, typeof(mdl_saveDocs), this);
         }

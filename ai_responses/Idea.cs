@@ -15,7 +15,7 @@ namespace IdeasAi.Ideas
                 "The rows of each columns must provide brief information, significance, project ideas, and research ideas about the subtopics." +
                 "Below the table, supply further information and explain the topic and its subtopic for the summary to make sure a dummy could understand it." +
                 "Finally, make a mindmap about the topic as well as some references on where the user can learn more." +
-                $"The topic supplied: {this.Input}.";
+                $"The topic supplied: {this.Input.Replace("\"", "'")}.";
 
             string response = await ScriptRunner.RunScriptAsync("Gemini_AI\\Scripts\\gemini.py", prompt);
             this.DateCreated = DateTime.Now;

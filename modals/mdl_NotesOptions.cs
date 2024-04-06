@@ -76,7 +76,7 @@ namespace IdeasAi.modals
                 mainForm.Focus();
             }
 
-            btn_delete.Text = "Click again to confirm.";
+            btn_delete.Text = "Click again to confirm";
         }
         private void txb_setNoteTitle_KeyDown(object sender, KeyEventArgs e)
         {

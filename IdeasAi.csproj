@@ -177,6 +177,12 @@
     <Compile Include="modals\mdl_DocsOptions.Designer.cs">
       <DependentUpon>mdl_DocsOptions.cs</DependentUpon>
     </Compile>
+    <Compile Include="modals\mdl_error.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modals\mdl_error.Designer.cs">
+      <DependentUpon>mdl_error.cs</DependentUpon>
+    </Compile>
     <Compile Include="modals\mdl_loading.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="modals\mdl_DocsOptions.resx">
       <DependentUpon>mdl_DocsOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modals\mdl_error.resx">
+      <DependentUpon>mdl_error.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modals\mdl_loading.resx">
       <DependentUpon>mdl_loading.cs</DependentUpon>
@@ -293,6 +302,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\icons\send.png" />
+    <None Include="Resources\error.png" />
+    <None Include="Resources\error.gif" />
     <None Include="Resources\mini_loading1.gif" />
     <None Include="Resources\Moving train.gif" />
     <None Include="Resources\loadingv2.gif" />
