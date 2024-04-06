@@ -6,6 +6,7 @@ using IdeasAi.PageForms;
 using IdeasAi.pages;
 using IdeasAi.modals;
 using IdeasAi.db;
+using System.Web.UI.Design;
 
 namespace IdeasAi
 {
@@ -63,7 +64,7 @@ namespace IdeasAi
             
             btn_active = this.btn_home;
             lbl_currentPage.Text = btn_active.Text;
-
+            Console.WriteLine(this.Width + "::" + this.Height);
         }
 
         
@@ -126,6 +127,36 @@ namespace IdeasAi
             }
         }
 
+        public void addNotification(string type, string typeTxt, string typeInfo)
+        {
+            var notif = new mdl_notif(this, type);
+            notif.lbl_type.Text = typeTxt;
+
+            if (mdl_notif.instancesCount > 1) notif.lbl_type.Text = typeTxt + $" ({mdl_notif.instancesCount - 1})";
+
+            notif.lbl_info.Text = typeInfo;
+            notif.TopLevel = false;
+            this.Controls.Add(notif);
+            notif.Show();
+            notif.BringToFront();
+        }
+
+        public mdl_notif addAsyncNotification(string type, string typeTxt, string typeInfo)
+        {
+            var notif = new mdl_notif(this, type);
+            notif.lbl_type.Text = typeTxt;
+
+            if (mdl_notif.instancesCount > 1) notif.lbl_type.Text = typeTxt + $" ({mdl_notif.instancesCount - 1})";
+
+            notif.lbl_info.Text = typeInfo;
+            notif.TopLevel = false;
+            this.Controls.Add(notif);
+      
+            return notif;
+        }
+
+
+
         private void btn_home_Click(object sender, EventArgs e)
         {
             setActiveBtn(sender, pnl_pageTabs);
@@ -176,10 +207,33 @@ namespace IdeasAi
             setActiveBtn(sender, pnl_pageTabs);
             loadForm(frm_mindmap, pnl_content);
         }
+        public void setNotifPosition()
+        {
+            int offset = mdl_notif.instancesCount;
+            foreach (var c in this.Controls)
+            {
+                if (c is mdl_notif)
+                {
+                    mdl_notif notifControl = c as mdl_notif;
+                    if (notifControl != null)
+                    {
+                        int notifX = (this.Width - notifControl.Width) - 34;
+                        int notifY = (this.Height - (notifControl.Height)) - ((notifControl.Height + 5) * offset--);
 
+                        //Console.WriteLine(notifControl.lbl_type);
+                        //Console.WriteLine(notifY);
+
+                        notifControl.Location = new Point(notifX, notifY);
+                    }
+                }
+            }
+        }
+        
         private void MainForm_SizeChanged(object sender, EventArgs e)
         {
             frm_notebook.displaySavedIdeas(dbManager_Note);
+            setNotifPosition();
+            
 ;        }
 
         //GETTERS

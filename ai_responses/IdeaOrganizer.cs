@@ -18,7 +18,10 @@ namespace IdeasAi.ai_responses
 
             string response = await ScriptRunner.RunScriptAsync("Gemini_AI\\Scripts\\gemini.py", prompt);
             this.DateCreated = DateTime.Now;
-
+            if (response.Contains("HARM_CATEGORY"))
+            {
+                throw new Exception(response);
+            }
             return response;
         }
     }

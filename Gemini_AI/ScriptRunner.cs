@@ -29,15 +29,18 @@ namespace IdeasAi.Gemini_AI
             psi.RedirectStandardOutput = true;
 
             var result = "ERROR";
-            var error = "";
+            var error = "NONE";
             Console.WriteLine(prompt);
             using (var process = Process.Start(psi))
             {
                 result = process.StandardOutput.ReadToEnd();
                 error = process.StandardError.ReadToEnd();
+                
             }
-            //Console.WriteLine(result);
-            Console.WriteLine(error);
+            Console.WriteLine("result: " + result);
+            //Console.WriteLine(error);
+
+            
 
             return result;
 

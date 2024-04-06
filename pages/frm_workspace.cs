@@ -183,6 +183,8 @@ namespace IdeasAi.pages
                     Console.WriteLine("already exist");
                 }
                 e.SuppressKeyPress = true;
+                mainForm.addNotification("success", "Successfully saved!", $"{saver_obj.Title}");
+                
             }
 
         }
@@ -195,12 +197,31 @@ namespace IdeasAi.pages
         private async void btn_QSearch_Click(object sender, EventArgs e)
         {
             // make a new instance of Ai response responsible for quick search
+            var asyncNotif = mainForm.addAsyncNotification("response", "Now searching for:", $"{txb_QSearch.Text}");
+            asyncNotif.Show();
+            asyncNotif.BringToFront();
+
             var qsearch_obj = new QuickSearch();
             qsearch_obj.Input = ConvertMarkdownToPlainText(txb_QSearch.Text);
             pbx_loading.Image = Resources.dot_loading;
-            qsearch_obj.Content = await qsearch_obj.GetResponse();
-            txb_qsearchRes.Text = ConvertMarkdownToPlainText(qsearch_obj.Content);
+
+            try
+            {
+                qsearch_obj.Content = await qsearch_obj.GetResponse();
+                txb_qsearchRes.Text = ConvertMarkdownToPlainText(qsearch_obj.Content);
+            }
+            catch(Exception ex)
+            {
+                mainForm.addNotification("warning", "An error occured: ", ex.Message);
+                Console.WriteLine(ex.Message);
+            }
+            
             pbx_loading.Image = null;
+
+            asyncNotif.Dispose();
+            mdl_notif.instancesCount--;
+            mainForm.setNotifPosition();
+
             // set its INput
         }
 

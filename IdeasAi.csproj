@@ -195,6 +195,12 @@
     <Compile Include="modals\mdl_NotesOptions.Designer.cs">
       <DependentUpon>mdl_NotesOptions.cs</DependentUpon>
     </Compile>
+    <Compile Include="modals\mdl_notif.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modals\mdl_notif.Designer.cs">
+      <DependentUpon>mdl_notif.cs</DependentUpon>
+    </Compile>
     <Compile Include="modals\mdl_saveNotes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +255,9 @@
     <EmbeddedResource Include="modals\mdl_NotesOptions.resx">
       <DependentUpon>mdl_NotesOptions.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="modals\mdl_notif.resx">
+      <DependentUpon>mdl_notif.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="modals\mdl_saveNotes.resx">
       <DependentUpon>mdl_saveNotes.cs</DependentUpon>
     </EmbeddedResource>
@@ -302,6 +311,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\icons\send.png" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\success.png" />
+    <None Include="Resources\info.png" />
+    <None Include="Resources\error_n.png" />
     <None Include="Resources\error.png" />
     <None Include="Resources\error.gif" />
     <None Include="Resources\mini_loading1.gif" />
