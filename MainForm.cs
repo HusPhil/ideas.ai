@@ -132,7 +132,7 @@ namespace IdeasAi
             var notif = new mdl_notif(this, type);
             notif.lbl_type.Text = typeTxt;
 
-            if (mdl_notif.instancesCount > 1) notif.lbl_type.Text = typeTxt + $" ({mdl_notif.instancesCount - 1})";
+            if (mdl_notif.instancesCount > 1) notif.lbl_type.Text = typeTxt;
 
             notif.lbl_info.Text = typeInfo;
             notif.TopLevel = false;
@@ -146,7 +146,7 @@ namespace IdeasAi
             var notif = new mdl_notif(this, type);
             notif.lbl_type.Text = typeTxt;
 
-            if (mdl_notif.instancesCount > 1) notif.lbl_type.Text = typeTxt + $" ({mdl_notif.instancesCount - 1})";
+            if (mdl_notif.instancesCount > 1) notif.lbl_type.Text = typeTxt;
 
             notif.lbl_info.Text = typeInfo;
             notif.TopLevel = false;

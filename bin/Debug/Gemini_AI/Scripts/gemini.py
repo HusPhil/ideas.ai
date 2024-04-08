@@ -3,6 +3,8 @@ import sys
 import textwrap
 import google.generativeai as genai
 
+response = ''
+
 try:
     GOOGLE_API_KEY = sys.argv[2]
 
@@ -14,4 +16,4 @@ try:
 
     print(response.text)
 except Exception as e:
-    print(f"{response.prompt_feedback.safety_ratings}")
+    print(f"ERROR: {response.prompt_feedback.safety_ratings}+{str(e)}")

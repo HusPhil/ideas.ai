@@ -209,6 +209,7 @@ namespace IdeasAi.pages
             {
                 qsearch_obj.Content = await qsearch_obj.GetResponse();
                 txb_qsearchRes.Text = ConvertMarkdownToPlainText(qsearch_obj.Content);
+                mainForm.addNotification("success", "Success!", "View search result");
             }
             catch(Exception ex)
             {
