@@ -72,5 +72,28 @@ namespace IdeasAi.modals
             }
             
         }
+
+        private void pnl_notifBody_MouseHover(object sender, EventArgs e)
+        {
+            tmr_close.Stop();
+            
+        }
+
+        private void pnl_notifBody_MouseLeave(object sender, EventArgs e)
+        {
+            tmr_close.Start();
+        }
+
+        private void lbl_type_MouseHover(object sender, EventArgs e)
+        {
+            tmr_close.Stop();
+            pnl_notifBody.BorderStyle = BorderStyle.Fixed3D;
+        }
+
+        private void lbl_type_MouseLeave(object sender, EventArgs e)
+        {
+            tmr_close.Start();
+            pnl_notifBody.BorderStyle = BorderStyle.None;
+        }
     }
 }

@@ -204,6 +204,9 @@ namespace IdeasAi.pages
             var qsearch_obj = new QuickSearch();
             qsearch_obj.Input = ConvertMarkdownToPlainText(txb_QSearch.Text);
             pbx_loading.Image = Resources.dot_loading;
+            pbx_loading.Visible = true;
+            btn_QSearch.Enabled = !true;
+
 
             try
             {
@@ -218,6 +221,8 @@ namespace IdeasAi.pages
             }
             
             pbx_loading.Image = null;
+            pbx_loading.Visible = !true;
+            btn_QSearch.Enabled = true;
 
             asyncNotif.Dispose();
             mdl_notif.instancesCount--;
@@ -228,6 +233,7 @@ namespace IdeasAi.pages
 
         private void txb_QSearch_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("callesd");
             if (txb_QSearch.Text.Equals("Quick search"))
             {
 
@@ -264,7 +270,13 @@ namespace IdeasAi.pages
             return ref saver_obj;
         }
 
-       
-
+        private void txb_QSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && btn_QSearch.Enabled)
+            {
+                btn_QSearch_Click(sender, e);
+                e.SuppressKeyPress = true;
+            }
+        }
     }
 }

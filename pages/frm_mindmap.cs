@@ -28,6 +28,7 @@ namespace IdeasAi.pages
             this.mainForm = mainForm;
             ApplyZoom();
             cb_viewSelector.SelectedIndex = 0;
+            cb_themeSelector.SelectedIndex = 0;
             pbx_mindmap.Image = null;
 
             this.txb_markdownInput.Text = "@startmindmap\n" +

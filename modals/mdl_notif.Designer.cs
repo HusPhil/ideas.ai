@@ -33,11 +33,11 @@
             this.btn_close = new System.Windows.Forms.Button();
             this.tmr_close = new System.Windows.Forms.Timer(this.components);
             this.pbx_type = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnl_notifBody = new System.Windows.Forms.Panel();
             this.lbl_type = new System.Windows.Forms.Label();
             this.lbl_info = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_type)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.pnl_notifBody.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_type
@@ -81,17 +81,19 @@
             this.pbx_type.TabIndex = 6;
             this.pbx_type.TabStop = false;
             // 
-            // panel1
+            // pnl_notifBody
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.lbl_type);
-            this.panel1.Controls.Add(this.lbl_info);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(68, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 8);
-            this.panel1.Size = new System.Drawing.Size(236, 60);
-            this.panel1.TabIndex = 7;
+            this.pnl_notifBody.BackColor = System.Drawing.SystemColors.Control;
+            this.pnl_notifBody.Controls.Add(this.lbl_type);
+            this.pnl_notifBody.Controls.Add(this.lbl_info);
+            this.pnl_notifBody.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_notifBody.Location = new System.Drawing.Point(68, 0);
+            this.pnl_notifBody.Name = "pnl_notifBody";
+            this.pnl_notifBody.Padding = new System.Windows.Forms.Padding(0, 10, 0, 8);
+            this.pnl_notifBody.Size = new System.Drawing.Size(236, 60);
+            this.pnl_notifBody.TabIndex = 7;
+            this.pnl_notifBody.MouseLeave += new System.EventHandler(this.pnl_notifBody_MouseLeave);
+            this.pnl_notifBody.MouseHover += new System.EventHandler(this.pnl_notifBody_MouseHover);
             // 
             // lbl_type
             // 
@@ -104,6 +106,8 @@
             this.lbl_type.Size = new System.Drawing.Size(50, 22);
             this.lbl_type.TabIndex = 3;
             this.lbl_type.Text = "Type";
+            this.lbl_type.MouseLeave += new System.EventHandler(this.lbl_type_MouseLeave);
+            this.lbl_type.MouseHover += new System.EventHandler(this.lbl_type_MouseHover);
             // 
             // lbl_info
             // 
@@ -116,6 +120,8 @@
             this.lbl_info.Size = new System.Drawing.Size(236, 17);
             this.lbl_info.TabIndex = 4;
             this.lbl_info.Text = "info";
+            this.lbl_info.MouseLeave += new System.EventHandler(this.lbl_type_MouseLeave);
+            this.lbl_info.MouseHover += new System.EventHandler(this.lbl_type_MouseHover);
             // 
             // mdl_notif
             // 
@@ -123,7 +129,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(365, 60);
             this.ControlBox = false;
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnl_notifBody);
             this.Controls.Add(this.pbx_type);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.pnl_type);
@@ -132,8 +138,8 @@
             this.Text = "mdl_notif";
             this.Load += new System.EventHandler(this.mdl_notif_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbx_type)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnl_notifBody.ResumeLayout(false);
+            this.pnl_notifBody.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -143,7 +149,7 @@
         public System.Windows.Forms.Panel pnl_type;
         public System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.PictureBox pbx_type;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnl_notifBody;
         public System.Windows.Forms.Label lbl_type;
         public System.Windows.Forms.Label lbl_info;
         public System.Windows.Forms.Timer tmr_close;

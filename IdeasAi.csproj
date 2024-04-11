@@ -311,6 +311,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\icons\send.png" />
+    <None Include="Resources\quickSearchLoad.gif" />
+    <None Include="Resources\quickSearch.png" />
     <None Include="Resources\moreSettings.png" />
     <None Include="Resources\zoomout.png" />
     <None Include="Resources\zoomin.png" />
