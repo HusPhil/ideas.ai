@@ -311,6 +311,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\icons\send.png" />
+    <None Include="Resources\delete.png" />
     <None Include="Resources\docOptions.png" />
     <None Include="Resources\mindmap.png" />
     <None Include="Resources\organize.png" />

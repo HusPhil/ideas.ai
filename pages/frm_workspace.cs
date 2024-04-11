@@ -125,11 +125,14 @@ namespace IdeasAi.pages
                     lbl_lastDateSaved.Text = $"Last Modified: {fileInfo.LastWriteTime.ToString("yyyy-MM-dd hh:mm tt")}";
                     mainForm.addNotification("success", "Document opened!", $"{txb_docsTitle.Text} was opened");
 
+                    btn_docsDel.Visible = !true;
+                    saver_obj.UUID = Guid.Empty;
                 }
                 else
                 {
                     mainForm.addNotification("error", "Failed to open!", $"A document was not opened properly");
                 }
+               
             }
         }
 
@@ -312,5 +315,49 @@ namespace IdeasAi.pages
             return ref lbl_lastDateSaved;
         }
 
+        private void btn_docsDel_Click(object sender, EventArgs e)
+        {
+            if(pnl_confirmDel.Visible)
+            {
+                pnl_confirmDel.Visible = !true;
+            }
+            else
+            {
+                pnl_confirmDel.Visible = true;
+            }
+        }
+
+        private void frm_workspace_Paint(object sender, PaintEventArgs e)
+        {
+            pnl_confirmDel.Visible = !true;
+            if (mainForm.dbManager_Docs.recordExist(saver_obj.UUID))
+            {
+                btn_docsDel.Visible = true;
+            }
+            else
+            {
+                btn_docsDel.Visible = !true;
+            }
+            Console.WriteLine(saver_obj.UUID);
+        }
+
+        private void btn_confirm_Click(object sender, EventArgs e)
+        {
+            if (mainForm.dbManager_Docs.recordExist(saver_obj.UUID))
+            {
+                try
+                {
+                    mainForm.dbManager_Docs.deleteRecord(saver_obj.UUID);
+                    mainForm.addNotification("success", "Successfully deleted!", $"{saver_obj.Title} was deleted");
+                    btn_new_Click(sender, e);
+                    pnl_confirmDel.Visible = false;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("ERROR FOUND IN DOCSDEL" + ex.Message);
+                    mainForm.addNotification("success", "Deleting failed!", $"{saver_obj.Title} failed to be deleted");
+                }
+            }
+        }
     }
 }
