@@ -50,7 +50,6 @@ namespace IdeasAi.pages
 
             var renderer = factory.CreateRenderer(settings);
 
-
             try
             {
                 // Render the markdown content as PNG bytes
@@ -357,6 +356,10 @@ namespace IdeasAi.pages
                             break;
                         case "Cyborg":
                             txb_markdownInput.Text = AddTheme(txb_markdownInput.Text, "!theme cyborg");
+                            generateMindmap(txb_markdownInput.Text);
+                            break;
+                        case "Hacker":
+                            txb_markdownInput.Text = AddTheme(txb_markdownInput.Text, "!theme hacker");
                             generateMindmap(txb_markdownInput.Text);
                             break;
                         case "Lightgray":

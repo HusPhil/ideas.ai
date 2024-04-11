@@ -220,6 +220,7 @@ namespace IdeasAi
                         int notifX = (this.Width - notifControl.Width) - 34;
                         int notifY = (this.Height - (notifControl.Height)) - ((notifControl.Height + 5) * offset--);
 
+                        if (notifY > (this.Height - (notifControl.Height)) - (notifControl.Height + 5)) notifY = (this.Height - (notifControl.Height)) - (notifControl.Height + 5); 
                         //Console.WriteLine(notifControl.lbl_type);
                         //Console.WriteLine(notifY);
 

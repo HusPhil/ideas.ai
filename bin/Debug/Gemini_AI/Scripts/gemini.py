@@ -16,4 +16,7 @@ try:
 
     print(response.text)
 except Exception as e:
-    print(f"ERROR: {response.prompt_feedback.safety_ratings}+{str(e)}")
+    if(response != ''):
+        print(f"ERROR: Inappropriate prompt was deteced!")
+    else:
+        print(f"ERROR: {str(e)}")

@@ -23,7 +23,7 @@ namespace IdeasAi.modals
             this.mainForm = mainForm;
             this.DoubleBuffered = true;
             this.notifType = notifType;
-            instancesCount++;
+            
 
             switch (notifType.ToLower())
             {
@@ -44,7 +44,8 @@ namespace IdeasAi.modals
 
         private void mdl_notif_Load(object sender, EventArgs e)
         {
-            Position();
+            instancesCount++;
+            mainForm.setNotifPosition();
         }
 
         public void Position()
@@ -65,11 +66,9 @@ namespace IdeasAi.modals
         {
             closeCountDown++;
             if (closeCountDown == 5 && notifType != "response") {
-
-            Console.WriteLine(Location);
-                instancesCount--;
-                this.Dispose();
-                mainForm.setNotifPosition();
+            instancesCount--;
+            this.Dispose();
+            mainForm.setNotifPosition();
             }
             
         }

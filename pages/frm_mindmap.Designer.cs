@@ -41,7 +41,7 @@
             this.btn_zoomIn = new System.Windows.Forms.Button();
             this.btn_reset = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_saveAsImage = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.cb_themeSelector = new System.Windows.Forms.ComboBox();
@@ -205,7 +205,7 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.btn_saveAsImage);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel3.Location = new System.Drawing.Point(951, 0);
             this.panel3.Name = "panel3";
@@ -213,20 +213,21 @@
             this.panel3.Size = new System.Drawing.Size(55, 83);
             this.panel3.TabIndex = 14;
             // 
-            // button2
+            // btn_saveAsImage
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(28)))));
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(5, 22);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(40, 39);
-            this.button2.TabIndex = 7;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btn_saveAsImage.BackColor = System.Drawing.Color.White;
+            this.btn_saveAsImage.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_saveAsImage.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(28)))));
+            this.btn_saveAsImage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_saveAsImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_saveAsImage.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_saveAsImage.Image = ((System.Drawing.Image)(resources.GetObject("btn_saveAsImage.Image")));
+            this.btn_saveAsImage.Location = new System.Drawing.Point(5, 22);
+            this.btn_saveAsImage.Name = "btn_saveAsImage";
+            this.btn_saveAsImage.Size = new System.Drawing.Size(40, 39);
+            this.btn_saveAsImage.TabIndex = 7;
+            this.btn_saveAsImage.UseVisualStyleBackColor = false;
+            this.btn_saveAsImage.Click += new System.EventHandler(this.btn_saveAsImage_Click);
             // 
             // panel2
             // 
@@ -408,6 +409,6 @@
         private System.Windows.Forms.Button btn_zoomIn;
         private System.Windows.Forms.Button btn_reset;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_saveAsImage;
     }
 }
