@@ -73,6 +73,16 @@ namespace IdeasAi.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap docOptions {
+            get {
+                object obj = ResourceManager.GetObject("docOptions", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dot_loading {
             get {
                 object obj = ResourceManager.GetObject("dot_loading", resourceCulture);
@@ -123,6 +133,16 @@ namespace IdeasAi.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap mindmap {
+            get {
+                object obj = ResourceManager.GetObject("mindmap", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap more {
             get {
                 object obj = ResourceManager.GetObject("more", resourceCulture);
@@ -136,6 +156,16 @@ namespace IdeasAi.Properties {
         internal static System.Drawing.Bitmap moreSettings {
             get {
                 object obj = ResourceManager.GetObject("moreSettings", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap organize {
+            get {
+                object obj = ResourceManager.GetObject("organize", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

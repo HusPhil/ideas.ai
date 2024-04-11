@@ -311,6 +311,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\icons\send.png" />
+    <None Include="Resources\docOptions.png" />
+    <None Include="Resources\mindmap.png" />
+    <None Include="Resources\organize.png" />
     <None Include="Resources\quickSearchLoad.gif" />
     <None Include="Resources\quickSearch.png" />
     <None Include="Resources\moreSettings.png" />

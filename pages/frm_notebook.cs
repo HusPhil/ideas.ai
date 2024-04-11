@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using IdeasAi.db;
 using IdeasAi.Ideas;
@@ -287,7 +288,7 @@ namespace IdeasAi.pages
                 mainForm.frm_workspace.getSaverObj().UUID = dom.UUID;
                 mainForm.frm_workspace.getTxbEditor().Text = dom.Content;
                 mainForm.frm_workspace.getTxbDocsTitle().Text = dom.Title; 
-
+                mainForm.frm_workspace.getLblLastDateSaved().Text = $"Last Modified: {dom.DateCreated.ToString("yyyy-MM-dd hh:mm tt")}"; ;
             }
         }
         private void frm_notebook_Load(object sender, EventArgs e)

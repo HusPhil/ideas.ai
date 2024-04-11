@@ -1,6 +1,7 @@
 ﻿using ComponentFactory.Krypton.Toolkit;
 using IdeasAi.ai_responses;
 using IdeasAi.db;
+using IdeasAi.Ideas;
 using IdeasAi.modals;
 using IdeasAi.Properties;
 using Markdig;
@@ -120,6 +121,9 @@ namespace IdeasAi.pages
                     txb_textEditor.Text = File.ReadAllText(filePath);
                     txb_docsTitle.Text = Path.GetFileNameWithoutExtension(filePath);
 
+                    FileInfo fileInfo = new FileInfo(filePath);
+                    lbl_lastDateSaved.Text = $"Last Modified: {fileInfo.LastWriteTime.ToString("yyyy-MM-dd hh:mm tt")}";
+
                     // Now you can do something with the selected file path
                 }
             }
@@ -155,8 +159,10 @@ namespace IdeasAi.pages
             saver_obj.UUID = Guid.NewGuid();
             txb_docsTitle.Text = "Untitled Docs";
             txb_textEditor.Text = "";
+            lbl_lastDateSaved.Text = "Last Modified: N/A";
             saver_obj.Content = txb_textEditor.Text;
             saver_obj.Title = txb_docsTitle.Text;
+
         }
 
         private void txb_textEditor_KeyDown(object sender, KeyEventArgs e)
@@ -241,12 +247,30 @@ namespace IdeasAi.pages
             }
             txb_QSearch.ForeColor = Color.Black;
         }
-
         private void txb_textEditor_Click(object sender, EventArgs e)
         {
             Console.WriteLine("natawag");
             //txb_textEditor.Text = "";
 
+        }
+        private void txb_QSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && btn_QSearch.Enabled)
+            {
+                btn_QSearch_Click(sender, e);
+                e.SuppressKeyPress = true;
+            }
+        }
+        private void btn_docOptions_Click(object sender, EventArgs e)
+        {
+            if (pnl_docConts.Visible)
+            {
+                pnl_docConts.Visible = !true;
+            }
+            else
+            {
+                pnl_docConts.Visible = true;
+            }
         }
 
 
@@ -269,14 +293,10 @@ namespace IdeasAi.pages
         {
             return ref saver_obj;
         }
-
-        private void txb_QSearch_KeyDown(object sender, KeyEventArgs e)
+        public ref Label getLblLastDateSaved()
         {
-            if (e.KeyCode == Keys.Enter && btn_QSearch.Enabled)
-            {
-                btn_QSearch_Click(sender, e);
-                e.SuppressKeyPress = true;
-            }
+            return ref lbl_lastDateSaved;
         }
+
     }
 }

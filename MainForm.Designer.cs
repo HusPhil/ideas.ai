@@ -255,6 +255,7 @@ namespace IdeasAi
             this.lbl_currentPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
             this.lbl_currentPage.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbl_currentPage.Font = new System.Drawing.Font("Cascadia Code", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_currentPage.ForeColor = System.Drawing.Color.White;
             this.lbl_currentPage.Location = new System.Drawing.Point(15, 15);
             this.lbl_currentPage.Name = "lbl_currentPage";
             this.lbl_currentPage.Padding = new System.Windows.Forms.Padding(12);
