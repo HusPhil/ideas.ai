@@ -12,6 +12,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -120,11 +121,14 @@ namespace IdeasAi.pages
                     string filePath = openFileDialog1.FileName;
                     txb_textEditor.Text = File.ReadAllText(filePath);
                     txb_docsTitle.Text = Path.GetFileNameWithoutExtension(filePath);
-
                     FileInfo fileInfo = new FileInfo(filePath);
                     lbl_lastDateSaved.Text = $"Last Modified: {fileInfo.LastWriteTime.ToString("yyyy-MM-dd hh:mm tt")}";
+                    mainForm.addNotification("success", "Document opened!", $"{txb_docsTitle.Text} was opened");
 
-                    // Now you can do something with the selected file path
+                }
+                else
+                {
+                    mainForm.addNotification("error", "Failed to open!", $"A document was not opened properly");
                 }
             }
         }
@@ -142,10 +146,19 @@ namespace IdeasAi.pages
         {
             var mindmap_obj = new Mindmap();
             mindmap_obj.Input = ConvertMarkdownToPlainText(txb_textEditor.Text);
-            mindmap_obj.Content = await mindmap_obj.GetResponse();
 
+
+            try
+            {
+                mindmap_obj.Content = await mindmap_obj.GetResponse();
+                //mainForm.addNotification("success", "Successfully generated!", "A mindmap was successfully generated");
+            }
+            catch (Exception exception)
+            {
+                mainForm.addNotification("error", "Failed to generate!", $"Error: {exception.Message}");
+            }
             mainForm.frm_mindmap.getTxbMarkdownInput().Text = mindmap_obj.Content;
-            mainForm.frm_mindmap.generateMindmap(mindmap_obj.Content, true);
+            mainForm.frm_mindmap.generateMindmap(mindmap_obj.Content);
 
             mainForm.loadForm(mainForm.frm_mindmap, mainForm.getPnlContent());
             mainForm.setActiveBtn(mainForm.getBtnMindmap(), mainForm.getPnlPageTabs());
@@ -162,7 +175,7 @@ namespace IdeasAi.pages
             lbl_lastDateSaved.Text = "Last Modified: N/A";
             saver_obj.Content = txb_textEditor.Text;
             saver_obj.Title = txb_docsTitle.Text;
-
+            mainForm.addNotification("info", "New document opened!", "Empty workspace loaded");
         }
 
         private void txb_textEditor_KeyDown(object sender, KeyEventArgs e)
@@ -189,6 +202,7 @@ namespace IdeasAi.pages
                     Console.WriteLine("already exist");
                 }
                 e.SuppressKeyPress = true;
+                lbl_lastDateSaved.Text = $"Last Modified: {DateTime.Now.ToString("yyyy-MM-dd hh:mm tt")}";
                 mainForm.addNotification("success", "Successfully saved!", $"{saver_obj.Title}");
                 
             }

@@ -11,8 +11,9 @@ namespace IdeasAi.pages
 {
     public partial class frm_notebook: Form
     {
-        public string current_title;
-        public Guid current_id;
+        //public string current_title;
+        //public Guid current_id;
+        public DBObjectManager saver_obj;
         public MainForm mainForm;
         private Panel pnl_tabSelect;
         private TableLayoutPanel tbpnl_tabs;
@@ -158,11 +159,11 @@ namespace IdeasAi.pages
 
                 if (db.GetType().Equals(typeof(DBManager_Note)))
                 {
-                    btn_edit.Click += (sender, e) => btn_showMoreNotes_click(idea.Title, idea.UUID);
+                    btn_edit.Click += (sender, e) => btn_showMoreNotes_click(idea);
                 }
                 else if (db.GetType().Equals(typeof(DBManager_Docs)))
                 {
-                    btn_edit.Click += (sender, e) => btn_showMoreDocs_click(idea.Title, idea.UUID);
+                    btn_edit.Click += (sender, e) => btn_showMoreDocs_click(idea);
                 }
 
                 btn_edit.BackColor = Color.Transparent;
@@ -257,17 +258,15 @@ namespace IdeasAi.pages
                 }
             }
         }
-        private void btn_showMoreNotes_click(string current_title, Guid current_id)
+        private void btn_showMoreNotes_click(DBObjectManager idea)
         {
-            this.current_title = current_title;
-            this.current_id = current_id;
+            this.saver_obj = idea;
             mainForm.mdl_setter.OpenModal(this, typeof(mdl_NotesOptions), mainForm);
 
         }
-        private void btn_showMoreDocs_click(string current_title, Guid current_id)
+        private void btn_showMoreDocs_click(DBObjectManager idea)
         {
-            this.current_title = current_title;
-            this.current_id = current_id;
+            this.saver_obj = idea;
             mainForm.mdl_setter.OpenModal(this, typeof(mdl_DocsOptions), mainForm);
 
         }

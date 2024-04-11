@@ -51,6 +51,7 @@ namespace IdeasAi.modals
             mainForm.frm_notebook.setActiveBtn(mainForm.frm_notebook.getBtnNotesTab(), mainForm.frm_notebook.getTbpnlTabs());
             mainForm.frm_notebook.displaySavedIdeas(mainForm.dbManager_Note);
 
+            mainForm.addNotification("success", "Successfully saved!", txb_setNoteTitle.Text);
             // Load the notebook form into the content panel
             mainForm.BringToFront();
             this.Hide();

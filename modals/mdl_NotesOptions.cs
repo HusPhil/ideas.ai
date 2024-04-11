@@ -28,7 +28,7 @@ namespace IdeasAi.modals
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-            txb_setNoteTitle.Text = mainForm.frm_notebook.current_title;
+            txb_setNoteTitle.Text = mainForm.frm_notebook.saver_obj.Title;
             oldTitle = txb_setNoteTitle.Text;
             var ownerForm = mainForm;
             this.Location = ModalSetter.CenterLocation(ownerForm.Width, ownerForm.Height, this.Width, this.Height, ownerForm.Location.X, ownerForm.Location.Y);
@@ -49,11 +49,12 @@ namespace IdeasAi.modals
         {
             
 
-            mainForm.dbManager_Note.modifyField(mainForm.frm_notebook.current_id, "Title", txb_setNoteTitle.Text);
+            mainForm.dbManager_Note.modifyField(mainForm.frm_notebook.saver_obj.UUID, "Title", txb_setNoteTitle.Text);
 
             if (!txb_setNoteTitle.Text.Equals(oldTitle))
             {
-                mainForm.dbManager_Note.modifyField(mainForm.frm_notebook.current_id, "Date_modified", DateTime.Now);
+                mainForm.dbManager_Note.modifyField(mainForm.frm_notebook.saver_obj.UUID, "Date_modified", DateTime.Now);
+                mainForm.addNotification("Success", "Successfully saved!", txb_setNoteTitle.Text);
             }
             
             mainForm.frm_notebook.displaySavedIdeas(mainForm.dbManager_Note);
@@ -67,7 +68,7 @@ namespace IdeasAi.modals
 
             if(confirm_count == 2)
             {
-                mainForm.dbManager_Note.deleteRecord(mainForm.frm_notebook.current_id);
+                mainForm.dbManager_Note.deleteRecord(mainForm.frm_notebook.saver_obj.UUID);
                 confirm_count = 0;
                 btn_delete.Text = "Delete";
                 mainForm.frm_notebook.displaySavedIdeas(mainForm.dbManager_Note);

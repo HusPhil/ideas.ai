@@ -28,7 +28,7 @@ namespace IdeasAi.pages
             this.mainForm = mainForm;
             ApplyZoom();
             cb_viewSelector.SelectedIndex = 0;
-            cb_themeSelector.SelectedIndex = 0;
+            
             pbx_mindmap.Image = null;
 
             this.txb_markdownInput.Text = "@startmindmap\n" +
@@ -40,7 +40,7 @@ namespace IdeasAi.pages
                 "*** Details 2.1\n" +
                 "**** Additional Details 2.1.1\n" +
                 "@endmindmap";
-            generateMindmap(txb_markdownInput.Text);
+            
         }
 
         public async Task<Image> markdownToMindmap(string markdown, bool auto)
@@ -61,6 +61,7 @@ namespace IdeasAi.pages
                 {
                     //lbl_errorIndicator.ForeColor = Color.Green;
                     //lbl_errorIndicator.Text = "No errors found.";
+                    mainForm.addNotification("success", "Successfully generated!", "A mindmap was successfully generated");
                     return Image.FromStream(ms);
                 }
             }
@@ -76,7 +77,7 @@ namespace IdeasAi.pages
 
                 //lbl_errorIndicator.ForeColor = Color.Red;
                 //lbl_errorIndicator.Text = ex.Message;
-                
+                mainForm.addNotification("error", "Failed to generate!", $"Error: {ex.Message}");
                 return null; 
             }
 
@@ -121,7 +122,7 @@ namespace IdeasAi.pages
 
         private void frm_mindmap_Load(object sender, EventArgs e)
         {
-            
+            cb_themeSelector.SelectedIndex = 0;
         }
 
         private static string AddTheme(string mindmapText, string theme)
@@ -236,13 +237,14 @@ namespace IdeasAi.pages
             try
             {
                 generateMindmap(txb_markdownInput.Text);    
-
+                
             }
             catch (Exception exception)
             {
                 //lbl_errorIndicator.ForeColor = Color.Red;
                 //lbl_errorIndicator.Text = exception.Message;
                 Console.WriteLine("Error: " + exception.Message);
+                mainForm.addNotification("error", "Failed to generate!", $"Error: {exception.Message}");
             }
         }
 

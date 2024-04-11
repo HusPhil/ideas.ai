@@ -34,6 +34,7 @@ namespace IdeasAi.modals
                 case "response":
                     pbx_type.Image = Resources.info;
                     break;
+                case "error":
                 case "warning":
                     pbx_type.Image = Resources.error_n;
                     break;
