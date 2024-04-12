@@ -42,15 +42,6 @@ namespace IdeasAi.pages
             pbx_loading.Image = null;
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnl_textEditor_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         private static string ConvertMarkdownToPlainText(string markdown)
         {
             // Replace Markdown heading syntax with plain text equivalent
@@ -211,12 +202,28 @@ namespace IdeasAi.pages
                 mainForm.addNotification("success", "Successfully saved!", $"{saver_obj.Title}");
                 
             }
+            else if (e.Control && e.KeyCode == Keys.Q)
+            {
+                // Get the clipboard data
+                string selectedText = txb_textEditor.SelectedText;
+
+                // Check if the clipboard contains image data
+                if (txb_textEditor.SelectionLength > 0)
+                {
+                    txb_QSearch.Text = selectedText;
+                    btn_QSearch_Click(sender, e);
+                }
+            }
+
+            
 
         }
+       
 
         private void txb_textEditor_TextChanged(object sender, EventArgs e)
         {
             saver_obj.Content = txb_textEditor.Text;
+            
         }
 
         private async void btn_QSearch_Click(object sender, EventArgs e)

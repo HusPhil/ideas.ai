@@ -223,7 +223,14 @@ namespace IdeasAi
         
         private void MainForm_SizeChanged(object sender, EventArgs e)
         {
-            frm_notebook.displaySavedIdeas(dbManager_Note);
+            if(frm_notebook.btn_activeTab.Equals(frm_notebook.getBtnDocsTab()))
+            {
+                frm_notebook.displaySavedIdeas(dbManager_Docs);
+            }
+            else
+            {
+                frm_notebook.displaySavedIdeas(dbManager_Note);
+            }
             setNotifPosition();
             
 ;        }
@@ -254,6 +261,9 @@ namespace IdeasAi
             return ref btn_mindmap; 
         }
 
-        
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

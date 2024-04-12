@@ -33,26 +33,26 @@ namespace IdeasAi
             this.components = new System.ComponentModel.Container();
             this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.pnl_menuSect = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
+            this.pnl_pageTabCont = new System.Windows.Forms.Panel();
             this.pnl_pageTabs = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_home = new System.Windows.Forms.Button();
             this.btn_consultation = new System.Windows.Forms.Button();
             this.btn_notebook = new System.Windows.Forms.Button();
             this.btn_workspace = new System.Windows.Forms.Button();
             this.btn_mindmap = new System.Windows.Forms.Button();
+            this.btn_exit = new System.Windows.Forms.Button();
+            this.pnl_header = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnl_content = new System.Windows.Forms.Panel();
             this.lbl_currentPage = new System.Windows.Forms.Label();
-            this.pnl_header = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pnl_pageTabCont = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pnl_menuSect)).BeginInit();
             this.pnl_menuSect.SuspendLayout();
-            this.pnl_pageTabs.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.pnl_header.SuspendLayout();
             this.pnl_pageTabCont.SuspendLayout();
+            this.pnl_pageTabs.SuspendLayout();
+            this.pnl_header.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // kryptonPalette1
@@ -89,6 +89,18 @@ namespace IdeasAi
             this.pnl_menuSect.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.pnl_menuSect.Size = new System.Drawing.Size(320, 720);
             this.pnl_menuSect.TabIndex = 0;
+            // 
+            // pnl_pageTabCont
+            // 
+            this.pnl_pageTabCont.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
+            this.pnl_pageTabCont.Controls.Add(this.pnl_pageTabs);
+            this.pnl_pageTabCont.Controls.Add(this.btn_exit);
+            this.pnl_pageTabCont.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_pageTabCont.Location = new System.Drawing.Point(0, 133);
+            this.pnl_pageTabCont.Name = "pnl_pageTabCont";
+            this.pnl_pageTabCont.Padding = new System.Windows.Forms.Padding(25, 30, 25, 50);
+            this.pnl_pageTabCont.Size = new System.Drawing.Size(320, 587);
+            this.pnl_pageTabCont.TabIndex = 2;
             // 
             // pnl_pageTabs
             // 
@@ -202,6 +214,48 @@ namespace IdeasAi
             this.btn_mindmap.UseVisualStyleBackColor = false;
             this.btn_mindmap.Click += new System.EventHandler(this.btn_mindmap_Click);
             // 
+            // btn_exit
+            // 
+            this.btn_exit.BackColor = System.Drawing.Color.Transparent;
+            this.btn_exit.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_exit.FlatAppearance.BorderSize = 0;
+            this.btn_exit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
+            this.btn_exit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
+            this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_exit.Font = new System.Drawing.Font("Cascadia Code Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_exit.ForeColor = System.Drawing.Color.White;
+            this.btn_exit.Location = new System.Drawing.Point(25, 478);
+            this.btn_exit.Name = "btn_exit";
+            this.btn_exit.Padding = new System.Windows.Forms.Padding(5);
+            this.btn_exit.Size = new System.Drawing.Size(270, 59);
+            this.btn_exit.TabIndex = 9;
+            this.btn_exit.Text = "Exit";
+            this.btn_exit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_exit.UseVisualStyleBackColor = false;
+            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
+            // 
+            // pnl_header
+            // 
+            this.pnl_header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
+            this.pnl_header.Controls.Add(this.label1);
+            this.pnl_header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_header.Location = new System.Drawing.Point(0, 0);
+            this.pnl_header.Name = "pnl_header";
+            this.pnl_header.Size = new System.Drawing.Size(320, 133);
+            this.pnl_header.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Cascadia Code", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(320, 133);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Ideas.ai";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // kryptonPalette2
             // 
             this.kryptonPalette2.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue;
@@ -250,59 +304,6 @@ namespace IdeasAi
             this.lbl_currentPage.Text = "Page 1";
             this.lbl_currentPage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pnl_header
-            // 
-            this.pnl_header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
-            this.pnl_header.Controls.Add(this.label1);
-            this.pnl_header.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_header.Location = new System.Drawing.Point(0, 0);
-            this.pnl_header.Name = "pnl_header";
-            this.pnl_header.Size = new System.Drawing.Size(320, 133);
-            this.pnl_header.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Cascadia Code", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(320, 133);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Ideas.ai";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pnl_pageTabCont
-            // 
-            this.pnl_pageTabCont.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
-            this.pnl_pageTabCont.Controls.Add(this.pnl_pageTabs);
-            this.pnl_pageTabCont.Controls.Add(this.button1);
-            this.pnl_pageTabCont.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_pageTabCont.Location = new System.Drawing.Point(0, 133);
-            this.pnl_pageTabCont.Name = "pnl_pageTabCont";
-            this.pnl_pageTabCont.Padding = new System.Windows.Forms.Padding(25, 30, 25, 50);
-            this.pnl_pageTabCont.Size = new System.Drawing.Size(320, 587);
-            this.pnl_pageTabCont.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Cascadia Code Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(25, 478);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(5);
-            this.button1.Size = new System.Drawing.Size(270, 59);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Exit";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -319,10 +320,10 @@ namespace IdeasAi
             this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.pnl_menuSect)).EndInit();
             this.pnl_menuSect.ResumeLayout(false);
-            this.pnl_pageTabs.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.pnl_header.ResumeLayout(false);
             this.pnl_pageTabCont.ResumeLayout(false);
+            this.pnl_pageTabs.ResumeLayout(false);
+            this.pnl_header.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -344,7 +345,7 @@ namespace IdeasAi
         private System.Windows.Forms.Panel pnl_header;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnl_pageTabCont;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_exit;
     }
 }
 
