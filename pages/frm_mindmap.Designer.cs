@@ -28,20 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_mindmap));
             this.pnl_viewerSide = new System.Windows.Forms.Panel();
             this.pnl_mindmapViewer = new System.Windows.Forms.Panel();
-            this.pbx_mindmap = new System.Windows.Forms.PictureBox();
             this.pnl_viewSettings = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.cb_viewSelector = new System.Windows.Forms.ComboBox();
             this.pnl_buttons = new System.Windows.Forms.Panel();
-            this.btn_zoomOut = new System.Windows.Forms.Button();
-            this.btn_zoomIn = new System.Windows.Forms.Button();
-            this.btn_reset = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btn_saveAsImage = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.cb_themeSelector = new System.Windows.Forms.ComboBox();
@@ -50,9 +44,15 @@
             this.pnl_inputSide = new System.Windows.Forms.Panel();
             this.txb_markdownInput = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.spl_mindmap = new System.Windows.Forms.Splitter();
+            this.pnl_titleCont = new System.Windows.Forms.Panel();
+            this.txb_title = new System.Windows.Forms.TextBox();
+            this.pbx_mindmap = new System.Windows.Forms.PictureBox();
+            this.btn_zoomOut = new System.Windows.Forms.Button();
+            this.btn_zoomIn = new System.Windows.Forms.Button();
+            this.btn_reset = new System.Windows.Forms.Button();
+            this.btn_saveAsImage = new System.Windows.Forms.Button();
             this.pnl_viewerSide.SuspendLayout();
             this.pnl_mindmapViewer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbx_mindmap)).BeginInit();
             this.pnl_viewSettings.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnl_buttons.SuspendLayout();
@@ -60,6 +60,8 @@
             this.panel2.SuspendLayout();
             this.pnl_error.SuspendLayout();
             this.pnl_inputSide.SuspendLayout();
+            this.pnl_titleCont.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_mindmap)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_viewerSide
@@ -84,21 +86,11 @@
             this.pnl_mindmapViewer.Size = new System.Drawing.Size(1008, 481);
             this.pnl_mindmapViewer.TabIndex = 2;
             // 
-            // pbx_mindmap
-            // 
-            this.pbx_mindmap.Image = global::IdeasAi.Properties.Resources.send;
-            this.pbx_mindmap.ImageLocation = "";
-            this.pbx_mindmap.Location = new System.Drawing.Point(0, 0);
-            this.pbx_mindmap.Name = "pbx_mindmap";
-            this.pbx_mindmap.Size = new System.Drawing.Size(14, 16);
-            this.pbx_mindmap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbx_mindmap.TabIndex = 0;
-            this.pbx_mindmap.TabStop = false;
-            // 
             // pnl_viewSettings
             // 
             this.pnl_viewSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(28)))));
             this.pnl_viewSettings.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_viewSettings.Controls.Add(this.pnl_titleCont);
             this.pnl_viewSettings.Controls.Add(this.panel1);
             this.pnl_viewSettings.Controls.Add(this.pnl_buttons);
             this.pnl_viewSettings.Controls.Add(this.panel3);
@@ -162,49 +154,6 @@
             this.pnl_buttons.Size = new System.Drawing.Size(126, 83);
             this.pnl_buttons.TabIndex = 16;
             // 
-            // btn_zoomOut
-            // 
-            this.btn_zoomOut.BackColor = System.Drawing.Color.White;
-            this.btn_zoomOut.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btn_zoomOut.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(28)))));
-            this.btn_zoomOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_zoomOut.Image = global::IdeasAi.Properties.Resources.zoomout;
-            this.btn_zoomOut.Location = new System.Drawing.Point(80, 22);
-            this.btn_zoomOut.Name = "btn_zoomOut";
-            this.btn_zoomOut.Size = new System.Drawing.Size(40, 39);
-            this.btn_zoomOut.TabIndex = 0;
-            this.btn_zoomOut.UseVisualStyleBackColor = false;
-            this.btn_zoomOut.Click += new System.EventHandler(this.btn_zoomOut_Click);
-            // 
-            // btn_zoomIn
-            // 
-            this.btn_zoomIn.BackColor = System.Drawing.Color.White;
-            this.btn_zoomIn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btn_zoomIn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(28)))));
-            this.btn_zoomIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_zoomIn.Image = global::IdeasAi.Properties.Resources.zoomin;
-            this.btn_zoomIn.Location = new System.Drawing.Point(40, 22);
-            this.btn_zoomIn.Name = "btn_zoomIn";
-            this.btn_zoomIn.Size = new System.Drawing.Size(40, 39);
-            this.btn_zoomIn.TabIndex = 1;
-            this.btn_zoomIn.UseVisualStyleBackColor = false;
-            this.btn_zoomIn.Click += new System.EventHandler(this.btn_zoomIn_Click);
-            // 
-            // btn_reset
-            // 
-            this.btn_reset.BackColor = System.Drawing.Color.White;
-            this.btn_reset.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btn_reset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(28)))));
-            this.btn_reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_reset.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_reset.Image = global::IdeasAi.Properties.Resources.resetZoom;
-            this.btn_reset.Location = new System.Drawing.Point(0, 22);
-            this.btn_reset.Name = "btn_reset";
-            this.btn_reset.Size = new System.Drawing.Size(40, 39);
-            this.btn_reset.TabIndex = 2;
-            this.btn_reset.UseVisualStyleBackColor = false;
-            this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btn_saveAsImage);
@@ -214,22 +163,6 @@
             this.panel3.Padding = new System.Windows.Forms.Padding(0, 22, 10, 22);
             this.panel3.Size = new System.Drawing.Size(55, 83);
             this.panel3.TabIndex = 14;
-            // 
-            // btn_saveAsImage
-            // 
-            this.btn_saveAsImage.BackColor = System.Drawing.Color.White;
-            this.btn_saveAsImage.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_saveAsImage.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(28)))));
-            this.btn_saveAsImage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btn_saveAsImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_saveAsImage.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_saveAsImage.Image = ((System.Drawing.Image)(resources.GetObject("btn_saveAsImage.Image")));
-            this.btn_saveAsImage.Location = new System.Drawing.Point(5, 22);
-            this.btn_saveAsImage.Name = "btn_saveAsImage";
-            this.btn_saveAsImage.Size = new System.Drawing.Size(40, 39);
-            this.btn_saveAsImage.TabIndex = 7;
-            this.btn_saveAsImage.UseVisualStyleBackColor = false;
-            this.btn_saveAsImage.Click += new System.EventHandler(this.btn_saveAsImage_Click);
             // 
             // panel2
             // 
@@ -359,6 +292,101 @@
             this.spl_mindmap.TabIndex = 6;
             this.spl_mindmap.TabStop = false;
             // 
+            // pnl_titleCont
+            // 
+            this.pnl_titleCont.Controls.Add(this.txb_title);
+            this.pnl_titleCont.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_titleCont.Location = new System.Drawing.Point(250, 0);
+            this.pnl_titleCont.Name = "pnl_titleCont";
+            this.pnl_titleCont.Padding = new System.Windows.Forms.Padding(25, 30, 25, 0);
+            this.pnl_titleCont.Size = new System.Drawing.Size(457, 83);
+            this.pnl_titleCont.TabIndex = 18;
+            // 
+            // txb_title
+            // 
+            this.txb_title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(28)))));
+            this.txb_title.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txb_title.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txb_title.Font = new System.Drawing.Font("Cascadia Code", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txb_title.ForeColor = System.Drawing.Color.White;
+            this.txb_title.Location = new System.Drawing.Point(25, 30);
+            this.txb_title.Name = "txb_title";
+            this.txb_title.Size = new System.Drawing.Size(407, 28);
+            this.txb_title.TabIndex = 0;
+            this.txb_title.Text = "myMindmap";
+            this.txb_title.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // pbx_mindmap
+            // 
+            this.pbx_mindmap.Image = global::IdeasAi.Properties.Resources.send;
+            this.pbx_mindmap.ImageLocation = "";
+            this.pbx_mindmap.Location = new System.Drawing.Point(0, 0);
+            this.pbx_mindmap.Name = "pbx_mindmap";
+            this.pbx_mindmap.Size = new System.Drawing.Size(14, 16);
+            this.pbx_mindmap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbx_mindmap.TabIndex = 0;
+            this.pbx_mindmap.TabStop = false;
+            // 
+            // btn_zoomOut
+            // 
+            this.btn_zoomOut.BackColor = System.Drawing.Color.White;
+            this.btn_zoomOut.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_zoomOut.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(28)))));
+            this.btn_zoomOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_zoomOut.Image = global::IdeasAi.Properties.Resources.zoomout;
+            this.btn_zoomOut.Location = new System.Drawing.Point(80, 22);
+            this.btn_zoomOut.Name = "btn_zoomOut";
+            this.btn_zoomOut.Size = new System.Drawing.Size(40, 39);
+            this.btn_zoomOut.TabIndex = 0;
+            this.btn_zoomOut.UseVisualStyleBackColor = false;
+            this.btn_zoomOut.Click += new System.EventHandler(this.btn_zoomOut_Click);
+            // 
+            // btn_zoomIn
+            // 
+            this.btn_zoomIn.BackColor = System.Drawing.Color.White;
+            this.btn_zoomIn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_zoomIn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(28)))));
+            this.btn_zoomIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_zoomIn.Image = global::IdeasAi.Properties.Resources.zoomin;
+            this.btn_zoomIn.Location = new System.Drawing.Point(40, 22);
+            this.btn_zoomIn.Name = "btn_zoomIn";
+            this.btn_zoomIn.Size = new System.Drawing.Size(40, 39);
+            this.btn_zoomIn.TabIndex = 1;
+            this.btn_zoomIn.UseVisualStyleBackColor = false;
+            this.btn_zoomIn.Click += new System.EventHandler(this.btn_zoomIn_Click);
+            // 
+            // btn_reset
+            // 
+            this.btn_reset.BackColor = System.Drawing.Color.White;
+            this.btn_reset.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_reset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(28)))));
+            this.btn_reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_reset.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_reset.Image = global::IdeasAi.Properties.Resources.resetZoom;
+            this.btn_reset.Location = new System.Drawing.Point(0, 22);
+            this.btn_reset.Name = "btn_reset";
+            this.btn_reset.Size = new System.Drawing.Size(40, 39);
+            this.btn_reset.TabIndex = 2;
+            this.btn_reset.UseVisualStyleBackColor = false;
+            this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
+            // 
+            // btn_saveAsImage
+            // 
+            this.btn_saveAsImage.BackColor = System.Drawing.Color.White;
+            this.btn_saveAsImage.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_saveAsImage.Enabled = false;
+            this.btn_saveAsImage.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(28)))));
+            this.btn_saveAsImage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_saveAsImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_saveAsImage.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_saveAsImage.Image = global::IdeasAi.Properties.Resources.saveAsFile;
+            this.btn_saveAsImage.Location = new System.Drawing.Point(5, 22);
+            this.btn_saveAsImage.Name = "btn_saveAsImage";
+            this.btn_saveAsImage.Size = new System.Drawing.Size(40, 39);
+            this.btn_saveAsImage.TabIndex = 7;
+            this.btn_saveAsImage.UseVisualStyleBackColor = false;
+            this.btn_saveAsImage.Click += new System.EventHandler(this.btn_saveAsImage_Click);
+            // 
             // frm_mindmap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -376,7 +404,6 @@
             this.Load += new System.EventHandler(this.frm_mindmap_Load);
             this.pnl_viewerSide.ResumeLayout(false);
             this.pnl_mindmapViewer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbx_mindmap)).EndInit();
             this.pnl_viewSettings.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -386,6 +413,9 @@
             this.panel2.PerformLayout();
             this.pnl_error.ResumeLayout(false);
             this.pnl_inputSide.ResumeLayout(false);
+            this.pnl_titleCont.ResumeLayout(false);
+            this.pnl_titleCont.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_mindmap)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -412,5 +442,7 @@
         private System.Windows.Forms.Button btn_reset;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btn_saveAsImage;
+        private System.Windows.Forms.Panel pnl_titleCont;
+        private System.Windows.Forms.TextBox txb_title;
     }
 }

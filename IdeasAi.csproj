@@ -177,12 +177,6 @@
     <Compile Include="modals\mdl_DocsOptions.Designer.cs">
       <DependentUpon>mdl_DocsOptions.cs</DependentUpon>
     </Compile>
-    <Compile Include="modals\mdl_error.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="modals\mdl_error.Designer.cs">
-      <DependentUpon>mdl_error.cs</DependentUpon>
-    </Compile>
     <Compile Include="modals\mdl_loading.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,9 +240,6 @@
     <EmbeddedResource Include="modals\mdl_DocsOptions.resx">
       <DependentUpon>mdl_DocsOptions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="modals\mdl_error.resx">
-      <DependentUpon>mdl_error.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="modals\mdl_loading.resx">
       <DependentUpon>mdl_loading.cs</DependentUpon>
     </EmbeddedResource>
@@ -311,12 +302,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\icons\send.png" />
+    <None Include="Resources\quickSearch.png" />
+    <None Include="Resources\saveAsFile.png" />
     <None Include="Resources\delete.png" />
     <None Include="Resources\docOptions.png" />
     <None Include="Resources\mindmap.png" />
     <None Include="Resources\organize.png" />
     <None Include="Resources\quickSearchLoad.gif" />
-    <None Include="Resources\quickSearch.png" />
     <None Include="Resources\moreSettings.png" />
     <None Include="Resources\zoomout.png" />
     <None Include="Resources\zoomin.png" />

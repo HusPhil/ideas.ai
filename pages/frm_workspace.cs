@@ -154,14 +154,16 @@ namespace IdeasAi.pages
             try
             {
                 mindmap_obj.Content = await mindmap_obj.GetResponse();
+                mainForm.frm_mindmap.getTxbMarkdownInput().Text = mindmap_obj.Content;
+                mainForm.frm_mindmap.generateMindmap(mindmap_obj.Content);
+                mainForm.frm_mindmap.getTxbTitle().Text = txb_docsTitle.Text + " [mindmap]";
                 //mainForm.addNotification("success", "Successfully generated!", "A mindmap was successfully generated");
             }
             catch (Exception exception)
             {
                 mainForm.addNotification("error", "Failed to generate!", $"Error: {exception.Message}");
             }
-            mainForm.frm_mindmap.getTxbMarkdownInput().Text = mindmap_obj.Content;
-            mainForm.frm_mindmap.generateMindmap(mindmap_obj.Content);
+            
 
             mainForm.loadForm(mainForm.frm_mindmap, mainForm.getPnlContent());
             mainForm.setActiveBtn(mainForm.getBtnMindmap(), mainForm.getPnlPageTabs());
@@ -301,7 +303,7 @@ namespace IdeasAi.pages
             return ref txb_docsTitle;
         }
 
-        public ref KryptonTextBox getTxbEditor()
+        public ref RichTextBox getTxbEditor()
         {
             return ref txb_textEditor;
         }

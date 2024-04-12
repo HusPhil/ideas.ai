@@ -62,22 +62,19 @@ namespace IdeasAi.pages
                     //lbl_errorIndicator.ForeColor = Color.Green;
                     //lbl_errorIndicator.Text = "No errors found.";
                     mainForm.addNotification("success", "Successfully generated!", "A mindmap was successfully generated");
+                    btn_saveAsImage.Enabled = true;
                     return Image.FromStream(ms);
+
                 }
             }
             catch (Exception ex)
             {
-                if (auto)
-                {
-                    mainForm.mdl_error.lbl_errorInfo.Text = ex.Message;
-                    mainForm.setModalBackground(this);
-                    mainForm.mdl_error.ShowDialog();
-                }
                 Console.WriteLine($"An error occurreds: {ex.Message}");
 
                 //lbl_errorIndicator.ForeColor = Color.Red;
                 //lbl_errorIndicator.Text = ex.Message;
                 mainForm.addNotification("error", "Failed to generate!", $"Error: {ex.Message}");
+                btn_saveAsImage.Enabled = !true;
                 return null; 
             }
 
@@ -248,26 +245,20 @@ namespace IdeasAi.pages
             }
         }
 
-        //Getters
-        public ref KryptonRichTextBox getTxbMarkdownInput()
-        {
-            return ref txb_markdownInput;
-        }
-
         private void btn_saveAsImage_Click(object sender, EventArgs e)
         {
             // Create save file dialog
             SaveFileDialog saveDialog = new SaveFileDialog();
             saveDialog.Filter = "JPEG Image|*.jpg|PNG Image|*.png|Bitmap Image|*.bmp";
             saveDialog.Title = "Save Image";
-            saveDialog.FileName = "image"; // Default filename
-
+            saveDialog.FileName = txb_title.Text;
             // Show save file dialog and get the result
             DialogResult result = saveDialog.ShowDialog();
 
             if (result == DialogResult.OK)
             {
                 // Get the filename entered by the user
+                
                 string fileName = saveDialog.FileName;
 
                 // Get the image from the PictureBox
@@ -294,10 +285,13 @@ namespace IdeasAi.pages
                             MessageBox.Show("Unsupported file format");
                             break;
                     }
+
+                    mainForm.addNotification("success", "File saved!", "Mindmap was saved as a file");
                 }
                 else
                 {
                     MessageBox.Show("No image to save");
+                    mainForm.addNotification("erro", "File was not saved!", "Failed to save your mindmap");
                 }
             }
         }
@@ -488,5 +482,15 @@ namespace IdeasAi.pages
                 Console.WriteLine("An error occurred: " + ex.Message);
             }
         }
+        //Getters
+        public ref KryptonRichTextBox getTxbMarkdownInput()
+        {
+            return ref txb_markdownInput;
+        }
+        public ref TextBox getTxbTitle()
+        {
+            return ref txb_title;
+        }
+
     }
 }

@@ -131,5 +131,4 @@ C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.modals.mdl_saveDocs.resources
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.modals.mdl_DocsOptions.resources
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.modals.mdl_NotesOptions.resources
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.modals.mdl_loading.resources
-C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.modals.mdl_error.resources
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.modals.mdl_notif.resources
