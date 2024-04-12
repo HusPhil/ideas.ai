@@ -31,41 +31,41 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_workspace));
             this.txb_docsTitle = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.pnl_textEditor = new System.Windows.Forms.Panel();
+            this.pnl_textEditCont = new System.Windows.Forms.Panel();
+            this.txb_textEditor = new System.Windows.Forms.RichTextBox();
             this.pnl_btns = new System.Windows.Forms.Panel();
             this.lbl_lastDateSaved = new System.Windows.Forms.Label();
+            this.btn_docOptions = new System.Windows.Forms.Button();
             this.pnl_docConts = new System.Windows.Forms.Panel();
             this.btn_new = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_openFile = new System.Windows.Forms.Button();
+            this.btn_docsDel = new System.Windows.Forms.Button();
             this.pnl_confirmDel = new System.Windows.Forms.Panel();
             this.btn_confirm = new System.Windows.Forms.Button();
+            this.btn_createMindmap = new System.Windows.Forms.Button();
+            this.btn_organizeIdea = new System.Windows.Forms.Button();
             this.pln_splitCont = new System.Windows.Forms.Panel();
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnl_quickSearchRes = new System.Windows.Forms.Panel();
             this.txb_qsearchRes = new System.Windows.Forms.TextBox();
+            this.pbx_loading = new System.Windows.Forms.PictureBox();
             this.pnl_quickSearch = new System.Windows.Forms.Panel();
             this.pnl_txbCont = new System.Windows.Forms.Panel();
             this.txb_QSearch = new System.Windows.Forms.RichTextBox();
-            this.btn_docOptions = new System.Windows.Forms.Button();
-            this.btn_docsDel = new System.Windows.Forms.Button();
-            this.btn_createMindmap = new System.Windows.Forms.Button();
-            this.btn_organizeIdea = new System.Windows.Forms.Button();
-            this.pbx_loading = new System.Windows.Forms.PictureBox();
             this.btn_QSearch = new System.Windows.Forms.Button();
-            this.txb_textEditor = new System.Windows.Forms.RichTextBox();
-            this.pnl_textEditCont = new System.Windows.Forms.Panel();
             this.pnl_textEditor.SuspendLayout();
+            this.pnl_textEditCont.SuspendLayout();
             this.pnl_btns.SuspendLayout();
             this.pnl_docConts.SuspendLayout();
             this.pnl_confirmDel.SuspendLayout();
             this.pln_splitCont.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnl_quickSearchRes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_loading)).BeginInit();
             this.pnl_quickSearch.SuspendLayout();
             this.pnl_txbCont.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbx_loading)).BeginInit();
-            this.pnl_textEditCont.SuspendLayout();
             this.SuspendLayout();
             // 
             // txb_docsTitle
@@ -79,6 +79,7 @@
             this.txb_docsTitle.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txb_docsTitle.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.txb_docsTitle.StateCommon.Content.Color1 = System.Drawing.Color.White;
             this.txb_docsTitle.StateCommon.Content.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txb_docsTitle.StateCommon.Content.Padding = new System.Windows.Forms.Padding(5, 10, 5, 5);
@@ -99,6 +100,30 @@
             this.pnl_textEditor.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.pnl_textEditor.Size = new System.Drawing.Size(1013, 549);
             this.pnl_textEditor.TabIndex = 10;
+            // 
+            // pnl_textEditCont
+            // 
+            this.pnl_textEditCont.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnl_textEditCont.Controls.Add(this.txb_textEditor);
+            this.pnl_textEditCont.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_textEditCont.Location = new System.Drawing.Point(0, 5);
+            this.pnl_textEditCont.Name = "pnl_textEditCont";
+            this.pnl_textEditCont.Padding = new System.Windows.Forms.Padding(10);
+            this.pnl_textEditCont.Size = new System.Drawing.Size(1013, 487);
+            this.pnl_textEditCont.TabIndex = 9;
+            // 
+            // txb_textEditor
+            // 
+            this.txb_textEditor.AcceptsTab = true;
+            this.txb_textEditor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txb_textEditor.Font = new System.Drawing.Font("Cascadia Code Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txb_textEditor.Location = new System.Drawing.Point(10, 10);
+            this.txb_textEditor.Name = "txb_textEditor";
+            this.txb_textEditor.Size = new System.Drawing.Size(993, 467);
+            this.txb_textEditor.TabIndex = 8;
+            this.txb_textEditor.Text = "Type your ideas..";
+            this.txb_textEditor.TextChanged += new System.EventHandler(this.txb_textEditor_TextChanged);
+            this.txb_textEditor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_textEditor_KeyDown);
             // 
             // pnl_btns
             // 
@@ -129,6 +154,19 @@
             this.lbl_lastDateSaved.TabIndex = 13;
             this.lbl_lastDateSaved.Text = "Last Modified: N/A";
             this.lbl_lastDateSaved.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btn_docOptions
+            // 
+            this.btn_docOptions.BackColor = System.Drawing.Color.White;
+            this.btn_docOptions.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_docOptions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_docOptions.Image = global::IdeasAi.Properties.Resources.docOptions;
+            this.btn_docOptions.Location = new System.Drawing.Point(593, 10);
+            this.btn_docOptions.Name = "btn_docOptions";
+            this.btn_docOptions.Size = new System.Drawing.Size(38, 42);
+            this.btn_docOptions.TabIndex = 18;
+            this.btn_docOptions.UseVisualStyleBackColor = false;
+            this.btn_docOptions.Click += new System.EventHandler(this.btn_docOptions_Click);
             // 
             // pnl_docConts
             // 
@@ -185,6 +223,21 @@
             this.btn_openFile.UseVisualStyleBackColor = false;
             this.btn_openFile.Click += new System.EventHandler(this.btn_openFile_Click);
             // 
+            // btn_docsDel
+            // 
+            this.btn_docsDel.BackColor = System.Drawing.Color.White;
+            this.btn_docsDel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_docsDel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn_docsDel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_docsDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_docsDel.Image = global::IdeasAi.Properties.Resources.delete;
+            this.btn_docsDel.Location = new System.Drawing.Point(877, 10);
+            this.btn_docsDel.Name = "btn_docsDel";
+            this.btn_docsDel.Size = new System.Drawing.Size(38, 42);
+            this.btn_docsDel.TabIndex = 16;
+            this.btn_docsDel.UseVisualStyleBackColor = false;
+            this.btn_docsDel.Click += new System.EventHandler(this.btn_docsDel_Click);
+            // 
             // pnl_confirmDel
             // 
             this.pnl_confirmDel.Controls.Add(this.btn_confirm);
@@ -210,6 +263,38 @@
             this.btn_confirm.Text = "Confirm";
             this.btn_confirm.UseVisualStyleBackColor = false;
             this.btn_confirm.Click += new System.EventHandler(this.btn_confirm_Click);
+            // 
+            // btn_createMindmap
+            // 
+            this.btn_createMindmap.BackColor = System.Drawing.Color.White;
+            this.btn_createMindmap.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_createMindmap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_createMindmap.Image = global::IdeasAi.Properties.Resources.mindmap;
+            this.btn_createMindmap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_createMindmap.Location = new System.Drawing.Point(123, 10);
+            this.btn_createMindmap.Name = "btn_createMindmap";
+            this.btn_createMindmap.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btn_createMindmap.Size = new System.Drawing.Size(127, 42);
+            this.btn_createMindmap.TabIndex = 5;
+            this.btn_createMindmap.Text = "     Mindmap";
+            this.btn_createMindmap.UseVisualStyleBackColor = false;
+            this.btn_createMindmap.Click += new System.EventHandler(this.btn_createMindmap_Click);
+            // 
+            // btn_organizeIdea
+            // 
+            this.btn_organizeIdea.BackColor = System.Drawing.Color.White;
+            this.btn_organizeIdea.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_organizeIdea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_organizeIdea.Image = global::IdeasAi.Properties.Resources.organize;
+            this.btn_organizeIdea.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_organizeIdea.Location = new System.Drawing.Point(0, 10);
+            this.btn_organizeIdea.Name = "btn_organizeIdea";
+            this.btn_organizeIdea.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btn_organizeIdea.Size = new System.Drawing.Size(123, 42);
+            this.btn_organizeIdea.TabIndex = 3;
+            this.btn_organizeIdea.Text = "     Organize";
+            this.btn_organizeIdea.UseVisualStyleBackColor = false;
+            this.btn_organizeIdea.Click += new System.EventHandler(this.btn_organizeIdea_Click);
             // 
             // pln_splitCont
             // 
@@ -268,6 +353,18 @@
             this.txb_qsearchRes.Size = new System.Drawing.Size(240, 458);
             this.txb_qsearchRes.TabIndex = 3;
             // 
+            // pbx_loading
+            // 
+            this.pbx_loading.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pbx_loading.Image = ((System.Drawing.Image)(resources.GetObject("pbx_loading.Image")));
+            this.pbx_loading.Location = new System.Drawing.Point(0, 59);
+            this.pbx_loading.Name = "pbx_loading";
+            this.pbx_loading.Size = new System.Drawing.Size(240, 27);
+            this.pbx_loading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbx_loading.TabIndex = 9;
+            this.pbx_loading.TabStop = false;
+            this.pbx_loading.Visible = false;
+            // 
             // pnl_quickSearch
             // 
             this.pnl_quickSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
@@ -309,78 +406,6 @@
             this.txb_QSearch.Click += new System.EventHandler(this.txb_QSearch_Click);
             this.txb_QSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_QSearch_KeyDown);
             // 
-            // btn_docOptions
-            // 
-            this.btn_docOptions.BackColor = System.Drawing.Color.White;
-            this.btn_docOptions.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_docOptions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_docOptions.Image = global::IdeasAi.Properties.Resources.docOptions;
-            this.btn_docOptions.Location = new System.Drawing.Point(593, 10);
-            this.btn_docOptions.Name = "btn_docOptions";
-            this.btn_docOptions.Size = new System.Drawing.Size(38, 42);
-            this.btn_docOptions.TabIndex = 18;
-            this.btn_docOptions.UseVisualStyleBackColor = false;
-            this.btn_docOptions.Click += new System.EventHandler(this.btn_docOptions_Click);
-            // 
-            // btn_docsDel
-            // 
-            this.btn_docsDel.BackColor = System.Drawing.Color.White;
-            this.btn_docsDel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_docsDel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn_docsDel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_docsDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_docsDel.Image = global::IdeasAi.Properties.Resources.delete;
-            this.btn_docsDel.Location = new System.Drawing.Point(877, 10);
-            this.btn_docsDel.Name = "btn_docsDel";
-            this.btn_docsDel.Size = new System.Drawing.Size(38, 42);
-            this.btn_docsDel.TabIndex = 16;
-            this.btn_docsDel.UseVisualStyleBackColor = false;
-            this.btn_docsDel.Click += new System.EventHandler(this.btn_docsDel_Click);
-            // 
-            // btn_createMindmap
-            // 
-            this.btn_createMindmap.BackColor = System.Drawing.Color.White;
-            this.btn_createMindmap.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btn_createMindmap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_createMindmap.Image = global::IdeasAi.Properties.Resources.mindmap;
-            this.btn_createMindmap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_createMindmap.Location = new System.Drawing.Point(123, 10);
-            this.btn_createMindmap.Name = "btn_createMindmap";
-            this.btn_createMindmap.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btn_createMindmap.Size = new System.Drawing.Size(127, 42);
-            this.btn_createMindmap.TabIndex = 5;
-            this.btn_createMindmap.Text = "     Mindmap";
-            this.btn_createMindmap.UseVisualStyleBackColor = false;
-            this.btn_createMindmap.Click += new System.EventHandler(this.btn_createMindmap_Click);
-            // 
-            // btn_organizeIdea
-            // 
-            this.btn_organizeIdea.BackColor = System.Drawing.Color.White;
-            this.btn_organizeIdea.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btn_organizeIdea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_organizeIdea.Image = global::IdeasAi.Properties.Resources.organize;
-            this.btn_organizeIdea.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_organizeIdea.Location = new System.Drawing.Point(0, 10);
-            this.btn_organizeIdea.Name = "btn_organizeIdea";
-            this.btn_organizeIdea.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btn_organizeIdea.Size = new System.Drawing.Size(123, 42);
-            this.btn_organizeIdea.TabIndex = 3;
-            this.btn_organizeIdea.Text = "     Organize";
-            this.btn_organizeIdea.UseVisualStyleBackColor = false;
-            this.btn_organizeIdea.Click += new System.EventHandler(this.btn_organizeIdea_Click);
-            // 
-            // pbx_loading
-            // 
-            this.pbx_loading.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pbx_loading.Image = ((System.Drawing.Image)(resources.GetObject("pbx_loading.Image")));
-            this.pbx_loading.Location = new System.Drawing.Point(0, 59);
-            this.pbx_loading.Name = "pbx_loading";
-            this.pbx_loading.Size = new System.Drawing.Size(240, 27);
-            this.pbx_loading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbx_loading.TabIndex = 9;
-            this.pbx_loading.TabStop = false;
-            this.pbx_loading.Visible = false;
-            // 
             // btn_QSearch
             // 
             this.btn_QSearch.BackColor = System.Drawing.Color.DimGray;
@@ -399,29 +424,6 @@
             this.btn_QSearch.UseVisualStyleBackColor = false;
             this.btn_QSearch.Click += new System.EventHandler(this.btn_QSearch_Click);
             // 
-            // txb_textEditor
-            // 
-            this.txb_textEditor.AcceptsTab = true;
-            this.txb_textEditor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txb_textEditor.Font = new System.Drawing.Font("Cascadia Code Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txb_textEditor.Location = new System.Drawing.Point(10, 10);
-            this.txb_textEditor.Name = "txb_textEditor";
-            this.txb_textEditor.Size = new System.Drawing.Size(993, 467);
-            this.txb_textEditor.TabIndex = 8;
-            this.txb_textEditor.Text = "Type your ideas..";
-            this.txb_textEditor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_textEditor_KeyDown);
-            // 
-            // pnl_textEditCont
-            // 
-            this.pnl_textEditCont.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnl_textEditCont.Controls.Add(this.txb_textEditor);
-            this.pnl_textEditCont.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_textEditCont.Location = new System.Drawing.Point(0, 5);
-            this.pnl_textEditCont.Name = "pnl_textEditCont";
-            this.pnl_textEditCont.Padding = new System.Windows.Forms.Padding(10);
-            this.pnl_textEditCont.Size = new System.Drawing.Size(1013, 487);
-            this.pnl_textEditCont.TabIndex = 9;
-            // 
             // frm_workspace
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -437,6 +439,7 @@
             this.Text = "frm_workspace";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frm_workspace_Paint);
             this.pnl_textEditor.ResumeLayout(false);
+            this.pnl_textEditCont.ResumeLayout(false);
             this.pnl_btns.ResumeLayout(false);
             this.pnl_docConts.ResumeLayout(false);
             this.pnl_confirmDel.ResumeLayout(false);
@@ -444,10 +447,9 @@
             this.panel1.ResumeLayout(false);
             this.pnl_quickSearchRes.ResumeLayout(false);
             this.pnl_quickSearchRes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_loading)).EndInit();
             this.pnl_quickSearch.ResumeLayout(false);
             this.pnl_txbCont.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbx_loading)).EndInit();
-            this.pnl_textEditCont.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

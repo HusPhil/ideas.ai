@@ -274,10 +274,10 @@ namespace IdeasAi.pages
         {
             if (db.GetType().Equals(typeof(DBManager_Note)))
             {
-            mainForm.loadForm(mainForm.frm_home,mainForm.getPnlContent());
+            mainForm.loadForm(mainForm.frm_consultation,mainForm.getPnlContent());
             mainForm.setActiveBtn(mainForm.getBtnHome(), mainForm.getPnlPageTabs());
-            mainForm.frm_home.displayResult(dom.Content);
-            mainForm.frm_home.getSaveBtn().Enabled = false;
+            mainForm.frm_consultation.displayResult(dom.Content);
+            mainForm.frm_consultation.getSaveBtn().Enabled = false;
 
             }
             else if (db.GetType().Equals(typeof(DBManager_Docs)))

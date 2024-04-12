@@ -17,8 +17,8 @@ namespace IdeasAi
 
         // PAGE FORMS
         public frm_home frm_home;
+        public frm_consultation frm_consultation;
         public frm_workspace frm_workspace;
-        public frm_settings frm_settings;
         public frm_notebook frm_notebook;
         public frm_mindmap frm_mindmap;
         //
@@ -44,8 +44,8 @@ namespace IdeasAi
 
             InitializeComponent();
             frm_home = new frm_home(this);
+            frm_consultation = new frm_consultation(this);
             frm_notebook =  new frm_notebook(this);
-            frm_settings = new frm_settings(this);
             frm_mindmap = new frm_mindmap(this);
             frm_workspace = new frm_workspace(this);
 
@@ -162,26 +162,19 @@ namespace IdeasAi
 
             loadForm(frm_home, pnl_content);
         }
+        private void btn_consultation_Click(object sender, EventArgs e)
+        {
+            setActiveBtn(sender, pnl_pageTabs);
+
+
+            loadForm(frm_consultation, pnl_content);
+        }
 
         private void btn_workspace_Click(object sender, EventArgs e)
         {
             setActiveBtn(sender, pnl_pageTabs);
             loadForm(frm_workspace, pnl_content);
-        }
-
-        private void btn_history_Click(object sender, EventArgs e)
-        {
-            setActiveBtn(sender, pnl_pageTabs);
-        }
-
-        private void btn_unde_Click(object sender, EventArgs e)
-        {
-
-            setActiveBtn(sender, pnl_pageTabs);
-            //loadForm(mdl_loading, pnl_content);
-
-            //mdl_setter.OpenModal(this, typeof(mdl_saveDocs), this);
-        }
+        }        
 
         private void btn_notebook_Click(object sender, EventArgs e)
         {
@@ -261,6 +254,6 @@ namespace IdeasAi
             return ref btn_mindmap; 
         }
 
-
+        
     }
 }

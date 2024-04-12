@@ -208,6 +208,12 @@
       <DependentUpon>mdl_saveDocs.cs</DependentUpon>
     </Compile>
     <Compile Include="modals\ModalSetter.cs" />
+    <Compile Include="pages\frm_consultation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\frm_consultation.Designer.cs">
+      <DependentUpon>frm_consultation.cs</DependentUpon>
+    </Compile>
     <Compile Include="pages\frm_home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,12 +225,6 @@
     </Compile>
     <Compile Include="pages\frm_mindmap.Designer.cs">
       <DependentUpon>frm_mindmap.cs</DependentUpon>
-    </Compile>
-    <Compile Include="pages\frm_settings.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="pages\frm_settings.Designer.cs">
-      <DependentUpon>frm_settings.cs</DependentUpon>
     </Compile>
     <Compile Include="pages\frm_workspace.cs">
       <SubType>Form</SubType>
@@ -255,6 +255,9 @@
     <EmbeddedResource Include="modals\mdl_saveDocs.resx">
       <DependentUpon>mdl_saveDocs.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="pages\frm_consultation.resx">
+      <DependentUpon>frm_consultation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="pages\frm_home.resx">
       <DependentUpon>frm_home.cs</DependentUpon>
     </EmbeddedResource>
@@ -263,9 +266,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pages\frm_notebook.resx">
       <DependentUpon>frm_notebook.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="pages\frm_settings.resx">
-      <DependentUpon>frm_settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pages\frm_workspace.resx">
       <DependentUpon>frm_workspace.cs</DependentUpon>
