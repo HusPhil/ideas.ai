@@ -221,14 +221,7 @@ namespace IdeasAi.pages
             ApplyZoom();
         }
 
-        public async void generateMindmap(string input, bool auto)
-        {
-            var cleanedInput = ConvertMarkdownToPlantUML(input);
-            Console.WriteLine(cleanedInput);
-            pbx_mindmap.Image = await markdownToMindmap(cleanedInput, auto);
-            scaleFactor = defaultScaleFactor;
-            ApplyZoom();
-        }
+        
         private void btn_generateMindmap_Click(object sender, EventArgs e)
         {
             try
@@ -490,7 +483,12 @@ namespace IdeasAi.pages
         public ref TextBox getTxbTitle()
         {
             return ref txb_title;
+
         }
 
+        private void pbx_mindmap_BackgroundImageChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("Changed");
+        }
     }
 }

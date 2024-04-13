@@ -9,6 +9,8 @@ using IdeasAi.db;
 using System.Drawing;
 using System.IO;
 using PlantUml.Net;
+using IdeasAi.pages;
+using System.Text.RegularExpressions;
 
 
 namespace IdeasAi.PageForms
@@ -26,6 +28,7 @@ namespace IdeasAi.PageForms
         public Guid id_holder;
         public string content_holder;
         public string input_holder;
+        public string markDownResonse;
         public DateTime date_holder;
         /// <summary>
         /// ////////////////////////////////////////////
@@ -115,6 +118,8 @@ namespace IdeasAi.PageForms
         {
             btn_send.Enabled = false;
             btn_save.Enabled = false;
+            btn_print.Enabled = !true;
+            btn_toWorkspace.Enabled = !true;
 
             var idea_obj = new Idea();
             wb_container.DocumentText = @"
@@ -148,36 +153,35 @@ namespace IdeasAi.PageForms
                     </html>
                     "; ;
 
-            var topic = this.textBox1.Text;
+            var topic = this.txb_Consult.Text;
 
             Console.WriteLine(topic);
             idea_obj.Input = topic;
-            idea_obj.Content = await idea_obj.GetResponse();
+            try
+            {
+                idea_obj.Content = await idea_obj.GetResponse();
+                mainForm.addNotification("success", "Successfully answered!", $"{idea_obj.Input}");
+                displayResult(idea_obj.Content);
 
-            displayResult(idea_obj.Content);
+                id_holder = idea_obj.UUID;
+                input_holder = idea_obj.Input;
+                content_holder = idea_obj.Content;
+                date_holder = idea_obj.DateCreated;
+                btn_save.Enabled = true;
+                btn_print.Enabled = true;
+                btn_toWorkspace.Enabled = true;
 
-            id_holder = idea_obj.UUID;
-            input_holder = idea_obj.Input;
-            content_holder = idea_obj.Content;
-            date_holder = idea_obj.DateCreated;
-
-            btn_save.Enabled = true;
+            }
+            catch (Exception ex)
+            {
+                wb_container.DocumentText = $"Ask appropriate questions in a clear manner.";
+                mainForm.addNotification("error", "An error occured!", $"{ex.Message}");
+            }
+            
             btn_send.Enabled = true;
-            Console.WriteLine($"ID AY ITO: {idea_obj.UUID}\nINPUT IS ITO: {idea_obj.Input}\nDATE IS ITO: {idea_obj.DateCreated}");
 
-
-
-            //Display the retrieved ideas
-            //Console.WriteLine("Retrieved Ideas:");
-            //foreach (var idea_var in ideas)
-            //{
-            //    Console.WriteLine($"UUID: {idea_var.UUID}");
-            //    Console.WriteLine($"Title: {idea_var.Title}");
-            //    Console.WriteLine($"Content: {idea_var.Content}");
-            //    Console.WriteLine($"Date Created: {idea_var.DateCreated}");
-            //    Console.WriteLine();
-            //}
-
+            
+            
         }
 
         
@@ -186,17 +190,46 @@ namespace IdeasAi.PageForms
         {
             mainForm.mdl_setter.OpenModal(this, typeof(mdl_saveNotes), mainForm);
         }
+        private void frm_home_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txb_Consult_TextChanged(object sender, EventArgs e)
+        {
+            txb_Consult.ForeColor = Color.White;
+        }
+
+        private void btn_print_Click(object sender, EventArgs e)
+        {
+            wb_container.ShowPrintDialog();
+        }
+
+        private void btn_toWorkspace_Click(object sender, EventArgs e)
+        {
+            mainForm.frm_workspace.saver_obj.UUID = Guid.NewGuid();
+            mainForm.frm_workspace.getTxbDocsTitle().Text = input_holder;
+            mainForm.frm_workspace.getTxbEditor().Text = frm_workspace.ConvertMarkdownToPlainText(content_holder);
+
+            mainForm.loadForm(mainForm.frm_workspace, mainForm.getPnlContent());
+            mainForm.setActiveBtn(mainForm.getBtnWorkspace(), mainForm.getPnlPageTabs());
+        }
 
         //GETTERS
         public ref Button getSaveBtn()
         {
             return ref btn_save;
         }
-
-        private void frm_home_Load(object sender, EventArgs e)
+        public ref Button getPrintBtn()
         {
-
+            return ref btn_print;
         }
+        public ref Button getToWorkspaceBtn()
+        {
+            return ref btn_toWorkspace;
+        }
+
+
     }
     
 }

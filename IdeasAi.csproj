@@ -302,6 +302,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\icons\send.png" />
+    <None Include="Resources\workspace_small.png" />
+    <None Include="Resources\print.png" />
     <None Include="Resources\quickSearch.png" />
     <None Include="Resources\saveAsFile.png" />
     <None Include="Resources\delete.png" />

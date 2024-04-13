@@ -27,15 +27,18 @@ namespace IdeasAi.modals
 
             switch (notifType.ToLower())
             {
-                case "sucess":
+                case "success":
                     pbx_type.Image = Resources.success;
+                    pnl_type.BackColor = Color.DarkGreen;
                     break;
                 case "info":
                 case "response":
+                    pnl_type.BackColor = Color.CadetBlue;
                     pbx_type.Image = Resources.info;
                     break;
-                case "error":
                 case "warning":
+                case "error":
+                    pnl_type.BackColor = Color.DarkRed;
                     pbx_type.Image = Resources.error_n;
                     break;
             }

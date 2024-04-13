@@ -28,7 +28,7 @@ namespace IdeasAi.pages
         //public string title_holder;
         //public string input_holder;
         //public DateTime date_holder;
-        private DBObjectManager saver_obj;
+        public DBObjectManager saver_obj;
         //
         MainForm mainForm;
         public frm_workspace(MainForm mainForm)
@@ -40,9 +40,10 @@ namespace IdeasAi.pages
             saver_obj.Content = txb_textEditor.Text;
             saver_obj.Title = txb_docsTitle.Text;
             pbx_loading.Image = null;
+            this.DoubleBuffered = true;
         }
 
-        private static string ConvertMarkdownToPlainText(string markdown)
+        public static string ConvertMarkdownToPlainText(string markdown)
         {
             // Replace Markdown heading syntax with plain text equivalent
             markdown = Regex.Replace(markdown, @"^#+\s*(.*?)\s*#*[\r\n]*", "$1\n\n", RegexOptions.Multiline);
@@ -80,7 +81,6 @@ namespace IdeasAi.pages
             txb_textEditor.ReadOnly = false;
 
         }
-
         private void btn_save_Click(object sender, EventArgs e)
         {
             saver_obj.Title = txb_docsTitle.Text;
@@ -88,7 +88,6 @@ namespace IdeasAi.pages
             
             mainForm.mdl_setter.OpenModal(this, typeof(mdl_saveDocs), mainForm);
         }
-
         private void btn_openFile_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog1 = new OpenFileDialog())
@@ -126,7 +125,6 @@ namespace IdeasAi.pages
                
             }
         }
-
         private void btn_createMindmap_Click(object sender, EventArgs e)
         {
             mainForm.setModalBackground(this);
@@ -135,7 +133,6 @@ namespace IdeasAi.pages
             mainForm.mdl_loading.ShowDialog();
 
         }
-
         public async void loadMindmap()
         {
             var mindmap_obj = new Mindmap();
@@ -162,7 +159,6 @@ namespace IdeasAi.pages
             mainForm.mdl_loading.Close();
             mainForm.modalBG.Hide();
         }
-
         private void btn_new_Click(object sender, EventArgs e)
         {
             saver_obj.UUID = Guid.NewGuid();
@@ -173,7 +169,6 @@ namespace IdeasAi.pages
             saver_obj.Title = txb_docsTitle.Text;
             mainForm.addNotification("info", "New document opened!", "Empty workspace loaded");
         }
-
         private void txb_textEditor_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.Control && e.KeyCode == Keys.S)
@@ -208,8 +203,9 @@ namespace IdeasAi.pages
                 string selectedText = txb_textEditor.SelectedText;
 
                 // Check if the clipboard contains image data
-                if (txb_textEditor.SelectionLength > 0)
+                if (!string.IsNullOrWhiteSpace(selectedText))
                 {
+                    txb_QSearch.ForeColor = Color.Black;
                     txb_QSearch.Text = selectedText;
                     btn_QSearch_Click(sender, e);
                 }
@@ -218,14 +214,11 @@ namespace IdeasAi.pages
             
 
         }
-       
-
         private void txb_textEditor_TextChanged(object sender, EventArgs e)
         {
             saver_obj.Content = txb_textEditor.Text;
             
         }
-
         private async void btn_QSearch_Click(object sender, EventArgs e)
         {
             // make a new instance of Ai response responsible for quick search
@@ -262,22 +255,13 @@ namespace IdeasAi.pages
 
             // set its INput
         }
-
         private void txb_QSearch_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("callesd");
-            if (txb_QSearch.Text.Equals("Quick search"))
+            if (txb_QSearch.ForeColor.Equals(Color.Silver))
             {
-
                 txb_QSearch.Text = "";
             }
             txb_QSearch.ForeColor = Color.Black;
-        }
-        private void txb_textEditor_Click(object sender, EventArgs e)
-        {
-            Console.WriteLine("natawag");
-            //txb_textEditor.Text = "";
-
         }
         private void txb_QSearch_KeyDown(object sender, KeyEventArgs e)
         {
@@ -298,10 +282,48 @@ namespace IdeasAi.pages
                 pnl_docConts.Visible = true;
             }
         }
-
-
-
-
+        private void btn_docsDel_Click(object sender, EventArgs e)
+        {
+            if(pnl_confirmDel.Visible)
+            {
+                pnl_confirmDel.Visible = !true;
+            }
+            else
+            {
+                pnl_confirmDel.Visible = true;
+            }
+        }
+        private void frm_workspace_Paint(object sender, PaintEventArgs e)
+        {
+            pnl_confirmDel.Visible = !true;
+            if (mainForm.dbManager_Docs.recordExist(saver_obj.UUID))
+            {
+                btn_docsDel.Visible = true;
+            }
+            else
+            {
+                btn_docsDel.Visible = !true;
+            }
+            Console.WriteLine(saver_obj.UUID);
+        }
+        private void btn_confirm_Click(object sender, EventArgs e)
+        {
+            if (mainForm.dbManager_Docs.recordExist(saver_obj.UUID))
+            {
+                try
+                {
+                    mainForm.dbManager_Docs.deleteRecord(saver_obj.UUID);
+                    mainForm.addNotification("success", "Successfully deleted!", $"{saver_obj.Title} was deleted");
+                    btn_new_Click(sender, e);
+                    pnl_confirmDel.Visible = false;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("ERROR FOUND IN DOCSDEL" + ex.Message);
+                    mainForm.addNotification("success", "Deleting failed!", $"{saver_obj.Title} failed to be deleted");
+                }
+            }
+        }
 
 
         //GETTERS
@@ -324,49 +346,5 @@ namespace IdeasAi.pages
             return ref lbl_lastDateSaved;
         }
 
-        private void btn_docsDel_Click(object sender, EventArgs e)
-        {
-            if(pnl_confirmDel.Visible)
-            {
-                pnl_confirmDel.Visible = !true;
-            }
-            else
-            {
-                pnl_confirmDel.Visible = true;
-            }
-        }
-
-        private void frm_workspace_Paint(object sender, PaintEventArgs e)
-        {
-            pnl_confirmDel.Visible = !true;
-            if (mainForm.dbManager_Docs.recordExist(saver_obj.UUID))
-            {
-                btn_docsDel.Visible = true;
-            }
-            else
-            {
-                btn_docsDel.Visible = !true;
-            }
-            Console.WriteLine(saver_obj.UUID);
-        }
-
-        private void btn_confirm_Click(object sender, EventArgs e)
-        {
-            if (mainForm.dbManager_Docs.recordExist(saver_obj.UUID))
-            {
-                try
-                {
-                    mainForm.dbManager_Docs.deleteRecord(saver_obj.UUID);
-                    mainForm.addNotification("success", "Successfully deleted!", $"{saver_obj.Title} was deleted");
-                    btn_new_Click(sender, e);
-                    pnl_confirmDel.Visible = false;
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("ERROR FOUND IN DOCSDEL" + ex.Message);
-                    mainForm.addNotification("success", "Deleting failed!", $"{saver_obj.Title} failed to be deleted");
-                }
-            }
-        }
     }
 }

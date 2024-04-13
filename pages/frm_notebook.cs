@@ -236,7 +236,6 @@ namespace IdeasAi.pages
             }
 
         }
-
         public void setActiveBtn(object btn, TableLayoutPanel pnl)
         {
             if ((Button)btn != btn_activeTab)
@@ -246,7 +245,6 @@ namespace IdeasAi.pages
                 btn_activeTab.BackColor = btn_notesTab.FlatAppearance.MouseOverBackColor;
             }
         }
-
         private void removeActiveBtn(TableLayoutPanel pnl)
         {
             foreach (var btn in pnl.Controls)
@@ -278,6 +276,12 @@ namespace IdeasAi.pages
             mainForm.setActiveBtn(mainForm.getBtnHome(), mainForm.getPnlPageTabs());
             mainForm.frm_consultation.displayResult(dom.Content);
             mainForm.frm_consultation.getSaveBtn().Enabled = false;
+            mainForm.frm_consultation.getPrintBtn().Enabled = !false;
+            mainForm.frm_consultation.getToWorkspaceBtn().Enabled = !false;
+            
+            mainForm.frm_consultation.content_holder = dom.Content;
+            mainForm.frm_consultation.input_holder = dom.Title;
+            
 
             }
             else if (db.GetType().Equals(typeof(DBManager_Docs)))
@@ -294,13 +298,11 @@ namespace IdeasAi.pages
         {
             displaySavedIdeas(mainForm.dbManager_Note);
         }
-        
         private void btn_notesTab_Click(object sender, EventArgs e)
         {
             mainForm.frm_notebook.displaySavedIdeas(mainForm.dbManager_Note);
             this.setActiveBtn(sender, tbpnl_tabs);
         }
-        
         private void btn_docsTab_Click(object sender, EventArgs e)
         {
             mainForm.frm_notebook.displaySavedIdeas(mainForm.dbManager_Docs);
