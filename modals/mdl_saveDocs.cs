@@ -75,6 +75,8 @@ namespace IdeasAi.modals
             }
 
             mainForm.frm_workspace.getTxbDocsTitle().Text = txb_setNoteTitle.Text;
+            mainForm.frm_workspace.getLblLastDateSaved().Text = $"Last Modified: {DateTime.Now.ToString("yyyy-MM-dd hh:mm tt")}";
+            mainForm.addNotification("success", "Successfully saved!", txb_setNoteTitle.Text);
 
             this.Hide();
         }
@@ -99,7 +101,14 @@ namespace IdeasAi.modals
             if (filePath != "")
             {
                 DatabaseManager.SaveStringAsTextFile(filePath, saver_obj.Content);
+                mainForm.addNotification("success", "File saved!", txb_setNoteTitle.Text);
             }
+            else
+            {
+                mainForm.addNotification("error", "An error occured!", $"{txb_setNoteTitle.Text} was not saved.");
+            }
+
+            
             this.Hide();
         }
 

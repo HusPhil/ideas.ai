@@ -6,6 +6,7 @@ using IdeasAi.PageForms;
 using IdeasAi.pages;
 using IdeasAi.modals;
 using IdeasAi.db;
+using System.Web.UI.Design;
 
 namespace IdeasAi
 {
@@ -13,11 +14,12 @@ namespace IdeasAi
     {
         //loading states
         public const int state_loadMindmap = 1;
+        public const int state_loadConsultation = 2;
 
         // PAGE FORMS
         public frm_home frm_home;
+        public frm_consultation frm_consultation;
         public frm_workspace frm_workspace;
-        public frm_settings frm_settings;
         public frm_notebook frm_notebook;
         public frm_mindmap frm_mindmap;
         //
@@ -43,8 +45,8 @@ namespace IdeasAi
 
             InitializeComponent();
             frm_home = new frm_home(this);
+            frm_consultation = new frm_consultation(this);
             frm_notebook =  new frm_notebook(this);
-            frm_settings = new frm_settings(this);
             frm_mindmap = new frm_mindmap(this);
             frm_workspace = new frm_workspace(this);
 
@@ -61,7 +63,7 @@ namespace IdeasAi
             
             btn_active = this.btn_home;
             lbl_currentPage.Text = btn_active.Text;
-
+            Console.WriteLine(this.Width + "::" + this.Height);
         }
 
         
@@ -124,6 +126,36 @@ namespace IdeasAi
             }
         }
 
+        public void addNotification(string type, string typeTxt, string typeInfo)
+        {
+            var notif = new mdl_notif(this, type);
+            notif.lbl_type.Text = typeTxt;
+
+            if (mdl_notif.instancesCount > 1) notif.lbl_type.Text = typeTxt;
+
+            notif.lbl_info.Text = typeInfo;
+            notif.TopLevel = false;
+            this.Controls.Add(notif);
+            notif.Show();
+            notif.BringToFront();
+        }
+
+        public mdl_notif addAsyncNotification(string type, string typeTxt, string typeInfo)
+        {
+            var notif = new mdl_notif(this, type);
+            notif.lbl_type.Text = typeTxt;
+
+            if (mdl_notif.instancesCount > 1) notif.lbl_type.Text = typeTxt;
+
+            notif.lbl_info.Text = typeInfo;
+            notif.TopLevel = false;
+            this.Controls.Add(notif);
+      
+            return notif;
+        }
+
+
+
         private void btn_home_Click(object sender, EventArgs e)
         {
             setActiveBtn(sender, pnl_pageTabs);
@@ -131,26 +163,19 @@ namespace IdeasAi
 
             loadForm(frm_home, pnl_content);
         }
+        private void btn_consultation_Click(object sender, EventArgs e)
+        {
+            setActiveBtn(sender, pnl_pageTabs);
+
+
+            loadForm(frm_consultation, pnl_content);
+        }
 
         private void btn_workspace_Click(object sender, EventArgs e)
         {
             setActiveBtn(sender, pnl_pageTabs);
             loadForm(frm_workspace, pnl_content);
-        }
-
-        private void btn_history_Click(object sender, EventArgs e)
-        {
-            setActiveBtn(sender, pnl_pageTabs);
-        }
-
-        private void btn_unde_Click(object sender, EventArgs e)
-        {
-
-            setActiveBtn(sender, pnl_pageTabs);
-            loadForm(mdl_loading, pnl_content);
-
-            //mdl_setter.OpenModal(this, typeof(mdl_saveDocs), this);
-        }
+        }        
 
         private void btn_notebook_Click(object sender, EventArgs e)
         {
@@ -174,10 +199,41 @@ namespace IdeasAi
             setActiveBtn(sender, pnl_pageTabs);
             loadForm(frm_mindmap, pnl_content);
         }
+        public void setNotifPosition()
+        {
+            int offset = mdl_notif.instancesCount;
+            foreach (var c in this.Controls)
+            {
+                if (c is mdl_notif)
+                {
+                    mdl_notif notifControl = c as mdl_notif;
+                    if (notifControl != null)
+                    {
+                        int notifX = (this.Width - notifControl.Width) - 34;
+                        int notifY = (this.Height - (notifControl.Height)) - ((notifControl.Height + 5) * offset--);
 
+                        if (notifY > (this.Height - (notifControl.Height)) - (notifControl.Height + 5)) notifY = (this.Height - (notifControl.Height)) - (notifControl.Height + 5); 
+                        //Console.WriteLine(notifControl.lbl_type);
+                        //Console.WriteLine(notifY);
+
+                        notifControl.Location = new Point(notifX, notifY);
+                    }
+                }
+            }
+        }
+        
         private void MainForm_SizeChanged(object sender, EventArgs e)
         {
-            frm_notebook.displaySavedIdeas(dbManager_Note);
+            if(frm_notebook.btn_activeTab.Equals(frm_notebook.getBtnDocsTab()))
+            {
+                frm_notebook.displaySavedIdeas(dbManager_Docs);
+            }
+            else
+            {
+                frm_notebook.displaySavedIdeas(dbManager_Note);
+            }
+            setNotifPosition();
+            
 ;        }
 
         //GETTERS
@@ -206,6 +262,9 @@ namespace IdeasAi
             return ref btn_mindmap; 
         }
 
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

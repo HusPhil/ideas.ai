@@ -30,7 +30,7 @@ namespace IdeasAi.modals
         }
         private void frm_modal_Load(object sender, EventArgs e)
         {
-            txb_setNoteTitle.Text = mainForm.frm_home.input_holder;
+            txb_setNoteTitle.Text = mainForm.frm_consultation.input_holder;
             var ownerForm = mainForm;
             this.Location = ModalSetter.CenterLocation(ownerForm.Width, ownerForm.Height, this.Width, this.Height, ownerForm.Location.X, ownerForm.Location.Y);
         }
@@ -38,11 +38,11 @@ namespace IdeasAi.modals
         {
             
             var idea_save_obj = new DBObjectManager();
-            idea_save_obj.UUID = mainForm.frm_home.id_holder;
+            idea_save_obj.UUID = mainForm.frm_consultation.id_holder;
             idea_save_obj.Title = txb_setNoteTitle.Text;
-            idea_save_obj.Input = mainForm.frm_home.input_holder;
-            idea_save_obj.Content = mainForm.frm_home.content_holder;
-            idea_save_obj.DateCreated = mainForm.frm_home.date_holder;
+            idea_save_obj.Input = mainForm.frm_consultation.input_holder;
+            idea_save_obj.Content = mainForm.frm_consultation.content_holder;
+            idea_save_obj.DateCreated = mainForm.frm_consultation.date_holder;
 
             mainForm.dbManager_Note.saveObject(idea_save_obj);
 
@@ -51,6 +51,7 @@ namespace IdeasAi.modals
             mainForm.frm_notebook.setActiveBtn(mainForm.frm_notebook.getBtnNotesTab(), mainForm.frm_notebook.getTbpnlTabs());
             mainForm.frm_notebook.displaySavedIdeas(mainForm.dbManager_Note);
 
+            mainForm.addNotification("success", "Successfully saved!", txb_setNoteTitle.Text);
             // Load the notebook form into the content panel
             mainForm.BringToFront();
             this.Hide();

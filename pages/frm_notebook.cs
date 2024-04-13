@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using IdeasAi.db;
 using IdeasAi.Ideas;
@@ -10,8 +11,9 @@ namespace IdeasAi.pages
 {
     public partial class frm_notebook: Form
     {
-        public string current_title;
-        public Guid current_id;
+        //public string current_title;
+        //public Guid current_id;
+        public DBObjectManager saver_obj;
         public MainForm mainForm;
         private Panel pnl_tabSelect;
         private TableLayoutPanel tbpnl_tabs;
@@ -157,11 +159,11 @@ namespace IdeasAi.pages
 
                 if (db.GetType().Equals(typeof(DBManager_Note)))
                 {
-                    btn_edit.Click += (sender, e) => btn_showMoreNotes_click(idea.Title, idea.UUID);
+                    btn_edit.Click += (sender, e) => btn_showMoreNotes_click(idea);
                 }
                 else if (db.GetType().Equals(typeof(DBManager_Docs)))
                 {
-                    btn_edit.Click += (sender, e) => btn_showMoreDocs_click(idea.Title, idea.UUID);
+                    btn_edit.Click += (sender, e) => btn_showMoreDocs_click(idea);
                 }
 
                 btn_edit.BackColor = Color.Transparent;
@@ -234,7 +236,6 @@ namespace IdeasAi.pages
             }
 
         }
-
         public void setActiveBtn(object btn, TableLayoutPanel pnl)
         {
             if ((Button)btn != btn_activeTab)
@@ -244,7 +245,6 @@ namespace IdeasAi.pages
                 btn_activeTab.BackColor = btn_notesTab.FlatAppearance.MouseOverBackColor;
             }
         }
-
         private void removeActiveBtn(TableLayoutPanel pnl)
         {
             foreach (var btn in pnl.Controls)
@@ -256,17 +256,15 @@ namespace IdeasAi.pages
                 }
             }
         }
-        private void btn_showMoreNotes_click(string current_title, Guid current_id)
+        private void btn_showMoreNotes_click(DBObjectManager idea)
         {
-            this.current_title = current_title;
-            this.current_id = current_id;
+            this.saver_obj = idea;
             mainForm.mdl_setter.OpenModal(this, typeof(mdl_NotesOptions), mainForm);
 
         }
-        private void btn_showMoreDocs_click(string current_title, Guid current_id)
+        private void btn_showMoreDocs_click(DBObjectManager idea)
         {
-            this.current_title = current_title;
-            this.current_id = current_id;
+            this.saver_obj = idea;
             mainForm.mdl_setter.OpenModal(this, typeof(mdl_DocsOptions), mainForm);
 
         }
@@ -274,10 +272,16 @@ namespace IdeasAi.pages
         {
             if (db.GetType().Equals(typeof(DBManager_Note)))
             {
-            mainForm.loadForm(mainForm.frm_home,mainForm.getPnlContent());
+            mainForm.loadForm(mainForm.frm_consultation,mainForm.getPnlContent());
             mainForm.setActiveBtn(mainForm.getBtnHome(), mainForm.getPnlPageTabs());
-            mainForm.frm_home.displayResult(dom.Content);
-            mainForm.frm_home.getSaveBtn().Enabled = false;
+            mainForm.frm_consultation.displayResult(dom.Content);
+            mainForm.frm_consultation.getSaveBtn().Enabled = false;
+            mainForm.frm_consultation.getPrintBtn().Enabled = !false;
+            mainForm.frm_consultation.getToWorkspaceBtn().Enabled = !false;
+            
+            mainForm.frm_consultation.content_holder = dom.Content;
+            mainForm.frm_consultation.input_holder = dom.Title;
+            
 
             }
             else if (db.GetType().Equals(typeof(DBManager_Docs)))
@@ -287,20 +291,18 @@ namespace IdeasAi.pages
                 mainForm.frm_workspace.getSaverObj().UUID = dom.UUID;
                 mainForm.frm_workspace.getTxbEditor().Text = dom.Content;
                 mainForm.frm_workspace.getTxbDocsTitle().Text = dom.Title; 
-
+                mainForm.frm_workspace.getLblLastDateSaved().Text = $"Last Modified: {dom.DateCreated.ToString("yyyy-MM-dd hh:mm tt")}"; ;
             }
         }
         private void frm_notebook_Load(object sender, EventArgs e)
         {
             displaySavedIdeas(mainForm.dbManager_Note);
         }
-        
         private void btn_notesTab_Click(object sender, EventArgs e)
         {
             mainForm.frm_notebook.displaySavedIdeas(mainForm.dbManager_Note);
             this.setActiveBtn(sender, tbpnl_tabs);
         }
-        
         private void btn_docsTab_Click(object sender, EventArgs e)
         {
             mainForm.frm_notebook.displaySavedIdeas(mainForm.dbManager_Docs);

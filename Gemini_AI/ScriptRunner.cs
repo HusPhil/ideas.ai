@@ -21,23 +21,26 @@ namespace IdeasAi.Gemini_AI
 
             var psi = new ProcessStartInfo();
             psi.FileName = pythonModule;
-            psi.Arguments = $"\"{scriptName}\" \"{prompt}\" \"{apiKey}\"";
+            psi.Arguments = $"\"{scriptName}\" \"{prompt.Replace("\"", "'")}\" \"{apiKey}\"";
 
             psi.UseShellExecute = false;
             psi.CreateNoWindow = true;
             psi.RedirectStandardError = true;
             psi.RedirectStandardOutput = true;
 
-            var result = "";
-            var error = "";
+            var result = "ERROR";
+            var error = "NONE";
             Console.WriteLine(prompt);
             using (var process = Process.Start(psi))
             {
                 result = process.StandardOutput.ReadToEnd();
                 error = process.StandardError.ReadToEnd();
+                
             }
-            //Console.WriteLine(result);
-            Console.WriteLine(error);
+            Console.WriteLine("result: " + result);
+            //Console.WriteLine(error);
+
+            
 
             return result;
 

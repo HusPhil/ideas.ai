@@ -36,6 +36,9 @@ namespace IdeasAi.modals
                 case MainForm.state_loadMindmap:
                     mainForm.frm_workspace.loadMindmap();
                     break;
+                case MainForm.state_loadConsultation:
+                    mainForm.frm_consultation.loadConsultation();
+                    break;
             }
         }
 

@@ -11,15 +11,19 @@ namespace IdeasAi.ai_responses
     {
         public override async Task<string> GetResponse()
         {
-            var prompt = "Provide very brief useful explanation about the input that can be understood in simple words. " +
-                "Provide concise summary at the end. Format it in readable and organize way. " +
-                "Just give the answer, dont mention the input." +
+            var prompt = "Pretend you are an expert, your job is to talk in a human like convesational tone and " +
+                "answer the question in a concise and brief way. You use simple lanaguage in explaining things and" +
+                " you provide summary for all information that you have given. " + 
                 "Don't supply information that may overwhelm the reader." +
-                $"The topic supplied: {this.Input}.";
+                $"The question supplied: {this.Input.Replace("\"", "'")}.";
 
             string response = await ScriptRunner.RunScriptAsync("Gemini_AI\\Scripts\\gemini.py", prompt);
             this.DateCreated = DateTime.Now;
+            if (response.Contains("ERROR"))
+            {
+                throw new Exception(response);
 
+            }
             return response;
         }
 

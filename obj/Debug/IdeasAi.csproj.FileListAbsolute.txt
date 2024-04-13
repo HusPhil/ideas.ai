@@ -100,7 +100,6 @@ C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\System.Numerics.Vectors.xml
 C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.csproj.AssemblyReference.cache
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.MainForm.resources
-C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.PageForms.frm_home.resources
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.pages.frm_notebook.resources
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.Properties.Resources.resources
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.csproj.GenerateResource.cache
@@ -109,7 +108,6 @@ C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.csproj.Up2Date
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.exe
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.pdb
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.pages.frm_workspace.resources
-C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.PageForms.MindMapControl.resources
 C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
@@ -131,3 +129,6 @@ C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.modals.mdl_saveDocs.resources
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.modals.mdl_DocsOptions.resources
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.modals.mdl_NotesOptions.resources
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.modals.mdl_loading.resources
+C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.modals.mdl_notif.resources
+C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.PageForms.frm_consultation.resources
+C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.pages.frm_home.resources

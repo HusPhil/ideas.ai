@@ -77,6 +77,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lbl_loadingInfo;
+        public System.Windows.Forms.Label lbl_loadingInfo;
     }
 }
