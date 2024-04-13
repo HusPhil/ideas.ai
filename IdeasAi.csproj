@@ -302,14 +302,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\icons\send.png" />
+    <None Include="Resources\quickSearch.png" />
+    <None Include="Resources\send2.png" />
+    <None Include="Resources\send22.png" />
+    <None Include="Resources\send21.png" />
+    <None Include="Resources\send.png" />
+    <None Include="Resources\organize.png" />
+    <None Include="Resources\mindmap.png" />
+    <None Include="Resources\docOptions.png" />
+    <None Include="Resources\delete.png" />
     <None Include="Resources\workspace_small.png" />
     <None Include="Resources\print.png" />
-    <None Include="Resources\quickSearch.png" />
     <None Include="Resources\saveAsFile.png" />
-    <None Include="Resources\delete.png" />
-    <None Include="Resources\docOptions.png" />
-    <None Include="Resources\mindmap.png" />
-    <None Include="Resources\organize.png" />
     <None Include="Resources\quickSearchLoad.gif" />
     <None Include="Resources\moreSettings.png" />
     <None Include="Resources\zoomout.png" />

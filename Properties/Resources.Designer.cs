@@ -243,9 +243,9 @@ namespace IdeasAi.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap send1 {
+        internal static System.Drawing.Bitmap send2 {
             get {
-                object obj = ResourceManager.GetObject("send1", resourceCulture);
+                object obj = ResourceManager.GetObject("send2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

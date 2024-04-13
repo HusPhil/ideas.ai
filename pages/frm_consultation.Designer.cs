@@ -31,18 +31,18 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.wb_container = new System.Windows.Forms.WebBrowser();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.txb_Consult = new System.Windows.Forms.RichTextBox();
-            this.pnl_txbCont = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnl_txbCont = new System.Windows.Forms.Panel();
+            this.txb_Consult = new System.Windows.Forms.RichTextBox();
             this.btn_send = new System.Windows.Forms.Button();
             this.btn_toWorkspace = new System.Windows.Forms.Button();
             this.btn_print = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnl_txbCont.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -66,6 +66,18 @@
             this.wb_container.Size = new System.Drawing.Size(880, 430);
             this.wb_container.TabIndex = 7;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btn_toWorkspace);
+            this.panel3.Controls.Add(this.btn_print);
+            this.panel3.Controls.Add(this.btn_save);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 514);
+            this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.panel3.Size = new System.Drawing.Size(880, 52);
+            this.panel3.TabIndex = 11;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(28)))));
@@ -77,6 +89,18 @@
             this.panel2.Padding = new System.Windows.Forms.Padding(15);
             this.panel2.Size = new System.Drawing.Size(880, 84);
             this.panel2.TabIndex = 5;
+            // 
+            // pnl_txbCont
+            // 
+            this.pnl_txbCont.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_txbCont.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_txbCont.Controls.Add(this.txb_Consult);
+            this.pnl_txbCont.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_txbCont.Location = new System.Drawing.Point(15, 15);
+            this.pnl_txbCont.Name = "pnl_txbCont";
+            this.pnl_txbCont.Padding = new System.Windows.Forms.Padding(10, 15, 10, 0);
+            this.pnl_txbCont.Size = new System.Drawing.Size(797, 54);
+            this.pnl_txbCont.TabIndex = 2;
             // 
             // txb_Consult
             // 
@@ -94,30 +118,6 @@
             this.txb_Consult.Text = "Ask a question..";
             this.txb_Consult.TextChanged += new System.EventHandler(this.txb_Consult_TextChanged);
             // 
-            // pnl_txbCont
-            // 
-            this.pnl_txbCont.BackColor = System.Drawing.Color.Transparent;
-            this.pnl_txbCont.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl_txbCont.Controls.Add(this.txb_Consult);
-            this.pnl_txbCont.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_txbCont.Location = new System.Drawing.Point(15, 15);
-            this.pnl_txbCont.Name = "pnl_txbCont";
-            this.pnl_txbCont.Padding = new System.Windows.Forms.Padding(10, 15, 10, 0);
-            this.pnl_txbCont.Size = new System.Drawing.Size(797, 54);
-            this.pnl_txbCont.TabIndex = 2;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.btn_toWorkspace);
-            this.panel3.Controls.Add(this.btn_print);
-            this.panel3.Controls.Add(this.btn_save);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 514);
-            this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.panel3.Size = new System.Drawing.Size(880, 52);
-            this.panel3.TabIndex = 11;
-            // 
             // btn_send
             // 
             this.btn_send.AllowDrop = true;
@@ -125,7 +125,7 @@
             this.btn_send.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_send.FlatAppearance.BorderSize = 0;
             this.btn_send.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_send.Image = global::IdeasAi.Properties.Resources.send;
+            this.btn_send.Image = global::IdeasAi.Properties.Resources.send2;
             this.btn_send.Location = new System.Drawing.Point(812, 15);
             this.btn_send.Name = "btn_send";
             this.btn_send.Size = new System.Drawing.Size(53, 54);
@@ -211,9 +211,9 @@
             this.Text = "frm_home";
             this.Load += new System.EventHandler(this.frm_home_Load);
             this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.pnl_txbCont.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

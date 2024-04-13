@@ -14,6 +14,7 @@ namespace IdeasAi
     {
         //loading states
         public const int state_loadMindmap = 1;
+        public const int state_loadConsultation = 2;
 
         // PAGE FORMS
         public frm_home frm_home;

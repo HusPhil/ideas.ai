@@ -79,7 +79,6 @@
             this.txb_docsTitle.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txb_docsTitle.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.txb_docsTitle.StateCommon.Content.Color1 = System.Drawing.Color.White;
             this.txb_docsTitle.StateCommon.Content.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txb_docsTitle.StateCommon.Content.Padding = new System.Windows.Forms.Padding(5, 10, 5, 5);
@@ -148,9 +147,9 @@
             this.lbl_lastDateSaved.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_lastDateSaved.Font = new System.Drawing.Font("Cascadia Code", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_lastDateSaved.ForeColor = System.Drawing.Color.White;
-            this.lbl_lastDateSaved.Location = new System.Drawing.Point(250, 10);
+            this.lbl_lastDateSaved.Location = new System.Drawing.Point(259, 10);
             this.lbl_lastDateSaved.Name = "lbl_lastDateSaved";
-            this.lbl_lastDateSaved.Size = new System.Drawing.Size(343, 42);
+            this.lbl_lastDateSaved.Size = new System.Drawing.Size(310, 42);
             this.lbl_lastDateSaved.TabIndex = 13;
             this.lbl_lastDateSaved.Text = "Last Modified: N/A";
             this.lbl_lastDateSaved.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -161,7 +160,7 @@
             this.btn_docOptions.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_docOptions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_docOptions.Image = global::IdeasAi.Properties.Resources.docOptions;
-            this.btn_docOptions.Location = new System.Drawing.Point(593, 10);
+            this.btn_docOptions.Location = new System.Drawing.Point(569, 10);
             this.btn_docOptions.Name = "btn_docOptions";
             this.btn_docOptions.Size = new System.Drawing.Size(38, 42);
             this.btn_docOptions.TabIndex = 18;
@@ -174,7 +173,7 @@
             this.pnl_docConts.Controls.Add(this.btn_save);
             this.pnl_docConts.Controls.Add(this.btn_openFile);
             this.pnl_docConts.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnl_docConts.Location = new System.Drawing.Point(631, 10);
+            this.pnl_docConts.Location = new System.Drawing.Point(607, 10);
             this.pnl_docConts.Name = "pnl_docConts";
             this.pnl_docConts.Padding = new System.Windows.Forms.Padding(0, 5, 10, 5);
             this.pnl_docConts.Size = new System.Drawing.Size(246, 42);
@@ -186,7 +185,7 @@
             this.btn_new.BackColor = System.Drawing.Color.White;
             this.btn_new.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_new.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_new.Font = new System.Drawing.Font("Cascadia Code", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_new.Font = new System.Drawing.Font("Cascadia Code", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_new.Location = new System.Drawing.Point(14, 5);
             this.btn_new.Name = "btn_new";
             this.btn_new.Size = new System.Drawing.Size(74, 32);
@@ -200,7 +199,7 @@
             this.btn_save.BackColor = System.Drawing.Color.White;
             this.btn_save.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_save.Font = new System.Drawing.Font("Cascadia Code", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_save.Font = new System.Drawing.Font("Cascadia Code", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_save.Location = new System.Drawing.Point(88, 5);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(74, 32);
@@ -214,7 +213,7 @@
             this.btn_openFile.BackColor = System.Drawing.Color.White;
             this.btn_openFile.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_openFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_openFile.Font = new System.Drawing.Font("Cascadia Code", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_openFile.Font = new System.Drawing.Font("Cascadia Code", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_openFile.Location = new System.Drawing.Point(162, 5);
             this.btn_openFile.Name = "btn_openFile";
             this.btn_openFile.Size = new System.Drawing.Size(74, 32);
@@ -231,7 +230,7 @@
             this.btn_docsDel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_docsDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_docsDel.Image = global::IdeasAi.Properties.Resources.delete;
-            this.btn_docsDel.Location = new System.Drawing.Point(877, 10);
+            this.btn_docsDel.Location = new System.Drawing.Point(853, 10);
             this.btn_docsDel.Name = "btn_docsDel";
             this.btn_docsDel.Size = new System.Drawing.Size(38, 42);
             this.btn_docsDel.TabIndex = 16;
@@ -243,10 +242,10 @@
             this.pnl_confirmDel.Controls.Add(this.btn_confirm);
             this.pnl_confirmDel.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnl_confirmDel.Font = new System.Drawing.Font("Cascadia Code", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnl_confirmDel.Location = new System.Drawing.Point(915, 10);
+            this.pnl_confirmDel.Location = new System.Drawing.Point(891, 10);
             this.pnl_confirmDel.Name = "pnl_confirmDel";
             this.pnl_confirmDel.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.pnl_confirmDel.Size = new System.Drawing.Size(98, 42);
+            this.pnl_confirmDel.Size = new System.Drawing.Size(122, 42);
             this.pnl_confirmDel.TabIndex = 15;
             this.pnl_confirmDel.Visible = false;
             // 
@@ -255,10 +254,11 @@
             this.btn_confirm.BackColor = System.Drawing.Color.White;
             this.btn_confirm.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_confirm.Font = new System.Drawing.Font("Cascadia Code SemiLight", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_confirm.Location = new System.Drawing.Point(16, 5);
+            this.btn_confirm.Font = new System.Drawing.Font("Cascadia Code", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_confirm.ForeColor = System.Drawing.Color.Firebrick;
+            this.btn_confirm.Location = new System.Drawing.Point(15, 5);
             this.btn_confirm.Name = "btn_confirm";
-            this.btn_confirm.Size = new System.Drawing.Size(82, 32);
+            this.btn_confirm.Size = new System.Drawing.Size(107, 32);
             this.btn_confirm.TabIndex = 13;
             this.btn_confirm.Text = "Confirm";
             this.btn_confirm.UseVisualStyleBackColor = false;
@@ -269,14 +269,17 @@
             this.btn_createMindmap.BackColor = System.Drawing.Color.White;
             this.btn_createMindmap.Dock = System.Windows.Forms.DockStyle.Left;
             this.btn_createMindmap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_createMindmap.Font = new System.Drawing.Font("Cascadia Code", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_createMindmap.ForeColor = System.Drawing.Color.Black;
             this.btn_createMindmap.Image = global::IdeasAi.Properties.Resources.mindmap;
             this.btn_createMindmap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_createMindmap.Location = new System.Drawing.Point(123, 10);
+            this.btn_createMindmap.Location = new System.Drawing.Point(135, 10);
             this.btn_createMindmap.Name = "btn_createMindmap";
-            this.btn_createMindmap.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btn_createMindmap.Size = new System.Drawing.Size(127, 42);
+            this.btn_createMindmap.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btn_createMindmap.Size = new System.Drawing.Size(124, 42);
             this.btn_createMindmap.TabIndex = 5;
-            this.btn_createMindmap.Text = "     Mindmap";
+            this.btn_createMindmap.Text = "Mindmap";
+            this.btn_createMindmap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_createMindmap.UseVisualStyleBackColor = false;
             this.btn_createMindmap.Click += new System.EventHandler(this.btn_createMindmap_Click);
             // 
@@ -285,14 +288,17 @@
             this.btn_organizeIdea.BackColor = System.Drawing.Color.White;
             this.btn_organizeIdea.Dock = System.Windows.Forms.DockStyle.Left;
             this.btn_organizeIdea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_organizeIdea.Font = new System.Drawing.Font("Cascadia Code", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_organizeIdea.ForeColor = System.Drawing.Color.Black;
             this.btn_organizeIdea.Image = global::IdeasAi.Properties.Resources.organize;
             this.btn_organizeIdea.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_organizeIdea.Location = new System.Drawing.Point(0, 10);
             this.btn_organizeIdea.Name = "btn_organizeIdea";
-            this.btn_organizeIdea.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btn_organizeIdea.Size = new System.Drawing.Size(123, 42);
+            this.btn_organizeIdea.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btn_organizeIdea.Size = new System.Drawing.Size(135, 42);
             this.btn_organizeIdea.TabIndex = 3;
-            this.btn_organizeIdea.Text = "     Organize";
+            this.btn_organizeIdea.Text = "Organize";
+            this.btn_organizeIdea.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_organizeIdea.UseVisualStyleBackColor = false;
             this.btn_organizeIdea.Click += new System.EventHandler(this.btn_organizeIdea_Click);
             // 
@@ -408,7 +414,7 @@
             // 
             // btn_QSearch
             // 
-            this.btn_QSearch.BackColor = System.Drawing.Color.DimGray;
+            this.btn_QSearch.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btn_QSearch.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_QSearch.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_QSearch.FlatAppearance.BorderSize = 3;
