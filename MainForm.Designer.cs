@@ -47,36 +47,34 @@ namespace IdeasAi
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnl_content = new System.Windows.Forms.Panel();
             this.lbl_currentPage = new System.Windows.Forms.Label();
+            this.pnl_contentHeader = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_howToUse = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pnl_menuSect)).BeginInit();
             this.pnl_menuSect.SuspendLayout();
             this.pnl_pageTabCont.SuspendLayout();
             this.pnl_pageTabs.SuspendLayout();
             this.pnl_header.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.pnl_content.SuspendLayout();
+            this.pnl_contentHeader.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // kryptonPalette1
             // 
-            this.kryptonPalette1.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
             this.kryptonPalette1.FormStyles.FormCommon.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
             this.kryptonPalette1.FormStyles.FormCommon.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
             this.kryptonPalette1.FormStyles.FormCommon.StateCommon.Back.ColorAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Local;
-            this.kryptonPalette1.FormStyles.FormCommon.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.FormStyles.FormMain.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
             this.kryptonPalette1.FormStyles.FormMain.StateActive.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
-            this.kryptonPalette1.FormStyles.FormMain.StateActive.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateNormal.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.LabelStyles.LabelCommon.StateNormal.ShortText.Color1 = System.Drawing.Color.White;
             this.kryptonPalette1.LabelStyles.LabelCommon.StateNormal.ShortText.Font = new System.Drawing.Font("Cascadia Code Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonPalette1.LabelStyles.LabelCommon.StateNormal.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.kryptonPalette1.LabelStyles.LabelCommon.StateNormal.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.kryptonPalette1.PanelStyles.PanelCommon.StateNormal.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
-            this.kryptonPalette1.PanelStyles.PanelCommon.StateNormal.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             // 
             // pnl_menuSect
             // 
@@ -261,17 +259,13 @@ namespace IdeasAi
             this.kryptonPalette2.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue;
             this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.OverrideDefault.Back.Color1 = System.Drawing.Color.Red;
             this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.OverrideDefault.Back.Color2 = System.Drawing.Color.Black;
-            this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.OverrideDefault.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.StateNormal.Back.Color1 = System.Drawing.Color.Red;
             this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.StateNormal.Back.Color2 = System.Drawing.Color.Red;
-            this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.StateNormal.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.StatePressed.Back.Color1 = System.Drawing.Color.Red;
-            this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.StatePressed.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.pnl_content);
-            this.panel1.Controls.Add(this.lbl_currentPage);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(320, 0);
             this.panel1.Name = "panel1";
@@ -282,27 +276,64 @@ namespace IdeasAi
             // pnl_content
             // 
             this.pnl_content.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(28)))));
+            this.pnl_content.Controls.Add(this.pnl_contentHeader);
             this.pnl_content.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_content.Location = new System.Drawing.Point(15, 89);
+            this.pnl_content.Location = new System.Drawing.Point(15, 15);
             this.pnl_content.Margin = new System.Windows.Forms.Padding(12);
             this.pnl_content.Name = "pnl_content";
             this.pnl_content.Padding = new System.Windows.Forms.Padding(0, 12, 0, 12);
-            this.pnl_content.Size = new System.Drawing.Size(930, 616);
+            this.pnl_content.Size = new System.Drawing.Size(930, 690);
             this.pnl_content.TabIndex = 4;
             // 
             // lbl_currentPage
             // 
             this.lbl_currentPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
-            this.lbl_currentPage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbl_currentPage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_currentPage.Font = new System.Drawing.Font("Cascadia Code", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_currentPage.ForeColor = System.Drawing.Color.White;
-            this.lbl_currentPage.Location = new System.Drawing.Point(15, 15);
+            this.lbl_currentPage.Location = new System.Drawing.Point(0, 0);
             this.lbl_currentPage.Name = "lbl_currentPage";
             this.lbl_currentPage.Padding = new System.Windows.Forms.Padding(12);
-            this.lbl_currentPage.Size = new System.Drawing.Size(930, 74);
+            this.lbl_currentPage.Size = new System.Drawing.Size(930, 72);
             this.lbl_currentPage.TabIndex = 3;
             this.lbl_currentPage.Text = "Page 1";
             this.lbl_currentPage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnl_contentHeader
+            // 
+            this.pnl_contentHeader.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_contentHeader.Controls.Add(this.panel2);
+            this.pnl_contentHeader.Controls.Add(this.lbl_currentPage);
+            this.pnl_contentHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_contentHeader.Location = new System.Drawing.Point(0, 12);
+            this.pnl_contentHeader.Name = "pnl_contentHeader";
+            this.pnl_contentHeader.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.pnl_contentHeader.Size = new System.Drawing.Size(930, 82);
+            this.pnl_contentHeader.TabIndex = 4;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
+            this.panel2.Controls.Add(this.btn_howToUse);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(849, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(20, 20, 10, 15);
+            this.panel2.Size = new System.Drawing.Size(81, 72);
+            this.panel2.TabIndex = 5;
+            // 
+            // btn_howToUse
+            // 
+            this.btn_howToUse.BackColor = System.Drawing.Color.White;
+            this.btn_howToUse.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_howToUse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_howToUse.Image = global::IdeasAi.Properties.Resources.questionMark;
+            this.btn_howToUse.Location = new System.Drawing.Point(20, 20);
+            this.btn_howToUse.Name = "btn_howToUse";
+            this.btn_howToUse.Size = new System.Drawing.Size(39, 37);
+            this.btn_howToUse.TabIndex = 5;
+            this.btn_howToUse.UseVisualStyleBackColor = false;
+            this.btn_howToUse.Click += new System.EventHandler(this.btn_howToUse_Click);
             // 
             // MainForm
             // 
@@ -324,6 +355,9 @@ namespace IdeasAi
             this.pnl_pageTabs.ResumeLayout(false);
             this.pnl_header.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.pnl_content.ResumeLayout(false);
+            this.pnl_contentHeader.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -346,6 +380,9 @@ namespace IdeasAi
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnl_pageTabCont;
         private System.Windows.Forms.Button btn_exit;
+        private System.Windows.Forms.Panel pnl_contentHeader;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btn_howToUse;
     }
 }
 

@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbl_loadingInfo = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tmr_animation = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,6 +57,12 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // tmr_animation
+            // 
+            this.tmr_animation.Enabled = true;
+            this.tmr_animation.Interval = 1;
+            this.tmr_animation.Tick += new System.EventHandler(this.tmr_animation_Tick);
+            // 
             // mdl_loading
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -67,6 +75,7 @@
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "mdl_loading";
+            this.Opacity = 0D;
             this.Text = "mdl_loading";
             this.Load += new System.EventHandler(this.mdl_loading_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -78,5 +87,6 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Label lbl_loadingInfo;
+        private System.Windows.Forms.Timer tmr_animation;
     }
 }

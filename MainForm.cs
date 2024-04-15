@@ -36,7 +36,7 @@ namespace IdeasAi
         public DBManager_Docs dbManager_Docs = new DBManager_Docs();
 
 
-        Button btn_active;
+        public Button btn_active;
         Color color_active = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
         Color color_inactive = System.Drawing.Color.Transparent;
 
@@ -249,6 +249,10 @@ namespace IdeasAi
         {
             return ref btn_home;
         }
+        public ref Button getBtnConsult()
+        {
+            return ref btn_consultation;
+        }
         public ref Panel getPnlContent()
         {
             return ref pnl_content;
@@ -265,6 +269,14 @@ namespace IdeasAi
         private void btn_exit_Click(object sender, EventArgs e)
         {
 
+        }
+
+
+        private void btn_howToUse_Click(object sender, EventArgs e)
+        {
+            setModalBackground(frm_home);
+            mdl_howToUse mdl_HowToUse = new mdl_howToUse(this);
+            mdl_HowToUse.ShowDialog();
         }
     }
 }
