@@ -145,7 +145,6 @@ namespace IdeasAi.PageForms
 
         private void txb_Consult_TextChanged(object sender, EventArgs e)
         {
-            txb_Consult.ForeColor = Color.White;
         }
 
         private void btn_print_Click(object sender, EventArgs e)
