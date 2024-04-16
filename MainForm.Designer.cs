@@ -34,74 +34,66 @@ namespace IdeasAi
             this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.pnl_pageTabCont = new System.Windows.Forms.Panel();
             this.pnl_pageTabs = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnl_HomeBtn = new System.Windows.Forms.Panel();
             this.btn_home = new System.Windows.Forms.Button();
+            this.pnl_QHubBtn = new System.Windows.Forms.Panel();
             this.btn_consultation = new System.Windows.Forms.Button();
+            this.pnl_notebookBtn = new System.Windows.Forms.Panel();
             this.btn_notebook = new System.Windows.Forms.Button();
+            this.pnl_workspaceBtn = new System.Windows.Forms.Panel();
             this.btn_workspace = new System.Windows.Forms.Button();
+            this.pnl_mindmapBtn = new System.Windows.Forms.Panel();
             this.btn_mindmap = new System.Windows.Forms.Button();
             this.btn_exit = new System.Windows.Forms.Button();
             this.pnl_header = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.lbl_appTitle = new System.Windows.Forms.Label();
             this.kryptonPalette2 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnl_mFormContent = new System.Windows.Forms.Panel();
+            this.pnl_fillContent = new System.Windows.Forms.Panel();
             this.pnl_content = new System.Windows.Forms.Panel();
             this.pnl_contentHeader = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_howToUse = new System.Windows.Forms.Button();
             this.lbl_currentPage = new System.Windows.Forms.Label();
+            this.pnl_sideContent = new System.Windows.Forms.Panel();
             this.pnl_menuSectBorder = new System.Windows.Forms.Panel();
             this.pnl_menuSect = new System.Windows.Forms.Panel();
-            this.pnl_HomeBtn = new System.Windows.Forms.Panel();
-            this.pnl_QHubBtn = new System.Windows.Forms.Panel();
-            this.pnl_notebookBtn = new System.Windows.Forms.Panel();
-            this.pnl_workspaceBtn = new System.Windows.Forms.Panel();
-            this.pnl_mindmapBtn = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pnl_sideContent = new System.Windows.Forms.Panel();
-            this.pnl_fillContent = new System.Windows.Forms.Panel();
             this.pnl_pageTabCont.SuspendLayout();
             this.pnl_pageTabs.SuspendLayout();
-            this.pnl_header.SuspendLayout();
-            this.pnl_mFormContent.SuspendLayout();
-            this.pnl_content.SuspendLayout();
-            this.pnl_contentHeader.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.pnl_menuSectBorder.SuspendLayout();
-            this.pnl_menuSect.SuspendLayout();
             this.pnl_HomeBtn.SuspendLayout();
             this.pnl_QHubBtn.SuspendLayout();
             this.pnl_notebookBtn.SuspendLayout();
             this.pnl_workspaceBtn.SuspendLayout();
             this.pnl_mindmapBtn.SuspendLayout();
+            this.pnl_header.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.pnl_sideContent.SuspendLayout();
+            this.pnl_mFormContent.SuspendLayout();
             this.pnl_fillContent.SuspendLayout();
+            this.pnl_content.SuspendLayout();
+            this.pnl_contentHeader.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.pnl_sideContent.SuspendLayout();
+            this.pnl_menuSectBorder.SuspendLayout();
+            this.pnl_menuSect.SuspendLayout();
             this.SuspendLayout();
             // 
             // kryptonPalette1
             // 
-            this.kryptonPalette1.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
             this.kryptonPalette1.FormStyles.FormCommon.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
             this.kryptonPalette1.FormStyles.FormCommon.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
             this.kryptonPalette1.FormStyles.FormCommon.StateCommon.Back.ColorAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Local;
-            this.kryptonPalette1.FormStyles.FormCommon.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.FormStyles.FormMain.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
             this.kryptonPalette1.FormStyles.FormMain.StateActive.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
-            this.kryptonPalette1.FormStyles.FormMain.StateActive.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(197)))), ((int)(((byte)(199)))));
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateNormal.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.LabelStyles.LabelCommon.StateNormal.ShortText.Color1 = System.Drawing.Color.White;
             this.kryptonPalette1.LabelStyles.LabelCommon.StateNormal.ShortText.Font = new System.Drawing.Font("Cascadia Code Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kryptonPalette1.LabelStyles.LabelCommon.StateNormal.ShortText.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
-            this.kryptonPalette1.LabelStyles.LabelCommon.StateNormal.ShortText.Trim = ComponentFactory.Krypton.Toolkit.PaletteTextTrim.Inherit;
             this.kryptonPalette1.PanelStyles.PanelCommon.StateNormal.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
-            this.kryptonPalette1.PanelStyles.PanelCommon.StateNormal.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             // 
             // pnl_pageTabCont
             // 
@@ -132,6 +124,16 @@ namespace IdeasAi
             this.pnl_pageTabs.Size = new System.Drawing.Size(249, 332);
             this.pnl_pageTabs.TabIndex = 1;
             // 
+            // pnl_HomeBtn
+            // 
+            this.pnl_HomeBtn.BackColor = System.Drawing.Color.White;
+            this.pnl_HomeBtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_HomeBtn.Controls.Add(this.btn_home);
+            this.pnl_HomeBtn.Location = new System.Drawing.Point(4, 4);
+            this.pnl_HomeBtn.Name = "pnl_HomeBtn";
+            this.pnl_HomeBtn.Size = new System.Drawing.Size(232, 48);
+            this.pnl_HomeBtn.TabIndex = 0;
+            // 
             // btn_home
             // 
             this.btn_home.BackColor = System.Drawing.Color.White;
@@ -151,6 +153,16 @@ namespace IdeasAi
             this.btn_home.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_home.UseVisualStyleBackColor = false;
             this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
+            // 
+            // pnl_QHubBtn
+            // 
+            this.pnl_QHubBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(222)))), ((int)(((byte)(220)))));
+            this.pnl_QHubBtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_QHubBtn.Controls.Add(this.btn_consultation);
+            this.pnl_QHubBtn.Location = new System.Drawing.Point(4, 58);
+            this.pnl_QHubBtn.Name = "pnl_QHubBtn";
+            this.pnl_QHubBtn.Size = new System.Drawing.Size(232, 53);
+            this.pnl_QHubBtn.TabIndex = 1;
             // 
             // btn_consultation
             // 
@@ -172,6 +184,15 @@ namespace IdeasAi
             this.btn_consultation.UseVisualStyleBackColor = false;
             this.btn_consultation.Click += new System.EventHandler(this.btn_consultation_Click);
             // 
+            // pnl_notebookBtn
+            // 
+            this.pnl_notebookBtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_notebookBtn.Controls.Add(this.btn_notebook);
+            this.pnl_notebookBtn.Location = new System.Drawing.Point(4, 117);
+            this.pnl_notebookBtn.Name = "pnl_notebookBtn";
+            this.pnl_notebookBtn.Size = new System.Drawing.Size(232, 53);
+            this.pnl_notebookBtn.TabIndex = 2;
+            // 
             // btn_notebook
             // 
             this.btn_notebook.BackColor = System.Drawing.Color.Transparent;
@@ -192,6 +213,15 @@ namespace IdeasAi
             this.btn_notebook.UseVisualStyleBackColor = false;
             this.btn_notebook.Click += new System.EventHandler(this.btn_notebook_Click);
             // 
+            // pnl_workspaceBtn
+            // 
+            this.pnl_workspaceBtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_workspaceBtn.Controls.Add(this.btn_workspace);
+            this.pnl_workspaceBtn.Location = new System.Drawing.Point(4, 176);
+            this.pnl_workspaceBtn.Name = "pnl_workspaceBtn";
+            this.pnl_workspaceBtn.Size = new System.Drawing.Size(232, 53);
+            this.pnl_workspaceBtn.TabIndex = 3;
+            // 
             // btn_workspace
             // 
             this.btn_workspace.BackColor = System.Drawing.Color.Transparent;
@@ -211,6 +241,15 @@ namespace IdeasAi
             this.btn_workspace.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_workspace.UseVisualStyleBackColor = false;
             this.btn_workspace.Click += new System.EventHandler(this.btn_workspace_Click);
+            // 
+            // pnl_mindmapBtn
+            // 
+            this.pnl_mindmapBtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_mindmapBtn.Controls.Add(this.btn_mindmap);
+            this.pnl_mindmapBtn.Location = new System.Drawing.Point(4, 235);
+            this.pnl_mindmapBtn.Name = "pnl_mindmapBtn";
+            this.pnl_mindmapBtn.Size = new System.Drawing.Size(232, 53);
+            this.pnl_mindmapBtn.TabIndex = 4;
             // 
             // btn_mindmap
             // 
@@ -265,6 +304,27 @@ namespace IdeasAi
             this.pnl_header.Size = new System.Drawing.Size(249, 150);
             this.pnl_header.TabIndex = 3;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(2, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(245, 37);
+            this.panel1.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(126)))));
+            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(45, 37);
+            this.button1.TabIndex = 0;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // lbl_appTitle
             // 
             this.lbl_appTitle.BackColor = System.Drawing.Color.White;
@@ -284,14 +344,10 @@ namespace IdeasAi
             this.kryptonPalette2.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue;
             this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.OverrideDefault.Back.Color1 = System.Drawing.Color.Red;
             this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.OverrideDefault.Back.Color2 = System.Drawing.Color.Black;
-            this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.OverrideDefault.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.StateNormal.Back.Color1 = System.Drawing.Color.Red;
             this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.StateNormal.Back.Color2 = System.Drawing.Color.Red;
-            this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.StateNormal.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.StatePressed.Back.Color1 = System.Drawing.Color.Red;
-            this.kryptonPalette2.ButtonStyles.ButtonBreadCrumb.StatePressed.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette2.PanelStyles.PanelCommon.StateCommon.Color1 = System.Drawing.Color.Lime;
-            this.kryptonPalette2.PanelStyles.PanelCommon.StateCommon.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             // 
             // panel3
             // 
@@ -314,6 +370,16 @@ namespace IdeasAi
             this.pnl_mFormContent.Size = new System.Drawing.Size(1280, 677);
             this.pnl_mFormContent.TabIndex = 6;
             // 
+            // pnl_fillContent
+            // 
+            this.pnl_fillContent.Controls.Add(this.pnl_content);
+            this.pnl_fillContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_fillContent.Location = new System.Drawing.Point(317, 0);
+            this.pnl_fillContent.Name = "pnl_fillContent";
+            this.pnl_fillContent.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.pnl_fillContent.Size = new System.Drawing.Size(963, 677);
+            this.pnl_fillContent.TabIndex = 7;
+            // 
             // pnl_content
             // 
             this.pnl_content.BackColor = System.Drawing.Color.White;
@@ -322,7 +388,7 @@ namespace IdeasAi
             this.pnl_content.Location = new System.Drawing.Point(0, 0);
             this.pnl_content.Margin = new System.Windows.Forms.Padding(12);
             this.pnl_content.Name = "pnl_content";
-            this.pnl_content.Padding = new System.Windows.Forms.Padding(0, 12, 0, 12);
+            this.pnl_content.Padding = new System.Windows.Forms.Padding(0, 12, 0, 20);
             this.pnl_content.Size = new System.Drawing.Size(943, 677);
             this.pnl_content.TabIndex = 4;
             // 
@@ -376,6 +442,16 @@ namespace IdeasAi
             this.lbl_currentPage.Text = "Page 1";
             this.lbl_currentPage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pnl_sideContent
+            // 
+            this.pnl_sideContent.Controls.Add(this.pnl_menuSectBorder);
+            this.pnl_sideContent.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnl_sideContent.Location = new System.Drawing.Point(0, 0);
+            this.pnl_sideContent.Name = "pnl_sideContent";
+            this.pnl_sideContent.Padding = new System.Windows.Forms.Padding(20);
+            this.pnl_sideContent.Size = new System.Drawing.Size(317, 677);
+            this.pnl_sideContent.TabIndex = 6;
+            // 
             // pnl_menuSectBorder
             // 
             this.pnl_menuSectBorder.BackColor = System.Drawing.Color.Black;
@@ -400,94 +476,6 @@ namespace IdeasAi
             this.pnl_menuSect.Size = new System.Drawing.Size(269, 629);
             this.pnl_menuSect.TabIndex = 0;
             // 
-            // pnl_HomeBtn
-            // 
-            this.pnl_HomeBtn.BackColor = System.Drawing.Color.White;
-            this.pnl_HomeBtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl_HomeBtn.Controls.Add(this.btn_home);
-            this.pnl_HomeBtn.Location = new System.Drawing.Point(4, 4);
-            this.pnl_HomeBtn.Name = "pnl_HomeBtn";
-            this.pnl_HomeBtn.Size = new System.Drawing.Size(232, 48);
-            this.pnl_HomeBtn.TabIndex = 0;
-            // 
-            // pnl_QHubBtn
-            // 
-            this.pnl_QHubBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(222)))), ((int)(((byte)(220)))));
-            this.pnl_QHubBtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl_QHubBtn.Controls.Add(this.btn_consultation);
-            this.pnl_QHubBtn.Location = new System.Drawing.Point(4, 58);
-            this.pnl_QHubBtn.Name = "pnl_QHubBtn";
-            this.pnl_QHubBtn.Size = new System.Drawing.Size(232, 53);
-            this.pnl_QHubBtn.TabIndex = 1;
-            // 
-            // pnl_notebookBtn
-            // 
-            this.pnl_notebookBtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl_notebookBtn.Controls.Add(this.btn_notebook);
-            this.pnl_notebookBtn.Location = new System.Drawing.Point(4, 117);
-            this.pnl_notebookBtn.Name = "pnl_notebookBtn";
-            this.pnl_notebookBtn.Size = new System.Drawing.Size(232, 53);
-            this.pnl_notebookBtn.TabIndex = 2;
-            // 
-            // pnl_workspaceBtn
-            // 
-            this.pnl_workspaceBtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl_workspaceBtn.Controls.Add(this.btn_workspace);
-            this.pnl_workspaceBtn.Location = new System.Drawing.Point(4, 176);
-            this.pnl_workspaceBtn.Name = "pnl_workspaceBtn";
-            this.pnl_workspaceBtn.Size = new System.Drawing.Size(232, 53);
-            this.pnl_workspaceBtn.TabIndex = 3;
-            // 
-            // pnl_mindmapBtn
-            // 
-            this.pnl_mindmapBtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl_mindmapBtn.Controls.Add(this.btn_mindmap);
-            this.pnl_mindmapBtn.Location = new System.Drawing.Point(4, 235);
-            this.pnl_mindmapBtn.Name = "pnl_mindmapBtn";
-            this.pnl_mindmapBtn.Size = new System.Drawing.Size(232, 53);
-            this.pnl_mindmapBtn.TabIndex = 4;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(2, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(245, 37);
-            this.panel1.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(126)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(45, 37);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // pnl_sideContent
-            // 
-            this.pnl_sideContent.Controls.Add(this.pnl_menuSectBorder);
-            this.pnl_sideContent.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnl_sideContent.Location = new System.Drawing.Point(0, 0);
-            this.pnl_sideContent.Name = "pnl_sideContent";
-            this.pnl_sideContent.Padding = new System.Windows.Forms.Padding(20);
-            this.pnl_sideContent.Size = new System.Drawing.Size(317, 677);
-            this.pnl_sideContent.TabIndex = 6;
-            // 
-            // pnl_fillContent
-            // 
-            this.pnl_fillContent.Controls.Add(this.pnl_content);
-            this.pnl_fillContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_fillContent.Location = new System.Drawing.Point(317, 0);
-            this.pnl_fillContent.Name = "pnl_fillContent";
-            this.pnl_fillContent.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.pnl_fillContent.Size = new System.Drawing.Size(963, 677);
-            this.pnl_fillContent.TabIndex = 7;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -497,7 +485,6 @@ namespace IdeasAi
             this.Controls.Add(this.pnl_mFormContent);
             this.Controls.Add(this.panel3);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.Palette = this.kryptonPalette1;
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
@@ -507,28 +494,27 @@ namespace IdeasAi
             this.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.StateCommon.Border.Rounding = 20;
             this.StateCommon.Border.Width = 20;
             this.Text = "Ideas.ai";
             this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
             this.pnl_pageTabCont.ResumeLayout(false);
             this.pnl_pageTabs.ResumeLayout(false);
-            this.pnl_header.ResumeLayout(false);
-            this.pnl_mFormContent.ResumeLayout(false);
-            this.pnl_content.ResumeLayout(false);
-            this.pnl_contentHeader.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.pnl_menuSectBorder.ResumeLayout(false);
-            this.pnl_menuSect.ResumeLayout(false);
             this.pnl_HomeBtn.ResumeLayout(false);
             this.pnl_QHubBtn.ResumeLayout(false);
             this.pnl_notebookBtn.ResumeLayout(false);
             this.pnl_workspaceBtn.ResumeLayout(false);
             this.pnl_mindmapBtn.ResumeLayout(false);
+            this.pnl_header.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.pnl_sideContent.ResumeLayout(false);
+            this.pnl_mFormContent.ResumeLayout(false);
             this.pnl_fillContent.ResumeLayout(false);
+            this.pnl_content.ResumeLayout(false);
+            this.pnl_contentHeader.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.pnl_sideContent.ResumeLayout(false);
+            this.pnl_menuSectBorder.ResumeLayout(false);
+            this.pnl_menuSect.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

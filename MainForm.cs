@@ -121,8 +121,8 @@ namespace IdeasAi
             {
                 removeActiveBtn();
                 btn_active = (Button)btn;
-                btn_active.BackColor = ColorTranslator.FromHtml((string)decors["Color"]["accent100"]);
-                btn_active.Parent.Padding = new Padding(20,0,0,0);
+                btn_active.BackColor = ColorTranslator.FromHtml((string)decors["Color"]["secondary100"]);
+                btn_active.Parent.Padding = new Padding(15,0,0,0);
                 btn_active.Parent.BackColor = ColorTranslator.FromHtml((string)decors["Color"]["accent"]);
                 lbl_currentPage.Text = btn_active.Text;
             }

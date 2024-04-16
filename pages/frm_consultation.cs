@@ -67,10 +67,10 @@ namespace IdeasAi.PageForms
     text-align: left;
   }
   tr:nth-child(even) {
-    background-color: rgb(173, 197, 199);
+    background-color: #b0d07e;
   }
   th {
-    background-color: rgb(173, 197, 199);
+    background-color: #b0d07e;
   }
                     </style>
                     </head>
