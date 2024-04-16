@@ -210,8 +210,13 @@ namespace IdeasAi.pages
                     btn_QSearch_Click(sender, e);
                 }
             }
+            else if (e.Control && e.KeyCode == Keys.V)
+            {
+                e.SuppressKeyPress = true;
+                txb_textEditor.SelectedText = Clipboard.GetText();
+            }
 
-            
+
 
         }
         private void txb_textEditor_TextChanged(object sender, EventArgs e)

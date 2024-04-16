@@ -133,3 +133,4 @@ C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.modals.mdl_notif.resources
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.PageForms.frm_consultation.resources
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.pages.frm_home.resources
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.modals.mdl_howToUse.resources
+C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\decors.json

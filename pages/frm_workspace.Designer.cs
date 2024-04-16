@@ -114,6 +114,7 @@
             // txb_textEditor
             // 
             this.txb_textEditor.AcceptsTab = true;
+            this.txb_textEditor.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txb_textEditor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txb_textEditor.Font = new System.Drawing.Font("Cascadia Code Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txb_textEditor.Location = new System.Drawing.Point(10, 10);

@@ -7,11 +7,16 @@ using IdeasAi.pages;
 using IdeasAi.modals;
 using IdeasAi.db;
 using System.Web.UI.Design;
+using System.IO;
+using Newtonsoft.Json.Linq;
 
 namespace IdeasAi
 {
     public partial class MainForm : KryptonForm
     {
+        //decors json
+        public JObject decors;
+
         //loading states
         public const int state_loadMindmap = 1;
         public const int state_loadConsultation = 2;
@@ -58,12 +63,19 @@ namespace IdeasAi
             mdl_setter = new ModalSetter(this);
             //modalManager = new ModalManager(this);
 
-            setActiveBtn((object)this.btn_home, pnl_pageTabs);
+            btn_active = btn_mindmap;
+            setActiveBtn((object)btn_mindmap, pnl_pageTabs);
             loadForm(frm_home, pnl_content);
             
-            btn_active = this.btn_home;
             lbl_currentPage.Text = btn_active.Text;
             Console.WriteLine(this.Width + "::" + this.Height);
+
+            using(StreamReader reader = File.OpenText("decors.json"))
+            {
+                string decorsJson = reader.ReadToEnd();
+                decors = JObject.Parse(decorsJson);
+            }
+            setActiveBtn((object)btn_home, pnl_pageTabs);
         }
 
         
@@ -105,25 +117,25 @@ namespace IdeasAi
 
         public void setActiveBtn(object btn, Panel pnl)
         {
-            if ((Button)btn != btn_active)
+            if ((Button)btn != btn_active && btn_active != null)
             {
-            removeActiveBtn(pnl);
+                removeActiveBtn();
                 btn_active = (Button)btn;
-                btn_active.BackColor = color_active;
+                btn_active.BackColor = ColorTranslator.FromHtml((string)decors["Color"]["accent100"]);
+                btn_active.Parent.Padding = new Padding(20,0,0,0);
+                btn_active.Parent.BackColor = ColorTranslator.FromHtml((string)decors["Color"]["accent"]);
                 lbl_currentPage.Text = btn_active.Text;
             }
         }
 
-        private void removeActiveBtn(Panel pnl)
+        private void removeActiveBtn()
         {
-            foreach (var btn in pnl.Controls)
+            if(btn_active != null)
             {
-                if ((Button)btn == btn_active)
-                {
-                    btn_active.BackColor = color_inactive;
-                    break;
-                }
+                btn_active.BackColor = ColorTranslator.FromHtml((string)decors["Color"]["primary"]);
+                btn_active.Parent.Padding = new Padding(0);
             }
+
         }
 
         public void addNotification(string type, string typeTxt, string typeInfo)

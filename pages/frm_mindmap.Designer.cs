@@ -33,6 +33,7 @@
             this.pbx_mindmap = new System.Windows.Forms.PictureBox();
             this.pnl_viewSettings = new System.Windows.Forms.Panel();
             this.pnl_titleCont = new System.Windows.Forms.Panel();
+            this.txb_title = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.cb_viewSelector = new System.Windows.Forms.ComboBox();
@@ -50,7 +51,6 @@
             this.pnl_inputSide = new System.Windows.Forms.Panel();
             this.txb_markdownInput = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.spl_mindmap = new System.Windows.Forms.Splitter();
-            this.txb_title = new System.Windows.Forms.TextBox();
             this.pnl_viewerSide.SuspendLayout();
             this.pnl_mindmapViewer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_mindmap)).BeginInit();
@@ -121,9 +121,23 @@
             this.pnl_titleCont.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_titleCont.Location = new System.Drawing.Point(250, 0);
             this.pnl_titleCont.Name = "pnl_titleCont";
-            this.pnl_titleCont.Padding = new System.Windows.Forms.Padding(25, 30, 25, 0);
+            this.pnl_titleCont.Padding = new System.Windows.Forms.Padding(0, 30, 10, 0);
             this.pnl_titleCont.Size = new System.Drawing.Size(457, 83);
             this.pnl_titleCont.TabIndex = 18;
+            // 
+            // txb_title
+            // 
+            this.txb_title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(28)))));
+            this.txb_title.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txb_title.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txb_title.Font = new System.Drawing.Font("Cascadia Code", 10.5F);
+            this.txb_title.ForeColor = System.Drawing.Color.White;
+            this.txb_title.Location = new System.Drawing.Point(0, 30);
+            this.txb_title.Name = "txb_title";
+            this.txb_title.Size = new System.Drawing.Size(447, 28);
+            this.txb_title.TabIndex = 0;
+            this.txb_title.Text = "myMindmap";
+            this.txb_title.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel1
             // 
@@ -374,20 +388,6 @@
             this.spl_mindmap.Size = new System.Drawing.Size(10, 566);
             this.spl_mindmap.TabIndex = 6;
             this.spl_mindmap.TabStop = false;
-            // 
-            // txb_title
-            // 
-            this.txb_title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(28)))));
-            this.txb_title.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txb_title.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txb_title.Font = new System.Drawing.Font("Cascadia Code", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txb_title.ForeColor = System.Drawing.Color.White;
-            this.txb_title.Location = new System.Drawing.Point(25, 30);
-            this.txb_title.Name = "txb_title";
-            this.txb_title.Size = new System.Drawing.Size(407, 28);
-            this.txb_title.TabIndex = 0;
-            this.txb_title.Text = "myMindmap";
-            this.txb_title.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // frm_mindmap
             // 

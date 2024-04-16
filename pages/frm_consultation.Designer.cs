@@ -32,13 +32,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.wb_container = new System.Windows.Forms.WebBrowser();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_toWorkspace = new System.Windows.Forms.Button();
+            this.btn_print = new System.Windows.Forms.Button();
+            this.btn_save = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnl_txbCont = new System.Windows.Forms.Panel();
             this.txb_Consult = new System.Windows.Forms.RichTextBox();
             this.btn_send = new System.Windows.Forms.Button();
-            this.btn_toWorkspace = new System.Windows.Forms.Button();
-            this.btn_print = new System.Windows.Forms.Button();
-            this.btn_save = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -52,9 +52,9 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(25, 25);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(880, 566);
+            this.panel1.Size = new System.Drawing.Size(924, 610);
             this.panel1.TabIndex = 0;
             // 
             // wb_container
@@ -63,75 +63,21 @@
             this.wb_container.Location = new System.Drawing.Point(0, 84);
             this.wb_container.MinimumSize = new System.Drawing.Size(20, 20);
             this.wb_container.Name = "wb_container";
-            this.wb_container.Size = new System.Drawing.Size(880, 430);
+            this.wb_container.Size = new System.Drawing.Size(924, 474);
             this.wb_container.TabIndex = 7;
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.btn_toWorkspace);
             this.panel3.Controls.Add(this.btn_print);
             this.panel3.Controls.Add(this.btn_save);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 514);
+            this.panel3.Location = new System.Drawing.Point(0, 558);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.panel3.Size = new System.Drawing.Size(880, 52);
+            this.panel3.Size = new System.Drawing.Size(924, 52);
             this.panel3.TabIndex = 11;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(28)))));
-            this.panel2.Controls.Add(this.pnl_txbCont);
-            this.panel2.Controls.Add(this.btn_send);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(15);
-            this.panel2.Size = new System.Drawing.Size(880, 84);
-            this.panel2.TabIndex = 5;
-            // 
-            // pnl_txbCont
-            // 
-            this.pnl_txbCont.BackColor = System.Drawing.Color.Transparent;
-            this.pnl_txbCont.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl_txbCont.Controls.Add(this.txb_Consult);
-            this.pnl_txbCont.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_txbCont.Location = new System.Drawing.Point(15, 15);
-            this.pnl_txbCont.Name = "pnl_txbCont";
-            this.pnl_txbCont.Padding = new System.Windows.Forms.Padding(10, 15, 10, 0);
-            this.pnl_txbCont.Size = new System.Drawing.Size(797, 54);
-            this.pnl_txbCont.TabIndex = 2;
-            // 
-            // txb_Consult
-            // 
-            this.txb_Consult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(28)))));
-            this.txb_Consult.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txb_Consult.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txb_Consult.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txb_Consult.ForeColor = System.Drawing.Color.White;
-            this.txb_Consult.Location = new System.Drawing.Point(10, 15);
-            this.txb_Consult.Multiline = false;
-            this.txb_Consult.Name = "txb_Consult";
-            this.txb_Consult.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.txb_Consult.Size = new System.Drawing.Size(775, 37);
-            this.txb_Consult.TabIndex = 2;
-            this.txb_Consult.Text = "Ask a question..";
-            this.txb_Consult.TextChanged += new System.EventHandler(this.txb_Consult_TextChanged);
-            // 
-            // btn_send
-            // 
-            this.btn_send.AllowDrop = true;
-            this.btn_send.BackColor = System.Drawing.Color.White;
-            this.btn_send.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_send.FlatAppearance.BorderSize = 0;
-            this.btn_send.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_send.Image = global::IdeasAi.Properties.Resources.send2;
-            this.btn_send.Location = new System.Drawing.Point(812, 15);
-            this.btn_send.Name = "btn_send";
-            this.btn_send.Size = new System.Drawing.Size(53, 54);
-            this.btn_send.TabIndex = 1;
-            this.btn_send.UseVisualStyleBackColor = false;
-            this.btn_send.Click += new System.EventHandler(this.btn_send_Click);
             // 
             // btn_toWorkspace
             // 
@@ -196,18 +142,75 @@
             this.btn_save.UseVisualStyleBackColor = false;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click_1);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.pnl_txbCont);
+            this.panel2.Controls.Add(this.btn_send);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(15);
+            this.panel2.Size = new System.Drawing.Size(924, 84);
+            this.panel2.TabIndex = 5;
+            // 
+            // pnl_txbCont
+            // 
+            this.pnl_txbCont.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(192)))), ((int)(((byte)(195)))));
+            this.pnl_txbCont.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_txbCont.Controls.Add(this.txb_Consult);
+            this.pnl_txbCont.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_txbCont.Location = new System.Drawing.Point(15, 15);
+            this.pnl_txbCont.Name = "pnl_txbCont";
+            this.pnl_txbCont.Padding = new System.Windows.Forms.Padding(10, 15, 10, 0);
+            this.pnl_txbCont.Size = new System.Drawing.Size(841, 54);
+            this.pnl_txbCont.TabIndex = 2;
+            // 
+            // txb_Consult
+            // 
+            this.txb_Consult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(192)))), ((int)(((byte)(195)))));
+            this.txb_Consult.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txb_Consult.DetectUrls = false;
+            this.txb_Consult.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txb_Consult.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txb_Consult.ForeColor = System.Drawing.Color.Black;
+            this.txb_Consult.Location = new System.Drawing.Point(10, 15);
+            this.txb_Consult.Multiline = false;
+            this.txb_Consult.Name = "txb_Consult";
+            this.txb_Consult.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.txb_Consult.Size = new System.Drawing.Size(819, 37);
+            this.txb_Consult.TabIndex = 2;
+            this.txb_Consult.Text = "Ask a question..";
+            this.txb_Consult.TextChanged += new System.EventHandler(this.txb_Consult_TextChanged);
+            this.txb_Consult.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_Consult_KeyDown);
+            // 
+            // btn_send
+            // 
+            this.btn_send.AllowDrop = true;
+            this.btn_send.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(192)))), ((int)(((byte)(195)))));
+            this.btn_send.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_send.FlatAppearance.BorderSize = 0;
+            this.btn_send.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_send.Image = global::IdeasAi.Properties.Resources.send2;
+            this.btn_send.Location = new System.Drawing.Point(856, 15);
+            this.btn_send.Name = "btn_send";
+            this.btn_send.Size = new System.Drawing.Size(53, 54);
+            this.btn_send.TabIndex = 1;
+            this.btn_send.UseVisualStyleBackColor = false;
+            this.btn_send.Click += new System.EventHandler(this.btn_send_Click);
+            // 
             // frm_consultation
             // 
             this.AcceptButton = this.btn_send;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
+            this.AllowDrop = true;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(930, 616);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_consultation";
-            this.Padding = new System.Windows.Forms.Padding(25);
+            this.Padding = new System.Windows.Forms.Padding(3);
             this.Text = "frm_home";
             this.Load += new System.EventHandler(this.frm_home_Load);
             this.panel1.ResumeLayout(false);

@@ -177,7 +177,15 @@ namespace IdeasAi.PageForms
             return ref btn_toWorkspace;
         }
 
+        private void txb_Consult_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.V)
+            {
+                e.SuppressKeyPress = true;
 
+                txb_Consult.SelectedText = Clipboard.GetText();
+            }
+        }
     }
     
 }
