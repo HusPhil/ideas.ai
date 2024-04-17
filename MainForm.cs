@@ -30,7 +30,8 @@ namespace IdeasAi
         //
         // MODALS
         //
-        public Form modalBG; 
+        public Form modalBG;
+        public mdl_organize mdl_organize;
         public mdl_saveNotes mdl_save;
         public mdl_saveDocs mdl_saveDocs;
         public mdl_NotesOptions mdl_editNotes;
@@ -61,6 +62,7 @@ namespace IdeasAi
             mdl_loading = new mdl_loading(this);
             modalBG = new Form();
             mdl_setter = new ModalSetter(this);
+            mdl_organize = new mdl_organize(this);
             //modalManager = new ModalManager(this);
 
             btn_active = btn_mindmap;
@@ -236,15 +238,15 @@ namespace IdeasAi
         
         private void MainForm_SizeChanged(object sender, EventArgs e)
         {
-            if(frm_notebook.btn_activeTab.Equals(frm_notebook.getBtnDocsTab()))
-            {
-                frm_notebook.displaySavedIdeas(dbManager_Docs);
-            }
-            else
-            {
-                frm_notebook.displaySavedIdeas(dbManager_Note);
-            }
-            setNotifPosition();
+            //if(frm_notebook.btn_activeTab.Equals(frm_notebook.getBtnDocsTab()))
+            //{
+            //    frm_notebook.displaySavedIdeas(dbManager_Docs);
+            //}
+            //else
+            //{
+            //    frm_notebook.displaySavedIdeas(dbManager_Note);
+            //}
+            //setNotifPosition();
             
 ;        }
 
@@ -289,6 +291,11 @@ namespace IdeasAi
             setModalBackground(frm_home);
             mdl_howToUse mdl_HowToUse = new mdl_howToUse(this);
             mdl_HowToUse.ShowDialog();
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

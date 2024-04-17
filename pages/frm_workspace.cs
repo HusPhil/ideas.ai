@@ -67,18 +67,8 @@ namespace IdeasAi.pages
         }
         private async void btn_organizeIdea_Click(object sender, EventArgs e)
         {
-            btn_organizeIdea.Enabled = false;
-            txb_textEditor.ReadOnly = true;
-
-            var orgIdea_obj = new IdeaOrganizer();
-            orgIdea_obj.Input = txb_textEditor.Text;
-            orgIdea_obj.Content = await orgIdea_obj.GetResponse();
-
-            var pipeline = new MarkdownPipelineBuilder().UseAdvancedExtensions().Build();
-
-            txb_textEditor.Text = ConvertMarkdownToPlainText(orgIdea_obj.Content);
-            btn_organizeIdea.Enabled = true;
-            txb_textEditor.ReadOnly = false;
+            mainForm.setModalBackground(this);
+            mainForm.mdl_organize.ShowDialog();
 
         }
         private void btn_save_Click(object sender, EventArgs e)

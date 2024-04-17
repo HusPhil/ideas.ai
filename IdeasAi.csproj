@@ -201,6 +201,12 @@
     <Compile Include="modals\mdl_notif.Designer.cs">
       <DependentUpon>mdl_notif.cs</DependentUpon>
     </Compile>
+    <Compile Include="modals\mdl_organize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modals\mdl_organize.Designer.cs">
+      <DependentUpon>mdl_organize.cs</DependentUpon>
+    </Compile>
     <Compile Include="modals\mdl_saveNotes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="modals\mdl_notif.resx">
       <DependentUpon>mdl_notif.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modals\mdl_organize.resx">
+      <DependentUpon>mdl_organize.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modals\mdl_saveNotes.resx">
       <DependentUpon>mdl_saveNotes.cs</DependentUpon>
