@@ -157,6 +157,7 @@
     <Compile Include="ai_responses\Mindmap.cs" />
     <Compile Include="ai_responses\IdeaOrganizer.cs" />
     <Compile Include="ai_responses\QuickSearch.cs" />
+    <Compile Include="ai_responses\Summarizer.cs" />
     <Compile Include="db\DatabaseManager.cs" />
     <Compile Include="db\DBManager_Docs.cs" />
     <Compile Include="db\DBManager_Note.cs" />
