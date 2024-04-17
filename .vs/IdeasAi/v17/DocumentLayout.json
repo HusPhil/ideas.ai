@@ -3,14 +3,6 @@
   "WorkspaceRootPath": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\pages\\frm_consultation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:pages\\frm_consultation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\pages\\frm_consultation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:pages\\frm_consultation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,8 +11,24 @@
       "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:decors.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|c:\\myfiles\\projects\\aoop\\ideasai\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|c:\\myfiles\\projects\\aoop\\ideasai\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|c:\\myfiles\\projects\\aoop\\ideasai\\ai_responses\\quicksearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:ai_responses\\quicksearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|c:\\myfiles\\projects\\aoop\\ideasai\\gemini_ai\\scripts\\gemini.py||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:gemini_ai\\scripts\\gemini.py||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\pages\\frm_consultation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:pages\\frm_consultation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,28 +38,54 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "gemini.py",
+              "DocumentMoniker": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\Gemini_AI\\Scripts\\gemini.py",
+              "RelativeDocumentMoniker": "Gemini_AI\\Scripts\\gemini.py",
+              "ToolTip": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\Gemini_AI\\Scripts\\gemini.py",
+              "RelativeToolTip": "Gemini_AI\\Scripts\\gemini.py",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-04-17T01:05:17.106Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
+              "Title": "QuickSearch.cs",
+              "DocumentMoniker": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\ai_responses\\QuickSearch.cs",
+              "RelativeDocumentMoniker": "ai_responses\\QuickSearch.cs",
+              "ToolTip": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\ai_responses\\QuickSearch.cs",
+              "RelativeToolTip": "ai_responses\\QuickSearch.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T01:02:23.749Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "frm_consultation.cs",
               "DocumentMoniker": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\pages\\frm_consultation.cs",
               "RelativeDocumentMoniker": "pages\\frm_consultation.cs",
               "ToolTip": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\pages\\frm_consultation.cs",
               "RelativeToolTip": "pages\\frm_consultation.cs",
-              "ViewState": "AQIAAIgAAAAAAAAAAAAYwJMAAAAAAAAA",
+              "ViewState": "AQIAACoAAAAAAAAAAAAQwDsAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-16T13:50:27.454Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "decors.json",
               "DocumentMoniker": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\decors.json",
               "RelativeDocumentMoniker": "decors.json",
@@ -64,20 +98,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "MainForm.cs",
               "DocumentMoniker": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\MainForm.cs",
               "RelativeDocumentMoniker": "MainForm.cs",
               "ToolTip": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\MainForm.cs",
               "RelativeToolTip": "MainForm.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAcwHsAAABlAAAA",
+              "ViewState": "AQIAAHUAAAAAAAAAAAAkwH0AAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-16T13:37:16.275Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "MainForm.cs [Design]",
               "DocumentMoniker": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\MainForm.cs",
               "RelativeDocumentMoniker": "MainForm.cs",
@@ -89,7 +123,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "frm_consultation.cs [Design]",
               "DocumentMoniker": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\pages\\frm_consultation.cs",
               "RelativeDocumentMoniker": "pages\\frm_consultation.cs",
