@@ -11,7 +11,7 @@ namespace IdeasAi.ai_responses
     {
         public override async Task<string> GetResponse()
         {
-            var prompt = "Pretend you are an expert, your job is to talk in a human like convesational tone and " +
+            var prompt = "Pretend you are an expert, your job is to talk in a human like conversational tone and " +
                 "answer the question in a concise and brief way. You use simple lanaguage in explaining things and" +
                 " you provide summary for all information that you have given. " + 
                 "Don't supply information that may overwhelm the reader." +

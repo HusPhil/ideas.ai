@@ -80,7 +80,7 @@ namespace IdeasAi.pages
             // btn_docsTab
             // 
             this.btn_docsTab.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_docsTab.BackColor = System.Drawing.Color.Transparent;
+            this.btn_docsTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(239)))), ((int)(((byte)(140)))));
             this.btn_docsTab.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
             this.btn_docsTab.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn_docsTab.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
@@ -98,7 +98,7 @@ namespace IdeasAi.pages
             // btn_notesTab
             // 
             this.btn_notesTab.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_notesTab.BackColor = System.Drawing.Color.Transparent;
+            this.btn_notesTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(126)))));
             this.btn_notesTab.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
             this.btn_notesTab.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn_notesTab.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
@@ -115,7 +115,7 @@ namespace IdeasAi.pages
             // 
             // frm_notebook
             // 
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.ClientSize = new System.Drawing.Size(930, 616);
             this.ControlBox = false;
             this.Controls.Add(this.pnl_container);

@@ -1,34 +1,98 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\",
+  "WorkspaceRootPath": "C:\\Users\\Lenovo\\Downloads\\IDEA\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\pages\\frm_consultation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_workspace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:pages\\frm_workspace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|c:\\users\\lenovo\\downloads\\idea\\pages\\frm_mindmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:pages\\frm_mindmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_mindmap.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:pages\\frm_mindmap.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_workspace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:pages\\frm_workspace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_notebook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:pages\\frm_notebook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_notebook.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:pages\\frm_notebook.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\Users\\Lenovo\\Downloads\\IDEA\\modals\\mdl_notesoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:modals\\mdl_notesoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_mindmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:pages\\frm_mindmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:pages\\frm_home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_notebook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:pages\\frm_notebook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\Users\\Lenovo\\Downloads\\IDEA\\modals\\mdl_organize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:modals\\mdl_organize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\Users\\Lenovo\\Downloads\\IDEA\\modals\\mdl_organize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:modals\\mdl_organize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_home.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:pages\\frm_home.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_consultation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:pages\\frm_consultation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\decors.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\Users\\Lenovo\\Downloads\\IDEA\\modals\\mdl_docsoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:modals\\mdl_docsoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_consultation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:pages\\frm_consultation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\Users\\Lenovo\\Downloads\\IDEA\\decors.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:decors.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\Users\\Lenovo\\Downloads\\IDEA\\modals\\mdl_docsoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:modals\\mdl_docsoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|c:\\myfiles\\projects\\aoop\\ideasai\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\Users\\Lenovo\\Downloads\\IDEA\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|c:\\myfiles\\projects\\aoop\\ideasai\\ai_responses\\quicksearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\Users\\Lenovo\\Downloads\\IDEA\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\Users\\Lenovo\\Downloads\\IDEA\\ai_responses\\quicksearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:ai_responses\\quicksearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|c:\\myfiles\\projects\\aoop\\ideasai\\gemini_ai\\scripts\\gemini.py||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\Users\\Lenovo\\Downloads\\IDEA\\gemini_ai\\scripts\\gemini.py||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:gemini_ai\\scripts\\gemini.py||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\pages\\frm_consultation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:pages\\frm_consultation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\Users\\Lenovo\\Downloads\\IDEA\\settings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:settings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,100 +102,283 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "gemini.py",
-              "DocumentMoniker": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\Gemini_AI\\Scripts\\gemini.py",
-              "RelativeDocumentMoniker": "Gemini_AI\\Scripts\\gemini.py",
-              "ToolTip": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\Gemini_AI\\Scripts\\gemini.py",
-              "RelativeToolTip": "Gemini_AI\\Scripts\\gemini.py",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAA4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-04-17T01:05:17.106Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "QuickSearch.cs",
-              "DocumentMoniker": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\ai_responses\\QuickSearch.cs",
-              "RelativeDocumentMoniker": "ai_responses\\QuickSearch.cs",
-              "ToolTip": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\ai_responses\\QuickSearch.cs",
-              "RelativeToolTip": "ai_responses\\QuickSearch.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAoAAAA",
+              "DocumentIndex": 2,
+              "Title": "frm_mindmap.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_mindmap.Designer.cs",
+              "RelativeDocumentMoniker": "pages\\frm_mindmap.Designer.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_mindmap.Designer.cs",
+              "RelativeToolTip": "pages\\frm_mindmap.Designer.cs",
+              "ViewState": "AQIAANkBAAAAAAAAAAAQwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-17T01:02:23.749Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frm_consultation.cs",
-              "DocumentMoniker": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\pages\\frm_consultation.cs",
-              "RelativeDocumentMoniker": "pages\\frm_consultation.cs",
-              "ToolTip": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\pages\\frm_consultation.cs",
-              "RelativeToolTip": "pages\\frm_consultation.cs",
-              "ViewState": "AQIAACoAAAAAAAAAAAAQwDsAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-16T13:50:27.454Z",
+              "WhenOpened": "2024-04-17T08:37:54.584Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "decors.json",
-              "DocumentMoniker": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\decors.json",
-              "RelativeDocumentMoniker": "decors.json",
-              "ToolTip": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\decors.json",
-              "RelativeToolTip": "decors.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-04-16T13:45:07.586Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainForm.cs",
-              "DocumentMoniker": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\MainForm.cs",
-              "RelativeDocumentMoniker": "MainForm.cs",
-              "ToolTip": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\MainForm.cs",
-              "RelativeToolTip": "MainForm.cs",
-              "ViewState": "AQIAAHUAAAAAAAAAAAAkwH0AAAAEAAAA",
+              "Title": "frm_mindmap.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_mindmap.cs",
+              "RelativeDocumentMoniker": "pages\\frm_mindmap.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_mindmap.cs [Design]",
+              "RelativeToolTip": "pages\\frm_mindmap.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-16T13:37:16.275Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MainForm.cs [Design]",
-              "DocumentMoniker": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\MainForm.cs",
-              "RelativeDocumentMoniker": "MainForm.cs",
-              "ToolTip": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\MainForm.cs [Design]",
-              "RelativeToolTip": "MainForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-16T13:18:36.282Z",
+              "WhenOpened": "2024-04-17T08:29:03.035Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "frm_mindmap.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_mindmap.cs",
+              "RelativeDocumentMoniker": "pages\\frm_mindmap.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_mindmap.cs",
+              "RelativeToolTip": "pages\\frm_mindmap.cs",
+              "ViewState": "AQIAANoAAAAAAAAAAAAUwOIAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T10:02:43.123Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "frm_consultation.cs [Design]",
-              "DocumentMoniker": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\pages\\frm_consultation.cs",
+              "Title": "mdl_NotesOptions.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Downloads\\IDEA\\modals\\mdl_NotesOptions.cs",
+              "RelativeDocumentMoniker": "modals\\mdl_NotesOptions.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Downloads\\IDEA\\modals\\mdl_NotesOptions.cs [Design]",
+              "RelativeToolTip": "modals\\mdl_NotesOptions.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T09:53:33.856Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frm_notebook.resx",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_notebook.resx",
+              "RelativeDocumentMoniker": "pages\\frm_notebook.resx",
+              "ToolTip": "C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_notebook.resx",
+              "RelativeToolTip": "pages\\frm_notebook.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-04-17T09:05:50.897Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frm_notebook.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_notebook.cs",
+              "RelativeDocumentMoniker": "pages\\frm_notebook.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_notebook.cs",
+              "RelativeToolTip": "pages\\frm_notebook.cs",
+              "ViewState": "AQIAACoBAAAAAAAAAAAmwDMBAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T09:00:13.725Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "frm_home.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_home.Designer.cs",
+              "RelativeDocumentMoniker": "pages\\frm_home.Designer.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_home.Designer.cs",
+              "RelativeToolTip": "pages\\frm_home.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T08:56:52.077Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "frm_notebook.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_notebook.cs",
+              "RelativeDocumentMoniker": "pages\\frm_notebook.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_notebook.cs [Design]",
+              "RelativeToolTip": "pages\\frm_notebook.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T08:36:32.742Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "frm_home.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_home.cs",
+              "RelativeDocumentMoniker": "pages\\frm_home.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_home.cs [Design]",
+              "RelativeToolTip": "pages\\frm_home.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T08:28:16.183Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "mdl_DocsOptions.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Downloads\\IDEA\\modals\\mdl_DocsOptions.cs",
+              "RelativeDocumentMoniker": "modals\\mdl_DocsOptions.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Downloads\\IDEA\\modals\\mdl_DocsOptions.cs",
+              "RelativeToolTip": "modals\\mdl_DocsOptions.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADgAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T07:22:08.727Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "mdl_DocsOptions.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Downloads\\IDEA\\modals\\mdl_DocsOptions.cs",
+              "RelativeDocumentMoniker": "modals\\mdl_DocsOptions.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Downloads\\IDEA\\modals\\mdl_DocsOptions.cs [Design]",
+              "RelativeToolTip": "modals\\mdl_DocsOptions.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T07:21:54.916Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "mdl_organize.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Downloads\\IDEA\\modals\\mdl_organize.cs",
+              "RelativeDocumentMoniker": "modals\\mdl_organize.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Downloads\\IDEA\\modals\\mdl_organize.cs",
+              "RelativeToolTip": "modals\\mdl_organize.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAiwCEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T07:09:07.062Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frm_workspace.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_workspace.cs",
+              "RelativeDocumentMoniker": "pages\\frm_workspace.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_workspace.cs",
+              "RelativeToolTip": "pages\\frm_workspace.cs",
+              "ViewState": "AQIAAJYAAAAAAAAAAAAywJgAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T07:05:49.943Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frm_workspace.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_workspace.cs",
+              "RelativeDocumentMoniker": "pages\\frm_workspace.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_workspace.cs [Design]",
+              "RelativeToolTip": "pages\\frm_workspace.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T07:05:39.781Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "mdl_organize.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Downloads\\IDEA\\modals\\mdl_organize.cs",
+              "RelativeDocumentMoniker": "modals\\mdl_organize.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Downloads\\IDEA\\modals\\mdl_organize.cs [Design]",
+              "RelativeToolTip": "modals\\mdl_organize.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T06:59:17.7Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "settings.json",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Downloads\\IDEA\\settings.json",
+              "RelativeDocumentMoniker": "settings.json",
+              "ToolTip": "C:\\Users\\Lenovo\\Downloads\\IDEA\\settings.json",
+              "RelativeToolTip": "settings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAABUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-17T03:45:14.713Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "gemini.py",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Downloads\\IDEA\\Gemini_AI\\Scripts\\gemini.py",
+              "RelativeDocumentMoniker": "Gemini_AI\\Scripts\\gemini.py",
+              "ToolTip": "C:\\Users\\Lenovo\\Downloads\\IDEA\\Gemini_AI\\Scripts\\gemini.py",
+              "RelativeToolTip": "Gemini_AI\\Scripts\\gemini.py",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAA4AAAA",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEVSURBVDhPrZOhboRAEIaHhqQIJAKJQCAQCB4AXR4EiUAgkUhwGCSCF2h4AAwOCQkCiUQgqGgy3Z2Uy3FHL\u002Blxf/Jnl5n8HzsbEL6/PhCelPj\u002BCfALeMo8\u002B8Y2p7QDjONIrusafN\u002BnmiiK4LouVFUFXddBlmWgKAr1uHYATdOgLEvo\u002Bx7SNAXHcSCOYyiKApqmgTzPwbZtgl50fQdcLISGYeC6ruh5Hs7zjEmS7GbfTNlbwDRNuCwLrZIk0RqG4S64\u002BRAQBAGdgh2TamwEHIYBLctCXdcxiiKUZflvALuHyzO3qqrYti31uDiMg3jvDsDD25tvbZom\u002Bbp2B/ivefa1HxIb8dCPtAMIgnDoRzo9wqnfGQDgB6iaAPhrbB0nAAAAAElFTkSuQmCC",
+              "WhenOpened": "2024-04-17T01:05:17.106Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "QuickSearch.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Downloads\\IDEA\\ai_responses\\QuickSearch.cs",
+              "RelativeDocumentMoniker": "ai_responses\\QuickSearch.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Downloads\\IDEA\\ai_responses\\QuickSearch.cs",
+              "RelativeToolTip": "ai_responses\\QuickSearch.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAABfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T01:02:23.749Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "frm_consultation.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_consultation.cs",
               "RelativeDocumentMoniker": "pages\\frm_consultation.cs",
-              "ToolTip": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\pages\\frm_consultation.cs [Design]",
+              "ToolTip": "C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_consultation.cs",
+              "RelativeToolTip": "pages\\frm_consultation.cs",
+              "ViewState": "AQIAAHYAAAAAAAAAAAAcwDsAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-16T13:50:27.454Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "decors.json",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Downloads\\IDEA\\decors.json",
+              "RelativeDocumentMoniker": "decors.json",
+              "ToolTip": "C:\\Users\\Lenovo\\Downloads\\IDEA\\decors.json",
+              "RelativeToolTip": "decors.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-16T13:45:07.586Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Downloads\\IDEA\\MainForm.cs",
+              "RelativeDocumentMoniker": "MainForm.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Downloads\\IDEA\\MainForm.cs",
+              "RelativeToolTip": "MainForm.cs",
+              "ViewState": "AQIAACABAAAAAAAAAAA6wCkBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-16T13:37:16.275Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "MainForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Downloads\\IDEA\\MainForm.cs",
+              "RelativeDocumentMoniker": "MainForm.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Downloads\\IDEA\\MainForm.cs [Design]",
+              "RelativeToolTip": "MainForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-16T13:18:36.282Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "frm_consultation.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_consultation.cs",
+              "RelativeDocumentMoniker": "pages\\frm_consultation.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Downloads\\IDEA\\pages\\frm_consultation.cs [Design]",
               "RelativeToolTip": "pages\\frm_consultation.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-16T13:18:00.02Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-04-16T13:18:00.02Z"
             }
           ]
         }
