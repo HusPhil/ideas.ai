@@ -10,6 +10,7 @@ namespace IdeasAi.pages
     {
         //public string current_title;
         //public Guid current_id;
+        public string currentNotebook;
         string[] keys;
         public DBObjectManager saver_obj;
         public MainForm mainForm;
@@ -25,6 +26,10 @@ namespace IdeasAi.pages
         private Panel panel1;
         private System.Windows.Forms.ComboBox cb_dbSelector;
         private Label lbl_nothingFound;
+        private Button btn_delete;
+        private Panel pnl_delDialog;
+        private Button btn_delConfirm;
+        private CheckBox chb_delFile;
         public System.Windows.Forms.Button btn_activeTab = new System.Windows.Forms.Button();
 
         public frm_notebook(MainForm _mainForm)
@@ -49,6 +54,10 @@ namespace IdeasAi.pages
             this.btn_docsTab = new System.Windows.Forms.Button();
             this.pnl_footer = new System.Windows.Forms.Panel();
             this.pnl_noteSettings = new System.Windows.Forms.Panel();
+            this.btn_delete = new System.Windows.Forms.Button();
+            this.pnl_delDialog = new System.Windows.Forms.Panel();
+            this.btn_delConfirm = new System.Windows.Forms.Button();
+            this.chb_delFile = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cb_dbSelector = new System.Windows.Forms.ComboBox();
             this.lbl_noteCurrent = new System.Windows.Forms.Label();
@@ -59,6 +68,7 @@ namespace IdeasAi.pages
             this.tbpnl_tabs.SuspendLayout();
             this.pnl_footer.SuspendLayout();
             this.pnl_noteSettings.SuspendLayout();
+            this.pnl_delDialog.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -139,15 +149,71 @@ namespace IdeasAi.pages
             // 
             // pnl_noteSettings
             // 
+            this.pnl_noteSettings.Controls.Add(this.btn_delete);
+            this.pnl_noteSettings.Controls.Add(this.pnl_delDialog);
             this.pnl_noteSettings.Controls.Add(this.panel1);
             this.pnl_noteSettings.Controls.Add(this.lbl_noteCurrent);
             this.pnl_noteSettings.Controls.Add(this.btn_notebookSettings);
             this.pnl_noteSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_noteSettings.Location = new System.Drawing.Point(0, 15);
             this.pnl_noteSettings.Name = "pnl_noteSettings";
-            this.pnl_noteSettings.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.pnl_noteSettings.Size = new System.Drawing.Size(890, 40);
             this.pnl_noteSettings.TabIndex = 5;
+            // 
+            // btn_delete
+            // 
+            this.btn_delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(126)))));
+            this.btn_delete.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_delete.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_delete.Location = new System.Drawing.Point(576, 0);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(40, 40);
+            this.btn_delete.TabIndex = 4;
+            this.btn_delete.Text = "-";
+            this.btn_delete.UseVisualStyleBackColor = false;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            // 
+            // pnl_delDialog
+            // 
+            this.pnl_delDialog.Controls.Add(this.btn_delConfirm);
+            this.pnl_delDialog.Controls.Add(this.chb_delFile);
+            this.pnl_delDialog.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnl_delDialog.Location = new System.Drawing.Point(616, 0);
+            this.pnl_delDialog.Name = "pnl_delDialog";
+            this.pnl_delDialog.Size = new System.Drawing.Size(274, 40);
+            this.pnl_delDialog.TabIndex = 5;
+            this.pnl_delDialog.Visible = false;
+            // 
+            // btn_delConfirm
+            // 
+            this.btn_delConfirm.BackColor = System.Drawing.Color.Transparent;
+            this.btn_delConfirm.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_delConfirm.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_delConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_delConfirm.Font = new System.Drawing.Font("Cascadia Code", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_delConfirm.ForeColor = System.Drawing.Color.Red;
+            this.btn_delConfirm.Location = new System.Drawing.Point(20, 0);
+            this.btn_delConfirm.Name = "btn_delConfirm";
+            this.btn_delConfirm.Size = new System.Drawing.Size(113, 40);
+            this.btn_delConfirm.TabIndex = 8;
+            this.btn_delConfirm.Text = "Confirm";
+            this.btn_delConfirm.UseVisualStyleBackColor = false;
+            this.btn_delConfirm.Click += new System.EventHandler(this.btn_delConfirm_Click);
+            // 
+            // chb_delFile
+            // 
+            this.chb_delFile.AutoSize = true;
+            this.chb_delFile.Dock = System.Windows.Forms.DockStyle.Right;
+            this.chb_delFile.Font = new System.Drawing.Font("Cascadia Code", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chb_delFile.Location = new System.Drawing.Point(133, 0);
+            this.chb_delFile.Name = "chb_delFile";
+            this.chb_delFile.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.chb_delFile.Size = new System.Drawing.Size(141, 40);
+            this.chb_delFile.TabIndex = 9;
+            this.chb_delFile.Text = "Delete file?";
+            this.chb_delFile.UseVisualStyleBackColor = true;
+            this.chb_delFile.CheckedChanged += new System.EventHandler(this.chb_delFile_CheckedChanged);
             // 
             // panel1
             // 
@@ -239,6 +305,8 @@ namespace IdeasAi.pages
             this.tbpnl_tabs.ResumeLayout(false);
             this.pnl_footer.ResumeLayout(false);
             this.pnl_noteSettings.ResumeLayout(false);
+            this.pnl_delDialog.ResumeLayout(false);
+            this.pnl_delDialog.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -495,6 +563,34 @@ namespace IdeasAi.pages
             mainForm.dbManager_Note.dbFilePath = cb_dbSelector.SelectedItem.ToString();
 
             showAllIdeas();
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            if (pnl_delDialog.Visible)
+            {
+                pnl_delDialog.Visible = false;
+            }
+            else
+            {
+                pnl_delDialog.Visible = true;
+
+            }
+        }
+
+        private void chb_delFile_CheckedChanged(object sender, EventArgs e)
+        {
+
+            
+        }
+
+        private void btn_delConfirm_Click(object sender, EventArgs e)
+        {
+            if (chb_delFile.Checked)
+            {
+
+            }
+            cb_dbSelector.Items.Remove(currentNotebook);
         }
     }
 }
