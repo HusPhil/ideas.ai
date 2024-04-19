@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnl_footer = new System.Windows.Forms.Panel();
-            this.pnl_buttons = new System.Windows.Forms.Panel();
-            this.btn_save = new System.Windows.Forms.Button();
-            this.btn_go = new System.Windows.Forms.Button();
-            this.pnl_selectMode = new System.Windows.Forms.Panel();
-            this.cb_modeSelector = new System.Windows.Forms.ComboBox();
-            this.pnl_header = new System.Windows.Forms.Panel();
-            this.lb_organize = new System.Windows.Forms.Label();
-            this.btn_exit = new System.Windows.Forms.Button();
+            //this.pnl_footer = new System.Windows.Forms.Panel();
+            //this.pnl_buttons = new System.Windows.Forms.Panel();
+            //this.btn_save = new System.Windows.Forms.Button();
+            //this.btn_go = new System.Windows.Forms.Button();
+            //this.pnl_selectMode = new System.Windows.Forms.Panel();
+            //this.cb_modeSelector = new System.Windows.Forms.ComboBox();
+            //this.pnl_header = new System.Windows.Forms.Panel();
+            //this.lb_organize = new System.Windows.Forms.Label();
+            //this.btn_exit = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
@@ -67,8 +67,8 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ControlBox = false;
-            this.Controls.Add(this.btn_exit);
-            this.Controls.Add(this.pnl_body);
+            //this.Controls.Add(this.btn_exit);
+            //this.Controls.Add(this.pnl_body);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
