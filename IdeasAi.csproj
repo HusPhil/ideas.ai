@@ -156,6 +156,7 @@
   <ItemGroup>
     <Compile Include="ai_responses\Mindmap.cs" />
     <Compile Include="ai_responses\IdeaOrganizer.cs" />
+    <Compile Include="ai_responses\QuickSearch.cs" />
     <Compile Include="db\DatabaseManager.cs" />
     <Compile Include="db\DBManager_Docs.cs" />
     <Compile Include="db\DBManager_Note.cs" />
@@ -176,11 +177,35 @@
     <Compile Include="modals\mdl_DocsOptions.Designer.cs">
       <DependentUpon>mdl_DocsOptions.cs</DependentUpon>
     </Compile>
+    <Compile Include="modals\mdl_howToUse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modals\mdl_howToUse.Designer.cs">
+      <DependentUpon>mdl_howToUse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modals\mdl_loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modals\mdl_loading.Designer.cs">
+      <DependentUpon>mdl_loading.cs</DependentUpon>
+    </Compile>
     <Compile Include="modals\mdl_NotesOptions.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="modals\mdl_NotesOptions.Designer.cs">
       <DependentUpon>mdl_NotesOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modals\mdl_notif.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modals\mdl_notif.Designer.cs">
+      <DependentUpon>mdl_notif.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modals\mdl_organize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modals\mdl_organize.Designer.cs">
+      <DependentUpon>mdl_organize.cs</DependentUpon>
     </Compile>
     <Compile Include="modals\mdl_saveNotes.cs">
       <SubType>Form</SubType>
@@ -195,6 +220,12 @@
       <DependentUpon>mdl_saveDocs.cs</DependentUpon>
     </Compile>
     <Compile Include="modals\ModalSetter.cs" />
+    <Compile Include="pages\frm_consultation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\frm_consultation.Designer.cs">
+      <DependentUpon>frm_consultation.cs</DependentUpon>
+    </Compile>
     <Compile Include="pages\frm_home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,12 +237,6 @@
     </Compile>
     <Compile Include="pages\frm_mindmap.Designer.cs">
       <DependentUpon>frm_mindmap.cs</DependentUpon>
-    </Compile>
-    <Compile Include="pages\frm_settings.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="pages\frm_settings.Designer.cs">
-      <DependentUpon>frm_settings.cs</DependentUpon>
     </Compile>
     <Compile Include="pages\frm_workspace.cs">
       <SubType>Form</SubType>
@@ -227,14 +252,29 @@
     <EmbeddedResource Include="modals\mdl_DocsOptions.resx">
       <DependentUpon>mdl_DocsOptions.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="modals\mdl_howToUse.resx">
+      <DependentUpon>mdl_howToUse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modals\mdl_loading.resx">
+      <DependentUpon>mdl_loading.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="modals\mdl_NotesOptions.resx">
       <DependentUpon>mdl_NotesOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modals\mdl_notif.resx">
+      <DependentUpon>mdl_notif.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modals\mdl_organize.resx">
+      <DependentUpon>mdl_organize.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modals\mdl_saveNotes.resx">
       <DependentUpon>mdl_saveNotes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modals\mdl_saveDocs.resx">
       <DependentUpon>mdl_saveDocs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pages\frm_consultation.resx">
+      <DependentUpon>frm_consultation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pages\frm_home.resx">
       <DependentUpon>frm_home.cs</DependentUpon>
@@ -245,23 +285,18 @@
     <EmbeddedResource Include="pages\frm_notebook.resx">
       <DependentUpon>frm_notebook.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="pages\frm_settings.resx">
-      <DependentUpon>frm_settings.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="pages\frm_workspace.resx">
       <DependentUpon>frm_workspace.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="db\sqlite.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="decors.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="settings.json">
@@ -272,6 +307,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -282,7 +322,34 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\icons\send.png" />
+    <None Include="Resources\questionMark.png" />
+    <None Include="Resources\quickSearch.png" />
+    <None Include="Resources\send2.png" />
+    <None Include="Resources\send22.png" />
+    <None Include="Resources\send21.png" />
+    <None Include="Resources\send.png" />
+    <None Include="Resources\organize.png" />
+    <None Include="Resources\mindmap.png" />
+    <None Include="Resources\docOptions.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\workspace_small.png" />
+    <None Include="Resources\print.png" />
+    <None Include="Resources\saveAsFile.png" />
+    <None Include="Resources\quickSearchLoad.gif" />
+    <None Include="Resources\moreSettings.png" />
+    <None Include="Resources\zoomout.png" />
+    <None Include="Resources\zoomin.png" />
+    <None Include="Resources\resetZoom.png" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\success.png" />
+    <None Include="Resources\info.png" />
+    <None Include="Resources\error_n.png" />
+    <None Include="Resources\error.png" />
+    <None Include="Resources\error.gif" />
+    <None Include="Resources\mini_loading1.gif" />
+    <None Include="Resources\Moving train.gif" />
+    <None Include="Resources\loadingv2.gif" />
+    <None Include="Resources\loading.gif" />
     <None Include="bin\Debug\out.png" />
     <Content Include="gemini_AI\Scripts\gemini.py">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -292,7 +359,9 @@
     </Compile>
     <None Include="Resources\menu-dots-vertical.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="styles\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

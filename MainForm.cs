@@ -6,30 +6,43 @@ using IdeasAi.PageForms;
 using IdeasAi.pages;
 using IdeasAi.modals;
 using IdeasAi.db;
+using System.Web.UI.Design;
+using System.IO;
+using Newtonsoft.Json.Linq;
 
 namespace IdeasAi
 {
     public partial class MainForm : KryptonForm
     {
+        //decors json
+        public JObject decors;
+
+        //loading states
+        public const int state_loadMindmap = 1;
+        public const int state_loadConsultation = 2;
+
         // PAGE FORMS
         public frm_home frm_home;
+        public frm_consultation frm_consultation;
         public frm_workspace frm_workspace;
-        public frm_settings frm_settings;
         public frm_notebook frm_notebook;
         public frm_mindmap frm_mindmap;
         //
         // MODALS
         //
+        public Form modalBG;
+        public mdl_organize mdl_organize;
         public mdl_saveNotes mdl_save;
         public mdl_saveDocs mdl_saveDocs;
         public mdl_NotesOptions mdl_editNotes;
+        public mdl_loading mdl_loading;
         public ModalSetter mdl_setter;
 
         public DBManager_Note dbManager_Note = new DBManager_Note();
         public DBManager_Docs dbManager_Docs = new DBManager_Docs();
 
 
-        Button btn_active;
+        public Button btn_active;
         Color color_active = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
         Color color_inactive = System.Drawing.Color.Transparent;
 
@@ -38,26 +51,48 @@ namespace IdeasAi
 
             InitializeComponent();
             frm_home = new frm_home(this);
+            frm_consultation = new frm_consultation(this);
             frm_notebook =  new frm_notebook(this);
-            frm_settings = new frm_settings(this);
             frm_mindmap = new frm_mindmap(this);
             frm_workspace = new frm_workspace(this);
 
             mdl_save = new mdl_saveNotes(this);
             mdl_saveDocs = new mdl_saveDocs(this);
             mdl_editNotes = new mdl_NotesOptions(this);
+            mdl_loading = new mdl_loading(this);
+            modalBG = new Form();
             mdl_setter = new ModalSetter(this);
+            mdl_organize = new mdl_organize(this);
             //modalManager = new ModalManager(this);
 
-            setActiveBtn((object)this.btn_home, pnl_pageTabs);
+            btn_active = btn_mindmap;
+            setActiveBtn((object)btn_mindmap, pnl_pageTabs);
             loadForm(frm_home, pnl_content);
-
-            btn_active = this.btn_home;
+            
             lbl_currentPage.Text = btn_active.Text;
+            Console.WriteLine(this.Width + "::" + this.Height);
+
+            using(StreamReader reader = File.OpenText("decors.json"))
+            {
+                string decorsJson = reader.ReadToEnd();
+                decors = JObject.Parse(decorsJson);
+            }
+            setActiveBtn((object)btn_home, pnl_pageTabs);
         }
 
         
-
+        public void setModalBackground(Form callerForm)
+        {
+            modalBG.Owner = this;
+            modalBG.StartPosition = FormStartPosition.Manual;
+            modalBG.FormBorderStyle = FormBorderStyle.None;
+            modalBG.Opacity = .50d;
+            modalBG.BackColor = Color.Black;
+            modalBG.Size = this.Size;
+            modalBG.Location = callerForm.Owner.Location;
+            modalBG.ShowInTaskbar = false;
+            modalBG.Show();
+        }
         public void loadForm(Form frm, Control container)
         {
             removeForm(frm, container);
@@ -84,26 +119,56 @@ namespace IdeasAi
 
         public void setActiveBtn(object btn, Panel pnl)
         {
-            if ((Button)btn != btn_active)
+            if ((Button)btn != btn_active && btn_active != null)
             {
-            removeActiveBtn(pnl);
+                removeActiveBtn();
                 btn_active = (Button)btn;
-                btn_active.BackColor = color_active;
+                btn_active.BackColor = ColorTranslator.FromHtml((string)decors["Color"]["secondary100"]);
+                btn_active.Parent.Padding = new Padding(15,0,0,0);
+                btn_active.Parent.BackColor = ColorTranslator.FromHtml((string)decors["Color"]["accent"]);
                 lbl_currentPage.Text = btn_active.Text;
             }
         }
 
-        private void removeActiveBtn(Panel pnl)
+        private void removeActiveBtn()
         {
-            foreach (var btn in pnl.Controls)
+            if(btn_active != null)
             {
-                if ((Button)btn == btn_active)
-                {
-                    btn_active.BackColor = color_inactive;
-                    break;
-                }
+                btn_active.BackColor = ColorTranslator.FromHtml((string)decors["Color"]["primary"]);
+                btn_active.Parent.Padding = new Padding(0);
             }
+
         }
+
+        public void addNotification(string type, string typeTxt, string typeInfo)
+        {
+            var notif = new mdl_notif(this, type);
+            notif.lbl_type.Text = typeTxt;
+
+            if (mdl_notif.instancesCount > 1) notif.lbl_type.Text = typeTxt;
+
+            notif.lbl_info.Text = typeInfo;
+            notif.TopLevel = false;
+            this.Controls.Add(notif);
+            notif.Show();
+            notif.BringToFront();
+        }
+
+        public mdl_notif addAsyncNotification(string type, string typeTxt, string typeInfo)
+        {
+            var notif = new mdl_notif(this, type);
+            notif.lbl_type.Text = typeTxt;
+
+            if (mdl_notif.instancesCount > 1) notif.lbl_type.Text = typeTxt;
+
+            notif.lbl_info.Text = typeInfo;
+            notif.TopLevel = false;
+            this.Controls.Add(notif);
+      
+            return notif;
+        }
+
+
 
         private void btn_home_Click(object sender, EventArgs e)
         {
@@ -112,26 +177,19 @@ namespace IdeasAi
 
             loadForm(frm_home, pnl_content);
         }
+        private void btn_consultation_Click(object sender, EventArgs e)
+        {
+            setActiveBtn(sender, pnl_pageTabs);
+
+
+            loadForm(frm_consultation, pnl_content);
+        }
 
         private void btn_workspace_Click(object sender, EventArgs e)
         {
             setActiveBtn(sender, pnl_pageTabs);
             loadForm(frm_workspace, pnl_content);
-        }
-
-        private void btn_history_Click(object sender, EventArgs e)
-        {
-            setActiveBtn(sender, pnl_pageTabs);
-        }
-
-        private void btn_unde_Click(object sender, EventArgs e)
-        {
-
-            setActiveBtn(sender, pnl_pageTabs);
-            loadForm(frm_settings, pnl_content);
-
-            //mdl_setter.OpenModal(this, typeof(mdl_saveDocs), this);
-        }
+        }        
 
         private void btn_notebook_Click(object sender, EventArgs e)
         {
@@ -155,10 +213,41 @@ namespace IdeasAi
             setActiveBtn(sender, pnl_pageTabs);
             loadForm(frm_mindmap, pnl_content);
         }
+        public void setNotifPosition()
+        {
+            int offset = mdl_notif.instancesCount;
+            foreach (var c in this.Controls)
+            {
+                if (c is mdl_notif)
+                {
+                    mdl_notif notifControl = c as mdl_notif;
+                    if (notifControl != null)
+                    {
+                        int notifX = (this.Width - notifControl.Width) - 34;
+                        int notifY = (this.Height - (notifControl.Height)) - ((notifControl.Height + 5) * offset--);
 
+                        if (notifY > (this.Height - (notifControl.Height)) - (notifControl.Height + 5)) notifY = (this.Height - (notifControl.Height)) - (notifControl.Height + 5); 
+                        //Console.WriteLine(notifControl.lbl_type);
+                        //Console.WriteLine(notifY);
+
+                        notifControl.Location = new Point(notifX, notifY);
+                    }
+                }
+            }
+        }
+        
         private void MainForm_SizeChanged(object sender, EventArgs e)
         {
-            frm_notebook.displaySavedIdeas(dbManager_Note);
+            //if(frm_notebook.btn_activeTab.Equals(frm_notebook.getBtnDocsTab()))
+            //{
+            //    frm_notebook.displaySavedIdeas(dbManager_Docs);
+            //}
+            //else
+            //{
+            //    frm_notebook.displaySavedIdeas(dbManager_Note);
+            //}
+            //setNotifPosition();
+            
 ;        }
 
         //GETTERS
@@ -174,6 +263,10 @@ namespace IdeasAi
         {
             return ref btn_home;
         }
+        public ref Button getBtnConsult()
+        {
+            return ref btn_consultation;
+        }
         public ref Panel getPnlContent()
         {
             return ref pnl_content;
@@ -187,6 +280,22 @@ namespace IdeasAi
             return ref btn_mindmap; 
         }
 
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
 
+        }
+
+
+        private void btn_howToUse_Click(object sender, EventArgs e)
+        {
+            setModalBackground(frm_home);
+            mdl_howToUse mdl_HowToUse = new mdl_howToUse(this);
+            mdl_HowToUse.ShowDialog();
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

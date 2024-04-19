@@ -3,12 +3,20 @@ import sys
 import textwrap
 import google.generativeai as genai
 
-GOOGLE_API_KEY=sys.argv[2]
+response = ''
 
-genai.configure(api_key=GOOGLE_API_KEY)
+try:
+    GOOGLE_API_KEY = sys.argv[2]
 
-model = genai.GenerativeModel('gemini-pro')
+    genai.configure(api_key=GOOGLE_API_KEY)
 
-response = model.generate_content(sys.argv[1])
+    model = genai.GenerativeModel('gemini-1.5-pro-latest')
 
-print(response.text)
+    response = model.generate_content(sys.argv[1])
+
+    print(response.text)
+except Exception as e:
+    if(response != ''):
+        print(f"ERROR: Inappropriate prompt was deteced!")
+    else:
+        print(f"ERROR: {str(e)}")
