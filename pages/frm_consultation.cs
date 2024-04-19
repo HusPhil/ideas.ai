@@ -85,7 +85,7 @@ namespace IdeasAi.PageForms
             // Set the HTML content to the WebBrowser control
             wb_container.DocumentText = htmlContent;
         }
-        private async void btn_send_Click(object sender, EventArgs e)
+        private void btn_send_Click(object sender, EventArgs e)
         {
             mainForm.setModalBackground(this);
             mainForm.mdl_loading.state = MainForm.state_loadConsultation;

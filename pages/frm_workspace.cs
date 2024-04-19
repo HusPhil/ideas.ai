@@ -65,7 +65,7 @@ namespace IdeasAi.pages
 
             return markdown;
         }
-        private async void btn_organizeIdea_Click(object sender, EventArgs e)
+        private void btn_organizeIdea_Click(object sender, EventArgs e)
         {
             mainForm.setModalBackground(this);
             mainForm.mdl_organize.ShowDialog();

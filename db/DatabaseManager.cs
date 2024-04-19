@@ -5,6 +5,7 @@ using IdeasAi.Gemini_AI;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System;
+using Newtonsoft.Json.Linq;
 
 
 namespace IdeasAi.db
@@ -17,9 +18,12 @@ namespace IdeasAi.db
         public DatabaseManager()
         {
             string jsonString = File.ReadAllText("settings.json");
-            var appSettings = JsonConvert.DeserializeObject<AppSettings>(jsonString);
-            var dbPath = appSettings.DBPath;
-            this.dbFilePath = dbPath;
+            var appSettings = JObject.Parse(jsonString);
+            ScriptRunner.ReplaceEnvironmentVariables(appSettings);
+
+            
+            this.dbFilePath = (string)appSettings["Database_Path"];
+            ;
 
             // Create the SQLite database file if it doesn't exist
             if (!File.Exists(dbFilePath))

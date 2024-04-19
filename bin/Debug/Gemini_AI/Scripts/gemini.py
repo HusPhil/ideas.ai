@@ -10,7 +10,10 @@ try:
 
     genai.configure(api_key=GOOGLE_API_KEY)
 
-    model = genai.GenerativeModel('gemini-1.5-pro-latest')
+    model = genai.GenerativeModel(
+        model_name="gemini-1.5-pro-latest",
+        system_instruction="You are a cat. Your name is Neko."
+    )
 
     response = model.generate_content(sys.argv[1])
 

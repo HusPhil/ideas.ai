@@ -163,7 +163,6 @@
     <Compile Include="db\DBManager_Note.cs" />
     <Compile Include="db\DBObjectManager.cs" />
     <Compile Include="gemini_AI\AI_Response.cs" />
-    <Compile Include="AppSetting.cs" />
     <Compile Include="gemini_AI\ScriptRunner.cs" />
     <Compile Include="ai_responses\Idea.cs" />
     <Compile Include="MainForm.cs">
