@@ -451,6 +451,19 @@ namespace IdeasAi
             this.panel2.Size = new System.Drawing.Size(63, 50);
             this.panel2.TabIndex = 5;
             // 
+            // btn_howToUse
+            // 
+            this.btn_howToUse.BackColor = System.Drawing.Color.White;
+            this.btn_howToUse.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_howToUse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_howToUse.Image = global::IdeasAi.Properties.Resources.questionMark;
+            this.btn_howToUse.Location = new System.Drawing.Point(20, 10);
+            this.btn_howToUse.Name = "btn_howToUse";
+            this.btn_howToUse.Size = new System.Drawing.Size(39, 42);
+            this.btn_howToUse.TabIndex = 5;
+            this.btn_howToUse.UseVisualStyleBackColor = false;
+            this.btn_howToUse.Click += new System.EventHandler(this.btn_howToUse_Click);
+            // 
             // lbl_currentPage
             // 
             this.lbl_currentPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(192)))), ((int)(((byte)(195)))));

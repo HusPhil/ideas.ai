@@ -238,15 +238,15 @@ namespace IdeasAi
         
         private void MainForm_SizeChanged(object sender, EventArgs e)
         {
-            if(frm_notebook.btn_activeTab.Equals(frm_notebook.getBtnDocsTab()))
-            {
-                frm_notebook.displaySavedIdeas(dbManager_Docs);
-            }
-            else
-            {
-                frm_notebook.displaySavedIdeas(dbManager_Note);
-            }
-            setNotifPosition();
+            //if(frm_notebook.btn_activeTab.Equals(frm_notebook.getBtnDocsTab()))
+            //{
+            //    frm_notebook.displaySavedIdeas(dbManager_Docs);
+            //}
+            //else
+            //{
+            //    frm_notebook.displaySavedIdeas(dbManager_Note);
+            //}
+            //setNotifPosition();
             
 ;        }
 

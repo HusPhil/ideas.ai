@@ -6,18 +6,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace IdeasAi.Gemini_AI
 {
     internal class ScriptRunner
     {
+        
         public static string runScript(string scriptName, string prompt)
         {
             string jsonString = File.ReadAllText("settings.json");
 
-            var appSettings = JsonConvert.DeserializeObject<AppSettings>(jsonString);
-            var pythonModule = appSettings.PythonModule;
-            var apiKey = appSettings.ApiKey;
+            var appSettings = JObject.Parse(jsonString);
+            ReplaceEnvironmentVariables(appSettings);
+
+            var pythonModule = (string)appSettings["Python_Module"];
+            var apiKey = (string)appSettings["API_KEY"];
 
             var psi = new ProcessStartInfo();
             psi.FileName = pythonModule;
@@ -52,9 +56,13 @@ namespace IdeasAi.Gemini_AI
         {
             string jsonString = File.ReadAllText("settings.json");
 
-            var appSettings = JsonConvert.DeserializeObject<AppSettings>(jsonString);
-            var pythonModule = appSettings.PythonModule;
-            var apiKey = appSettings.ApiKey;
+            var appSettings = JObject.Parse(jsonString);
+            ReplaceEnvironmentVariables(appSettings);
+
+            var pythonModule = (string)appSettings["Python_Module"];
+            var apiKey = (string)appSettings["API_KEY"];
+
+            Console.WriteLine(pythonModule + "::" + apiKey);
 
             var psi = new ProcessStartInfo();
             psi.FileName = pythonModule;
@@ -77,5 +85,19 @@ namespace IdeasAi.Gemini_AI
 
             return result;
         }
+
+        public static void ReplaceEnvironmentVariables(JObject config)
+        {
+            foreach (JProperty property in config.Properties())
+            {
+                if (property.Value.Type == JTokenType.String && property.Value.ToString().StartsWith("__") && property.Value.ToString().EndsWith("__"))
+                {
+                    string envVarName = property.Value.ToString().Trim('_');
+                    string envVarValue = Environment.GetEnvironmentVariable(envVarName) ?? string.Empty;
+                    property.Value = envVarValue;
+                }
+            }
+        }
     }
+
 }
