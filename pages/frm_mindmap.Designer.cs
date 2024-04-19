@@ -71,7 +71,7 @@
             this.pnl_viewerSide.Controls.Add(this.pnl_mindmapViewer);
             this.pnl_viewerSide.Controls.Add(this.pnl_viewSettings);
             this.pnl_viewerSide.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_viewerSide.Location = new System.Drawing.Point(271, 31);
+            this.pnl_viewerSide.Location = new System.Drawing.Point(240, 25);
             this.pnl_viewerSide.Name = "pnl_viewerSide";
             this.pnl_viewerSide.Size = new System.Drawing.Size(1008, 566);
             this.pnl_viewerSide.TabIndex = 3;

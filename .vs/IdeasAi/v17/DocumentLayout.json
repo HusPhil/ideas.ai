@@ -3,16 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\husph\\Desktop\\master-test\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\Users\\husph\\Desktop\\master-test\\modals\\mdl_organize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:modals\\mdl_organize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|c:\\users\\husph\\desktop\\master-test\\modals\\mdl_notebooksettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:modals\\mdl_notebooksettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|c:\\users\\husph\\desktop\\master-test\\modals\\mdl_organize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:modals\\mdl_organize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\husph\\Desktop\\master-test\\bin\\Debug\\settings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:bin\\Debug\\settings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|c:\\users\\husph\\desktop\\master-test\\modals\\mdl_organize.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:modals\\mdl_organize.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|c:\\users\\husph\\desktop\\master-test\\pages\\frm_notebook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:pages\\frm_notebook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|c:\\users\\husph\\desktop\\master-test\\db\\databasemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:db\\databasemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|c:\\users\\husph\\desktop\\master-test\\pages\\frm_notebook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:pages\\frm_notebook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|c:\\users\\husph\\desktop\\master-test\\pages\\frm_workspace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:pages\\frm_workspace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|c:\\users\\husph\\desktop\\master-test\\modals\\mdl_notebooksettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:modals\\mdl_notebooksettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,45 +41,96 @@
           "SelectedChildIndex": 3,
           "Children": [
             {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "settings.json",
+              "DocumentMoniker": "C:\\Users\\husph\\Desktop\\master-test\\bin\\Debug\\settings.json",
+              "RelativeDocumentMoniker": "bin\\Debug\\settings.json",
+              "ToolTip": "C:\\Users\\husph\\Desktop\\master-test\\bin\\Debug\\settings.json",
+              "RelativeToolTip": "bin\\Debug\\settings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-19T15:23:42.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DatabaseManager.cs",
+              "DocumentMoniker": "C:\\Users\\husph\\Desktop\\master-test\\db\\DatabaseManager.cs",
+              "RelativeDocumentMoniker": "db\\DatabaseManager.cs",
+              "ToolTip": "C:\\Users\\husph\\Desktop\\master-test\\db\\DatabaseManager.cs",
+              "RelativeToolTip": "db\\DatabaseManager.cs",
+              "ViewState": "AQIAAJYAAAAAAAAAAAAqwK8AAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T15:07:29.984Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "mdl_organize.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\husph\\Desktop\\master-test\\modals\\mdl_organize.cs",
-              "RelativeDocumentMoniker": "modals\\mdl_organize.cs",
-              "ToolTip": "C:\\Users\\husph\\Desktop\\master-test\\modals\\mdl_organize.cs [Design]",
-              "RelativeToolTip": "modals\\mdl_organize.cs [Design]",
+              "DocumentIndex": 0,
+              "Title": "mdl_notebookSettings.cs",
+              "DocumentMoniker": "C:\\Users\\husph\\Desktop\\master-test\\modals\\mdl_notebookSettings.cs",
+              "RelativeDocumentMoniker": "modals\\mdl_notebookSettings.cs",
+              "ToolTip": "C:\\Users\\husph\\Desktop\\master-test\\modals\\mdl_notebookSettings.cs",
+              "RelativeToolTip": "modals\\mdl_notebookSettings.cs",
+              "ViewState": "AQIAAJQAAAAAAAAAAAAmwKYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-19T07:34:07.84Z",
+              "WhenOpened": "2024-04-19T14:56:19.249Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "mdl_notebookSettings.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\husph\\Desktop\\master-test\\modals\\mdl_notebookSettings.cs",
+              "RelativeDocumentMoniker": "modals\\mdl_notebookSettings.cs",
+              "ToolTip": "C:\\Users\\husph\\Desktop\\master-test\\modals\\mdl_notebookSettings.cs [Design]",
+              "RelativeToolTip": "modals\\mdl_notebookSettings.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T14:56:18.644Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "mdl_organize.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\husph\\Desktop\\master-test\\modals\\mdl_organize.Designer.cs",
-              "RelativeDocumentMoniker": "modals\\mdl_organize.Designer.cs",
-              "ToolTip": "C:\\Users\\husph\\Desktop\\master-test\\modals\\mdl_organize.Designer.cs",
-              "RelativeToolTip": "modals\\mdl_organize.Designer.cs",
-              "ViewState": "AQIAAI4AAAAAAAAAAAAowJcAAAAwAAAA",
+              "Title": "frm_notebook.cs",
+              "DocumentMoniker": "C:\\Users\\husph\\Desktop\\master-test\\pages\\frm_notebook.cs",
+              "RelativeDocumentMoniker": "pages\\frm_notebook.cs",
+              "ToolTip": "C:\\Users\\husph\\Desktop\\master-test\\pages\\frm_notebook.cs",
+              "RelativeToolTip": "pages\\frm_notebook.cs",
+              "ViewState": "AQIAAMUBAAAAAAAAAAAIwO8BAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-19T07:28:05.623Z",
+              "WhenOpened": "2024-04-19T14:55:41.948Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "mdl_organize.cs",
-              "DocumentMoniker": "C:\\Users\\husph\\Desktop\\master-test\\modals\\mdl_organize.cs",
-              "RelativeDocumentMoniker": "modals\\mdl_organize.cs",
-              "ToolTip": "C:\\Users\\husph\\Desktop\\master-test\\modals\\mdl_organize.cs",
-              "RelativeToolTip": "modals\\mdl_organize.cs",
-              "ViewState": "AQIAADYAAAAAAAAAAAAcwFEAAAABAAAA",
+              "DocumentIndex": 4,
+              "Title": "frm_notebook.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\husph\\Desktop\\master-test\\pages\\frm_notebook.cs",
+              "RelativeDocumentMoniker": "pages\\frm_notebook.cs",
+              "ToolTip": "C:\\Users\\husph\\Desktop\\master-test\\pages\\frm_notebook.cs [Design]",
+              "RelativeToolTip": "pages\\frm_notebook.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-19T07:27:08.54Z",
+              "WhenOpened": "2024-04-19T14:55:41.73Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frm_workspace.cs",
+              "DocumentMoniker": "C:\\Users\\husph\\Desktop\\master-test\\pages\\frm_workspace.cs",
+              "RelativeDocumentMoniker": "pages\\frm_workspace.cs",
+              "ToolTip": "C:\\Users\\husph\\Desktop\\master-test\\pages\\frm_workspace.cs",
+              "RelativeToolTip": "pages\\frm_workspace.cs",
+              "ViewState": "AQIAAFYAAAAAAAAAAAAmwG0AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T14:55:24.845Z",
               "EditorCaption": ""
             }
           ]

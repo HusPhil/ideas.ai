@@ -267,8 +267,6 @@ D:\MJFiles\IDEA\obj\Debug\IdeasAi.exe
 D:\MJFiles\IDEA\obj\Debug\IdeasAi.pdb
 C:\Users\husph\Desktop\master-test\bin\Debug\gemini_AI\Scripts\gemini.py
 C:\Users\husph\Desktop\master-test\bin\Debug\db\sqlite.db
-C:\Users\husph\Desktop\master-test\bin\Debug\decors.json
-C:\Users\husph\Desktop\master-test\bin\Debug\settings.json
 C:\Users\husph\Desktop\master-test\bin\Debug\IdeasAi.exe.config
 C:\Users\husph\Desktop\master-test\bin\Debug\IdeasAi.exe
 C:\Users\husph\Desktop\master-test\bin\Debug\IdeasAi.pdb
@@ -330,3 +328,6 @@ C:\Users\husph\Desktop\master-test\obj\Debug\IdeasAi.csproj.CoreCompileInputs.ca
 C:\Users\husph\Desktop\master-test\obj\Debug\IdeasAi.csproj.Up2Date
 C:\Users\husph\Desktop\master-test\obj\Debug\IdeasAi.exe
 C:\Users\husph\Desktop\master-test\obj\Debug\IdeasAi.pdb
+C:\Users\husph\Desktop\master-test\bin\Debug\decors.json
+C:\Users\husph\Desktop\master-test\bin\Debug\settings.json
+C:\Users\husph\Desktop\master-test\obj\Debug\IdeasAi.modals.mdl_notebookSettings.resources

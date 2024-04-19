@@ -189,6 +189,12 @@
     <Compile Include="modals\mdl_loading.Designer.cs">
       <DependentUpon>mdl_loading.cs</DependentUpon>
     </Compile>
+    <Compile Include="modals\mdl_notebookSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modals\mdl_notebookSettings.Designer.cs">
+      <DependentUpon>mdl_notebookSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="modals\mdl_NotesOptions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="modals\mdl_loading.resx">
       <DependentUpon>mdl_loading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modals\mdl_notebookSettings.resx">
+      <DependentUpon>mdl_notebookSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modals\mdl_NotesOptions.resx">
       <DependentUpon>mdl_NotesOptions.cs</DependentUpon>
@@ -360,7 +369,7 @@
     <None Include="Resources\menu-dots-vertical.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="styles\" />
+    <Folder Include="configs\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

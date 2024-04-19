@@ -12,8 +12,19 @@ using Newtonsoft.Json.Linq;
 
 namespace IdeasAi
 {
-    public partial class MainForm : KryptonForm
+    public partial class MainForm : Form
     {
+        //show or hide side pnl
+        private bool showMode = true;
+        public bool sliding = false;
+
+
+        //pnl_header configs
+        private bool isDragging = false;
+        private Point lastCursorPosition;
+        private bool isFullScreen = false;
+        private FormWindowState normalWindowState;
+
         //decors json
         public JObject decors;
 
@@ -31,6 +42,7 @@ namespace IdeasAi
         // MODALS
         //
         public Form modalBG;
+        public mdl_notebookSettings mdl_notebookSettings;
         public mdl_organize mdl_organize;
         public mdl_saveNotes mdl_save;
         public mdl_saveDocs mdl_saveDocs;
@@ -56,6 +68,7 @@ namespace IdeasAi
             frm_mindmap = new frm_mindmap(this);
             frm_workspace = new frm_workspace(this);
 
+            mdl_notebookSettings = new mdl_notebookSettings(this);
             mdl_save = new mdl_saveNotes(this);
             mdl_saveDocs = new mdl_saveDocs(this);
             mdl_editNotes = new mdl_NotesOptions(this);
@@ -193,6 +206,7 @@ namespace IdeasAi
 
         private void btn_notebook_Click(object sender, EventArgs e)
         {
+            btn_notebook.Enabled = false;
             setActiveBtn(sender, pnl_pageTabs);
             loadForm(frm_notebook, pnl_content);
 
@@ -204,6 +218,7 @@ namespace IdeasAi
             {
                 frm_notebook.displaySavedIdeas(dbManager_Docs);
             }
+            
 
 
         }
@@ -238,18 +253,118 @@ namespace IdeasAi
         
         private void MainForm_SizeChanged(object sender, EventArgs e)
         {
-            //if(frm_notebook.btn_activeTab.Equals(frm_notebook.getBtnDocsTab()))
-            //{
-            //    frm_notebook.displaySavedIdeas(dbManager_Docs);
-            //}
-            //else
-            //{
-            //    frm_notebook.displaySavedIdeas(dbManager_Note);
-            //}
-            //setNotifPosition();
-            
-;        }
+            setNotifPosition();
 
+        }
+
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btn_howToUse_Click(object sender, EventArgs e)
+        {
+            setModalBackground(frm_home);
+            mdl_howToUse mdl_HowToUse = new mdl_howToUse(this);
+            mdl_HowToUse.ShowDialog();
+        }
+
+        private void pnl_formHeader_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                isDragging = true;
+                lastCursorPosition = e.Location;
+            }
+        }
+
+        private void pnl_formHeader_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isDragging)
+            {
+                int deltaX = e.X - lastCursorPosition.X;
+                int deltaY = e.Y - lastCursorPosition.Y;
+                this.Location = new Point(this.Left + deltaX, this.Top + deltaY);
+            }
+        }
+
+        private void pnl_formHeader_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                isDragging = false;
+            }
+        }
+
+        private void pnl_formHeader_DoubleClick(object sender, EventArgs e)
+        {
+            ToggleFullScreen();
+        }
+        private void ToggleFullScreen()
+        {
+            if (isFullScreen)
+            {
+                this.WindowState = normalWindowState;
+                isFullScreen = false;
+            }
+            else
+            {
+                normalWindowState = this.WindowState;
+                this.WindowState = FormWindowState.Maximized;
+                isFullScreen = true;
+            }
+        }
+
+        private void btn_showOrHide_Click(object sender, EventArgs e)
+        {
+            if (showMode)
+            {
+                showMode = false;
+            }
+            else
+            {
+                showMode = true;
+            }
+            tmr_animation.Start();
+            sliding = true;
+        }
+
+        private void tmr_animation_Tick(object sender, EventArgs e)
+        {
+            if(showMode)
+            {
+                if (pnl_sideContent.Width >= 320)
+                {
+                    tmr_animation.Stop();
+                    pnl_sideContent.Width = 320;
+                    pnl_sideContent.Width += 1;
+                    sliding = false;
+                    pnl_sideContent.Width -= 1;
+                }
+                else
+                {
+                    pnl_sideContent.Width += 20;
+                }
+            }
+            else
+            {
+                if (pnl_sideContent.Width <= 170)
+                {
+                    tmr_animation.Stop();
+                    pnl_sideContent.Width = 150;
+                    pnl_sideContent.Width += 1;
+                    sliding = false;
+                    pnl_sideContent.Width -= 1;
+                }
+                else
+                {
+                    pnl_sideContent.Width -= 20;
+                }
+            }
+            
+        }
+        
         //GETTERS
         public ref Button getBtnNotebook()
         {
@@ -271,7 +386,7 @@ namespace IdeasAi
         {
             return ref pnl_content;
         }
-        public ref FlowLayoutPanel getPnlPageTabs()
+        public ref Panel getPnlPageTabs()
         {
             return ref pnl_pageTabs; 
         }
@@ -279,23 +394,9 @@ namespace IdeasAi
         {
             return ref btn_mindmap; 
         }
-
-        private void btn_exit_Click(object sender, EventArgs e)
+        public ref Timer getTmrAnim()
         {
-
-        }
-
-
-        private void btn_howToUse_Click(object sender, EventArgs e)
-        {
-            setModalBackground(frm_home);
-            mdl_howToUse mdl_HowToUse = new mdl_howToUse(this);
-            mdl_HowToUse.ShowDialog();
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
+            return ref tmr_animation;
         }
     }
 }
