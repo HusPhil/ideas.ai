@@ -14,6 +14,7 @@ namespace IdeasAi.modals
     public partial class mdl_notif : Form
     {
         MainForm mainForm;
+        bool debugOn;
         int closeCountDown;
         public string notifType;
         public static int instancesCount;
@@ -99,5 +100,25 @@ namespace IdeasAi.modals
             tmr_close.Start();
             pnl_notifBody.BorderStyle = BorderStyle.None;
         }
+
+        private void pbx_type_Click(object sender, EventArgs e)
+        {
+            if (debugOn)
+            {
+                lbl_info.Dock = DockStyle.Fill;
+                lbl_type.Visible = false;
+                debugOn = false;
+            }
+            else
+            {
+                lbl_info.Dock = DockStyle.Bottom;
+                lbl_type.Visible = true;
+                debugOn = true;
+            }
+        }
+
+       
+
+        
     }
 }

@@ -37,7 +37,7 @@ namespace IdeasAi.pages
             InitializeComponent();
             mainForm = _mainForm;
 
-            keys = DatabaseManager.GetDatabasePathKeys();
+            keys = DatabaseManager.GetDatabasePathKeys(mainForm.settings);
             cb_dbSelector.Items.AddRange(keys);
             cb_dbSelector.SelectedIndex = 0;
 
@@ -314,114 +314,126 @@ namespace IdeasAi.pages
 
         public void displaySavedIdeas(DatabaseManager db)
         {
-            pnl_container.Controls.Clear();
-            Console.WriteLine(db.dbFilePath);
-            var saved_ideas = db.retrieveDBRecords();
-
-            if(saved_ideas.Count == 0)
-            {
-                lbl_nothingFound.Visible = true;
-                pnl_container.Visible = false;
-            }
-            else
+            try
             {
                 lbl_nothingFound.Visible = false;
                 pnl_container.Visible = true;
 
-                bool verticalScrollBarVisible = false;
+                pnl_container.Controls.Clear();
+                var saved_ideas = db.retrieveDBRecords();
 
-                int panelWidth = (pnl_container.Width / 3) - 6;
-
-                foreach (var idea in saved_ideas)
+                if (saved_ideas.Count == 0)
                 {
-                    Panel pnl_idea = new Panel();
-                    pnl_idea.BorderStyle = BorderStyle.FixedSingle;
-                    pnl_idea.BackColor = Color.Gray;
-                    pnl_idea.Size = new Size(panelWidth, 200);
-                    pnl_idea.Padding = new Padding(0, 10, 0, 10);
-
-                    Panel pnl_header = new Panel();
-                    pnl_header.BorderStyle = BorderStyle.None;
-                    pnl_header.Dock = DockStyle.Top;
-                    pnl_header.Size = new Size(50, 50);
-                    pnl_header.Padding = new Padding(0, 0, 20, 0);
-
-                    Button btn_edit = new Button();
-                    btn_edit.Image = global::IdeasAi.Properties.Resources.more;
-                    btn_edit.BackColor = Color.Transparent;
-                    btn_edit.AutoSize = false;
-                    btn_edit.Size = new Size(32, 32);
-                    btn_edit.Dock = DockStyle.Right;
-                    btn_edit.FlatStyle = FlatStyle.Flat;
-                    btn_edit.FlatAppearance.BorderSize = 0;
-                    btn_edit.Margin = new Padding(0, 0, 20, 0);
-
-                    if (db.GetType() == typeof(DBManager_Note))
-                    {
-                        btn_edit.Click += (sender, e) => btn_showMoreNotes_click(idea);
-                    }
-                    else if (db.GetType() == typeof(DBManager_Docs))
-                    {
-                        btn_edit.Click += (sender, e) => btn_showMoreDocs_click(idea);
-                    }
-
-                    pnl_header.Controls.Add(btn_edit);
-                    pnl_idea.Controls.Add(pnl_header);
-
-                    Label titleLabel = new Label();
-                    titleLabel.Text = idea.Title;
-                    titleLabel.Dock = DockStyle.Top;
-                    titleLabel.Padding = new Padding(35, 0, 35, 0);
-                    titleLabel.TextAlign = ContentAlignment.MiddleCenter;
-                    titleLabel.AutoEllipsis = true;
-                    titleLabel.Font = new Font("Cascadia Code", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-                    pnl_idea.Controls.Add(titleLabel);
-
-                    Panel pnl_btns = new Panel();
-                    pnl_btns.Dock = DockStyle.Bottom;
-                    pnl_btns.Height = titleLabel.Height + 20;
-                    pnl_btns.Margin = new Padding(0, 0, 0, 20);
-
-                    Button btn_view = new Button();
-                    btn_view.Text = "View";
-                    btn_view.Click += (sender, e) => displayNote_click(idea, db);
-                    btn_view.Dock = DockStyle.Fill;
-                    btn_view.FlatStyle = FlatStyle.Flat;
-                    pnl_btns.Controls.Add(btn_view);
-                    pnl_idea.Controls.Add(pnl_btns);
-                    pnl_btns.Padding = new Padding(15, 0, 15, 0);
-
-                    int btnSize = (pnl_btns.Width / 3);
-                    btn_view.Size = new Size(btnSize, pnl_btns.Height - 8);
-
-                    Label dateLabel = new Label();
-                    dateLabel.Text = $"Date Modified: {idea.DateCreated.Date.ToString("yyyy-MM-dd")}";
-                    dateLabel.Dock = DockStyle.Bottom;
-                    dateLabel.TextAlign = ContentAlignment.MiddleCenter;
-                    dateLabel.Location = new Point(10, 50); // Adjust location as needed
-                    dateLabel.Font = new Font("Cascadia Code", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-                    pnl_idea.Controls.Add(dateLabel);
-
-                    pnl_container.Controls.Add(pnl_idea);
+                    lbl_nothingFound.Visible = true;
+                    pnl_container.Visible = false;
                 }
-
-                // Check if the vertical scrollbar is visible after adding all ideas
-                verticalScrollBarVisible = pnl_container.VerticalScroll.Visible;
-
-                // If the vertical scrollbar is visible, adjust the width of each pnl_idea
-                if (verticalScrollBarVisible)
+                else
                 {
-                    foreach (Control control in pnl_container.Controls)
+                    lbl_nothingFound.Visible = false;
+                    pnl_container.Visible = true;
+
+                    bool verticalScrollBarVisible = false;
+
+                    int panelWidth = (pnl_container.Width / 3) - 6;
+
+                    foreach (var idea in saved_ideas)
                     {
-                        if (control is Panel pnl_idea)
+                        Panel pnl_idea = new Panel();
+                        pnl_idea.BorderStyle = BorderStyle.FixedSingle;
+                        pnl_idea.BackColor = Color.Gray;
+                        pnl_idea.Size = new Size(panelWidth, 200);
+                        pnl_idea.Padding = new Padding(0, 10, 0, 10);
+
+                        Panel pnl_header = new Panel();
+                        pnl_header.BorderStyle = BorderStyle.None;
+                        pnl_header.Dock = DockStyle.Top;
+                        pnl_header.Size = new Size(50, 50);
+                        pnl_header.Padding = new Padding(0, 0, 20, 0);
+
+                        Button btn_edit = new Button();
+                        btn_edit.Image = global::IdeasAi.Properties.Resources.more;
+                        btn_edit.BackColor = Color.Transparent;
+                        btn_edit.AutoSize = false;
+                        btn_edit.Size = new Size(32, 32);
+                        btn_edit.Dock = DockStyle.Right;
+                        btn_edit.FlatStyle = FlatStyle.Flat;
+                        btn_edit.FlatAppearance.BorderSize = 0;
+                        btn_edit.Margin = new Padding(0, 0, 20, 0);
+
+                        if (db.GetType() == typeof(DBManager_Note))
                         {
-                            pnl_idea.Size = new Size(panelWidth - (SystemInformation.VerticalScrollBarWidth / 3), 200);
+                            btn_edit.Click += (sender, e) => btn_showMoreNotes_click(idea);
+                        }
+                        else if (db.GetType() == typeof(DBManager_Docs))
+                        {
+                            btn_edit.Click += (sender, e) => btn_showMoreDocs_click(idea);
+                        }
+
+                        pnl_header.Controls.Add(btn_edit);
+                        pnl_idea.Controls.Add(pnl_header);
+
+                        Label titleLabel = new Label();
+                        titleLabel.Text = idea.Title;
+                        titleLabel.Dock = DockStyle.Top;
+                        titleLabel.Padding = new Padding(35, 0, 35, 0);
+                        titleLabel.TextAlign = ContentAlignment.MiddleCenter;
+                        titleLabel.AutoEllipsis = true;
+                        titleLabel.Font = new Font("Cascadia Code", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+                        pnl_idea.Controls.Add(titleLabel);
+
+                        Panel pnl_btns = new Panel();
+                        pnl_btns.Dock = DockStyle.Bottom;
+                        pnl_btns.Height = titleLabel.Height + 20;
+                        pnl_btns.Margin = new Padding(0, 0, 0, 20);
+
+                        Button btn_view = new Button();
+                        btn_view.Text = "View";
+                        btn_view.Click += (sender, e) => displayNote_click(idea, db);
+                        btn_view.Dock = DockStyle.Fill;
+                        btn_view.FlatStyle = FlatStyle.Flat;
+                        pnl_btns.Controls.Add(btn_view);
+                        pnl_idea.Controls.Add(pnl_btns);
+                        pnl_btns.Padding = new Padding(15, 0, 15, 0);
+
+                        int btnSize = (pnl_btns.Width / 3);
+                        btn_view.Size = new Size(btnSize, pnl_btns.Height - 8);
+
+                        Label dateLabel = new Label();
+                        dateLabel.Text = $"Date Modified: {idea.DateCreated.Date.ToString("yyyy-MM-dd")}";
+                        dateLabel.Dock = DockStyle.Bottom;
+                        dateLabel.TextAlign = ContentAlignment.MiddleCenter;
+                        dateLabel.Location = new Point(10, 50); // Adjust location as needed
+                        dateLabel.Font = new Font("Cascadia Code", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+                        pnl_idea.Controls.Add(dateLabel);
+
+                        pnl_container.Controls.Add(pnl_idea);
+                    }
+
+                    // Check if the vertical scrollbar is visible after adding all ideas
+                    verticalScrollBarVisible = pnl_container.VerticalScroll.Visible;
+
+                    // If the vertical scrollbar is visible, adjust the width of each pnl_idea
+                    if (verticalScrollBarVisible)
+                    {
+                        foreach (Control control in pnl_container.Controls)
+                        {
+                            if (control is Panel pnl_idea)
+                            {
+                                pnl_idea.Size = new Size(panelWidth - (SystemInformation.VerticalScrollBarWidth / 3), 200);
+                            }
                         }
                     }
                 }
             }
+            catch(Exception ex)
+            {
+                mainForm.addNotification("error", "Failed to display ideas!", $"{ex.Message}");
+                Console.WriteLine("Failed to display ideas! " + $"{ex.Message}");
 
-            
+                lbl_nothingFound.Visible = true;
+                pnl_container.Visible = false;
+            }
+
             mainForm.getBtnNotebook().Enabled = true;
         }
         public void showAllIdeas()

@@ -72,8 +72,6 @@ namespace IdeasAi
             dbManager_Note = new DBManager_Note(this);
             dbManager_Docs = new DBManager_Docs(this);
 
-            Console.WriteLine(dbManager_Docs.dbFilePath);
-
             frm_home = new frm_home(this);
             frm_consultation = new frm_consultation(this);
             frm_notebook =  new frm_notebook(this);
@@ -94,7 +92,6 @@ namespace IdeasAi
             loadForm(frm_home, pnl_content);
             
             lbl_currentPage.Text = btn_active.Text;
-            Console.WriteLine(this.Width + "::" + this.Height);
 
             
 
@@ -260,11 +257,9 @@ namespace IdeasAi
                     if (notifControl != null)
                     {
                         int notifX = (this.Width - notifControl.Width) - 34;
-                        int notifY = (this.Height - (notifControl.Height)) - ((notifControl.Height + 5) * offset--);
+                        int notifY = (this.Height) - ((notifControl.Height + 5) * offset--);
 
-                        if (notifY > (this.Height - (notifControl.Height)) - (notifControl.Height + 5)) notifY = (this.Height - (notifControl.Height)) - (notifControl.Height + 5); 
-                        //Console.WriteLine(notifControl.lbl_type);
-                        //Console.WriteLine(notifY);
+                        if (notifY > (this.Height) - (notifControl.Height + 5)) notifY = (this.Height - (notifControl.Height)) - (notifControl.Height + 5); 
 
                         notifControl.Location = new Point(notifX, notifY);
                     }

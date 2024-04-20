@@ -109,16 +109,17 @@ namespace IdeasAi.modals
             try
             {
                 DatabaseManager.CreateNewNotebook(txb_noteName.Text, txb_saveDBPath.Text + "\\" + txb_noteName.Text + ".db");
-                DatabaseManager.AddNewDatabasePath(txb_noteName.Text, txb_saveDBPath.Text + "\\" + txb_noteName.Text + ".db");
+                DatabaseManager.AddNewDatabasePath(txb_noteName.Text, txb_saveDBPath.Text + "\\" + txb_noteName.Text + ".db", mainForm.settings);
+                var notebookName = txb_noteName.Text;
+
+
                 if (mainForm.frm_notebook.getCbDBSelector().Items.Contains(txb_noteName.Text))
                 {
-                    mainForm.frm_notebook.getCbDBSelector().Items.Add(txb_noteName.Text + "(*)");
+                    notebookName += "*";
                 }
-                else
-                {
-                    mainForm.frm_notebook.getCbDBSelector().Items.Add(txb_noteName.Text);
-                }
-
+                
+                mainForm.frm_notebook.getCbDBSelector().Items.Add(notebookName);
+                mainForm.addNotification("success", "Notebook added!", $"{notebookName} was opened");
 
             }
             catch (Exception ex)
@@ -156,7 +157,7 @@ namespace IdeasAi.modals
                         string fileName = Path.GetFileNameWithoutExtension(filePath);
 
 
-                        DatabaseManager.AddNewDatabasePath(fileName, filePath);
+                        DatabaseManager.AddNewDatabasePath(fileName, filePath, mainForm.settings);
                         if (mainForm.frm_notebook.getCbDBSelector().Items.Contains(fileName))
                         {
                             mainForm.frm_notebook.getCbDBSelector().Items.Add(fileName + "(*)");
@@ -166,7 +167,7 @@ namespace IdeasAi.modals
                         {
                             mainForm.frm_notebook.getCbDBSelector().Items.Add(fileName);
                         }
-                        mainForm.addNotification("success", "Document opened!", $"{fileName} was opened");
+                        mainForm.addNotification("success", "Notebook added!", $"{fileName} was opened");
                     }
                     else
                     {
