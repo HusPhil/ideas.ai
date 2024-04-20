@@ -3,8 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\husph\\Desktop\\master-test\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|c:\\users\\husph\\desktop\\master-test\\pages\\frm_notebook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:pages\\frm_notebook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|c:\\users\\husph\\desktop\\master-test\\pages\\frm_notebook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:pages\\frm_notebook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|c:\\users\\husph\\desktop\\master-test\\db\\databasemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:db\\databasemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|c:\\users\\husph\\desktop\\master-test\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|c:\\users\\husph\\desktop\\master-test\\db\\dbmanager_note.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:db\\dbmanager_note.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|c:\\users\\husph\\desktop\\master-test\\db\\dbmanager_docs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:db\\dbmanager_docs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,12 +43,76 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "frm_notebook.cs",
+              "DocumentMoniker": "C:\\Users\\husph\\Desktop\\master-test\\pages\\frm_notebook.cs",
+              "RelativeDocumentMoniker": "pages\\frm_notebook.cs",
+              "ToolTip": "C:\\Users\\husph\\Desktop\\master-test\\pages\\frm_notebook.cs",
+              "RelativeToolTip": "pages\\frm_notebook.cs",
+              "ViewState": "AQIAABwCAAAAAAAAAAAAADQCAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-20T05:16:33.088Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frm_notebook.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\husph\\Desktop\\master-test\\pages\\frm_notebook.cs",
+              "RelativeDocumentMoniker": "pages\\frm_notebook.cs",
+              "ToolTip": "C:\\Users\\husph\\Desktop\\master-test\\pages\\frm_notebook.cs [Design]",
+              "RelativeToolTip": "pages\\frm_notebook.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-20T05:16:30.858Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\husph\\Desktop\\master-test\\MainForm.cs",
+              "RelativeDocumentMoniker": "MainForm.cs",
+              "ToolTip": "C:\\Users\\husph\\Desktop\\master-test\\MainForm.cs",
+              "RelativeToolTip": "MainForm.cs",
+              "ViewState": "AQIAADgAAAAAAAAAAAAAAEoAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-20T05:11:38.65Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DBManager_Note.cs",
+              "DocumentMoniker": "C:\\Users\\husph\\Desktop\\master-test\\db\\DBManager_Note.cs",
+              "RelativeDocumentMoniker": "db\\DBManager_Note.cs",
+              "ToolTip": "C:\\Users\\husph\\Desktop\\master-test\\db\\DBManager_Note.cs",
+              "RelativeToolTip": "db\\DBManager_Note.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAkAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-20T05:09:54.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DBManager_Docs.cs",
+              "DocumentMoniker": "C:\\Users\\husph\\Desktop\\master-test\\db\\DBManager_Docs.cs",
+              "RelativeDocumentMoniker": "db\\DBManager_Docs.cs",
+              "ToolTip": "C:\\Users\\husph\\Desktop\\master-test\\db\\DBManager_Docs.cs",
+              "RelativeToolTip": "db\\DBManager_Docs.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-20T05:09:44.223Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "DatabaseManager.cs",
               "DocumentMoniker": "C:\\Users\\husph\\Desktop\\master-test\\db\\DatabaseManager.cs",
               "RelativeDocumentMoniker": "db\\DatabaseManager.cs",
               "ToolTip": "C:\\Users\\husph\\Desktop\\master-test\\db\\DatabaseManager.cs",
               "RelativeToolTip": "db\\DatabaseManager.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAA8AAAAjAAAA",
+              "ViewState": "AQIAABUAAAAAAAAAAAAuwFUAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-20T03:15:51.839Z",
               "EditorCaption": ""

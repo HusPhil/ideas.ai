@@ -18,6 +18,13 @@ namespace IdeasAi
         private bool showMode = true;
         public bool sliding = false;
 
+        // json configs
+        public JObject decors;
+        public JObject settings;
+
+        // database
+        public DBManager_Note dbManager_Note;
+        public DBManager_Docs dbManager_Docs;
 
         //pnl_header configs
         private bool isDragging = false;
@@ -25,9 +32,7 @@ namespace IdeasAi
         private bool isFullScreen = false;
         private FormWindowState normalWindowState;
 
-        // json configs
-        public JObject decors;
-        public JObject settings;
+        
 
         //loading states
         public const int state_loadMindmap = 1;
@@ -51,8 +56,7 @@ namespace IdeasAi
         public mdl_loading mdl_loading;
         public ModalSetter mdl_setter;
 
-        public DBManager_Note dbManager_Note = new DBManager_Note();
-        public DBManager_Docs dbManager_Docs = new DBManager_Docs();
+        
 
 
         public Button btn_active;
@@ -63,6 +67,13 @@ namespace IdeasAi
         {
 
             InitializeComponent();
+            InitializeConfigs();
+
+            dbManager_Note = new DBManager_Note(this);
+            dbManager_Docs = new DBManager_Docs(this);
+
+            Console.WriteLine(dbManager_Docs.dbFilePath);
+
             frm_home = new frm_home(this);
             frm_consultation = new frm_consultation(this);
             frm_notebook =  new frm_notebook(this);
@@ -77,7 +88,6 @@ namespace IdeasAi
             modalBG = new Form();
             mdl_setter = new ModalSetter(this);
             mdl_organize = new mdl_organize(this);
-            //modalManager = new ModalManager(this);
 
             btn_active = btn_mindmap;
             setActiveBtn((object)btn_mindmap, pnl_pageTabs);
@@ -86,6 +96,13 @@ namespace IdeasAi
             lbl_currentPage.Text = btn_active.Text;
             Console.WriteLine(this.Width + "::" + this.Height);
 
+            
+
+            setActiveBtn((object)btn_home, pnl_pageTabs);
+        }
+
+        private void InitializeConfigs()
+        {
             using (StreamReader reader = File.OpenText("configs/decors.json"))
             {
                 string decorsJson = reader.ReadToEnd();
@@ -97,11 +114,7 @@ namespace IdeasAi
                 string settingsJson = reader.ReadToEnd();
                 settings = JObject.Parse(settingsJson);
             }
-
-            setActiveBtn((object)btn_home, pnl_pageTabs);
         }
-
-        
         public void setModalBackground(Form callerForm)
         {
             modalBG.Owner = this;

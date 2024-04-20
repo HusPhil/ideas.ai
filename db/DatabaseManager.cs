@@ -13,30 +13,33 @@ namespace IdeasAi.db
 {
     public abstract class DatabaseManager
     {
-        private string DB_FILEPATH;
-        public string dbFilePath
-        {
-            get {
-                return DB_FILEPATH;
-            }
-            set {
-                string jsonString = File.ReadAllText("configs/settings.json");
-                var appSettings = JObject.Parse(jsonString);
-                ScriptRunner.ReplaceEnvironmentVariables(appSettings);
+        MainForm mainForm;
+        //private string DB_FILEPATH;
+        public string dbFilePath;
+        //{
+        //    get {
+        //        return DB_FILEPATH;
+        //    }
+        //    set {
+        //        string jsonString = File.ReadAllText("configs/settings.json");
+        //        var appSettings = JObject.Parse(jsonString);
+        //        ScriptRunner.ReplaceEnvironmentVariables(appSettings);
 
 
-                this.DB_FILEPATH = (string)appSettings["Database_Path"][value];
-            } 
-        }
+        //        this.DB_FILEPATH = (string)appSettings["Database_Path"][value];
+        //    } 
+        //}
 
         public const string ConfigFilePath = "configs/settings.json";
         protected string table { get; set; }
 
-        public DatabaseManager()
+        public DatabaseManager(MainForm mainForm)
         {
-
-            dbFilePath = "DEFAULT";
-            
+            this.mainForm = mainForm;
+            var appConfig = mainForm.settings;
+            ScriptRunner.ReplaceEnvironmentVariables(appConfig);
+            dbFilePath = (string)appConfig["Database_Path"]["DEFAULT"];
+            Console.WriteLine(dbFilePath);
 
             // Create the SQLite database file if it doesn't exist
             if (!File.Exists(dbFilePath))
@@ -73,7 +76,7 @@ namespace IdeasAi.db
             List<DBObjectManager> ideas = new List<DBObjectManager>();
 
             // Accessing the dbFilePath parameter directly instead of base.dbFilePath
-            using (SQLiteConnection connection = new SQLiteConnection($"Data Source={dbFilePath};Version=3;"))
+            using (SQLiteConnection connection = new SQLiteConnection($"Data Source={this.dbFilePath};Version=3;"))
             {
                 connection.Open();
 

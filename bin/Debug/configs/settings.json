@@ -3,8 +3,7 @@
   "Python_Module": "__pythonModule__",
   "Database_Path": {
     "DEFAULT": "..\\..\\db\\default.db",
-    "NEW_DB": "C:\\Users\\husph\\Desktop\\test\\hello.db",
-    "another": "C:\\Users\\husph\\Desktop\\test\\another.db",
-    "nago": "C:\\Users\\husph\\Desktop\\test\\nago.db"
+    "NEW_DB": "C:\\Users\\husph\\Desktop\\test\\hello.db"
   }
+
 }

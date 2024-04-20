@@ -315,6 +315,7 @@ namespace IdeasAi.pages
         public void displaySavedIdeas(DatabaseManager db)
         {
             pnl_container.Controls.Clear();
+            Console.WriteLine(db.dbFilePath);
             var saved_ideas = db.retrieveDBRecords();
 
             if(saved_ideas.Count == 0)
@@ -559,8 +560,11 @@ namespace IdeasAi.pages
 
         private void cb_dbSelector_SelectedIndexChanged(object sender, EventArgs e)
         {
-            mainForm.dbManager_Docs.dbFilePath = cb_dbSelector.SelectedItem.ToString();
-            mainForm.dbManager_Note.dbFilePath = cb_dbSelector.SelectedItem.ToString();
+            var selectedNotebook = cb_dbSelector.SelectedItem.ToString();
+            var newNotebook = (string)mainForm.settings["Database_Path"][selectedNotebook];
+
+            mainForm.dbManager_Docs.dbFilePath = newNotebook;
+            mainForm.dbManager_Note.dbFilePath = newNotebook;
 
             showAllIdeas();
         }
