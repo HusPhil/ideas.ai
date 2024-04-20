@@ -123,7 +123,7 @@ namespace IdeasAi.PageForms
             }
             catch (Exception ex)
             {
-                wb_container.DocumentText = $"Ask appropriate questions in a clear manner.";
+                wb_container.DocumentText = $"Something went wrong. Please check your internet connection and try again  by asking appropriate questions in a clear manner. Thank you!";
                 mainForm.addNotification("error", "An error occured!", $"{ex.Message}");
             }
 

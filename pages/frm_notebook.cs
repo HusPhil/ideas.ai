@@ -8,10 +8,7 @@ namespace IdeasAi.pages
 {
     public partial class frm_notebook: Form
     {
-        //public string current_title;
-        //public Guid current_id;
         public string currentNotebook;
-        string[] keys;
         public DBObjectManager saver_obj;
         public MainForm mainForm;
         private Panel pnl_tabSelect;
@@ -37,14 +34,25 @@ namespace IdeasAi.pages
             InitializeComponent();
             mainForm = _mainForm;
 
-            keys = DatabaseManager.GetDatabasePathKeys(mainForm.settings);
-            cb_dbSelector.Items.AddRange(keys);
+            setNotebookKeys(false);
             cb_dbSelector.SelectedIndex = 0;
 
             btn_activeTab = btn_notesTab;
             btn_notesTab.BackColor = btn_notesTab.FlatAppearance.MouseOverBackColor;
 
 
+        }
+
+        public void setNotebookKeys(bool showLastIndex)
+        {
+
+            cb_dbSelector.Items.Clear();
+            cb_dbSelector.Items.AddRange(DatabaseManager.GetDatabasePathKeys(mainForm.settings));
+
+            if (showLastIndex)
+            {
+                cb_dbSelector.SelectedIndex = cb_dbSelector.Items.Count - 1;
+            }
         }
         private void InitializeComponent()
         {
@@ -611,14 +619,7 @@ namespace IdeasAi.pages
                     cb_dbSelector.Items.Remove(currentNotebook);
                     DatabaseManager.RemoveDatabasePath(currentNotebook, chb_delFile.Checked, mainForm.settings);
 
-                    if (cb_dbSelector.SelectedIndex <= 0)
-                    {
-                        cb_dbSelector.SelectedIndex = 0;
-                    }
-                    else
-                    {
-                        cb_dbSelector.SelectedIndex--;
-                    }
+                    setNotebookKeys(true);
                     mainForm.setSettingsConfig();
                     mainForm.addNotification("success", "Notebook removed!", "Notebook successfully removed!");
 

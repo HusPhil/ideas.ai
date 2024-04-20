@@ -20,6 +20,6 @@ try:
     print(response.text)
 except Exception as e:
     if(response != ''):
-        print(f"ERROR: Inappropriate prompt was deteced!")
+        print(f"ERROR: Something went wrong. Can't connect to Gemini AI.'")
     else:
         print(f"ERROR: {str(e)}")

@@ -109,17 +109,20 @@ namespace IdeasAi.modals
         {
             try
             {
-                DatabaseManager.CreateNewNotebook(txb_noteName.Text, txb_saveDBPath.Text + "\\" + txb_noteName.Text + ".db");
-                DatabaseManager.AddNewDatabasePath(txb_noteName.Text, txb_saveDBPath.Text + "\\" + txb_noteName.Text + ".db", mainForm.settings);
                 var notebookName = txb_noteName.Text;
 
 
-                if (mainForm.frm_notebook.getCbDBSelector().Items.Contains(txb_noteName.Text))
+                if (mainForm.frm_notebook.getCbDBSelector().Items.Contains(notebookName))
                 {
-                    notebookName += "*";
+                    mainForm.addNotification("error", "Failed to open!", $"Notebook already exist!");
+                    this.Close();
+                    return;
                 }
-                
-                mainForm.frm_notebook.getCbDBSelector().Items.Add(notebookName);
+
+                DatabaseManager.CreateNewNotebook(notebookName, txb_saveDBPath.Text + "\\" + notebookName + ".db");
+                DatabaseManager.AddNewDatabasePath(notebookName, txb_saveDBPath.Text + "\\" + notebookName + ".db", mainForm.settings);
+
+                mainForm.frm_notebook.setNotebookKeys(true);
                 mainForm.addNotification("success", "Notebook added!", $"{notebookName} was opened");
 
             }
@@ -156,19 +159,19 @@ namespace IdeasAi.modals
                         // Get the selected file path
                         string filePath = openFileDialog1.FileName;
                         string fileName = Path.GetFileNameWithoutExtension(filePath);
+                        string notebookName = fileName;
 
 
-                        DatabaseManager.AddNewDatabasePath(fileName, filePath, mainForm.settings);
                         if (mainForm.frm_notebook.getCbDBSelector().Items.Contains(fileName))
                         {
-                            mainForm.frm_notebook.getCbDBSelector().Items.Add(fileName + "(*)");
+                            mainForm.addNotification("error", "Failed to open!", $"Notebook already exist!");
+                            this.Close();
+                            return;
+                        }
 
-                        }
-                        else
-                        {
-                            mainForm.frm_notebook.getCbDBSelector().Items.Add(fileName);
-                        }
-                        mainForm.addNotification("success", "Notebook added!", $"{fileName} was opened");
+                        DatabaseManager.AddNewDatabasePath(fileName, filePath, mainForm.settings);
+                        mainForm.frm_notebook.setNotebookKeys(true);
+                        mainForm.addNotification("success", "Notebook added!", $"{notebookName} was opened");
                     }
                     else
                     {

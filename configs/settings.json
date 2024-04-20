@@ -3,7 +3,6 @@
   "Python_Module": "__pythonModule__",
   "Database_Path": {
     "DEFAULT": "..\\..\\db\\default.db",
-    "NEW_DB": "C:\\Users\\husph\\Desktop\\test\\hello.db"
   }
 
 }
