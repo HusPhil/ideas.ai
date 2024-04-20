@@ -25,8 +25,9 @@ namespace IdeasAi
         private bool isFullScreen = false;
         private FormWindowState normalWindowState;
 
-        //decors json
+        // json configs
         public JObject decors;
+        public JObject settings;
 
         //loading states
         public const int state_loadMindmap = 1;
@@ -85,11 +86,18 @@ namespace IdeasAi
             lbl_currentPage.Text = btn_active.Text;
             Console.WriteLine(this.Width + "::" + this.Height);
 
-            using(StreamReader reader = File.OpenText("decors.json"))
+            using (StreamReader reader = File.OpenText("decors.json"))
             {
                 string decorsJson = reader.ReadToEnd();
                 decors = JObject.Parse(decorsJson);
             }
+
+            using (StreamReader reader = File.OpenText("settings.json"))
+            {
+                string settingsJson = reader.ReadToEnd();
+                settings = JObject.Parse(settingsJson);
+            }
+
             setActiveBtn((object)btn_home, pnl_pageTabs);
         }
 
