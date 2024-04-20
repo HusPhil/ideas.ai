@@ -53,7 +53,7 @@ namespace IdeasAi.modals
                 case "Summarizer":
                     var summarizer = new Summarizer();
                     summarizer.Input = mainForm.frm_workspace.getTxbEditor().Text;
-                    summarizer.Content = await summarizer.GetResponse();
+                    summarizer.Content = await summarizer.GetResponse(mainForm.settings);
 
                     txb_preview.Text = summarizer.Content;
                     break;

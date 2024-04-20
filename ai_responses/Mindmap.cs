@@ -1,4 +1,5 @@
 ﻿using IdeasAi.Gemini_AI;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace IdeasAi.ai_responses
     internal class Mindmap : AI_Response
     {
         public string Title { get; set; }
-        public override async Task<string> GetResponse()
+        public override async Task<string> GetResponse(JObject appConfig)
         {
             var prompt = "Act like an automatic system text generator for a mindmap that follows a strict syntax. " +
                 "Given an input, your goal is to organize an output based on the instructions given: " +
@@ -36,7 +37,7 @@ namespace IdeasAi.ai_responses
                 "Most importantly, never use indentation." +
                 $"The input supplied: {this.Input.Replace("\"", "'")}.";
 
-            string response = await ScriptRunner.RunScriptAsync("Gemini_AI\\Scripts\\gemini.py", prompt);
+            string response = await ScriptRunner.RunScriptAsync("Gemini_AI\\Scripts\\gemini.py", prompt, appConfig);
             this.DateCreated = DateTime.Now;
             if (response.Contains("ERROR"))
             {

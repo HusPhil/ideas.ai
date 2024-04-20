@@ -131,7 +131,7 @@ namespace IdeasAi.pages
 
             try
             {
-                mindmap_obj.Content = await mindmap_obj.GetResponse();
+                mindmap_obj.Content = await mindmap_obj.GetResponse(mainForm.settings);
                 mainForm.frm_mindmap.getTxbMarkdownInput().Text = mindmap_obj.Content;
                 mainForm.frm_mindmap.generateMindmap(mindmap_obj.Content);
                 mainForm.frm_mindmap.getTxbTitle().Text = txb_docsTitle.Text + " [mindmap]";
@@ -230,7 +230,7 @@ namespace IdeasAi.pages
 
             try
             {
-                qsearch_obj.Content = await qsearch_obj.GetResponse();
+                qsearch_obj.Content = await qsearch_obj.GetResponse(mainForm.settings);
                 txb_qsearchRes.Text = ConvertMarkdownToPlainText(qsearch_obj.Content);
                 mainForm.addNotification("success", "Success!", "View search result");
             }

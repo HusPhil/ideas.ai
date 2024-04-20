@@ -86,13 +86,13 @@ namespace IdeasAi
             lbl_currentPage.Text = btn_active.Text;
             Console.WriteLine(this.Width + "::" + this.Height);
 
-            using (StreamReader reader = File.OpenText("decors.json"))
+            using (StreamReader reader = File.OpenText("configs/decors.json"))
             {
                 string decorsJson = reader.ReadToEnd();
                 decors = JObject.Parse(decorsJson);
             }
 
-            using (StreamReader reader = File.OpenText("settings.json"))
+            using (StreamReader reader = File.OpenText("configs/settings.json"))
             {
                 string settingsJson = reader.ReadToEnd();
                 settings = JObject.Parse(settingsJson);

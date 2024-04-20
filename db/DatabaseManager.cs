@@ -20,7 +20,7 @@ namespace IdeasAi.db
                 return DB_FILEPATH;
             }
             set {
-                string jsonString = File.ReadAllText("settings.json");
+                string jsonString = File.ReadAllText("configs/settings.json");
                 var appSettings = JObject.Parse(jsonString);
                 ScriptRunner.ReplaceEnvironmentVariables(appSettings);
 
@@ -29,7 +29,7 @@ namespace IdeasAi.db
             } 
         }
 
-        public const string ConfigFilePath = "settings.json";
+        public const string ConfigFilePath = "configs/settings.json";
         protected string table { get; set; }
 
         public DatabaseManager()

@@ -1,9 +1,0 @@
-{
-  "API_KEY": "__GeminiAPI__",
-  "Python_Module": "__pythonModule__",
-  "Database_Path": {
-    "DEFAULT": "..\\..\\db\\sqlite.db",
-    "NEW_DB": "C:\\Users\\husph\\Desktop\\test\\hello.db",
-    "hello world": "C:\\Users\\husph\\Desktop\\hello world.db"
-  }
-}

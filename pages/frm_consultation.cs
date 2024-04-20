@@ -108,7 +108,7 @@ namespace IdeasAi.PageForms
             idea_obj.Input = topic;
             try
             {
-                idea_obj.Content = await idea_obj.GetResponse();
+                idea_obj.Content = await idea_obj.GetResponse(mainForm.settings);
                 mainForm.addNotification("success", "Successfully answered!", $"{idea_obj.Input}");
                 displayResult(idea_obj.Content);
 
