@@ -27,6 +27,7 @@ namespace IdeasAi.pages
         private Panel pnl_delDialog;
         private Button btn_delConfirm;
         private CheckBox chb_delFile;
+        private Label lbl_currentNotebook;
         public System.Windows.Forms.Button btn_activeTab = new System.Windows.Forms.Button();
 
         public frm_notebook(MainForm _mainForm)
@@ -39,7 +40,9 @@ namespace IdeasAi.pages
 
             btn_activeTab = btn_notesTab;
             btn_notesTab.BackColor = btn_notesTab.FlatAppearance.MouseOverBackColor;
+            showAllIdeas();
 
+            
 
         }
 
@@ -72,6 +75,7 @@ namespace IdeasAi.pages
             this.btn_notebookSettings = new System.Windows.Forms.Button();
             this.pnl_container = new System.Windows.Forms.FlowLayoutPanel();
             this.lbl_nothingFound = new System.Windows.Forms.Label();
+            this.lbl_currentNotebook = new System.Windows.Forms.Label();
             this.pnl_tabSelect.SuspendLayout();
             this.tbpnl_tabs.SuspendLayout();
             this.pnl_footer.SuspendLayout();
@@ -99,6 +103,7 @@ namespace IdeasAi.pages
             this.tbpnl_tabs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tbpnl_tabs.Controls.Add(this.btn_notesTab, 0, 0);
             this.tbpnl_tabs.Controls.Add(this.btn_docsTab, 2, 0);
+            this.tbpnl_tabs.Controls.Add(this.lbl_currentNotebook, 1, 0);
             this.tbpnl_tabs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbpnl_tabs.Location = new System.Drawing.Point(10, 10);
             this.tbpnl_tabs.Name = "tbpnl_tabs";
@@ -295,6 +300,18 @@ namespace IdeasAi.pages
             this.lbl_nothingFound.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_nothingFound.Visible = false;
             // 
+            // lbl_currentNotebook
+            // 
+            this.lbl_currentNotebook.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_currentNotebook.AutoEllipsis = true;
+            this.lbl_currentNotebook.AutoSize = true;
+            this.lbl_currentNotebook.Font = new System.Drawing.Font("Cascadia Code", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_currentNotebook.Location = new System.Drawing.Point(389, 8);
+            this.lbl_currentNotebook.Name = "lbl_currentNotebook";
+            this.lbl_currentNotebook.Size = new System.Drawing.Size(91, 30);
+            this.lbl_currentNotebook.TabIndex = 5;
+            this.lbl_currentNotebook.Text = "label1";
+            // 
             // frm_notebook
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
@@ -311,6 +328,7 @@ namespace IdeasAi.pages
             this.SizeChanged += new System.EventHandler(this.frm_notebook_SizeChanged);
             this.pnl_tabSelect.ResumeLayout(false);
             this.tbpnl_tabs.ResumeLayout(false);
+            this.tbpnl_tabs.PerformLayout();
             this.pnl_footer.ResumeLayout(false);
             this.pnl_noteSettings.ResumeLayout(false);
             this.pnl_delDialog.ResumeLayout(false);
@@ -517,18 +535,7 @@ namespace IdeasAi.pages
         }
         private void frm_notebook_Load(object sender, EventArgs e)
         {
-
-
-
-            //if(btn_activeTab == btn_docsTab)
-            //{
-            //    lbl_noteCurrent.Text = mainForm.dbManager_Docs.dbFilePath;
-            //}
-            //else
-            //{
-            //    lbl_noteCurrent.Text = mainForm.dbManager_Note.dbFilePath;
-            //}
-            showAllIdeas();
+            //showAllIdeas();
         }
         private void btn_notesTab_Click(object sender, EventArgs e)
         {
@@ -562,6 +569,7 @@ namespace IdeasAi.pages
 
         private void frm_notebook_SizeChanged(object sender, EventArgs e)
         {
+
             if (!mainForm.sliding)
             {
                 showAllIdeas();
@@ -570,7 +578,6 @@ namespace IdeasAi.pages
             {
                 pnl_container.Controls.Clear();
             }
-            
 
         }
 
@@ -586,6 +593,8 @@ namespace IdeasAi.pages
 
             mainForm.dbManager_Docs.dbFilePath = newNotebook;
             mainForm.dbManager_Note.dbFilePath = newNotebook;
+
+            lbl_currentNotebook.Text = currentNotebook;
 
             showAllIdeas();
         }

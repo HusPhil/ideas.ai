@@ -230,22 +230,9 @@ namespace IdeasAi
         private void btn_notebook_Click(object sender, EventArgs e)
         {
             InitializeConfigs();
-            btn_notebook.Enabled = false;
+            //frm_notebook.notebookClickCount++ ;
             setActiveBtn(sender, pnl_pageTabs);
             loadForm(frm_notebook, pnl_content);
-
-            if (frm_notebook.btn_activeTab == frm_notebook.getBtnNotesTab())
-            {
-                frm_notebook.displaySavedIdeas(dbManager_Note);
-            }
-            else if (frm_notebook.btn_activeTab == frm_notebook.getBtnDocsTab())
-            {
-                frm_notebook.displaySavedIdeas(dbManager_Docs);
-            }
-
-            
-
-
         }
 
         private void btn_mindmap_Click(object sender, EventArgs e)
