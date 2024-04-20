@@ -105,7 +105,12 @@ namespace IdeasAi
                 string decorsJson = reader.ReadToEnd();
                 decors = JObject.Parse(decorsJson);
             }
+            setSettingsConfig();
+            
+        }
 
+        public void setSettingsConfig()
+        {
             using (StreamReader reader = File.OpenText("configs/settings.json"))
             {
                 string settingsJson = reader.ReadToEnd();
@@ -224,6 +229,7 @@ namespace IdeasAi
 
         private void btn_notebook_Click(object sender, EventArgs e)
         {
+            InitializeConfigs();
             btn_notebook.Enabled = false;
             setActiveBtn(sender, pnl_pageTabs);
             loadForm(frm_notebook, pnl_content);
@@ -236,6 +242,7 @@ namespace IdeasAi
             {
                 frm_notebook.displaySavedIdeas(dbManager_Docs);
             }
+
             
 
 

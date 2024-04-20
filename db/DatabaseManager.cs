@@ -138,12 +138,8 @@ namespace IdeasAi.db
         //STATIC METHODS
         public static void CreateNewNotebook(string dbName, string dbFilePath)
         {
-            
 
-            // SQL script to create tables
-            try
-            {
-                string sqlScript = @"
+            string sqlScript = @"
             CREATE TABLE IF NOT EXISTS Document (
                 ID UNIQUEIDENTIFIER PRIMARY KEY,
                 Title TEXT,
@@ -160,37 +156,44 @@ namespace IdeasAi.db
                 Date_modified DATE
             );
         ";
-                CreateDatabase(dbName, dbFilePath, sqlScript);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Creating a notebook failed: {ex.Message}");
-            }
-            // Call the method to create the database
+            CreateDatabase(dbName, dbFilePath, sqlScript);
 
         }
         public static void AddNewDatabasePath(string key, string path, JObject appConfig)
         {
-            try
-            {
-                // Access the "Database_Path" property
-                JObject databasePath = (JObject)appConfig["Database_Path"];
-
-                // Add a new key-value pair to the "Database_Path" property
-                databasePath[key] = path;
-
-                // Write the modified JSON back to the file
-                File.WriteAllText(ConfigFilePath, JsonConvert.SerializeObject(appConfig, Formatting.Indented));
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Adding a DB path failed: {ex.Message}");
-            }
             
-        }
-        public static void RemoveDatabasePath(string key)
-        {
+            // Access the "Database_Path" property
+            JObject databasePath = (JObject)appConfig["Database_Path"];
 
+            // Add a new key-value pair to the "Database_Path" property
+            databasePath[key] = path;
+
+            // Write the modified JSON back to the file
+            File.WriteAllText(ConfigFilePath, JsonConvert.SerializeObject(appConfig, Formatting.Indented));
+        }
+        public static void RemoveDatabasePath(string key, bool deleteFile, JObject appConfig)
+        {
+            
+            Console.WriteLine(appConfig);
+
+            JObject newDatabaseConfig = (JObject)appConfig["Database_Path"];
+
+            if(deleteFile)
+            {
+                File.Delete((string)newDatabaseConfig[key]);
+            }
+
+            newDatabaseConfig.Remove(key);
+
+            Console.WriteLine(newDatabaseConfig);
+
+            appConfig["Database_Path"] = newDatabaseConfig;
+
+
+            // Write the modified JSON back to the file
+            File.WriteAllText(ConfigFilePath, JsonConvert.SerializeObject(appConfig, Formatting.Indented));
+            
+            
         }
         public static string[] GetDatabasePathKeys(JObject appConfig)
         {
@@ -209,35 +212,29 @@ namespace IdeasAi.db
         }
         public static void CreateDatabase(string dbName, string dbFilePath, string sqlScript)
         {
-            try
+            // Check if the database file already exists
+            if (File.Exists(dbFilePath))
             {
-                // Check if the database file already exists
-                if (File.Exists(dbFilePath))
+                Console.WriteLine("Database file already exists.");
+                throw new Exception("Database file already exists.");
+            }
+
+            string connectionString = $"Data Source={dbFilePath};Version=3;";
+            SQLiteConnection.CreateFile(dbFilePath);
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                using (SQLiteCommand command = new SQLiteCommand(sqlScript, connection))
                 {
-                    Console.WriteLine("Database file already exists.");
-                    throw new Exception("Database file already exists.");
+                    command.ExecuteNonQuery();
                 }
 
-                string connectionString = $"Data Source={dbFilePath};Version=3;";
-                SQLiteConnection.CreateFile(dbFilePath);
-                using (SQLiteConnection connection = new SQLiteConnection(connectionString))
-                {
-                    connection.Open();
-                    using (SQLiteCommand command = new SQLiteCommand(sqlScript, connection))
-                    {
-                        command.ExecuteNonQuery();
-                    }
-
-                    // Close the connection
-                    connection.Close();
-                }
-
-                Console.WriteLine("Database created successfully.");
+                // Close the connection
+                connection.Close();
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Creating a DB failed: {ex.Message}");
-            }
+
+            Console.WriteLine("Database created successfully.");
+            
             
         }
         public static string OpenTextFile(string filePath)

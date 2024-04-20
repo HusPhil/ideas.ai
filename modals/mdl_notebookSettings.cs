@@ -68,9 +68,10 @@ namespace IdeasAi.modals
                     txb_saveDBPath.Text = "";
                     // Handle case where the user cancels the dialog
                     mainForm.addNotification("error", "Failed to open!", "A folder was not selected properly");
+                    this.Close();
                 }
             }
-
+            
         }
 
         private void btn_exit_Click(object sender, EventArgs e)

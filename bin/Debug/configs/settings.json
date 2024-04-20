@@ -1,9 +1,8 @@
 {
-  "API_KEY": "AIzaSyCkAHZqCjRPDDbeARiLyxwFww9se4ei6-Y",
-  "Python_Module": "C:\\MyFiles\\PythonInstall\\python.exe",
+  "API_KEY": "__GeminiAPI__",
+  "Python_Module": "__pythonModule__",
   "Database_Path": {
     "DEFAULT": "..\\..\\db\\default.db",
-    "NEW_DB": "C:\\Users\\husph\\Desktop\\test\\hello.db",
-    "test": "C:\\Users\\husph\\Desktop\\test\\test.db"
+    "NEW_DB": "C:\\Users\\husph\\Desktop\\test\\hello.db"
   }
 }

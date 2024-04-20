@@ -84,6 +84,8 @@
             this.pbx_type.TabIndex = 6;
             this.pbx_type.TabStop = false;
             this.pbx_type.Click += new System.EventHandler(this.pbx_type_Click);
+            this.pbx_type.MouseLeave += new System.EventHandler(this.pbx_type_MouseLeave);
+            this.pbx_type.MouseHover += new System.EventHandler(this.pbx_type_MouseHover);
             // 
             // pnl_notifBody
             // 

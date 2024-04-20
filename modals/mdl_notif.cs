@@ -117,8 +117,14 @@ namespace IdeasAi.modals
             }
         }
 
-       
+        private void pbx_type_MouseHover(object sender, EventArgs e)
+        {
+            tmr_close.Stop();
+        }
 
-        
+        private void pbx_type_MouseLeave(object sender, EventArgs e)
+        {
+            tmr_close.Start();
+        }
     }
 }

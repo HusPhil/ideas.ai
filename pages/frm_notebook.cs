@@ -316,6 +316,7 @@ namespace IdeasAi.pages
         {
             try
             {
+                Console.WriteLine(currentNotebook);
                 lbl_nothingFound.Visible = false;
                 pnl_container.Visible = true;
 
@@ -572,8 +573,8 @@ namespace IdeasAi.pages
 
         private void cb_dbSelector_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var selectedNotebook = cb_dbSelector.SelectedItem.ToString();
-            var newNotebook = (string)mainForm.settings["Database_Path"][selectedNotebook];
+            currentNotebook = cb_dbSelector.SelectedItem.ToString();
+            var newNotebook = (string)mainForm.settings["Database_Path"][currentNotebook];
 
             mainForm.dbManager_Docs.dbFilePath = newNotebook;
             mainForm.dbManager_Note.dbFilePath = newNotebook;
@@ -602,11 +603,41 @@ namespace IdeasAi.pages
 
         private void btn_delConfirm_Click(object sender, EventArgs e)
         {
-            if (chb_delFile.Checked)
+            try {
+                if (cb_dbSelector.Items.Count > 1)
+                {
+                   
+
+                    cb_dbSelector.Items.Remove(currentNotebook);
+                    DatabaseManager.RemoveDatabasePath(currentNotebook, chb_delFile.Checked, mainForm.settings);
+
+                    if (cb_dbSelector.SelectedIndex <= 0)
+                    {
+                        cb_dbSelector.SelectedIndex = 0;
+                    }
+                    else
+                    {
+                        cb_dbSelector.SelectedIndex--;
+                    }
+                    mainForm.setSettingsConfig();
+                    mainForm.addNotification("success", "Notebook removed!", "Notebook successfully removed!");
+
+                }
+                else
+                {
+                    mainForm.addNotification("error", "Deleting notebook failed!", "You can't have no notebook!");
+                }
+            }
+            catch (Exception ex)
             {
+                    mainForm.addNotification("error", "Deleting notebook failed!", $"{ex.Message}");
 
             }
-            cb_dbSelector.Items.Remove(currentNotebook);
+            finally
+            {
+                chb_delFile.Checked = false;
+                pnl_delDialog.Visible = false;
+            }
         }
     }
 }
