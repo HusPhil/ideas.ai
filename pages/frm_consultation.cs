@@ -12,6 +12,7 @@ using PlantUml.Net;
 using IdeasAi.pages;
 using System.Text.RegularExpressions;
 using System.CodeDom.Compiler;
+using Microsoft.Win32;
 
 
 namespace IdeasAi.PageForms
@@ -41,7 +42,21 @@ namespace IdeasAi.PageForms
         {
             InitializeComponent();
             this.mainForm = _mainForm;
+            OptimizeInternetExplorerVersion();
         }
+        private void OptimizeInternetExplorerVersion()
+        {
+            var appName = System.Diagnostics.Process.GetCurrentProcess().ProcessName + ".exe";
+
+            using (var key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BROWSER_EMULATION", true))
+            {
+                key.SetValue(appName, 99999, RegistryValueKind.DWord);
+            }
+
+            wb_container.Navigate("C:\\MyFiles\\Projects\\Web Projects\\testWeb\\index.html");
+
+        }
+
         private string ConvertMarkdownToHtml(string markdownText)
         {
             // Convert Markdown to HTML

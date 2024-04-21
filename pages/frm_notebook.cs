@@ -63,6 +63,7 @@ namespace IdeasAi.pages
             this.tbpnl_tabs = new System.Windows.Forms.TableLayoutPanel();
             this.btn_notesTab = new System.Windows.Forms.Button();
             this.btn_docsTab = new System.Windows.Forms.Button();
+            this.lbl_currentNotebook = new System.Windows.Forms.Label();
             this.pnl_footer = new System.Windows.Forms.Panel();
             this.pnl_noteSettings = new System.Windows.Forms.Panel();
             this.btn_delete = new System.Windows.Forms.Button();
@@ -75,7 +76,6 @@ namespace IdeasAi.pages
             this.btn_notebookSettings = new System.Windows.Forms.Button();
             this.pnl_container = new System.Windows.Forms.FlowLayoutPanel();
             this.lbl_nothingFound = new System.Windows.Forms.Label();
-            this.lbl_currentNotebook = new System.Windows.Forms.Label();
             this.pnl_tabSelect.SuspendLayout();
             this.tbpnl_tabs.SuspendLayout();
             this.pnl_footer.SuspendLayout();
@@ -149,15 +149,27 @@ namespace IdeasAi.pages
             this.btn_docsTab.UseVisualStyleBackColor = false;
             this.btn_docsTab.Click += new System.EventHandler(this.btn_docsTab_Click);
             // 
+            // lbl_currentNotebook
+            // 
+            this.lbl_currentNotebook.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_currentNotebook.AutoEllipsis = true;
+            this.lbl_currentNotebook.AutoSize = true;
+            this.lbl_currentNotebook.Font = new System.Drawing.Font("Cascadia Code", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_currentNotebook.Location = new System.Drawing.Point(389, 8);
+            this.lbl_currentNotebook.Name = "lbl_currentNotebook";
+            this.lbl_currentNotebook.Size = new System.Drawing.Size(91, 30);
+            this.lbl_currentNotebook.TabIndex = 5;
+            this.lbl_currentNotebook.Text = "label1";
+            // 
             // pnl_footer
             // 
             this.pnl_footer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnl_footer.Controls.Add(this.pnl_noteSettings);
             this.pnl_footer.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnl_footer.Location = new System.Drawing.Point(20, 541);
+            this.pnl_footer.Location = new System.Drawing.Point(20, 539);
             this.pnl_footer.Name = "pnl_footer";
             this.pnl_footer.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
-            this.pnl_footer.Size = new System.Drawing.Size(890, 55);
+            this.pnl_footer.Size = new System.Drawing.Size(890, 57);
             this.pnl_footer.TabIndex = 2;
             // 
             // pnl_noteSettings
@@ -170,7 +182,7 @@ namespace IdeasAi.pages
             this.pnl_noteSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_noteSettings.Location = new System.Drawing.Point(0, 15);
             this.pnl_noteSettings.Name = "pnl_noteSettings";
-            this.pnl_noteSettings.Size = new System.Drawing.Size(890, 40);
+            this.pnl_noteSettings.Size = new System.Drawing.Size(890, 42);
             this.pnl_noteSettings.TabIndex = 5;
             // 
             // btn_delete
@@ -181,7 +193,7 @@ namespace IdeasAi.pages
             this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_delete.Location = new System.Drawing.Point(576, 0);
             this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(40, 40);
+            this.btn_delete.Size = new System.Drawing.Size(40, 42);
             this.btn_delete.TabIndex = 4;
             this.btn_delete.Text = "-";
             this.btn_delete.UseVisualStyleBackColor = false;
@@ -194,7 +206,7 @@ namespace IdeasAi.pages
             this.pnl_delDialog.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnl_delDialog.Location = new System.Drawing.Point(616, 0);
             this.pnl_delDialog.Name = "pnl_delDialog";
-            this.pnl_delDialog.Size = new System.Drawing.Size(274, 40);
+            this.pnl_delDialog.Size = new System.Drawing.Size(274, 42);
             this.pnl_delDialog.TabIndex = 5;
             this.pnl_delDialog.Visible = false;
             // 
@@ -208,7 +220,7 @@ namespace IdeasAi.pages
             this.btn_delConfirm.ForeColor = System.Drawing.Color.Red;
             this.btn_delConfirm.Location = new System.Drawing.Point(20, 0);
             this.btn_delConfirm.Name = "btn_delConfirm";
-            this.btn_delConfirm.Size = new System.Drawing.Size(113, 40);
+            this.btn_delConfirm.Size = new System.Drawing.Size(113, 42);
             this.btn_delConfirm.TabIndex = 8;
             this.btn_delConfirm.Text = "Confirm";
             this.btn_delConfirm.UseVisualStyleBackColor = false;
@@ -222,7 +234,7 @@ namespace IdeasAi.pages
             this.chb_delFile.Location = new System.Drawing.Point(133, 0);
             this.chb_delFile.Name = "chb_delFile";
             this.chb_delFile.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.chb_delFile.Size = new System.Drawing.Size(141, 40);
+            this.chb_delFile.Size = new System.Drawing.Size(141, 42);
             this.chb_delFile.TabIndex = 9;
             this.chb_delFile.Text = "Delete file?";
             this.chb_delFile.UseVisualStyleBackColor = true;
@@ -235,7 +247,7 @@ namespace IdeasAi.pages
             this.panel1.Location = new System.Drawing.Point(194, 0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.panel1.Size = new System.Drawing.Size(200, 40);
+            this.panel1.Size = new System.Drawing.Size(200, 42);
             this.panel1.TabIndex = 3;
             // 
             // cb_dbSelector
@@ -258,7 +270,7 @@ namespace IdeasAi.pages
             this.lbl_noteCurrent.Location = new System.Drawing.Point(40, 0);
             this.lbl_noteCurrent.Name = "lbl_noteCurrent";
             this.lbl_noteCurrent.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.lbl_noteCurrent.Size = new System.Drawing.Size(154, 40);
+            this.lbl_noteCurrent.Size = new System.Drawing.Size(154, 42);
             this.lbl_noteCurrent.TabIndex = 1;
             this.lbl_noteCurrent.Text = "Current Notebook:";
             this.lbl_noteCurrent.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -271,7 +283,7 @@ namespace IdeasAi.pages
             this.btn_notebookSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_notebookSettings.Location = new System.Drawing.Point(0, 0);
             this.btn_notebookSettings.Name = "btn_notebookSettings";
-            this.btn_notebookSettings.Size = new System.Drawing.Size(40, 40);
+            this.btn_notebookSettings.Size = new System.Drawing.Size(40, 42);
             this.btn_notebookSettings.TabIndex = 0;
             this.btn_notebookSettings.Text = "+";
             this.btn_notebookSettings.UseVisualStyleBackColor = false;
@@ -285,7 +297,7 @@ namespace IdeasAi.pages
             this.pnl_container.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_container.Name = "pnl_container";
             this.pnl_container.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.pnl_container.Size = new System.Drawing.Size(890, 455);
+            this.pnl_container.Size = new System.Drawing.Size(890, 453);
             this.pnl_container.TabIndex = 3;
             // 
             // lbl_nothingFound
@@ -294,27 +306,15 @@ namespace IdeasAi.pages
             this.lbl_nothingFound.Font = new System.Drawing.Font("Cascadia Code", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_nothingFound.Location = new System.Drawing.Point(20, 86);
             this.lbl_nothingFound.Name = "lbl_nothingFound";
-            this.lbl_nothingFound.Size = new System.Drawing.Size(890, 455);
+            this.lbl_nothingFound.Size = new System.Drawing.Size(890, 453);
             this.lbl_nothingFound.TabIndex = 4;
             this.lbl_nothingFound.Text = "There\'s nothing here!";
             this.lbl_nothingFound.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_nothingFound.Visible = false;
             // 
-            // lbl_currentNotebook
-            // 
-            this.lbl_currentNotebook.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl_currentNotebook.AutoEllipsis = true;
-            this.lbl_currentNotebook.AutoSize = true;
-            this.lbl_currentNotebook.Font = new System.Drawing.Font("Cascadia Code", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_currentNotebook.Location = new System.Drawing.Point(389, 8);
-            this.lbl_currentNotebook.Name = "lbl_currentNotebook";
-            this.lbl_currentNotebook.Size = new System.Drawing.Size(91, 30);
-            this.lbl_currentNotebook.TabIndex = 5;
-            this.lbl_currentNotebook.Text = "label1";
-            // 
             // frm_notebook
             // 
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(930, 616);
             this.ControlBox = false;
             this.Controls.Add(this.lbl_nothingFound);
@@ -367,15 +367,17 @@ namespace IdeasAi.pages
                     {
                         Panel pnl_idea = new Panel();
                         pnl_idea.BorderStyle = BorderStyle.FixedSingle;
-                        pnl_idea.BackColor = Color.Gray;
+                        pnl_idea.BackColor = ColorTranslator.FromHtml((string)mainForm.decors["Color"]["secondary100"]);
                         pnl_idea.Size = new Size(panelWidth, 200);
                         pnl_idea.Padding = new Padding(0, 10, 0, 10);
 
                         Panel pnl_header = new Panel();
+
                         pnl_header.BorderStyle = BorderStyle.None;
                         pnl_header.Dock = DockStyle.Top;
                         pnl_header.Size = new Size(50, 50);
                         pnl_header.Padding = new Padding(0, 0, 20, 0);
+                        pnl_header.BringToFront();
 
                         Button btn_edit = new Button();
                         btn_edit.Image = global::IdeasAi.Properties.Resources.more;
@@ -386,6 +388,8 @@ namespace IdeasAi.pages
                         btn_edit.FlatStyle = FlatStyle.Flat;
                         btn_edit.FlatAppearance.BorderSize = 0;
                         btn_edit.Margin = new Padding(0, 0, 20, 0);
+
+                        
 
                         if (db.GetType() == typeof(DBManager_Note))
                         {
@@ -401,16 +405,17 @@ namespace IdeasAi.pages
 
                         Label titleLabel = new Label();
                         titleLabel.Text = idea.Title;
-                        titleLabel.Dock = DockStyle.Top;
+                        titleLabel.Dock = DockStyle.Fill;
                         titleLabel.Padding = new Padding(35, 0, 35, 0);
                         titleLabel.TextAlign = ContentAlignment.MiddleCenter;
                         titleLabel.AutoEllipsis = true;
                         titleLabel.Font = new Font("Cascadia Code", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-                        pnl_idea.Controls.Add(titleLabel);
+                        titleLabel.SendToBack();
+                        pnl_header.Controls.Add(titleLabel);
 
                         Panel pnl_btns = new Panel();
                         pnl_btns.Dock = DockStyle.Bottom;
-                        pnl_btns.Height = titleLabel.Height + 20;
+                        pnl_btns.Height = 10 + (titleLabel.Height/2);
                         pnl_btns.Margin = new Padding(0, 0, 0, 20);
 
                         Button btn_view = new Button();
@@ -418,6 +423,7 @@ namespace IdeasAi.pages
                         btn_view.Click += (sender, e) => displayNote_click(idea, db);
                         btn_view.Dock = DockStyle.Fill;
                         btn_view.FlatStyle = FlatStyle.Flat;
+                        btn_view.BackColor = ColorTranslator.FromHtml((string)mainForm.decors["Color"]["accent"]);
                         pnl_btns.Controls.Add(btn_view);
                         pnl_idea.Controls.Add(pnl_btns);
                         pnl_btns.Padding = new Padding(15, 0, 15, 0);
