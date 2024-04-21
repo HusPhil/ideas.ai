@@ -82,6 +82,7 @@
             this.wb_container.Location = new System.Drawing.Point(15, 0);
             this.wb_container.MinimumSize = new System.Drawing.Size(20, 20);
             this.wb_container.Name = "wb_container";
+            this.wb_container.ScriptErrorsSuppressed = true;
             this.wb_container.Size = new System.Drawing.Size(894, 448);
             this.wb_container.TabIndex = 7;
             // 

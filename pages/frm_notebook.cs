@@ -63,6 +63,7 @@ namespace IdeasAi.pages
             this.tbpnl_tabs = new System.Windows.Forms.TableLayoutPanel();
             this.btn_notesTab = new System.Windows.Forms.Button();
             this.btn_docsTab = new System.Windows.Forms.Button();
+            this.lbl_currentNotebook = new System.Windows.Forms.Label();
             this.pnl_footer = new System.Windows.Forms.Panel();
             this.pnl_noteSettings = new System.Windows.Forms.Panel();
             this.btn_delete = new System.Windows.Forms.Button();
@@ -75,7 +76,6 @@ namespace IdeasAi.pages
             this.btn_notebookSettings = new System.Windows.Forms.Button();
             this.pnl_container = new System.Windows.Forms.FlowLayoutPanel();
             this.lbl_nothingFound = new System.Windows.Forms.Label();
-            this.lbl_currentNotebook = new System.Windows.Forms.Label();
             this.pnl_tabSelect.SuspendLayout();
             this.tbpnl_tabs.SuspendLayout();
             this.pnl_footer.SuspendLayout();
@@ -148,6 +148,18 @@ namespace IdeasAi.pages
             this.btn_docsTab.Text = "Documents";
             this.btn_docsTab.UseVisualStyleBackColor = false;
             this.btn_docsTab.Click += new System.EventHandler(this.btn_docsTab_Click);
+            // 
+            // lbl_currentNotebook
+            // 
+            this.lbl_currentNotebook.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_currentNotebook.AutoEllipsis = true;
+            this.lbl_currentNotebook.AutoSize = true;
+            this.lbl_currentNotebook.Font = new System.Drawing.Font("Cascadia Code", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_currentNotebook.Location = new System.Drawing.Point(389, 8);
+            this.lbl_currentNotebook.Name = "lbl_currentNotebook";
+            this.lbl_currentNotebook.Size = new System.Drawing.Size(91, 30);
+            this.lbl_currentNotebook.TabIndex = 5;
+            this.lbl_currentNotebook.Text = "label1";
             // 
             // pnl_footer
             // 
@@ -299,18 +311,6 @@ namespace IdeasAi.pages
             this.lbl_nothingFound.Text = "There\'s nothing here!";
             this.lbl_nothingFound.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_nothingFound.Visible = false;
-            // 
-            // lbl_currentNotebook
-            // 
-            this.lbl_currentNotebook.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl_currentNotebook.AutoEllipsis = true;
-            this.lbl_currentNotebook.AutoSize = true;
-            this.lbl_currentNotebook.Font = new System.Drawing.Font("Cascadia Code", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_currentNotebook.Location = new System.Drawing.Point(389, 8);
-            this.lbl_currentNotebook.Name = "lbl_currentNotebook";
-            this.lbl_currentNotebook.Size = new System.Drawing.Size(91, 30);
-            this.lbl_currentNotebook.TabIndex = 5;
-            this.lbl_currentNotebook.Text = "label1";
             // 
             // frm_notebook
             // 
