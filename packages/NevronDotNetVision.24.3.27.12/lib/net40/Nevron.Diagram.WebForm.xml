@@ -1,0 +1,1222 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nevron.Diagram.WebForm</name>
+    </assembly>
+    <members>
+        <member name="T:Nevron.Diagram.WebForm.NDiagramAjaxTechnology">
+            <summary>
+            Provides the AJAX client-server communication functionality (HMTL rendering
+            and event handling) for the Nevron Diagram web control.
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramAjaxTechnology.#ctor(Nevron.UI.WebForm.Controls.NWebControl)">
+            <summary>
+            Initializes a new instance of the NDiagramAjaxTechnology class, associated with
+            a given web control.
+            </summary>
+            <param name="webControl">
+            The web control, which uses the new instance of the NDiagramAjaxTechnology class.
+            </param>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramAjaxTechnology.EnumerateScriptIncludes">
+            <summary>
+            Enumerates all script files that implement the Nevron client-side
+            AJAX framework and the client-side JavaScript NDiagramCallbackService class.
+            </summary>
+            <returns>
+            A list of web resources containing client-side JavaScript include files.
+            </returns>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramAjaxTechnology.IsApplicable(System.Boolean)">
+            <summary>
+            Tests if the client web browser supports callbacks and XML HTTP requests.
+            </summary>
+            <param name="designMode">
+            Indicates if the NDiagramAjaxTechnology is being tested in design mode.
+            </param>
+            <returns>True if in design mode or if the client browser supports callbacks; else returns false.</returns>
+            <remarks>
+            If this method returns false to the Nevron AJAX framework, the default
+            post-back mode will be used. So it is recommended 
+            to provide post-back event handling when using the 
+            Nevron Diagram web control in AJAX mode. This way web browsers that do not
+            support AJAX will still provide at least part of the desired 
+            diagramming functionality.
+            </remarks>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramAjaxTechnology.OnWebControlLoad(System.EventArgs)">
+            <summary>
+            Checks if there is a diagram web control state serialized in the session
+            and if a diagram web control state is found, loads it to the associated
+            Nevron Diagram web control.
+            </summary>
+            <param name="e">
+            An <see cref="T:System.EventArgs"/> that contains the event data.
+            </param>
+            <remarks>
+            In AJAX mode the state of the diagram, displayed by the web control, can be
+            changed asynchronously by AJAX callbacks. In addition the diagram image is
+            rendered by the <see cref="T:Nevron.Diagram.WebForm.NDiagramImageResourceHandler"/> class,
+            rather than by the web control itself. Because of that the run-time state of the
+            diagram is stored in the session, rather than in the view state, which is
+            not available to the HTTP image resource handler.
+            </remarks>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramAjaxTechnology.OnWebControlRender(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Creates the HTML, required to display the diagram image on the client
+            and to activate the client-side AJAX JavaScript callback service.
+            </summary>
+            <param name="output">
+            The System.Web.UI.HtmlTextWriter object that receives the control content.
+            </param>
+            <remarks>
+            <para>
+            If there are errors renders an HTML div with detailed error report.
+            </para>
+            <para>
+            Else this method creates a div element with an id similar to "MyDiagramWebControl_Div"
+            (&lt;the id of the web control> + "_Div") and
+            inside the div ceates an image element with an id similar to "MyDiagramWebControl_diagramImage"
+            (&lt;the id of the web control> + "_chartImage").
+            The image element is followed by a &lt;br /> tag in order to avoid the extra spacing,
+            rendered by default by the browsers below an image, located as a child in a box
+            HTML element. In addition this method renders a JavaScript block that
+            registers the client-side AJAX callback service, associated with the
+            web control. The client-side AJAX callback service is an instance of the
+            NDiagramCallbackService client-side JavaScript class and can be obtained
+            at client-side with the following JavaScript call:
+            <code>
+            if(typeof(NDiagramCallbackService) != "undefined")
+            {	
+            	var cs = NDiagramCallbackService.GetCallbackService("MyDiagramWebControl");
+            	//...
+            }
+            </code>
+            The callback service registration script is rendered outside the div element.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramAjaxTechnology.OnCallbackEventHandlerGetCallbackResult">
+            <summary>
+            This method is invoked from the GetCallbackResult method of the <see cref="T:Nevron.UI.WebForm.Controls.NWebControl"/> class (GetCallbackResult is a part of the implementation of ICallbackEventHandler).
+            </summary>
+            <returns>
+            A callback result that tells the Nevron client-side AJAX
+            framework to refresh the chart image data, displayed to the visitor.
+            </returns>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramAjaxTechnology.OnCallbackEventHandlerRaiseCallbackEvent(System.String)">
+            <summary>
+            Lets the web control to process an event, delegated from the client to the server through
+            an AJAX callback. Calls the 
+            OnAsyncClick or 
+            OnAsyncDoubleClick or
+            OnAsyncMouseMove or
+            OnAsyncMouseDown or
+            OnAsyncMouseUp or
+            OnAsyncRefresh
+            method of the associated web control.
+            </summary>
+            <param name="eventArgument">
+            The client-side Nevron AJAX framework provides as eventArgument a serialized NAjaxXmlTransport object with a NAjaxXmlDataSection named "command".
+            </param>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramAjaxTechnology.ProvideDefaultStateManager(Nevron.UI.WebForm.Controls.NWebControl)">
+            <summary>
+            Provides an instance of the default state manager.
+            </summary>
+            <returns>
+            An instance of the default state manager.
+            </returns>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramAjaxTechnology.EnumerateStateManagers(Nevron.UI.WebForm.Controls.NWebControl)">
+            <summary>
+            Enumerates all state agents, applicable to this client-server technology.
+            </summary>
+            <returns>
+            A generic dictionary, containing all applicable state managers.
+            </returns>
+        </member>
+        <member name="T:Nevron.Diagram.WebForm.NDiagramClientServerTechnology">
+            <summary>
+            NDiagramClientServerTechnology is the base class for both post-back and AJAX technologies,
+            used by the Nevron Diagram web control.
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramClientServerTechnology.#ctor(Nevron.UI.WebForm.Controls.NWebControl)">
+            <summary>
+            Initializes a new instance of the NDiagramClientServerTechnology class, associated with
+            a given web control.
+            </summary>
+            <param name="webControl">
+            The web control, which uses the new instance of the NDiagramClientServerTechnology class.
+            </param>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramClientServerTechnology.OnWebControlDesignTimeRender(Nevron.UI.WebForm.Controls.NWebControlDesigner)">
+            <summary>
+            Generates an HTML with image preview of the diagram control in design mode.
+            </summary>
+            <param name="designer">
+            The instance of the <see cref="T:Nevron.UI.WebForm.Controls.NWebControlDesigner"/> object that invoked the method.
+            </param>
+            <returns>
+            If there are errors renders an HTML div with detailed error report.
+            Else, renders the diagram control as an HMTL image element. In both cases, the
+            size of the control is the size provided in the Width and Height properties of the web control.
+            </returns>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramClientServerTechnology.OnWebControlDesignTimeChanged(Nevron.UI.WebForm.Controls.NWebControlDesigner,System.ComponentModel.Design.ComponentChangedEventArgs)">
+            <summary>
+            Updates the diagram on resize.
+            </summary>
+            <param name="designer">
+            The instance of the <see cref="T:Nevron.UI.WebForm.Controls.NWebControlDesigner"/> object that invoked the method.
+            </param>
+            <param name="ce">
+            A System.ComponentModel.Design.ComponentChangedEventArgs that contains the event data.
+            </param>
+        </member>
+        <member name="P:Nevron.Diagram.WebForm.NDiagramClientServerTechnology.DiagramControl">
+            <summary>
+            Gets the Nevron Diagram web control, associated by this instance of the NDiagramClientServerTechnology class.
+            This property is initialized from the NDiagramClientServerTechnology constructor.
+            </summary>
+        </member>
+        <member name="T:Nevron.Diagram.WebForm.NDiagramPdfImageFormatProvider">
+            <summary>
+            Summary description for NDiagramPdfImageFormatProvider.
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramPdfImageFormatProvider.#ctor(Nevron.Diagram.WebForm.NDrawingView)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="view">view associated with the image provider</param>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramPdfImageFormatProvider.#ctor(Nevron.Diagram.NDrawingDocument,Nevron.Diagram.Extensions.NCanvas)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="document">document associated with the image provider</param>
+            <param name="canvas">canvas associated with the image provider</param>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramPdfImageFormatProvider.ProvideImage(Nevron.GraphicsCore.NSize,Nevron.GraphicsCore.NResolution,Nevron.GraphicsCore.INImageFormat)">
+            <summary>
+            Provides an image with the specifies dimensions and format.
+            </summary>
+            <param name="dimensions"></param>
+            <param name="resolution"></param>
+            <param name="imageFormat"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramPdfImageFormatProvider.ProvideImage(Nevron.GraphicsCore.NSize,Nevron.GraphicsCore.NRectangle,Nevron.GraphicsCore.NResolution,Nevron.GraphicsCore.INImageFormat)">
+            <summary>
+            
+            </summary>
+            <param name="dimensions"></param>
+            <param name="viewport"></param>
+            <param name="resolution"></param>
+            <param name="imageFormat"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Nevron.Diagram.WebForm.NDiagramPdfImageFormatProvider.ProvidedMimeTypes">
+            <summary>
+            Obtains an array of the provided mime types
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramPdfImageFormatProvider.CreateCanvas(Nevron.GraphicsCore.NRectangleF,Nevron.GraphicsCore.NRectangleF)">
+            <summary>
+            Called by the OnPrintPage method to create a canvas, which can be used to print the current page on the printer graphics
+            </summary>
+            <param name="canvasBounds">bounds of the canvas (page bounds)</param>
+            <param name="windowBounds">bounds of the window (margins bounds)</param>
+            <returns>canvas used for the rendering of the current page</returns>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramPdfImageFormatProvider.ComputePagingCore(Nevron.Diagram.Extensions.NCanvas,Nevron.GraphicsCore.NPdfImageFormat,System.Int32@,System.Int32@)">
+            <summary>
+            Core implementation of the print document paging layout, that zooms the document according 
+            to the print manager print layout mode and returns the count of rows and columns.
+            </summary>
+            <param name="canvas"></param>
+            <param name="imageFormat"></param>
+            <param name="rowCount"></param>
+            <param name="colCount"></param>
+        </member>
+        <member name="P:Nevron.Diagram.WebForm.NDiagramPdfImageFormatProvider.ExportedDocument">
+            <summary>
+            Obtains a reference to the document which must be printed
+            </summary>
+            <remarks>
+            If the originally passed document has an absolute measurement unit then this property returns
+            the value of the Document property. Otherwise it creates a copy of the original document, 
+            which is then converted to millimeters
+            </remarks>
+        </member>
+        <member name="T:Nevron.Diagram.WebForm.NDiagramSwfImageFormatProvider">
+            <summary>
+            Summary description for NDiagramSwfImageFormatProvider.
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramSwfImageFormatProvider.#ctor(Nevron.Diagram.WebForm.NDrawingView)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="view">view associated with the image provider</param>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramSwfImageFormatProvider.#ctor(Nevron.Diagram.NDrawingDocument,Nevron.Diagram.Extensions.NCanvas)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="document">document associated with the image provider</param>
+            <param name="canvas">canvas associated with the image provider</param>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramSwfImageFormatProvider.ProvideImage(Nevron.GraphicsCore.NSize,Nevron.GraphicsCore.NResolution,Nevron.GraphicsCore.INImageFormat)">
+            <summary>
+            Provides an image with the specifies dimensions and format.
+            </summary>
+            <param name="dimensions"></param>
+            <param name="resolution"></param>
+            <param name="imageFormat"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramSwfImageFormatProvider.ProvideImage(Nevron.GraphicsCore.NSize,Nevron.GraphicsCore.NRectangle,Nevron.GraphicsCore.NResolution,Nevron.GraphicsCore.INImageFormat)">
+            <summary>
+            
+            </summary>
+            <param name="dimensions"></param>
+            <param name="viewport"></param>
+            <param name="resolution"></param>
+            <param name="imageFormat"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Nevron.Diagram.WebForm.NDiagramSwfImageFormatProvider.ProvidedMimeTypes">
+            <summary>
+            Obtains an array of the provided mime types
+            </summary>
+        </member>
+        <member name="T:Nevron.Diagram.WebForm.NDiagramXamlImageFormatProvider">
+            <summary>
+            Summary description for NDiagramXamlImageFormatProvider.
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramXamlImageFormatProvider.#ctor(Nevron.Diagram.WebForm.NDrawingView)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="view">view associated with the image provider</param>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramXamlImageFormatProvider.#ctor(Nevron.Diagram.NDrawingDocument,Nevron.Diagram.Extensions.NCanvas)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="document">document associated with the image provider</param>
+            <param name="canvas">canvas associated with the image provider</param>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramXamlImageFormatProvider.ProvideImage(Nevron.GraphicsCore.NSize,Nevron.GraphicsCore.NResolution,Nevron.GraphicsCore.INImageFormat)">
+            <summary>
+            Provides an image with the specifies dimensions and format.
+            </summary>
+            <param name="dimensions"></param>
+            <param name="resolution"></param>
+            <param name="imageFormat"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramXamlImageFormatProvider.ProvideImage(Nevron.GraphicsCore.NSize,Nevron.GraphicsCore.NRectangle,Nevron.GraphicsCore.NResolution,Nevron.GraphicsCore.INImageFormat)">
+            <summary>
+            
+            </summary>
+            <param name="dimensions"></param>
+            <param name="viewport"></param>
+            <param name="resolution"></param>
+            <param name="imageFormat"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Nevron.Diagram.WebForm.NDiagramXamlImageFormatProvider.ProvidedMimeTypes">
+            <summary>
+            Obtains an array of the provided mime types
+            </summary>
+        </member>
+        <member name="T:Nevron.Diagram.WebForm.NDiagramImageResourceHandler">
+            <summary>
+            This class is responsible for the rendering of the diagram for a specific Nevron Diagram web control to an image.
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramImageResourceHandler.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramImageResourceHandler.RenderImage(System.Web.HttpContext,Nevron.UI.WebForm.Controls.NStateObject,System.Nullable{Nevron.GraphicsCore.NRectangle})">
+            <summary>
+            Renders the diagram for a specific Nevron Diagram web control to an image
+            and sends the response to the browser. 
+            </summary>
+            <param name="context">
+            An HttpContext object that provides references to the intrinsic server objects (for example, Request, Response, Session, and Server) used to service HTTP requests.
+            </param>
+            <param name="stateTransport">
+            The state of the web control being rendered.
+            </param>
+            <param name="viewport">
+            The viewport for parial rendering.
+            </param>
+            <remarks>
+            The response type is "image/png".
+            No cache is enabled by the response.
+            The particular Nevron Diagram web control which is to be rendered is
+            determined based on the WebControlId request query string argument, passed
+            to this HTTP handler. The state of the diagram to render is acquired
+            from the session state. See the OnWebControlLoad method of the 
+            <see cref="T:Nevron.Diagram.WebForm.NDiagramAjaxTechnology"/> class for details
+            on how the diagram state is persisted over its life-time.
+            </remarks>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramImageResourceHandler.EnumerateFormatProviders(Nevron.UI.WebForm.Controls.NStateObject)">
+            <summary>
+            Enumerates all image providers, supported by the web control.
+            </summary>
+            <param name="stateTransport">The session state, associated with the web control</param>
+            <returns>A container, aggregating format providers.</returns>
+        </member>
+        <member name="T:Nevron.Diagram.WebForm.NDiagramPostbackTechnology">
+            <summary>
+            Provides the post-back client-server communication functionality (HMTL rendering
+            and event handling) for the Nevron Diagram web control.
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramPostbackTechnology.#ctor(Nevron.UI.WebForm.Controls.NWebControl)">
+            <summary>
+            Initializes a new instance of the NDiagramPostbackTechnology class, associated with
+            a given web control.
+            </summary>
+            <param name="webControl">
+            The web control, which uses the new instance of the NDiagramPostbackTechnology class.
+            </param>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramPostbackTechnology.OnWebControlRender(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Creates the HTML, required to display the diagram image on the client.
+            </summary>
+            <param name="output">
+            The System.Web.UI.HtmlTextWriter object that receives the control content.
+            </param>
+            <remarks>
+            Renders the diagram control in the passed HtmlTextWriter. The image dimensions are taken from the control style.
+            </remarks>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramPostbackTechnology.OnPostbackEventHandlerRaisePostbackEvent(System.String)">
+            <summary>
+            Lets the web control to process an event, received from the client to the server through
+            post-back. Calls the OnClick method of the associated web control.
+            </summary>
+            <param name="eventArgument">
+            A string that represents an optional event argument to be passed to the event handler.
+            </param>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramPostbackTechnology.OnWebControlLoad(System.EventArgs)">
+            <summary>
+            Checks if there is a diagram web control state stored
+            and if one is found, loads it to the associated
+            Nevron Diagram web control.
+            </summary>
+            <param name="e">
+            An <see cref="T:System.EventArgs"/> that contains the event data.
+            </param>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramPostbackTechnology.OnWebControlPreRender(System.EventArgs,System.Collections.ArrayList)">
+            <summary>
+            This method is invoked from the overridden OnPreRender method of the <see cref="T:Nevron.UI.WebForm.Controls.NWebControl"/> class.
+            The default implementation of this method registers the script files as provided by the EnumerateScriptIncludes() method.
+            The NChartPostbackTechnology implementation of this method cancels the default behavior.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data.</param>
+            <param name="scriptIncludeFiles">The script include files as provided by the EnumerateScriptIncludes() method.</param>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramPostbackTechnology.ProvideDefaultStateManager(Nevron.UI.WebForm.Controls.NWebControl)">
+            <summary>
+            Provides an instance of the default state manager.
+            </summary>
+            <returns>
+            An instance of the default state manager.
+            </returns>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramPostbackTechnology.EnumerateStateManagers(Nevron.UI.WebForm.Controls.NWebControl)">
+            <summary>
+            Enumerates all state agents, applicable to this client-server technology.
+            </summary>
+            <returns>
+            A generic dictionary, containing all applicable state managers.
+            </returns>
+        </member>
+        <member name="T:Nevron.Diagram.WebForm.NDiagramTechnologyFactory">
+            <summary>
+            A NDiagramTechnologyFactory factory is used by the <see cref="T:Nevron.Diagram.WebForm.NDrawingView"/> class
+            to create different NDiagramClientServerTechnology instances based on a <see cref="T:Nevron.UI.WebForm.Controls.WebControlTechnologyType"/>
+            control parameter. The factory, used by a <see cref="T:Nevron.Diagram.WebForm.NDrawingView"/> instance is initialized
+            once in the control's constructor. Later, when the Technology property of the <see cref="T:Nevron.Diagram.WebForm.NDrawingView"/>
+            instance is changed, the factory replaces the current NDiagramClientServerTechnology instance, exposed by the ClientServerTechnology property of the 
+            <see cref="T:Nevron.Diagram.WebForm.NDrawingView"/> object with a new instance of a different NDiagramClientServerTechnology implementation.
+            <para>
+            E.g. when the Technology property is set to WebControlTechnologyType.Ajax, the ClientServerTechnology is initialized with a NDiagramAjaxTechnology
+            instance. When the Technology property is set to WebControlTechnologyType.Postback, the ClientServerTechnology is initialized with a NDiagramPostbackTechnology
+            instance.
+            </para>
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramTechnologyFactory.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramTechnologyFactory.Create(Nevron.UI.WebForm.Controls.WebControlTechnologyType,Nevron.UI.WebForm.Controls.NWebControl)">
+            <summary>
+            Creates a new instance of a class, derived from the NDiagramClientServerTechnology base class.
+            </summary>
+            <param name="type">
+            The type of the technology that determines which class, derived from the NDiagramClientServerTechnology base class, to use for the new instance.
+            </param>
+            <param name="webControl">
+            The web control to associate the new NDiagramClientServerTechnology object with.
+            </param>
+            <returns>A new instance of a either NDiagramAjaxTechnology or NDiagramPostbackTechnology clas, depending to the type parameter.</returns>
+        </member>
+        <member name="T:Nevron.Diagram.WebForm.NDiagramImageFormatProvider">
+            <summary>
+            Summary description for NDiagramImageFormatProvider.
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramImageFormatProvider.#ctor(Nevron.Diagram.WebForm.NDrawingView)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="view">view associated with the image provider</param>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramImageFormatProvider.#ctor(Nevron.Diagram.NDrawingDocument,Nevron.Diagram.Extensions.NCanvas)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="document">document associated with the image provider</param>
+            <param name="canvas">canvas associated with the image provider</param>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramImageFormatProvider.ProvideImage(Nevron.GraphicsCore.NSize,Nevron.GraphicsCore.NResolution,Nevron.GraphicsCore.INImageFormat)">
+            <summary>
+            Provides an image with the specifies dimensions and format.
+            </summary>
+            <param name="dimensions"></param>
+            <param name="resolution"></param>
+            <param name="imageFormat"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramImageFormatProvider.ProvideImage(Nevron.GraphicsCore.NSize,Nevron.GraphicsCore.NRectangle,Nevron.GraphicsCore.NResolution,Nevron.GraphicsCore.INImageFormat)">
+            <summary>
+            Provides an image with the specifies dimensions and format.
+            </summary>
+            <param name="dimensions"></param>
+            <param name="viewport"></param>
+            <param name="resolution"></param>
+            <param name="imageFormat"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Nevron.Diagram.WebForm.NDiagramImageFormatProvider.m_Document">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Nevron.Diagram.WebForm.NDiagramImageFormatProvider.m_Canvas">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Nevron.Diagram.WebForm.NDiagramImageFormatProvider.m_View">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Nevron.Diagram.WebForm.NDiagramRasterImageFormatProvider">
+            <summary>
+            Summary description for NDiagramRasterImageFormatProvider.
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramRasterImageFormatProvider.#ctor(Nevron.Diagram.WebForm.NDrawingView)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="view">view associated with the image provider</param>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramRasterImageFormatProvider.#ctor(Nevron.Diagram.NDrawingDocument,Nevron.Diagram.Extensions.NCanvas)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="document">document associated with the image provider</param>
+            <param name="canvas">canvas associated with the image provider</param>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramRasterImageFormatProvider.ProvideImage(Nevron.GraphicsCore.NSize,Nevron.GraphicsCore.NResolution,Nevron.GraphicsCore.INImageFormat)">
+            <summary>
+            Provides a raster image with the specifies dimensions and format.
+            </summary>
+            <param name="dimensions"></param>
+            <param name="resolution"></param>
+            <param name="imageFormat"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramRasterImageFormatProvider.ProvideImage(Nevron.GraphicsCore.NSize,Nevron.GraphicsCore.NRectangle,Nevron.GraphicsCore.NResolution,Nevron.GraphicsCore.INImageFormat)">
+            <summary>
+            Provides a raster image with the specifies dimensions and format.
+            </summary>
+            <param name="dimensions"></param>
+            <param name="viewport"></param>
+            <param name="resolution"></param>
+            <param name="imageFormat"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramRasterImageFormatProvider.UpdateBitmap(System.Drawing.Bitmap,Nevron.GraphicsCore.NResolution)">
+            <summary>
+            Must override to update the internally created bitmap
+            </summary>
+            <param name="bitmap"></param>
+            <param name="resolution"></param>
+        </member>
+        <member name="P:Nevron.Diagram.WebForm.NDiagramRasterImageFormatProvider.ProvidedMimeTypes">
+            <summary>
+            Obtains an array of the provided mime types
+            </summary>
+        </member>
+        <member name="T:Nevron.Diagram.WebForm.NDiagramSvgImageFormatProvider">
+            <summary>
+            Summary description for NDiagramSvgImageFormatProvider.
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramSvgImageFormatProvider.#ctor(Nevron.Diagram.WebForm.NDrawingView)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="view">view associated with the image provider</param>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramSvgImageFormatProvider.#ctor(Nevron.Diagram.NDrawingDocument,Nevron.Diagram.Extensions.NCanvas)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="document">document associated with the image provider</param>
+            <param name="canvas">canvas associated with the image provider</param>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramSvgImageFormatProvider.ProvideImage(Nevron.GraphicsCore.NSize,Nevron.GraphicsCore.NResolution,Nevron.GraphicsCore.INImageFormat)">
+            <summary>
+            Provides an image with the specifies dimensions and format.
+            </summary>
+            <param name="dimensions"></param>
+            <param name="resolution"></param>
+            <param name="imageFormat"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramSvgImageFormatProvider.ProvideImage(Nevron.GraphicsCore.NSize,Nevron.GraphicsCore.NRectangle,Nevron.GraphicsCore.NResolution,Nevron.GraphicsCore.INImageFormat)">
+            <summary>
+            
+            </summary>
+            <param name="dimensions"></param>
+            <param name="viewport"></param>
+            <param name="resolution"></param>
+            <param name="imageFormat"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Nevron.Diagram.WebForm.NDiagramSvgImageFormatProvider.ProvidedMimeTypes">
+            <summary>
+            Obtains an array of the provided mime types
+            </summary>
+        </member>
+        <member name="T:Nevron.Diagram.WebForm.INDrawingViewDesigner">
+            <summary>
+            Summary description for INDrawingViewDesigner.
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.WebForm.INDrawingViewDesigner.DrawingView">
+            <summary>
+            The associated drawing view
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.INDrawingViewDesigner.OnDrawingViewChanged">
+            <summary>
+            Notifies the designer that the drawing view has changed
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDocumentHolder.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDocumentHolder.#ctor(Nevron.Diagram.NDocument)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="document"></param>
+        </member>
+        <member name="T:Nevron.Diagram.WebForm.NDrawingView">
+            <summary>
+            The NDrawingView class represents a view, which is used to display and a single NDrawingDocument instance in the context of WebForm applications.
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDrawingView.#ctor">
+            <summary>
+            Creates a new instance with default settings.
+            </summary>
+            <remarks>
+            The default settings for the server control are saved in the web.config file in XML format. For more information on server side configuration settings take a look at the User's guide.
+            </remarks>
+        </member>
+        <member name="P:Nevron.Diagram.WebForm.NDrawingView.Serializer">
+            <summary>
+            Document serializer for the control
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDrawingView.WriteHtmlMap(Nevron.GraphicsCore.NHtmlMapContext,System.IO.TextWriter)">
+            <summary>
+            Writes an image map to the specified text writer.
+            </summary>
+            <param name="context"></param>
+            <param name="textWriter"></param>
+        </member>
+        <member name="P:Nevron.Diagram.WebForm.NDrawingView.ServerConfigSectionName">
+            <summary>
+            Obtains the server configuration section name corresponding to this control.
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.WebForm.NDrawingView.Document">
+            <summary>
+            Obtains the current drawing view document.
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDrawingView.Refresh">
+            <summary>
+            Refreshes the view (repaint it)
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDrawingView.SmartRefresh">
+            <summary>
+            Smartly refreshes the view (only repaints the view area which is invalid)
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDrawingView.UpdateView">
+            <summary>
+            Informs the view that it needs to update itself
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDrawingView.GetViewBridge(Nevron.Diagram.ViewBridgeType)">
+            <summary>
+            Gets a reference for the specified view bridge
+            </summary>
+            <param name="bridgeType">view bridge type to get</param>
+            <returns>reference to view bridge, or null if the view cannot provide it</returns>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDrawingView.Dispose">
+            <summary>
+            Disposes the contained bitmap and graphics
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDrawingView.UpdateClientSideBounds">
+            <summary>
+            When used with AJAX mode, this method enforces the client side
+            image size to be updated accordingly to the currently specified
+            control dimensions.
+            </summary>
+            <remarks>
+            Call this method after modifying the Width and/or Height properties
+            of the web control from within an asynchronous event handler.
+            </remarks>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDrawingView.SizeToContent">
+            <summary>
+            Resizes the drawing view to fit the document content
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDrawingView.SizeToContent(Nevron.GraphicsCore.NSizeF,Nevron.Diagram.NMargins)">
+            <summary>
+            Resizes the drawing view to fit the document content
+            </summary>
+            <param name="minSize">Minimal new document bounds</param>
+            <param name="padding">Padding applied to document content</param>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDrawingView.HitTest(Nevron.UI.WebForm.Controls.NCallbackMouseEventArgs)">
+            <summary>
+            Returns a NNodeList collection containing all visual objects at the given window coordinates.
+            </summary>
+            <param name="args">
+            An <see cref="T:Nevron.UI.WebForm.Controls.NCallbackMouseEventArgs"/> containing the hit-test coordinates.
+            </param>
+            <returns>
+            A <see cref="T:Nevron.Dom.NNodeList"/> object containing all visual objects at the given window coordinates.
+            </returns>
+            <remarks>
+            Objects with highter z-order have greater index in the collection.
+            </remarks>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDrawingView.HitTest(Nevron.GraphicsCore.NPointF)">
+            <summary>
+            Returns a NNodeList collection containing all visual objects at the given window coordinates.
+            </summary>
+            <param name="point">
+            A point containing the hit-test coordinates.
+            </param>
+            <returns>
+            A <see cref="T:Nevron.Dom.NNodeList"/> object containing all visual objects at the given window coordinates.
+            </returns>
+            <remarks>
+            Objects with highter z-order have greater index in the collection.
+            </remarks>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDrawingView.ProvideDocumentHitTestContext">
+            <summary>
+            Provides a valid hit test context, which can be used for document hit tests
+            </summary>
+            <returns>document hit test context</returns>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDrawingView.Zoom(System.Single)">
+            <summary>
+            Applies equal X and Y scales of the view and preserves the current viewport center
+            </summary>
+            <param name="zoom">zoom factor</param>
+            <retruns>true if zoomed successfully, otherwise false</retruns>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDrawingView.Zoom(System.Single,Nevron.GraphicsCore.NPointF)">
+            <summary>
+            Applies equal X and Y scales of the view and makes the specified point the new viewport center
+            </summary>
+            <param name="zoom">zoom factor</param>
+            <param name="viewportCenter">new viewport center</param>
+            <retruns>true if zoomed successfully, otherwise false</retruns>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDrawingView.IsValidScaleFactor(System.Single)">
+            <summary>
+            Determines whether the specified scale factor is valid
+            </summary>
+            <remarks>
+            This method takes into account the document settings MinZoomFactor and MaxZoomFactor properties.
+            </remarks>
+            <param name="scaleFactor">scale factor</param>
+            <returns>true if the scale factor is valid, otherwise false</returns>
+        </member>
+        <member name="P:Nevron.Diagram.WebForm.NDrawingView.ViewLayout">
+            <summary>
+            Gets/sets the view layout
+            </summary>
+            <remarks>
+            By default set to Normal.
+            </remarks>
+        </member>
+        <member name="P:Nevron.Diagram.WebForm.NDrawingView.ScaleX">
+            <summary>
+            Gets/sets the X scale of the world to view transformation
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.WebForm.NDrawingView.ScaleY">
+            <summary>
+            Gets/sets the Y scale of the world to view transformation
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.WebForm.NDrawingView.DocumentPadding">
+            <summary>
+            Controls the document padding (in document measurment units)
+            </summary>
+            <remarks>
+            The document padding defines a constant inflate of the document bounds
+            </remarks>
+        </member>
+        <member name="P:Nevron.Diagram.WebForm.NDrawingView.ViewportOrigin">
+            <summary>
+            Gets/sets the viewport origin
+            </summary>
+            <remarks>
+            The viewport origin is the point in scene coordinates, which is mapped to the 
+            left-top corner of the window (e.g. the WindowOrigin). Scrollbars can 
+            change the viewport origin to achieve effects like scrolling and panning.
+            </remarks>
+            
+        </member>
+        <member name="P:Nevron.Diagram.WebForm.NDrawingView.GlobalVisibility">
+            <summary>
+            Controls the global visilbity of elements and effects
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.WebForm.NDrawingView.FormatProviders">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.WebForm.NDrawingView.SceneToDevice">
+            <summary>
+            Obtains the current scene to device transformation (identical for the document and the view scene).
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.WebForm.NDrawingView.SceneScaleToPixelsX">
+            <summary>
+            Obtains the current X scaling of scene units to pixels (identical for the document and the view scene)
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.WebForm.NDrawingView.SceneScaleToPixelsY">
+            <summary>
+            Obtains the current Y scaling of scene units to pixels (identical for the document and the view scene)
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.WebForm.NDrawingView.DocumentSceneToWorld">
+            <summary>
+            Obtains the current scene to world transformation of the document.
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.WebForm.NDrawingView.DocumentWorldToView">
+            <summary>
+            Obtains the current world to view transformation of the document.
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.WebForm.NDrawingView.DocumentWorldToDevice">
+            <summary>
+            Obtains the current world to device transformation of the document.
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.WebForm.NDrawingView.SceneBounds">
+            <summary>
+            Obtains the current document scene bounds.
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.WebForm.NDrawingView.ViewportSize">
+            <summary>
+            Obtains the document viewport size.
+            </summary>
+        </member>
+        <member name="T:Nevron.Diagram.WebForm.NDrawingViewDesigner">
+            <summary>
+            Summary description for NDrawingViewDesigner.
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDrawingViewDesigner.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDrawingViewDesigner.Dispose(System.Boolean)">
+            <summary>
+            Deletes all temporary files, created by the designer
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDrawingViewDesigner.ProvideReference(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="parentType"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Nevron.Diagram.WebForm.NDrawingViewDesigner.DrawingView">
+            <summary>
+            The associated drawing view
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDrawingViewDesigner.OnDrawingViewChanged">
+            <summary>
+            Notifies the designer that the drawing view has changed
+            </summary>
+        </member>
+        <member name="T:Nevron.Diagram.WebForm.NDrawingViewHostPage">
+            <summary>
+            Summary description for NImageHostPage.
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDrawingViewHostPage.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.WebForm.NDrawingViewHostPage.DrawingView">
+            <summary>
+            Gets/sets the drawing view associated with this page
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDrawingViewHostPage.Page_Load(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDrawingViewHostPage.OnInit(System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="T:Nevron.Diagram.WebForm.NDiagramBatonSessionStateManager">
+            <summary>
+            NDiagramBatonSessionStateManager maintains a state between two postbacks.
+            On every postback the manager checks if a prevoius state exists and if yes
+            removes it, prior to storing a new one.
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramBatonSessionStateManager.#ctor(System.Web.HttpContext,System.String)">
+            <summary>
+            Initializes a new instance of the state manager with given HTTP context and a default state object id.
+            </summary>
+            <param name="httpContext">
+            The HTTP request of the current request.
+            </param>
+            <param name="stateId">
+            The state object id.
+            </param>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramBatonSessionStateManager.CreateStateObject(System.String,Nevron.UI.WebForm.Controls.NImage)">
+            <summary>
+            Creates a new state instance.
+            </summary>
+            <param name="stateId">
+            The id of the new state.
+            </param>
+            <param name="imageControl">
+            A chart control to be stored into the state.
+            </param>
+            <returns>
+            The state object.
+            </returns>
+        </member>
+        <member name="T:Nevron.Diagram.WebForm.NDiagramPermanentSessionStateManager">
+            <summary>
+            NDiagramPermanentSessionStateManager maintains a permanent state in the session state.
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramPermanentSessionStateManager.#ctor(System.Web.HttpContext,Nevron.UI.WebForm.Controls.NWebControl)">
+            <summary>
+            Initializes a new instance of the state manager with given HTTP context and web control.
+            </summary>
+            <param name="httpContext">
+            The HTTP request of the current request.
+            </param>
+            <param name="webControl">
+            The associated web control.
+            </param>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramPermanentSessionStateManager.#ctor(System.Web.HttpContext,System.String)">
+            <summary>
+            Initializes a new instance of the state manager with given HTTP context and a default state object id.
+            </summary>
+            <param name="httpContext">
+            The HTTP request of the current request.
+            </param>
+            <param name="stateId">
+            The state object id.
+            </param>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramPermanentSessionStateManager.CreateStateObject(System.String,Nevron.UI.WebForm.Controls.NImage)">
+            <summary>
+            Creates a new state instance.
+            </summary>
+            <param name="stateId">
+            The id of the new state.
+            </param>
+            <param name="imageControl">
+            A chart control to be stored into the state.
+            </param>
+            <returns>
+            The state object.
+            </returns>
+        </member>
+        <member name="T:Nevron.Diagram.WebForm.NDiagramRenderSessionStateManager">
+            <summary>
+            NDiagramRenderSessionStateManager maintains a state between the HTML render phase and the image render phase.
+            When an image is rendered, the state object, stored into the session state, is removed.
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramRenderSessionStateManager.#ctor(System.Web.HttpContext,Nevron.UI.WebForm.Controls.NWebControl)">
+            <summary>
+            Initializes a new instance of the state manager with given HTTP context and web control.
+            </summary>
+            <param name="httpContext">
+            The HTTP request of the current request.
+            </param>
+            <param name="webControl">
+            The associated web control.
+            </param>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramRenderSessionStateManager.#ctor(System.Web.HttpContext,System.String)">
+            <summary>
+            Initializes a new instance of the state manager with given HTTP context and a default state object id.
+            </summary>
+            <param name="httpContext">
+            The HTTP request of the current request.
+            </param>
+            <param name="stateId">
+            The state object id.
+            </param>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramRenderSessionStateManager.CreateStateObject(System.String,Nevron.UI.WebForm.Controls.NImage)">
+            <summary>
+            Creates a new state instance.
+            </summary>
+            <param name="stateId">
+            The id of the new state.
+            </param>
+            <param name="imageControl">
+            A chart control to be stored into the state.
+            </param>
+            <returns>
+            The state object.
+            </returns>
+        </member>
+        <member name="T:Nevron.Diagram.WebForm.NDiagramSessionStateObject">
+            <summary>
+            Contains the diagram data to be stored into the session state
+            between AJAX callback events and render requests.
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramSessionStateObject.#ctor(System.String,System.Guid,Nevron.UI.WebForm.Controls.INHttpHandlerCallback,Nevron.GraphicsCore.NImageFormat,Nevron.Diagram.NDrawingDocument,Nevron.Diagram.Extensions.NCanvas)">
+            <summary>
+            Initializes a new instance of the NDiagramSessionState class
+            with given diagram document and canvas to draw images onto.
+            </summary>
+            <param name="stateId">
+            A guid that uniquely identifies the specific instance of the state of a web control.
+            </param>
+            <param name="snapshotGuid">
+            A guid that uniquely identifies a specific image snapshot of the web control.
+            </param>
+            <param name="document">
+            The diagam document.
+            </param>
+            <param name="canvas">
+            The virtual drawing surface, which can be used to render a drawing document.
+            </param>
+            <param name="httpHandlerCallback">
+            The http handler callback that is used when operating in Nevron Instant Callback mode.
+            </param>
+            <param name="imageFormat">
+            The image format of the rendered image. Can be null for controls that do not generate an image.
+            </param>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramSessionStateObject.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramSessionStateObject.HitTest(Nevron.UI.WebForm.Controls.NCallbackMouseEventArgs)">
+            <summary>
+            Returns a NNodeList collection containing all visual objects at the given window coordinates.
+            </summary>
+            <param name="args">
+            An <see cref="T:Nevron.UI.WebForm.Controls.NCallbackMouseEventArgs"/> containing the hit-test coordinates.
+            </param>
+            <returns>
+            A <see cref="T:Nevron.Dom.NNodeList"/> object containing all visual objects at the given window coordinates.
+            </returns>
+            <remarks>
+            Objects with highter z-order have greater index in the collection.
+            </remarks>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramSessionStateObject.HitTest(Nevron.GraphicsCore.NPointF)">
+            <summary>
+            Returns a NNodeList collection containing all visual objects at the given window coordinates.
+            </summary>
+            <param name="point">
+            A point containing the hit-test coordinates.
+            </param>
+            <returns>
+            A <see cref="T:Nevron.Dom.NNodeList"/> object containing all visual objects at the given window coordinates.
+            </returns>
+            <remarks>
+            Objects with highter z-order have greater index in the collection.
+            </remarks>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramSessionStateObject.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Provided for serialization support
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramSessionStateObject.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Provided for serialization support
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="P:Nevron.Diagram.WebForm.NDiagramSessionStateObject.ViewSize">
+            <summary>
+            Gets the size of the view.
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramSessionStateObject.ProvideDocumentHitTestContext">
+            <summary>
+            Provides a valid hit test context, which can be used for document hit tests
+            </summary>
+            <returns>document hit test context</returns>
+        </member>
+        <member name="P:Nevron.Diagram.WebForm.NDiagramSessionStateObject.Document">
+            <summary>
+            Gets / sets the diagram document.
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.WebForm.NDiagramSessionStateObject.Canvas">
+            <summary>
+            Gets / sets the virtual drawing surface, which can be used to render a drawing document.
+            </summary>
+        </member>
+        <member name="T:Nevron.Diagram.WebForm.NDiagramStateManagerFactory">
+            <summary>
+            Creates state agents for the diagram control.
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramStateManagerFactory.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.WebForm.NDiagramStateManagerFactory.CreateInstance(System.Web.HttpContext)">
+            <summary>
+            Creates a state manager.
+            </summary>
+            <param name="httpContext">
+            HTTP context.
+            </param>
+            <returns>
+            A state manager.
+            </returns>
+        </member>
+        <member name="M:Nevron.Internal.nGKE.SaveControlStateToFile(System.String,Nevron.Serialization.PersistencyFormat,Nevron.Serialization.INSerializationFilter)">
+            <summary>
+            Saves the current state of the chart control to a file in the specified format.
+            </summary>
+            <param name="pGKE">A relative or absolute path for the output file.</param>
+            <param name="QGKE">The format of the file.</param>
+            <param name="rGKE">A serialization filter.</param>
+            <remarks>
+            The filter parameters is used only when the format is CustomXML or CustomBinary.
+            </remarks>
+        </member>
+        <member name="M:Nevron.Internal.nGKE.LoadControlStateFromFile(System.String,Nevron.Serialization.PersistencyFormat,Nevron.Serialization.INSerializationFilter)">
+            <summary>
+            Loads an existing document state from a file.
+            </summary>
+            <param name="SGKE"></param>
+            <param name="tGKE"></param>
+            <param name="UGKE"></param>
+        </member>
+        <member name="M:Nevron.Internal.nGKE.SaveControlStateToStream(System.IO.Stream,Nevron.Serialization.PersistencyFormat,Nevron.Serialization.INSerializationFilter)">
+            <summary>
+            Saves the document state in the passed stream.
+            </summary>
+            <param name="vGKE">The stream to load the state from.</param>
+            <param name="WGKE">The format of the stream.</param>
+            <param name="xGKE">A serialization filter.</param>
+            <remarks>
+            You're responsible for the stream creation and closure. The filter parameter is used only when the format is CustomXML or CustomBinary.
+            </remarks>
+        </member>
+        <member name="M:Nevron.Internal.nGKE.LoadControlStateFromStream(System.IO.Stream,Nevron.Serialization.PersistencyFormat,Nevron.Serialization.INSerializationFilter)">
+            <summary>
+            Loads the document state from the passed stream.
+            </summary>
+            <param name="YGKE">The stream to save the state to.</param>
+            <param name="AhKE">The format of the stream.</param>
+            <param name="bhKE">A serialization filter.</param>
+            <remarks>
+            You're responsible for the stream creation and closure. The filter parameters is used only when the format is CustomXML or CustomBinary.
+            </remarks>
+        </member>
+    </members>
+</doc>

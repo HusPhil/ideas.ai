@@ -1,21 +1,20 @@
-import pathlib
 import sys
-import textwrap
 import google.generativeai as genai
 from google.generativeai.types import HarmCategory, HarmBlockThreshold
 
-response = ''
-
 try:
+    if len(sys.argv) < 3:
+        raise ValueError("Please provide both the text prompt and the Google API key as command line arguments.")
+
     GOOGLE_API_KEY = sys.argv[2]
 
     genai.configure(api_key=GOOGLE_API_KEY)
 
     mysafety_settings = {
-      HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_ONLY_HIGH,
-      HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
-      HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
-      HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+        HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+        HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+        HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+        HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
     }
 
     model = genai.GenerativeModel(
@@ -27,8 +26,12 @@ try:
     response = model.generate_content(sys.argv[1])
 
     print(response.text)
+
+except UnicodeEncodeError as e:
+    print(f"ERROR: Unable to encode response text. Please check the encoding settings. {e}")
+
+except AttributeError as e:
+    print(f"ERROR: Attribute error occurred. {e}")
+
 except Exception as e:
-    if(response != ''):
-        print(f"ERROR: Something went wrong. Can't connect to Gemini AI.' {response.candidates}")
-    else:
-        print(f"ERROR: {str(e)}")
+    print(f"ERROR: {str(e)}")

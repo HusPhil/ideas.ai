@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Xamarin.Forms.PancakeView</name>
+    </assembly>
+    <members>
+        <member name="M:Xamarin.Forms.PancakeView.MacOS.PancakeViewRenderer.Init">
+            <summary>
+            This method ensures that we don't get stripped out by the linker.
+            </summary>
+        </member>
+    </members>
+</doc>

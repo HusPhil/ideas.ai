@@ -1,0 +1,206 @@
+﻿NEVRON SOFTWARE LICENSE AGREEMENT 
+Nevron .NET Vision License Agreement
+
+IMPORTANT: Read carefully the following license agreement before installing or using Nevron Software Products, and/or all related materials. 
+
+This License Agreement is a legal agreement between NEVRON SOFTWARE LLC, a corporation with its principal place of business located at 501 Silverside Road Suite 105, Wilmington, DE 19809, USA (hereinafter referred to as "Nevron"), and you (either an individual or an entity), the licensee of the Nevron Software Products and the Nevron .NET Vision product family including:
+(i) “ Nevron .NET Vision “,
+(ii) “ Nevron Chart for .NET “,
+(iii) “ Nevron Diagram for .NET “ or
+(iv) “ Nevron User Interface for .NET “
+which includes computer software, and may include associated media, printed materials, online or electronic documentation (such products and materials being hereinafter referred to as "Software").
+
+Each of the following acts by you, your employee or agent, shall constitute your acceptance of the terms and conditions of this Agreement and your agreement to be bound thereby:
+(i) loading or installing any of the executable files, DLL's or data files of Nevron into memory or virtual memory of any computer;
+(ii) clicking to signify acceptance of this Agreement during the software installation process;
+(iii) opening the sealed disk package, if any;
+(iv) delivering a signed copy of this Agreement to Nevron;
+
+You shall have no rights to any of the Software or its use unless you have accepted the terms and conditions of this Agreement and agreed to be bound thereby.
+
+BY INSTALLING, COPYING, OR OTHERWISE USING THE SOFTWARE, YOU AGREE TO BE BOUND BY THE TERMS OF THIS LICENSE AGREEMENT. IF YOU DO NOT AGREE TO THE TERMS AND CONDITIONS OF THIS LICENSE AGREEMENT AND DO NOT INDICATE YOUR ACCEPTANCE, YOU WILL NOT BE PERMITTED TO USE THE SOFTWARE.
+
+1. UTILITY OF THE SOFTWARE: The Software is intended to be used by web application developers and desktop application developers as a development tool for adapting, configuring, and producing code to integrate the Software with other work, within 32 bit or 64 bit Microsoft Windows® based operating systems.
+
+2. GRANT OF LICENSE RIGHTS: The Software is licensed on a per developer basis (individual developer using the Software for development purposes) and per production server deployment basis. Each developer who desires to use the Software must hold a valid Developer License. In consideration of your acceptance to be bound by the terms and conditions of this Agreement, Nevron grants you the non-exclusive, non-transferable right to use the Software for the sole purpose of creating integration program code and web content to aid in integrating the Software (Nevron .NET Vision controls) with desktop applications or web applications and web content you produce (“the Work”), and on one or more test servers used for testing and evaluation purposes only, to produce charts, gauges and diagrams or graphs (graphical representations or diagrams), provided that:
+(i) you have registered this Software with Nevron;
+(ii) a separate Developer License is required for each person working with the Software, who develops, manipulates, configures, adjusts, or alters the program code or web content while integrating the Work with the Software;
+(iii) a separate Production Server License is required for each Production Server in which the Work will be deployed and running, and for each Production Server which will be displaying charts, gauges and diagrams or graphs (graphical representations or diagrams) generated using the Software;
+(iv) the Software is not the sole or primary component of the Work;
+(v) you shall not substantially duplicate the capabilities of the Software or, in the reasonable opinion of Nevron, compete with, directly or indirectly, the Software;
+(vi) you do not use the Software as or to create a product or service or utility which exposes the functionality of the Software to other users in such a way as to compete, directly or indirectly, with the Software;
+(vii) you agree not to remove any copyright, trademark, or patent notices contained in or on the Software;
+(viii) you agree to indemnify, defend and hold Nevron harmless from and against any claims or lawsuits, including reasonable attorney's and legal fees, that arise or result from the use or distribution of the Software.
+
+Your rights to use the Software are conditional on your compliance with the terms of this Agreement.
+
+2.1. DEVELOPER LICENSE: A Developer License for the Software is required for each person working with the Software, who develops, manipulates, configures, adjusts, or alters the program code or web content while integrating the Work with the Software.
+
+Each individual developer who desires to use the Software must hold a valid Developer License. Each Developer License includes a single Production Server License by default.
+
+2.2. DEVELOPER LICENSE FEES: The Software Developer License cost is determined based on the number of developers working with the Software for developing, manipulating, configuring, adjusting or altering the program code or web content while integrating the Work with the Software and the type of Nevron Services provided with the License (Subscriptions, Technical Support etc.).
+
+Prices are available upon request and are subject to change. Please consult Nevron or its authorized resellers as to current fees before placing an order. All license fees are non-refundable and non-cancelable.
+
+2.3. PRODUCTION SERVER LICENSE: A Production Server License is required for each Production Server in which the Work will be deployed and running, and for each Production Server which will be displaying charts, gauges and diagrams or graphs (graphical representations or diagrams) generated using the Software.
+
+There is no restriction on the number of users viewing the Production Server environment and there is no restriction on the number of users viewing the charts, gauges and diagrams or graphs (graphical representations or diagrams) generated using the Software.
+
+2.4. PRODUCTION SERVER LICENSE FEES: The Production Server License cost is determined based on the number of Production Servers in which the Work will be deployed and running, and for each Production Server which will be displaying charts, gauges and diagrams or graphs (graphical representations or diagrams) generated using the Software.
+
+Prices are available upon request and are subject to change. Please consult Nevron or its authorized resellers as to current fees before placing an order. All license fees are non-refundable and non-cancelable.
+
+2.5. DEVELOPMENT AND TEST ENVIRONMENTS: The Software may be used on one or more Development or Test environments in evaluation mode and does not require a Developer License or Production Server License. The evaluation Software may be used for evaluation and testing purposes only.
+
+3. OWNERSHIP OF SOFTWARE: As the licensee, you own the magnetic or other physical media on which the Software is originally or subsequently recorded or fixed, but an express condition of this Agreement is that Nevron retains the ownership, title, copyright, and other intellectual property rights of the Software. The Software is licensed, not sold, and all rights not expressly granted in this Agreement are reserved by Nevron.
+
+4. COPYRIGHT: The Software is owned by Nevron Software LLC and is protected by the United States copyright laws and international treaty provisions. Nevron owns and retains all rights, title, and interest in and to the Software, including all copyrights, patents, trade secret rights, trademarks, and other intellectual property rights therein.
+
+You acknowledge that your possession, installation, or use of the Software does not transfer to you any title to the intellectual property in the Software, and that you will not acquire any rights to the Software except as expressly set forth in this Agreement. You agree that any copies of the Software will contain the same proprietary notices that appear on and in the Software. You will not copy all or a substantial part of the Software, except to the extent necessary to install the program in a single hard disk or other storage device and as provided herein or except in compliance with the grant of rights to you herein.
+
+You may copy the Software solely for backup and archival purposes, provided that the original and each copy are kept in your possession and that your installation and use of the Software does not exceed that allowed in the "GRANT OF LICENSE RIGHTS" section above.
+
+A License for the Software may not be shared or used concurrently on different computers. 
+
+5. INTELLECTUAL PROPERTY RIGHTS: You acknowledge that the Software and any copies that you are authorized to make in accordance with this Agreement are the intellectual property of and are owned by Nevron Software LLC. The Software is protected by copyright, including without limitation by United States Copyright Law, international treaty provisions and applicable laws in the country in which it is being used.
+
+You acknowledge that Nevron retains the ownership of all patents, copyrights, trade secrets, trademarks and other intellectual property rights pertaining to the Software, and that Nevron's ownership rights extend to any images, photographs, animations, videos, audio, music, text and "applets" incorporated into the Software and all accompanying materials. You will take no actions which adversely affect Nevron's intellectual property rights in the Software.
+
+Except as expressly stated above, this Software License Agreement does not grant you any intellectual property rights in the Software.
+
+6. REDISTRIBUTABLE CODE: You may not redistribute any part of the Software, except the run-time assemblies (.dlls). These dlls may only be redistributed upon your compliance with the Redistributable Code License rights described below.
+
+Redistributable Code - Additional License Rights and Distribution Requirements
+In addition to the rights granted above, the assemblies (.dll) ("the Redistributable"), is provided to you with additional license rights and distribution requirements.
+
+6.1. Additional License Rights
+Nevron grants you a limited, nonexclusive license to distribute the assemblies in the Software, so long as you redistribute such content in its entirety and do not modify such content in any way.
+
+6.2. Distribution Requirements
+The assemblies can be redistributed, in conjunction with and as a part of a software application product, the Work, developed by you and that furthermore complies with section 6.3 of this License Agreement. The Work must display your own valid copyright notice which shall be sufficient to protect Nevron's copyright in the Redistributable. You cannot remove or obscure any trademark or copyright that appears on the Software as delivered to you by Nevron. If you choose to redistribute the dlls, you also agree:
+(i) to indemnify, hold harmless, and defend Nevron from and against any claims or lawsuits, including attorney's fees, resulting from the use or distribution of the Work;
+(ii) to comply with the terms of this License Agreement;
+(iii) to permit further distribution of the Redistributable by your end users, only if they comply with all restrictions of this License Agreement that are applicable to you;
+(iv) and agree that Nevron reserves all rights not expressly granted.
+
+6.3. Non-competition clause
+The Work cannot compete with the Software. Under no circumstances may the Software be used in whole or in part, as the basis for creating a product that provides the same, or substantially the same, functionality as any Nevron Software.
+
+The Work must not substantially duplicate the capabilities of the Software or, in the reasonable opinion of Nevron, compete with, directly or indirectly, the Software. You agree not to use the Software as or to create a product or service or utility which exposes the functionality of the Software to other users in such a way as to compete, directly or indirectly, with the Nevron Software.
+
+7. LIMITED TRANSFER RIGHTS: This license may not be transferred or assigned to anyone without the prior written consent of Nevron.  Any authorized transferee of the Software shall be bound by the terms and conditions of this Agreement.
+
+Notwithstanding the foregoing, you may transfer all your rights to use the Software to another person or legal entity provided that:
+(i) you also transfer each of this Software License Agreement, the Software and all other software or hardware bundled or pre-installed with the Software, including all copies, updates and prior versions, and all copies of font software converted into other formats, to such person or entity;
+(ii) you retain no copies, including backups and copies stored on a computer;
+(iii) the receiving party secures a personalized serial number from Nevron; and 
+(iv) the receiving party accepts the terms and conditions of this Software License Agreement and any other terms and conditions upon which you legally purchased a license to the Software.
+
+Notwithstanding the foregoing, you may not transfer education, pre-release, or not-for-resale copies of the Software.
+
+8. OTHER RESTRICTIONS:
+8.1. No Reverse Engineering, no decompilation and no disassembly
+You shall not reverse engineer, decompile or disassemble the Software.
+
+8.2. No sublicensing, rental, no leasing and no lending
+You may not sublicense, rent, lease or lend any portion of the Software. You may not provide commercial hosting services with the Software (except to the extent that the Software is integrated into a Production environment, on the terms provided in this Agreement, which is made available for use by end users through a hosted service).
+
+You may not redistribute the Software without the express written consent of Nevron which will be granted through a Nevron Software OEM License Agreement.
+
+9. ADDITIONAL PROVISOS FOR EVALUATION AND BETA VERSIONS SOFTWARE
+9.1. ADDITIONAL PROVISOS FOR EVALUATION VERSIONS SOFTWARE
+If the Software is identified as Evaluation version Software ("Evaluation Software"), the following section applies to all evaluation and/or demonstration copies of Nevron Software and continues in effect until you purchase a license for the Software:
+(i) the Software may be used on one or more Development or Test environments;
+(ii) the Software may only be used for testing and evaluation purposes and may not be redistributed;
+(iii) access to any files created with the Evaluation Software is entirely at your risk; and
+(iv) you agree that the Software is provided "as is, where is" without warranty or condition of any kind.
+
+If the Evaluation Software has a time-out feature, then the software will cease operation after the conclusion of the designated evaluation period. Upon such an expiration date, your license will expire unless otherwise extended.
+
+9.2. ADDITIONAL PROVISOS FOR BETA VERSIONS SOFTWARE
+To the extent that any provision in this section conflicts with any other term or condition in this Software License Agreement, this section shall supersede such other term(s) and condition(s) only with respect to the Pre-release or Beta Software, but only to the extent necessary to resolve the conflict.
+
+If the Software is identified as Beta version Software ("Pre-release Software"), the following additional provisions apply:
+(i) you acknowledge that the Pre-release Software is a pre-release version, does not represent final product from Nevron, and may contain bugs, errors and other problems that could cause system or other failures and data loss, and may be substantially modified by Nevron prior to commercial release;
+(ii) this license expires in respect of Pre-release Software upon the availability of a commercial release of the Software from Nevron;
+(iii) the Software may only be used for testing and evaluation purposes and may not be redistributed;
+(iv) access to any files created with the Pre-release Software is entirely at your risk; and
+(v) you agree that the Software is provided "as is, where is" without warranty or condition of any kind.
+
+CONSEQUENTLY, THE PRE-RELEASE SOFTWARE IS PROVIDED TO YOU "AS-IS" WITH NO WARRANTIES FOR USE OR PERFORMANCE, AND NEVRON DISCLAIMS ANY WARRANTY OR LIABILITY OBLIGATIONS TO YOU OF ANY KIND, WHETHER EXPRESS OR IMPLIED.
+
+You acknowledge that Nevron has not promised or guaranteed to you that Pre-release Software will be announced or made available to anyone in the future, that Nevron has no express or implied obligation to you to announce or introduce the Pre-release Software, and that Nevron may not introduce a product similar to, or compatible with the Pre-release Software. Accordingly, you acknowledge that any research or development that you perform regarding the Pre-release Software or any product associated with the Pre-release Software is done entirely at your own risk. During the term of this Software License Agreement, if requested by Nevron, you will provide feedback to Nevron regarding testing and use of the Pre-release Software, including error or bug reports. You may not sublicense, lease, loan, rent, distribute or otherwise transfer the Pre-release Software. 
+
+10. TRADE SECRETS AND CONFIDENTIALITY: You agree with Nevron that:
+(i) the Software contains information or material which is proprietary to Nevron ("Confidential Information"), which is not generally known other than by Nevron, and which you may obtain knowledge of through, or as a result of the relationship established hereunder with Nevron.  Without limiting the generality of the foregoing, Confidential Information includes, but is not limited to, the following types of information, and other information of a similar nature (whether or not reduced to writing or still in development): designs, concepts, ideas, inventions, specifications, techniques, discoveries, models, data, source code, object code, documentation, graphs, diagrams, flow charts, research, development, methodology, processes, procedures, know-how, new product or new technology information, strategies and development plans (including prospective trade names or trademarks);
+(ii) such Confidential Information has been developed and obtained by Nevron by the investment of significant time, effort and expense, and provides Nevron with a significant competitive advantage in its business;
+(iii) you agree that you shall not make use of the Confidential Information for your own benefit or for the benefit of any person or entity other than Nevron, except for the expressed purposes described in the paragraph hereof entitled " UTILITY OF THE SOFTWARE ", in accordance with the provisions of this Agreement, and not for any other purpose;
+(iv) you agree to hold in confidence, and not to disclose or reveal to any person or entity, the Software, the Documentation or any other Confidential Information concerning the Software other than to such persons as Nevron shall have specifically agreed in writing to permit you to so disclose, except where such disclosure is necessary for you to utilize the Software for the furtherance of the expressed purposes described in the paragraph hereof entitled " UTILITY OF THE SOFTWARE ", in accordance with the provisions of this Agreement, and not for any other purpose; and
+(v) you acknowledge the purpose of this paragraph entitled " TRADE SECRETS AND CONFIDENTIALITY " is to protect Nevron's ability to limit the use of the data and the Software generally to licensees and to prevent the use of Confidential Information concerning the Software by other developers or vendors of software.
+
+11. RIGHTS TO IDEAS AND MATERIALS PROVIDED TO NEVRON: You grant Nevron, its affiliated companies and necessary sub-licensees and its licensors and suppliers permission to use and a grant of a worldwide, non-terminable, royalty-free, fully assignable and transferable right and license in perpetuity to use materials you provide to Nevron (including feedback and suggestions) or post, upload, input or submit ("Post") to Nevron or to any services for review by the general public, or for review by the members of any public or private community (a "Submission" or collectively "Submissions") for all purposes of Nevron, including, without limitation, the license rights to: copy, distribute, transmit, publicly display, publicly perform, reproduce, edit, translate and reformat your Submission; to use the ideas, concepts, methods, designs, code you have Posted for evaluation and testing and for use, deployment, sub-licensing or other exploitation, and/or integration into a Nevron product or service for evaluation, testing, use, deployment, sub-licensing and other exploitation; to publish your name in connection with your Submission; and the right to sublicense all such rights. You confirm that you will own or otherwise control all of the rights to your Submission including, without limitation, all the rights necessary for you to provide, post, upload, input or submit your Submissions.
+
+NEVRON OR ANY OF ITS EMPLOYEES DO NOT ACCEPT OR CONSIDER UNSOLICITED IDEAS, INCLUDING IDEAS FOR NEW ADVERTISING CAMPAIGNS, NEW PROMOTIONS, NEW PRODUCTS OR TECHNOLOGIES, PROCESSES, MATERIALS, MARKETING PLANS OR NEW PRODUCT NAMES. PLEASE DO NOT SEND ANY ORIGINAL CREATIVE ARTWORK, SAMPLES, DEMOS, OR OTHER WORKS. THE SOLE PURPOSE OF THIS POLICY IS TO AVOID POTENTIAL MISUNDERSTANDINGS OR DISPUTES WHEN NEVRON'S PRODUCTS OR MARKETING STRATEGIES MIGHT SEEM SIMILAR TO IDEAS SUBMITTED TO NEVRON. IF, DESPITE THIS REQUEST THAT YOU NOT SEND US IDEAS AND MATERIALS, YOU STILL SEND THEM, PLEASE UNDERSTAND THAT NEVRON MAKES NO ASSURANCES THAT YOUR IDEAS AND MATERIALS WILL BE TREATED AS CONFIDENTIAL OR PROPRIETARY. RATHER, YOU HEREBY GRANT TO NEVRON A WORLDWIDE, NON-TERMINABLE, ROYALTY FREE RIGHT AND LICENSE TO USE AND EXPLOIT SUCH IDEAS AND MATERIALS AS STATED HEREIN IN PERPETUITY. 
+
+12. TRANSFER OF "BUG FIXES": You may deliver or suggest "bug fixes" for Nevron's consideration in the event problems or defects are discovered in the Software.  Nevron shall have the absolute right to incorporate all such "bug fixes" accepted by Nevron into Nevron products and services for all purposes, without any payment or other compensation to you. All right, title and interest to any submitted "bug fixes", whether accepted or not, shall transfer to Nevron at no cost to Nevron.
+
+13. UPGRADES: Nevron may create, from time to time, maintenance releases, including bug fixes, service packs, incremental and minor version upgrades to the Software. Nevron, at its opinion, may upgrade users (free of charge) to a newer version of a Nevron Software product in order to fix a known issue that has been fixed in a service pack or minor version.
+
+To use a version of the Software identified as an upgrade, maintenance releases, service pack, incremental or minor version upgrade, you must first be properly licensed for the version of the Software identified by Nevron as eligible for the upgrade in order to use the Software. After upgrading, you will no longer receive Support for the Software that formed the basis for the upgrade.
+
+Any maintenance releases, including bug fixes, service packs, incremental and minor version upgrades provided to you pursuant to this Agreement or any other agreement relating to the Software will be governed by the terms of this Agreement.
+
+14. TERMINATION: This License Agreement takes effect upon your use of the Software and your acceptance of the Agreement. The Agreement is effective until terminated.  Nevron may terminate this Agreement upon issuance of written notice to you due to:
+(i) an intellectual property infringement claim relating to the Software in the event that Nevron is unable to remedy the infringement by providing a work-around or by obtaining the required license rights;
+(ii) in accordance with applicable law, including a court order; or
+(iii) your breach of any terms of this Agreement.
+
+Upon termination of this License Agreement, you agree to destroy or return the Documentation and all copies of the Software in your possession, including all updates, supplements, add-on components, or internet-based services, of the Software that Nevron has provided to you.
+
+15. LIMITED WARRANTY: NEVRON EXPRESSLY DISCLAIMS ANY WARRANTY FOR THE SOFTWARE. THE SOFTWARE AND ANY RELATED DOCUMENTATION (INCLUDING INSTRUCTIONS FOR USE) IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, SATISFACTORY QUALITY, INFORMATIONAL CONTENT OR ACCURACY, QUIET ENJOYMENT, TITLE AND NON-INFRINGEMENT, WITH REGARD TO THE SOFTWARE, AND THE PROVISION OF OR FAILURE TO PROVIDE SUPPORT SERVICES.
+
+NEVRON DOES NOT WARRANT, GUARANTEE OR MAKE ANY REPRESENTATIONS REGARDING THE USE, OR THE RESULTS OF USE, OF THE SOFTWARE OR DOCUMENTATION IN TERMS OF CORRECTNESS, ACCURACY, RELIABILITY OR OTHERWISE. THE ENTIRE RISK AS TO THE RESULTS AND PERFORMANCE OF THE SOFTWARE IS ASSUMED BY YOU.
+
+NEVRON DOES NOT WARRANT THAT THE SOFTWARE WILL MEET YOUR REQUIREMENTS, THAT THE OPERATION OF THE SOFTWARE WILL BE UNINTERRUPTED OR ERROR-FREE, OR THAT ALL SOFTWARE ERRORS WILL BE CORRECTED. NEVRON IS NOT RESPONSIBLE FOR PROBLEMS CAUSED BY CHANGES IN THE OPERATING CHARACTERISTICS OF COMPUTER HARDWARE OR COMPUTER OPERATING SYSTEMS WHICH ARE MADE AFTER THE RELEASE OF THE SOFTWARE NOR FOR PROBLEMS IN THE INTERACTION OF THE SOFTWARE WITH NON-NEVRON PRODUCTS.
+
+NO ORAL OR WRITTEN INFORMATION OR ADVICE GIVEN BY NEVRON, ITS EMPLOYEES, DISTRIBUTORS, DEALERS OR AGENTS SHALL INCREASE THE SCOPE OF THE ABOVE WARRANTIES OR CREATE ANY NEW WARRANTIES.
+
+NEITHER NEVRON NOR ANYONE ELSE WHO HAS BEEN INVOLVED IN THE CREATION, PRODUCTION OR DELIVERY OF THE SOFTWARE (INCLUDING, WITHOUT LIMITATION, NEVRON’S LICENSORS AND SUPPLIERS) SHALL BE LIABLE UNDER ANY LEGAL THEORY, WHETHER IN CONTRACT OR TORT OR PRODUCTS LIABILITY OR OTHERWISE, FOR ANY INDIRECT, CONSEQUENTIAL OR INCIDENTAL DAMAGES (INCLUDING DAMAGES FOR LOSS OF BUSINESS PROFITS, BUSINESS LOSSES, BUSINESS INTERRUPTION, WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, LOSS OF DATA, LOSS OF GOODWILL, AND ANY OF THE LIKE) ARISING OUT OF THE USE OR INABILITY TO USE THE SOFTWARE, OR ANY OTHER CLAIM BY ANY PARTY EVEN IF NEVRON HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+YOU CONTROL THE DEVELOPMENT, COMPLETION, IMPLEMENTATION, INSTALLATION, AND USE OF ANY APPLICATION CONTAINING THE SOFTWARE. NEVRON HAS NO CONTROL OF THE CONDUCT OF ANY USE OF ANY APPLICATION CONTAINING THE SOFTWARE AND NO CONTROL OF OR INTEREST IN THE SOFTWARE APPLICATIONS OR SERVICES OFFERED BY YOU. YOU AGREE TO INDEMNIFY AND HOLD NEVRON HARMLESS FROM AND AGAINST ANY CLAIMS, DAMAGES, OR LOSS YOU MAY SUFFER RESULTING FROM ANY CLAIMS BY SUB-LICENSEES, AND END USERS OF THE SOFTWARE OR OF ANY WORK OR ANY APPLICATION CONTAINING THE SOFTWARE, FOR ANY REASON WHATSOEVER INCLUDING ANY CLAIMS RESULTING FROM ERRORS IN DATA, ERRORS IN DATA PROCESSING, THE COMPLETE AND TOTAL FAILURE OF THE SOFTWARE OR ANY APPLICATION CONTAINING THE SOFTWARE TO PERFORM ANY OF ITS FUNCTIONS, WILFUL MISCONDUCT, OR OTHER DEFECT OR DEFICIENCY IN YOUR WORK OR IN THE PRODUCT OR SERVICE OFFERED BY YOU TO YOUR SUB-LICENSEES AND END USERS WHICH INCLUDES THE SOFTWARE, INCLUDING ANY DIRECT, INDIRECT, CONSEQUENTIAL OR INCIDENTAL DAMAGES (INCLUDING DAMAGES FOR LOSS OF BUSINESS PROFITS, BUSINESS LOSSES, BUSINESS INTERRUPTION, WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, LOSS OF DATA, LOSS OF GOODWILL, AND ANY OF THE LIKE) OR ANY OTHER CLAIM BY ANY PARTY EVEN IF NEVRON HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. 
+
+16. LIMITATION OF LIABILITY: TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW EVEN IF A REMEDY FAILS ITS ESSENTIAL PURPOSE, IN NO EVENT SHALL NEVRON OR ITS SUPPLIERS OR RESELLERS BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT, OR CONSEQUENTIAL DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS OF BUSINESS INFORMATION, OR ANY OTHER PECUNIARY LOSS) ARISING OUT OF THE USE OF OR INABILITY TO USE THE SOFTWARE OR THE PROVISION OF OR FAILURE TO PROVIDE SUPPORT SERVICES, EVEN IF NEVRON HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+IN ANY CASE, NEVRON’S ENTIRE LIABILITY UNDER ANY PROVISION OF THIS SOFTWARE LICENSE AGREEMENT SHALL BE LIMITED TO THE AMOUNT ACTUALLY PAID BY YOU FOR THE SOFTWARE PRODUCT.
+
+17. NO OPEN SOURCE: Your right to the Software does not include any license, right, power or authority to subject the Software in whole or in part to any of the terms of an Excluded License. An "Excluded License" means any "open source" or other license that require as a condition of use, modification and/or distribution of software subject to the Excluded License, that such software or other software combined and/or distributed with such software be
+(i) disclosed or distributed in source code form;
+(ii) licensed for the purpose of making derivative works; or 
+(iii) redistributable at no charge.
+
+18. ACKNOWLEDGEMENT: You acknowledge having read and understood this Agreement, and agree to be bound by its terms and conditions. You agree that this Agreement is the complete and exclusive statement of the agreement between the parties and supersede all proposals or prior agreements oral or written, and any other communications between the parties relating to the subject matter of this Agreement.
+
+19. GENERAL: This Agreement inures to the benefit of the parties, and their respective heirs, executors, administrators, legal personal representatives, successors, and duly authorized assigns. Nevron may assign this Agreement without your consent. You may not assign this Agreement or any of its rights or obligations hereunder without the prior written consent of Nevron. Any attempt to assign this Agreement without the written consent of Nevron shall be null and void.
+
+This Agreement shall be governed by and protected by the copyright laws and international copyright treaties, as well as other intellectual property laws and treaties.
+
+If any provision of this Agreement is found to be unlawful, void or unenforceable, then that provision shall be severed from this Agreement and shall not affect the validity and enforceability of any of the remaining provisions.
+
+The terms of this Agreement may not be amended or modified, no rights under it waived, except in a writing executed by an authorized representative of each party.
+
+Neither this Agreement, nor any terms and conditions contained herein, may be construed as creating or constituting a partnership, joint venture or agency relationship between the parties.
+
+In no event shall either party be liable to the other for any delay or failure to perform hereunder, which delay or failure to perform is due to causes beyond the control of said party including, but not limited to, government restrictions, exchange or market rulings, labor strike, war, earthquake, fire, other natural disaster, or any other event, condition or occurrence beyond the reasonable control of such party.
+
+20. EXPORT CONTROLS: The Software and any accompanying materials are subject to U.S. export laws and regulations. You must comply with all domestic and international export laws and regulations that apply to the Software, including components. You represent that neither you nor any third party you give rights to under this Agreement has had export privileges suspended, revoked or denied by a U.S. government agency.
+
+21. FOREIGN CORRUPT PRACTICES: Neither you, nor any of your employees or agents shall, directly or indirectly, pay, offer to pay or authorize the payment of anything of value to any government official, government employee, political party or political candidate anywhere in the world to obtain or retain business in connection with the use, sale or licensing of Software or otherwise to influence such an individual in his or her official capacity. You shall promptly notify Nevron if you learn that any such payment, offer, promise, or authorization has been made.
+
+22. HIGH RISK ACTIVITIES: The Software has been tested under a variety of conditions and applications. However, it is not possible to test the applicability of the Software for all potential applications. By virtue of the complex nature of the Software and its potential uses, some of which uses and results of use are indeterminable by Nevron, it is possible that latent bugs or inoperable features or incompatibilities or errors may affect the validity of data obtained and calculations performed using the Software.  Nevron advises that the Software is not fault tolerant and is not intended for use in High Risk Activities. You may not use the Software in the design, construction, operation or maintenance of any nuclear facility or weapon of mass destruction, or for the purpose of aircraft navigation or control or any other activity in which the failure of the Software could result in loss of human life, personal injury or property damage. Nevron expressly disclaims any express or implied warranty or condition of fitness for High Risk Activities.  You agree that use of the Software in High Risk Activities is at your own risk, that you have been advised to obtain suitable perils insurance against risk in an amount commensurate with your risk of loss, and to retain a consultant or consultants skilled in developing applications using the Software and in testing any such applications before use. You hereby indemnify and hold Nevron and its licensors and suppliers harmless from liability for such use and the results of use.
+
+23. THIRD PARTY LICENSORS AND SUPPLIERS: Each party agrees that Nevron's licensors and suppliers, together with their subsidiaries and affiliates are third party beneficiaries to this Agreement with the right to rely on and enforce its terms to their full extent, notwithstanding that such entities are not parties to this Agreement.  The parties further agree not to take any actions that may prevent or otherwise impair any such licensor's or supplier's exercise of these rights.  In no event shall Nevron's licensors and suppliers, together with their subsidiaries and affiliates have any liability for any damages, whether direct, indirect, incidental or consequential, as a result of the use or installation of the Software.
+
+24. NEVRON CUSTOMER CONTACT: You may contact NEVRON by writing to: NEVRON SOFTWARE LLC, 501 Silverside Road Suite 105, Wilmington, DE 19809 USA.  For further information you are referred to www.nevron.com.
+
+Nevron Software LLC
+Nevron .NET Vision License Agreement
