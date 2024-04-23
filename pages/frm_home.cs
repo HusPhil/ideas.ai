@@ -19,5 +19,6 @@ namespace IdeasAi.pages
             this.mainForm = mainForm;
         }
 
+        
     }
 }
