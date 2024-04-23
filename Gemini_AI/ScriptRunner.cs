@@ -31,6 +31,7 @@ namespace IdeasAi.Gemini_AI
             psi.CreateNoWindow = true;
             psi.RedirectStandardError = true;
             psi.RedirectStandardOutput = true;
+            psi.StandardOutputEncoding = System.Text.Encoding.UTF8;
 
             var result = "ERROR";
             var error = "NONE";
@@ -71,6 +72,7 @@ namespace IdeasAi.Gemini_AI
             psi.CreateNoWindow = true;
             psi.RedirectStandardError = true;
             psi.RedirectStandardOutput = true;
+            psi.StandardOutputEncoding = System.Text.Encoding.UTF8;
 
             var result = "";
             var error = "";

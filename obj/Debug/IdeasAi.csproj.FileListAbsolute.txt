@@ -70,8 +70,6 @@ C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\bin\Debug\IdeasAi.exe.config
 C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\bin\Debug\IdeasAi.exe
 C:\Users\husph_erev5zx\Desktop\IDEAS_AI\ideas.ai\obj\Debug\IdeasAi.exe
 C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\gemini_AI\Scripts\gemini.py
-C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\db\sqlite.db
-C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\settings.json
 C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\IdeasAi.exe.config
 C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\IdeasAi.exe
 C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\IdeasAi.pdb
@@ -133,7 +131,6 @@ C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.modals.mdl_notif.resources
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.PageForms.frm_consultation.resources
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.pages.frm_home.resources
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.modals.mdl_howToUse.resources
-C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\decors.json
 C:\Users\Admin\Desktop\Project_AOOP\bin\Debug\gemini_AI\Scripts\gemini.py
 C:\Users\Admin\Desktop\Project_AOOP\bin\Debug\db\sqlite.db
 C:\Users\Admin\Desktop\Project_AOOP\bin\Debug\decors.json
@@ -331,3 +328,8 @@ C:\Users\husph\Desktop\master-test\obj\Debug\IdeasAi.modals.mdl_notebookSettings
 C:\Users\husph\Desktop\master-test\bin\Debug\configs\settings.json
 C:\Users\husph\Desktop\master-test\bin\Debug\configs\decors.json
 C:\Users\husph\Desktop\master-test\bin\Debug\db\default.db
+C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\db\default.db
+C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\configs\decors.json
+C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\configs\settings.json
+C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.modals.mdl_notebookSettings.resources
+C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.modals.mdl_organize.resources

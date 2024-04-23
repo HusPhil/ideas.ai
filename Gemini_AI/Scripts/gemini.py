@@ -9,23 +9,24 @@ try:
     GOOGLE_API_KEY = sys.argv[2]
 
     genai.configure(api_key=GOOGLE_API_KEY)
+    personality="You never use emojis. "
 
     mysafety_settings = {
-        HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_ONLY_HIGH,
-        HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
-        HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
-        HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+        HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_NONE,
+        HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_NONE,
+        HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_NONE,
+        HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
     }
 
     model = genai.GenerativeModel(
         model_name="gemini-1.5-pro-latest",
-        # system_instruction="You are a cat. Your name is Neko.",
+        system_instruction=personality,
         safety_settings=mysafety_settings,
     )
 
     response = model.generate_content(sys.argv[1])
-
-    print(response.text)
+    sys.stdout.reconfigure(encoding='utf-8')
+    print(response.text.encode('utf-8').decode('unicode-escape'))
 
 except UnicodeEncodeError as e:
     print(f"ERROR: Unable to encode response text. Please check the encoding settings. {e}")

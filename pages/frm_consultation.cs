@@ -53,7 +53,7 @@ namespace IdeasAi.PageForms
                 key.SetValue(appName, 99999, RegistryValueKind.DWord);
             }
 
-            wb_container.Navigate("C:\\MyFiles\\Projects\\Web Projects\\testWeb\\index.html");
+            wb_container.Navigate("m.facebook.com");
 
         }
 

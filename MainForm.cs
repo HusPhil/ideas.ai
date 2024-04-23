@@ -170,7 +170,8 @@ namespace IdeasAi
         {
             if(btn_active != null)
             {
-                btn_active.BackColor = ColorTranslator.FromHtml((string)decors["Color"]["primary"]);
+                btn_active.BackColor = Color.Transparent;
+                btn_active.Parent.BackColor = Color.Transparent;
                 btn_active.Parent.Padding = new Padding(0);
             }
 
@@ -230,9 +231,10 @@ namespace IdeasAi
         private void btn_notebook_Click(object sender, EventArgs e)
         {
             InitializeConfigs();
-            //frm_notebook.notebookClickCount++ ;
+            frm_notebook.showAllIdeas();
             setActiveBtn(sender, pnl_pageTabs);
             loadForm(frm_notebook, pnl_content);
+
         }
 
         private void btn_mindmap_Click(object sender, EventArgs e)

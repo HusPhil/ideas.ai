@@ -40,10 +40,12 @@
             this.btn_new = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_openFile = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.btn_docsDel = new System.Windows.Forms.Button();
             this.pnl_confirmDel = new System.Windows.Forms.Panel();
             this.btn_confirm = new System.Windows.Forms.Button();
             this.btn_createMindmap = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.btn_organizeIdea = new System.Windows.Forms.Button();
             this.pln_splitCont = new System.Windows.Forms.Panel();
             this.splitter2 = new System.Windows.Forms.Splitter();
@@ -55,8 +57,6 @@
             this.pnl_txbCont = new System.Windows.Forms.Panel();
             this.txb_QSearch = new System.Windows.Forms.RichTextBox();
             this.btn_QSearch = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.pnl_textEditor.SuspendLayout();
             this.pnl_textEditCont.SuspendLayout();
             this.pnl_btns.SuspendLayout();
@@ -83,7 +83,7 @@
             this.txb_docsTitle.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txb_docsTitle.StateCommon.Content.Color1 = System.Drawing.Color.White;
+            this.txb_docsTitle.StateCommon.Content.Color1 = System.Drawing.Color.Black;
             this.txb_docsTitle.StateCommon.Content.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txb_docsTitle.StateCommon.Content.Padding = new System.Windows.Forms.Padding(5, 10, 5, 5);
             this.txb_docsTitle.TabIndex = 4;
@@ -241,6 +241,15 @@
             this.btn_openFile.UseVisualStyleBackColor = false;
             this.btn_openFile.Click += new System.EventHandler(this.btn_openFile_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(876, 10);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(10, 42);
+            this.panel2.TabIndex = 20;
+            // 
             // btn_docsDel
             // 
             this.btn_docsDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(126)))));
@@ -305,6 +314,15 @@
             this.btn_createMindmap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_createMindmap.UseVisualStyleBackColor = false;
             this.btn_createMindmap.Click += new System.EventHandler(this.btn_createMindmap_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel6.Location = new System.Drawing.Point(135, 10);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(10, 42);
+            this.panel6.TabIndex = 19;
             // 
             // btn_organizeIdea
             // 
@@ -467,24 +485,6 @@
             this.btn_QSearch.TabIndex = 0;
             this.btn_QSearch.UseVisualStyleBackColor = false;
             this.btn_QSearch.Click += new System.EventHandler(this.btn_QSearch_Click);
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel6.Location = new System.Drawing.Point(135, 10);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(10, 42);
-            this.panel6.TabIndex = 19;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(876, 10);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 42);
-            this.panel2.TabIndex = 20;
             // 
             // frm_workspace
             // 
