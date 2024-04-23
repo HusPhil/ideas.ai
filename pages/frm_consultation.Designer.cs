@@ -67,7 +67,7 @@
             // 
             // pnl_wbCont
             // 
-            this.pnl_wbCont.BackColor = System.Drawing.Color.White;
+            this.pnl_wbCont.BackColor = System.Drawing.Color.Transparent;
             this.pnl_wbCont.Controls.Add(this.wb_container);
             this.pnl_wbCont.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_wbCont.Location = new System.Drawing.Point(0, 93);
@@ -88,7 +88,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.btn_toWorkspace);
             this.panel3.Controls.Add(this.panel7);
             this.panel3.Controls.Add(this.btn_print);
@@ -124,7 +124,7 @@
             // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.BackColor = System.Drawing.Color.Transparent;
             this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel7.Location = new System.Drawing.Point(239, 12);
             this.panel7.Name = "panel7";
@@ -153,7 +153,7 @@
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.BackColor = System.Drawing.Color.Transparent;
             this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel6.Location = new System.Drawing.Point(117, 12);
             this.panel6.Name = "panel6";
@@ -182,7 +182,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 12);
             this.panel4.Name = "panel4";
@@ -191,7 +191,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.pnl_borderTxb);
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.btn_send);
@@ -246,7 +246,7 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel5.Location = new System.Drawing.Point(827, 15);
             this.panel5.Name = "panel5";
@@ -273,7 +273,7 @@
             this.AcceptButton = this.btn_send;
             this.AllowDrop = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(930, 616);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);

@@ -69,7 +69,7 @@ namespace IdeasAi.pages
             // pnl_viewerSide
             // 
             this.pnl_viewerSide.AutoScroll = true;
-            this.pnl_viewerSide.BackColor = System.Drawing.Color.White;
+            this.pnl_viewerSide.BackColor = System.Drawing.Color.Transparent;
             this.pnl_viewerSide.Controls.Add(this.pnl_mindmapViewer);
             this.pnl_viewerSide.Controls.Add(this.pnl_viewSettings);
             this.pnl_viewerSide.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -81,6 +81,7 @@ namespace IdeasAi.pages
             // pnl_mindmapViewer
             // 
             this.pnl_mindmapViewer.AutoScroll = true;
+            this.pnl_mindmapViewer.BackColor = System.Drawing.SystemColors.Window;
             this.pnl_mindmapViewer.Controls.Add(this.pbx_mindmap);
             this.pnl_mindmapViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_mindmapViewer.ForeColor = System.Drawing.Color.Black;
@@ -105,7 +106,7 @@ namespace IdeasAi.pages
             // 
             // pnl_viewSettings
             // 
-            this.pnl_viewSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(192)))), ((int)(((byte)(195)))));
+            this.pnl_viewSettings.BackColor = System.Drawing.Color.Transparent;
             this.pnl_viewSettings.Controls.Add(this.pnl_titleCont);
             this.pnl_viewSettings.Controls.Add(this.panel1);
             this.pnl_viewSettings.Controls.Add(this.pnl_buttons);
@@ -402,7 +403,7 @@ namespace IdeasAi.pages
             // 
             // spl_mindmap
             // 
-            this.spl_mindmap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(192)))), ((int)(((byte)(195)))));
+            this.spl_mindmap.BackColor = System.Drawing.Color.Gray;
             this.spl_mindmap.Location = new System.Drawing.Point(215, 10);
             this.spl_mindmap.Name = "spl_mindmap";
             this.spl_mindmap.Size = new System.Drawing.Size(10, 596);
@@ -413,7 +414,7 @@ namespace IdeasAi.pages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(192)))), ((int)(((byte)(195)))));
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1273, 616);
             this.ControlBox = false;
             this.Controls.Add(this.pnl_viewerSide);

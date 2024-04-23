@@ -314,7 +314,7 @@ namespace IdeasAi.pages
             // 
             // frm_notebook
             // 
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(930, 616);
             this.ControlBox = false;
             this.Controls.Add(this.lbl_nothingFound);

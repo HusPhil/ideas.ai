@@ -94,7 +94,7 @@
             // 
             // pnl_textEditor
             // 
-            this.pnl_textEditor.BackColor = System.Drawing.Color.White;
+            this.pnl_textEditor.BackColor = System.Drawing.Color.Transparent;
             this.pnl_textEditor.Controls.Add(this.pnl_textEditCont);
             this.pnl_textEditor.Controls.Add(this.pnl_btns);
             this.pnl_textEditor.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -136,7 +136,7 @@
             // 
             // pnl_btns
             // 
-            this.pnl_btns.BackColor = System.Drawing.Color.White;
+            this.pnl_btns.BackColor = System.Drawing.Color.Transparent;
             this.pnl_btns.Controls.Add(this.lbl_lastDateSaved);
             this.pnl_btns.Controls.Add(this.btn_docOptions);
             this.pnl_btns.Controls.Add(this.pnl_docConts);
@@ -157,7 +157,7 @@
             // lbl_lastDateSaved
             // 
             this.lbl_lastDateSaved.AutoEllipsis = true;
-            this.lbl_lastDateSaved.BackColor = System.Drawing.Color.White;
+            this.lbl_lastDateSaved.BackColor = System.Drawing.Color.Transparent;
             this.lbl_lastDateSaved.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_lastDateSaved.Font = new System.Drawing.Font("Cascadia Code", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_lastDateSaved.ForeColor = System.Drawing.Color.Black;
@@ -243,7 +243,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(876, 10);
             this.panel2.Name = "panel2";
@@ -317,7 +317,7 @@
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.BackColor = System.Drawing.Color.Transparent;
             this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel6.Location = new System.Drawing.Point(135, 10);
             this.panel6.Name = "panel6";
@@ -346,7 +346,7 @@
             // 
             // pln_splitCont
             // 
-            this.pln_splitCont.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
+            this.pln_splitCont.BackColor = System.Drawing.Color.Transparent;
             this.pln_splitCont.Controls.Add(this.pnl_textEditor);
             this.pln_splitCont.Controls.Add(this.splitter2);
             this.pln_splitCont.Controls.Add(this.panel1);
@@ -359,7 +359,7 @@
             // 
             // splitter2
             // 
-            this.splitter2.BackColor = System.Drawing.Color.White;
+            this.splitter2.BackColor = System.Drawing.Color.Gray;
             this.splitter2.Dock = System.Windows.Forms.DockStyle.Right;
             this.splitter2.Location = new System.Drawing.Point(1046, 0);
             this.splitter2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -370,7 +370,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.pnl_quickSearchRes);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -382,7 +382,7 @@
             // 
             // pnl_quickSearchRes
             // 
-            this.pnl_quickSearchRes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.pnl_quickSearchRes.BackColor = System.Drawing.Color.Transparent;
             this.pnl_quickSearchRes.Controls.Add(this.txb_qsearchRes);
             this.pnl_quickSearchRes.Controls.Add(this.pbx_loading);
             this.pnl_quickSearchRes.Controls.Add(this.pnl_quickSearch);
@@ -410,7 +410,7 @@
             // 
             // pbx_loading
             // 
-            this.pbx_loading.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(192)))), ((int)(((byte)(195)))));
+            this.pbx_loading.BackColor = System.Drawing.Color.Transparent;
             this.pbx_loading.Dock = System.Windows.Forms.DockStyle.Top;
             this.pbx_loading.Image = ((System.Drawing.Image)(resources.GetObject("pbx_loading.Image")));
             this.pbx_loading.Location = new System.Drawing.Point(0, 59);
@@ -424,7 +424,7 @@
             // 
             // pnl_quickSearch
             // 
-            this.pnl_quickSearch.BackColor = System.Drawing.Color.White;
+            this.pnl_quickSearch.BackColor = System.Drawing.Color.Transparent;
             this.pnl_quickSearch.Controls.Add(this.pnl_txbCont);
             this.pnl_quickSearch.Controls.Add(this.btn_QSearch);
             this.pnl_quickSearch.Dock = System.Windows.Forms.DockStyle.Top;
@@ -490,7 +490,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1313, 615);
             this.ControlBox = false;
             this.Controls.Add(this.pln_splitCont);
