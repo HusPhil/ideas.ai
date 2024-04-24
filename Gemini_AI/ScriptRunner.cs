@@ -15,7 +15,7 @@ namespace IdeasAi.Gemini_AI
         
         public static string runScript(string scriptName, string prompt)
         {
-            string jsonString = File.ReadAllText("settings.json");
+            string jsonString = File.ReadAllText("configs/settings.json");
 
             var appSettings = JObject.Parse(jsonString);
             ReplaceEnvironmentVariables(appSettings);
@@ -52,15 +52,14 @@ namespace IdeasAi.Gemini_AI
 
         }
 
-        public static async Task<string> RunScriptAsync(string scriptName, string prompt)
+        public static async Task<string> RunScriptAsync(string scriptName, string prompt, JObject appConfig)
         {
-            string jsonString = File.ReadAllText("settings.json");
+            
 
-            var appSettings = JObject.Parse(jsonString);
-            ReplaceEnvironmentVariables(appSettings);
+            ReplaceEnvironmentVariables(appConfig);
 
-            var pythonModule = (string)appSettings["Python_Module"];
-            var apiKey = (string)appSettings["API_KEY"];
+            var pythonModule = (string)appConfig["Python_Module"];
+            var apiKey = (string)appConfig["API_KEY"];
 
             Console.WriteLine(pythonModule + "::" + apiKey);
 

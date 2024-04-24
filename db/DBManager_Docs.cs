@@ -7,7 +7,7 @@ namespace IdeasAi.db
 {
     public class DBManager_Docs : DatabaseManager
     {
-        public DBManager_Docs()
+        public DBManager_Docs(MainForm mainForm) : base(mainForm)
         {
             table = "Document";
         }

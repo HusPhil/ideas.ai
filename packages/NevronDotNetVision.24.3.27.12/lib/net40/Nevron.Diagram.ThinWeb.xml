@@ -1,0 +1,333 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nevron.Diagram.ThinWeb</name>
+    </assembly>
+    <members>
+        <member name="T:Nevron.Diagram.ThinWeb.NTogglePanToolAction">
+            <summary>
+            Toggles the pan tool
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.ThinWeb.NTogglePanToolAction.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Nevron.Diagram.ThinWeb.NToggleRectZoomToolAction">
+            <summary>
+            Toggles the rect zoom tool
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.ThinWeb.NToggleRectZoomToolAction.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Nevron.Diagram.ThinWeb.NToggleViewLayoutAction">
+            <summary>
+            Zooms in the control
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.ThinWeb.NToggleViewLayoutAction.#ctor">
+            <summary>
+            Initializer constructor
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.ThinWeb.NToggleViewLayoutAction.#ctor(Nevron.Diagram.CanvasLayout)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="layout"></param>
+        </member>
+        <member name="M:Nevron.Diagram.ThinWeb.NToggleViewLayoutAction.#ctor(Nevron.Diagram.CanvasLayout,System.Boolean,System.String)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="layout"></param>
+            <param name="resetZoom"></param>
+            <param name="tooltip"></param>
+        </member>
+        <member name="T:Nevron.Diagram.ThinWeb.NZoomInAction">
+            <summary>
+            Zooms in the control
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.ThinWeb.NZoomInAction.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Nevron.Diagram.ThinWeb.NZoomOutAction">
+            <summary>
+            Zooms out the control
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.ThinWeb.INDrawingDocumentSerializationCallback.Serialize(Nevron.Diagram.ThinWeb.NThinDiagramControl,Nevron.Diagram.NDrawingDocument)">
+            <summary>
+            Serializes the passed document
+            </summary>
+            <param name="control"></param>
+            <param name="document"></param>
+        </member>
+        <member name="M:Nevron.Diagram.ThinWeb.INDrawingDocumentSerializationCallback.Deserialize(Nevron.Diagram.ThinWeb.NThinDiagramControl)">
+            <summary>
+            Deserializes the passed document
+            </summary>
+            <param name="control"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nevron.Diagram.ThinWeb.NDiagramServerSettings">
+            <summary>
+            Provides various settings related to chart tiling
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.ThinWeb.NDiagramServerSettings.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.ThinWeb.NDiagramServerSettings.ShowLoaderImages">
+            <summary>
+            Whether to show loader images when using tiling
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.ThinWeb.NDiagramServerSettings.TilingMode">
+            <summary>
+            Whether tiling is enabled
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.ThinWeb.NDiagramServerSettings.AutoTilingThreshold">
+            <summary>
+            Gets / sets the automatic tiling threshold
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.ThinWeb.NDiagramServerSettings.TileSize">
+            <summary>
+            Gets / sets the tile size
+            </summary>
+        </member>
+        <member name="T:Nevron.Diagram.ThinWeb.NDiagramView">
+            <summary>
+            Provides various settings related to diagram zooming and panning.
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.ThinWeb.NDiagramView.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.ThinWeb.NDiagramView.WindowOrigin">
+            <summary>
+            Gets / sets the viewport origin.
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.ThinWeb.NDiagramView.Layout">
+            <summary>
+            Gets / sets the layout.
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.ThinWeb.NDiagramView.ZoomFactor">
+            <summary>
+            Gets / sets the zoom factor.
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.ThinWeb.NDiagramView.ZoomPercent">
+            <summary>
+            Gets / sets the percent with which zoom in / out commands modify the zoom factor.
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.ThinWeb.NDiagramView.MinZoomFactor">
+            <summary>
+            Gets / sets the minimum zoom factor value.
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.ThinWeb.NDiagramView.MaxZoomFactor">
+            <summary>
+            Gets / sets the maximum zoom factor value.
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.ThinWeb.NDiagramView.GlobalVisibility">
+            <summary>
+            Controls the global visilbity of elements and effects.
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.ThinWeb.NDiagramView.WindowBounds">
+            <summary>
+            Gets / sets the window bounds.
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.ThinWeb.NDiagramView.SizeToContent">
+            <summary>
+            Resizes the drawing view to fit the document content
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.ThinWeb.NDiagramView.ClientViewToWindow(Nevron.GraphicsCore.NPointF)">
+            <summary>
+            Converts a point from client view coordinates to window coordinates
+            </summary>
+            <param name="point"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nevron.Diagram.ThinWeb.NThinDiagramControl">
+            <summary>
+            Represents a ThinWeb Diagram control
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.ThinWeb.NThinDiagramControl.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.ThinWeb.NThinDiagramControl.DocumentSerializationCallback">
+            <summary>
+            Gets / sets the document serialization callback which allows you to custom serialize / deserialize the drawing document
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.ThinWeb.NThinDiagramControl.Document">
+            <summary>
+            Gets the chart document
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.ThinWeb.NThinDiagramControl.ServerSettings">
+            <summary>
+            Gets / sets the diagram settings
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.ThinWeb.NThinDiagramControl.View">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.ThinWeb.NThinDiagramControl.Controller">
+            <summary>
+            Gets the tools attached to this control
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.ThinWeb.NThinDiagramControl.HitTest(Nevron.GraphicsCore.NPointF)">
+            <summary>
+            Returns a NNodeList collection containing all visual objects at the given window coordinates.
+            </summary>
+            <param name="point">
+            A point containing the hit-test coordinates.
+            </param>
+            <returns>
+            A <see cref="T:Nevron.Dom.NNodeList"/> object containing all visual objects at the given window coordinates.
+            </returns>
+            <remarks>
+            Objects with highter z-order have greater index in the collection.
+            </remarks>
+        </member>
+        <member name="M:Nevron.Diagram.ThinWeb.NThinDiagramControl.ZoomToRect(Nevron.GraphicsCore.NRectangleF)">
+            <summary>
+            Zooms to the specified rectangle in view coordinates
+            </summary>
+            <param name="viewBounds"></param>
+        </member>
+        <member name="M:Nevron.Diagram.ThinWeb.NThinDiagramControl.CreatetHitTestContext">
+            <summary>
+            Provides a valid hit test context, which can be used for document hit tests
+            </summary>
+            <returns>document hit test context</returns>
+        </member>
+        <member name="M:Nevron.Diagram.ThinWeb.NThinDiagramControl.Zoom(System.Single)">
+            <summary>
+            Applies equal X and Y scales of the view and preserves the current viewport center
+            </summary>
+            <param name="zoomFactor">zoom factor</param>
+            <retruns>true if zoomed successfully, otherwise false</retruns>
+        </member>
+        <member name="M:Nevron.Diagram.ThinWeb.NThinDiagramControl.Zoom(System.Single,Nevron.GraphicsCore.NPointF)">
+            <summary>
+            Applies equal X and Y scales of the view and makes the specified point the new viewport center.
+            </summary>
+            <param name="zoomFactor">zoom factor</param>
+            <param name="viewportCenter">new viewport center</param>
+            <returns>true if zoomed successfully, otherwise false</returns>
+        </member>
+        <member name="M:Nevron.Diagram.ThinWeb.NThinDiagramControl.IsValidScaleFactor(System.Single)">
+            <summary>
+            Determines whether the specified scale factor is valid
+            </summary>
+            <remarks>
+            This method takes into account the document settings MinZoomFactor and MaxZoomFactor properties.
+            </remarks>
+            <param name="scaleFactor">scale factor</param>
+            <returns>true if the scale factor is valid, otherwise false</returns>
+        </member>
+        <member name="M:Nevron.Diagram.ThinWeb.NThinDiagramControl.SizeToContent">
+            <summary>
+            Resizes the drawing view to fit the document content
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.ThinWeb.NThinDiagramControl.GetImage(Nevron.GraphicsCore.INImageFormat,Nevron.GraphicsCore.NSize,Nevron.GraphicsCore.NResolution)">
+            <summary>
+            
+            </summary>
+            <param name="format"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.Diagram.ThinWeb.NThinDiagramControl.GetImageMap">
+            <summary>
+            Get an image map
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.Diagram.ThinWeb.NThinDiagramControl.GetHttpHandlerType">
+            <summary>
+            Gets the http handler type for service requests
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.Diagram.ThinWeb.NThinDiagramControl.Dispose">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Nevron.Diagram.ThinWeb.NThinDiagramControlHttpHandler.IsReusable">
+            <summary>
+            Gets a value indicating whether another request can use the IHttpHandler instance.
+            </summary>
+            <remarks>
+            Returns true.
+            </remarks>
+        </member>
+        <member name="M:Nevron.Diagram.ThinWeb.NThinDiagramControlHttpHandler.ProcessRequest(System.Web.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Nevron.Diagram.ThinWeb.NDiagramControlDesigner">
+            <summary>
+            Provides design time support.
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.ThinWeb.NDiagramControlDesigner.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="T:Nevron.Diagram.ThinWeb.NDiagramTool">
+            <summary>
+            The base of all diagram tools
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.ThinWeb.NDiagramTool.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Nevron.Diagram.ThinWeb.NRectZoomTool">
+            <summary>
+            Represents a tool that allows the user to zoom in / out a diagram using a rectangular selection.
+            </summary>
+        </member>
+        <member name="M:Nevron.Diagram.ThinWeb.NRectZoomTool.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+    </members>
+</doc>

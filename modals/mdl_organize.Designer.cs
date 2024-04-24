@@ -56,10 +56,10 @@
             this.pnl_footer.Controls.Add(this.pnl_selectMode);
             this.pnl_footer.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnl_footer.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnl_footer.Location = new System.Drawing.Point(22, 428);
-            this.pnl_footer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnl_footer.Location = new System.Drawing.Point(20, 342);
+            this.pnl_footer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnl_footer.Name = "pnl_footer";
-            this.pnl_footer.Size = new System.Drawing.Size(751, 87);
+            this.pnl_footer.Size = new System.Drawing.Size(667, 70);
             this.pnl_footer.TabIndex = 0;
             // 
             // pnl_buttons
@@ -68,11 +68,11 @@
             this.pnl_buttons.Controls.Add(this.btn_save);
             this.pnl_buttons.Controls.Add(this.btn_go);
             this.pnl_buttons.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnl_buttons.Location = new System.Drawing.Point(449, 0);
-            this.pnl_buttons.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnl_buttons.Location = new System.Drawing.Point(398, 0);
+            this.pnl_buttons.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnl_buttons.Name = "pnl_buttons";
-            this.pnl_buttons.Padding = new System.Windows.Forms.Padding(22, 23, 22, 23);
-            this.pnl_buttons.Size = new System.Drawing.Size(300, 85);
+            this.pnl_buttons.Padding = new System.Windows.Forms.Padding(20, 18, 20, 18);
+            this.pnl_buttons.Size = new System.Drawing.Size(267, 68);
             this.pnl_buttons.TabIndex = 1;
             // 
             // btn_save
@@ -82,10 +82,10 @@
             this.btn_save.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_save.ForeColor = System.Drawing.Color.Black;
-            this.btn_save.Location = new System.Drawing.Point(22, 23);
-            this.btn_save.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_save.Location = new System.Drawing.Point(20, 18);
+            this.btn_save.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(112, 39);
+            this.btn_save.Size = new System.Drawing.Size(100, 32);
             this.btn_save.TabIndex = 1;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = false;
@@ -98,10 +98,10 @@
             this.btn_go.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_go.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_go.ForeColor = System.Drawing.Color.Black;
-            this.btn_go.Location = new System.Drawing.Point(210, 23);
-            this.btn_go.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_go.Location = new System.Drawing.Point(187, 18);
+            this.btn_go.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_go.Name = "btn_go";
-            this.btn_go.Size = new System.Drawing.Size(68, 39);
+            this.btn_go.Size = new System.Drawing.Size(60, 32);
             this.btn_go.TabIndex = 0;
             this.btn_go.Text = "Go";
             this.btn_go.UseVisualStyleBackColor = false;
@@ -114,10 +114,10 @@
             this.pnl_selectMode.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnl_selectMode.ForeColor = System.Drawing.SystemColors.Control;
             this.pnl_selectMode.Location = new System.Drawing.Point(0, 0);
-            this.pnl_selectMode.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnl_selectMode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnl_selectMode.Name = "pnl_selectMode";
-            this.pnl_selectMode.Padding = new System.Windows.Forms.Padding(22, 23, 0, 0);
-            this.pnl_selectMode.Size = new System.Drawing.Size(200, 85);
+            this.pnl_selectMode.Padding = new System.Windows.Forms.Padding(20, 18, 0, 0);
+            this.pnl_selectMode.Size = new System.Drawing.Size(178, 68);
             this.pnl_selectMode.TabIndex = 6;
             // 
             // cb_modeSelector
@@ -140,10 +140,10 @@
             "Expand Ideas",
             "Categorize Ideas",
             "SCAMPER Technique"});
-            this.cb_modeSelector.Location = new System.Drawing.Point(22, 23);
-            this.cb_modeSelector.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cb_modeSelector.Location = new System.Drawing.Point(20, 18);
+            this.cb_modeSelector.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cb_modeSelector.Name = "cb_modeSelector";
-            this.cb_modeSelector.Size = new System.Drawing.Size(178, 28);
+            this.cb_modeSelector.Size = new System.Drawing.Size(158, 24);
             this.cb_modeSelector.TabIndex = 0;
             // 
             // pnl_header
@@ -151,10 +151,10 @@
             this.pnl_header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(126)))));
             this.pnl_header.Controls.Add(this.lb_organize);
             this.pnl_header.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_header.Location = new System.Drawing.Point(22, 62);
-            this.pnl_header.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnl_header.Location = new System.Drawing.Point(20, 50);
+            this.pnl_header.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnl_header.Name = "pnl_header";
-            this.pnl_header.Size = new System.Drawing.Size(751, 86);
+            this.pnl_header.Size = new System.Drawing.Size(667, 69);
             this.pnl_header.TabIndex = 0;
             // 
             // lb_organize
@@ -165,7 +165,7 @@
             this.lb_organize.Location = new System.Drawing.Point(0, 0);
             this.lb_organize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_organize.Name = "lb_organize";
-            this.lb_organize.Size = new System.Drawing.Size(751, 86);
+            this.lb_organize.Size = new System.Drawing.Size(667, 69);
             this.lb_organize.TabIndex = 0;
             this.lb_organize.Text = "Organize your Ideas!";
             this.lb_organize.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -174,10 +174,10 @@
             // 
             this.btn_exit.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_exit.Location = new System.Drawing.Point(728, 17);
-            this.btn_exit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_exit.Location = new System.Drawing.Point(647, 14);
+            this.btn_exit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Size = new System.Drawing.Size(45, 35);
+            this.btn_exit.Size = new System.Drawing.Size(40, 28);
             this.btn_exit.TabIndex = 1;
             this.btn_exit.Text = "X";
             this.btn_exit.UseVisualStyleBackColor = true;
@@ -188,10 +188,10 @@
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel3.Location = new System.Drawing.Point(22, 403);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel3.Location = new System.Drawing.Point(20, 322);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(751, 25);
+            this.panel3.Size = new System.Drawing.Size(667, 20);
             this.panel3.TabIndex = 2;
             // 
             // pnl_body
@@ -201,21 +201,21 @@
             this.pnl_body.Controls.Add(this.txb_preview);
             this.pnl_body.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_body.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnl_body.Location = new System.Drawing.Point(22, 173);
-            this.pnl_body.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnl_body.Location = new System.Drawing.Point(20, 139);
+            this.pnl_body.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnl_body.Name = "pnl_body";
-            this.pnl_body.Padding = new System.Windows.Forms.Padding(22, 23, 22, 23);
-            this.pnl_body.Size = new System.Drawing.Size(751, 230);
+            this.pnl_body.Padding = new System.Windows.Forms.Padding(20, 18, 20, 18);
+            this.pnl_body.Size = new System.Drawing.Size(667, 183);
             this.pnl_body.TabIndex = 3;
             // 
             // txb_preview
             // 
             this.txb_preview.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txb_preview.Font = new System.Drawing.Font("Cascadia Code", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txb_preview.Location = new System.Drawing.Point(22, 23);
-            this.txb_preview.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txb_preview.Location = new System.Drawing.Point(20, 18);
+            this.txb_preview.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txb_preview.Name = "txb_preview";
-            this.txb_preview.Size = new System.Drawing.Size(705, 182);
+            this.txb_preview.Size = new System.Drawing.Size(625, 145);
             this.txb_preview.TabIndex = 5;
             this.txb_preview.Text = "This is Preview";
             // 
@@ -224,18 +224,18 @@
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel4.Location = new System.Drawing.Point(22, 148);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel4.Location = new System.Drawing.Point(20, 119);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(751, 25);
+            this.panel4.Size = new System.Drawing.Size(667, 20);
             this.panel4.TabIndex = 4;
             // 
             // mdl_organize
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(795, 538);
+            this.ClientSize = new System.Drawing.Size(707, 430);
             this.ControlBox = false;
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.pnl_body);
@@ -244,9 +244,10 @@
             this.Controls.Add(this.pnl_footer);
             this.Controls.Add(this.pnl_header);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "mdl_organize";
-            this.Padding = new System.Windows.Forms.Padding(22, 62, 22, 23);
+            this.Padding = new System.Windows.Forms.Padding(20, 50, 20, 18);
+            this.ShowInTaskbar = false;
             this.Text = "mdl_organize";
             this.Load += new System.EventHandler(this.mdl_organize_Load);
             this.pnl_footer.ResumeLayout(false);

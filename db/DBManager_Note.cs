@@ -7,7 +7,7 @@ namespace IdeasAi.db
 {
     public class DBManager_Note : DatabaseManager
     {
-        public DBManager_Note()
+        public DBManager_Note(MainForm mainForm) : base(mainForm)
         {
             table = "Note";
         }

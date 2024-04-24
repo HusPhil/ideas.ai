@@ -1,0 +1,845 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nevron.Chart.WebForm</name>
+    </assembly>
+    <members>
+        <member name="T:Nevron.Chart.WebForm.NChartClientServerTechnology">
+            <summary>
+            NChartClientServerTechnology is the base class for both post-back and AJAX technologies,
+            used by the Nevron Chart web control.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartClientServerTechnology.#ctor(Nevron.UI.WebForm.Controls.NWebControl)">
+            <summary>
+            Initializes a new instance of the NChartClientServerTechnology class, associated with
+            a given web control.
+            </summary>
+            <param name="webControl">
+            The web control, which uses the new instance of the NChartClientServerTechnology class.
+            </param>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartClientServerTechnology.OnWebControlLoad(System.EventArgs)">
+            <summary>
+            Updates the data binding manager of the associated chart control.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartClientServerTechnology.OnWebControlDesignTimeRender(Nevron.UI.WebForm.Controls.NWebControlDesigner)">
+            <summary>
+            Generates an HTML with image preview of the chart control in design mode.
+            Also registers in web.config the HTTP action handler, required by Nevron Chart
+            to render chart images in run-time in AJAX mode. The HTTP action handler is
+            registered only if it is missing from web.config.
+            </summary>
+            <param name="designer">
+            The instance of the <see cref="T:Nevron.UI.WebForm.Controls.NWebControlDesigner"/> object that invoked the method.
+            </param>
+            <returns>
+            If there are errors renders an HTML div with detailed error report.
+            Else, renders the chart control as an HMTL image element. In both cases, the
+            size of the control is the size provided in the Width and Height properties of the control.
+            </returns>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartClientServerTechnology.OnWebControlDesignTimeChanged(Nevron.UI.WebForm.Controls.NWebControlDesigner,System.ComponentModel.Design.ComponentChangedEventArgs)">
+            <summary>
+            Updates the chart on resize.
+            </summary>
+            <param name="designer">
+            The instance of the <see cref="T:Nevron.UI.WebForm.Controls.NWebControlDesigner"/> object that invoked the method.
+            </param>
+            <param name="ce">
+            A System.ComponentModel.Design.ComponentChangedEventArgs that contains the event data.
+            </param>
+        </member>
+        <member name="P:Nevron.Chart.WebForm.NChartClientServerTechnology.ChartControl">
+            <summary>
+            Gets the Nevron Chart web control, associated by this instance of the NChartClientServerTechnology class.
+            This property is initialized from the NChartClientServerTechnology constructor.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WebForm.NChartPostbackTechnology">
+            <summary>
+            Provides the post-back client-server communication functionality (HMTL rendering
+            and event handling) for the Nevron Chart web control.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartPostbackTechnology.#ctor(Nevron.UI.WebForm.Controls.NWebControl)">
+            <summary>
+            Initializes a new instance of the NChartPostbackTechnology class, associated with
+            a given web control.
+            </summary>
+            <param name="webControl">
+            The web control, which uses the new instance of the NChartPostbackTechnology class.
+            </param>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartPostbackTechnology.OnWebControlRender(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Creates the HTML, required to display the chart image on the client.
+            </summary>
+            <param name="output">
+            The System.Web.UI.HtmlTextWriter object that receives the control content.
+            </param>
+            <remarks>
+            Renders the chart control in the passed HtmlTextWriter. The image dimensions are taken from the control style.
+            </remarks>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartPostbackTechnology.OnPostbackEventHandlerRaisePostbackEvent(System.String)">
+            <summary>
+            Lets the web control to process an event, received from the client to the server through
+            post-back. Calls the OnClick method of the associated web control.
+            </summary>
+            <param name="eventArgument">
+            A string that represents an optional event argument to be passed to the event handler.
+            </param>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartPostbackTechnology.OnWebControlPreRender(System.EventArgs,System.Collections.ArrayList)">
+            <summary>
+            This method is invoked from the overridden OnPreRender method of the <see cref="T:Nevron.UI.WebForm.Controls.NWebControl"/> class.
+            The default implementation of this method registers the script files as provided by the EnumerateScriptIncludes() method.
+            The NChartPostbackTechnology implementation of this method cancels the default behaviour.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data.</param>
+            <param name="scriptIncludeFiles">The script include files as provided by the EnumerateScriptIncludes() method.</param>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartPostbackTechnology.OnWebControlLoad(System.EventArgs)">
+            <summary>
+            Checks if there is a chart web control state stored
+            and if one is found, loads it to the associated
+            Nevron Chart web control.
+            </summary>
+            <param name="e">
+            An <see cref="T:System.EventArgs"/> that contains the event data.
+            </param>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartPostbackTechnology.ProvideDefaultStateManager(Nevron.UI.WebForm.Controls.NWebControl)">
+            <summary>
+            Provides an instance of the default state manager.
+            </summary>
+            <returns>
+            An instance of the default state manager.
+            </returns>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartPostbackTechnology.EnumerateStateManagers(Nevron.UI.WebForm.Controls.NWebControl)">
+            <summary>
+            Enumerates all state agents, applicable to this client-server technology.
+            </summary>
+            <returns>
+            A generic dictionary, containing all applicable state managers.
+            </returns>
+        </member>
+        <member name="T:Nevron.Chart.WebForm.NChartAjaxTechnology">
+            <summary>
+            Provides the AJAX client-server communication functionality (HMTL rendering
+            and event handling) for the Nevron Chart web control.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartAjaxTechnology.#ctor(Nevron.UI.WebForm.Controls.NWebControl)">
+            <summary>
+            Initializes a new instance of the NChartAjaxTechnology class, associated with
+            a given web control.
+            </summary>
+            <param name="webControl">
+            The web control, which uses the new instance of the NChartAjaxTechnology class.
+            </param>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartAjaxTechnology.EnumerateScriptIncludes">
+            <summary>
+            Enumerates all script files that implement the Nevron client-side
+            AJAX framework and the client-side JavaScript NChartCallbackService class.
+            </summary>
+            <returns>
+            A list of web resources containing client-side JavaScript include files.
+            </returns>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartAjaxTechnology.IsApplicable(System.Boolean)">
+            <summary>
+            Tests if the client web browser supports callbacks and XML HTTP requests.
+            </summary>
+            <param name="designMode">
+            Indicates if the NChartAjaxTechnology is being tested in design mode.
+            </param>
+            <returns>True if in design mode or if the client browser supports callbacks; else returns false.</returns>
+            <remarks>
+            If this method returns false to the Nevron AJAX framework, the default
+            post-back mode will be used. So it is recommended 
+            to provide post-back event handling when using the 
+            Nevron Chart web control in AJAX mode. This way web browsers that do not
+            support AJAX will still provide at least part of the desired 
+            charting functionality.
+            </remarks>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartAjaxTechnology.OnWebControlLoad(System.EventArgs)">
+            <summary>
+            Checks if there is a chart web control state serialized in the session
+            and if a chart web control state is found, loads it to the associated
+            Nevron Chart web control.
+            </summary>
+            <param name="e">
+            An <see cref="T:System.EventArgs"/> that contains the event data.
+            </param>
+            <remarks>
+            In AJAX mode the state of the chart, displayed by the web control, can be
+            changed asynchronously by AJAX callbacks. In addition the chart image is
+            rendered by the <see cref="T:Nevron.Chart.WebForm.NChartImageResourceHandler"/> class,
+            rather than by the web control itself. Because of that the run-time state of the
+            chart is stored in the session, rather than in the view state, which is
+            not available to the HTTP image resource handler.
+            </remarks>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartAjaxTechnology.OnWebControlRender(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Creates the HTML, required to display the chart image on the client
+            and to activate the client-side AJAX JavaScript callback service.
+            </summary>
+            <param name="output">
+            The System.Web.UI.HtmlTextWriter object that receives the control content.
+            </param>
+            <remarks>
+            <para>
+            If there are errors renders an HTML div with detailed error report.
+            </para>
+            <para>
+            Else this method creates a div element with an id similar to "MyChartWebControl_Div"
+            (&lt;the id of the web control> + "_Div") and
+            inside the div ceates an image element with an id similar to "MyChartWebControl_chartImage"
+            (&lt;the id of the web control> + "_chartImage").
+            The image element is followed by a &lt;br /> tag in order to avoid the extra spacing,
+            rendered by default by the browsers below an image, located as a child in a box
+            HTML element. In addition this method renders a JavaScript block that
+            registers the client-side AJAX callback service, associated with the
+            web control. The client-side AJAX callback service is an instance of the
+            NChartCallbackService client-side JavaScript class and can be obtained
+            at client-side with the following JavaScript call:
+            <code>
+            if(typeof(NChartCallbackService) != "undefined")
+            {	
+            	var cs = NChartCallbackService.GetCallbackService("MyChartWebControl");
+            	//...
+            }
+            </code>
+            The callback service registration script is rendered outside the div element.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartAjaxTechnology.OnCallbackEventHandlerGetCallbackResult">
+            <summary>
+            This method is invoked from the GetCallbackResult method of the <see cref="T:Nevron.UI.WebForm.Controls.NWebControl"/> class (GetCallbackResult is a part of the implementation of ICallbackEventHandler).
+            </summary>
+            <returns>
+            A callback result that tells the Nevron client-side AJAX
+            framework to refresh the chart image data, displayed to the visitor.
+            </returns>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartAjaxTechnology.OnCallbackEventHandlerRaiseCallbackEvent(System.String)">
+            <summary>
+            Lets the web control to process an event, delegated from the client to the server through
+            an AJAX callback. Calls the 
+            OnAsyncClick or 
+            OnAsyncDoubleClick or
+            OnAsyncMouseMove or
+            OnAsyncMouseDown or
+            OnAsyncMouseUp or
+            OnAsyncRefresh
+            method of the associated web control.
+            </summary>
+            <param name="eventArgument">
+            The client-side Nevron AJAX framework provides as eventArgument a serialized NAjaxXmlTransport object with a NAjaxXmlDataSection named "command".
+            </param>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartAjaxTechnology.ProvideDefaultStateManager(Nevron.UI.WebForm.Controls.NWebControl)">
+            <summary>
+            Provides an instance of the default state manager.
+            </summary>
+            <returns>
+            An instance of the default state manager.
+            </returns>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartAjaxTechnology.EnumerateStateManagers(Nevron.UI.WebForm.Controls.NWebControl)">
+            <summary>
+            Enumerates all state agents, applicable to this client-server technology.
+            </summary>
+            <returns>
+            A generic dictionary, containing all applicable state managers.
+            </returns>
+        </member>
+        <member name="T:Nevron.Chart.WebForm.NChartImageResourceHandler">
+            <summary>
+            This class is responsible for the rendering of the chart for a specific Nevron Chart web control to an image.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartImageResourceHandler.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartImageResourceHandler.RenderImage(System.Web.HttpContext,Nevron.UI.WebForm.Controls.NStateObject,System.Nullable{Nevron.GraphicsCore.NRectangle})">
+            <summary>
+            Renders the chart for a specific Nevron Chart web control to an image
+            and sends the response to the browser. 
+            </summary>
+            <param name="context">
+            An HttpContext object that provides references to the intrinsic server objects (for example, Request, Response, Session, and Server) used to service HTTP requests.
+            </param>
+            <param name="stateTransport">
+            The state of the web control being rendered.
+            </param>
+            <param name="viewport">
+            The viewport for parial rendering.
+            </param>
+            <remarks>
+            The response type is "image/png".
+            No cache is enabled by the response.
+            The particular Nevron Chart web control which is to be rendered is
+            determined based on the WebControlId request query string argument, passed
+            to this HTTP handler. The state of the chart to render is acquired
+            from the session state. See the OnWebControlLoad method of the 
+            <see cref="T:Nevron.Chart.WebForm.NChartAjaxTechnology"/> class for details
+            on how the chart state is persisted over its life-time.
+            </remarks>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartImageResourceHandler.EnumerateFormatProviders(Nevron.UI.WebForm.Controls.NStateObject)">
+            <summary>
+            Enumerates all image providers, supported by the web control.
+            </summary>
+            <param name="stateTransport">The session state, associated with the web control</param>
+            <returns>A container, aggregating format providers.</returns>
+        </member>
+        <member name="T:Nevron.Chart.WebForm.NChartTechnologyFactory">
+            <summary>
+            A NChartTechnologyFactory factory is used by the <see cref="T:Nevron.Chart.WebForm.NChartControl"/> class
+            to create different NChartClientServerTechnology instances based on a <see cref="T:Nevron.UI.WebForm.Controls.WebControlTechnologyType"/>
+            control parameter. The factory, used by a <see cref="T:Nevron.Chart.WebForm.NChartControl"/> instance is initialized
+            once in the control's constructor. Later, when the Technology property of the <see cref="T:Nevron.Chart.WebForm.NChartControl"/>
+            instance is changed, the factory replaces the current NChartClientServerTechnology instance, exposed by the ClientServerTechnology property of the 
+            <see cref="T:Nevron.Chart.WebForm.NChartControl"/> object with a new instance of a different NChartClientServerTechnology implementation.
+            <para>
+            E.g. when the Technology property is set to WebControlTechnologyType.Ajax, the ClientServerTechnology is initialized with a NChartAjaxTechnology
+            instance. When the Technology property is set to WebControlTechnologyType.Postback, the ClientServerTechnology is initialized with a NChartPostbackTechnology
+            instance.
+            </para>
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartTechnologyFactory.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartTechnologyFactory.Create(Nevron.UI.WebForm.Controls.WebControlTechnologyType,Nevron.UI.WebForm.Controls.NWebControl)">
+            <summary>
+            Creates a new instance of a class, derived from the NChartClientServerTechnology base class.
+            </summary>
+            <param name="type">
+            The type of the technology that determines which class, derived from the NChartClientServerTechnology base class, to use for the new instance.
+            </param>
+            <param name="webControl">
+            The web control to associate the new NChartClientServerTechnology object with.
+            </param>
+            <returns>A new instance of a either NChartAjaxTechnology or NChartPostbackTechnology clas, depending to the type parameter.</returns>
+        </member>
+        <member name="T:Nevron.Chart.WebForm.NChartControl">
+            <summary>
+            The NChartControl class represents Nevron Chart for .NET used in ASPX web forms.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartControl.#ctor">
+            <summary>
+            Creates a new instance with default settings.
+            </summary>
+            <remarks>
+            The default settings for the server control are saved in the web.config file in XML format. For more information on server side configuration settings take a look at the User's guide.
+            </remarks>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartControl.UpdateClientSideBounds">
+            <summary>
+            When used with AJAX mode, this method enforces the client side
+            image size to be updated accordingly to the currently specified
+            control dimensions.
+            </summary>
+            <remarks>Q
+            Call this method after modifying the Width and/or Height properties
+            of the web control from within an asynchronous event handler.
+            </remarks>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartControl.Clear">
+            <summary>
+            Clears the current state of the chart control.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartControl.Dispose">
+            <summary>
+            Disposes all system resources used by the control.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartControl.WriteHtmlMap(Nevron.GraphicsCore.NHtmlMapContext,System.IO.TextWriter)">
+            <summary>
+            Writes an image map to the specified text writer.
+            </summary>
+            <param name="context"></param>
+            <param name="textWriter"></param>
+        </member>
+        <member name="P:Nevron.Chart.WebForm.NChartControl.ServerConfigSectionName">
+            <summary>
+            Obtains the server configuration section name corresponding to this control.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WebForm.NChartControl.Charts">
+            <summary>
+            Gets the charts collection of the component.
+            </summary>
+            <remarks>
+            The charts collection contains the charts displayed in the control canvas.
+            By default there is one Cartesian chart in the collection.
+            </remarks>
+        </member>
+        <member name="P:Nevron.Chart.WebForm.NChartControl.Legends">
+            <summary>
+            Gets the legends collection of the component.
+            </summary>
+            <remarks>
+            The legends collection contains the legends displayed in the control canvas.
+            By default there is one legend in the collection.
+            </remarks>
+        </member>
+        <member name="P:Nevron.Chart.WebForm.NChartControl.Labels">
+            <summary>
+            Gets the labels collection of the component.
+            </summary>
+            <remarks>
+            The labels collection contains the labels displayed in the control canvas.
+            By default the collection is empty.
+            </remarks>
+        </member>
+        <member name="P:Nevron.Chart.WebForm.NChartControl.Gauges">
+            <summary>
+            Gets the gauges collection of the component.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WebForm.NChartControl.NumericDisplays">
+            <summary>
+            Gets the numeric displays collection of the component.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WebForm.NChartControl.StateIndicators">
+            <summary>
+            Gets the state indicators collection of the component.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WebForm.NChartControl.Watermarks">
+            <summary>
+            Gets the watermarks collection of the component.
+            </summary>
+            <remarks>
+            The watermarks collection contains the watermarks displayed in the control canvas.
+            By default the collection is empty.
+            </remarks>
+        </member>
+        <member name="P:Nevron.Chart.WebForm.NChartControl.Panels">
+            <summary>
+            Gets the panels collection of the component.
+            </summary>
+            <remarks>
+            The panels collection contains all the panels displayed in the control canvas. 
+            This includes charts, legends, labels, watermarks, etc.
+            </remarks>
+        </member>
+        <member name="P:Nevron.Chart.WebForm.NChartControl.BackgroundStyle">
+            <summary>
+            Gives you access to the NBackground object applied on the chart background.
+            </summary>
+            <remarks>
+            The NBackground object controls various aspects of the chart background including fill effect, frame and interactivity.
+            </remarks>
+            <example>
+            The following exampe applies a gradient filling on the background.
+            <code lang = 'VB'>
+            NChartControl.Background.FillStyle.SetPredefinedAdvancedGradient(AdvancedGradientScheme.CalmWater2, 13)
+            </code>
+            <code>
+            NChartControl.Background.FillStyle.SetPredefinedAdvancedGradient(AdvancedGradientScheme.CalmWater2, 13);
+            </code>
+            </example>
+        </member>
+        <member name="P:Nevron.Chart.WebForm.NChartControl.InteractivityStyle">
+            <summary>
+            The interactive style associated with the control
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WebForm.NChartControl.AnimationsStyle">
+            <summary>
+            Gets or sets the animation style
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WebForm.NChartControl.Settings">
+            <summary>
+            Gets the chart settings related to rendering.
+            </summary>
+            <remarks>
+            With the help of the NSettings object you can control various properties related to the chart rendering and appearance.
+            </remarks>
+            <example>
+            The following example enables the jittering feature of the control.
+            <code lang = 'VB'>
+            ' enable the antialiasing of the whole scene
+            NChartControl.Settings.EnableJittering = True
+            NChartControl.Settings.JitteringSteps = 4
+            </code>
+            <code>
+            // enable the antialiasing of the whole scene
+            NChartControl.Settings.EnableJittering = true;
+            NChartControl.Settings.JitteringSteps = 4;
+            </code>
+            </example>
+        </member>
+        <member name="P:Nevron.Chart.WebForm.NChartControl.ServiceManager">
+            <summary>
+            Obtains the services collection of the chart document.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WebForm.NChartControl.Document">
+            <summary>
+            Obtains the current chart document.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WebForm.NChartControl.Serializer">
+            <summary>
+            Gives access to the chart serializer. The serializer
+            can be used to save/load control state through binary, XML and SOAP files.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WebForm.NChartControl.Wizard">
+            <summary>
+            Gives access to the chart wizard object.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WebForm.NChartControl.ImageExporter">
+            <summary>
+            Returns a NImageExport object exposing several image export functions.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WebForm.NChartControl.DataBindingManager">
+            <summary>
+            Controls the database integration of the chart control.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartControl.OnClick(Nevron.GraphicsCore.NPostbackEventArgs)">
+            <summary>
+            Raises the Click event.
+            </summary>
+            <param name="args">An NPostbackEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartControl.HitTest(Nevron.UI.WebForm.Controls.NCallbackMouseEventArgs)">
+            <summary>
+            Returns a NHitTestResult object describing the object at the given window coordinates.
+            </summary>
+            <param name="args">An <see cref="T:Nevron.UI.WebForm.Controls.NCallbackMouseEventArgs"/> containing the hit-test coordinates.</param>
+            <returns>A <see cref="T:Nevron.Chart.NHitTestResult"/> object describing the object at the given window coordinates. </returns>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartControl.HitTest(Nevron.GraphicsCore.NPointF)">
+            <summary>
+            Returns a NHitTestResult object describing the object at the given window coordinates.
+            </summary>
+            <param name="point">An <see cref="T:Nevron.GraphicsCore.NPointF"/> containing the hit-test coordinates.</param>
+            <returns>A <see cref="T:Nevron.Chart.NHitTestResult"/> object describing the object at the given window coordinates. </returns>
+        </member>
+        <member name="T:Nevron.Chart.WebForm.NChartControlCodeDomSerializer">
+            <summary>
+            The custom serializer for the NChartControl class
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartControlCodeDomSerializer.Deserialize(System.ComponentModel.Design.Serialization.IDesignerSerializationManager,System.Object)">
+            <summary>
+            The deserialization is delegated to the default serializer.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartControlCodeDomSerializer.Serialize(System.ComponentModel.Design.Serialization.IDesignerSerializationManager,System.Object)">
+            <summary>
+            Customizes the output from the default serializer.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WebForm.NChartControlDesigner">
+            <summary>
+            Provides design time support.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartControlDesigner.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WebForm.NChartControlDesigner.Document">
+            <summary>
+            Obtains a reference to the chart document associated with the designer
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WebForm.NChartControlDesigner.ViewSize">
+            <summary>
+            Gets the size of the view / control hosting the document
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartControlDesigner.OnDocumentChanged">
+            <summary>
+            Called when the chart document has changed
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartControlDesigner.OnDocumentCleared">
+            <summary>
+            Called when the chart document has been cleared (reset to default state)
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartBatonSessionStateManager.#ctor(System.Web.HttpContext,System.String)">
+            <summary>
+            Initializes a new instance of the state manager with given HTTP context and a default state object id.
+            </summary>
+            <param name="httpContext">
+            The HTTP request of the current request.
+            </param>
+            <param name="stateId">
+            The state object id.
+            </param>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartBatonSessionStateManager.CreateStateObject(System.String,Nevron.UI.WebForm.Controls.NImage)">
+            <summary>
+            Creates a new state instance.
+            </summary>
+            <param name="stateId">
+            The id of the new state.
+            </param>
+            <param name="imageControl">
+            A chart control to be stored into the state.
+            </param>
+            <returns>
+            The state object.
+            </returns>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartPermanentSessionStateManager.#ctor(System.Web.HttpContext,Nevron.UI.WebForm.Controls.NWebControl)">
+            <summary>
+            Initializes a new instance of the state manager with given HTTP context and web control.
+            </summary>
+            <param name="httpContext">
+            The HTTP request of the current request.
+            </param>
+            <param name="webControl">
+            The associated web control.
+            </param>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartPermanentSessionStateManager.#ctor(System.Web.HttpContext,System.String)">
+            <summary>
+            Initializes a new instance of the state manager with given HTTP context and a default state object id.
+            </summary>
+            <param name="httpContext">
+            The HTTP request of the current request.
+            </param>
+            <param name="stateId">
+            The state object id.
+            </param>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartPermanentSessionStateManager.CreateStateObject(System.String,Nevron.UI.WebForm.Controls.NImage)">
+            <summary>
+            Creates a new state instance.
+            </summary>
+            <param name="stateId">
+            The id of the new state.
+            </param>
+            <param name="imageControl">
+            A chart control to be stored into the state.
+            </param>
+            <returns>
+            The state object.
+            </returns>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartRenderSessionStateManager.#ctor(System.Web.HttpContext,Nevron.UI.WebForm.Controls.NWebControl)">
+            <summary>
+            Initializes a new instance of the state manager with given HTTP context and web control.
+            </summary>
+            <param name="httpContext">
+            The HTTP request of the current request.
+            </param>
+            <param name="webControl">
+            The associated web control.
+            </param>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartRenderSessionStateManager.#ctor(System.Web.HttpContext,System.String)">
+            <summary>
+            Initializes a new instance of the state manager with given HTTP context and a default state object id.
+            </summary>
+            <param name="httpContext">
+            The HTTP request of the current request.
+            </param>
+            <param name="stateId">
+            The state object id.
+            </param>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartRenderSessionStateManager.CreateStateObject(System.String,Nevron.UI.WebForm.Controls.NImage)">
+            <summary>
+            Creates a new state instance.
+            </summary>
+            <param name="stateId">
+            The id of the new state.
+            </param>
+            <param name="imageControl">
+            A chart control to be stored into the state.
+            </param>
+            <returns>
+            The state object.
+            </returns>
+        </member>
+        <member name="T:Nevron.Chart.WebForm.NChartSessionStateObject">
+            <summary>
+            Contains the chart data to be stored into the session state
+            between AJAX callback events and render requests.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartSessionStateObject.#ctor(System.String,System.Guid,Nevron.UI.WebForm.Controls.INHttpHandlerCallback,Nevron.GraphicsCore.NImageFormat,Nevron.Chart.NDocument,Nevron.GraphicsCore.NSize)">
+            <summary>
+            Initializes a new instance of the NChartSessionState class
+            with given chart document and size.
+            </summary>
+            <param name="stateId">
+            A string that uniquely identifies the specific instance of the state of a web control.
+            </param>
+            <param name="snapshotGuid">
+            A guid that uniquely identifies a specific image snapshot of the web control.
+            </param>
+            <param name="document">
+            The chart document.
+            </param>
+            <param name="size">
+            The size of the Nevron Chart web control.
+            </param>
+            <param name="httpHandlerCallback">
+            The http handler callback that is used when operating in Nevron Instant Callback mode.
+            </param>
+            <param name="imageFormat">
+            The image format of the rendered image. Can be null for controls that do not generate an image.
+            </param>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartSessionStateObject.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartSessionStateObject.HitTest(Nevron.UI.WebForm.Controls.NCallbackMouseEventArgs)">
+            <summary>
+            Returns a NHitTestResult object describing the object at the given window coordinates.
+            </summary>
+            <param name="args">An <see cref="T:Nevron.UI.WebForm.Controls.NCallbackMouseEventArgs"/> containing the hit-test coordinates.</param>
+            <returns>A <see cref="T:Nevron.Chart.NHitTestResult"/> object describing the object at the given window coordinates. </returns>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartSessionStateObject.HitTest(Nevron.GraphicsCore.NPointF)">
+            <summary>
+            Returns a NHitTestResult object describing the object at the given window coordinates.
+            </summary>
+            <param name="point">An <see cref="T:Nevron.GraphicsCore.NPointF"/> containing the hit-test coordinates.</param>
+            <returns>A <see cref="T:Nevron.Chart.NHitTestResult"/> object describing the object at the given window coordinates. </returns>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartSessionStateObject.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Provided for serialization support
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartSessionStateObject.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Provided for serialization support
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="P:Nevron.Chart.WebForm.NChartSessionStateObject.ViewSize">
+            <summary>
+            Gets the size of the view.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WebForm.NChartSessionStateObject.Document">
+            <summary>
+            Gets / sets the chart document.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WebForm.NChartSessionStateObject.Size">
+            <summary>
+            Gets / sets the size of the Nevron Chart web control.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartStateManagerFactory.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WebForm.NChartStateManagerFactory.CreateInstance(System.Web.HttpContext)">
+            <summary>
+            Creates a state manager.
+            </summary>
+            <param name="httpContext">
+            An object of type HttpContext.
+            </param>
+            <returns>
+            A state manager.
+            </returns>
+        </member>
+        <member name="T:Nevron.Chart.WebForm.ResponseType">
+            <summary>
+            The possible response types generated by the component.
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WebForm.ResponseType.Image">
+            <summary>
+            Static image is send to the client browser
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WebForm.ResponseType.HTMLImageMap">
+            <summary>
+            HTML Image map is send to the client browser
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WebForm.ResponseType.SVG">
+            <summary>
+            SVG content is send to the client browser
+            </summary>
+        </member>
+        <member name="M:Nevron.Internal.MxYd.ProvideImage(Nevron.GraphicsCore.NSize,Nevron.GraphicsCore.NResolution,Nevron.GraphicsCore.INImageFormat)">
+            <summary>
+            Provides an image with the specifies dimensions and format.
+            </summary>
+            <param name="pxYd"></param>
+            <param name="QxYd"></param>
+            <param name="rxYd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.Internal.MxYd.ProvideImage(Nevron.GraphicsCore.NSize,Nevron.GraphicsCore.NRectangle,Nevron.GraphicsCore.NResolution,Nevron.GraphicsCore.INImageFormat)">
+            <summary>
+            Provides an image with the specifies dimensions and format.
+            </summary>
+            <param name="SxYd"></param>
+            <param name="txYd"></param>
+            <param name="UxYd"></param>
+            <param name="vxYd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.Internal.YxYd.ProvideImage(Nevron.GraphicsCore.NSize,Nevron.GraphicsCore.NResolution,Nevron.GraphicsCore.INImageFormat)">
+            <summary>
+            Provides a raster image with the specifies dimensions and format.
+            </summary>
+            <param name="CYYd"></param>
+            <param name="dYYd"></param>
+            <param name="EYYd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.Internal.YxYd.ProvideImage(Nevron.GraphicsCore.NSize,Nevron.GraphicsCore.NRectangle,Nevron.GraphicsCore.NResolution,Nevron.GraphicsCore.INImageFormat)">
+            <summary>
+            Provides a raster image with the specifies dimensions and format.
+            </summary>
+            <param name="fYYd"></param>
+            <param name="GYYd"></param>
+            <param name="hYYd"></param>
+            <param name="IYYd"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Nevron.Internal.YxYd.ProvidedMimeTypes">
+            <summary>
+            Obtains an array of the provided mime types
+            </summary>
+        </member>
+    </members>
+</doc>

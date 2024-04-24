@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Threading.Tasks;
 
 namespace IdeasAi.Gemini_AI
@@ -22,6 +23,6 @@ namespace IdeasAi.Gemini_AI
         {
             UUID = Guid.NewGuid();
         }
-        public abstract Task<string> GetResponse();
+        public abstract Task<string> GetResponse(JObject appConfig);
     }
 }

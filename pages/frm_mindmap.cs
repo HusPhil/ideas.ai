@@ -476,7 +476,7 @@ namespace IdeasAi.pages
             }
         }
         //Getters
-        public ref KryptonRichTextBox getTxbMarkdownInput()
+        public ref RichTextBox getTxbMarkdownInput()
         {
             return ref txb_markdownInput;
         }

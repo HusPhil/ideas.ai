@@ -1,0 +1,706 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nevron.Chart.ThinWeb</name>
+    </assembly>
+    <members>
+        <member name="T:Nevron.Chart.ThinWeb.NTogglePanelDragToolAction">
+            <summary>
+            Enables the trackball tool
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NTogglePanelDragToolAction.#ctor">
+            <summary>
+            Initializer constructor
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.ThinWeb.NToggleChart3DAction">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NToggleChart3DAction.#ctor">
+            <summary>
+            Initializer constructor
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.ThinWeb.NToggleChartLightingAction">
+            <summary>
+            Toggles the chart lighting
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NToggleChartLightingAction.#ctor">
+            <summary>
+            Initializer constructor
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.ThinWeb.NToggleChartToolAction">
+            <summary>
+            Base for all chart tool actions
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.ThinWeb.NToggleDataPanToolAction">
+            <summary>
+            Enables the data pan tool if present the chart controller collection
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NToggleDataPanToolAction.#ctor">
+            <summary>
+            Initializer constructor
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.ThinWeb.NToggleDataZoomToolAction">
+            <summary>
+            Enables the data zoom tool
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NToggleDataZoomToolAction.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NToggleDataZoomToolAction.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="xAxisId"></param>
+            <param name="yAxisId"></param>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NToggleDataZoomToolAction.XAxisId">
+            <summary>
+            Gets or sets the x axis id used for zooming on the currently active chart
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NToggleDataZoomToolAction.YAxisId">
+            <summary>
+            Gets or sets the y axis id used for zooming on the currently active chart
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NToggleDataZoomToolAction.MaxZoomFactor">
+            <summary>
+            Gets or sets the max zoom factor
+            </summary>
+            <remarks>
+            The default zoom factor is 20.
+            </remarks>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NToggleDataZoomToolAction.IsEnabled">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NToggleDataZoomToolAction.GetImage">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NToggleDataZoomToolAction.ToolType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.ThinWeb.NTogglePanelSelectorToolAction">
+            <summary>
+            Enables the panel selector tool
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NTogglePanelSelectorToolAction.#ctor">
+            <summary>
+            Initializer constructor
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.ThinWeb.NToggleTrackballToolAction">
+            <summary>
+            Enables the trackball tool
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NToggleTrackballToolAction.#ctor">
+            <summary>
+            Initializer constructor
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.ThinWeb.INEndPanelDragCallback">
+            <summary>
+            Implemented by objects that track end drag
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.INEndPanelDragCallback.OnEndDrag(Nevron.Chart.ThinWeb.NThinChartControl,Nevron.Chart.NPanel)">
+            <summary>
+            
+            </summary>
+            <param name="control"></param>
+            <param name="panel"></param>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.INPanelDragCallback.OnPanelLocationChanged(Nevron.Chart.ThinWeb.NThinChartControl,Nevron.Chart.NContentPanel,Nevron.GraphicsCore.NPointL,Nevron.GraphicsCore.NPointL)">
+            <summary>
+            Called when a panel location has changed as a result of drag operation
+            </summary>
+            <param name="control"></param>
+            <param name="panel"></param>
+            <param name="oldValue"></param>
+            <param name="newValue"></param>
+        </member>
+        <member name="T:Nevron.Chart.ThinWeb.INEndIndicatorDragCallback">
+            <summary>
+            Implemented by objects that track end drag
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.INEndIndicatorDragCallback.OnEndDrag(Nevron.Chart.ThinWeb.NThinChartControl,Nevron.Chart.NIndicator)">
+            <summary>
+            
+            </summary>
+            <param name="control"></param>
+            <param name="chart"></param>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.INActivatePanelCallback.OnActivatePanel(Nevron.Chart.ThinWeb.NThinChartControl,Nevron.Chart.NContentPanel,Nevron.Chart.NContentPanel)">
+            <summary>
+            Called when the currently active panel has changed
+            </summary>
+            <param name="control"></param>
+            <param name="newActivePanel"></param>
+            <param name="oldActivePanel"></param>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.INDataPanCallback.OnDataPan(Nevron.Chart.ThinWeb.NThinChartControl,Nevron.Chart.NCartesianChart,Nevron.Chart.NAxis,Nevron.Chart.NAxis)">
+            <summary>
+            
+            </summary>
+            <param name="control"></param>
+            <param name="chart"></param>
+            <param name="newXRange"></param>
+            <param name="newYRange"></param>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.INDataPointDragCallback.OnTrackball(Nevron.Chart.ThinWeb.NThinChartControl,Nevron.Chart.NChart,System.Single,System.Single)">
+            <summary>
+            Called when the rotation and elevation properties of the currently active chart have changed
+            </summary>
+            <param name="control"></param>
+            <param name="chart"></param>
+            <param name="oldRotation"></param>
+            <param name="oldElevation"></param>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.INDataZoomCallback.OnDataZoom(Nevron.Chart.ThinWeb.NThinChartControl,Nevron.Chart.NCartesianChart,Nevron.Chart.NAxis,Nevron.Chart.NAxis)">
+            <summary>
+            Called when a data zoom has occured
+            </summary>
+            <param name="control"></param>
+            <param name="chart"></param>
+            <param name="horzAxis"></param>
+            <param name="vertAxis"></param>
+        </member>
+        <member name="T:Nevron.Chart.ThinWeb.INEndTrackballDragCallback">
+            <summary>
+            Implemented by objects that track end drag
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.INEndTrackballDragCallback.OnEndDrag(Nevron.Chart.ThinWeb.NThinChartControl,Nevron.Chart.NChart)">
+            <summary>
+            
+            </summary>
+            <param name="control"></param>
+            <param name="chart"></param>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.INIndicatorDragCallback.OnIndicatorValueChanged(Nevron.Chart.ThinWeb.NThinChartControl,Nevron.Chart.NGaugePanel,Nevron.Chart.NIndicator,System.Double,System.Double)">
+            <summary>
+            Called when a gauge indicator value has changed as a result of drag operation
+            </summary>
+            <param name="control"></param>
+            <param name="gauge"></param>
+            <param name="indicator"></param>
+            <param name="oldValue"></param>
+            <param name="newValue"></param>
+        </member>
+        <member name="T:Nevron.Chart.ThinWeb.INTrackballCallback">
+            <summary>
+            Implemented by objects that track trackball rotation / elevation change
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.INTrackballCallback.OnTrackball(Nevron.Chart.ThinWeb.NThinChartControl,Nevron.Chart.NChart,System.Single,System.Single)">
+            <summary>
+            Called when the rotation and elevation properties of the currently active chart have changed
+            </summary>
+            <param name="control"></param>
+            <param name="chart"></param>
+            <param name="oldRotation"></param>
+            <param name="oldElevation"></param>
+        </member>
+        <member name="T:Nevron.Chart.ThinWeb.NChartServerSettings">
+            <summary>
+            Provides various settings related to chart tiling
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NChartServerSettings.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NChartServerSettings.EnableTiledZoom">
+            <summary>
+            Whether tiling is enabled
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NChartServerSettings.ShowLoaderImagesForPlotTiles">
+            <summary>
+            Whether to show loader images for chart plot tiles
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NChartServerSettings.ShowLoaderImagesForAxisTiles">
+            <summary>
+            Whether to show loader images for axis tiles
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NChartServerSettings.MinZoomXRange">
+            <summary>
+            Gets / sets the minimum zoom x range length
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NChartServerSettings.MinZoomYRange">
+            <summary>
+            Gets / sets the minimum zoom y range length
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NChartServerSettings.UseTiledRenderingForNonZoomedAxes">
+            <summary>
+            Whether to uze tiled rendering for non zoomed axes
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.ThinWeb.NThinChartControl">
+            <summary>
+            Represents a ThinWeb Chart control
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NThinChartControl.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NThinChartControl.Controller">
+            <summary>
+            Gets the tools attached to this control
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NThinChartControl.ServerSettings">
+            <summary>
+            Gets or sets the chart settings
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NThinChartControl.HitTest(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NThinChartControl.HitTest(Nevron.ThinWeb.NBrowserMouseEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NThinChartControl.ScrollCallback">
+            <summary>
+            Gets sets a scroll callback
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NThinChartControl.GetImage(Nevron.GraphicsCore.INImageFormat,Nevron.GraphicsCore.NSize,Nevron.GraphicsCore.NResolution)">
+            <summary>
+            
+            </summary>
+            <param name="format"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NThinChartControl.GetImageMap">
+            <summary>
+            Writes an image map to the specified text writer.
+            </summary>
+            <param name="context"></param>
+            <param name="textWriter"></param>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NThinChartControl.GetHttpHandlerType">
+            <summary>
+            Gets the http handler type for service requests
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NThinChartControl.Charts">
+            <summary>
+            Gets the charts collection of the component.
+            </summary>
+            <remarks>
+            The charts collection contains the charts displayed in the control canvas.
+            By default there is one Cartesian chart in the collection.
+            </remarks>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NThinChartControl.Legends">
+            <summary>
+            Gets the legends collection of the component.
+            </summary>
+            <remarks>
+            The legends collection contains the legends displayed in the control canvas.
+            By default there is one legend in the collection.
+            </remarks>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NThinChartControl.Labels">
+            <summary>
+            Gets the labels collection of the component.
+            </summary>
+            <remarks>
+            The labels collection contains the labels displayed in the control canvas.
+            By default the collection is empty.
+            </remarks>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NThinChartControl.Gauges">
+            <summary>
+            Gets the gauges collection of the component.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NThinChartControl.NumericDisplays">
+            <summary>
+            Gets the numeric displays collection of the component.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NThinChartControl.StateIndicators">
+            <summary>
+            Gets the state indicators collection of the component.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NThinChartControl.Watermarks">
+            <summary>
+            Gets the watermarks collection of the component.
+            </summary>
+            <remarks>
+            The watermarks collection contains the watermarks displayed in the control canvas.
+            By default the collection is empty.
+            </remarks>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NThinChartControl.Panels">
+            <summary>
+            Gets the panels collection of the component.
+            </summary>
+            <remarks>
+            The panels collection contains all the panels displayed in the control canvas. 
+            This includes charts, legends, labels, watermarks, etc.
+            </remarks>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NThinChartControl.BackgroundStyle">
+            <summary>
+            Gives you access to the NBackground object applied on the chart background.
+            </summary>
+            <remarks>
+            The NBackground object controls various aspects of the chart background including fill effect, frame and interactivity.
+            </remarks>
+            <example>
+            The following exampe applies a gradient filling on the background.
+            <code lang = 'VB'>
+            NChartControl.Background.FillStyle.SetPredefinedAdvancedGradient(AdvancedGradientScheme.CalmWater2, 13)
+            </code>
+            <code>
+            NChartControl.Background.FillStyle.SetPredefinedAdvancedGradient(AdvancedGradientScheme.CalmWater2, 13);
+            </code>
+            </example>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NThinChartControl.InteractivityStyle">
+            <summary>
+            The interactive style associated with the control
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NThinChartControl.AnimationsStyle">
+            <summary>
+            Gets or sets the animation style
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NThinChartControl.Settings">
+            <summary>
+            Gets the chart settings related to rendering.
+            </summary>
+            <remarks>
+            With the help of the NSettings object you can control various properties related to the chart rendering and appearance.
+            </remarks>
+            <example>
+            The following example enables the jittering feature of the control.
+            <code lang = 'VB'>
+            ' enable the antialiasing of the whole scene
+            NChartControl.Settings.EnableJittering = True
+            NChartControl.Settings.JitteringSteps = 4
+            </code>
+            <code>
+            // enable the antialiasing of the whole scene
+            NChartControl.Settings.EnableJittering = true;
+            NChartControl.Settings.JitteringSteps = 4;
+            </code>
+            </example>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NThinChartControl.ServiceManager">
+            <summary>
+            Obtains the services collection of the chart document.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NThinChartControl.Document">
+            <summary>
+            Obtains the current chart document.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NThinChartControl.Serializer">
+            <summary>
+            Gives access to the chart serializer. The serializer
+            can be used to save/load control state through binary, XML and SOAP files.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NThinChartControl.Wizard">
+            <summary>
+            Gives access to the chart wizard object.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NThinChartControl.ImageExporter">
+            <summary>
+            Returns a NImageExport object exposing several image export functions.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NThinChartControl.DataBindingManager">
+            <summary>
+            Controls the database integration of the chart control.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NThinChartControl.Dispose">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NThinChartControl.RecalcLayout">
+            <summary>
+            Recalculates the layout of the control
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.ThinWeb.NChartControlDesigner">
+            <summary>
+            Provides design time support.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NChartControlDesigner.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.ThinWeb.NThinChartControlHttpHandler">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NThinChartControlHttpHandler.IsReusable">
+            <summary>
+            Gets a value indicating whether another request can use the IHttpHandler instance.
+            </summary>
+            <remarks>
+            Returns true.
+            </remarks>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NThinChartControlHttpHandler.ProcessRequest(System.Web.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Nevron.Chart.ThinWeb.NPanelDragTool">
+            <summary>
+            Represents the panel drag tool
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NPanelDragTool.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NPanelDragTool.PanelDragCallback">
+            <summary>
+            Called when an Panel value has changed
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NPanelDragTool.EndDragCallback">
+            <summary>
+            Called when the tool has finished dragging
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NChartController.GetActivePanel">
+            <summary>
+            Gets the current active panel
+            </summary>
+            <param name="document"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NChartController.SetActivePanel(Nevron.Chart.NContentPanel)">
+            <summary>
+            Sets the current active panel
+            </summary>
+            <param name="panel"></param>
+        </member>
+        <member name="T:Nevron.Chart.ThinWeb.NChartPlotTool">
+            <summary>
+            Base for all tools that operate on a chart plot (pair of x and y axis)
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NChartPlotTool.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NChartPlotTool.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="xAxisId"></param>
+            <param name="yAxisId"></param>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NChartPlotTool.XAxisId">
+            <summary>
+            Gets or sets the x axis id of the tool
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NChartPlotTool.YAxisId">
+            <summary>
+            Gets or sets the y axis id of the tool
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.ThinWeb.NChartTool">
+            <summary>
+            Base for all chart tools
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NChartTool.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NChartTool.RequiresActivePanel">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Nevron.Chart.ThinWeb.NDataPanTool">
+            <summary>
+            Represents a chart tool that allows the user to click and drag the visible plot area
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NDataPanTool.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NDataPanTool.DataPanCallback">
+            <summary>
+            Gets or sets the data pan callback
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.ThinWeb.NDataPointDragTool">
+            <summary>
+            Represents the trackball tool
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NDataPointDragTool.TrackballCallback">
+            <summary>
+            Called when the active panel has changed
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.ThinWeb.NDataZoomTool">
+            <summary>
+            Represents a tool that allows the user to zoom in / out a chart using a rectangular selection.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NDataZoomTool.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NDataZoomTool.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="xAxisId"></param>
+            <param name="yAxisId"></param>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NDataZoomTool.AllowXAxisZoom">
+            <summary>
+            Gets or sets a value indicating whether x axis zoom is allowed
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NDataZoomTool.AllowYAxisZoom">
+            <summary>
+            Gets or sets a value indicating whether y axis zoom is allowed
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NDataZoomTool.HorizontalAscendingZoom">
+            <summary>
+            Whether dragging the mouse in the positive x direction produces a zoom in
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NDataZoomTool.VerticalAscendingZoom">
+            <summary>
+            Whether dragging the mouse in the positive y direction produces a zoom in
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NDataZoomTool.ZoomOutResetsAxes">
+            <summary>
+            Whether a zoom out operation will reset the axes to their original, non zoomed state
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NDataZoomTool.DataZoomCallback">
+            <summary>
+            Gets or sets the data zoom callback
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.ThinWeb.NIndicatorDragTool">
+            <summary>
+            Represents the indicator drag tool
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NIndicatorDragTool.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NIndicatorDragTool.IndicatorDragCallback">
+            <summary>
+            Called when an indicator value has changed
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NIndicatorDragTool.EndDragCallback">
+            <summary>
+            Called when the tool has finished dragging
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.ThinWeb.NPanelSelectorTool">
+            <summary>
+            Represents a tool that can switch the currently active panel
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.ThinWeb.NPanelSelectorTool.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NPanelSelectorTool.ActivatePanelCallback">
+            <summary>
+            Called when the active panel has changed
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.ThinWeb.NTrackballTool">
+            <summary>
+            Represents the trackball tool
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NTrackballTool.TrackballCallback">
+            <summary>
+            Called when the active panel has changed
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.ThinWeb.NTrackballTool.EndDragCallback">
+            <summary>
+            Called when the trackball has finished dragging
+            </summary>
+        </member>
+    </members>
+</doc>

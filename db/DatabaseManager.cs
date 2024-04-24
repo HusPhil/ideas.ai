@@ -6,80 +6,31 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System;
 using Newtonsoft.Json.Linq;
+using System.Linq;
+using System.Xml.Linq;
+using System.Windows.Forms;
 
 
 namespace IdeasAi.db
 {
     public abstract class DatabaseManager
     {
-        protected string dbFilePath { get; set; }
+        MainForm mainForm;
+        public string dbFilePath;
+        public const string ConfigFilePath = "configs/settings.json";
         protected string table { get; set; }
-
-        public DatabaseManager()
+        public DatabaseManager(MainForm mainForm)
         {
-            string jsonString = File.ReadAllText("settings.json");
-            var appSettings = JObject.Parse(jsonString);
-            ScriptRunner.ReplaceEnvironmentVariables(appSettings);
+            this.mainForm = mainForm;
+            var appConfig = mainForm.settings;
+            ScriptRunner.ReplaceEnvironmentVariables(appConfig);
+            dbFilePath = (string)appConfig["Database_Path"]["DEFAULT"];
 
-            
-            this.dbFilePath = (string)appSettings["Database_Path"];
-            ;
-
-            // Create the SQLite database file if it doesn't exist
             if (!File.Exists(dbFilePath))
             {
                 SQLiteConnection.CreateFile(dbFilePath);
             }
         }
-
-        //STATIC METHODS
-        public static string OpenTextFile(string filePath)
-        {
-            try
-            {
-                // Check if the file exists
-                if (File.Exists(filePath))
-                {
-                    // Read all text from the file and return it
-                    using (StreamReader reader = new StreamReader(filePath))
-                    {
-                        return reader.ReadToEnd();
-                    }
-                }
-                else
-                {
-                    // File doesn't exist
-                    Console.WriteLine("The specified file does not exist.");
-                    return null;
-                }
-            }
-            catch (Exception ex)
-            {
-                // Exception occurred while reading the file
-                Console.WriteLine($"An error occurred while reading the file: {ex.Message}");
-                return null;
-            }
-        }
-        public static bool SaveStringAsTextFile(string filePath, string content)
-        {
-            try
-            {
-                // Write the content to the specified file path
-                using (StreamWriter writer = new StreamWriter(filePath))
-                {
-                    writer.Write(content);
-                }
-                return true; // File saved successfully
-            }
-            catch (Exception ex)
-            {
-                // Exception occurred while writing to the file
-                Console.WriteLine($"An error occurred while saving the file: {ex.Message}");
-                return false; // File saving failed
-            }
-        }
-        //
-        //
         public bool recordExist(Guid id)
         {
             using (SQLiteConnection connection = new SQLiteConnection($"Data Source={dbFilePath};Version=3;"))
@@ -109,7 +60,7 @@ namespace IdeasAi.db
             List<DBObjectManager> ideas = new List<DBObjectManager>();
 
             // Accessing the dbFilePath parameter directly instead of base.dbFilePath
-            using (SQLiteConnection connection = new SQLiteConnection($"Data Source={dbFilePath};Version=3;"))
+            using (SQLiteConnection connection = new SQLiteConnection($"Data Source={this.dbFilePath};Version=3;"))
             {
                 connection.Open();
 
@@ -183,6 +134,156 @@ namespace IdeasAi.db
                 }
             }
         }
+
+        //STATIC METHODS
+        public static void CreateNewNotebook(string dbName, string dbFilePath)
+        {
+
+            string sqlScript = @"
+            CREATE TABLE IF NOT EXISTS Document (
+                ID UNIQUEIDENTIFIER PRIMARY KEY,
+                Title TEXT,
+                Input TEXT,
+                Content TEXT,
+                Date_modified DATE
+            );
+
+            CREATE TABLE IF NOT EXISTS Note (
+                ID UNIQUEIDENTIFIER PRIMARY KEY,
+                Title TEXT,
+                Input TEXT,
+                Content TEXT,
+                Date_modified DATE
+            );
+        ";
+            CreateDatabase(dbName, dbFilePath, sqlScript);
+
+        }
+        public static void AddNewDatabasePath(string key, string path, JObject appConfig)
+        {
+            
+            // Access the "Database_Path" property
+            JObject databasePath = (JObject)appConfig["Database_Path"];
+
+            // Add a new key-value pair to the "Database_Path" property
+            databasePath[key] = path;
+
+            // Write the modified JSON back to the file
+            File.WriteAllText(ConfigFilePath, JsonConvert.SerializeObject(appConfig, Formatting.Indented));
+        }
+        public static void RemoveDatabasePath(string key, bool deleteFile, JObject appConfig)
+        {
+            
+            Console.WriteLine(appConfig);
+
+            JObject newDatabaseConfig = (JObject)appConfig["Database_Path"];
+
+            if(deleteFile)
+            {
+                File.Delete((string)newDatabaseConfig[key]);
+            }
+
+            newDatabaseConfig.Remove(key);
+
+            Console.WriteLine(newDatabaseConfig);
+
+            appConfig["Database_Path"] = newDatabaseConfig;
+
+
+            // Write the modified JSON back to the file
+            File.WriteAllText(ConfigFilePath, JsonConvert.SerializeObject(appConfig, Formatting.Indented));
+            
+            
+        }
+        public static string[] GetDatabasePathKeys(JObject appConfig)
+        {
+            string[] keys = null;
+            try
+            {    
+                JObject databasePath = (JObject)appConfig["Database_Path"];
+                keys = databasePath.Properties().Select(p => p.Name).ToArray();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Getting db path keys failed: {ex.Message}");
+            }
+
+            return keys;
+        }
+        public static void CreateDatabase(string dbName, string dbFilePath, string sqlScript)
+        {
+            // Check if the database file already exists
+            if (File.Exists(dbFilePath))
+            {
+                Console.WriteLine("Database file already exists.");
+                throw new Exception("Database file already exists.");
+            }
+
+            string connectionString = $"Data Source={dbFilePath};Version=3;";
+            SQLiteConnection.CreateFile(dbFilePath);
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                using (SQLiteCommand command = new SQLiteCommand(sqlScript, connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+
+                // Close the connection
+                connection.Close();
+            }
+
+            Console.WriteLine("Database created successfully.");
+            
+            
+        }
+        public static string OpenTextFile(string filePath)
+        {
+            try
+            {
+                // Check if the file exists
+                if (File.Exists(filePath))
+                {
+                    // Read all text from the file and return it
+                    using (StreamReader reader = new StreamReader(filePath))
+                    {
+                        return reader.ReadToEnd();
+                    }
+                }
+                else
+                {
+                    // File doesn't exist
+                    Console.WriteLine("The specified file does not exist.");
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Exception occurred while reading the file
+                Console.WriteLine($"An error occurred while reading the file: {ex.Message}");
+                return null;
+            }
+        }
+        public static bool SaveStringAsTextFile(string filePath, string content)
+        {
+            try
+            {
+                // Write the content to the specified file path
+                using (StreamWriter writer = new StreamWriter(filePath))
+                {
+                    writer.Write(content);
+                }
+                return true; // File saved successfully
+            }
+            catch (Exception ex)
+            {
+                // Exception occurred while writing to the file
+                Console.WriteLine($"An error occurred while saving the file: {ex.Message}");
+                return false; // File saving failed
+            }
+        }
+        //
+        //
         
     }
 }

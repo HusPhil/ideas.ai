@@ -1,0 +1,1372 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nevron.ThinWeb</name>
+    </assembly>
+    <members>
+        <member name="T:Nevron.ThinWeb.NAction">
+            <summary>
+            Base class for all client / server actions
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NAction.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="tooltip"></param>
+        </member>
+        <member name="P:Nevron.ThinWeb.NAction.Tooltip">
+            <summary>
+            Gets / sets the tooltip of displayed by this action
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NAction.UnpressOnResponse">
+            <summary>
+            Whether the button will be unpressed on control response or directly on the client. The default value is true
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NAction.IsEnabled">
+            <summary>
+            Whether the action is enabled
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.ThinWeb.NAction.GetScript">
+            <summary>
+            The client script to execute in response to this action
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.ThinWeb.NAction.GetImage">
+            <summary>
+            Gets the image src of the action in case it is hosted in a visual element such as toolbar or menu
+            </summary>
+            <param name="control"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Nevron.ThinWeb.NAction.m_Tooltip">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Nevron.ThinWeb.NCheckAction">
+            <summary>
+            Base class for all client / server check actions
+            </summary>
+        </member>
+        <member name="T:Nevron.ThinWeb.NSaveImageAction">
+            <summary>
+            Saves the control as image to the client
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NSaveImageAction.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NSaveImageAction.#ctor(System.String,Nevron.GraphicsCore.NImageFormat,System.Boolean,Nevron.GraphicsCore.NSize,System.Int32)">
+            <summary>
+            Initializer constuctor
+            </summary>
+            <param name="fileName"></param>
+            <param name="imageFormat"></param>
+            <param name="size"></param>
+            <param name="resolution"></param>
+        </member>
+        <member name="M:Nevron.ThinWeb.NSaveImageAction.#ctor(System.String,System.String,Nevron.GraphicsCore.NImageFormat,System.Boolean,Nevron.GraphicsCore.NSize,System.Int32)">
+            <summary>
+            Initializer constuctor
+            </summary>
+            <param name="fileName"></param>
+            <param name="tooltip"></param>
+            <param name="imageFormat"></param>
+            <param name="autoSize"></param>
+            <param name="size"></param>
+            <param name="resolution"></param>
+        </member>
+        <member name="P:Nevron.ThinWeb.NSaveImageAction.UnpressOnResponse">
+            <summary>
+            Whether the button will be unpressed on control response or directly on the client. The default value is true
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NSaveImageAction.IsEnabled">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.ThinWeb.NSaveImageAction.GetImage">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.ThinWeb.NSaveImageAction.GetScript">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Nevron.ThinWeb.NSaveStateAction">
+            <summary>
+            Saves the control state to the client
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NSaveStateAction.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NSaveStateAction.#ctor(System.String,Nevron.Serialization.PersistencyFormat)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="fileName"></param>
+            <param name="format"></param>
+        </member>
+        <member name="P:Nevron.ThinWeb.NSaveStateAction.UnpressOnResponse">
+            <summary>
+            Whether the button will be unpressed on control response or directly on the client. The default value is true
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NSaveStateAction.IsEnabled">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.ThinWeb.NSaveStateAction.GetImage">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.ThinWeb.NSaveStateAction.GetScript">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Nevron.ThinWeb.NToggleAutoUpdateAction">
+            <summary>
+            Toggles the auto update of the control
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NToggleAutoUpdateAction.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NToggleAutoUpdateAction.IsChecked">
+            <summary>
+            
+            </summary>
+            <param name="control"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.ThinWeb.NToggleAutoUpdateAction.GetImage">
+            <summary>
+            Gets the image sources
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.ThinWeb.NToggleAutoUpdateAction.GetScript">
+            <summary>
+            
+            </summary>
+            <param name="control"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.ThinWeb.NToggleAutoUpdateAction.IsEnabled">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Nevron.ThinWeb.NToggleBrowserRedirectToolAction">
+            <summary>
+            Enables the browser redirect tool
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NToggleBrowserRedirectToolAction.#ctor">
+            <summary>
+            Initializer constructor
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NToggleBrowserRedirectToolAction.ToolType">
+            <summary>
+            Gets the tool type
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NToggleBrowserRedirectToolAction.GetImage">
+            <summary>
+            Gets the image sources
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Nevron.ThinWeb.NToggleCursorToolAction">
+            <summary>
+            Enables the cursor change tool
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NToggleCursorToolAction.#ctor">
+            <summary>
+            Initializer constructor
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NToggleCursorToolAction.ToolType">
+            <summary>
+            Gets the tool type
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NToggleCursorToolAction.GetImage">
+            <summary>
+            Gets the image sources
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Nevron.ThinWeb.NToggleTooltipToolAction">
+            <summary>
+            Enables the browser redirect tool
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NToggleTooltipToolAction.#ctor">
+            <summary>
+            Initializer constructor
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NToggleTooltipToolAction.ToolType">
+            <summary>
+            Gets the tool type
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NToggleTooltipToolAction.GetImage">
+            <summary>
+            Gets the image sources
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Nevron.ThinWeb.NToolAction">
+            <summary>
+            Base class for all actions that enable client / server tools
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NToolAction.IsChecked">
+            <summary>
+            
+            </summary>
+            <param name="control"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.ThinWeb.NToolAction.IsEnabled">
+            <summary>
+            
+            </summary>
+            <param name="control"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.ThinWeb.NToolAction.GetScript">
+            <summary>
+            
+            </summary>
+            <param name="control"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.ThinWeb.INAutoUpdateCallback.OnAutoUpdate(Nevron.ThinWeb.NAspNetThinWebControl)">
+            <summary>
+            Called when the control requests an auto update
+            </summary>
+            <param name="control"></param>
+        </member>
+        <member name="M:Nevron.ThinWeb.INAutoUpdateCallback.OnAutoUpdateStateChanged(Nevron.ThinWeb.NAspNetThinWebControl)">
+            <summary>
+            Called when the control auto update state has changed (stopped or started)
+            </summary>
+            <param name="control"></param>
+        </member>
+        <member name="T:Nevron.ThinWeb.INCustomRequestCallback">
+            <summary>
+            Represents a callback that is invoked when the client browser processes a custom callback
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.INCustomRequestCallback.OnCustomRequestCallback(Nevron.ThinWeb.NAspNetThinWebControl,Nevron.ThinWeb.NRequestContext,System.String)">
+            <summary>
+            Called when the client browser processes a custom request
+            </summary>
+            <param name="control"></param>
+            <param name="context"></param>
+            <param name="argument"></param>
+        </member>
+        <member name="T:Nevron.ThinWeb.NClientCommand">
+            <summary>
+            Repsents a client command
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NClientCommand.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NClientCommand.#ctor(System.String)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:Nevron.ThinWeb.NClientCommand.#ctor(System.String,System.Object[])">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="arguments"></param>
+        </member>
+        <member name="T:Nevron.ThinWeb.NClientCommandList">
+            <summary>
+            Repsents a client command
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NClientCommandList.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NClientCommandList.Pack">
+            <summary>
+            Packs the command list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Nevron.ThinWeb.NIncompatibleTypeException">
+            <summary>
+            Throws an incompatible type exception
+            </summary>
+        </member>
+        <member name="T:Nevron.ThinWeb.NNode">
+            <summary>
+            Base node implementation
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NNode.ParentNode">
+            <summary>
+            Obtains the parent node
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NNode.RootNode">
+            <summary>
+            Obtains the root of this node
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NNode.Clone">
+            <summary>
+            Creates an identical copy of this object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Nevron.ThinWeb.NNodeCollection">
+            <summary>
+            Summary description for NNodeCollection.
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NNodeCollection.#ctor(System.Type)">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NNodeCollection.Count">
+            <summary>
+            Gets the number of elements contained in the collection.
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NNodeCollection.IsSynchronized">
+            <summary>
+            Gets a value indicating whether access to the ICollection is synchronized (thread-safe).
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NNodeCollection.SyncRoot">
+            <summary>
+            Gets an object that can be used to synchronize access to the ICollection.
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NNodeCollection.CopyTo(System.Array,System.Int32)">
+            <summary>
+            Copies the elements of the collection to an Array, starting at a particular Array index.
+            </summary>
+            <param name="array"></param>
+            <param name="index"></param>
+        </member>
+        <member name="P:Nevron.ThinWeb.NNodeCollection.IsFixedSize">
+            <summary>
+            Gets a value indicating whether the collection has a fixed size.
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NNodeCollection.IsReadOnly">
+            <summary>
+            Gets a value indicating whether the collection is read-only.
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NNodeCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets the element at the specified index.
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NNodeCollection.Add(System.Object)">
+            <summary>
+            Adds an item to the collection.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.ThinWeb.NNodeCollection.Clear">
+            <summary>
+            Removes all items from the collection.
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NNodeCollection.Contains(System.Object)">
+            <summary>
+            Determines whether the IList contains a specific value.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.ThinWeb.NNodeCollection.IndexOf(System.Object)">
+            <summary>
+            Determines the index of a specific item in the collection.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.ThinWeb.NNodeCollection.Insert(System.Int32,System.Object)">
+            <summary>
+            Inserts an item to the collection at the specified position.
+            </summary>
+            <param name="index"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Nevron.ThinWeb.NNodeCollection.Remove(System.Object)">
+            <summary>
+            Removes the first occurrence of a specific object from the collectino.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Nevron.ThinWeb.NNodeCollection.RemoveAt(System.Int32)">
+            <summary>
+            Removes the item at the specified index.
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="T:Nevron.ThinWeb.NNodeComposite">
+            <summary>
+            Summary description for NNodeComposite.
+            </summary>
+        </member>
+        <member name="T:Nevron.ThinWeb.JQuerySourceType">
+            <summary>
+            Specifies the JQuery script source
+            </summary>
+        </member>
+        <member name="F:Nevron.ThinWeb.JQuerySourceType.None">
+            <summary>
+            JQuery will not be embedded in the client script generated by the control. If you select this mode the page using the control must 
+            refernce JQuery
+            </summary>
+        </member>
+        <member name="F:Nevron.ThinWeb.JQuerySourceType.Embedded">
+            <summary>
+            The control will use the embedded version of JQuery
+            </summary>
+        </member>
+        <member name="F:Nevron.ThinWeb.JQuerySourceType.Url">
+            <summary>
+            The control will generate a script tag that refrences the specified url. This URL must contain the JQuery library.
+            </summary>
+        </member>
+        <member name="T:Nevron.ThinWeb.ImageServeMode">
+            <summary>
+            Enumerates the http handler modes
+            </summary>
+        </member>
+        <member name="F:Nevron.ThinWeb.ImageServeMode.Request">
+            <summary>
+            Serve the images in a separate request
+            </summary>
+        </member>
+        <member name="F:Nevron.ThinWeb.ImageServeMode.Embed">
+            <summary>
+            Always embed images in the response
+            </summary>
+        </member>
+        <member name="F:Nevron.ThinWeb.ImageServeMode.Auto">
+            <summary>
+            Automatically choose whether to embed images based on the client browser
+            </summary>
+        </member>
+        <member name="T:Nevron.ThinWeb.MouseEvent">
+            <summary>
+            Enumerates the tracked mouse events
+            </summary>
+        </member>
+        <member name="F:Nevron.ThinWeb.MouseEvent.MouseDown">
+            <summary>
+            Mouse down
+            </summary>
+        </member>
+        <member name="F:Nevron.ThinWeb.MouseEvent.MouseMove">
+            <summary>
+            Mouse move
+            </summary>
+        </member>
+        <member name="F:Nevron.ThinWeb.MouseEvent.MouseUp">
+            <summary>
+            Mouse up
+            </summary>
+        </member>
+        <member name="F:Nevron.ThinWeb.MouseEvent.MouseLeave">
+            <summary>
+            Mouse leave
+            </summary>
+        </member>
+        <member name="F:Nevron.ThinWeb.MouseEvent.MouseHover">
+            <summary>
+            Mouse hover
+            </summary>
+        </member>
+        <member name="F:Nevron.ThinWeb.MouseEvent.MouseEnter">
+            <summary>
+            Mouse enter
+            </summary>
+        </member>
+        <member name="F:Nevron.ThinWeb.MouseEvent.MouseClick">
+            <summary>
+            Mouse click
+            </summary>
+        </member>
+        <member name="F:Nevron.ThinWeb.MouseEvent.MouseDoubleClick">
+            <summary>
+            Mouse double click
+            </summary>
+        </member>
+        <member name="T:Nevron.ThinWeb.MouseButton">
+            <summary>
+            Enumerates the mouse buttons
+            </summary>
+        </member>
+        <member name="T:Nevron.ThinWeb.NAspNetThinWebControlHttpHandler">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NAspNetThinWebControlHttpHandler.IsReusable">
+            <summary>
+            Gets a value indicating whether another request can use the IHttpHandler instance.
+            </summary>
+            <remarks>
+            Returns true.
+            </remarks>
+        </member>
+        <member name="M:Nevron.ThinWeb.NAspNetThinWebControlHttpHandler.ProcessRequest(System.Web.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Nevron.ThinWeb.NAspNetThinWebControl">
+            <summary>
+            Base ASP.NET thin control
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NAspNetThinWebControl.#ctor">
+            <summary>
+            Default construcotr
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NAspNetThinWebControl.Width">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NAspNetThinWebControl.Height">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NAspNetThinWebControl.Initialized">
+            <summary>
+            Returns true if the control is initialized
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NAspNetThinWebControl.CustomData">
+            <summary>
+            Gets or sets an object that is persisted with the control across roundtrips
+            </summary>
+            <remarks>
+            The object must be an object that can be binary serialized by the .NET framework. 
+            </remarks>
+        </member>
+        <member name="P:Nevron.ThinWeb.NAspNetThinWebControl.AutoUpdateCallback">
+            <summary>
+            Gets or sets the auto update callback
+            </summary>
+            <remarks>
+            The object that implements the INAutoUpdateCallback interface must be .NET binary serializable
+            </remarks>
+        </member>
+        <member name="P:Nevron.ThinWeb.NAspNetThinWebControl.CustomRequestCallback">
+            <summary>
+            Gets or sets the auto update callback
+            </summary>
+            <remarks>
+            The object that implements the INCustomRequestCallback interface must be .NET binary serializable
+            </remarks>
+        </member>
+        <member name="P:Nevron.ThinWeb.NAspNetThinWebControl.Toolbar">
+            <summary>
+            Gets or sets the control toolbar 
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NAspNetThinWebControl.PostbackID">
+            <summary>
+            Gets the client side id of this control.
+            </summary>
+            <remarks>
+            The getter simply replaces colons with the $ sign.
+            </remarks>
+        </member>
+        <member name="P:Nevron.ThinWeb.NAspNetThinWebControl.StateId">
+            <summary>
+            Gets or sets the state id
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NAspNetThinWebControl.ServiceUrl">
+            <summary>
+            Gets or sets the service URL
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NAspNetThinWebControl.PageUrl">
+            <summary>
+            Gets the page URL
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NAspNetThinWebControl.ClearResponse">
+            <summary>
+            Ensures that the control does not produce a response
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NAspNetThinWebControl.Update">
+            <summary>
+            Update the content of the control in the client browser
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NAspNetThinWebControl.UpdateToolbar">
+            <summary>
+            Update the content of the control in the client browser
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NAspNetThinWebControl.UpdateView">
+            <summary>
+            Update the content of the control in the client browser
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NAspNetThinWebControl.GetImage(Nevron.GraphicsCore.INImageFormat,Nevron.GraphicsCore.NSize,Nevron.GraphicsCore.NResolution)">
+            <summary>
+            Gets an image in the specified format, size and resolution
+            </summary>
+            <param name="format"></param>
+            <param name="size"></param>
+            <param name="resolution"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.ThinWeb.NAspNetThinWebControl.GetImage(Nevron.GraphicsCore.INImageFormat)">
+            <summary>
+            Gets an image in the specified format
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.ThinWeb.NAspNetThinWebControl.AddCustomClientCommand(System.String)">
+            <summary>
+            Adds a custom client command to the generated commands to the client
+            </summary>
+            <param name="argument"></param>
+        </member>
+        <member name="M:Nevron.ThinWeb.NAspNetThinWebControl.LoadStateFromSession(System.String,System.Boolean)">
+            <summary>
+            Loads the specified state from the current session
+            </summary>
+            <param name="stateId"></param>
+            <param name="initialized"></param>
+        </member>
+        <member name="M:Nevron.ThinWeb.NAspNetThinWebControl.SaveStateToSession">
+            <summary>
+            Saves the state of the control to the current session state
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NAspNetThinWebControl.GetImageMap">
+            <summary>
+            Gets an image map
+            </summary>
+            <param name="context"></param>
+            <param name="writer"></param>
+        </member>
+        <member name="M:Nevron.ThinWeb.NAspNetThinWebControl.OnPreRender(System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+            <param name="scriptIncludeFiles"></param>
+        </member>
+        <member name="M:Nevron.ThinWeb.NAspNetThinWebControl.RenderControl(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Renders the control
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:Nevron.ThinWeb.NAspNetThinWebControl.GetIncludeScript">
+            <summary>
+            Gets the include script of the control
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NAspNetThinWebControl.RaisePostBackEvent(System.String)">
+            <summary>
+            Region raises the postback event
+            </summary>
+            <param name="eventArgument"></param>
+        </member>
+        <member name="M:Nevron.ThinWeb.NAspNetThinWebControl.GetHttpHandlerType">
+            <summary>
+            Gets the http handler type for service requests
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.ThinWeb.NAspNetThinWebControl.GetHttpHandlerName(System.Type)">
+            <summary>
+            Gets the http handler name
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.ThinWeb.NAspNetThinWebControl.RegisterWebConfigHandler(Nevron.ThinWeb.NAspNetThinWebControlDesigner)">
+            <summary>
+            Registes the control web config handler
+            </summary>
+            <param name="designer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.ThinWeb.NAspNetThinWebControl.ConfigureInitialResponse">
+            <summary>
+            Configures the image response of the control
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Nevron.ThinWeb.NAspNetThinWebControlDesigner">
+            <summary>
+            Provides design time support for all web controls, which derive from NAspNetThinWebControl class.
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NAspNetThinWebControlDesigner.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NAspNetThinWebControlDesigner.OnComponentChanged(System.Object,System.ComponentModel.Design.ComponentChangedEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="ce"></param>
+        </member>
+        <member name="M:Nevron.ThinWeb.NAspNetThinWebControlDesigner.GetDesignTimeHtml">
+            <summary>
+            Delegates the rendering to the OnWebControlDesignTimeRender method of the active 
+            <see cref="!:Nevron.UI.WebForm.Controls.NClientServerTechnology"/> instance,
+            stored in the ClientServerTechnology property of the web control that is being designed.
+            </summary>
+            <returns>The design-time HTML of the rendered web control.</returns>
+        </member>
+        <member name="P:Nevron.ThinWeb.NAspNetThinWebControlDesigner.WebControl">
+            <summary>
+            Gets the NWebControl object that is being designed.
+            </summary>
+        </member>
+        <member name="T:Nevron.ThinWeb.NPostbackEventArgs">
+            <summary>
+            Represents postback event args
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NPostbackEventArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NPostbackEventArgs.#ctor(Nevron.GraphicsCore.NPoint,Nevron.GraphicsCore.NPoint)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="mousePosition"></param>
+            <param name="relativeMousePosition"></param>
+        </member>
+        <member name="P:Nevron.ThinWeb.NPostbackEventArgs.MousePosition">
+            <summary>
+            Gets the mouse coordinates relative to the object
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NPostbackEventArgs.PageMousePosition">
+            <summary>
+            Gets the mouse page coordinates of the postback event
+            </summary>
+        </member>
+        <member name="T:Nevron.ThinWeb.NServerSettings">
+            <summary>
+            Provides various settings related to the ThinWeb control processing
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NServerSettings.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NServerSettings.TileCacheSize">
+            <summary>
+            Gets / sets the tiled cache size (in pixels)
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NServerSettings.ImageServeMode">
+            <summary>
+            Gets / set how to serve the generated image(s) of the control
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NServerSettings.EnableAutoUpdate">
+            <summary>
+            Whether auto update is enabled
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NServerSettings.AutoUpdateInterval">
+            <summary>
+            The auto update interval in milliseconds
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NServerSettings.DisplayErrorMessages">
+            <summary>
+            Whether to display error message on the client
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NServerSettings.JQuery">
+            <summary>
+            Controsl JQuery related settings
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NServerSettings.Css">
+            <summary>
+            Gets or sets the CSS used by the control
+            </summary>
+        </member>
+        <member name="T:Nevron.ThinWeb.NThinWebControlLoadAssemblyType">
+            <summary>
+            Used to explicitly load/reference the Nevron.ThinWeb.dll assembly.
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NThinWebControlLoadAssemblyType.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Nevron.ThinWeb.NRequestContext">
+            <summary>
+            Base for all requests
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NBinaryResponseOutput.#ctor(System.String,System.Byte[])">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="mimeType"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:Nevron.ThinWeb.NBinaryResponseOutput.#ctor(System.String,System.Byte[],System.Int32)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="mimeType"></param>
+            <param name="data"></param>
+            <param name="length"></param>
+        </member>
+        <member name="M:Nevron.ThinWeb.NBinaryResponseOutput.#ctor(System.String,System.Byte[],System.Int32,System.Int32,System.String[])">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="mimeType"></param>
+            <param name="data"></param>
+            <param name="length"></param>
+            <param name="expiration"></param>
+            <param name="headers"></param>
+        </member>
+        <member name="M:Nevron.ThinWeb.NTextResponseOutput.#ctor(System.String,System.String)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="mimeType"></param>
+            <param name="text"></param>
+        </member>
+        <member name="F:Nevron.ThinWeb.NTextResponseOutput.m_MimePlainText">
+            <summary>
+            Plain text
+            </summary>
+        </member>
+        <member name="F:Nevron.ThinWeb.NTextResponseOutput.m_MimeCSS">
+            <summary>
+            CSS 
+            </summary>
+        </member>
+        <member name="F:Nevron.ThinWeb.NTextResponseOutput.m_MimeHTML">
+            <summary>
+            HTML
+            </summary>
+        </member>
+        <member name="F:Nevron.ThinWeb.NTextResponseOutput.m_MimeJavaScript">
+            <summary>
+            Java Script
+            </summary>
+        </member>
+        <member name="T:Nevron.ThinWeb.NCssSettings">
+            <summary>
+            Controls the CSS used by the control
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NCssSettings.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NCssSettings.ScrollbarButtonInflate">
+            <summary>
+            Gets sets the scrollbar button inflate
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NCssSettings.ScrollbarInflate">
+            <summary>
+            Gets / sets the scrollbar inflate
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NCssSettings.ViewInflate">
+            <summary>
+            Gets / sets the view inflate caused by CSS applied on the view
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NCssSettings.ToolbarInflate">
+            <summary>
+            Gets / sets the toolbar inflate
+            </summary>
+            <remarks>
+            The value of this property is used when the control toolbar is measured. By default it is set to height inflate of 2 pixels - this reflects the CSS
+            applied on the toolbar which has no padding and border and bottom margin of 2 pixels.
+            </remarks>
+        </member>
+        <member name="P:Nevron.ThinWeb.NCssSettings.View">
+            <summary>
+            Gets / sets the css used for the control view on the client
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NCssSettings.NoSelect">
+            <summary>
+            Gets / sets the css used to mark images and div as non selectable
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NCssSettings.Tooltip">
+            <summary>
+            Gets / sets the css used to for tooltips
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NCssSettings.ZoomInSelection">
+            <summary>
+            Gets / sets the css used to for zoom in selection
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NCssSettings.ZoomOutSelection">
+            <summary>
+            Gets / sets the css used to for zoom out selection
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NCssSettings.Scrollbar">
+            <summary>
+            Gets / sets teh css applied on the scrollbar
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NCssSettings.Toolbar">
+            <summary>
+            Gets / sets the css applied on the toolbar
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NCssSettings.ToolbarButton">
+            <summary>
+            Gets / sets the css applied on toolbar buttons
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NCssSettings.ToolbarSeparator">
+            <summary>
+            Gets / sets the css applied on toolbar separators
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NCssSettings.StatePressed">
+            <summary>
+            Gets / sets the button pressed css
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NCssSettings.StateDisabled">
+            <summary>
+            Gets / sets the button disabled css
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NCssSettings.StateHover">
+            <summary>
+            Gets / sets the css applied on hovered buttons
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NCssSettings.StateDefault">
+            <summary>
+            Gets / sets the css applied by default on buttons
+            </summary>
+        </member>
+        <member name="T:Nevron.ThinWeb.NJQuerySettings">
+            <summary>
+            Controls the version and location of JQuery used by the ThinWeb control
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NJQuerySettings.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NJQuerySettings.SourceType">
+            <summary>
+            Specifies how JQuery will be embedded in the client script
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NJQuerySettings.Url">
+            <summary>
+            Gets / sets the url holding the JQuery souce code in case the SourceType is set to Url
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NJQuerySettings.ExecuteAllScriptsInDocumentReady">
+            <summary>
+            Gets or sets whether to execute all scripts in document ready
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NControlToolbar.#ctor">
+            <summary>
+            Initializer constructor
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NControlToolbar.Visible">
+            <summary>
+            Gets or sets the visible property
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NControlToolbar.Items">
+            <summary>
+            Gets or sets the toolbar items collection
+            </summary>
+        </member>
+        <member name="T:Nevron.ThinWeb.NToolbarActionItem">
+            <summary>
+            The base of all toolbar items
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NToolbarActionItem.#ctor">
+            <summary>
+            Initializer constructor
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NToolbarActionItem.#ctor(Nevron.ThinWeb.NAction)">
+            <summary>
+            Initializer constructor
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NToolbarActionItem.Action">
+            <summary>
+            Gets / sets the action associated with this item
+            </summary>
+        </member>
+        <member name="F:Nevron.ThinWeb.NToolbarActionItem.m_Action">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NToolbarButton.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NToolbarButton.#ctor(Nevron.ThinWeb.NAction)">
+            <summary>
+            Initalizer constructor
+            </summary>
+            <param name="action"></param>
+        </member>
+        <member name="T:Nevron.ThinWeb.NToolbarItem">
+            <summary>
+            The base of all toolbar items
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NToolbarItem.#ctor">
+            <summary>
+            Initializer constructor
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NToolbarItem.Size">
+            <summary>
+            Gets / sets the size of the item
+            </summary>
+        </member>
+        <member name="T:Nevron.ThinWeb.NToolbarItemCollection">
+            <summary>
+            This collection holds toolbar items
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NToolbarItemCollection.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Nevron.ThinWeb.NToolbarSeparator">
+            <summary>
+            Represents a toolbar separator
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NToolbarSeparator.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Nevron.ThinWeb.NBrowserMouseEventArgs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NBrowserMouseEventArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NBrowserMouseEventArgs.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="mouseButton"></param>
+            <param name="x"></param>
+            <param name="y"></param>
+        </member>
+        <member name="P:Nevron.ThinWeb.NBrowserMouseEventArgs.X">
+            <summary>
+            Gets the X mouse coordinate
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NBrowserMouseEventArgs.Y">
+            <summary>
+            Gets the Y mouse coordinate
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NBrowserMouseEventArgs.MouseButton">
+            <summary>
+            Get the mouse button
+            </summary>
+        </member>
+        <member name="T:Nevron.ThinWeb.NBrowserRedirectTool">
+            <summary>
+            Represents a tool that redirects the client browser when the user clicks on element with interactivity style having a URL attribute
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NBrowserRedirectTool.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NBrowserRedirectTool.OpenLinkInNewWindow">
+            <summary>
+            Gets or sets a value indicating whether to open the link in a new window
+            </summary>
+        </member>
+        <member name="T:Nevron.ThinWeb.NClientMouseEventTool">
+            <summary>
+            Represents a tool that when present in the controller tools collection processes client image map script associated with control elements
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NClientMouseEventTool.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Nevron.ThinWeb.NController">
+            <summary>
+            The controller object serves as a holder of the tools in the control
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NController.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NController.Tools">
+            <summary>
+            Gets or sets the tools attached to this control
+            </summary>
+        </member>
+        <member name="T:Nevron.ThinWeb.NCursorTool">
+            <summary>
+            Represents a tool that dynamically changes the browser cursor depending on the cursor interactivity attribute
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NCursorTool.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Nevron.ThinWeb.NPostbackTool">
+            <summary>
+            Represents a tool that when present in the controller tools collection processes client image map script
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NPostbackTool.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NPostbackTool.#ctor(System.Boolean)">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NPostbackTool.PostbackOnlyOnInteractiveItems">
+            <summary>
+            Gets or sets a value indicating whether postback should occur only on interactive items
+            </summary>
+        </member>
+        <member name="T:Nevron.ThinWeb.NServerMouseEventTool">
+            <summary>
+            Represents a tool that when present in the controller tools collection fires server side mouse events
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NServerMouseEventTool.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NServerMouseEventTool.#ctor(Nevron.ThinWeb.INMouseEventCallback,Nevron.ThinWeb.INMouseEventCallback,Nevron.ThinWeb.INMouseEventCallback,Nevron.ThinWeb.INMouseEventCallback,Nevron.ThinWeb.INMouseEventCallback,Nevron.ThinWeb.INMouseEventCallback,Nevron.ThinWeb.INMouseEventCallback,Nevron.ThinWeb.INMouseEventCallback)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="mouseDown"></param>
+            <param name="mouseMove"></param>
+            <param name="mouseUp"></param>
+            <param name="mouseEnter"></param>
+            <param name="mouseLeave"></param>
+            <param name="mouseOver"></param>
+        </member>
+        <member name="P:Nevron.ThinWeb.NServerMouseEventTool.MouseDown">
+            <summary>
+            Whether to track the mouse down event on the client
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NServerMouseEventTool.MouseMove">
+            <summary>
+            Whether to track the mouse move event on the client
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NServerMouseEventTool.MouseUp">
+            <summary>
+            Whether to track the mouse up event on the client
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NServerMouseEventTool.MouseLeave">
+            <summary>
+            Whether to track the mouse leave event on the client
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NServerMouseEventTool.MouseOver">
+            <summary>
+            Whether to track the mouse over event on the client
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NServerMouseEventTool.MouseEnter">
+            <summary>
+            Whether to track the mouse enter event on the client
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NServerMouseEventTool.MouseClick">
+            <summary>
+            Whether to track mouse click event on the client
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NServerMouseEventTool.MouseDoubleClick">
+            <summary>
+            Whether to track mouse double click event on the client
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NTool.#ctor">
+            <summary>
+            Contructors
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NTool.Enabled">
+            <summary>
+            Gets or sets a value indicating whether the tool is enabled
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NTool.Exclusive">
+            <summary>
+            Whether the tool is exclusive (e.g. should not be combined with other tools)
+            </summary>
+        </member>
+        <member name="T:Nevron.ThinWeb.NToolCollection">
+            <summary>
+            This collection holds the tools, which can applied to the control.
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NToolCollection.#ctor">
+            <summary>
+            Creates a new empty interactivity operations collection.
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NToolCollection.FindToolOfType(System.Type)">
+            <summary>
+            Finds a tool of the specified type
+            </summary>
+            <param name="type"></param>
+        </member>
+        <member name="T:Nevron.ThinWeb.NTooltipTool">
+            <summary>
+            Represents a tool that shows client side tooltips depending on the tooltip interactivity attribute
+            </summary>
+        </member>
+        <member name="M:Nevron.ThinWeb.NTooltipTool.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NTooltipTool.PopDelay">
+            <summary>
+            Gets or sets the tooltip pop delay in milliseconds
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NTooltipTool.InitialDelay">
+            <summary>
+            Gets or sets the tooltip initial delay in milliseconds
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NTooltipTool.FadeInDelay">
+            <summary>
+            Gets or sets the tooltip fade in delay in milliseconds
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NTooltipTool.FadeOutDelay">
+            <summary>
+            Gets or sets the tooltip fade out delay in milliseconds
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NTooltipTool.ReshowDelay">
+            <summary>
+            Gets or sets the tooltip reshow delay in milliseconds
+            </summary>
+        </member>
+        <member name="P:Nevron.ThinWeb.NTooltipTool.FollowMouse">
+            <summary>
+            Whether the tooltip must follow the mouse position
+            </summary>
+        </member>
+    </members>
+</doc>

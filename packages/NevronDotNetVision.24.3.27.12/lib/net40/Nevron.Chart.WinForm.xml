@@ -1,0 +1,2608 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nevron.Chart.WinForm</name>
+    </assembly>
+    <members>
+        <member name="T:Nevron.Chart.WinForm.SimpleMethod">
+            <summary>
+            Delegate used to build a context menu for the specified object
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NChartControlCodeDomSerializer">
+            <summary>
+            The custom serializer for the NChartControl class
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartControlCodeDomSerializer.Deserialize(System.ComponentModel.Design.Serialization.IDesignerSerializationManager,System.Object)">
+            <summary>
+            The deserialization is delegated to the default serializer.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartControlCodeDomSerializer.Serialize(System.ComponentModel.Design.Serialization.IDesignerSerializationManager,System.Object)">
+            <summary>
+            Customizes the output from the default serializer.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NChartControlDesigner">
+            <summary>
+            Designer class for the NChartControl
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartControlDesigner.ViewSize">
+            <summary>
+            Gets the size of the view / control hosting the document
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartControlDesigner.OnDocumentCleared">
+            <summary>
+            Called when the chart document has been cleared (reset to default state)
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NChartControlSerializer">
+            <summary>
+            Summary description for NChartSerializer.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartControlSerializer.SaveControlStateToFile">
+            <summary>
+            Shows a save file dialog and saves the current control state to file.
+            </summary>
+            <returns></returns>
+            <remarks>
+            The function returns true if the state was successfully saved. This function may trow a serialization exception.
+            </remarks>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartControlSerializer.LoadControlStateFromFile">
+            <summary>
+            Shows an open file dialog and loads the control state from the file.
+            </summary>
+            <returns></returns>
+            <remarks>
+            The function returns true if the state was successfully loaded. This function may trow a serialization exception.
+            </remarks>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartControlSerializer.SaveControlStateToFile(System.String,Nevron.Serialization.PersistencyFormat,Nevron.Serialization.INSerializationFilter)">
+            <summary>
+            Saves the current state of the chart control to a file in the specified format.
+            </summary>
+            <param name="filePath">A relative or absolute path for the output file.</param>
+            <param name="format">The format of the file.</param>
+            <param name="filter">A serialization filter.</param>
+            <remarks>
+            The filter parameters is used only when the format is CustomXML or CustomBinary.
+            </remarks>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartControlSerializer.LoadControlStateFromFile(System.String,Nevron.Serialization.PersistencyFormat,Nevron.Serialization.INSerializationFilter)">
+            <summary>
+            Loads an existing chart state to the chart control from a file.
+            </summary>
+            <param name="filePath">A relative or absolute path for the input file.</param>
+            <param name="format">The format of the file.</param>
+            <param name="filter">A serialization filter.</param>
+            <remarks>
+            The filter parameters is used only when the format is CustomXML or CustomBinary.
+            </remarks>
+            <example>
+            The following example loads a new state and repaints the control:
+            <code lang = 'VB'>
+            nChartControl1.Serializer.LoadControlStateFromFile("c:\chart.bin", PersistencyFormat.Binary, Nothing)
+            nChartControl1.Refresh()
+            </code>
+            <code>
+            nChartControl1.Serializer.LoadControlStateFromFile("c:\chart.bin", PersistencyFormat.Binary, null);
+            nChartControl1.Refresh();
+            </code>
+            </example>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartControlSerializer.SaveControlStateToStream(System.IO.Stream,Nevron.Serialization.PersistencyFormat,Nevron.Serialization.INSerializationFilter)">
+            <summary>
+            Saves the chart control state in the passed stream.
+            </summary>
+            <param name="stream">The stream to load the state from.</param>
+            <param name="format">The format of the stream.</param>
+            <param name="filter">A serialization filter.</param>
+            <remarks>
+            You're responsible for the stream creation and closure. The filter parameter is used only when the format is CustomXML or CustomBinary.
+            </remarks>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartControlSerializer.LoadControlStateFromStream(System.IO.Stream,Nevron.Serialization.PersistencyFormat,Nevron.Serialization.INSerializationFilter)">
+            <summary>
+            Loads the chart control state from the passed stream.
+            </summary>
+            <param name="stream">The stream to save the state to.</param>
+            <param name="format">The format of the stream.</param>
+            <param name="filter">A serialization filter.</param>
+            <remarks>
+            You're responsible for the stream creation and closure. The filter parameters is used only when the format is CustomXML or CustomBinary.
+            </remarks>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NChartControlState">
+            <summary>
+            Summary description for NChartControlState.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartControlState.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartControlState.#ctor(Nevron.Chart.NChartDocumentState)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="documentState"></param>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NChartGridControl">
+            <summary>
+            A grid control which can be used for the editing of the chart control data series
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartGridControl.#ctor">
+            <summary>
+            Creates a new instance of the class with default settings
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartGridControl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartGridControl.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartGridControl.ChartControl">
+            <summary>
+            The grid control can be attached to a chart control. This property specifies the currently edited chart control
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartGridControl.ChartGridButtonsMask">
+            <summary>
+            A bitmask controlling the displayed toolbar buttons
+            </summary>
+            <remarks>
+            A combination of the ChartGridButtonsMask enum fields is possible.
+            </remarks>
+            <example>
+            The following example instructs the grid to have only SelectChart and SelectSeries buttons
+            <code lang = 'VB'>
+            NChartGrid1.ChartGridButtonsMask = ChartGridButtonsMask.SelectChart Or ChartGridButtonsMask.SelectSeries;
+            </code>
+            <code>
+            NChartGrid1.ChartGridButtonsMask = ChartGridButtonsMask.SelectChart | ChartGridButtonsMask.SelectSeries;
+            </code>
+            </example>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartGridControl.ToolbarVisible">
+            <summary>
+            Controls the visibility of the toolbar
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartGridControl.DataSeriesGrid">
+            <summary>
+            Gets or sets the data series grid.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartGridControl.BindToChart">
+            <summary>
+            Binds the Grid to the Chart control
+            </summary>
+            <remarks>
+            When the grid is working in this mode the Chart control will automatically be updated with changes made in the grid
+            </remarks>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.INChartButtonCommand">
+            <summary>
+            Implemented by chart button commands
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.INChartButtonCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.INChartCheckButtonCommand">
+            <summary>
+            Implemented by chart check button commands
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.INChartCheckButtonCommand.Checked">
+            <summary>
+            Gets the checked state of the command
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.INChartComboCommand">
+            <summary>
+            Implemented by chart combo box commands
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.INChartComboCommand.Options">
+            <summary>
+            Gets/sets the combo box options
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.INChartComboCommand.GetEditText">
+            <summary>
+            Gets the text of the combo box edit part
+            </summary>
+            <returns>edit part text</returns>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.INChartComboCommand.Execute(System.String)">
+            <summary>
+            Executes the combo command with the specified text option
+            </summary>
+            <param name="text">text option</param>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.INChartMenuCommand">
+            <summary>
+            Implemented by chart menu commands
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.INChartMenuCommand.Items">
+            <summary>
+            Gets/sets the ids of the commands displayed by the menu
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.INChartOptionMenuCommand">
+            <summary>
+            Implemented by chart option menu commands
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.INChartOptionMenuCommand.GetSelectedItemImageInfo(Nevron.GraphicsCore.NCustomImageList@,System.Int32@)">
+            <summary>
+            Gets the selected option image info
+            </summary>
+            <param name="imageList">image list</param>
+            <param name="imageIndex">image index</param>
+            <returns>true if the image info was successfully retreived, otherwise false</returns>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NChartControl">
+            <summary>
+            The NChartControl class represents Nevron Chart for .NET used in Windows forms.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartControl.#ctor">
+            <summary>
+            Creates a new instance of Nevron Chart for .NET
+            </summary>
+            <remarks>
+            All properties of the control are set to their default values. 
+            There is one chart and one legend linked to the chart.
+            </remarks>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartControl.OnPaintBackground(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartControl.Tag">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartControl.IsInputKey(System.Windows.Forms.Keys)">
+            <summary>
+            Determines whether the specified key is a regular input key or a special key that requires preprocessing. 
+            </summary>
+            <param name="keyData"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartControl.Charts">
+            <summary>
+            Retrieves the charts collection of the component.
+            </summary>
+            <remarks>
+            The charts collection contains the charts displayed in the control canvas.
+            By default there is one Cartesian chart in the collection.
+            </remarks>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartControl.Legends">
+            <summary>
+            Retrieves the legends collection of the component.
+            </summary>
+            <remarks>
+            The legends collection contains the legends displayed in the control canvas.
+            By default there is one legend in the collection.
+            </remarks>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartControl.Labels">
+            <summary>
+            Retrieves the labels collection of the component.
+            </summary>
+            <remarks>
+            The labels collection contains the labels displayed in the control canvas.
+            By default the collection is empty.
+            </remarks>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartControl.Watermarks">
+            <summary>
+            Retrieves the watermarks collection of the component.
+            </summary>
+            <remarks>
+            The watermarks collection contains the watermarks displayed in the control canvas.
+            By default the collection is empty.
+            </remarks>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartControl.Gauges">
+            <summary>
+            Gets the gauges collection of the component.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartControl.NumericDisplays">
+            <summary>
+            Gets the numeric displays collection of the component.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartControl.StateIndicators">
+            <summary>
+            Gets the state indicators collection of the component.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartControl.Panels">
+            <summary>
+            Retrieves the panels collection of the component.
+            </summary>
+            <remarks>
+            The panels collection contains all the panels displayed in the control canvas. 
+            This includes charts, legends, labels, watermarks, etc.
+            </remarks>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartControl.BackgroundStyle">
+            <summary>
+            Gets or sets the NBackgroundStyle object applied to the chart background.
+            </summary>
+            <remarks>
+            The NBackgroundStyle object controls various aspects of the chart background 
+            including fill style, frame and interactivity.
+            </remarks>
+            <example>
+            The following exampe applies a solid color filling to the background.
+            <code lang = 'VB'>
+            chartControl.BackgroundStyle.FillStyle = New NColorFillStyle(Color.Azure)
+            </code>
+            <code>
+            chartControl.BackgroundStyle.FillStyle = new NColorFillStyle(Color.Azure);
+            </code>
+            </example>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartControl.InteractivityStyle">
+            <summary>
+            The interactive style associated with the control.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartControl.AnimationsStyle">
+            <summary>
+            Gets or sets the animation style
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartControl.Settings">
+            <summary>
+            Retrieves the chart settings related to rendering.
+            </summary>
+            <remarks>
+            With the help of the NSettings object you can control various properties related to the chart rendering and appearance.
+            </remarks>
+            <example>
+            The following example enables the jittering feature of the control.
+            <code lang = 'VB'>
+            ' enable the antialiasing of the whole scene
+            NChartControl.Settings.EnableJittering = True
+            NChartControl.Settings.JitteringSteps = 4
+            </code>
+            <code>
+            // enable the antialiasing of the whole scene
+            NChartControl.Settings.EnableJittering = true;
+            NChartControl.Settings.JitteringSteps = 4;
+            </code>
+            </example>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartControl.ServiceManager">
+            <summary>
+            Obtains the services collection of the control.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartControl.Document">
+            <summary>
+            Obtains the current chart document.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartControl.View">
+            <summary>
+            Gets the chart view associated with this control.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartControl.Controller">
+            <summary>
+            Retrieves the controller of the chart.
+            </summary>
+            <remarks>
+            The controller object contains a collection of tools. The tools define the way in which 
+            the control responds to user actions.
+            </remarks>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartControl.Serializer">
+            <summary>
+            Gets or sets the chart serializer. The serializer can be used 
+            to save/load control state through binary, XML and SOAP files.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartControl.Wizard">
+            <summary>
+            Gets or sets the chart wizard object.
+            </summary>
+            <remarks>
+            The chart wizard can help you create a chart based on a template.
+            </remarks>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartControl.PrintManager">
+            <summary>
+            Retrieves the chart print manager.
+            </summary>
+            <remarks>
+            Nevron Chart for .NET has a built-in print manager that can help you in many aspects 
+            related to printing. For example it can automatically detect the printer resolution 
+            and calculate the best scaling ratio in order for the chart to have a good quality, 
+            because most printers have better resolution than the monitor.
+            </remarks>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartControl.CommandBarsPrintManager">
+            <summary>
+            Retrieves the print manager used by the chart command bars.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartControl.ImageExporter">
+            <summary>
+            Returns a NImageExporter object exposing several image export functions.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartControl.DataBindingManager">
+            <summary>
+            Controls the database integration of the chart control.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartControl.AutoRefresh">
+            <summary>
+            When set to true the control will automatically invalidate when a property changes.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartControl.InputKeys">
+            <summary>
+            Gets or sets an array of keys that can be input keys for the control.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartControl.ShowEditor">
+            <summary>
+            Shows the Nevron Chart for .NET control editor
+            </summary>
+            <returns>true if the user clicked on the ok button, false otherwise</returns>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartControl.DisposeEvents">
+            <summary>
+            Clears all events associated with the control.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartControl.Refresh">
+            <summary>
+            Forces the control to redraw itself.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartControl.RefreshOverlay">
+            <summary>
+            Forces the control to refresh only the overlay content (cursors, range selections etc.)
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartControl.RecalcLayout">
+            <summary>
+            Recalculates the control layout.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartControl.Clear">
+            <summary>
+            Clears the current state of the chart control.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartControl.HitTest(System.Int32,System.Int32)">
+            <summary>
+            Returns a NHitTestResult object describing the object at the given window coordinates.
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartControl.HitTest(System.Drawing.Point)">
+            <summary>
+            Returns a NHitTestResult object describing the object at the given window coordinates.
+            </summary>
+            <param name="pt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartControl.HitTest(Nevron.GraphicsCore.NRectangleF,System.Boolean)">
+            <summary>
+            Returns a NHitTestResult object describing the object at the given window rect.
+            </summary>
+            <param name="rect"></param>
+            <param name="containOrIntersect">whether hit testing returns only object completely contained 
+            withing the rect or object that intersect the rect as well</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartControl.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NState">
+            <summary>
+            Summary description for NState.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.ChartCommand">
+            <summary>
+            Enumeration identifing the available chart commands
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.Open">
+            <summary>
+            Loads the component state from file
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.Save">
+            <summary>
+            Saves the component state to file
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.Print">
+            <summary>
+            Shows the built-in print manager
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.PageSetup">
+            <summary>
+            Shows the built-in print manager
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.ImageExport">
+            <summary>
+            Shows the import export dialog
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.Wizard">
+            <summary>
+            Shows the chart control Wizard
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.ChartEditor">
+            <summary>
+            Shows the chart control Editor
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.ApplyStyleSheet">
+            <summary>
+            Applies a style sheet to the chart document
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.IncreaseChartWidth">
+            <summary>
+            Increases the chart width
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.IncreaseChartHeight">
+            <summary>
+            Increases the chart height
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.IncreaseChartDepth">
+            <summary>
+            Increases the chart depth
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.DecreaseChartWidth">
+            <summary>
+            Decreases the chart width
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.DecreaseChartHeight">
+            <summary>
+            Decreases the chart height
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.DecreaseChartDepth">
+            <summary>
+            Decreases the chart depth
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.Toggle3D">
+            <summary>
+            Toggles 3D
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.RotateLeft">
+            <summary>
+            Makes the current controlled object to rotate left by increasing the Rotation 
+            property of its N3DView object with the value of the toolbar�s RotationStep property.
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.RotateRight">
+            <summary>
+            Makes the current controlled object to rotate right by decreasing the Rotation property of its N3DView object with the value of the toolbar�s RotationStep property.
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.ElevationUp">
+            <summary>
+            Makes the current controlled object to rotate around the x axis by decreasing the Rotation property of its N3DView object with the value of the toolbar�s ElevationStep property.
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.ElevationDown">
+            <summary>
+            Makes the current controlled object to around the x axis by increasing the Rotation property of its N3DView object with the value of the toolbar�s ElevationStep property.
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.ViewerRotationLeft">
+            <summary>
+            Decreases the ViewerRotation property of the current controlled object�s N3DView object with the value of the toolbar�s ViewerRotationStep property.
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.ViewerRotationRight">
+            <summary>
+             Increases the ViewerRotation property of the current controlled object�s N3DView object with the value of the toolbar�s ViewerRotationStep property.
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.ZoomIn">
+            <summary>
+            Makes the current controlled object to zoom in by increasing the Zoom property of its N3DView object with the value of the toolbar�s ZoomStep property.
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.ZoomOut">
+            <summary>
+            Makes the current controlled object to zoom out by decreasing the Zoom property of its N3DView object with the value of the toolbar�s ZoomStep property.
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.Perspective">
+            <summary>
+            Sets perspective projection for the currently controlled chart
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.Orthogonal">
+            <summary>
+            Sets orthogonal projection for the currently controlled chart.
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.View2D">
+            <summary>
+            Sets 2-dimensional view for the currently controlled chart
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.PredefinedProjection">
+            <summary>
+            Applies a predefined projection the the currently controlled chart
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.ToggleLighting">
+            <summary>
+            Toggles lighting
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.PredefinedLightModel">
+            <summary>
+            Applies a predefined light scheme
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.NudgeLeft">
+            <summary>
+            Makes the current controlled object to move to left by decreasing the OffsetX property of its N3DView object with the value of the toolbar�s OffsetXStep property.
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.NudgeRight">
+            <summary>
+            Makes the current controlled object to move to right by increasing the OffsetX property of its N3DView object with the value of the toolbar�s OffsetXStep property.
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.NudgeUp">
+            <summary>
+            Makes the current controlled object to move up by increasing the OffsetY property of its N3DView object with the value of the toolbar�s OffsetYStep property.
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.NudgeDown">
+            <summary>
+             Makes the current controlled object to move down by decreasing the OffsetY property of its N3DView object with the value of the toolbar�s OffsetYStep property.
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.MouseSelect">
+            <summary>
+            Sets the mouse drag mode to Disabled
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.MouseTrackball">
+            <summary>
+            Sets the mouse drag mode to Trackball mode.
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.MouseZoom">
+            <summary>
+            Sets the mouse drag mode to Zoom mode.
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.MouseOffset">
+            <summary>
+            Sets the mouse drag mode to Offset mode.
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.BackgroundFillStyle">
+            <summary>
+            Controls the background fill style
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.BackgroundFrameStyle">
+            <summary>
+            Controls the background frame style
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommand.LastCommandId">
+            <summary>
+            Id for the last command
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.ChartCommandRange">
+            <summary>
+            Enumerates the chart command ranges
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommandRange.Standard">
+            <summary>
+            Standard
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommandRange.Panel">
+            <summary>
+            Panel
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommandRange.Device">
+            <summary>
+            Device
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommandRange.Format">
+            <summary>
+            Format
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommandRange.Tools">
+            <summary>
+            Tools
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommandRange.Projection">
+            <summary>
+            Projection
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommandRange.Aspect">
+            <summary>
+            Aspect
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartCommandRange.LightModel">
+            <summary>
+            Light model
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NChartCommandBuilder">
+            <summary>
+            The NCommandBuilder abstract class serves as base class for all command builders
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommandBuilder.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommandBuilder.UpdateReferences(Nevron.INReferenceProvider)">
+            <summary>
+            
+            </summary>
+            <param name="provider"></param>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommandBuilder.CreateNonSerializedObjects">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommandBuilder.GetReferenceProvider">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartCommandBuilder.Manager">
+            <summary>
+            Obtains a reference to the command bars manager
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommandBuilder.CreateCommand(System.Int32,System.Boolean)">
+            <summary>
+            Creates a new command from the command context identified by the specified command id and optionally marks it as new group (separator)
+            </summary>
+            <param name="commandId">command id</param>
+            <param name="beginGroup">whether to mark the command as a new group (separator)</param>
+            <returns>new command</returns>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NChartToolbarCommandBuilder">
+            <summary>
+            Builds the chart toolbar.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartToolbarCommandBuilder.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartToolbarCommandBuilder.BuildToolbars(Nevron.Chart.WinForm.NChartCommander)">
+            <summary>
+            Builds the toolbars
+            </summary>
+            <returns>new toolbars</returns>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NChartAspectButtonCommand">
+            <summary>
+            Base class for all commands that modify the chart aspect ratio.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartAspectButtonCommand.#ctor(System.Int32,System.Int32,System.String,System.String,Nevron.UI.WinForm.Controls.NShortcut)">
+            <summary>
+            Creates a new chart aspect button command from the specified parameters.
+            </summary>
+            <param name="rangeId"></param>
+            <param name="id"></param>
+            <param name="text"></param>
+            <param name="tooltipText"></param>
+            <param name="shortcut"></param>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartAspectButtonCommand.ChangeChartAspect(System.Single,System.Single,System.Single)">
+            <summary>
+            Modifies the chart aspect.
+            </summary>
+            <param name="widthChange"></param>
+            <param name="heightChange"></param>
+            <param name="depthChange"></param>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NDecreaseChartDepthCommand">
+            <summary>
+            Descreases the chart depth aspect.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NDecreaseChartDepthCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NDecreaseChartDepthCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NDecreaseChartDepthCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NDecreaseChartHeightCommand">
+            <summary>
+            Decreases the chart height aspect.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NDecreaseChartHeightCommand.#ctor">
+            <summary>
+            Initializer constructor
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NDecreaseChartHeightCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NDecreaseChartHeightCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NDecreaseChartWidthCommand">
+            <summary>
+            Decreases the chart width aspect.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NDecreaseChartWidthCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NDecreaseChartWidthCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NDecreaseChartWidthCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NIncreaseChartDepthCommand">
+            <summary>
+            Increases the chart depth aspect.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NIncreaseChartDepthCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NIncreaseChartDepthCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NIncreaseChartDepthCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NIncreaseChartHeightCommand">
+            <summary>
+            Increases the chart height aspect.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NIncreaseChartHeightCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NIncreaseChartHeightCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NIncreaseChartHeightCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NIncreaseChartWidthCommand">
+            <summary>
+            Increases the chart width aspect.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NIncreaseChartWidthCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NIncreaseChartWidthCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NIncreaseChartWidthCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NPredefinedLightModelCheckButtonCommand">
+            <summary>
+            Applies a predefined light model to the currently selected chart.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NPredefinedLightModelCheckButtonCommand.#ctor(Nevron.GraphicsCore.PredefinedLightModel,System.Int32)">
+            <summary>
+            Creates a new predefined light model command based from the specified predefined light model and command id.
+            </summary>
+            <param name="predefinedLightModel"></param>
+            <param name="id"></param>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NPredefinedLightModelCheckButtonCommand.Checked">
+            <summary>
+            Determines whether the check box is checked
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NPredefinedLightModelCheckButtonCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.NPredefinedLightModelCheckButtonCommand.m_PredefinedLightModel">
+            <summary>
+            The predefined light model applied by this command.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NPredefinedLightModelCommand">
+            <summary>
+            Groups predefined light model commands.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NPredefinedLightModelCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NPredefinedLightModelCommand.Enabled">
+            <summary>
+            Returns true if the current selections contains a 3D chart.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NPredefinedLightModelCommand.Execute">
+            <summary>
+            Executes the combo command
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NPredefinedLightModelCommand.GetSelectedItemImageInfo(Nevron.GraphicsCore.NCustomImageList@,System.Int32@)">
+            <summary>
+            Gets the selected option image info
+            </summary>
+            <param name="imageList">image list</param>
+            <param name="imageIndex">image index</param>
+            <returns>true if the image info was successfully retreived, otherwise false</returns>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NPredefinedLightModelCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NToggleLightingCommand">
+            <summary>
+            Turns on/off the lighting of the currently selected chart.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NToggleLightingCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NToggleLightingCommand.Enabled">
+            <summary>
+            Returns true if the selection contains a 3D chart.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NToggleLightingCommand.Checked">
+            <summary>
+            Returns true if the currently selected chart is a 3D chart with enabled lighting.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NToggleLightingCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NToggleLightingCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NChartPanelButtonCommand">
+            <summary>
+            Base for all commands that modify chart panel related properties.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartPanelButtonCommand.#ctor(System.Int32,System.Int32,System.String,System.String,Nevron.UI.WinForm.Controls.NShortcut)">
+            <summary>
+            Creates a new chart panel command with the specified parameters.
+            </summary>
+            <param name="rangeId"></param>
+            <param name="id"></param>
+            <param name="text"></param>
+            <param name="tooltipText"></param>
+            <param name="shortcut"></param>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartPanelButtonCommand.Enabled">
+            <summary>
+            Returns true if the current selection contains a chart.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartPanelButtonCommand.Chart">
+            <summary>
+            Obtains a reference to the first selected chart.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.N2DProjectionCommand">
+            <summary>
+            Applies 2D projection on the currently selected chart.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.N2DProjectionCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.N2DProjectionCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.N2DProjectionCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NChartProjectionButtonCommand">
+            <summary>
+            Base for all commands that modify the chart projection.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartProjectionButtonCommand.#ctor(System.Int32,System.Int32,System.String,System.String,Nevron.UI.WinForm.Controls.NShortcut)">
+            <summary>
+            Creates a new chart projection command with the specified parameters.
+            </summary>
+            <param name="rangeId"></param>
+            <param name="id"></param>
+            <param name="text"></param>
+            <param name="tooltipText"></param>
+            <param name="shortcut"></param>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartProjectionButtonCommand.Enabled">
+            <summary>
+            Returns true if the selection contains a chart.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartProjectionButtonCommand.SetPredefinedProjection(Nevron.GraphicsCore.PredefinedProjection)">
+            <summary>
+            Applies a predefined projection on the currently selected chart.
+            </summary>
+            <param name="predefinedProjection"></param>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartProjectionButtonCommand.ChangeProjection(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Modifies the projection of the currently selected chart.
+            </summary>
+            <param name="rotationStep"></param>
+            <param name="elevationStep"></param>
+            <param name="viewerRotationStep"></param>
+            <param name="zoomStep"></param>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NElevationDownCommand">
+            <summary>
+            Decreases the chart elevation.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NElevationDownCommand.#ctor">
+            <summary>
+            Initializer constructor
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NElevationDownCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NElevationDownCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NElevationUpCommand">
+            <summary>
+            Increases the chart elevation.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NElevationUpCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NElevationUpCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NToggle3DCommand">
+            <summary>
+            Turns on/off the enable 3D property of the currently selected chart.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NToggle3DCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NToggle3DCommand.Enabled">
+            <summary>
+            Returns true if the selection contains a chart.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NToggle3DCommand.Checked">
+            <summary>
+            Returns true if lighting is enabled for the currently selected chart.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NToggle3DCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NToggle3DCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NOrthogonalProjectionCommand">
+            <summary>
+            Applies an orhtogonal projection to the currently selected chart.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NOrthogonalProjectionCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NOrthogonalProjectionCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NOrthogonalProjectionCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NPerspectiveProjectionCommand">
+            <summary>
+            Applies a perspective projection to the currently selected chart.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NPerspectiveProjectionCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NPerspectiveProjectionCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NPerspectiveProjectionCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NPredefinedProjectionCheckButtonCommand">
+            <summary>
+            Recognizes a predefined projection applied to the currently selected chart.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NPredefinedProjectionCheckButtonCommand.#ctor(Nevron.GraphicsCore.PredefinedProjection,System.Int32)">
+            <summary>
+            Creates a new predefined projection commandd based on the specified predefined projection and command id.
+            </summary>
+            <param name="predefinedProjection"></param>
+            <param name="id"></param>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NPredefinedProjectionCheckButtonCommand.Checked">
+            <summary>
+            Returns true if the currently selected chart projection is equal to the predefined projection
+            represented by this command.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NPredefinedProjectionCheckButtonCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NPredefinedProjectionCommand">
+            <summary>
+            Groups predefined projection commands.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NPredefinedProjectionCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NPredefinedProjectionCommand.Enabled">
+            <summary>
+            Returns true if the current selection contains a chart.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NPredefinedProjectionCommand.Execute">
+            <summary>
+            Executes the combo command
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NPredefinedProjectionCommand.GetSelectedItemImageInfo(Nevron.GraphicsCore.NCustomImageList@,System.Int32@)">
+            <summary>
+            Gets the selected option image info
+            </summary>
+            <param name="imageList">image list</param>
+            <param name="imageIndex">image index</param>
+            <returns>true if the image info was successfully retreived, otherwise false</returns>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NPredefinedProjectionCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NRotateLeftCommand">
+            <summary>
+            Rotates the chart to the left.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NRotateLeftCommand.#ctor">
+            <summary>
+            Initializer constuctor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NRotateLeftCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NRotateLeftCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NRotateRightCommand">
+            <summary>
+            Rotates the chart to the right.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NRotateRightCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NRotateRightCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NRotateRightCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NViewerRotationLeftCommand">
+            <summary>
+            Modifies the viewer rotation of the chart to the left.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NViewerRotationLeftCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NViewerRotationLeftCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NViewerRotationLeftCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NViewerRotationRightCommand">
+            <summary>
+            Modifies the viewer rotation of the chart to the right.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NViewerRotationRightCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NViewerRotationRightCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NViewerRotationRightCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NZoomInCommand">
+            <summary>
+            Zooms in the currently selected chart.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NZoomInCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NZoomInCommand.Enabled">
+            <summary>
+            Returns true if the selection contains a chart
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NZoomInCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NZoomInCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NZoomOutCommand">
+            <summary>
+            Zooms out the currently selected chart.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NZoomOutCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NZoomOutCommand.Enabled">
+            <summary>
+            Returns true if the selection contains a chart
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NZoomOutCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NZoomOutCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NRenderSurfaceCheckButtonCommand">
+            <summary>
+            Recognizes the chart render surface.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NRenderSurfaceCheckButtonCommand.#ctor(Nevron.GraphicsCore.RenderSurface,System.Int32)">
+            <summary>
+            Creates a new render surface command based on the specified render surface and command id.
+            </summary>
+            <param name="renderSurface"></param>
+            <param name="id"></param>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NRenderSurfaceCheckButtonCommand.Checked">
+            <summary>
+            Determines whether the check box is checked
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NRenderSurfaceCheckButtonCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.NRenderSurfaceCheckButtonCommand.m_RenderSurface">
+            <summary>
+            The render surface represented by this command.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NRenderSurfaceCommand">
+            <summary>
+            Groups render surface commands.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NRenderSurfaceCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NRenderSurfaceCommand.Execute">
+            <summary>
+            Executes the combo command
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NRenderSurfaceCommand.GetSelectedItemImageInfo(Nevron.GraphicsCore.NCustomImageList@,System.Int32@)">
+            <summary>
+            Gets the selected option image info
+            </summary>
+            <param name="imageList">image list</param>
+            <param name="imageIndex">image index</param>
+            <returns>true if the image info was successfully retreived, otherwise false</returns>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NRenderSurfaceCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NBackgroundFillStyleCommand">
+            <summary>
+            Modifies the control background fill style.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NBackgroundFillStyleCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NBackgroundFillStyleCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NBackgroundFillStyleCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NFrameBorderCommand">
+            <summary>
+            Modifies the control frame border.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NFrameBorderCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NFrameBorderCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NFrameBorderCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NChartButtonCommand">
+            <summary>
+            The NChartButtonCommand abstract class perpresents a push button command
+            </summary>
+            <remarks>
+            It implements the INChartButtonCommand interface, which has only one method - Execute(), 
+            which is called when the button is pushed
+            </remarks>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartButtonCommand.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="rangeId">command range</param>
+            <param name="id">command id</param>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartButtonCommand.#ctor(System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="rangeId">command range</param>
+            <param name="id">command id</param>
+            <param name="text">text</param>
+            <param name="tooltipText">tooltip text</param>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartButtonCommand.#ctor(System.Int32,System.Int32,System.String,System.String,Nevron.UI.WinForm.Controls.NShortcut)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="rangeId">command range</param>
+            <param name="id">command id</param>
+            <param name="text">text</param>
+            <param name="tooltipText">tooltip text</param>
+            <param name="shortcut">shortcut</param>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartButtonCommand.Enabled">
+            <summary>
+            Returns true if the command is enabled.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartButtonCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NChartCheckButtonCommand">
+            <summary>
+            The NChartButtonCommand abstract class perpresents a check button command
+            </summary>
+            <remarks>
+            It implements the INChartCheckButtonCommand interface
+            </remarks>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCheckButtonCommand.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="rangeId">command range</param>
+            <param name="id">command id</param>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCheckButtonCommand.#ctor(System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="rangeId">command range</param>
+            <param name="id">command id</param>
+            <param name="text">text</param>
+            <param name="tooltipText">tooltip text</param>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCheckButtonCommand.#ctor(System.Int32,System.Int32,System.String,System.String,Nevron.UI.WinForm.Controls.NShortcut)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="rangeId">command range</param>
+            <param name="id">command id</param>
+            <param name="text">text</param>
+            <param name="tooltipText">tooltip text</param>
+            <param name="shortcut">shortcut</param>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartCheckButtonCommand.Checked">
+            <summary>
+            Determines whether check button is checked
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NChartComboCommand">
+            <summary>
+            The NChartComboCommand abstract class perpresents a combo box command
+            </summary>
+            <remarks>
+            It implements the INChartComboCommand interface
+            </remarks>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartComboCommand.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="rangeId">command range</param>
+            <param name="id">command id</param>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartComboCommand.#ctor(System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="rangeId">command range</param>
+            <param name="id">command id</param>
+            <param name="text">text</param>
+            <param name="tooltipText">tooltip text</param>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartComboCommand.#ctor(System.Int32,System.Int32,System.String,System.String,Nevron.UI.WinForm.Controls.NShortcut)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="rangeId">command range</param>
+            <param name="id">command id</param>
+            <param name="text">text</param>
+            <param name="tooltipText">tooltip text</param>
+            <param name="shortcut">shortcut</param>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartComboCommand.Options">
+            <summary>
+            Gets/sets the combo box options
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartComboCommand.GetEditText">
+            <summary>
+            Gets the text of the combo box edit part
+            </summary>
+            <returns>edit part text</returns>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartComboCommand.Execute(System.String)">
+            <summary>
+            Executes the combo command with the specified text option
+            </summary>
+            <param name="text">text option</param>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartComboCommand.CreateUICommand">
+            <summary>
+            Creates a combo user interface command for the this chart command
+            </summary>
+            <returns>combo user interface command</returns> 
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NChartCommand">
+            <summary>
+            The NChartCommand abstract class serves as base class for all command implementations in the designer.
+            </summary>
+            <remarks>
+            Commands are only implementing state and execution logic. 
+            In this way they can be used from any type of UI. 
+            Commands can create Nevron UI command contexts (via the CreateCommandContext abstract method) 
+            and in this way connect with the Nevron UI Command Bars.
+            </remarks>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommand.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="rangeId">command range</param>
+            <param name="id">command id</param>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommand.#ctor(System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="rangeId">command range</param>
+            <param name="id">command id</param>
+            <param name="text">text</param>
+            <param name="tooltipText">tooltip text</param>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommand.#ctor(System.Int32,System.Int32,System.String,System.String,Nevron.UI.WinForm.Controls.NShortcut)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="rangeId">command range</param>
+            <param name="id">command id</param>
+            <param name="text">text</param>
+            <param name="tooltipText">tooltip text</param>
+            <param name="shortcut">shortcut</param>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommand.UpdateReferences(Nevron.INReferenceProvider)">
+            <summary>
+            
+            </summary>
+            <param name="provider"></param>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommand.CreateNonSerializedObjects">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommand.GetReferenceProvider">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartCommand.Commander">
+            <summary>
+            Obtains a reference to the chart commander
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartCommand.ChartControl">
+            <summary>
+            Obtains a reference to the chart control currently connected to the commander
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartCommand.Id">
+            <summary>
+            Gets/sets the command id
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartCommand.RangeId">
+            <summary>
+            Gets/sets the command range
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartCommand.Text">
+            <summary>
+            Gets/sets the text
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartCommand.TooltipText">
+            <summary>
+            Gets/sets the tooltip text
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartCommand.Shortcut">
+            <summary>
+            Gets/sets the command shortcut
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartCommand.Enabled">
+            <summary>
+            Determines whether the command is currently enabled
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommand.CreateUICommand">
+            <summary>
+            Creates a user interface command for the this chart command
+            </summary>
+            <returns>user interface command</returns> 
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NChartCommandCollection">
+            <summary>
+            The NChartCommandCollection class represents a strongly typed collection containing NChartCommand instances
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommandCollection.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartCommandCollection.Item(System.Int32)">
+            <summary>
+            Gets/sets the command at the specified index
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommandCollection.Add(Nevron.Chart.WinForm.NChartCommand)">
+            <summary>
+            Adds the specified command
+            </summary>
+            <param name="command">command to add</param>
+            <returns>index of the command in the collection</returns>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommandCollection.IndexOf(Nevron.Chart.WinForm.NChartCommand)">
+            <summary>
+            Determines the index of the command in the collection
+            </summary>
+            <param name="command">command</param>
+            <returns>index of the command or -1 if it is not in the collection</returns>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommandCollection.Insert(System.Int32,Nevron.Chart.WinForm.NChartCommand)">
+            <summary>
+            Inserts a the specified command at the specified index
+            </summary>
+            <param name="index">index</param>
+            <param name="command">command</param>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommandCollection.Remove(Nevron.Chart.WinForm.NChartCommand)">
+            <summary>
+            Removes the specified command
+            </summary>
+            <param name="command">command to remove</param>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommandCollection.Contains(Nevron.Chart.WinForm.NChartCommand)">
+            <summary>
+            Determines whether the specified command is contained in this collection
+            </summary>
+            <param name="command">command</param>
+            <returns>true if the command is contained in this collection, otherwise false</returns>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommandCollection.OnInsert(System.Int32,System.Object)">
+            <summary>
+            Overriden to check the type of the inserted object
+            </summary>
+            <param name="index"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommandCollection.OnRemove(System.Int32,System.Object)">
+            <summary>
+            Overriden to check the type of the removed object
+            </summary>
+            <param name="index"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommandCollection.OnSet(System.Int32,System.Object,System.Object)">
+            <summary>
+            Overriden to check the type of the set object and call the OnCollectionChanged method
+            </summary>
+            <param name="index"></param>
+            <param name="oldobj"></param>
+            <param name="newobj"></param>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommandCollection.OnValidate(System.Object)">
+            <summary>
+            Overriden to check the type of the object
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommandCollection.GetCommandFromId(System.Int32)">
+            <summary>
+            Gets the chart command corresponding to the specified id
+            </summary>
+            <param name="id">command id</param>
+            <returns>chart command</returns>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NChartMenuCommand">
+            <summary>
+            The NChartMenuCommand abstract class perpresents a menu command
+            </summary>
+            <remarks>
+            It implements the INChartMenuCommand interface, which has only one property - Items, 
+            through which you control the ids of the chart commands displayed by the menu.
+            </remarks>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartMenuCommand.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="rangeId">command range</param>
+            <param name="id">command id</param>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartMenuCommand.#ctor(System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="rangeId">command range</param>
+            <param name="id">command id</param>
+            <param name="text">text</param>
+            <param name="tooltipText">tooltip text</param>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartMenuCommand.#ctor(System.Int32,System.Int32,System.String,System.String,Nevron.UI.WinForm.Controls.NShortcut)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="rangeId">command range</param>
+            <param name="id">command id</param>
+            <param name="text">text</param>
+            <param name="tooltipText">tooltip text</param>
+            <param name="shortcut">shortcut</param>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartMenuCommand.Items">
+            <summary>
+            Gets/sets the ids of the commands displayed by the menu
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartMenuCommand.CreateUICommand">
+            <summary>
+            Creates a menu user interface command for the this chart command
+            </summary>
+            <returns>menu user interface command</returns> 
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NChartOptionMenuCommand">
+            <summary>
+            The NChartOptionMenuCommand abstract class perpresents a menu command, from which you can select from several options
+            </summary>
+            <remarks>
+            It implements the INChartOptionMenuCommand interface
+            </remarks>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartOptionMenuCommand.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="rangeId">command range</param>
+            <param name="id">command id</param>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartOptionMenuCommand.#ctor(System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="rangeId">command range</param>
+            <param name="id">command id</param>
+            <param name="text">text</param>
+            <param name="tooltipText">tooltip text</param>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartOptionMenuCommand.#ctor(System.Int32,System.Int32,System.String,System.String,Nevron.UI.WinForm.Controls.NShortcut)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="rangeId">command range</param>
+            <param name="id">command id</param>
+            <param name="text">text</param>
+            <param name="tooltipText">tooltip text</param>
+            <param name="shortcut">shortcut</param>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartOptionMenuCommand.GetSelectedItemImageInfo(Nevron.GraphicsCore.NCustomImageList@,System.Int32@)">
+            <summary>
+            Gets the selected option image info
+            </summary>
+            <param name="imageList">image list</param>
+            <param name="imageIndex">image index</param>
+            <returns>true if the image info was successfully retreived, otherwise false</returns>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NNudgeDownCommand">
+            <summary>
+            Moves the currently selected panel to the bottom.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NNudgeDownCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NNudgeDownCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NNudgeDownCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NNudgeLeftCommand">
+            <summary>
+            Moves the currently selected panel to the left.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NNudgeLeftCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NNudgeLeftCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NNudgeLeftCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NNudgeRightCommand">
+            <summary>
+            Moves the currently selected panel to the right.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NNudgeRightCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NNudgeRightCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NNudgeRightCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NNudgeUpCommand">
+            <summary>
+            Moves the currently selected panel to the top.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NNudgeUpCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NNudgeUpCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NNudgeUpCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NPanelCommand">
+            <summary>
+            Base for all commands that modify panel related parameters.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NPanelCommand.#ctor(System.Int32,System.Int32,System.String,System.String,Nevron.UI.WinForm.Controls.NShortcut)">
+            <summary>
+            Creates a new panel command from the range id, command id, text, tooltip text and shortcut.
+            </summary>
+            <param name="rangeId"></param>
+            <param name="id"></param>
+            <param name="text"></param>
+            <param name="tooltipText"></param>
+            <param name="shortcut"></param>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NPanelCommand.Enabled">
+            <summary>
+            Returns true if the current selection contains docking panel.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NPanelCommand.OffsetPanel(Nevron.GraphicsCore.NPointL)">
+            <summary>
+            Moves the currently selected panels with the specified offset.
+            </summary>
+            <param name="offset"></param>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NPageSetupChartCommand">
+            <summary>
+            Shows the page setup dialog of the control allowing the user to configure the printer page settings.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NPageSetupChartCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NPageSetupChartCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NPageSetupChartCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NExportChartImageCommand">
+            <summary>
+            Shows the image export dialog allowing the user to export the chart image to PNG, JPEG, BMP, TIFF, GIF or SVG format.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NExportChartImageCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NExportChartImageCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NExportChartImageCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NOpenChartCommand">
+            <summary>
+            Shows the Open file dialog allowing the user to load the component state from a file.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NOpenChartCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NOpenChartCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NOpenChartCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NPrintChartCommand">
+            <summary>
+            Shows the print preview of the control allowing the user to print the chart.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NPrintChartCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NPrintChartCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NPrintChartCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NSaveChartCommand">
+            <summary>
+            Shows the Save file dialog allowing the user to save the component state to a file.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NSaveChartCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NSaveChartCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NSaveChartCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NShowChartEditorCommand">
+            <summary>
+            Shows the chart editor allowing the user to modify all chart properties.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NShowChartEditorCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NShowChartEditorCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NShowChartEditorCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NShowChartWizardCommand">
+            <summary>
+            Shows the chart wizard allowing the user to configure a simple chart with a few clicks.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NShowChartWizardCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NShowChartWizardCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NShowChartWizardCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NApplyStyleSheetCheckButtonCommand.#ctor(Nevron.Chart.PredefinedStyleSheet,System.Int32)">
+            <summary>
+            Initializer constructor
+            </summary>
+            <param name="styleSheet"></param>
+            <param name="id"></param>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NApplyStyleSheetCheckButtonCommand.Checked">
+            <summary>
+            Determines whether the check box is checked
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NApplyStyleSheetCheckButtonCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.NApplyStyleSheetCheckButtonCommand.m_StyleSheet">
+            <summary>
+            The render surface represented by this command.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NApplyStyleSheetCommand.#ctor">
+            <summary>
+            Creates a new render surface command based on the specified render surface and command id.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NApplyStyleSheetCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NApplyStyleSheetCommand.GetSelectedItemImageInfo(Nevron.GraphicsCore.NCustomImageList@,System.Int32@)">
+            <summary>
+            Gets the selected option image info
+            </summary>
+            <param name="imageList">image list</param>
+            <param name="imageIndex">image index</param>
+            <returns>true if the image info was successfully retreived, otherwise false</returns>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.NApplyStyleSheetCommand.m_StyleSheet">
+            <summary>
+            The render surface represented by this command.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NApplyStyleSheetCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NMouseOffsetCommand">
+            <summary>
+            Enables the offset and selector tools allowing the user to move panels in the control canvas.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NMouseOffsetCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NMouseOffsetCommand.Enabled">
+            <summary>
+            Determines whether the tool is enabled
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NMouseOffsetCommand.Checked">
+            <summary>
+            Determines whether check button is checked
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NMouseOffsetCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NMouseOffsetCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NMouseSelectToolCommand">
+            <summary>
+            Enables the selector tool allowing the user to select objects in the chart.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NMouseSelectToolCommand.#ctor">
+            <summary>
+            Initializer constructor
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NMouseSelectToolCommand.Checked">
+            <summary>
+            Determines whether check button is checked
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NMouseSelectToolCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NMouseSelectToolCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NMouseZoomCommand">
+            <summary>
+            Enables the mouse zoom and selector tools allowing the user to select and zoom chart in the control.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NMouseZoomCommand.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NMouseZoomCommand.Checked">
+            <summary>
+            Determines whether check button is checked
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NMouseZoomCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NMouseZoomCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NToolCommand">
+            <summary>
+            The base for all tool commands.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NToolCommand.#ctor(System.Int32,System.Int32,System.String,System.String,Nevron.UI.WinForm.Controls.NShortcut)">
+            <summary>
+            Creates a new tool command with the specified parameters.
+            </summary>
+            <param name="rangeId"></param>
+            <param name="id"></param>
+            <param name="text"></param>
+            <param name="tooltipText"></param>
+            <param name="shortcut"></param>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NToolCommand.ToolsCollection">
+            <summary>
+            Obtains the tool collection of the control.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NTrackballCommand">
+            <summary>
+            Enables the mouse trackball and selector tools allowing the user to select and rotate charts in the control.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NTrackballCommand.#ctor">
+            <summary>
+            Initializer constructor
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NTrackballCommand.Enabled">
+            <summary>
+            Returns true if the selection contains a 3D chart.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NTrackballCommand.Checked">
+            <summary>
+            Determines whether check button is checked
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NTrackballCommand.Execute">
+            <summary>
+            Executes the button command
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NTrackballCommand.LocalizationContextName">
+            <summary>
+            Gets the localization context name for this class.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NChartCommandBarsManager">
+            <summary>
+            Represents a predefined NCommandBarsManager with a set of command contexts
+            which might be used to visually edit a NChart contorl.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommandBarsManager.#ctor">
+            <summary>
+            Initializer contructor.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartCommandBarsManager.Commander">
+            <summary>
+            Gets/sets the commander
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartCommandBarsManager.ChartControl">
+            <summary>
+            Gets or sets the chart control associated with the manager.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartCommandBarsManager.ToolbarsBuilder">
+            <summary>
+            Gets/sets toolbars builder
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartCommandBarsManager.RefreshInterval">
+            <summary>
+            Gets/sets auto refrehs interval (in miliseconds)
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartCommandBarsManager.AutoRefresh">
+            <summary>
+            Specifies if commands state must automatically be updated
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartCommandBarsManager.Contexts">
+            <summary>
+            Gets the collection of command contexts for the chart.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartCommandBarsManager.Ranges">
+            <summary>
+            Gets the collection of command context ranges for the framework.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartCommandBarsManager.Toolbars">
+            <summary>
+            Gets the toolbar collection for the framework.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommandBarsManager.Recreate">
+            <summary>
+            Recreates the command bars, ranges and contexts using the current commander and builders
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommandBarsManager.OnCommandContextExecuted(Nevron.UI.WinForm.Controls.CommandContextEventArgs)">
+            <summary>
+            Executes the chart command associated with the executed command context
+            </summary>
+            <param name="e"></param>
+            <returns>true if the command context was successfully executed, otherwise false</returns>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommandBarsManager.OnQueryCommandUIState(Nevron.UI.WinForm.Controls.NCommandUIState@)">
+            <summary>
+            Updates the state of the specified command from the chart command associated with it
+            </summary>
+            <param name="state">command state to update</param>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NChartCommander">
+            <summary>
+            Represents a class that handles the command events.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommander.#ctor">
+            <summary>
+            Initializer constructor.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartCommander.Commands">
+            <summary>
+            Gets/sets the chart commands associated with the commander
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartCommander.ChartControl">
+            <summary>
+            Gets or sets the NChartControl this commander works on.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartCommander.HorizontalMoveStep">
+            <summary>
+            Gets or sets the distance by which a panel is moved when Nudge Left or Nudge Right is performed.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartCommander.VerticalMoveStep">
+            <summary>
+            Gets or sets the distance by which a panel is moved when Nudge Up or Nudge Down is performed.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartCommander.ElevationStep">
+            <summary>
+            Gets or sets the angle change for the Elevation Up and Elevation Down commands.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartCommander.RotationStep">
+            <summary>
+            Gets or sets the angle change for the Rotate Left and Rotate Right commands.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartCommander.ZoomStep">
+            <summary>
+            Gets or sets the zoom change for the Rotate Left and Rotate Right commands.
+            </summary>
+        </member>
+        <member name="P:Nevron.Chart.WinForm.NChartCommander.ChartSizeStep">
+            <summary>
+            Gets or sets the size change for the chart resizing commands.
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommander.UpdateReferences(Nevron.INReferenceProvider)">
+            <summary>
+            
+            </summary>
+            <param name="provider"></param>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommander.CreateNonSerializedObjects">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommander.GetReferenceProvider">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommander.ProvideReference(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="parentType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommander.CreateUICommand(Nevron.Chart.WinForm.NChartCommand)">
+            <summary>
+            Creates a user inteface command for the specified command
+            </summary>
+            <remarks>
+            This implementation will create a NCommandContext instance
+            </remarks>
+            <returns>user interface command</returns> 
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommander.CreateComboUICommand(Nevron.Chart.WinForm.NChartCommand)">
+            <summary>
+            Creates a combo user inteface command for the specified chart command
+            </summary>
+            <remarks>
+            This implementation will create a NComboBoxCommandContext instance
+            </remarks>
+            <returns>user interface command</returns> 
+        </member>
+        <member name="M:Nevron.Chart.WinForm.NChartCommander.CreateMenuUICommand(Nevron.Chart.WinForm.NChartCommand)">
+            <summary>
+            Creates a menu user inteface command for the specified chart command
+            </summary>
+            <remarks>
+            This implementation will create a NCommandContext instance with nested contexts
+            </remarks>
+            <returns>user interface command</returns> 
+        </member>
+        <member name="T:Nevron.Chart.WinForm.NToolbarImageLists">
+            <summary>
+            Summary description for NToolbarImageLists.
+            </summary>
+        </member>
+        <member name="T:Nevron.Chart.WinForm.ChartGridButtonsMask">
+            <summary>
+            A bitmask enumeration controlling the visible chart grid buttons
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartGridButtonsMask.SelectSeries">
+            <summary>
+            The select series button
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartGridButtonsMask.ShowInteractivity">
+            <summary>
+            Show interactivity data series button
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartGridButtonsMask.ShowAppearance">
+            <summary>
+            Show appearance series button
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartGridButtonsMask.UpdateSeriesFromGrid">
+            <summary>
+            Update series from grid button
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartGridButtonsMask.UpdateGridFromSeries">
+            <summary>
+            Update grid from series button
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartGridButtonsMask.BindToChart">
+            <summary>
+            Binds the chart to the grid control
+            </summary>
+        </member>
+        <member name="F:Nevron.Chart.WinForm.ChartGridButtonsMask.All">
+            <summary>
+            All buttons must be displayed
+            </summary>
+        </member>
+        <member name="M:Nevron.Internal.jfYd.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+    </members>
+</doc>

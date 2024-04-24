@@ -12,6 +12,7 @@ using PlantUml.Net;
 using IdeasAi.pages;
 using System.Text.RegularExpressions;
 using System.CodeDom.Compiler;
+using Microsoft.Win32;
 
 
 namespace IdeasAi.PageForms
@@ -41,7 +42,21 @@ namespace IdeasAi.PageForms
         {
             InitializeComponent();
             this.mainForm = _mainForm;
+            OptimizeInternetExplorerVersion();
         }
+        private void OptimizeInternetExplorerVersion()
+        {
+            var appName = System.Diagnostics.Process.GetCurrentProcess().ProcessName + ".exe";
+
+            using (var key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BROWSER_EMULATION", true))
+            {
+                key.SetValue(appName, 99999, RegistryValueKind.DWord);
+            }
+
+            wb_container.Navigate("C:\\MyFiles\\Projects\\Web Projects\\testWeb\\index.html");
+
+        }
+
         private string ConvertMarkdownToHtml(string markdownText)
         {
             // Convert Markdown to HTML
@@ -108,7 +123,7 @@ namespace IdeasAi.PageForms
             idea_obj.Input = topic;
             try
             {
-                idea_obj.Content = await idea_obj.GetResponse();
+                idea_obj.Content = await idea_obj.GetResponse(mainForm.settings);
                 mainForm.addNotification("success", "Successfully answered!", $"{idea_obj.Input}");
                 displayResult(idea_obj.Content);
 
@@ -123,7 +138,7 @@ namespace IdeasAi.PageForms
             }
             catch (Exception ex)
             {
-                wb_container.DocumentText = $"Ask appropriate questions in a clear manner.";
+                wb_container.DocumentText = $"Something went wrong. Please check your internet connection and try again  by asking appropriate questions in a clear manner. Thank you!";
                 mainForm.addNotification("error", "An error occured!", $"{ex.Message}");
             }
 

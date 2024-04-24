@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Threading.Tasks;
 using IdeasAi.Gemini_AI;
+using Newtonsoft.Json.Linq;
 
 namespace IdeasAi.Ideas
 {
     public class Idea : AI_Response
     {
         public string Title { get; set; }
-        public override async Task<string> GetResponse()
+        public override async Task<string> GetResponse(JObject appConfig)
         {
             var prompt = "Pretend you are a teacher that answers a student's question. " +
                 "You use simple language and talk like a person in a conversatonal tone in answering the supplied question by your student. " +
@@ -22,7 +23,7 @@ namespace IdeasAi.Ideas
                 
                 $"The question supplied: {this.Input.Replace("\"", "'")}.";
 
-            string response = await ScriptRunner.RunScriptAsync("Gemini_AI\\Scripts\\gemini.py", prompt);
+            string response = await ScriptRunner.RunScriptAsync("Gemini_AI\\Scripts\\gemini.py", prompt, appConfig);
             this.DateCreated = DateTime.Now;
             Console.WriteLine(response);
             if (response.Contains("ERROR"))
