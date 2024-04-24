@@ -34,8 +34,6 @@ namespace IdeasAi
         private bool isFullScreen = false;
         private FormWindowState normalWindowState;
 
-        
-
         //loading states
         public const int state_loadMindmap = 1;
         public const int state_loadConsultation = 2;
@@ -58,12 +56,7 @@ namespace IdeasAi
         public mdl_loading mdl_loading;
         public ModalSetter mdl_setter;
 
-        
-
-
         public Button btn_active;
-        Color color_active = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
-        Color color_inactive = System.Drawing.Color.Transparent;
 
         public MainForm()
         {
@@ -94,16 +87,14 @@ namespace IdeasAi
             pb_active.Image = Resources.activeState;
             pb_active.Dock = DockStyle.Left;
             pb_active.SizeMode = PictureBoxSizeMode.CenterImage;
-            pb_active.Size = new System.Drawing.Size(37, 48);
+            pb_active.Size = new Size(37, 48);
 
             btn_active = btn_mindmap;
-            setActiveBtn((object)btn_mindmap, pnl_pageTabs);
-            loadForm(frm_home, pnl_content);
-            
             lbl_currentPage.Text = btn_active.Text;
+
+            loadForm(frm_home, pnl_content);
             setActiveBtn((object)btn_home, pnl_pageTabs);
             setThemeMode("light");
-
         }
 
         private void InitializeConfigs()
