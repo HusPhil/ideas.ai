@@ -178,7 +178,7 @@
             this.btn_save.Text = "Save";
             this.btn_save.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_save.UseVisualStyleBackColor = false;
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click_1);
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // panel4
             // 
@@ -280,7 +280,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_consultation";
             this.Text = "frm_home";
-            this.Load += new System.EventHandler(this.frm_home_Load);
             this.panel1.ResumeLayout(false);
             this.pnl_wbCont.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

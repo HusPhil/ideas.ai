@@ -33,16 +33,15 @@ namespace IdeasAi.PageForms
                 key.SetValue(appName, 99999, RegistryValueKind.DWord);
             }
 
-            wb_container.Navigate("m.facebook.com");
+            wb_container.Navigate("https://google.com/");
 
         }
-
         private string ConvertMarkdownToHtml(string markdownText)
         {
-            // Convert Markdown to HTML
             var pipeline = new MarkdownPipelineBuilder().UseAdvancedExtensions().Build();
             return Markdig.Markdown.ToHtml(markdownText, pipeline);
         }
+       
         public void displayResult(string markdownText)
         {
             string htmlText = ConvertMarkdownToHtml(markdownText);
@@ -52,22 +51,21 @@ namespace IdeasAi.PageForms
                     <html>
                     <head>
                     <style>
-                        
                         table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-  th, td {
-    border: 1px solid black;
-    padding: 8px;
-    text-align: left;
-  }
-  tr:nth-child(even) {
-    background-color: #b0d07e;
-  }
-  th {
-    background-color: #b0d07e;
-  }
+                        border-collapse: collapse;
+                        width: 100%;
+                          }
+                          th, td {
+                            border: 1px solid black;
+                            padding: 8px;
+                            text-align: left;
+                          }
+                          tr:nth-child(even) {
+                            background-color: #b0d07e;
+                          }
+                          th {
+                            background-color: #b0d07e;
+                           }
                     </style>
                     </head>
                     <body>
@@ -76,17 +74,7 @@ namespace IdeasAi.PageForms
                     </html>
                     ";
 
-            // Set the HTML content to the WebBrowser control
             wb_container.DocumentText = htmlContent;
-        }
-        private void btn_send_Click(object sender, EventArgs e)
-        {
-            mainForm.setModalBackground(this);
-            mainForm.mdl_loading.state = MainForm.state_loadConsultation;
-            mainForm.mdl_loading.getLblLoadInfo().Text = "Generating an answer..";
-            mainForm.mdl_loading.ShowDialog();
-
-
         }
         public async void loadConsultation()
         {
@@ -119,33 +107,29 @@ namespace IdeasAi.PageForms
                 wb_container.DocumentText = $"Something went wrong. Please check your internet connection and try again  by asking appropriate questions in a clear manner. Thank you!";
                 mainForm.addNotification("error", "An error occured!", $"{ex.Message}");
             }
+            finally {
+                btn_send.Enabled = true;
+                mainForm.mdl_loading.Close();
+                mainForm.modalBG.Hide();
 
-            btn_send.Enabled = true;
-            mainForm.mdl_loading.Close();
-            mainForm.modalBG.Hide();
-
+            }
         }
 
-
-
-        private void btn_save_Click_1(object sender, EventArgs e)
+        private void btn_send_Click(object sender, EventArgs e)
+        {
+            mainForm.setModalBackground(this);
+            mainForm.mdl_loading.state = MainForm.state_loadConsultation;
+            mainForm.mdl_loading.getLblLoadInfo().Text = "Generating an answer..";
+            mainForm.mdl_loading.ShowDialog();
+        }
+        private void btn_save_Click(object sender, EventArgs e)
         {
             mainForm.mdl_setter.OpenModal(this, typeof(mdl_saveNotes), mainForm);
         }
-        private void frm_home_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txb_Consult_TextChanged(object sender, EventArgs e)
-        {
-        }
-
         private void btn_print_Click(object sender, EventArgs e)
         {
             wb_container.ShowPrintDialog();
         }
-
         private void btn_toWorkspace_Click(object sender, EventArgs e)
         {
             mainForm.frm_workspace.saver_obj.UUID = Guid.NewGuid();
@@ -154,6 +138,18 @@ namespace IdeasAi.PageForms
 
             mainForm.loadForm(mainForm.frm_workspace, mainForm.getPnlContent());
             mainForm.setActiveBtn(mainForm.getBtnWorkspace(), mainForm.getPnlPageTabs());
+        }
+        private void txb_Consult_TextChanged(object sender, EventArgs e)
+        {
+        }
+        private void txb_Consult_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.V)
+            {
+                e.SuppressKeyPress = true;
+
+                txb_Consult.SelectedText = Clipboard.GetText();
+            }
         }
 
         //GETTERS
@@ -170,15 +166,6 @@ namespace IdeasAi.PageForms
             return ref btn_toWorkspace;
         }
 
-        private void txb_Consult_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Control && e.KeyCode == Keys.V)
-            {
-                e.SuppressKeyPress = true;
-
-                txb_Consult.SelectedText = Clipboard.GetText();
-            }
-        }
     }
     
 }
