@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.lbl_loadingInfo = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tmr_animation = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,27 +41,27 @@
             this.lbl_loadingInfo.Font = new System.Drawing.Font("Cascadia Code", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_loadingInfo.Location = new System.Drawing.Point(0, 0);
             this.lbl_loadingInfo.Name = "lbl_loadingInfo";
-            this.lbl_loadingInfo.Size = new System.Drawing.Size(500, 111);
+            this.lbl_loadingInfo.Size = new System.Drawing.Size(500, 66);
             this.lbl_loadingInfo.TabIndex = 1;
             this.lbl_loadingInfo.Text = "lbl_loadingInfo";
             this.lbl_loadingInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::IdeasAi.Properties.Resources.loading;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 111);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(500, 124);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // tmr_animation
             // 
             this.tmr_animation.Enabled = true;
             this.tmr_animation.Interval = 1;
             this.tmr_animation.Tick += new System.EventHandler(this.tmr_animation_Tick);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::IdeasAi.Properties.Resources.loaderCat;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 66);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(500, 169);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // mdl_loading
             // 

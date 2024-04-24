@@ -201,6 +201,23 @@ namespace IdeasAi.pages
                     btn_QSearch_Click(sender, e);
                 }
             }
+            else if (e.Control && e.KeyCode == Keys.O)
+            {
+                // Get the clipboard data
+                string selectedText = txb_textEditor.SelectedText;
+
+
+                // Check if the clipboard contains image data
+                if (string.IsNullOrWhiteSpace(selectedText))
+                {
+                    selectedText = mainForm.frm_workspace.getTxbEditor().Text;
+                }
+
+                Console.WriteLine(selectedText);
+                mainForm.mdl_organize.getTxbPreview().Text = selectedText;
+                mainForm.setModalBackground(this);
+                mainForm.mdl_organize.ShowDialog();
+            }
             else if (e.Control && e.KeyCode == Keys.V)
             {
                 e.SuppressKeyPress = true;

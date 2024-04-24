@@ -45,16 +45,23 @@ namespace IdeasAi.modals
             //Expand Ideas
             //Categorize Ideas
             //SCAMPER Technique
+
+            var loader = new mdl_loading(mainForm);
+            
+
+            mainForm.loadForm(loader, pnl_body);
+
             switch (selectedMode)
             {
                 case "Grammar Checker":
                     Console.WriteLine("Grammar Check!");
                     break;
                 case "Summarizer":
+                    loader.getLblLoadInfo().Text = "Summarizing your ideas..";
                     var summarizer = new Summarizer();
-                    summarizer.Input = mainForm.frm_workspace.getTxbEditor().Text;
+                    summarizer.Input = txb_preview.Text;
                     summarizer.Content = await summarizer.GetResponse(mainForm.settings);
-
+                    mainForm.removeForm(loader, pnl_body);
                     txb_preview.Text = summarizer.Content;
                     break;
                 case "Expand Ideas":
@@ -77,6 +84,11 @@ namespace IdeasAi.modals
         private void btn_save_Click(object sender, EventArgs e)
         {
             mainForm.frm_workspace.getTxbEditor().Text += cb_modeSelector.SelectedItem.ToString() + ":\n" + txb_preview.Text;
+        }
+
+        public ref RichTextBox getTxbPreview()
+        {
+            return ref txb_preview;
         }
     }
 }

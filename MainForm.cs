@@ -148,7 +148,7 @@ namespace IdeasAi
             frm.Show();
         }
 
-        private void removeForm(Form frm, Control container)
+        public void removeForm(Form frm, Control container)
         {
             foreach (Control control in container.Controls)
             {
