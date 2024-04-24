@@ -39,8 +39,8 @@
             this.txb_setNoteTitle = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.tmr_animation = new System.Windows.Forms.Timer(this.components);
             this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -54,20 +54,20 @@
             this.lbl_noteTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbl_noteTitle.Font = new System.Drawing.Font("Cascadia Code", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_noteTitle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbl_noteTitle.Location = new System.Drawing.Point(46, 50);
-            this.lbl_noteTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 8);
+            this.lbl_noteTitle.Location = new System.Drawing.Point(61, 62);
+            this.lbl_noteTitle.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.lbl_noteTitle.Name = "lbl_noteTitle";
-            this.lbl_noteTitle.Size = new System.Drawing.Size(73, 15);
+            this.lbl_noteTitle.Size = new System.Drawing.Size(96, 17);
             this.lbl_noteTitle.TabIndex = 3;
             this.lbl_noteTitle.Text = "Note title:";
             // 
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(46, 65);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Location = new System.Drawing.Point(61, 79);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(333, 8);
+            this.panel3.Size = new System.Drawing.Size(445, 10);
             this.panel3.TabIndex = 5;
             // 
             // btn_delete
@@ -76,10 +76,10 @@
             this.btn_delete.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btn_delete.FlatAppearance.BorderSize = 0;
             this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_delete.Location = new System.Drawing.Point(46, 167);
-            this.btn_delete.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_delete.Location = new System.Drawing.Point(61, 207);
+            this.btn_delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(333, 28);
+            this.btn_delete.Size = new System.Drawing.Size(445, 34);
             this.btn_delete.TabIndex = 11;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = false;
@@ -88,10 +88,10 @@
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(46, 159);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
+            this.panel4.Location = new System.Drawing.Point(61, 197);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(333, 8);
+            this.panel4.Size = new System.Drawing.Size(445, 10);
             this.panel4.TabIndex = 13;
             // 
             // btn_save
@@ -101,10 +101,10 @@
             this.btn_save.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btn_save.FlatAppearance.BorderSize = 0;
             this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_save.Location = new System.Drawing.Point(46, 131);
-            this.btn_save.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_save.Location = new System.Drawing.Point(61, 163);
+            this.btn_save.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(333, 28);
+            this.btn_save.Size = new System.Drawing.Size(445, 34);
             this.btn_save.TabIndex = 14;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = false;
@@ -120,22 +120,21 @@
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.lbl_noteTitle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(10, 55);
-            this.panel2.Margin = new System.Windows.Forms.Padding(60, 65, 60, 65);
+            this.panel2.Location = new System.Drawing.Point(13, 67);
+            this.panel2.Margin = new System.Windows.Forms.Padding(80, 80, 80, 80);
             this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(46, 50, 46, 50);
-            this.panel2.Size = new System.Drawing.Size(425, 245);
+            this.panel2.Padding = new System.Windows.Forms.Padding(61, 62, 61, 62);
+            this.panel2.Size = new System.Drawing.Size(567, 303);
             this.panel2.TabIndex = 5;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // txb_setNoteTitle
             // 
             this.txb_setNoteTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txb_setNoteTitle.Location = new System.Drawing.Point(46, 73);
-            this.txb_setNoteTitle.Margin = new System.Windows.Forms.Padding(2);
+            this.txb_setNoteTitle.Location = new System.Drawing.Point(61, 89);
+            this.txb_setNoteTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txb_setNoteTitle.Multiline = true;
             this.txb_setNoteTitle.Name = "txb_setNoteTitle";
-            this.txb_setNoteTitle.Size = new System.Drawing.Size(333, 31);
+            this.txb_setNoteTitle.Size = new System.Drawing.Size(445, 38);
             this.txb_setNoteTitle.StateActive.Content.Font = new System.Drawing.Font("Cascadia Code", 12F);
             this.txb_setNoteTitle.StateActive.Content.Padding = new System.Windows.Forms.Padding(8, 2, 2, 2);
             this.txb_setNoteTitle.TabIndex = 10;
@@ -156,21 +155,11 @@
             this.panel5.Controls.Add(this.pictureBox1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Padding = new System.Windows.Forms.Padding(20, 10, 20, 0);
-            this.panel5.Size = new System.Drawing.Size(425, 46);
+            this.panel5.Padding = new System.Windows.Forms.Padding(27, 12, 27, 0);
+            this.panel5.Size = new System.Drawing.Size(567, 56);
             this.panel5.TabIndex = 4;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(20, 10);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 30);
-            this.pictureBox1.Size = new System.Drawing.Size(34, 34);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -178,40 +167,54 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
             this.label2.Enabled = false;
             this.label2.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(54, 10);
+            this.label2.Location = new System.Drawing.Point(72, 12);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 21);
+            this.label2.Size = new System.Drawing.Size(108, 27);
             this.label2.TabIndex = 3;
             this.label2.Text = "Settings";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(27, 12);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 37);
+            this.pictureBox1.Size = new System.Drawing.Size(45, 42);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(10, 10);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(13, 12);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(425, 45);
+            this.panel1.Size = new System.Drawing.Size(567, 55);
             this.panel1.TabIndex = 4;
             // 
             // mdl_NotesOptions
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(445, 310);
+            this.ClientSize = new System.Drawing.Size(593, 382);
             this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "mdl_NotesOptions";
             this.Opacity = 0D;
-            this.Padding = new System.Windows.Forms.Padding(10);
+            this.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.ShowInTaskbar = false;
             this.Text = "mdl_editNotes";
+            this.Load += new System.EventHandler(this.mdl_NotesOptions_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel5.ResumeLayout(false);

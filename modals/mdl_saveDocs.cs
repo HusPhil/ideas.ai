@@ -26,6 +26,20 @@ namespace IdeasAi.modals
             this.tmr_animation.Interval = 1;
             this.tmr_animation.Tick += new System.EventHandler(this.tmr_animation_Tick);
         }
+        private void frm_modal_Load(object sender, EventArgs e)
+        {
+            var ownerForm = mainForm;
+            this.Location = ModalSetter.CenterLocation(ownerForm.Width, ownerForm.Height, this.Width, this.Height, ownerForm.Location.X, ownerForm.Location.Y);
+
+            txb_setNoteTitle.Text = mainForm.frm_workspace.getSaverObj().Title;
+
+            saver_obj.Title = txb_setNoteTitle.Text;
+            saver_obj.Content = mainForm.frm_workspace.getSaverObj().Content;
+            saver_obj.UUID = mainForm.frm_workspace.getSaverObj().UUID;
+
+            txb_setNoteTitle.SelectionStart = txb_setNoteTitle.Text.Length; ;
+            txb_setNoteTitle.SelectionLength = 0;
+        }
 
         private void tmr_animation_Tick(object sender, EventArgs e)
         {
@@ -38,18 +52,7 @@ namespace IdeasAi.modals
                 Opacity += .05;
             }
         }
-        private void frm_modal_Load(object sender, EventArgs e)
-        {
-            var ownerForm = mainForm;
-            this.Location = ModalSetter.CenterLocation(ownerForm.Width, ownerForm.Height, this.Width, this.Height, ownerForm.Location.X, ownerForm.Location.Y);
-
-            txb_setNoteTitle.Text = mainForm.frm_workspace.getSaverObj().Title;
-            
-
-            saver_obj.Title = txb_setNoteTitle.Text;
-            saver_obj.Content = mainForm.frm_workspace.getSaverObj().Content;
-            saver_obj.UUID = mainForm.frm_workspace.getSaverObj().UUID;
-        }
+       
         private void btn_cancel_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -111,12 +114,10 @@ namespace IdeasAi.modals
             
             this.Hide();
         }
-
         private void btn_cancel_Click_1(object sender, EventArgs e)
         {
             Hide();
         }
-
         private void txb_setNoteTitle_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

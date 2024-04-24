@@ -17,6 +17,16 @@ namespace IdeasAi.modals
 
 
         }
+        private void frm_modal_Load(object sender, EventArgs e)
+        {
+            txb_setNoteTitle.Text = mainForm.frm_consultation.saver_obj.Input;
+            var ownerForm = mainForm;
+            this.Location = ModalSetter.CenterLocation(ownerForm.Width, ownerForm.Height, this.Width, this.Height, ownerForm.Location.X, ownerForm.Location.Y);
+
+            txb_setNoteTitle.SelectionStart = txb_setNoteTitle.Text.Length; ;
+            txb_setNoteTitle.SelectionLength = 0;
+        }
+        
         private void tmr_animation_Tick(object sender, EventArgs e)
         {
             if(Opacity >= 1)
@@ -28,12 +38,7 @@ namespace IdeasAi.modals
                 Opacity += .05;
             }
         }
-        private void frm_modal_Load(object sender, EventArgs e)
-        {
-            txb_setNoteTitle.Text = mainForm.frm_consultation.saver_obj.Input;
-            var ownerForm = mainForm;
-            this.Location = ModalSetter.CenterLocation(ownerForm.Width, ownerForm.Height, this.Width, this.Height, ownerForm.Location.X, ownerForm.Location.Y);
-        }
+        
         private void btn_save_Click(object sender, EventArgs e)
         {
             

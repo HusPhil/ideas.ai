@@ -48,9 +48,8 @@
             this.lbl_title.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_title.Font = new System.Drawing.Font("Cascadia Code", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_title.Location = new System.Drawing.Point(0, 0);
-            this.lbl_title.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_title.Name = "lbl_title";
-            this.lbl_title.Size = new System.Drawing.Size(445, 49);
+            this.lbl_title.Size = new System.Drawing.Size(593, 60);
             this.lbl_title.TabIndex = 0;
             this.lbl_title.Text = "More settings";
             this.lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -71,13 +70,12 @@
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.lbl_noteTitle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 49);
-            this.panel2.Margin = new System.Windows.Forms.Padding(60, 65, 60, 65);
+            this.panel2.Location = new System.Drawing.Point(0, 60);
+            this.panel2.Margin = new System.Windows.Forms.Padding(80, 80, 80, 80);
             this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(46, 50, 46, 50);
-            this.panel2.Size = new System.Drawing.Size(445, 261);
+            this.panel2.Padding = new System.Windows.Forms.Padding(61, 62, 61, 62);
+            this.panel2.Size = new System.Drawing.Size(593, 322);
             this.panel2.TabIndex = 7;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // btn_save
             // 
@@ -86,10 +84,10 @@
             this.btn_save.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btn_save.FlatAppearance.BorderSize = 0;
             this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_save.Location = new System.Drawing.Point(46, 147);
-            this.btn_save.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_save.Location = new System.Drawing.Point(61, 182);
+            this.btn_save.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(353, 28);
+            this.btn_save.Size = new System.Drawing.Size(471, 34);
             this.btn_save.TabIndex = 14;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = false;
@@ -98,10 +96,10 @@
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(46, 175);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
+            this.panel4.Location = new System.Drawing.Point(61, 216);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(353, 8);
+            this.panel4.Size = new System.Drawing.Size(471, 10);
             this.panel4.TabIndex = 13;
             // 
             // btn_delete
@@ -110,10 +108,10 @@
             this.btn_delete.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btn_delete.FlatAppearance.BorderSize = 0;
             this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_delete.Location = new System.Drawing.Point(46, 183);
-            this.btn_delete.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_delete.Location = new System.Drawing.Point(61, 226);
+            this.btn_delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(353, 28);
+            this.btn_delete.Size = new System.Drawing.Size(471, 34);
             this.btn_delete.TabIndex = 11;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = false;
@@ -125,11 +123,11 @@
             this.txb_setNoteTitle.AcceptsTab = true;
             this.txb_setNoteTitle.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.txb_setNoteTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txb_setNoteTitle.Location = new System.Drawing.Point(46, 73);
-            this.txb_setNoteTitle.Margin = new System.Windows.Forms.Padding(2);
+            this.txb_setNoteTitle.Location = new System.Drawing.Point(61, 89);
+            this.txb_setNoteTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txb_setNoteTitle.Multiline = true;
             this.txb_setNoteTitle.Name = "txb_setNoteTitle";
-            this.txb_setNoteTitle.Size = new System.Drawing.Size(353, 31);
+            this.txb_setNoteTitle.Size = new System.Drawing.Size(471, 38);
             this.txb_setNoteTitle.StateActive.Content.Font = new System.Drawing.Font("Cascadia Code", 12F);
             this.txb_setNoteTitle.StateActive.Content.Padding = new System.Windows.Forms.Padding(8, 2, 2, 2);
             this.txb_setNoteTitle.TabIndex = 10;
@@ -139,10 +137,10 @@
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(46, 65);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Location = new System.Drawing.Point(61, 79);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(353, 8);
+            this.panel3.Size = new System.Drawing.Size(471, 10);
             this.panel3.TabIndex = 5;
             // 
             // lbl_noteTitle
@@ -151,10 +149,10 @@
             this.lbl_noteTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbl_noteTitle.Font = new System.Drawing.Font("Cascadia Code", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_noteTitle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbl_noteTitle.Location = new System.Drawing.Point(46, 50);
-            this.lbl_noteTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 8);
+            this.lbl_noteTitle.Location = new System.Drawing.Point(61, 62);
+            this.lbl_noteTitle.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.lbl_noteTitle.Name = "lbl_noteTitle";
-            this.lbl_noteTitle.Size = new System.Drawing.Size(73, 15);
+            this.lbl_noteTitle.Size = new System.Drawing.Size(96, 17);
             this.lbl_noteTitle.TabIndex = 3;
             this.lbl_noteTitle.Text = "Docs title:";
             // 
@@ -164,25 +162,26 @@
             this.panel1.Controls.Add(this.lbl_title);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(445, 49);
+            this.panel1.Size = new System.Drawing.Size(593, 60);
             this.panel1.TabIndex = 6;
             // 
             // mdl_DocsOptions
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(445, 310);
+            this.ClientSize = new System.Drawing.Size(593, 382);
             this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "mdl_DocsOptions";
             this.Opacity = 0D;
             this.ShowInTaskbar = false;
             this.Text = "mdl_DocsOprions";
+            this.Load += new System.EventHandler(this.mdl_DocsOptions_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
