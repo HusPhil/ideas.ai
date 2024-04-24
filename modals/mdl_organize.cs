@@ -37,15 +37,8 @@ namespace IdeasAi.modals
 
         private async void btn_go_Click(object sender, EventArgs e)
         {
-            //get the selected item from the mode selector
+            
             string selectedMode = cb_modeSelector.SelectedItem.ToString();
-            //call the class for the respective mode
-            //Summarizer
-            //Grammar Checker
-            //Expand Ideas
-            //Categorize Ideas
-            //SCAMPER Technique
-
             var loader = new mdl_loading(mainForm);
             
 
