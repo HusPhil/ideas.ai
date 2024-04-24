@@ -156,9 +156,9 @@ namespace IdeasAi.pages
             this.lbl_currentNotebook.AutoEllipsis = true;
             this.lbl_currentNotebook.AutoSize = true;
             this.lbl_currentNotebook.Font = new System.Drawing.Font("Cascadia Code", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_currentNotebook.Location = new System.Drawing.Point(389, 8);
+            this.lbl_currentNotebook.Location = new System.Drawing.Point(396, 10);
             this.lbl_currentNotebook.Name = "lbl_currentNotebook";
-            this.lbl_currentNotebook.Size = new System.Drawing.Size(91, 30);
+            this.lbl_currentNotebook.Size = new System.Drawing.Size(78, 25);
             this.lbl_currentNotebook.TabIndex = 5;
             this.lbl_currentNotebook.Text = "label1";
             // 
@@ -219,7 +219,7 @@ namespace IdeasAi.pages
             this.btn_delConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_delConfirm.Font = new System.Drawing.Font("Cascadia Code", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delConfirm.ForeColor = System.Drawing.Color.Red;
-            this.btn_delConfirm.Location = new System.Drawing.Point(20, 0);
+            this.btn_delConfirm.Location = new System.Drawing.Point(48, 0);
             this.btn_delConfirm.Name = "btn_delConfirm";
             this.btn_delConfirm.Size = new System.Drawing.Size(113, 42);
             this.btn_delConfirm.TabIndex = 8;
@@ -232,10 +232,10 @@ namespace IdeasAi.pages
             this.chb_delFile.AutoSize = true;
             this.chb_delFile.Dock = System.Windows.Forms.DockStyle.Right;
             this.chb_delFile.Font = new System.Drawing.Font("Cascadia Code", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chb_delFile.Location = new System.Drawing.Point(133, 0);
+            this.chb_delFile.Location = new System.Drawing.Point(161, 0);
             this.chb_delFile.Name = "chb_delFile";
             this.chb_delFile.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.chb_delFile.Size = new System.Drawing.Size(141, 42);
+            this.chb_delFile.Size = new System.Drawing.Size(113, 42);
             this.chb_delFile.TabIndex = 9;
             this.chb_delFile.Text = "Delete file?";
             this.chb_delFile.UseVisualStyleBackColor = true;
@@ -259,7 +259,7 @@ namespace IdeasAi.pages
             this.cb_dbSelector.FormattingEnabled = true;
             this.cb_dbSelector.Location = new System.Drawing.Point(0, 8);
             this.cb_dbSelector.Name = "cb_dbSelector";
-            this.cb_dbSelector.Size = new System.Drawing.Size(121, 25);
+            this.cb_dbSelector.Size = new System.Drawing.Size(121, 21);
             this.cb_dbSelector.TabIndex = 3;
             this.cb_dbSelector.SelectedIndexChanged += new System.EventHandler(this.cb_dbSelector_SelectedIndexChanged);
             // 

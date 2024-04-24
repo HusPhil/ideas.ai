@@ -87,7 +87,7 @@
             this.btn_save.FlatAppearance.BorderSize = 0;
             this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_save.Location = new System.Drawing.Point(46, 147);
-            this.btn_save.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_save.Margin = new System.Windows.Forms.Padding(2);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(353, 28);
             this.btn_save.TabIndex = 14;
@@ -99,7 +99,7 @@
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(46, 175);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(353, 8);
             this.panel4.TabIndex = 13;
@@ -111,7 +111,7 @@
             this.btn_delete.FlatAppearance.BorderSize = 0;
             this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_delete.Location = new System.Drawing.Point(46, 183);
-            this.btn_delete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_delete.Margin = new System.Windows.Forms.Padding(2);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(353, 28);
             this.btn_delete.TabIndex = 11;
@@ -126,7 +126,7 @@
             this.txb_setNoteTitle.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.txb_setNoteTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.txb_setNoteTitle.Location = new System.Drawing.Point(46, 73);
-            this.txb_setNoteTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txb_setNoteTitle.Margin = new System.Windows.Forms.Padding(2);
             this.txb_setNoteTitle.Multiline = true;
             this.txb_setNoteTitle.Name = "txb_setNoteTitle";
             this.txb_setNoteTitle.Size = new System.Drawing.Size(353, 31);
@@ -140,7 +140,7 @@
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(46, 65);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(353, 8);
             this.panel3.TabIndex = 5;
@@ -164,7 +164,7 @@
             this.panel1.Controls.Add(this.lbl_title);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(445, 49);
             this.panel1.TabIndex = 6;
@@ -178,7 +178,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "mdl_DocsOptions";
             this.Opacity = 0D;
             this.ShowInTaskbar = false;
