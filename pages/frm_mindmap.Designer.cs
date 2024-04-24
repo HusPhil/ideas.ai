@@ -102,7 +102,6 @@ namespace IdeasAi.pages
             this.pbx_mindmap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbx_mindmap.TabIndex = 0;
             this.pbx_mindmap.TabStop = false;
-            this.pbx_mindmap.BackgroundImageChanged += new System.EventHandler(this.pbx_mindmap_BackgroundImageChanged);
             // 
             // pnl_viewSettings
             // 
