@@ -9,6 +9,7 @@ using IdeasAi.db;
 using System.Web.UI.Design;
 using System.IO;
 using Newtonsoft.Json.Linq;
+using IdeasAi.Properties;
 
 namespace IdeasAi
 {
@@ -17,6 +18,7 @@ namespace IdeasAi
         //show or hide side pnl
         private bool showMode = true;
         public bool sliding = false;
+        PictureBox pb_active;
 
         // json configs
         public JObject decors;
@@ -86,6 +88,13 @@ namespace IdeasAi
             modalBG = new Form();
             mdl_setter = new ModalSetter(this);
             mdl_organize = new mdl_organize(this);
+
+            pb_active = new PictureBox();
+            pb_active.BackColor = Color.Transparent;
+            pb_active.Image = Resources.activeState;
+            pb_active.Dock = DockStyle.Left;
+            pb_active.SizeMode = PictureBoxSizeMode.CenterImage;
+            pb_active.Size = new System.Drawing.Size(37, 48);
 
             btn_active = btn_mindmap;
             setActiveBtn((object)btn_mindmap, pnl_pageTabs);
@@ -157,11 +166,13 @@ namespace IdeasAi
         {
             if ((Button)btn != btn_active && btn_active != null)
             {
+                
+                
+
                 removeActiveBtn();
                 btn_active = (Button)btn;
-                btn_active.BackColor = ColorTranslator.FromHtml((string)decors["Color"]["secondary100"]);
-                btn_active.Parent.Padding = new Padding(15,0,0,0);
-                btn_active.Parent.BackColor = ColorTranslator.FromHtml((string)decors["Color"]["accent"]);
+                btn_active.Parent.Controls.Add(pb_active);
+                btn_active.BackColor = ColorTranslator.FromHtml((string)decors["Color"]["accent"]);
                 lbl_currentPage.Text = btn_active.Text;
             }
         }
@@ -170,9 +181,8 @@ namespace IdeasAi
         {
             if(btn_active != null)
             {
+                btn_active.Parent.Controls.Remove(pb_active);
                 btn_active.BackColor = Color.Transparent;
-                btn_active.Parent.BackColor = Color.Transparent;
-                btn_active.Parent.Padding = new Padding(0);
             }
 
         }

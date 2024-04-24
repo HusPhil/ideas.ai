@@ -331,6 +331,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\activeState.png" />
+    <None Include="Resources\icons8-rounded-square-24.png" />
+    <None Include="Resources\icons8-rounded-square-35.png" />
+    <None Include="Resources\icons8-active-state-30.png" />
+    <None Include="Resources\idea.gif" />
+    <None Include="Resources\icons8-light-on-ezgif.com-gif-maker.gif" />
+    <None Include="Resources\icons8-light-on.gif" />
     <None Include="Resources\questionMark.png" />
     <None Include="Resources\quickSearch.png" />
     <None Include="Resources\send2.png" />

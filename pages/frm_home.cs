@@ -19,5 +19,14 @@ namespace IdeasAi.pages
             this.mainForm = mainForm;
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frm_home_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

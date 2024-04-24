@@ -39,7 +39,7 @@ namespace IdeasAi.pages
             cb_dbSelector.SelectedIndex = 0;
 
             btn_activeTab = btn_notesTab;
-            btn_notesTab.BackColor = btn_notesTab.FlatAppearance.MouseOverBackColor;
+            btn_notesTab.BackColor = ColorTranslator.FromHtml((string)mainForm.decors["Color"]["secondary"]); ;
             showAllIdeas();
 
             
@@ -118,11 +118,11 @@ namespace IdeasAi.pages
             this.btn_notesTab.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_notesTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(126)))));
             this.btn_notesTab.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
-            this.btn_notesTab.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_notesTab.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
+            this.btn_notesTab.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.btn_notesTab.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.btn_notesTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_notesTab.Font = new System.Drawing.Font("Cascadia Code Light", 9.5F);
-            this.btn_notesTab.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_notesTab.ForeColor = System.Drawing.Color.Black;
             this.btn_notesTab.Location = new System.Drawing.Point(68, 3);
             this.btn_notesTab.Name = "btn_notesTab";
             this.btn_notesTab.Size = new System.Drawing.Size(153, 40);
@@ -136,11 +136,11 @@ namespace IdeasAi.pages
             this.btn_docsTab.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_docsTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(126)))));
             this.btn_docsTab.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(73)))));
-            this.btn_docsTab.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_docsTab.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(50)))));
+            this.btn_docsTab.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.btn_docsTab.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.btn_docsTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_docsTab.Font = new System.Drawing.Font("Cascadia Code Light", 9.5F);
-            this.btn_docsTab.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_docsTab.ForeColor = System.Drawing.Color.Black;
             this.btn_docsTab.Location = new System.Drawing.Point(648, 3);
             this.btn_docsTab.Name = "btn_docsTab";
             this.btn_docsTab.Size = new System.Drawing.Size(153, 40);
@@ -488,7 +488,7 @@ namespace IdeasAi.pages
                 {
                     removeActiveBtn(pnl);
                     btn_activeTab = (Button)btn;
-                    btn_activeTab.BackColor = btn_notesTab.FlatAppearance.MouseOverBackColor;
+                    btn_activeTab.BackColor = ColorTranslator.FromHtml((string)mainForm.decors["Color"]["secondary"]);
                 }
             }
             
