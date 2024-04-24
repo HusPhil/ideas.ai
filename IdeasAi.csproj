@@ -244,6 +244,9 @@
     <Compile Include="pages\frm_mindmap.Designer.cs">
       <DependentUpon>frm_mindmap.cs</DependentUpon>
     </Compile>
+    <Compile Include="pages\frm_notebook.Designer.cs">
+      <DependentUpon>frm_notebook.cs</DependentUpon>
+    </Compile>
     <Compile Include="pages\frm_workspace.cs">
       <SubType>Form</SubType>
     </Compile>

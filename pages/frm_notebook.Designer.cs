@@ -295,7 +295,6 @@ namespace IdeasAi.pages
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_notebook";
             this.Padding = new System.Windows.Forms.Padding(20);
-            this.Load += new System.EventHandler(this.frm_notebook_Load);
             this.SizeChanged += new System.EventHandler(this.frm_notebook_SizeChanged);
             this.pnl_tabSelect.ResumeLayout(false);
             this.tbpnl_tabs.ResumeLayout(false);
