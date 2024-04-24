@@ -135,9 +135,6 @@ C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.pages.frm_home.resources
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.modals.mdl_howToUse.resources
 C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\decors.json
 C:\Users\Admin\Desktop\Project_AOOP\bin\Debug\gemini_AI\Scripts\gemini.py
-C:\Users\Admin\Desktop\Project_AOOP\bin\Debug\db\sqlite.db
-C:\Users\Admin\Desktop\Project_AOOP\bin\Debug\decors.json
-C:\Users\Admin\Desktop\Project_AOOP\bin\Debug\settings.json
 C:\Users\Admin\Desktop\Project_AOOP\bin\Debug\IdeasAi.exe.config
 C:\Users\Admin\Desktop\Project_AOOP\bin\Debug\IdeasAi.exe
 C:\Users\Admin\Desktop\Project_AOOP\bin\Debug\IdeasAi.pdb
@@ -331,3 +328,7 @@ C:\Users\husph\Desktop\master-test\obj\Debug\IdeasAi.modals.mdl_notebookSettings
 C:\Users\husph\Desktop\master-test\bin\Debug\configs\settings.json
 C:\Users\husph\Desktop\master-test\bin\Debug\configs\decors.json
 C:\Users\husph\Desktop\master-test\bin\Debug\db\default.db
+C:\Users\Admin\Desktop\Project_AOOP\bin\Debug\db\default.db
+C:\Users\Admin\Desktop\Project_AOOP\bin\Debug\configs\decors.json
+C:\Users\Admin\Desktop\Project_AOOP\bin\Debug\configs\settings.json
+C:\Users\Admin\Desktop\Project_AOOP\obj\Debug\IdeasAi.modals.mdl_notebookSettings.resources

@@ -117,4 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label2.Text" xml:space="preserve">
+    <value>IDEA.ai is an interactive platform designed to assist individuals, particularly students, in generating fresh ideas through artificial intelligence. It facilitates a collaborative environment where users can leverage AI to explore and develop innovative concepts. With IDEA.ai, students can engage in creative problem-solving and idea generation with ease.</value>
+  </data>
 </root>

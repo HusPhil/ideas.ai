@@ -52,8 +52,10 @@ namespace IdeasAi
             this.pnl_formHeader = new System.Windows.Forms.Panel();
             this.pnl_mFormContent = new System.Windows.Forms.Panel();
             this.pnl_fillContent = new System.Windows.Forms.Panel();
+            this.pnlb_content = new System.Windows.Forms.Panel();
             this.pnl_content = new System.Windows.Forms.Panel();
             this.pnl_contentHeader = new System.Windows.Forms.Panel();
+            this.pnlb_pageTitle = new System.Windows.Forms.Panel();
             this.pnl_pageTitle = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_howToUse = new System.Windows.Forms.Button();
@@ -62,8 +64,6 @@ namespace IdeasAi
             this.pnl_menuSectBorder = new System.Windows.Forms.Panel();
             this.pnl_menuSect = new System.Windows.Forms.Panel();
             this.tmr_animation = new System.Windows.Forms.Timer(this.components);
-            this.pnlb_content = new System.Windows.Forms.Panel();
-            this.pnlb_pageTitle = new System.Windows.Forms.Panel();
             this.pnl_pageTabCont.SuspendLayout();
             this.pnl_pageTabs.SuspendLayout();
             this.pnl_mindmapBtn.SuspendLayout();
@@ -75,14 +75,14 @@ namespace IdeasAi
             this.panel1.SuspendLayout();
             this.pnl_mFormContent.SuspendLayout();
             this.pnl_fillContent.SuspendLayout();
+            this.pnlb_content.SuspendLayout();
             this.pnl_contentHeader.SuspendLayout();
+            this.pnlb_pageTitle.SuspendLayout();
             this.pnl_pageTitle.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnl_sideContent.SuspendLayout();
             this.pnl_menuSectBorder.SuspendLayout();
             this.pnl_menuSect.SuspendLayout();
-            this.pnlb_content.SuspendLayout();
-            this.pnlb_pageTitle.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_pageTabCont
@@ -91,11 +91,11 @@ namespace IdeasAi
             this.pnl_pageTabCont.Controls.Add(this.pnl_pageTabs);
             this.pnl_pageTabCont.Controls.Add(this.btn_exit);
             this.pnl_pageTabCont.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_pageTabCont.Location = new System.Drawing.Point(30, 175);
+            this.pnl_pageTabCont.Location = new System.Drawing.Point(24, 140);
             this.pnl_pageTabCont.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_pageTabCont.Name = "pnl_pageTabCont";
-            this.pnl_pageTabCont.Padding = new System.Windows.Forms.Padding(0, 30, 0, 30);
-            this.pnl_pageTabCont.Size = new System.Drawing.Size(230, 447);
+            this.pnl_pageTabCont.Padding = new System.Windows.Forms.Padding(0, 24, 0, 24);
+            this.pnl_pageTabCont.Size = new System.Drawing.Size(183, 356);
             this.pnl_pageTabCont.TabIndex = 2;
             // 
             // pnl_pageTabs
@@ -109,11 +109,11 @@ namespace IdeasAi
             this.pnl_pageTabs.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.pnl_pageTabs.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_pageTabs.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pnl_pageTabs.Location = new System.Drawing.Point(0, 30);
-            this.pnl_pageTabs.Margin = new System.Windows.Forms.Padding(20);
+            this.pnl_pageTabs.Location = new System.Drawing.Point(0, 24);
+            this.pnl_pageTabs.Margin = new System.Windows.Forms.Padding(16, 16, 16, 16);
             this.pnl_pageTabs.Name = "pnl_pageTabs";
             this.pnl_pageTabs.Padding = new System.Windows.Forms.Padding(1);
-            this.pnl_pageTabs.Size = new System.Drawing.Size(230, 275);
+            this.pnl_pageTabs.Size = new System.Drawing.Size(183, 220);
             this.pnl_pageTabs.TabIndex = 1;
             // 
             // pnl_mindmapBtn
@@ -121,10 +121,10 @@ namespace IdeasAi
             this.pnl_mindmapBtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_mindmapBtn.Controls.Add(this.btn_mindmap);
             this.pnl_mindmapBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_mindmapBtn.Location = new System.Drawing.Point(1, 193);
+            this.pnl_mindmapBtn.Location = new System.Drawing.Point(1, 157);
             this.pnl_mindmapBtn.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_mindmapBtn.Name = "pnl_mindmapBtn";
-            this.pnl_mindmapBtn.Size = new System.Drawing.Size(228, 48);
+            this.pnl_mindmapBtn.Size = new System.Drawing.Size(181, 39);
             this.pnl_mindmapBtn.TabIndex = 4;
             // 
             // btn_mindmap
@@ -141,7 +141,7 @@ namespace IdeasAi
             this.btn_mindmap.Margin = new System.Windows.Forms.Padding(2);
             this.btn_mindmap.Name = "btn_mindmap";
             this.btn_mindmap.Padding = new System.Windows.Forms.Padding(2);
-            this.btn_mindmap.Size = new System.Drawing.Size(226, 46);
+            this.btn_mindmap.Size = new System.Drawing.Size(179, 37);
             this.btn_mindmap.TabIndex = 6;
             this.btn_mindmap.Text = "Mindmap";
             this.btn_mindmap.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -153,10 +153,10 @@ namespace IdeasAi
             this.pnl_workspaceBtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_workspaceBtn.Controls.Add(this.btn_workspace);
             this.pnl_workspaceBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_workspaceBtn.Location = new System.Drawing.Point(1, 145);
+            this.pnl_workspaceBtn.Location = new System.Drawing.Point(1, 118);
             this.pnl_workspaceBtn.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_workspaceBtn.Name = "pnl_workspaceBtn";
-            this.pnl_workspaceBtn.Size = new System.Drawing.Size(228, 48);
+            this.pnl_workspaceBtn.Size = new System.Drawing.Size(181, 39);
             this.pnl_workspaceBtn.TabIndex = 3;
             // 
             // btn_workspace
@@ -173,7 +173,7 @@ namespace IdeasAi
             this.btn_workspace.Margin = new System.Windows.Forms.Padding(2);
             this.btn_workspace.Name = "btn_workspace";
             this.btn_workspace.Padding = new System.Windows.Forms.Padding(2);
-            this.btn_workspace.Size = new System.Drawing.Size(226, 46);
+            this.btn_workspace.Size = new System.Drawing.Size(179, 37);
             this.btn_workspace.TabIndex = 1;
             this.btn_workspace.Text = "Workspace";
             this.btn_workspace.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -185,10 +185,10 @@ namespace IdeasAi
             this.pnl_notebookBtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_notebookBtn.Controls.Add(this.btn_notebook);
             this.pnl_notebookBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_notebookBtn.Location = new System.Drawing.Point(1, 97);
+            this.pnl_notebookBtn.Location = new System.Drawing.Point(1, 79);
             this.pnl_notebookBtn.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_notebookBtn.Name = "pnl_notebookBtn";
-            this.pnl_notebookBtn.Size = new System.Drawing.Size(228, 48);
+            this.pnl_notebookBtn.Size = new System.Drawing.Size(181, 39);
             this.pnl_notebookBtn.TabIndex = 2;
             // 
             // btn_notebook
@@ -205,7 +205,7 @@ namespace IdeasAi
             this.btn_notebook.Margin = new System.Windows.Forms.Padding(2);
             this.btn_notebook.Name = "btn_notebook";
             this.btn_notebook.Padding = new System.Windows.Forms.Padding(2);
-            this.btn_notebook.Size = new System.Drawing.Size(226, 46);
+            this.btn_notebook.Size = new System.Drawing.Size(179, 37);
             this.btn_notebook.TabIndex = 5;
             this.btn_notebook.Text = "Notebook";
             this.btn_notebook.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -218,10 +218,10 @@ namespace IdeasAi
             this.pnl_QHubBtn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_QHubBtn.Controls.Add(this.btn_consultation);
             this.pnl_QHubBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_QHubBtn.Location = new System.Drawing.Point(1, 49);
+            this.pnl_QHubBtn.Location = new System.Drawing.Point(1, 40);
             this.pnl_QHubBtn.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_QHubBtn.Name = "pnl_QHubBtn";
-            this.pnl_QHubBtn.Size = new System.Drawing.Size(228, 48);
+            this.pnl_QHubBtn.Size = new System.Drawing.Size(181, 39);
             this.pnl_QHubBtn.TabIndex = 1;
             // 
             // btn_consultation
@@ -238,7 +238,7 @@ namespace IdeasAi
             this.btn_consultation.Margin = new System.Windows.Forms.Padding(2);
             this.btn_consultation.Name = "btn_consultation";
             this.btn_consultation.Padding = new System.Windows.Forms.Padding(2);
-            this.btn_consultation.Size = new System.Drawing.Size(226, 46);
+            this.btn_consultation.Size = new System.Drawing.Size(179, 37);
             this.btn_consultation.TabIndex = 8;
             this.btn_consultation.Text = "QHub";
             this.btn_consultation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -252,9 +252,9 @@ namespace IdeasAi
             this.pnl_HomeBtn.Controls.Add(this.btn_home);
             this.pnl_HomeBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_HomeBtn.Location = new System.Drawing.Point(1, 1);
-            this.pnl_HomeBtn.Margin = new System.Windows.Forms.Padding(20);
+            this.pnl_HomeBtn.Margin = new System.Windows.Forms.Padding(16, 16, 16, 16);
             this.pnl_HomeBtn.Name = "pnl_HomeBtn";
-            this.pnl_HomeBtn.Size = new System.Drawing.Size(228, 48);
+            this.pnl_HomeBtn.Size = new System.Drawing.Size(181, 39);
             this.pnl_HomeBtn.TabIndex = 0;
             // 
             // btn_home
@@ -272,7 +272,7 @@ namespace IdeasAi
             this.btn_home.Margin = new System.Windows.Forms.Padding(2);
             this.btn_home.Name = "btn_home";
             this.btn_home.Padding = new System.Windows.Forms.Padding(2);
-            this.btn_home.Size = new System.Drawing.Size(226, 46);
+            this.btn_home.Size = new System.Drawing.Size(179, 37);
             this.btn_home.TabIndex = 4;
             this.btn_home.Text = "Home";
             this.btn_home.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -290,11 +290,11 @@ namespace IdeasAi
             this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_exit.Font = new System.Drawing.Font("Cascadia Code Light", 10F);
             this.btn_exit.ForeColor = System.Drawing.Color.Black;
-            this.btn_exit.Location = new System.Drawing.Point(0, 367);
+            this.btn_exit.Location = new System.Drawing.Point(0, 292);
             this.btn_exit.Margin = new System.Windows.Forms.Padding(2);
             this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Padding = new System.Windows.Forms.Padding(5);
-            this.btn_exit.Size = new System.Drawing.Size(230, 50);
+            this.btn_exit.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_exit.Size = new System.Drawing.Size(183, 40);
             this.btn_exit.TabIndex = 9;
             this.btn_exit.Text = "Exit";
             this.btn_exit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -307,11 +307,11 @@ namespace IdeasAi
             this.pnl_header.Controls.Add(this.panel1);
             this.pnl_header.Controls.Add(this.lbl_appTitle);
             this.pnl_header.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_header.Location = new System.Drawing.Point(30, 25);
+            this.pnl_header.Location = new System.Drawing.Point(24, 20);
             this.pnl_header.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_header.Name = "pnl_header";
             this.pnl_header.Padding = new System.Windows.Forms.Padding(2);
-            this.pnl_header.Size = new System.Drawing.Size(230, 150);
+            this.pnl_header.Size = new System.Drawing.Size(183, 120);
             this.pnl_header.TabIndex = 3;
             // 
             // panel1
@@ -322,7 +322,7 @@ namespace IdeasAi
             this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(226, 38);
+            this.panel1.Size = new System.Drawing.Size(179, 30);
             this.panel1.TabIndex = 1;
             // 
             // btn_showOrHide
@@ -334,7 +334,7 @@ namespace IdeasAi
             this.btn_showOrHide.Location = new System.Drawing.Point(0, 0);
             this.btn_showOrHide.Margin = new System.Windows.Forms.Padding(2);
             this.btn_showOrHide.Name = "btn_showOrHide";
-            this.btn_showOrHide.Size = new System.Drawing.Size(38, 38);
+            this.btn_showOrHide.Size = new System.Drawing.Size(30, 30);
             this.btn_showOrHide.TabIndex = 0;
             this.btn_showOrHide.UseVisualStyleBackColor = false;
             this.btn_showOrHide.Click += new System.EventHandler(this.btn_showOrHide_Click);
@@ -342,9 +342,10 @@ namespace IdeasAi
             // pnl_filer
             // 
             this.pnl_filer.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnl_filer.Location = new System.Drawing.Point(38, 0);
+            this.pnl_filer.Location = new System.Drawing.Point(29, 0);
+            this.pnl_filer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnl_filer.Name = "pnl_filer";
-            this.pnl_filer.Size = new System.Drawing.Size(188, 38);
+            this.pnl_filer.Size = new System.Drawing.Size(150, 30);
             this.pnl_filer.TabIndex = 1;
             // 
             // lbl_appTitle
@@ -354,10 +355,10 @@ namespace IdeasAi
             this.lbl_appTitle.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lbl_appTitle.Font = new System.Drawing.Font("Cascadia Code", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_appTitle.ForeColor = System.Drawing.Color.Black;
-            this.lbl_appTitle.Location = new System.Drawing.Point(2, 57);
+            this.lbl_appTitle.Location = new System.Drawing.Point(2, 45);
             this.lbl_appTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_appTitle.Name = "lbl_appTitle";
-            this.lbl_appTitle.Size = new System.Drawing.Size(226, 91);
+            this.lbl_appTitle.Size = new System.Drawing.Size(179, 73);
             this.lbl_appTitle.TabIndex = 0;
             this.lbl_appTitle.Text = "Ideas.ai";
             this.lbl_appTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -370,7 +371,7 @@ namespace IdeasAi
             this.pnl_formHeader.Location = new System.Drawing.Point(0, 0);
             this.pnl_formHeader.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_formHeader.Name = "pnl_formHeader";
-            this.pnl_formHeader.Size = new System.Drawing.Size(1280, 42);
+            this.pnl_formHeader.Size = new System.Drawing.Size(1024, 34);
             this.pnl_formHeader.TabIndex = 5;
             this.pnl_formHeader.DoubleClick += new System.EventHandler(this.pnl_formHeader_DoubleClick);
             this.pnl_formHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_formHeader_MouseDown);
@@ -383,10 +384,10 @@ namespace IdeasAi
             this.pnl_mFormContent.Controls.Add(this.pnl_fillContent);
             this.pnl_mFormContent.Controls.Add(this.pnl_sideContent);
             this.pnl_mFormContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_mFormContent.Location = new System.Drawing.Point(0, 42);
+            this.pnl_mFormContent.Location = new System.Drawing.Point(0, 34);
             this.pnl_mFormContent.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_mFormContent.Name = "pnl_mFormContent";
-            this.pnl_mFormContent.Size = new System.Drawing.Size(1280, 678);
+            this.pnl_mFormContent.Size = new System.Drawing.Size(1024, 542);
             this.pnl_mFormContent.TabIndex = 6;
             // 
             // pnl_fillContent
@@ -394,21 +395,34 @@ namespace IdeasAi
             this.pnl_fillContent.Controls.Add(this.pnlb_content);
             this.pnl_fillContent.Controls.Add(this.pnl_contentHeader);
             this.pnl_fillContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_fillContent.Location = new System.Drawing.Point(336, 0);
+            this.pnl_fillContent.Location = new System.Drawing.Point(269, 0);
             this.pnl_fillContent.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_fillContent.Name = "pnl_fillContent";
-            this.pnl_fillContent.Padding = new System.Windows.Forms.Padding(0, 0, 20, 20);
-            this.pnl_fillContent.Size = new System.Drawing.Size(944, 678);
+            this.pnl_fillContent.Padding = new System.Windows.Forms.Padding(0, 0, 16, 16);
+            this.pnl_fillContent.Size = new System.Drawing.Size(755, 542);
             this.pnl_fillContent.TabIndex = 7;
+            // 
+            // pnlb_content
+            // 
+            this.pnlb_content.BackColor = System.Drawing.Color.Black;
+            this.pnlb_content.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlb_content.Controls.Add(this.pnl_content);
+            this.pnlb_content.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlb_content.Location = new System.Drawing.Point(0, 75);
+            this.pnlb_content.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlb_content.Name = "pnlb_content";
+            this.pnlb_content.Padding = new System.Windows.Forms.Padding(2);
+            this.pnlb_content.Size = new System.Drawing.Size(739, 451);
+            this.pnlb_content.TabIndex = 5;
             // 
             // pnl_content
             // 
             this.pnl_content.BackColor = System.Drawing.Color.White;
             this.pnl_content.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_content.Location = new System.Drawing.Point(2, 2);
-            this.pnl_content.Margin = new System.Windows.Forms.Padding(12);
+            this.pnl_content.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
             this.pnl_content.Name = "pnl_content";
-            this.pnl_content.Size = new System.Drawing.Size(918, 558);
+            this.pnl_content.Size = new System.Drawing.Size(733, 445);
             this.pnl_content.TabIndex = 4;
             // 
             // pnl_contentHeader
@@ -419,9 +433,21 @@ namespace IdeasAi
             this.pnl_contentHeader.Location = new System.Drawing.Point(0, 0);
             this.pnl_contentHeader.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_contentHeader.Name = "pnl_contentHeader";
-            this.pnl_contentHeader.Padding = new System.Windows.Forms.Padding(0, 20, 0, 10);
-            this.pnl_contentHeader.Size = new System.Drawing.Size(924, 94);
+            this.pnl_contentHeader.Padding = new System.Windows.Forms.Padding(0, 16, 0, 8);
+            this.pnl_contentHeader.Size = new System.Drawing.Size(739, 75);
             this.pnl_contentHeader.TabIndex = 4;
+            // 
+            // pnlb_pageTitle
+            // 
+            this.pnlb_pageTitle.BackColor = System.Drawing.Color.Black;
+            this.pnlb_pageTitle.Controls.Add(this.pnl_pageTitle);
+            this.pnlb_pageTitle.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlb_pageTitle.Location = new System.Drawing.Point(0, 16);
+            this.pnlb_pageTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlb_pageTitle.Name = "pnlb_pageTitle";
+            this.pnlb_pageTitle.Padding = new System.Windows.Forms.Padding(2);
+            this.pnlb_pageTitle.Size = new System.Drawing.Size(279, 51);
+            this.pnlb_pageTitle.TabIndex = 7;
             // 
             // pnl_pageTitle
             // 
@@ -432,7 +458,7 @@ namespace IdeasAi
             this.pnl_pageTitle.Location = new System.Drawing.Point(2, 2);
             this.pnl_pageTitle.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_pageTitle.Name = "pnl_pageTitle";
-            this.pnl_pageTitle.Size = new System.Drawing.Size(345, 60);
+            this.pnl_pageTitle.Size = new System.Drawing.Size(275, 47);
             this.pnl_pageTitle.TabIndex = 6;
             // 
             // panel2
@@ -440,11 +466,11 @@ namespace IdeasAi
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(192)))), ((int)(((byte)(195)))));
             this.panel2.Controls.Add(this.btn_howToUse);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(264, 0);
+            this.panel2.Location = new System.Drawing.Point(210, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(20, 10, 10, 10);
-            this.panel2.Size = new System.Drawing.Size(79, 58);
+            this.panel2.Padding = new System.Windows.Forms.Padding(16, 8, 8, 8);
+            this.panel2.Size = new System.Drawing.Size(63, 45);
             this.panel2.TabIndex = 5;
             // 
             // btn_howToUse
@@ -453,10 +479,10 @@ namespace IdeasAi
             this.btn_howToUse.Dock = System.Windows.Forms.DockStyle.Left;
             this.btn_howToUse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_howToUse.Image = global::IdeasAi.Properties.Resources.questionMark;
-            this.btn_howToUse.Location = new System.Drawing.Point(20, 10);
+            this.btn_howToUse.Location = new System.Drawing.Point(16, 8);
             this.btn_howToUse.Margin = new System.Windows.Forms.Padding(2);
             this.btn_howToUse.Name = "btn_howToUse";
-            this.btn_howToUse.Size = new System.Drawing.Size(39, 38);
+            this.btn_howToUse.Size = new System.Drawing.Size(31, 29);
             this.btn_howToUse.TabIndex = 5;
             this.btn_howToUse.UseVisualStyleBackColor = false;
             this.btn_howToUse.Click += new System.EventHandler(this.btn_howToUse_Click);
@@ -470,8 +496,8 @@ namespace IdeasAi
             this.lbl_currentPage.Location = new System.Drawing.Point(0, 0);
             this.lbl_currentPage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_currentPage.Name = "lbl_currentPage";
-            this.lbl_currentPage.Padding = new System.Windows.Forms.Padding(12);
-            this.lbl_currentPage.Size = new System.Drawing.Size(343, 58);
+            this.lbl_currentPage.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.lbl_currentPage.Size = new System.Drawing.Size(273, 45);
             this.lbl_currentPage.TabIndex = 3;
             this.lbl_currentPage.Text = "Page 1";
             this.lbl_currentPage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -483,8 +509,8 @@ namespace IdeasAi
             this.pnl_sideContent.Location = new System.Drawing.Point(0, 0);
             this.pnl_sideContent.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_sideContent.Name = "pnl_sideContent";
-            this.pnl_sideContent.Padding = new System.Windows.Forms.Padding(20);
-            this.pnl_sideContent.Size = new System.Drawing.Size(336, 678);
+            this.pnl_sideContent.Padding = new System.Windows.Forms.Padding(16, 16, 16, 16);
+            this.pnl_sideContent.Size = new System.Drawing.Size(269, 542);
             this.pnl_sideContent.TabIndex = 6;
             // 
             // pnl_menuSectBorder
@@ -493,11 +519,11 @@ namespace IdeasAi
             this.pnl_menuSectBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_menuSectBorder.Controls.Add(this.pnl_menuSect);
             this.pnl_menuSectBorder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_menuSectBorder.Location = new System.Drawing.Point(20, 20);
+            this.pnl_menuSectBorder.Location = new System.Drawing.Point(16, 16);
             this.pnl_menuSectBorder.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_menuSectBorder.Name = "pnl_menuSectBorder";
             this.pnl_menuSectBorder.Padding = new System.Windows.Forms.Padding(2);
-            this.pnl_menuSectBorder.Size = new System.Drawing.Size(296, 638);
+            this.pnl_menuSectBorder.Size = new System.Drawing.Size(237, 510);
             this.pnl_menuSectBorder.TabIndex = 5;
             // 
             // pnl_menuSect
@@ -509,8 +535,8 @@ namespace IdeasAi
             this.pnl_menuSect.Location = new System.Drawing.Point(2, 2);
             this.pnl_menuSect.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_menuSect.Name = "pnl_menuSect";
-            this.pnl_menuSect.Padding = new System.Windows.Forms.Padding(30, 25, 30, 10);
-            this.pnl_menuSect.Size = new System.Drawing.Size(290, 632);
+            this.pnl_menuSect.Padding = new System.Windows.Forms.Padding(24, 20, 24, 8);
+            this.pnl_menuSect.Size = new System.Drawing.Size(231, 504);
             this.pnl_menuSect.TabIndex = 0;
             // 
             // tmr_animation
@@ -519,35 +545,12 @@ namespace IdeasAi
             this.tmr_animation.Interval = 1;
             this.tmr_animation.Tick += new System.EventHandler(this.tmr_animation_Tick);
             // 
-            // pnlb_content
-            // 
-            this.pnlb_content.BackColor = System.Drawing.Color.Black;
-            this.pnlb_content.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlb_content.Controls.Add(this.pnl_content);
-            this.pnlb_content.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlb_content.Location = new System.Drawing.Point(0, 94);
-            this.pnlb_content.Name = "pnlb_content";
-            this.pnlb_content.Padding = new System.Windows.Forms.Padding(2);
-            this.pnlb_content.Size = new System.Drawing.Size(924, 564);
-            this.pnlb_content.TabIndex = 5;
-            // 
-            // pnlb_pageTitle
-            // 
-            this.pnlb_pageTitle.BackColor = System.Drawing.Color.Black;
-            this.pnlb_pageTitle.Controls.Add(this.pnl_pageTitle);
-            this.pnlb_pageTitle.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlb_pageTitle.Location = new System.Drawing.Point(0, 20);
-            this.pnlb_pageTitle.Name = "pnlb_pageTitle";
-            this.pnlb_pageTitle.Padding = new System.Windows.Forms.Padding(2);
-            this.pnlb_pageTitle.Size = new System.Drawing.Size(349, 64);
-            this.pnlb_pageTitle.TabIndex = 7;
-            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(28)))));
-            this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.ClientSize = new System.Drawing.Size(1024, 576);
             this.Controls.Add(this.pnl_mFormContent);
             this.Controls.Add(this.pnl_formHeader);
             this.DoubleBuffered = true;
@@ -568,14 +571,14 @@ namespace IdeasAi
             this.panel1.ResumeLayout(false);
             this.pnl_mFormContent.ResumeLayout(false);
             this.pnl_fillContent.ResumeLayout(false);
+            this.pnlb_content.ResumeLayout(false);
             this.pnl_contentHeader.ResumeLayout(false);
+            this.pnlb_pageTitle.ResumeLayout(false);
             this.pnl_pageTitle.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.pnl_sideContent.ResumeLayout(false);
             this.pnl_menuSectBorder.ResumeLayout(false);
             this.pnl_menuSect.ResumeLayout(false);
-            this.pnlb_content.ResumeLayout(false);
-            this.pnlb_pageTitle.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
