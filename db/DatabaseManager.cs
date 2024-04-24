@@ -174,7 +174,6 @@ namespace IdeasAi.db
         public static void RemoveDatabasePath(string key, bool deleteFile, JObject appConfig)
         {
             
-            Console.WriteLine(appConfig);
 
             JObject newDatabaseConfig = (JObject)appConfig["Database_Path"];
 
@@ -185,7 +184,6 @@ namespace IdeasAi.db
 
             newDatabaseConfig.Remove(key);
 
-            Console.WriteLine(newDatabaseConfig);
 
             appConfig["Database_Path"] = newDatabaseConfig;
 

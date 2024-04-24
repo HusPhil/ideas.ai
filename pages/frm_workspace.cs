@@ -180,6 +180,7 @@ namespace IdeasAi.pages
                     mainForm.dbManager_Docs.modifyField(saver_obj.UUID, "Content", saver_obj.Content);
                     mainForm.dbManager_Docs.modifyField(saver_obj.UUID, "Title", saver_obj.Title);
                     mainForm.dbManager_Docs.modifyField(saver_obj.UUID, "Date_modified", saver_obj.DateCreated);
+                    
                     Console.WriteLine("already exist");
                 }
                 e.SuppressKeyPress = true;
@@ -299,7 +300,6 @@ namespace IdeasAi.pages
             {
                 btn_docsDel.Visible = !true;
             }
-            Console.WriteLine(saver_obj.UUID);
         }
         private void btn_confirm_Click(object sender, EventArgs e)
         {

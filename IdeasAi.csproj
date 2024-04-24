@@ -331,6 +331,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icons8-sun-18.png" />
+    <None Include="Resources\icons8-do-not-disturb-ios-20.png" />
     <None Include="Resources\activeState.png" />
     <None Include="Resources\icons8-rounded-square-24.png" />
     <None Include="Resources\icons8-rounded-square-35.png" />

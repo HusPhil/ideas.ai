@@ -101,10 +101,9 @@ namespace IdeasAi
             loadForm(frm_home, pnl_content);
             
             lbl_currentPage.Text = btn_active.Text;
-
-            
-
             setActiveBtn((object)btn_home, pnl_pageTabs);
+            setThemeMode("light");
+
         }
 
         private void InitializeConfigs()
@@ -172,7 +171,7 @@ namespace IdeasAi
                 removeActiveBtn();
                 btn_active = (Button)btn;
                 btn_active.Parent.Controls.Add(pb_active);
-                btn_active.BackColor = ColorTranslator.FromHtml((string)decors["Color"]["accent"]);
+                btn_active.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["LightTheme"]["accent"]);
                 lbl_currentPage.Text = btn_active.Text;
             }
         }
@@ -279,6 +278,60 @@ namespace IdeasAi
 
         }
 
+        private void toggleDarkMode()
+        {
+            btn_toggleDarkMode.Dock = DockStyle.Left;
+
+
+            this.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["DarkTheme"]["primary"]);
+            this.pnl_menuSect.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["DarkTheme"]["primary100"]);
+            frm_home.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["DarkTheme"]["primary100"]);
+            frm_consultation.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["DarkTheme"]["primary100"]);
+            frm_notebook.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["DarkTheme"]["primary100"]);
+            frm_workspace.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["DarkTheme"]["primary100"]);
+            frm_workspace.spl_workspace.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["DarkTheme"]["primary100"]);
+            frm_mindmap.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["DarkTheme"]["primary100"]);
+            frm_mindmap.spl_mindmap.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["DarkTheme"]["primary100"]);
+
+            pnl_btnCont.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["DarkTheme"]["primary100"]);
+            btn_toggleDarkMode.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["LightTheme"]["primary100"]);
+            btn_toggleDarkMode.Image = Resources.darkModeBtn;
+
+        }
+
+        private void toggleLightMode()
+        {
+            btn_toggleDarkMode.Dock = DockStyle.Right;
+
+
+            this.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["LightTheme"]["primary"]);
+            this.pnl_menuSect.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["LightTheme"]["primary100"]);
+            frm_home.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["LightTheme"]["primary100"]);
+            frm_consultation.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["LightTheme"]["primary100"]);
+            frm_notebook.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["LightTheme"]["primary100"]);
+            frm_workspace.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["LightTheme"]["primary100"]);
+            frm_workspace.spl_workspace.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["LightTheme"]["primary100"]);
+            frm_mindmap.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["LightTheme"]["primary100"]);
+            frm_mindmap.spl_mindmap.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["LightTheme"]["primary100"]);
+
+            pnl_btnCont.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["DarkTheme"]["primary"]);
+            btn_toggleDarkMode.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["DarkTheme"]["primary100"]);
+            btn_toggleDarkMode.Image = Resources.lightModeBtn;
+
+        }
+
+        public void setThemeMode(string theme)
+        {
+            switch (theme.ToLower())
+            {
+                case "light":
+                    toggleLightMode();
+                    break;
+                case "dark":
+                    toggleDarkMode();
+                    break;
+            }
+        }
 
         private void btn_exit_Click(object sender, EventArgs e)
         {
@@ -416,9 +469,20 @@ namespace IdeasAi
         {
             return ref btn_mindmap; 
         }
-        public ref Timer getTmrAnim()
+
+
+
+
+        private void btn_toggleDarkMode_Click(object sender, EventArgs e)
         {
-            return ref tmr_animation;
+            if (btn_toggleDarkMode.Dock == DockStyle.Right)
+            {
+                setThemeMode("dark");
+            }
+            else
+            {
+                setThemeMode("light");
+            }
         }
     }
 }

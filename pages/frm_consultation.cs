@@ -96,7 +96,6 @@ namespace IdeasAi.PageForms
                     </html>
                     ";
 
-            Console.WriteLine(htmlText);
             // Set the HTML content to the WebBrowser control
             wb_container.DocumentText = htmlContent;
         }
@@ -119,7 +118,6 @@ namespace IdeasAi.PageForms
             var idea_obj = new Idea();
             var topic = this.txb_Consult.Text;
 
-            Console.WriteLine(topic);
             idea_obj.Input = topic;
             try
             {

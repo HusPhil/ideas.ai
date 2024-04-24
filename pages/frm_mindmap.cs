@@ -149,7 +149,6 @@ namespace IdeasAi.pages
                 if (cb_viewSelector.SelectedItem != null)
                 {
                     string selectedSetting = cb_viewSelector.SelectedItem.ToString();
-                    Console.WriteLine("Selected item: " + selectedSetting);
 
                     switch (selectedSetting)
                     {
@@ -215,7 +214,6 @@ namespace IdeasAi.pages
         public async void generateMindmap(string input)
         {
             var cleanedInput = ConvertMarkdownToPlantUML(input);
-            Console.WriteLine(cleanedInput);
             pbx_mindmap.Image = await markdownToMindmap(cleanedInput, false);
             scaleFactor = defaultScaleFactor;
             ApplyZoom();
@@ -296,7 +294,6 @@ namespace IdeasAi.pages
                 if (cb_themeSelector.SelectedItem != null)
                 {
                     string selectedSetting = cb_themeSelector.SelectedItem.ToString();
-                    Console.WriteLine("Selected item: " + selectedSetting);
 
                     switch (selectedSetting)
                     {

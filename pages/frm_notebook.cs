@@ -39,7 +39,8 @@ namespace IdeasAi.pages
             cb_dbSelector.SelectedIndex = 0;
 
             btn_activeTab = btn_notesTab;
-            btn_notesTab.BackColor = ColorTranslator.FromHtml((string)mainForm.decors["Color"]["secondary"]); ;
+            btn_notesTab.BackColor = ColorTranslator.FromHtml((string)mainForm.decors["Themes"]["LightTheme"]["secondary"]);
+
             showAllIdeas();
 
             
@@ -342,7 +343,6 @@ namespace IdeasAi.pages
         {
             try
             {
-                Console.WriteLine(currentNotebook);
                 lbl_nothingFound.Visible = false;
                 pnl_container.Visible = true;
 
@@ -367,7 +367,7 @@ namespace IdeasAi.pages
                     {
                         Panel pnl_idea = new Panel();
                         pnl_idea.BorderStyle = BorderStyle.FixedSingle;
-                        pnl_idea.BackColor = ColorTranslator.FromHtml((string)mainForm.decors["Color"]["secondary100"]);
+                        pnl_idea.BackColor = ColorTranslator.FromHtml((string)mainForm.decors["Themes"]["LightTheme"]["secondary100"]);
                         pnl_idea.Size = new Size(panelWidth, 200);
                         pnl_idea.Padding = new Padding(0, 10, 0, 10);
 
@@ -423,7 +423,7 @@ namespace IdeasAi.pages
                         btn_view.Click += (sender, e) => displayNote_click(idea, db);
                         btn_view.Dock = DockStyle.Fill;
                         btn_view.FlatStyle = FlatStyle.Flat;
-                        btn_view.BackColor = ColorTranslator.FromHtml((string)mainForm.decors["Color"]["accent"]);
+                        btn_view.BackColor = ColorTranslator.FromHtml((string)mainForm.decors["Themes"]["LightTheme"]["accent"]);
                         pnl_btns.Controls.Add(btn_view);
                         pnl_idea.Controls.Add(pnl_btns);
                         pnl_btns.Padding = new Padding(15, 0, 15, 0);
@@ -488,7 +488,7 @@ namespace IdeasAi.pages
                 {
                     removeActiveBtn(pnl);
                     btn_activeTab = (Button)btn;
-                    btn_activeTab.BackColor = ColorTranslator.FromHtml((string)mainForm.decors["Color"]["secondary"]);
+                    btn_activeTab.BackColor = ColorTranslator.FromHtml((string)mainForm.decors["Themes"]["LightTheme"]["secondary"]);
                 }
             }
             
@@ -497,7 +497,7 @@ namespace IdeasAi.pages
         {
             if(btn_activeTab != null)
             {
-            btn_activeTab.BackColor = ColorTranslator.FromHtml((string)mainForm.decors["Color"]["accent"]); ;
+            btn_activeTab.BackColor = ColorTranslator.FromHtml((string)mainForm.decors["Themes"]["LightTheme"]["accent"]); ;
 
             }
         }

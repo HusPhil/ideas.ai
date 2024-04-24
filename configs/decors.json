@@ -1,10 +1,21 @@
 {
-  "Color": {
-    "primary": "#FFFFFF",
-    "secondary": "#76c0c3",
-    "secondary100": "#d1eeee",
-    "accent": "#b0d07e",
-    "accent100": "#f4fed6"
+  "Themes": {
+    "LightTheme": {
+      "primary": "#F5F5F5",
+      "primary100": "#F9F6ED",
+      "secondary": "#76c0c3",
+      "secondary100": "#d1eeee",
+      "accent": "#b0d07e",
+      "accent100": "#f4fed6"
+    },
+    "DarkTheme": {
+      "primary": "#28282B",
+      "primary100": "#808080",
+      "secondary": "#76c0c3",
+      "secondary100": "#d1eeee",
+      "accent": "#b0d07e",
+      "accent100": "#f4fed6"
+    }
   },
   "Font": {
 

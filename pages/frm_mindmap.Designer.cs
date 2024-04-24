@@ -450,7 +450,6 @@ namespace IdeasAi.pages
         private System.Windows.Forms.PictureBox pbx_mindmap;
         private System.Windows.Forms.Panel pnl_viewSettings;
         private System.Windows.Forms.Panel pnlb_inputSide;
-        private System.Windows.Forms.Splitter spl_mindmap;
         private System.Windows.Forms.RichTextBox txb_markdownInput;
         private System.Windows.Forms.Panel pnl_error;
         private System.Windows.Forms.Button btn_generateMindmap;
@@ -468,5 +467,6 @@ namespace IdeasAi.pages
         private System.Windows.Forms.Button btn_saveAsImage;
         private System.Windows.Forms.Panel pnl_titleCont;
         private System.Windows.Forms.TextBox txb_title;
+        public Splitter spl_mindmap;
     }
 }

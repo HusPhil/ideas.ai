@@ -35,14 +35,14 @@ namespace IdeasAi.Gemini_AI
 
             var result = "ERROR";
             var error = "NONE";
-            Console.WriteLine(prompt);
+            //Console.WriteLine(prompt);
             using (var process = Process.Start(psi))
             {
                 result = process.StandardOutput.ReadToEnd();
                 error = process.StandardError.ReadToEnd();
                 
             }
-            Console.WriteLine("result: " + result);
+            //Console.WriteLine("result: " + result);
             //Console.WriteLine(error);
 
             
@@ -62,7 +62,7 @@ namespace IdeasAi.Gemini_AI
             var pythonModule = (string)appConfig["Python_Module"];
             var apiKey = (string)appConfig["API_KEY"];
 
-            Console.WriteLine(pythonModule + "::" + apiKey);
+            //Console.WriteLine(pythonModule + "::" + apiKey);
 
             var psi = new ProcessStartInfo();
             psi.FileName = pythonModule;
@@ -76,7 +76,7 @@ namespace IdeasAi.Gemini_AI
 
             var result = "";
             var error = "";
-            Console.WriteLine(prompt);
+            //Console.WriteLine(prompt);
             using (var process = Process.Start(psi))
             {
                 result = await process.StandardOutput.ReadToEndAsync();

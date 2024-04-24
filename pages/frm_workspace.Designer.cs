@@ -48,7 +48,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.btn_organizeIdea = new System.Windows.Forms.Button();
             this.pln_splitCont = new System.Windows.Forms.Panel();
-            this.splitter2 = new System.Windows.Forms.Splitter();
+            this.spl_workspace = new System.Windows.Forms.Splitter();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnl_quickSearchRes = new System.Windows.Forms.Panel();
             this.txb_qsearchRes = new System.Windows.Forms.TextBox();
@@ -348,7 +348,7 @@
             // 
             this.pln_splitCont.BackColor = System.Drawing.Color.Transparent;
             this.pln_splitCont.Controls.Add(this.pnl_textEditor);
-            this.pln_splitCont.Controls.Add(this.splitter2);
+            this.pln_splitCont.Controls.Add(this.spl_workspace);
             this.pln_splitCont.Controls.Add(this.panel1);
             this.pln_splitCont.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pln_splitCont.Location = new System.Drawing.Point(8, 45);
@@ -357,16 +357,16 @@
             this.pln_splitCont.Size = new System.Drawing.Size(1297, 562);
             this.pln_splitCont.TabIndex = 0;
             // 
-            // splitter2
+            // spl_workspace
             // 
-            this.splitter2.BackColor = System.Drawing.Color.Gray;
-            this.splitter2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.splitter2.Location = new System.Drawing.Point(1046, 0);
-            this.splitter2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(11, 562);
-            this.splitter2.TabIndex = 12;
-            this.splitter2.TabStop = false;
+            this.spl_workspace.BackColor = System.Drawing.Color.Gray;
+            this.spl_workspace.Dock = System.Windows.Forms.DockStyle.Right;
+            this.spl_workspace.Location = new System.Drawing.Point(1046, 0);
+            this.spl_workspace.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.spl_workspace.Name = "spl_workspace";
+            this.spl_workspace.Size = new System.Drawing.Size(11, 562);
+            this.spl_workspace.TabIndex = 12;
+            this.spl_workspace.TabStop = false;
             // 
             // panel1
             // 
@@ -522,7 +522,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txb_docsTitle;
         private System.Windows.Forms.Panel pnl_textEditor;
         private System.Windows.Forms.Panel pln_splitCont;
-        private System.Windows.Forms.Splitter splitter2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnl_quickSearchRes;
         private System.Windows.Forms.Panel pnl_quickSearch;
@@ -547,5 +546,6 @@
         private System.Windows.Forms.RichTextBox txb_textEditor;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel6;
+        public System.Windows.Forms.Splitter spl_workspace;
     }
 }
