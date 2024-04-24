@@ -524,8 +524,8 @@ namespace IdeasAi.pages
             mainForm.frm_consultation.getPrintBtn().Enabled = !false;
             mainForm.frm_consultation.getToWorkspaceBtn().Enabled = !false;
             
-            mainForm.frm_consultation.content_holder = dom.Content;
-            mainForm.frm_consultation.input_holder = dom.Title;
+            mainForm.frm_consultation.saver_obj.Content = dom.Content;
+            mainForm.frm_consultation.saver_obj.Title = dom.Title;
             
 
             }

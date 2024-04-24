@@ -107,7 +107,6 @@ namespace IdeasAi
             setSettingsConfig();
             
         }
-
         public void setSettingsConfig()
         {
             using (StreamReader reader = File.OpenText("configs/settings.json"))
@@ -116,6 +115,8 @@ namespace IdeasAi
                 settings = JObject.Parse(settingsJson);
             }
         }
+        
+        //CAN BE MODIFIED, ADD TO MODAL SETTER CLASS
         public void setModalBackground(Form callerForm)
         {
             modalBG.Owner = this;
@@ -127,120 +128,6 @@ namespace IdeasAi
             modalBG.Location = callerForm.Owner.Location;
             modalBG.ShowInTaskbar = false;
             modalBG.Show();
-        }
-        public void loadForm(Form frm, Control container)
-        {
-            removeForm(frm, container);
-            frm.Owner = this;
-            frm.TopLevel = false;
-            container.Controls.Add(frm);
-            frm.BringToFront();
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
-        }
-
-        public void removeForm(Form frm, Control container)
-        {
-            foreach (Control control in container.Controls)
-            {
-                if (control is Form form)
-                {
-                    container.Controls.Remove(control);
-
-                    break;
-                }
-            }
-        }
-
-        public void setActiveBtn(object btn, Panel pnl)
-        {
-            if ((Button)btn != btn_active && btn_active != null)
-            {
-                
-                
-
-                removeActiveBtn();
-                btn_active = (Button)btn;
-                btn_active.Parent.Controls.Add(pb_active);
-                btn_active.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["LightTheme"]["accent"]);
-                lbl_currentPage.Text = btn_active.Text;
-            }
-        }
-
-        private void removeActiveBtn()
-        {
-            if(btn_active != null)
-            {
-                btn_active.Parent.Controls.Remove(pb_active);
-                btn_active.BackColor = Color.Transparent;
-            }
-
-        }
-
-        public void addNotification(string type, string typeTxt, string typeInfo)
-        {
-            var notif = new mdl_notif(this, type);
-            notif.lbl_type.Text = typeTxt;
-
-            if (mdl_notif.instancesCount > 1) notif.lbl_type.Text = typeTxt;
-
-            notif.lbl_info.Text = typeInfo;
-            notif.TopLevel = false;
-            this.Controls.Add(notif);
-            notif.Show();
-            notif.BringToFront();
-        }
-
-        public mdl_notif addAsyncNotification(string type, string typeTxt, string typeInfo)
-        {
-            var notif = new mdl_notif(this, type);
-            notif.lbl_type.Text = typeTxt;
-
-            if (mdl_notif.instancesCount > 1) notif.lbl_type.Text = typeTxt;
-
-            notif.lbl_info.Text = typeInfo;
-            notif.TopLevel = false;
-            this.Controls.Add(notif);
-      
-            return notif;
-        }
-
-
-
-        private void btn_home_Click(object sender, EventArgs e)
-        {
-            setActiveBtn(sender, pnl_pageTabs);
-
-
-            loadForm(frm_home, pnl_content);
-        }
-        private void btn_consultation_Click(object sender, EventArgs e)
-        {
-            setActiveBtn(sender, pnl_pageTabs);
-
-
-            loadForm(frm_consultation, pnl_content);
-        }
-
-        private void btn_workspace_Click(object sender, EventArgs e)
-        {
-            setActiveBtn(sender, pnl_pageTabs);
-            loadForm(frm_workspace, pnl_content);
-        }        
-
-        private void btn_notebook_Click(object sender, EventArgs e)
-        {
-            InitializeConfigs();
-            frm_notebook.showAllIdeas();
-            setActiveBtn(sender, pnl_pageTabs);
-            loadForm(frm_notebook, pnl_content);
-
-        }
-
-        private void btn_mindmap_Click(object sender, EventArgs e)
-        {
-            setActiveBtn(sender, pnl_pageTabs);
-            loadForm(frm_mindmap, pnl_content);
         }
         public void setNotifPosition()
         {
@@ -262,13 +149,195 @@ namespace IdeasAi
                 }
             }
         }
-        
+
+        public void loadForm(Form frm, Control container)
+        {
+            removeForm(frm, container);
+            frm.Owner = this;
+            frm.TopLevel = false;
+            container.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+        }
+        public void removeForm(Form frm, Control container)
+        {
+            foreach (Control control in container.Controls)
+            {
+                if (control is Form form)
+                {
+                    container.Controls.Remove(control);
+
+                    break;
+                }
+            }
+        }
+        public void setActiveBtn(object btn, Panel pnl)
+        {
+            if ((Button)btn != btn_active && btn_active != null)
+            {
+                
+                
+
+                removeActiveBtn();
+                btn_active = (Button)btn;
+                btn_active.Parent.Controls.Add(pb_active);
+                btn_active.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["LightTheme"]["accent"]);
+                lbl_currentPage.Text = btn_active.Text;
+            }
+        }
+        private void removeActiveBtn()
+        {
+            if(btn_active != null)
+            {
+                btn_active.Parent.Controls.Remove(pb_active);
+                btn_active.BackColor = Color.Transparent;
+            }
+
+        }
+
+
+        public void addNotification(string type, string typeTxt, string typeInfo)
+        {
+            var notif = new mdl_notif(this, type);
+            notif.lbl_type.Text = typeTxt;
+
+            if (mdl_notif.instancesCount > 1) notif.lbl_type.Text = typeTxt;
+
+            notif.lbl_info.Text = typeInfo;
+            notif.TopLevel = false;
+            this.Controls.Add(notif);
+            notif.Show();
+            notif.BringToFront();
+        }
+        public mdl_notif addAsyncNotification(string type, string typeTxt, string typeInfo)
+        {
+            var notif = new mdl_notif(this, type);
+            notif.lbl_type.Text = typeTxt;
+
+            if (mdl_notif.instancesCount > 1) notif.lbl_type.Text = typeTxt;
+
+            notif.lbl_info.Text = typeInfo;
+            notif.TopLevel = false;
+            this.Controls.Add(notif);
+      
+            return notif;
+        }
+
         private void MainForm_SizeChanged(object sender, EventArgs e)
         {
             setNotifPosition();
 
         }
+        private void btn_home_Click(object sender, EventArgs e)
+        {
+            setActiveBtn(sender, pnl_pageTabs);
 
+
+            loadForm(frm_home, pnl_content);
+        }
+        private void btn_consultation_Click(object sender, EventArgs e)
+        {
+            setActiveBtn(sender, pnl_pageTabs);
+
+
+            loadForm(frm_consultation, pnl_content);
+        }
+        private void btn_workspace_Click(object sender, EventArgs e)
+        {
+            setActiveBtn(sender, pnl_pageTabs);
+            loadForm(frm_workspace, pnl_content);
+        }        
+        private void btn_notebook_Click(object sender, EventArgs e)
+        {
+            InitializeConfigs();
+            frm_notebook.showAllIdeas();
+            setActiveBtn(sender, pnl_pageTabs);
+            loadForm(frm_notebook, pnl_content);
+
+        }
+        private void btn_mindmap_Click(object sender, EventArgs e)
+        {
+            setActiveBtn(sender, pnl_pageTabs);
+            loadForm(frm_mindmap, pnl_content);
+        }
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        private void btn_howToUse_Click(object sender, EventArgs e)
+        {
+            setModalBackground(frm_home);
+            mdl_howToUse mdl_HowToUse = new mdl_howToUse(this);
+            mdl_HowToUse.ShowDialog();
+        }
+        private void btn_toggleDarkMode_Click(object sender, EventArgs e)
+        {
+            if (btn_toggleDarkMode.Dock == DockStyle.Right)
+            {
+                setThemeMode("dark");
+            }
+            else
+            {
+                setThemeMode("light");
+            }
+        }
+
+        private void pnl_formHeader_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                isDragging = true;
+                lastCursorPosition = e.Location;
+            }
+        }
+        private void pnl_formHeader_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isDragging)
+            {
+                int deltaX = e.X - lastCursorPosition.X;
+                int deltaY = e.Y - lastCursorPosition.Y;
+                this.Location = new Point(this.Left + deltaX, this.Top + deltaY);
+            }
+        }
+        private void pnl_formHeader_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                isDragging = false;
+            }
+        }
+        private void pnl_formHeader_DoubleClick(object sender, EventArgs e)
+        {
+            ToggleFullScreen();
+        }
+        private void ToggleFullScreen()
+        {
+            if (isFullScreen)
+            {
+                this.WindowState = normalWindowState;
+                isFullScreen = false;
+            }
+            else
+            {
+                normalWindowState = this.WindowState;
+                this.WindowState = FormWindowState.Maximized;
+                isFullScreen = true;
+            }
+        }
+
+        public void setThemeMode(string theme)
+        {
+            switch (theme.ToLower())
+            {
+                case "light":
+                    toggleLightMode();
+                    break;
+                case "dark":
+                    toggleDarkMode();
+                    break;
+            }
+        }
         private void toggleDarkMode()
         {
             btn_toggleDarkMode.Dock = DockStyle.Left;
@@ -289,7 +358,6 @@ namespace IdeasAi
             btn_toggleDarkMode.Image = Resources.darkModeBtn;
 
         }
-
         private void toggleLightMode()
         {
             btn_toggleDarkMode.Dock = DockStyle.Right;
@@ -310,78 +378,7 @@ namespace IdeasAi
             btn_toggleDarkMode.Image = Resources.lightModeBtn;
 
         }
-
-        public void setThemeMode(string theme)
-        {
-            switch (theme.ToLower())
-            {
-                case "light":
-                    toggleLightMode();
-                    break;
-                case "dark":
-                    toggleDarkMode();
-                    break;
-            }
-        }
-
-        private void btn_exit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void btn_howToUse_Click(object sender, EventArgs e)
-        {
-            setModalBackground(frm_home);
-            mdl_howToUse mdl_HowToUse = new mdl_howToUse(this);
-            mdl_HowToUse.ShowDialog();
-        }
-
-        private void pnl_formHeader_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                isDragging = true;
-                lastCursorPosition = e.Location;
-            }
-        }
-
-        private void pnl_formHeader_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (isDragging)
-            {
-                int deltaX = e.X - lastCursorPosition.X;
-                int deltaY = e.Y - lastCursorPosition.Y;
-                this.Location = new Point(this.Left + deltaX, this.Top + deltaY);
-            }
-        }
-
-        private void pnl_formHeader_MouseUp(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                isDragging = false;
-            }
-        }
-
-        private void pnl_formHeader_DoubleClick(object sender, EventArgs e)
-        {
-            ToggleFullScreen();
-        }
-        private void ToggleFullScreen()
-        {
-            if (isFullScreen)
-            {
-                this.WindowState = normalWindowState;
-                isFullScreen = false;
-            }
-            else
-            {
-                normalWindowState = this.WindowState;
-                this.WindowState = FormWindowState.Maximized;
-                isFullScreen = true;
-            }
-        }
-
+        
         private void btn_showOrHide_Click(object sender, EventArgs e)
         {
             if (showMode)
@@ -395,7 +392,6 @@ namespace IdeasAi
             tmr_animation.Start();
             sliding = true;
         }
-
         private void tmr_animation_Tick(object sender, EventArgs e)
         {
             if(showMode)
@@ -430,7 +426,7 @@ namespace IdeasAi
             }
             
         }
-        
+
         //GETTERS
         public ref Button getBtnNotebook()
         {
@@ -461,19 +457,5 @@ namespace IdeasAi
             return ref btn_mindmap; 
         }
 
-
-
-
-        private void btn_toggleDarkMode_Click(object sender, EventArgs e)
-        {
-            if (btn_toggleDarkMode.Dock == DockStyle.Right)
-            {
-                setThemeMode("dark");
-            }
-            else
-            {
-                setThemeMode("light");
-            }
-        }
     }
 }

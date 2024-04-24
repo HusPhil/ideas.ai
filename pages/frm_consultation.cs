@@ -1,47 +1,27 @@
 ﻿using System;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Markdig;
-using IdeasAi.Gemini_AI;
 using IdeasAi.Ideas;
 using IdeasAi.modals;
-using IdeasAi.db;
-using System.Drawing;
-using System.IO;
-using PlantUml.Net;
 using IdeasAi.pages;
-using System.Text.RegularExpressions;
-using System.CodeDom.Compiler;
 using Microsoft.Win32;
+using IdeasAi.db;
 
 
 namespace IdeasAi.PageForms
 {
-    //public class MyClass
-    //{
-    //    public string Name { get; set; }
-    //    public int Age { get; set; }
-    //}
     public partial class frm_consultation : Form
     {
         private MainForm mainForm;
 
         //PROPERTIES
-        public Guid id_holder;
-        public string content_holder;
-        public string input_holder;
-        public string markDownResonse;
-        public DateTime date_holder;
-        /// <summary>
-        /// ////////////////////////////////////////////
-        /// </summary>
-        /// 
-
+        public DBObjectManager saver_obj;
 
         public frm_consultation(MainForm _mainForm)
         {
             InitializeComponent();
             this.mainForm = _mainForm;
+            saver_obj = new DBObjectManager();
             OptimizeInternetExplorerVersion();
         }
         private void OptimizeInternetExplorerVersion()
@@ -125,10 +105,10 @@ namespace IdeasAi.PageForms
                 mainForm.addNotification("success", "Successfully answered!", $"{idea_obj.Input}");
                 displayResult(idea_obj.Content);
 
-                id_holder = idea_obj.UUID;
-                input_holder = idea_obj.Input;
-                content_holder = idea_obj.Content;
-                date_holder = idea_obj.DateCreated;
+                saver_obj.UUID = idea_obj.UUID;
+                saver_obj.Input = idea_obj.Input;
+                saver_obj.Content = idea_obj.Content;
+                saver_obj.DateCreated = idea_obj.DateCreated;
                 btn_save.Enabled = true;
                 btn_print.Enabled = true;
                 btn_toWorkspace.Enabled = true;
@@ -169,8 +149,8 @@ namespace IdeasAi.PageForms
         private void btn_toWorkspace_Click(object sender, EventArgs e)
         {
             mainForm.frm_workspace.saver_obj.UUID = Guid.NewGuid();
-            mainForm.frm_workspace.getTxbDocsTitle().Text = input_holder;
-            mainForm.frm_workspace.getTxbEditor().Text = frm_workspace.ConvertMarkdownToPlainText(content_holder);
+            mainForm.frm_workspace.getTxbDocsTitle().Text = saver_obj.Input;
+            mainForm.frm_workspace.getTxbEditor().Text = frm_workspace.ConvertMarkdownToPlainText(saver_obj.Content);
 
             mainForm.loadForm(mainForm.frm_workspace, mainForm.getPnlContent());
             mainForm.setActiveBtn(mainForm.getBtnWorkspace(), mainForm.getPnlPageTabs());

@@ -30,7 +30,7 @@ namespace IdeasAi.modals
         }
         private void frm_modal_Load(object sender, EventArgs e)
         {
-            txb_setNoteTitle.Text = mainForm.frm_consultation.input_holder;
+            txb_setNoteTitle.Text = mainForm.frm_consultation.saver_obj.Input;
             var ownerForm = mainForm;
             this.Location = ModalSetter.CenterLocation(ownerForm.Width, ownerForm.Height, this.Width, this.Height, ownerForm.Location.X, ownerForm.Location.Y);
         }
@@ -38,11 +38,11 @@ namespace IdeasAi.modals
         {
             
             var idea_save_obj = new DBObjectManager();
-            idea_save_obj.UUID = mainForm.frm_consultation.id_holder;
+            idea_save_obj.UUID = mainForm.frm_consultation.saver_obj.UUID;
             idea_save_obj.Title = txb_setNoteTitle.Text;
-            idea_save_obj.Input = mainForm.frm_consultation.input_holder;
-            idea_save_obj.Content = mainForm.frm_consultation.content_holder;
-            idea_save_obj.DateCreated = mainForm.frm_consultation.date_holder;
+            idea_save_obj.Input = mainForm.frm_consultation.saver_obj.Input;
+            idea_save_obj.Content = mainForm.frm_consultation.saver_obj.Content;
+            idea_save_obj.DateCreated = mainForm.frm_consultation.saver_obj.DateCreated;
 
             mainForm.dbManager_Note.saveObject(idea_save_obj);
 
