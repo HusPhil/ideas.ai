@@ -138,26 +138,26 @@ namespace IdeasAi.modals
         {
             try
             {
-                using (OpenFileDialog openFileDialog1 = new OpenFileDialog())
+                using (OpenFileDialog openFileDialog = new OpenFileDialog())
                 {
                     // Set initial directory (optional)
-                    openFileDialog1.InitialDirectory = @"C:\";
+                    openFileDialog.InitialDirectory = @"C:\";
 
                     // Set the file dialog filter
-                    openFileDialog1.Filter = "Database files (*.db)|*.db|All files (*.*)|*.*";
+                    openFileDialog.Filter = "Database files (*.db)|*.db|All files (*.*)|*.*";
 
 
                     // Allow multiple files to be selected (optional)
-                    openFileDialog1.Multiselect = false;
+                    openFileDialog.Multiselect = false;
 
                     // Show the dialog and capture the result
-                    DialogResult result = openFileDialog1.ShowDialog();
+                    DialogResult result = openFileDialog.ShowDialog();
 
                     // Check if the user clicked OK
                     if (result == DialogResult.OK)
                     {
                         // Get the selected file path
-                        string filePath = openFileDialog1.FileName;
+                        string filePath = openFileDialog.FileName;
                         string fileName = Path.GetFileNameWithoutExtension(filePath);
                         string notebookName = fileName;
 
