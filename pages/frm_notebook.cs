@@ -227,7 +227,8 @@ namespace IdeasAi.pages
         private void btn_showMoreDocs_click(DBObjectManager idea)
         {
             this.saver_obj = idea;
-            mainForm.mdl_setter.OpenModal(this, typeof(mdl_DocsOptions), mainForm);
+            //mainForm.mdl_setter.OpenModal(this, typeof(mdl_DocsOptions), mainForm);
+            ModalManager.ShowModal(mainForm, this, mainForm.mdl_editDocs);
 
         }
         private void btn_notebookSettings_Click(object sender, EventArgs e)
@@ -259,10 +260,11 @@ namespace IdeasAi.pages
         }
         private void btn_delConfirm_Click(object sender, EventArgs e)
         {
-            try {
+            try
+            {
                 if (cb_dbSelector.Items.Count > 1)
                 {
-                   
+
 
                     cb_dbSelector.Items.Remove(currentNotebook);
                     DatabaseManager.RemoveDatabasePath(currentNotebook, chb_delFile.Checked, mainForm.settings);
@@ -279,7 +281,7 @@ namespace IdeasAi.pages
             }
             catch (Exception ex)
             {
-                    mainForm.addNotification("error", "Deleting notebook failed!", $"{ex.Message}");
+                mainForm.addNotification("error", "Deleting notebook failed!", $"{ex.Message}");
 
             }
             finally
@@ -292,14 +294,14 @@ namespace IdeasAi.pages
         {
             if (db.GetType().Equals(typeof(DBManager_Note)))
             {
-            mainForm.loadForm(mainForm.frm_consultation,mainForm.getPnlContent());
-            mainForm.setActiveBtn(mainForm.getBtnHome(), mainForm.getPnlPageTabs());
-            mainForm.frm_consultation.displayResult(dom.Content);
-            mainForm.frm_consultation.getSaveBtn().Enabled = false;
-            mainForm.frm_consultation.getPrintBtn().Enabled = !false;
-            mainForm.frm_consultation.getToWorkspaceBtn().Enabled = !false;
-            
-            mainForm.frm_consultation.saver_obj.Content = dom.Content;
+                mainForm.loadForm(mainForm.frm_consultation, mainForm.getPnlContent());
+                mainForm.setActiveBtn(mainForm.getBtnHome(), mainForm.getPnlPageTabs());
+                mainForm.frm_consultation.displayResult(dom.Content);
+                mainForm.frm_consultation.getSaveBtn().Enabled = false;
+                mainForm.frm_consultation.getPrintBtn().Enabled = !false;
+                mainForm.frm_consultation.getToWorkspaceBtn().Enabled = !false;
+
+                mainForm.frm_consultation.saver_obj.Content = dom.Content;
             mainForm.frm_consultation.saver_obj.Title = dom.Title;
             
 
@@ -325,11 +327,6 @@ namespace IdeasAi.pages
             lbl_currentNotebook.Text = currentNotebook;
 
             showAllIdeas();
-        }
-        private void chb_delFile_CheckedChanged(object sender, EventArgs e)
-        {
-
-            
         }
 
         //GETTERS

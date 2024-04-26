@@ -31,7 +31,7 @@ namespace IdeasAi.modals
         private void mdl_notebookSettings_Load(object sender, EventArgs e)
         {
             var ownerForm = mainForm;
-            this.Location = ModalSetter.CenterLocation(ownerForm.Width, ownerForm.Height, this.Width, this.Height, ownerForm.Location.X, ownerForm.Location.Y);
+            this.Location = ModalManager.CenterLocation(ownerForm.Width, ownerForm.Height, this.Width, this.Height, ownerForm.Location.X, ownerForm.Location.Y);
         }
 
         private void tmr_animation_Tick(object sender, EventArgs e)

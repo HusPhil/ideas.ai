@@ -29,7 +29,7 @@ namespace IdeasAi.modals
         private void frm_modal_Load(object sender, EventArgs e)
         {
             var ownerForm = mainForm;
-            this.Location = ModalSetter.CenterLocation(ownerForm.Width, ownerForm.Height, this.Width, this.Height, ownerForm.Location.X, ownerForm.Location.Y);
+            this.Location = ModalManager.CenterLocation(ownerForm.Width, ownerForm.Height, this.Width, this.Height, ownerForm.Location.X, ownerForm.Location.Y);
 
             txb_setNoteTitle.Text = mainForm.frm_workspace.getSaverObj().Title;
 

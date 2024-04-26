@@ -71,7 +71,7 @@
             this.panel2.Controls.Add(this.lbl_noteTitle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 60);
-            this.panel2.Margin = new System.Windows.Forms.Padding(80, 80, 80, 80);
+            this.panel2.Margin = new System.Windows.Forms.Padding(80);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(61, 62, 61, 62);
             this.panel2.Size = new System.Drawing.Size(593, 322);

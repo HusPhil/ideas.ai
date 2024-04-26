@@ -26,7 +26,7 @@ namespace IdeasAi.modals
         {
             cb_modeSelector.SelectedIndex = 0;
             var ownerForm = mainForm;
-            this.Location = ModalSetter.CenterLocation(ownerForm.Width, ownerForm.Height, this.Width, this.Height, ownerForm.Location.X, ownerForm.Location.Y);
+            this.Location = ModalManager.CenterLocation(ownerForm.Width, ownerForm.Height, this.Width, this.Height, ownerForm.Location.X, ownerForm.Location.Y);
         }
 
         private void btn_exit_Click(object sender, EventArgs e)

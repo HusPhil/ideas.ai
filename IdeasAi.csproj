@@ -225,7 +225,7 @@
     <Compile Include="modals\mdl_saveDocs.Designer.cs">
       <DependentUpon>mdl_saveDocs.cs</DependentUpon>
     </Compile>
-    <Compile Include="modals\ModalSetter.cs" />
+    <Compile Include="modals\ModalManager.cs" />
     <Compile Include="pages\frm_consultation.cs">
       <SubType>Form</SubType>
     </Compile>

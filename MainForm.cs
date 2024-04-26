@@ -53,8 +53,9 @@ namespace IdeasAi
         public mdl_saveNotes mdl_save;
         public mdl_saveDocs mdl_saveDocs;
         public mdl_NotesOptions mdl_editNotes;
+        public mdl_DocsOptions mdl_editDocs;
         public mdl_loading mdl_loading;
-        public ModalSetter mdl_setter;
+        public ModalManager mdl_setter;
 
         public Button btn_active;
 
@@ -77,9 +78,10 @@ namespace IdeasAi
             mdl_save = new mdl_saveNotes(this);
             mdl_saveDocs = new mdl_saveDocs(this);
             mdl_editNotes = new mdl_NotesOptions(this);
+            mdl_editDocs = new mdl_DocsOptions(this);
             mdl_loading = new mdl_loading(this);
             modalBG = new Form();
-            mdl_setter = new ModalSetter(this);
+            mdl_setter = new ModalManager(this);
             mdl_organize = new mdl_organize(this);
 
             pb_active = new PictureBox();

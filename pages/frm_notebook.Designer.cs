@@ -209,7 +209,6 @@ namespace IdeasAi.pages
             this.chb_delFile.TabIndex = 9;
             this.chb_delFile.Text = "Delete file?";
             this.chb_delFile.UseVisualStyleBackColor = true;
-            this.chb_delFile.CheckedChanged += new System.EventHandler(this.chb_delFile_CheckedChanged);
             // 
             // panel1
             // 
