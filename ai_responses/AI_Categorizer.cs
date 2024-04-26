@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace IdeasAi.ai_responses
 {
-    public class AI_GrammarChecker : AI_Response
+    public class AI_Categorizer : AI_Response
     {
         public override async Task<string> GetResponse(JObject appConfig)
         {
-            var prompt = "Check and improve the grammar. " +
+            var prompt = "Categorize my ideas in bullet points. " +
                 $"The context supplied: {this.Input.Replace("\"", "'")}.";
 
             string response = await ScriptRunner.RunScriptAsync("Gemini_AI\\Scripts\\gemini.py", prompt, appConfig);

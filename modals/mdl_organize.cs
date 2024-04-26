@@ -1,5 +1,6 @@
 ﻿using IdeasAi.ai_responses;
 using IdeasAi.Ideas;
+using Markdig;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -48,7 +49,14 @@ namespace IdeasAi.modals
             switch (selectedMode)
             {
                 case "Grammar Checker":
-                    Console.WriteLine("Grammar Check!");
+                    loader.getLblLoadInfo().Text = "Checking the grammar..";
+                    var grammarChecker = new AI_ResponseBuilder<AI_GrammarChecker>()
+                        .WithInput(txb_preview.Text)
+                        .Build();
+
+                    grammarChecker.Content = await grammarChecker.GetResponse(mainForm.settings);
+                    txb_preview.Text = Markdown.ToPlainText(grammarChecker.Content);
+
                     break;
                 case "Summarizer":
                     loader.getLblLoadInfo().Text = "Summarizing your ideas..";
@@ -58,22 +66,42 @@ namespace IdeasAi.modals
                         .Build();
                     
                     summarizer.Content = await summarizer.GetResponse(mainForm.settings);
-                    
+                    txb_preview.Text = Markdown.ToPlainText(summarizer.Content);
 
-
-                    mainForm.removeForm(loader, pnl_body);
-                    txb_preview.Text = summarizer.Content;
                     break;
                 case "Expand Ideas":
+                    loader.getLblLoadInfo().Text = "Expanding your ideas..";
+
+                    var expander = new AI_ResponseBuilder<AI_Elaborator>()
+                        .WithInput(txb_preview.Text)
+                        .Build();
+                    expander.Content = await expander.GetResponse(mainForm.settings);
+                    txb_preview.Text = Markdown.ToPlainText(expander.Content);
 
                     break;
                 case "Categorize Ideas":
+                    loader.getLblLoadInfo().Text = "Categorizing your ideas..";
+
+                    var categorizer = new AI_ResponseBuilder<AI_Categorizer>()
+                        .WithInput(txb_preview.Text)
+                        .Build();
+                    categorizer.Content = await categorizer.GetResponse(mainForm.settings);
+                    txb_preview.Text = Markdown.ToPlainText(categorizer.Content);
 
                     break;
                 case "SCAMPER Technique":
+                    loader.getLblLoadInfo().Text = "Organizing (SCAMPER) your ideas..";
+
+                    var scamper = new AI_ResponseBuilder<AI_Scamper>()
+                        .WithInput(txb_preview.Text)
+                        .Build();
+                    scamper.Content = await scamper.GetResponse(mainForm.settings);
+                    txb_preview.Text =  Markdown.ToPlainText(scamper.Content);
 
                     break;
             }
+
+            mainForm.removeForm(loader, pnl_body);
         }
 
         private void cb_modeSelector_SelectedIndexChanged(object sender, EventArgs e)

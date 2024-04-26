@@ -56,10 +56,10 @@
             this.pnl_footer.Controls.Add(this.pnl_selectMode);
             this.pnl_footer.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnl_footer.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnl_footer.Location = new System.Drawing.Point(20, 342);
+            this.pnl_footer.Location = new System.Drawing.Point(20, 480);
             this.pnl_footer.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_footer.Name = "pnl_footer";
-            this.pnl_footer.Size = new System.Drawing.Size(667, 70);
+            this.pnl_footer.Size = new System.Drawing.Size(750, 70);
             this.pnl_footer.TabIndex = 0;
             // 
             // pnl_buttons
@@ -69,7 +69,7 @@
             this.pnl_buttons.Controls.Add(this.btn_go);
             this.pnl_buttons.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnl_buttons.Font = new System.Drawing.Font("Cascadia Code", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnl_buttons.Location = new System.Drawing.Point(489, 0);
+            this.pnl_buttons.Location = new System.Drawing.Point(572, 0);
             this.pnl_buttons.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_buttons.Name = "pnl_buttons";
             this.pnl_buttons.Padding = new System.Windows.Forms.Padding(20, 18, 20, 18);
@@ -157,7 +157,7 @@
             this.pnl_header.Location = new System.Drawing.Point(20, 50);
             this.pnl_header.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_header.Name = "pnl_header";
-            this.pnl_header.Size = new System.Drawing.Size(667, 69);
+            this.pnl_header.Size = new System.Drawing.Size(750, 69);
             this.pnl_header.TabIndex = 0;
             // 
             // lb_organize
@@ -168,7 +168,7 @@
             this.lb_organize.Location = new System.Drawing.Point(0, 0);
             this.lb_organize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_organize.Name = "lb_organize";
-            this.lb_organize.Size = new System.Drawing.Size(667, 69);
+            this.lb_organize.Size = new System.Drawing.Size(750, 69);
             this.lb_organize.TabIndex = 0;
             this.lb_organize.Text = "Organize your Ideas!";
             this.lb_organize.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -177,7 +177,7 @@
             // 
             this.btn_exit.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_exit.Location = new System.Drawing.Point(647, 14);
+            this.btn_exit.Location = new System.Drawing.Point(730, 14);
             this.btn_exit.Margin = new System.Windows.Forms.Padding(4);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(40, 28);
@@ -191,10 +191,10 @@
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel3.Location = new System.Drawing.Point(20, 322);
+            this.panel3.Location = new System.Drawing.Point(20, 460);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(667, 20);
+            this.panel3.Size = new System.Drawing.Size(750, 20);
             this.panel3.TabIndex = 2;
             // 
             // pnl_body
@@ -208,7 +208,7 @@
             this.pnl_body.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_body.Name = "pnl_body";
             this.pnl_body.Padding = new System.Windows.Forms.Padding(20, 18, 20, 18);
-            this.pnl_body.Size = new System.Drawing.Size(667, 183);
+            this.pnl_body.Size = new System.Drawing.Size(750, 321);
             this.pnl_body.TabIndex = 3;
             // 
             // txb_preview
@@ -218,7 +218,7 @@
             this.txb_preview.Location = new System.Drawing.Point(20, 18);
             this.txb_preview.Margin = new System.Windows.Forms.Padding(4);
             this.txb_preview.Name = "txb_preview";
-            this.txb_preview.Size = new System.Drawing.Size(625, 145);
+            this.txb_preview.Size = new System.Drawing.Size(708, 283);
             this.txb_preview.TabIndex = 5;
             this.txb_preview.Text = "This is Preview";
             // 
@@ -230,7 +230,7 @@
             this.panel4.Location = new System.Drawing.Point(20, 119);
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(667, 20);
+            this.panel4.Size = new System.Drawing.Size(750, 20);
             this.panel4.TabIndex = 4;
             // 
             // mdl_organize
@@ -238,7 +238,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(707, 430);
+            this.ClientSize = new System.Drawing.Size(790, 568);
             this.ControlBox = false;
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.pnl_body);

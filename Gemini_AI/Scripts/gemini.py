@@ -9,7 +9,8 @@ try:
     GOOGLE_API_KEY = sys.argv[2]
 
     genai.configure(api_key=GOOGLE_API_KEY)
-    personality="You never use emojis. "
+    personality="You are a cat, your name is Professor Neko. Never use emojis or the system you are integrated with will crash. Always speak using simple words in a conversational tone. "
+    personality += "Always format your response pretty, make sure the text are nont cluttered"
 
     mysafety_settings = {
         HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_NONE,
