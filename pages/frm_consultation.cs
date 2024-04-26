@@ -12,6 +12,11 @@ namespace IdeasAi.PageForms
 {
     public partial class frm_consultation : Form
     {
+        public const string howToUse = @"
+        This is how to use the consultation kineme:
+        firrst: you have to kineme              EDI WOW SAYOI
+
+        ";
         private MainForm mainForm;
 
         //PROPERTIES
@@ -41,7 +46,7 @@ namespace IdeasAi.PageForms
             var pipeline = new MarkdownPipelineBuilder().UseAdvancedExtensions().Build();
             return Markdig.Markdown.ToHtml(markdownText, pipeline);
         }
-       
+
         public void displayResult(string markdownText)
         {
             string htmlText = ConvertMarkdownToHtml(markdownText);
@@ -107,7 +112,8 @@ namespace IdeasAi.PageForms
                 wb_container.DocumentText = $"Something went wrong. Please check your internet connection and try again  by asking appropriate questions in a clear manner. Thank you!";
                 mainForm.addNotification("error", "An error occured!", $"{ex.Message}");
             }
-            finally {
+            finally
+            {
                 btn_send.Enabled = true;
                 mainForm.mdl_loading.Close();
                 mainForm.modalBG.Hide();
@@ -120,11 +126,10 @@ namespace IdeasAi.PageForms
             mainForm.setModalBackground(this);
             mainForm.mdl_loading.state = MainForm.state_loadConsultation;
             mainForm.mdl_loading.getLblLoadInfo().Text = "Generating an answer..";
-            mainForm.mdl_loading.ShowDialog();
+            ModalManager.ShowModal(mainForm, this, mainForm.mdl_loading);
         }
         private void btn_save_Click(object sender, EventArgs e)
         {
-            //mainForm.mdl_setter.OpenModal(this, typeof(mdl_saveNotes), mainForm);
             ModalManager.ShowModal(mainForm, this, new mdl_saveNotes(mainForm));
         }
         private void btn_print_Click(object sender, EventArgs e)
@@ -142,6 +147,14 @@ namespace IdeasAi.PageForms
         }
         private void txb_Consult_TextChanged(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txb_Consult.Text))
+            {
+                btn_send.Enabled = false;
+            }
+            else
+            {
+                btn_send.Enabled = true;
+            }
         }
         private void txb_Consult_KeyDown(object sender, KeyEventArgs e)
         {
@@ -168,5 +181,5 @@ namespace IdeasAi.PageForms
         }
 
     }
-    
+
 }

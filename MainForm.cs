@@ -269,9 +269,36 @@ namespace IdeasAi
         }
         private void btn_howToUse_Click(object sender, EventArgs e)
         {
-            setModalBackground(frm_home);
-            mdl_howToUse mdl_HowToUse = new mdl_howToUse(this);
-            mdl_HowToUse.ShowDialog();
+            var currentActivBtn = btn_active.Text;
+            var contentToDisplay = "";
+
+            if (currentActivBtn == btn_home.Text)
+            {
+                contentToDisplay = frm_home.howToUse;
+            }
+            else if (currentActivBtn == btn_notebook.Text)
+            {
+                contentToDisplay = frm_notebook.howToUse;
+
+            }
+            else if (currentActivBtn == btn_workspace.Text)
+            {
+                contentToDisplay = frm_workspace.howToUse;
+
+            }
+            else if (currentActivBtn == btn_mindmap.Text)
+            {
+                contentToDisplay = frm_mindmap.howToUse;
+
+            }
+            else if (currentActivBtn == btn_consultation.Text)
+            {
+                contentToDisplay = frm_consultation.howToUse;
+
+            }
+
+            ModalManager.ShowModal(this, frm_home, new mdl_howToUse(this, currentActivBtn, contentToDisplay));
+
         }
         private void btn_toggleDarkMode_Click(object sender, EventArgs e)
         {

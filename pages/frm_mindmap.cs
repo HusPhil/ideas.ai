@@ -10,7 +10,11 @@ namespace IdeasAi.pages
 {
     public partial class frm_mindmap : Form
     {
+        public const string howToUse = @"
+        This is how to use the MINDMAP kineme:
+        firrst: you have to 
 
+        ";
         private MainForm mainForm;
         private const float defaultScaleFactor = 1.0f;
         private float scaleFactor = defaultScaleFactor;

@@ -18,29 +18,6 @@ namespace IdeasAi.modals
         {
             this.mainForm = mainForm;
         }
-        public void mOpenModal(Form OwnerForm, Type ModalFormType, params object[] args)
-        {
-
-            Form modalBG = new Form();
-
-            using (var modal = (Form) Activator.CreateInstance(ModalFormType, args))
-            {
-                modalBG.Owner = OwnerForm;
-                modalBG.StartPosition = FormStartPosition.Manual;
-                modalBG.FormBorderStyle = FormBorderStyle.None;
-                modalBG.Opacity = .50d;
-                modalBG.BackColor = Color.Black;
-                modalBG.Size = OwnerForm.Owner.Size;
-                modalBG.Location = OwnerForm.Owner.Location;
-                modalBG.ShowInTaskbar = false;
-                modalBG.Show();
-                modal.Owner = modalBG;
-
-                modal.ShowDialog();
-                modalBG.Dispose();
-                mainForm.Focus();
-            }
-        }
         public static void ShowModal(MainForm mainForm, Form callerForm, Form modal)
         {
             mainForm.setModalBackground(callerForm);

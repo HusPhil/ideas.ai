@@ -8,6 +8,10 @@ namespace IdeasAi.pages
 {
     public partial class frm_notebook: Form
     {
+        public const string howToUse = @"
+        This is how to use the notebook kineme:
+        firrst: you have to kineme              E
+        ";
         public string currentNotebook;
         public DBObjectManager saver_obj;
         public MainForm mainForm;

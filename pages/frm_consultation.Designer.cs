@@ -240,7 +240,7 @@
             this.txb_Consult.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.txb_Consult.Size = new System.Drawing.Size(766, 27);
             this.txb_Consult.TabIndex = 2;
-            this.txb_Consult.Text = "Ask a question..";
+            this.txb_Consult.Text = "What does \'Hello, world!\' mean?";
             this.txb_Consult.TextChanged += new System.EventHandler(this.txb_Consult_TextChanged);
             this.txb_Consult.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_Consult_KeyDown);
             // 

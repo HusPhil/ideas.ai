@@ -13,10 +13,12 @@ namespace IdeasAi.modals
     public partial class mdl_howToUse : Form
     {
         MainForm mainForm;
-        public mdl_howToUse(MainForm mainForm)
+        public mdl_howToUse(MainForm mainForm, string title, string content)
         {
             this.mainForm = mainForm;
             InitializeComponent();
+            lbl_title.Text = title;
+            lbl_content.Text = content;
         }
         
 
@@ -25,33 +27,7 @@ namespace IdeasAi.modals
             var ownerForm = mainForm;
             this.Location = ModalManager.CenterLocation(ownerForm.Width, ownerForm.Height, this.Width, this.Height, ownerForm.Location.X, ownerForm.Location.Y);
 
-            var currentActivBtn = mainForm.btn_active.Text;
-            
-            if(currentActivBtn == mainForm.getBtnHome().Text)
-            {
-                lbl_content.Text = "This is how to use the home";
-            }
-            else if (currentActivBtn == mainForm.getBtnNotebook().Text)
-            {
-                lbl_content.Text = "This is how to use the notebook";
-
-            }
-            else if (currentActivBtn == mainForm.getBtnWorkspace().Text)
-            {
-                lbl_content.Text = "This is how to use the workspace";
-
-            }
-            else if (currentActivBtn == mainForm.getBtnMindmap().Text)
-            {
-                lbl_content.Text = "This is how to use the mindmap";
-
-            }
-            else if (currentActivBtn == mainForm.getBtnConsult().Text)
-            {
-                lbl_content.Text = "This is how to use the consult";
-
-            }
-
+           
 
         }
 

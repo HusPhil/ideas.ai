@@ -13,6 +13,11 @@ namespace IdeasAi.pages
 {
     public partial class frm_workspace : Form
     {
+        public const string howToUse = @"
+        This is how to use the WORKSAPCE kineme:
+        firrst: you have to kineme              EDI WOW SAYOI
+
+        ";
         public DBObjectManager saver_obj;
         MainForm mainForm;
         public frm_workspace(MainForm mainForm)
@@ -159,7 +164,7 @@ namespace IdeasAi.pages
             mainForm.setModalBackground(this);
             mainForm.mdl_loading.state = MainForm.state_loadMindmap;
             mainForm.mdl_loading.getLblLoadInfo().Text = "Generating your Mindmap..";
-            mainForm.mdl_loading.ShowDialog();
+            ModalManager.ShowModal(mainForm, this, mainForm.mdl_loading);
 
         }
         private void btn_new_Click(object sender, EventArgs e)
