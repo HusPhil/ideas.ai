@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnl_type = new System.Windows.Forms.Panel();
-            this.btn_close = new System.Windows.Forms.Button();
-            this.tmr_close = new System.Windows.Forms.Timer(this.components);
-            this.pbx_type = new System.Windows.Forms.PictureBox();
             this.pnl_notifBody = new System.Windows.Forms.Panel();
             this.lbl_type = new System.Windows.Forms.Label();
             this.lbl_info = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pbx_type)).BeginInit();
+            this.pbx_type = new System.Windows.Forms.PictureBox();
+            this.btn_close = new System.Windows.Forms.Button();
+            this.tmr_close = new System.Windows.Forms.Timer(this.components);
             this.pnl_notifBody.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_type)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_type
@@ -49,43 +49,6 @@
             this.pnl_type.Name = "pnl_type";
             this.pnl_type.Size = new System.Drawing.Size(15, 60);
             this.pnl_type.TabIndex = 0;
-            // 
-            // btn_close
-            // 
-            this.btn_close.BackColor = System.Drawing.Color.Transparent;
-            this.btn_close.BackgroundImage = global::IdeasAi.Properties.Resources.close;
-            this.btn_close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_close.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_close.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_close.Location = new System.Drawing.Point(304, 0);
-            this.btn_close.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(61, 60);
-            this.btn_close.TabIndex = 5;
-            this.btn_close.UseVisualStyleBackColor = false;
-            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
-            // 
-            // tmr_close
-            // 
-            this.tmr_close.Enabled = true;
-            this.tmr_close.Interval = 1000;
-            this.tmr_close.Tick += new System.EventHandler(this.tmr_close_Tick);
-            // 
-            // pbx_type
-            // 
-            this.pbx_type.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pbx_type.Image = global::IdeasAi.Properties.Resources.success;
-            this.pbx_type.Location = new System.Drawing.Point(15, 0);
-            this.pbx_type.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pbx_type.Name = "pbx_type";
-            this.pbx_type.Size = new System.Drawing.Size(53, 60);
-            this.pbx_type.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbx_type.TabIndex = 6;
-            this.pbx_type.TabStop = false;
-            this.pbx_type.Click += new System.EventHandler(this.pbx_type_Click);
-            this.pbx_type.MouseLeave += new System.EventHandler(this.pbx_type_MouseLeave);
-            this.pbx_type.MouseHover += new System.EventHandler(this.pbx_type_MouseHover);
             // 
             // pnl_notifBody
             // 
@@ -130,6 +93,43 @@
             this.lbl_info.MouseLeave += new System.EventHandler(this.lbl_type_MouseLeave);
             this.lbl_info.MouseHover += new System.EventHandler(this.lbl_type_MouseHover);
             // 
+            // pbx_type
+            // 
+            this.pbx_type.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pbx_type.Image = global::IdeasAi.Properties.Resources.success;
+            this.pbx_type.Location = new System.Drawing.Point(15, 0);
+            this.pbx_type.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbx_type.Name = "pbx_type";
+            this.pbx_type.Size = new System.Drawing.Size(53, 60);
+            this.pbx_type.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbx_type.TabIndex = 6;
+            this.pbx_type.TabStop = false;
+            this.pbx_type.Click += new System.EventHandler(this.pbx_type_Click);
+            this.pbx_type.MouseLeave += new System.EventHandler(this.pbx_type_MouseLeave);
+            this.pbx_type.MouseHover += new System.EventHandler(this.pbx_type_MouseHover);
+            // 
+            // btn_close
+            // 
+            this.btn_close.BackColor = System.Drawing.Color.Transparent;
+            this.btn_close.BackgroundImage = global::IdeasAi.Properties.Resources.close;
+            this.btn_close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_close.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_close.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_close.Location = new System.Drawing.Point(304, 0);
+            this.btn_close.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(61, 60);
+            this.btn_close.TabIndex = 5;
+            this.btn_close.UseVisualStyleBackColor = false;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
+            // 
+            // tmr_close
+            // 
+            this.tmr_close.Enabled = true;
+            this.tmr_close.Interval = 1000;
+            this.tmr_close.Tick += new System.EventHandler(this.tmr_close_Tick);
+            // 
             // mdl_notif
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -145,9 +145,9 @@
             this.Name = "mdl_notif";
             this.Text = "mdl_notif";
             this.Load += new System.EventHandler(this.mdl_notif_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbx_type)).EndInit();
             this.pnl_notifBody.ResumeLayout(false);
             this.pnl_notifBody.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_type)).EndInit();
             this.ResumeLayout(false);
 
         }

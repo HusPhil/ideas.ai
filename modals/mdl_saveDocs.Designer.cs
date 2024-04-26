@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -41,7 +40,6 @@
             this.lbl_noteTitle = new System.Windows.Forms.Label();
             this.lbl_title = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tmr_animation = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -187,11 +185,6 @@
             this.panel1.Size = new System.Drawing.Size(593, 60);
             this.panel1.TabIndex = 4;
             // 
-            // tmr_animation
-            // 
-            this.tmr_animation.Enabled = true;
-            this.tmr_animation.Interval = 1;
-            // 
             // mdl_saveDocs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -229,6 +222,5 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button btn_notebookSave;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Timer tmr_animation;
     }
 }

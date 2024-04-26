@@ -21,10 +21,6 @@ namespace IdeasAi.modals
             InitializeComponent();
             this.mainForm = mainForm;
             saver_obj = new DBObjectManager();
-
-            this.tmr_animation.Enabled = true;
-            this.tmr_animation.Interval = 1;
-            this.tmr_animation.Tick += new System.EventHandler(this.tmr_animation_Tick);
         }
         private void frm_modal_Load(object sender, EventArgs e)
         {
@@ -41,17 +37,6 @@ namespace IdeasAi.modals
             txb_setNoteTitle.SelectionLength = 0;
         }
 
-        private void tmr_animation_Tick(object sender, EventArgs e)
-        {
-            if (Opacity >= 1)
-            {
-                tmr_animation.Stop();
-            }
-            else
-            {
-                Opacity += .05;
-            }
-        }
        
         private void btn_cancel_Click(object sender, EventArgs e)
         {

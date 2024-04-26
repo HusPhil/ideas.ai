@@ -48,12 +48,12 @@ namespace IdeasAi
         // MODALS
         //
         public Form modalBG;
-        public mdl_notebookSettings mdl_notebookSettings;
+        //public mdl_notebookSettings mdl_notebookSettings;
+        //public mdl_saveNotes mdl_save;
+        //public mdl_saveDocs mdl_saveDocs;
+        //public mdl_NotesOptions mdl_editNotes;
+        //public mdl_DocsOptions mdl_editDocs;
         public mdl_organize mdl_organize;
-        public mdl_saveNotes mdl_save;
-        public mdl_saveDocs mdl_saveDocs;
-        public mdl_NotesOptions mdl_editNotes;
-        public mdl_DocsOptions mdl_editDocs;
         public mdl_loading mdl_loading;
         public ModalManager mdl_setter;
 
@@ -74,15 +74,15 @@ namespace IdeasAi
             frm_mindmap = new frm_mindmap(this);
             frm_workspace = new frm_workspace(this);
 
-            mdl_notebookSettings = new mdl_notebookSettings(this);
-            mdl_save = new mdl_saveNotes(this);
-            mdl_saveDocs = new mdl_saveDocs(this);
-            mdl_editNotes = new mdl_NotesOptions(this);
-            mdl_editDocs = new mdl_DocsOptions(this);
+            //mdl_notebookSettings = new mdl_notebookSettings(this);
+            //mdl_save = new mdl_saveNotes(this);
+            //mdl_saveDocs = new mdl_saveDocs(this);
+            //mdl_editNotes = new mdl_NotesOptions(this);
+            //mdl_editDocs = new mdl_DocsOptions(this);
             mdl_loading = new mdl_loading(this);
             modalBG = new Form();
-            mdl_setter = new ModalManager(this);
             mdl_organize = new mdl_organize(this);
+            mdl_setter = new ModalManager(this);
 
             pb_active = new PictureBox();
             pb_active.BackColor = Color.Transparent;

@@ -34,17 +34,6 @@ namespace IdeasAi.modals
             this.Location = ModalManager.CenterLocation(ownerForm.Width, ownerForm.Height, this.Width, this.Height, ownerForm.Location.X, ownerForm.Location.Y);
         }
 
-        private void tmr_animation_Tick(object sender, EventArgs e)
-        {
-            if (Opacity >= 1)
-            {
-                tmr_animation.Stop();
-            }
-            else
-            {
-                Opacity += .05;
-            }
-        }
 
         private void btn_browsePath_Click(object sender, EventArgs e)
         {

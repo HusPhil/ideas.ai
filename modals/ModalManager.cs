@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO.Ports;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -45,11 +46,16 @@ namespace IdeasAi.modals
             mainForm.setModalBackground(callerForm);
 
             modal.Owner = mainForm.modalBG;
+            modal.ShowInTaskbar = false;
+
+            AnimationUtils.FadeIn(modal);
+            
             modal.ShowDialog();
 
             mainForm.modalBG.Hide();
             mainForm.Focus();
         }
+
         public static Point CenterLocation(int cont_width, int cont_height, int item_width, int item_height)
         {
             return new Point((cont_width / 2) - (item_height / 2), (cont_height / 2) - (item_height / 2));

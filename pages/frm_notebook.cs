@@ -221,19 +221,20 @@ namespace IdeasAi.pages
         private void btn_showMoreNotes_click(DBObjectManager idea)
         {
             this.saver_obj = idea;
-            mainForm.mdl_setter.OpenModal(this, typeof(mdl_NotesOptions), mainForm);
+            //mainForm.mdl_setter.OpenModal(this, typeof(mdl_NotesOptions), mainForm);
+            ModalManager.ShowModal(mainForm, this, new mdl_NotesOptions(mainForm));
 
         }
         private void btn_showMoreDocs_click(DBObjectManager idea)
         {
             this.saver_obj = idea;
             //mainForm.mdl_setter.OpenModal(this, typeof(mdl_DocsOptions), mainForm);
-            ModalManager.ShowModal(mainForm, this, mainForm.mdl_editDocs);
+            ModalManager.ShowModal(mainForm, this, new mdl_DocsOptions(mainForm));
 
         }
         private void btn_notebookSettings_Click(object sender, EventArgs e)
         {
-            mainForm.mdl_setter.OpenModal(this, typeof(mdl_notebookSettings), mainForm);
+            ModalManager.ShowModal(mainForm, this, new mdl_notebookSettings(mainForm));
         }
         private void btn_notesTab_Click(object sender, EventArgs e)
         {

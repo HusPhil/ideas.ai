@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.lbl_title = new System.Windows.Forms.Label();
-            this.tmr_animation = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_save = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -53,12 +51,6 @@
             this.lbl_title.TabIndex = 0;
             this.lbl_title.Text = "More settings";
             this.lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tmr_animation
-            // 
-            this.tmr_animation.Enabled = true;
-            this.tmr_animation.Interval = 1;
-            this.tmr_animation.Tick += new System.EventHandler(this.tmr_animation_Tick);
             // 
             // panel2
             // 
@@ -192,7 +184,6 @@
         #endregion
 
         private System.Windows.Forms.Label lbl_title;
-        private System.Windows.Forms.Timer tmr_animation;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.Panel panel4;

@@ -28,7 +28,7 @@ namespace IdeasAi.pages
         }
         private void frm_workspace_Paint(object sender, PaintEventArgs e)
         {
-            pnl_confirmDel.Visible = !true;
+            
             if (mainForm.dbManager_Docs.recordExist(saver_obj.UUID))
             {
                 btn_docsDel.Visible = true;
@@ -115,15 +115,15 @@ namespace IdeasAi.pages
         }
         private void btn_organizeIdea_Click(object sender, EventArgs e)
         {
-            mainForm.setModalBackground(this);
-            mainForm.mdl_organize.ShowDialog();
+            ModalManager.ShowModal(mainForm, this, mainForm.mdl_organize);
         }
         private void btn_save_Click(object sender, EventArgs e)
         {
             saver_obj.Title = txb_docsTitle.Text;
             saver_obj.Content = txb_textEditor.Text;
-            
-            mainForm.mdl_setter.OpenModal(this, typeof(mdl_saveDocs), mainForm);
+
+            //mainForm.mdl_setter.OpenModal(this, typeof(mdl_saveDocs), mainForm);
+            ModalManager.ShowModal(mainForm, this, new mdl_saveDocs(mainForm));
         }
         private void btn_openFile_Click(object sender, EventArgs e)
         {
@@ -259,15 +259,12 @@ namespace IdeasAi.pages
             {
                 string selectedText = txb_textEditor.SelectedText;
 
-                if (string.IsNullOrWhiteSpace(selectedText))
+                if (!string.IsNullOrWhiteSpace(selectedText))
                 {
-                    selectedText = mainForm.frm_workspace.getTxbEditor().Text;
+                    mainForm.mdl_organize.getTxbPreview().Text = selectedText;
                 }
 
-                Console.WriteLine(selectedText);
-                mainForm.mdl_organize.getTxbPreview().Text = selectedText;
-                mainForm.setModalBackground(this);
-                mainForm.mdl_organize.ShowDialog();
+                ModalManager.ShowModal(mainForm, this, mainForm.mdl_organize);
             }
             else if (e.Control && e.KeyCode == Keys.V)
             {
@@ -319,5 +316,9 @@ namespace IdeasAi.pages
             return ref lbl_lastDateSaved;
         }
 
+        private void frm_workspace_Load(object sender, EventArgs e)
+        {
+            pnl_confirmDel.Visible = !true;
+        }
     }
 }

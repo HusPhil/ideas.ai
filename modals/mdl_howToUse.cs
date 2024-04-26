@@ -18,17 +18,7 @@ namespace IdeasAi.modals
             this.mainForm = mainForm;
             InitializeComponent();
         }
-        private void tmr_animation_Tick(object sender, EventArgs e)
-        {
-            if (Opacity >= 1)
-            {
-                tmr_animation.Stop();
-            }
-            else
-            {
-                Opacity += .05;
-            }
-        }
+        
 
         private void mdl_howToUse_Load(object sender, EventArgs e)
         {

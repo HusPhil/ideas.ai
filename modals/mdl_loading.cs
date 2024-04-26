@@ -48,16 +48,6 @@ namespace IdeasAi.modals
             return ref lbl_loadingInfo;
         }
 
-        private void tmr_animation_Tick(object sender, EventArgs e)
-        {
-            if (Opacity >= 1)
-            {
-                tmr_animation.Stop();
-            }
-            else
-            {
-                Opacity += .05;
-            }
-        }
+        
     }
 }

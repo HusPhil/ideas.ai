@@ -171,6 +171,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="modals\AnimationUtils.cs" />
     <Compile Include="modals\mdl_DocsOptions.cs">
       <SubType>Form</SubType>
     </Compile>

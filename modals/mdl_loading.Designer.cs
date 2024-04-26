@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.lbl_loadingInfo = new System.Windows.Forms.Label();
-            this.tmr_animation = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -45,12 +43,6 @@
             this.lbl_loadingInfo.TabIndex = 1;
             this.lbl_loadingInfo.Text = "lbl_loadingInfo";
             this.lbl_loadingInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tmr_animation
-            // 
-            this.tmr_animation.Enabled = true;
-            this.tmr_animation.Interval = 1;
-            this.tmr_animation.Tick += new System.EventHandler(this.tmr_animation_Tick);
             // 
             // pictureBox1
             // 
@@ -87,6 +79,5 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Label lbl_loadingInfo;
-        private System.Windows.Forms.Timer tmr_animation;
     }
 }

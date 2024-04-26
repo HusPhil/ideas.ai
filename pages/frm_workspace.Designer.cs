@@ -40,9 +40,8 @@
             this.btn_new = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_openFile = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_docsDel = new System.Windows.Forms.Button();
             this.pnl_confirmDel = new System.Windows.Forms.Panel();
+            this.btn_docsDel = new System.Windows.Forms.Button();
             this.btn_confirm = new System.Windows.Forms.Button();
             this.btn_createMindmap = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -57,6 +56,7 @@
             this.pnl_txbCont = new System.Windows.Forms.Panel();
             this.txb_QSearch = new System.Windows.Forms.RichTextBox();
             this.btn_QSearch = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.pnl_textEditor.SuspendLayout();
             this.pnl_textEditCont.SuspendLayout();
             this.pnl_btns.SuspendLayout();
@@ -163,7 +163,7 @@
             this.lbl_lastDateSaved.ForeColor = System.Drawing.Color.Black;
             this.lbl_lastDateSaved.Location = new System.Drawing.Point(269, 10);
             this.lbl_lastDateSaved.Name = "lbl_lastDateSaved";
-            this.lbl_lastDateSaved.Size = new System.Drawing.Size(325, 42);
+            this.lbl_lastDateSaved.Size = new System.Drawing.Size(326, 42);
             this.lbl_lastDateSaved.TabIndex = 13;
             this.lbl_lastDateSaved.Text = "Last Modified: N/A";
             this.lbl_lastDateSaved.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -174,7 +174,7 @@
             this.btn_docOptions.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_docOptions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_docOptions.Image = global::IdeasAi.Properties.Resources.docOptions;
-            this.btn_docOptions.Location = new System.Drawing.Point(594, 10);
+            this.btn_docOptions.Location = new System.Drawing.Point(595, 10);
             this.btn_docOptions.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_docOptions.Name = "btn_docOptions";
             this.btn_docOptions.Size = new System.Drawing.Size(37, 42);
@@ -188,7 +188,7 @@
             this.pnl_docConts.Controls.Add(this.btn_save);
             this.pnl_docConts.Controls.Add(this.btn_openFile);
             this.pnl_docConts.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnl_docConts.Location = new System.Drawing.Point(631, 10);
+            this.pnl_docConts.Location = new System.Drawing.Point(632, 10);
             this.pnl_docConts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnl_docConts.Name = "pnl_docConts";
             this.pnl_docConts.Padding = new System.Windows.Forms.Padding(0, 5, 11, 5);
@@ -241,14 +241,17 @@
             this.btn_openFile.UseVisualStyleBackColor = false;
             this.btn_openFile.Click += new System.EventHandler(this.btn_openFile_Click);
             // 
-            // panel2
+            // pnl_confirmDel
             // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(876, 10);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 42);
-            this.panel2.TabIndex = 20;
+            this.pnl_confirmDel.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_confirmDel.Controls.Add(this.btn_confirm);
+            this.pnl_confirmDel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnl_confirmDel.Location = new System.Drawing.Point(924, 10);
+            this.pnl_confirmDel.Name = "pnl_confirmDel";
+            this.pnl_confirmDel.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.pnl_confirmDel.Size = new System.Drawing.Size(122, 42);
+            this.pnl_confirmDel.TabIndex = 20;
+            this.pnl_confirmDel.Visible = false;
             // 
             // btn_docsDel
             // 
@@ -258,26 +261,13 @@
             this.btn_docsDel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_docsDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_docsDel.Image = global::IdeasAi.Properties.Resources.delete;
-            this.btn_docsDel.Location = new System.Drawing.Point(886, 10);
+            this.btn_docsDel.Location = new System.Drawing.Point(887, 10);
             this.btn_docsDel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_docsDel.Name = "btn_docsDel";
             this.btn_docsDel.Size = new System.Drawing.Size(37, 42);
             this.btn_docsDel.TabIndex = 16;
             this.btn_docsDel.UseVisualStyleBackColor = false;
             this.btn_docsDel.Click += new System.EventHandler(this.btn_docsDel_Click);
-            // 
-            // pnl_confirmDel
-            // 
-            this.pnl_confirmDel.Controls.Add(this.btn_confirm);
-            this.pnl_confirmDel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnl_confirmDel.Font = new System.Drawing.Font("Cascadia Code", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnl_confirmDel.Location = new System.Drawing.Point(923, 10);
-            this.pnl_confirmDel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnl_confirmDel.Name = "pnl_confirmDel";
-            this.pnl_confirmDel.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.pnl_confirmDel.Size = new System.Drawing.Size(123, 42);
-            this.pnl_confirmDel.TabIndex = 15;
-            this.pnl_confirmDel.Visible = false;
             // 
             // btn_confirm
             // 
@@ -286,7 +276,7 @@
             this.btn_confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_confirm.Font = new System.Drawing.Font("Cascadia Code", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_confirm.ForeColor = System.Drawing.Color.Black;
-            this.btn_confirm.Location = new System.Drawing.Point(16, 5);
+            this.btn_confirm.Location = new System.Drawing.Point(15, 5);
             this.btn_confirm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_confirm.Name = "btn_confirm";
             this.btn_confirm.Size = new System.Drawing.Size(107, 32);
@@ -486,6 +476,14 @@
             this.btn_QSearch.UseVisualStyleBackColor = false;
             this.btn_QSearch.Click += new System.EventHandler(this.btn_QSearch_Click);
             // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(877, 10);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(10, 42);
+            this.panel2.TabIndex = 21;
+            // 
             // frm_workspace
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -500,6 +498,7 @@
             this.Name = "frm_workspace";
             this.Padding = new System.Windows.Forms.Padding(8);
             this.Text = "frm_workspace";
+            this.Load += new System.EventHandler(this.frm_workspace_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frm_workspace_Paint);
             this.pnl_textEditor.ResumeLayout(false);
             this.pnl_textEditCont.ResumeLayout(false);
@@ -535,7 +534,6 @@
         private System.Windows.Forms.Button btn_organizeIdea;
         private System.Windows.Forms.Label lbl_lastDateSaved;
         private System.Windows.Forms.Button btn_docsDel;
-        private System.Windows.Forms.Panel pnl_confirmDel;
         private System.Windows.Forms.Button btn_confirm;
         private System.Windows.Forms.Button btn_docOptions;
         private System.Windows.Forms.Panel pnl_docConts;
@@ -544,8 +542,9 @@
         private System.Windows.Forms.Button btn_openFile;
         private System.Windows.Forms.Panel pnl_textEditCont;
         private System.Windows.Forms.RichTextBox txb_textEditor;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnl_confirmDel;
         private System.Windows.Forms.Panel panel6;
         public System.Windows.Forms.Splitter spl_workspace;
+        private System.Windows.Forms.Panel panel2;
     }
 }

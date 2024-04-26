@@ -36,17 +36,6 @@ namespace IdeasAi.modals
             txb_setNoteTitle.SelectionLength = 0;
         }
 
-        private void tmr_animation_Tick(object sender, EventArgs e)
-        {
-            if (Opacity >= 1)
-            {
-                tmr_animation.Stop();
-            }
-            else
-            {
-                Opacity += .05;
-            }
-        }
 
         private void btn_save_Click(object sender, EventArgs e)
         {

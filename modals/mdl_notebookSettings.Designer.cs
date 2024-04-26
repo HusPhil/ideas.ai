@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.pnl_header = new System.Windows.Forms.Panel();
             this.btn_exit = new System.Windows.Forms.Button();
             this.lbl_title = new System.Windows.Forms.Label();
@@ -40,7 +39,6 @@
             this.txb_noteName = new System.Windows.Forms.TextBox();
             this.btn_browse = new System.Windows.Forms.Button();
             this.btn_createNew = new System.Windows.Forms.Button();
-            this.tmr_animation = new System.Windows.Forms.Timer(this.components);
             this.pnl_header.SuspendLayout();
             this.pnl_content.SuspendLayout();
             this.SuspendLayout();
@@ -159,12 +157,6 @@
             this.btn_createNew.UseVisualStyleBackColor = true;
             this.btn_createNew.Click += new System.EventHandler(this.btn_createNew_Click);
             // 
-            // tmr_animation
-            // 
-            this.tmr_animation.Enabled = true;
-            this.tmr_animation.Interval = 1;
-            this.tmr_animation.Tick += new System.EventHandler(this.tmr_animation_Tick);
-            // 
             // mdl_notebookSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -197,7 +189,6 @@
         private System.Windows.Forms.Label lbl_savePath;
         private System.Windows.Forms.TextBox txb_saveDBPath;
         private System.Windows.Forms.Button btn_browsePath;
-        private System.Windows.Forms.Timer tmr_animation;
         private System.Windows.Forms.Button btn_exit;
     }
 }

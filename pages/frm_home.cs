@@ -15,16 +15,20 @@ namespace IdeasAi.pages
 
         private void btn_QhubInfo_Click(object sender, EventArgs e)
         {
-            mainForm.setModalBackground(this);
-            mdl_howToUse mdl_HowToUse = new mdl_howToUse(mainForm);
-            mdl_HowToUse.ShowDialog();
+            //mainForm.setModalBackground(this);
+            //mdl_howToUse mdl_HowToUse = new mdl_howToUse(mainForm);
+            //mdl_HowToUse.ShowDialog();
+
+            ModalManager.ShowModal(mainForm, this, new mdl_howToUse(mainForm));
         }
 
         private void btn_NotebookInfo_Click(object sender, EventArgs e)
         {
-            mainForm.setModalBackground(this);
-            mdl_howToUse mdl_HowToUse = new mdl_howToUse(mainForm);
-            mdl_HowToUse.ShowDialog();
+            //mainForm.setModalBackground(this);
+            //mdl_howToUse mdl_HowToUse = new mdl_howToUse(mainForm);
+            //mdl_HowToUse.ShowDialog();
+
+            //ModalManager.ShowModal(mainForm, this, new Modal(mainForm));
         }
 
         private void btn_WorkspaceInfo_Click(object sender, EventArgs e)
