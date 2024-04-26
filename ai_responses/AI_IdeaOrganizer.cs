@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace IdeasAi.ai_responses
 {
-    internal class IdeaOrganizer : AI_Response
+    internal class AI_IdeaOrganizer : AI_Response
     {
-        public string Title { get; set; }
+        
         public override async Task<string> GetResponse(JObject appConfig)
         {
             var prompt = "Organize, elaborate, and expand the inputted idea, with correct grammar and format of sentences." +

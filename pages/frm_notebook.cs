@@ -299,15 +299,16 @@ namespace IdeasAi.pages
         {
             if (db.GetType().Equals(typeof(DBManager_Note)))
             {
+                mainForm.frm_consultation.saver_obj.Content = dom.Content;
+                mainForm.frm_consultation.saver_obj.Title = dom.Title;
+                
                 mainForm.loadForm(mainForm.frm_consultation, mainForm.getPnlContent());
-                mainForm.setActiveBtn(mainForm.getBtnHome(), mainForm.getPnlPageTabs());
+                mainForm.setActiveBtn(mainForm.getBtnConsult(), mainForm.getPnlPageTabs());
                 mainForm.frm_consultation.displayResult(dom.Content);
                 mainForm.frm_consultation.getSaveBtn().Enabled = false;
                 mainForm.frm_consultation.getPrintBtn().Enabled = !false;
                 mainForm.frm_consultation.getToWorkspaceBtn().Enabled = !false;
 
-                mainForm.frm_consultation.saver_obj.Content = dom.Content;
-            mainForm.frm_consultation.saver_obj.Title = dom.Title;
             
 
             }

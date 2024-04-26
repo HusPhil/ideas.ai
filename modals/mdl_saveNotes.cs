@@ -57,5 +57,35 @@ namespace IdeasAi.modals
             this.Hide();
         }
 
+        private void txb_setNoteTitle_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txb_setNoteTitle_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                var idea_save_obj = new DBObjectManager();
+                idea_save_obj.UUID = mainForm.frm_consultation.saver_obj.UUID;
+                idea_save_obj.Title = txb_setNoteTitle.Text;
+                idea_save_obj.Input = mainForm.frm_consultation.saver_obj.Input;
+                idea_save_obj.Content = mainForm.frm_consultation.saver_obj.Content;
+                idea_save_obj.DateCreated = mainForm.frm_consultation.saver_obj.DateCreated;
+
+                mainForm.dbManager_Note.saveObject(idea_save_obj);
+
+                mainForm.loadForm(mainForm.frm_notebook, mainForm.getPnlContent());
+                mainForm.setActiveBtn(mainForm.getBtnNotebook(), mainForm.getPnlPageTabs());
+                mainForm.frm_notebook.setActiveBtn(mainForm.frm_notebook.getBtnNotesTab(), mainForm.frm_notebook.getTbpnlTabs());
+                mainForm.frm_notebook.displaySavedIdeas(mainForm.dbManager_Note);
+
+                mainForm.addNotification("success", "Successfully saved!", txb_setNoteTitle.Text);
+                // Load the notebook form into the content panel
+                mainForm.BringToFront();
+                this.Hide();
+            }
+            
+        }
     }
 }

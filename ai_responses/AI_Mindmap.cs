@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace IdeasAi.ai_responses
 {
-    internal class Mindmap : AI_Response
+    internal class AI_Mindmap : AI_Response
     {
-        public string Title { get; set; }
         public override async Task<string> GetResponse(JObject appConfig)
         {
             var prompt = "Act like an automatic system text generator for a mindmap that follows a strict syntax. " +

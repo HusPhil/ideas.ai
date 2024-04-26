@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace IdeasAi.ai_responses
 {
-    internal class Summarizer : AI_Response
+    internal class AI_Summarizer : AI_Response
     {
         public override async Task<string> GetResponse(JObject appConfig)
         {

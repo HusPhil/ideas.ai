@@ -1,6 +1,7 @@
 ﻿using ComponentFactory.Krypton.Toolkit;
 using IdeasAi.ai_responses;
 using IdeasAi.db;
+using IdeasAi.Ideas;
 using IdeasAi.modals;
 using IdeasAi.Properties;
 using System;
@@ -33,7 +34,7 @@ namespace IdeasAi.pages
         }
         private void frm_workspace_Paint(object sender, PaintEventArgs e)
         {
-            
+
             if (mainForm.dbManager_Docs.recordExist(saver_obj.UUID))
             {
                 btn_docsDel.Visible = true;
@@ -62,9 +63,9 @@ namespace IdeasAi.pages
         }
         public async void loadMindmap()
         {
-            var mindmap_obj = new Mindmap();
-            mindmap_obj.Input = ConvertMarkdownToPlainText(txb_textEditor.Text);
-
+            var mindmap_obj = new AI_ResponseBuilder<AI_Mindmap>()
+                .WithInput(ConvertMarkdownToPlainText(txb_textEditor.Text))
+                .Build();
             try
             {
                 mindmap_obj.Content = await mindmap_obj.GetResponse(mainForm.settings);
@@ -76,22 +77,24 @@ namespace IdeasAi.pages
             {
                 mainForm.addNotification("error", "Failed to generate!", $"Error: {exception.Message}");
             }
-            
+
             mainForm.loadForm(mainForm.frm_mindmap, mainForm.getPnlContent());
             mainForm.setActiveBtn(mainForm.getBtnMindmap(), mainForm.getPnlPageTabs());
 
             mainForm.mdl_loading.Close();
             mainForm.modalBG.Hide();
         }
-        
+
         private async void btn_QSearch_Click(object sender, EventArgs e)
         {
             var asyncNotif = mainForm.addAsyncNotification("response", "Now searching for:", $"{txb_QSearch.Text}");
             asyncNotif.Show();
             asyncNotif.BringToFront();
 
-            var qsearch_obj = new QuickSearch();
-            qsearch_obj.Input = ConvertMarkdownToPlainText(txb_QSearch.Text);
+            var qsearch_obj = new AI_ResponseBuilder<AI_QuickSearch>()
+                .WithInput(ConvertMarkdownToPlainText(txb_QSearch.Text))
+                .Build() as AI_QuickSearch;
+
             pbx_loading.Image = Resources.dot_loading;
             pbx_loading.Visible = true;
             btn_QSearch.Enabled = !true;
@@ -103,12 +106,12 @@ namespace IdeasAi.pages
                 txb_qsearchRes.Text = ConvertMarkdownToPlainText(qsearch_obj.Content);
                 mainForm.addNotification("success", "Success!", "View search result");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 mainForm.addNotification("warning", "An error occured: ", ex.Message);
                 Console.WriteLine(ex.Message);
             }
-            
+
             pbx_loading.Image = null;
             pbx_loading.Visible = !true;
             btn_QSearch.Enabled = true;
@@ -156,7 +159,7 @@ namespace IdeasAi.pages
                 {
                     mainForm.addNotification("error", "Failed to open!", $"A document was not opened properly");
                 }
-               
+
             }
         }
         private void btn_createMindmap_Click(object sender, EventArgs e)
@@ -190,7 +193,7 @@ namespace IdeasAi.pages
         }
         private void btn_docsDel_Click(object sender, EventArgs e)
         {
-            if(pnl_confirmDel.Visible)
+            if (pnl_confirmDel.Visible)
             {
                 pnl_confirmDel.Visible = !true;
             }
@@ -198,6 +201,7 @@ namespace IdeasAi.pages
             {
                 pnl_confirmDel.Visible = true;
             }
+            pnl_confirmDel.Focus();
         }
         private void btn_confirm_Click(object sender, EventArgs e)
         {
@@ -217,10 +221,10 @@ namespace IdeasAi.pages
                 }
             }
         }
-        
+
         private void txb_textEditor_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.Control && e.KeyCode == Keys.S)
+            if (e.Control && e.KeyCode == Keys.S)
             {
                 saver_obj.Content = saver_obj.Content;
                 saver_obj.Title = txb_docsTitle.Text;
@@ -239,13 +243,13 @@ namespace IdeasAi.pages
                     mainForm.dbManager_Docs.modifyField(saver_obj.UUID, "Content", saver_obj.Content);
                     mainForm.dbManager_Docs.modifyField(saver_obj.UUID, "Title", saver_obj.Title);
                     mainForm.dbManager_Docs.modifyField(saver_obj.UUID, "Date_modified", saver_obj.DateCreated);
-                    
+
                     Console.WriteLine("already exist");
                 }
                 e.SuppressKeyPress = true;
                 lbl_lastDateSaved.Text = $"Last Modified: {DateTime.Now.ToString("yyyy-MM-dd hh:mm tt")}";
                 mainForm.addNotification("success", "Successfully saved!", $"{saver_obj.Title}");
-                
+
             }
             else if (e.Control && e.KeyCode == Keys.Q)
             {
@@ -283,7 +287,7 @@ namespace IdeasAi.pages
         private void txb_textEditor_TextChanged(object sender, EventArgs e)
         {
             saver_obj.Content = txb_textEditor.Text;
-            
+
         }
         private void txb_QSearch_Click(object sender, EventArgs e)
         {
@@ -320,10 +324,24 @@ namespace IdeasAi.pages
         {
             return ref lbl_lastDateSaved;
         }
+        public ref Panel getPnlDelete()
+        {
+            return ref pnl_confirmDel;
+        }
 
         private void frm_workspace_Load(object sender, EventArgs e)
         {
             pnl_confirmDel.Visible = !true;
+        }
+
+        private void btn_confirm_Leave(object sender, EventArgs e)
+        {
+            pnl_confirmDel.Visible = false;
+        }
+
+        private void pnl_confirmDel_Leave(object sender, EventArgs e)
+        {
+            pnl_confirmDel.Visible = false;
         }
     }
 }

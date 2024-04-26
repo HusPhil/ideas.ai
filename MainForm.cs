@@ -485,6 +485,5 @@ namespace IdeasAi
         {
             return ref btn_mindmap; 
         }
-
     }
 }

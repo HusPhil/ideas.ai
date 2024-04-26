@@ -5,9 +5,8 @@ using Newtonsoft.Json.Linq;
 
 namespace IdeasAi.Ideas
 {
-    public class Idea : AI_Response
+    public class AI_Consultant : AI_Response
     {
-        public string Title { get; set; }
         public override async Task<string> GetResponse(JObject appConfig)
         {
             var prompt = "Pretend you are a teacher that answers a student's question. " +

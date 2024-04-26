@@ -89,6 +89,8 @@
             this.txb_setNoteTitle.StateActive.Content.Padding = new System.Windows.Forms.Padding(8, 2, 2, 2);
             this.txb_setNoteTitle.TabIndex = 10;
             this.txb_setNoteTitle.Text = "My Note #1";
+            this.txb_setNoteTitle.TextChanged += new System.EventHandler(this.txb_setNoteTitle_TextChanged);
+            this.txb_setNoteTitle.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_setNoteTitle_KeyDown);
             // 
             // btn_cancel
             // 

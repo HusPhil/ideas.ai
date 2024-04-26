@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace IdeasAi.ai_responses
 {
-    public class QuickSearch : AI_Response
+    public class AI_QuickSearch : AI_Response
     {
         public override async Task<string> GetResponse(JObject appConfig)
         {

@@ -1,4 +1,5 @@
 ﻿using IdeasAi.ai_responses;
+using IdeasAi.Ideas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -51,9 +52,15 @@ namespace IdeasAi.modals
                     break;
                 case "Summarizer":
                     loader.getLblLoadInfo().Text = "Summarizing your ideas..";
-                    var summarizer = new Summarizer();
-                    summarizer.Input = txb_preview.Text;
+
+                    var summarizer = new AI_ResponseBuilder<AI_Summarizer>()
+                        .WithInput(txb_preview.Text)
+                        .Build();
+                    
                     summarizer.Content = await summarizer.GetResponse(mainForm.settings);
+                    
+
+
                     mainForm.removeForm(loader, pnl_body);
                     txb_preview.Text = summarizer.Content;
                     break;

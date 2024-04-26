@@ -6,6 +6,7 @@ using IdeasAi.modals;
 using IdeasAi.pages;
 using Microsoft.Win32;
 using IdeasAi.db;
+using IdeasAi.ai_responses;
 
 
 namespace IdeasAi.PageForms
@@ -88,10 +89,11 @@ namespace IdeasAi.PageForms
             btn_print.Enabled = !true;
             btn_toWorkspace.Enabled = !true;
 
-            var idea_obj = new Idea();
             var topic = this.txb_Consult.Text;
+            var idea_obj = new AI_ResponseBuilder<AI_Consultant>()
+                .WithInput(topic)
+                .Build();
 
-            idea_obj.Input = topic;
             try
             {
                 idea_obj.Content = await idea_obj.GetResponse(mainForm.settings);
@@ -139,7 +141,7 @@ namespace IdeasAi.PageForms
         private void btn_toWorkspace_Click(object sender, EventArgs e)
         {
             mainForm.frm_workspace.saver_obj.UUID = Guid.NewGuid();
-            mainForm.frm_workspace.getTxbDocsTitle().Text = saver_obj.Input;
+            mainForm.frm_workspace.getTxbDocsTitle().Text = saver_obj.Title;
             mainForm.frm_workspace.getTxbEditor().Text = frm_workspace.ConvertMarkdownToPlainText(saver_obj.Content);
 
             mainForm.loadForm(mainForm.frm_workspace, mainForm.getPnlContent());

@@ -4,9 +4,10 @@ using System.Threading.Tasks;
 
 namespace IdeasAi.Gemini_AI
 {
-    public abstract class AI_Response
+    public class AI_Response
     {
         public Guid UUID { get; set; }
+        public string Title { get; set; }
         public string Input { get; set; }
         public string Content { get; set; }
 
@@ -23,6 +24,9 @@ namespace IdeasAi.Gemini_AI
         {
             UUID = Guid.NewGuid();
         }
-        public abstract Task<string> GetResponse(JObject appConfig);
+        public virtual Task<string> GetResponse(JObject appConfig)
+        {
+            return Task.FromResult("Default response");
+        }
     }
 }
