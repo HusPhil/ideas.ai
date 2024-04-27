@@ -428,19 +428,55 @@ namespace IdeasAi
             btn_toggleDarkMode.Image = Resources.lightModeBtn;
 
         }
+        private void sideBarExpand()
+        {
+            btn_home.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_workspace.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_notebook.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_mindmap.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_consultation.ImageAlign = ContentAlignment.MiddleLeft;
+
+            pnl_header.Size = new Size(214, 180);
+
+            pb_active.Visible = true;
+            pbx_logo.Image = Resources.app_logo;
+            pbx_logo.Size = new Size(210, 145);
+
+        }
+        private void sideBarShrink()
+        {
+
+            btn_home.ImageAlign = ContentAlignment.MiddleCenter;
+            btn_workspace.ImageAlign = ContentAlignment.MiddleCenter;
+            btn_notebook.ImageAlign = ContentAlignment.MiddleCenter;
+            btn_mindmap.ImageAlign = ContentAlignment.MiddleCenter;
+            btn_consultation.ImageAlign = ContentAlignment.MiddleCenter;
+
+            pnl_header.Size = new Size(214, 110);
+
+            pb_active.Visible = false;
+            pbx_logo.Image = Resources.mini_logo;
+            pbx_logo.Size = new Size(70, 70);
+
+
+        }
         
         private void btn_showOrHide_Click(object sender, EventArgs e)
         {
             if (showMode)
             {
                 showMode = false;
+                sideBarShrink();
             }
             else
             {
                 showMode = true;
+                sideBarExpand();
             }
             tmr_animation.Start();
             sliding = true;
+            pnl_sideContentHolder.Visible = false;
+
         }
         private void tmr_animation_Tick(object sender, EventArgs e)
         {
@@ -455,10 +491,16 @@ namespace IdeasAi
                     pnl_sideContent.Width += 1;
                     sliding = false;
                     pnl_sideContent.Width -= 1;
+
+
+                    pnl_sideContentHolder.Visible = true;
+
+
+
                 }
                 else
                 {
-                    pnl_sideContent.Width += 35;
+                    pnl_sideContent.Width += 30;
                 }
             }
             else
@@ -470,10 +512,17 @@ namespace IdeasAi
                     pnl_sideContent.Width += 1;
                     sliding = false;
                     pnl_sideContent.Width -= 1;
+                    
+
+
+                    pnl_sideContentHolder.Visible = true;
+
+
+
                 }
                 else
                 {
-                    pnl_sideContent.Width -= 35;
+                    pnl_sideContent.Width -= 30;
                 }
             }
             

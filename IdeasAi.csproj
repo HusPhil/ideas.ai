@@ -339,6 +339,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\mini_logo.png" />
     <None Include="Resources\Idea.ai-removebg-preview.png" />
     <None Include="Resources\home.png" />
     <None Include="Resources\qhub.png" />
