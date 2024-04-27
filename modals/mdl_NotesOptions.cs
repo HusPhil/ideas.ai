@@ -29,6 +29,7 @@ namespace IdeasAi.modals
         {
             txb_setNoteTitle.Text = mainForm.frm_notebook.saver_obj.Title;
             oldTitle = txb_setNoteTitle.Text;
+
             var ownerForm = mainForm;
             this.Location = ModalManager.CenterLocation(ownerForm.Width, ownerForm.Height, this.Width, this.Height, ownerForm.Location.X, ownerForm.Location.Y);
 
@@ -96,6 +97,6 @@ namespace IdeasAi.modals
             this.Hide();
         }
 
-       
+
     }
 }
