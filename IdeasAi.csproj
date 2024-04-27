@@ -339,6 +339,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\noteIcon.png" />
+    <None Include="Resources\docIcon.png" />
+    <None Include="Resources\send.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\generate.png" />
+    <None Include="Resources\download.png" />
+    <None Include="Resources\exit.png" />
     <None Include="Resources\mini_logo.png" />
     <None Include="Resources\Idea.ai-removebg-preview.png" />
     <None Include="Resources\home.png" />
@@ -359,7 +366,6 @@
     <None Include="Resources\send2.png" />
     <None Include="Resources\send22.png" />
     <None Include="Resources\send21.png" />
-    <None Include="Resources\send.png" />
     <None Include="Resources\organize.png" />
     <None Include="Resources\mindmap.png" />
     <None Include="Resources\docOptions.png" />

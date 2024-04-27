@@ -435,6 +435,7 @@ namespace IdeasAi
             btn_notebook.ImageAlign = ContentAlignment.MiddleLeft;
             btn_mindmap.ImageAlign = ContentAlignment.MiddleLeft;
             btn_consultation.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_exit.ImageAlign = ContentAlignment.MiddleLeft;
 
             pnl_header.Size = new Size(214, 180);
 
@@ -451,6 +452,8 @@ namespace IdeasAi
             btn_notebook.ImageAlign = ContentAlignment.MiddleCenter;
             btn_mindmap.ImageAlign = ContentAlignment.MiddleCenter;
             btn_consultation.ImageAlign = ContentAlignment.MiddleCenter;
+            btn_exit.ImageAlign = ContentAlignment.MiddleCenter;
+
 
             pnl_header.Size = new Size(214, 110);
 
@@ -561,6 +564,16 @@ namespace IdeasAi
         private void pnl_helpbtn_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void pbx_logo_MouseHover(object sender, EventArgs e)
+        {
+            pbx_logo.BorderStyle = BorderStyle.Fixed3D;
+        }
+
+        private void pbx_logo_MouseLeave(object sender, EventArgs e)
+        {
+            pbx_logo.BorderStyle = BorderStyle.None;
         }
     }
 }

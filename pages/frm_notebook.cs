@@ -21,12 +21,12 @@ namespace IdeasAi.pages
         {
             InitializeComponent();
             mainForm = _mainForm;
+            btn_activeTab = btn_docsTab;
 
             setNotebookKeys(false);
             cb_dbSelector.SelectedIndex = 0;
 
-            btn_activeTab = btn_notesTab;
-            btn_notesTab.BackColor = ColorTranslator.FromHtml((string)mainForm.decors["Themes"]["LightTheme"]["secondary"]);
+            setActiveBtn(btn_notesTab, tbpnl_tabs);
 
             showAllIdeas();
 
@@ -86,7 +86,7 @@ namespace IdeasAi.pages
                     {
                         Panel pnl_idea = new Panel();
                         pnl_idea.BorderStyle = BorderStyle.FixedSingle;
-                        pnl_idea.BackColor = ColorTranslator.FromHtml((string)mainForm.decors["Themes"]["LightTheme"]["secondary100"]);
+                        pnl_idea.BackColor = Color.Transparent;
                         pnl_idea.Size = new Size(panelWidth, 200);
                         pnl_idea.Padding = new Padding(0, 10, 0, 10);
 
@@ -212,7 +212,7 @@ namespace IdeasAi.pages
                 {
                     removeActiveBtn(pnl);
                     btn_activeTab = (Button)btn;
-                    btn_activeTab.BackColor = ColorTranslator.FromHtml((string)mainForm.decors["Themes"]["LightTheme"]["secondary"]);
+                    btn_activeTab.BackColor = ColorTranslator.FromHtml((string)mainForm.decors["Themes"]["LightTheme"]["accent100"]);
                 }
             }
 

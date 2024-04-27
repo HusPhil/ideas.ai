@@ -47,12 +47,16 @@ namespace IdeasAi.pages
             this.btn_notebookSettings = new System.Windows.Forms.Button();
             this.pnl_container = new System.Windows.Forms.FlowLayoutPanel();
             this.lbl_nothingFound = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnl_tabSelect.SuspendLayout();
             this.tbpnl_tabs.SuspendLayout();
             this.pnl_footer.SuspendLayout();
             this.pnl_noteSettings.SuspendLayout();
             this.pnl_delDialog.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_tabSelect
@@ -72,9 +76,9 @@ namespace IdeasAi.pages
             this.tbpnl_tabs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tbpnl_tabs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tbpnl_tabs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tbpnl_tabs.Controls.Add(this.panel2, 1, 0);
             this.tbpnl_tabs.Controls.Add(this.btn_notesTab, 0, 0);
             this.tbpnl_tabs.Controls.Add(this.btn_docsTab, 2, 0);
-            this.tbpnl_tabs.Controls.Add(this.lbl_currentNotebook, 1, 0);
             this.tbpnl_tabs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbpnl_tabs.Location = new System.Drawing.Point(10, 10);
             this.tbpnl_tabs.Name = "tbpnl_tabs";
@@ -94,11 +98,15 @@ namespace IdeasAi.pages
             this.btn_notesTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_notesTab.Font = new System.Drawing.Font("Cascadia Code Light", 9.5F);
             this.btn_notesTab.ForeColor = System.Drawing.Color.Black;
+            this.btn_notesTab.Image = global::IdeasAi.Properties.Resources.noteIcon;
+            this.btn_notesTab.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_notesTab.Location = new System.Drawing.Point(3, 3);
             this.btn_notesTab.Name = "btn_notesTab";
+            this.btn_notesTab.Padding = new System.Windows.Forms.Padding(25, 0, 25, 0);
             this.btn_notesTab.Size = new System.Drawing.Size(153, 40);
             this.btn_notesTab.TabIndex = 3;
             this.btn_notesTab.Text = "Notes";
+            this.btn_notesTab.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_notesTab.UseVisualStyleBackColor = false;
             this.btn_notesTab.Click += new System.EventHandler(this.btn_notesTab_Click);
             // 
@@ -112,25 +120,30 @@ namespace IdeasAi.pages
             this.btn_docsTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_docsTab.Font = new System.Drawing.Font("Cascadia Code Light", 9.5F);
             this.btn_docsTab.ForeColor = System.Drawing.Color.Black;
+            this.btn_docsTab.Image = global::IdeasAi.Properties.Resources.docIcon;
+            this.btn_docsTab.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_docsTab.Location = new System.Drawing.Point(714, 3);
             this.btn_docsTab.Name = "btn_docsTab";
+            this.btn_docsTab.Padding = new System.Windows.Forms.Padding(10, 0, 8, 0);
             this.btn_docsTab.Size = new System.Drawing.Size(153, 40);
             this.btn_docsTab.TabIndex = 4;
             this.btn_docsTab.Text = "Documents";
+            this.btn_docsTab.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_docsTab.UseVisualStyleBackColor = false;
             this.btn_docsTab.Click += new System.EventHandler(this.btn_docsTab_Click);
             // 
             // lbl_currentNotebook
             // 
-            this.lbl_currentNotebook.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_currentNotebook.AutoEllipsis = true;
-            this.lbl_currentNotebook.AutoSize = true;
+            this.lbl_currentNotebook.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_currentNotebook.Font = new System.Drawing.Font("Cascadia Code", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_currentNotebook.Location = new System.Drawing.Point(389, 8);
+            this.lbl_currentNotebook.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_currentNotebook.Location = new System.Drawing.Point(41, 0);
             this.lbl_currentNotebook.Name = "lbl_currentNotebook";
-            this.lbl_currentNotebook.Size = new System.Drawing.Size(91, 30);
+            this.lbl_currentNotebook.Size = new System.Drawing.Size(167, 40);
             this.lbl_currentNotebook.TabIndex = 5;
-            this.lbl_currentNotebook.Text = "label1";
+            this.lbl_currentNotebook.Text = "label";
+            this.lbl_currentNotebook.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnl_footer
             // 
@@ -162,11 +175,11 @@ namespace IdeasAi.pages
             this.btn_delete.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_delete.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_delete.Image = global::IdeasAi.Properties.Resources.delete;
             this.btn_delete.Location = new System.Drawing.Point(576, 0);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(40, 42);
             this.btn_delete.TabIndex = 4;
-            this.btn_delete.Text = "-";
             this.btn_delete.UseVisualStyleBackColor = false;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
@@ -251,11 +264,11 @@ namespace IdeasAi.pages
             this.btn_notebookSettings.Dock = System.Windows.Forms.DockStyle.Left;
             this.btn_notebookSettings.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_notebookSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_notebookSettings.Image = global::IdeasAi.Properties.Resources.add;
             this.btn_notebookSettings.Location = new System.Drawing.Point(0, 0);
             this.btn_notebookSettings.Name = "btn_notebookSettings";
             this.btn_notebookSettings.Size = new System.Drawing.Size(40, 42);
             this.btn_notebookSettings.TabIndex = 0;
-            this.btn_notebookSettings.Text = "+";
             this.btn_notebookSettings.UseVisualStyleBackColor = false;
             this.btn_notebookSettings.Click += new System.EventHandler(this.btn_notebookSettings_Click);
             // 
@@ -282,9 +295,31 @@ namespace IdeasAi.pages
             this.lbl_nothingFound.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_nothingFound.Visible = false;
             // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.lbl_currentNotebook);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Location = new System.Drawing.Point(331, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(208, 40);
+            this.panel2.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Image = global::IdeasAi.Properties.Resources.notebook;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(41, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
             // frm_notebook
             // 
-            this.BackColor = System.Drawing.Color.Gray;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(930, 616);
             this.ControlBox = false;
             this.Controls.Add(this.lbl_nothingFound);
@@ -297,12 +332,13 @@ namespace IdeasAi.pages
             this.SizeChanged += new System.EventHandler(this.frm_notebook_SizeChanged);
             this.pnl_tabSelect.ResumeLayout(false);
             this.tbpnl_tabs.ResumeLayout(false);
-            this.tbpnl_tabs.PerformLayout();
             this.pnl_footer.ResumeLayout(false);
             this.pnl_noteSettings.ResumeLayout(false);
             this.pnl_delDialog.ResumeLayout(false);
             this.pnl_delDialog.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -325,5 +361,7 @@ namespace IdeasAi.pages
         private Button btn_delConfirm;
         private CheckBox chb_delFile;
         private Label lbl_currentNotebook;
+        private Panel panel2;
+        private PictureBox pictureBox1;
     }
 }

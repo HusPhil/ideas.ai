@@ -3,17 +3,14 @@
     "LightTheme": {
       "primary": "#F5F5F5",
       "primary100": "#FFF6FF",
-      "secondary": "#76c0c3",
-      "secondary100": "#d1eeee",
-      "accent": "#98E587",
-      "accent100": "#F48FB1",
-      "accent200": "#FFDE59"
+      "secondary100": "#90CAF9",
+      "accent": "#98E587", // green
+      "accent100": "#F48FB1", //pink
+      "accent200": "#FFDE59" //yellow
     },
     "DarkTheme": {
       "primary": "#28282B",
       "primary100": "#808080",
-      "secondary": "#76c0c3",
-      "secondary100": "#d1eeee",
     }
   },
   "Font": {

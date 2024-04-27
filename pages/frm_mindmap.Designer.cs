@@ -30,6 +30,7 @@ namespace IdeasAi.pages
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_mindmap));
             this.pnl_viewerSide = new System.Windows.Forms.Panel();
             this.pnl_mindmapViewer = new System.Windows.Forms.Panel();
             this.pbx_mindmap = new System.Windows.Forms.PictureBox();
@@ -93,7 +94,7 @@ namespace IdeasAi.pages
             // 
             // pbx_mindmap
             // 
-            this.pbx_mindmap.Image = global::IdeasAi.Properties.Resources.send;
+            this.pbx_mindmap.Image = ((System.Drawing.Image)(resources.GetObject("pbx_mindmap.Image")));
             this.pbx_mindmap.ImageLocation = "";
             this.pbx_mindmap.Location = new System.Drawing.Point(0, 0);
             this.pbx_mindmap.Margin = new System.Windows.Forms.Padding(2);
@@ -125,10 +126,10 @@ namespace IdeasAi.pages
             this.pnl_titleCont.BackColor = System.Drawing.Color.White;
             this.pnl_titleCont.Controls.Add(this.txb_title);
             this.pnl_titleCont.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_titleCont.Location = new System.Drawing.Point(250, 8);
+            this.pnl_titleCont.Location = new System.Drawing.Point(264, 8);
             this.pnl_titleCont.Name = "pnl_titleCont";
             this.pnl_titleCont.Padding = new System.Windows.Forms.Padding(0, 30, 10, 0);
-            this.pnl_titleCont.Size = new System.Drawing.Size(489, 87);
+            this.pnl_titleCont.Size = new System.Drawing.Size(475, 87);
             this.pnl_titleCont.TabIndex = 18;
             // 
             // txb_title
@@ -140,7 +141,7 @@ namespace IdeasAi.pages
             this.txb_title.ForeColor = System.Drawing.Color.Black;
             this.txb_title.Location = new System.Drawing.Point(0, 30);
             this.txb_title.Name = "txb_title";
-            this.txb_title.Size = new System.Drawing.Size(479, 28);
+            this.txb_title.Size = new System.Drawing.Size(465, 28);
             this.txb_title.TabIndex = 0;
             this.txb_title.Text = "myMindmap";
             this.txb_title.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -262,7 +263,7 @@ namespace IdeasAi.pages
             this.btn_saveAsImage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_saveAsImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_saveAsImage.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_saveAsImage.Image = global::IdeasAi.Properties.Resources.saveAsFile;
+            this.btn_saveAsImage.Image = global::IdeasAi.Properties.Resources.download;
             this.btn_saveAsImage.Location = new System.Drawing.Point(5, 22);
             this.btn_saveAsImage.Name = "btn_saveAsImage";
             this.btn_saveAsImage.Size = new System.Drawing.Size(40, 43);
@@ -276,7 +277,7 @@ namespace IdeasAi.pages
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.cb_themeSelector);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(132, 8);
+            this.panel2.Location = new System.Drawing.Point(146, 8);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(0, 15, 10, 22);
             this.panel2.Size = new System.Drawing.Size(118, 87);
@@ -357,7 +358,7 @@ namespace IdeasAi.pages
             this.pnl_error.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_error.Name = "pnl_error";
             this.pnl_error.Padding = new System.Windows.Forms.Padding(8, 20, 8, 22);
-            this.pnl_error.Size = new System.Drawing.Size(132, 87);
+            this.pnl_error.Size = new System.Drawing.Size(146, 87);
             this.pnl_error.TabIndex = 7;
             // 
             // btn_generateMindmap
@@ -367,11 +368,14 @@ namespace IdeasAi.pages
             this.btn_generateMindmap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_generateMindmap.Font = new System.Drawing.Font("Cascadia Code", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_generateMindmap.ForeColor = System.Drawing.Color.Black;
+            this.btn_generateMindmap.Image = global::IdeasAi.Properties.Resources.generate;
+            this.btn_generateMindmap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_generateMindmap.Location = new System.Drawing.Point(8, 20);
             this.btn_generateMindmap.Name = "btn_generateMindmap";
-            this.btn_generateMindmap.Size = new System.Drawing.Size(116, 45);
+            this.btn_generateMindmap.Size = new System.Drawing.Size(130, 45);
             this.btn_generateMindmap.TabIndex = 3;
-            this.btn_generateMindmap.Text = "Generate";
+            this.btn_generateMindmap.Text = "    Generate";
+            this.btn_generateMindmap.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_generateMindmap.UseVisualStyleBackColor = false;
             this.btn_generateMindmap.Click += new System.EventHandler(this.btn_generateMindmap_Click);
             // 
