@@ -104,7 +104,7 @@
             // 
             // btn_toWorkspace
             // 
-            this.btn_toWorkspace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(192)))), ((int)(((byte)(195)))));
+            this.btn_toWorkspace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(229)))), ((int)(((byte)(135)))));
             this.btn_toWorkspace.Dock = System.Windows.Forms.DockStyle.Left;
             this.btn_toWorkspace.Enabled = false;
             this.btn_toWorkspace.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -133,7 +133,7 @@
             // 
             // btn_print
             // 
-            this.btn_print.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(192)))), ((int)(((byte)(195)))));
+            this.btn_print.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(229)))), ((int)(((byte)(135)))));
             this.btn_print.Dock = System.Windows.Forms.DockStyle.Left;
             this.btn_print.Enabled = false;
             this.btn_print.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -162,7 +162,7 @@
             // 
             // btn_save
             // 
-            this.btn_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(192)))), ((int)(((byte)(195)))));
+            this.btn_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(229)))), ((int)(((byte)(135)))));
             this.btn_save.Dock = System.Windows.Forms.DockStyle.Left;
             this.btn_save.Enabled = false;
             this.btn_save.FlatAppearance.BorderColor = System.Drawing.Color.Black;

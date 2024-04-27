@@ -32,6 +32,8 @@ namespace IdeasAi
         {
             this.components = new System.ComponentModel.Container();
             this.pnl_pageTabCont = new System.Windows.Forms.Panel();
+            this.pnl_sectFooter = new System.Windows.Forms.Panel();
+            this.btn_exit = new System.Windows.Forms.Button();
             this.pnl_pageTabs = new System.Windows.Forms.Panel();
             this.pnl_mindmapBtn = new System.Windows.Forms.Panel();
             this.btn_mindmap = new System.Windows.Forms.Button();
@@ -47,11 +49,6 @@ namespace IdeasAi
             this.panel4 = new System.Windows.Forms.Panel();
             this.pnl_HomeBtn = new System.Windows.Forms.Panel();
             this.btn_home = new System.Windows.Forms.Button();
-            this.btn_exit = new System.Windows.Forms.Button();
-            this.pnl_header = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_showOrHide = new System.Windows.Forms.Button();
-            this.lbl_appTitle = new System.Windows.Forms.Label();
             this.pnl_formHeader = new System.Windows.Forms.Panel();
             this.pnl_mFormContent = new System.Windows.Forms.Panel();
             this.pnl_fillContent = new System.Windows.Forms.Panel();
@@ -63,22 +60,23 @@ namespace IdeasAi
             this.btn_toggleDarkMode = new System.Windows.Forms.Button();
             this.pnlb_pageTitle = new System.Windows.Forms.Panel();
             this.pnl_pageTitle = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_howToUse = new System.Windows.Forms.Button();
             this.lbl_currentPage = new System.Windows.Forms.Label();
+            this.pnl_helpbtn = new System.Windows.Forms.Panel();
+            this.btn_howToUse = new System.Windows.Forms.Button();
             this.pnl_sideContent = new System.Windows.Forms.Panel();
             this.pnl_menuSectBorder = new System.Windows.Forms.Panel();
             this.pnl_menuSect = new System.Windows.Forms.Panel();
+            this.pnl_header = new System.Windows.Forms.Panel();
+            this.pbx_logo = new System.Windows.Forms.PictureBox();
             this.tmr_animation = new System.Windows.Forms.Timer(this.components);
             this.pnl_pageTabCont.SuspendLayout();
+            this.pnl_sectFooter.SuspendLayout();
             this.pnl_pageTabs.SuspendLayout();
             this.pnl_mindmapBtn.SuspendLayout();
             this.pnl_workspaceBtn.SuspendLayout();
             this.pnl_notebookBtn.SuspendLayout();
             this.pnl_QHubBtn.SuspendLayout();
             this.pnl_HomeBtn.SuspendLayout();
-            this.pnl_header.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.pnl_mFormContent.SuspendLayout();
             this.pnl_fillContent.SuspendLayout();
             this.pnlb_content.SuspendLayout();
@@ -87,24 +85,57 @@ namespace IdeasAi
             this.pnl_btnCont.SuspendLayout();
             this.pnlb_pageTitle.SuspendLayout();
             this.pnl_pageTitle.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnl_helpbtn.SuspendLayout();
             this.pnl_sideContent.SuspendLayout();
             this.pnl_menuSectBorder.SuspendLayout();
             this.pnl_menuSect.SuspendLayout();
+            this.pnl_header.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_logo)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_pageTabCont
             // 
             this.pnl_pageTabCont.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_pageTabCont.Controls.Add(this.pnl_sectFooter);
             this.pnl_pageTabCont.Controls.Add(this.pnl_pageTabs);
-            this.pnl_pageTabCont.Controls.Add(this.btn_exit);
             this.pnl_pageTabCont.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_pageTabCont.Location = new System.Drawing.Point(30, 175);
+            this.pnl_pageTabCont.Location = new System.Drawing.Point(30, 209);
             this.pnl_pageTabCont.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_pageTabCont.Name = "pnl_pageTabCont";
-            this.pnl_pageTabCont.Padding = new System.Windows.Forms.Padding(0, 10, 0, 30);
-            this.pnl_pageTabCont.Size = new System.Drawing.Size(232, 449);
+            this.pnl_pageTabCont.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.pnl_pageTabCont.Size = new System.Drawing.Size(214, 403);
             this.pnl_pageTabCont.TabIndex = 2;
+            // 
+            // pnl_sectFooter
+            // 
+            this.pnl_sectFooter.Controls.Add(this.btn_exit);
+            this.pnl_sectFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnl_sectFooter.Location = new System.Drawing.Point(0, 341);
+            this.pnl_sectFooter.Name = "pnl_sectFooter";
+            this.pnl_sectFooter.Size = new System.Drawing.Size(214, 62);
+            this.pnl_sectFooter.TabIndex = 10;
+            // 
+            // btn_exit
+            // 
+            this.btn_exit.BackColor = System.Drawing.Color.Transparent;
+            this.btn_exit.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_exit.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn_exit.FlatAppearance.BorderSize = 2;
+            this.btn_exit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(143)))), ((int)(((byte)(177)))));
+            this.btn_exit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(143)))), ((int)(((byte)(177)))));
+            this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_exit.Font = new System.Drawing.Font("Cascadia Code Light", 10F);
+            this.btn_exit.ForeColor = System.Drawing.Color.Black;
+            this.btn_exit.Location = new System.Drawing.Point(0, 12);
+            this.btn_exit.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_exit.Name = "btn_exit";
+            this.btn_exit.Padding = new System.Windows.Forms.Padding(5);
+            this.btn_exit.Size = new System.Drawing.Size(214, 50);
+            this.btn_exit.TabIndex = 9;
+            this.btn_exit.Text = "Exit";
+            this.btn_exit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_exit.UseVisualStyleBackColor = false;
+            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
             // pnl_pageTabs
             // 
@@ -125,7 +156,7 @@ namespace IdeasAi
             this.pnl_pageTabs.Margin = new System.Windows.Forms.Padding(20);
             this.pnl_pageTabs.Name = "pnl_pageTabs";
             this.pnl_pageTabs.Padding = new System.Windows.Forms.Padding(1);
-            this.pnl_pageTabs.Size = new System.Drawing.Size(232, 330);
+            this.pnl_pageTabs.Size = new System.Drawing.Size(214, 312);
             this.pnl_pageTabs.TabIndex = 1;
             // 
             // pnl_mindmapBtn
@@ -135,7 +166,7 @@ namespace IdeasAi
             this.pnl_mindmapBtn.Location = new System.Drawing.Point(1, 253);
             this.pnl_mindmapBtn.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_mindmapBtn.Name = "pnl_mindmapBtn";
-            this.pnl_mindmapBtn.Size = new System.Drawing.Size(230, 48);
+            this.pnl_mindmapBtn.Size = new System.Drawing.Size(212, 48);
             this.pnl_mindmapBtn.TabIndex = 4;
             // 
             // btn_mindmap
@@ -144,17 +175,19 @@ namespace IdeasAi
             this.btn_mindmap.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_mindmap.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_mindmap.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.btn_mindmap.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.btn_mindmap.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(89)))));
             this.btn_mindmap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_mindmap.Font = new System.Drawing.Font("Cascadia Code Light", 10F);
             this.btn_mindmap.ForeColor = System.Drawing.Color.Black;
+            this.btn_mindmap.Image = global::IdeasAi.Properties.Resources.mindmap;
+            this.btn_mindmap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_mindmap.Location = new System.Drawing.Point(0, 0);
             this.btn_mindmap.Margin = new System.Windows.Forms.Padding(2);
             this.btn_mindmap.Name = "btn_mindmap";
             this.btn_mindmap.Padding = new System.Windows.Forms.Padding(2);
-            this.btn_mindmap.Size = new System.Drawing.Size(230, 48);
+            this.btn_mindmap.Size = new System.Drawing.Size(212, 48);
             this.btn_mindmap.TabIndex = 6;
-            this.btn_mindmap.Text = "Mindmap";
+            this.btn_mindmap.Text = "    Mindmap";
             this.btn_mindmap.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_mindmap.UseVisualStyleBackColor = false;
             this.btn_mindmap.Click += new System.EventHandler(this.btn_mindmap_Click);
@@ -164,7 +197,7 @@ namespace IdeasAi
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(1, 238);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(230, 15);
+            this.panel5.Size = new System.Drawing.Size(212, 15);
             this.panel5.TabIndex = 8;
             // 
             // pnl_workspaceBtn
@@ -174,7 +207,7 @@ namespace IdeasAi
             this.pnl_workspaceBtn.Location = new System.Drawing.Point(1, 190);
             this.pnl_workspaceBtn.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_workspaceBtn.Name = "pnl_workspaceBtn";
-            this.pnl_workspaceBtn.Size = new System.Drawing.Size(230, 48);
+            this.pnl_workspaceBtn.Size = new System.Drawing.Size(212, 48);
             this.pnl_workspaceBtn.TabIndex = 3;
             // 
             // btn_workspace
@@ -183,17 +216,19 @@ namespace IdeasAi
             this.btn_workspace.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_workspace.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_workspace.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.btn_workspace.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.btn_workspace.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(89)))));
             this.btn_workspace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_workspace.Font = new System.Drawing.Font("Cascadia Code Light", 10F);
             this.btn_workspace.ForeColor = System.Drawing.Color.Black;
+            this.btn_workspace.Image = global::IdeasAi.Properties.Resources.workspace_small;
+            this.btn_workspace.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_workspace.Location = new System.Drawing.Point(0, 0);
             this.btn_workspace.Margin = new System.Windows.Forms.Padding(2);
             this.btn_workspace.Name = "btn_workspace";
             this.btn_workspace.Padding = new System.Windows.Forms.Padding(2);
-            this.btn_workspace.Size = new System.Drawing.Size(230, 48);
+            this.btn_workspace.Size = new System.Drawing.Size(212, 48);
             this.btn_workspace.TabIndex = 1;
-            this.btn_workspace.Text = "Workspace";
+            this.btn_workspace.Text = "    Workspace";
             this.btn_workspace.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_workspace.UseVisualStyleBackColor = false;
             this.btn_workspace.Click += new System.EventHandler(this.btn_workspace_Click);
@@ -203,7 +238,7 @@ namespace IdeasAi
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(1, 175);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(230, 15);
+            this.panel6.Size = new System.Drawing.Size(212, 15);
             this.panel6.TabIndex = 9;
             // 
             // pnl_notebookBtn
@@ -213,7 +248,7 @@ namespace IdeasAi
             this.pnl_notebookBtn.Location = new System.Drawing.Point(1, 127);
             this.pnl_notebookBtn.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_notebookBtn.Name = "pnl_notebookBtn";
-            this.pnl_notebookBtn.Size = new System.Drawing.Size(230, 48);
+            this.pnl_notebookBtn.Size = new System.Drawing.Size(212, 48);
             this.pnl_notebookBtn.TabIndex = 2;
             // 
             // btn_notebook
@@ -222,17 +257,19 @@ namespace IdeasAi
             this.btn_notebook.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_notebook.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_notebook.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.btn_notebook.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.btn_notebook.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(89)))));
             this.btn_notebook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_notebook.Font = new System.Drawing.Font("Cascadia Code Light", 10F);
             this.btn_notebook.ForeColor = System.Drawing.Color.Black;
+            this.btn_notebook.Image = global::IdeasAi.Properties.Resources.notebook;
+            this.btn_notebook.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_notebook.Location = new System.Drawing.Point(0, 0);
             this.btn_notebook.Margin = new System.Windows.Forms.Padding(2);
             this.btn_notebook.Name = "btn_notebook";
             this.btn_notebook.Padding = new System.Windows.Forms.Padding(2);
-            this.btn_notebook.Size = new System.Drawing.Size(230, 48);
+            this.btn_notebook.Size = new System.Drawing.Size(212, 48);
             this.btn_notebook.TabIndex = 5;
-            this.btn_notebook.Text = "Notebook";
+            this.btn_notebook.Text = "    Notebook";
             this.btn_notebook.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_notebook.UseVisualStyleBackColor = false;
             this.btn_notebook.Click += new System.EventHandler(this.btn_notebook_Click);
@@ -242,7 +279,7 @@ namespace IdeasAi
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(1, 112);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(230, 15);
+            this.panel3.Size = new System.Drawing.Size(212, 15);
             this.panel3.TabIndex = 6;
             // 
             // pnl_QHubBtn
@@ -253,7 +290,7 @@ namespace IdeasAi
             this.pnl_QHubBtn.Location = new System.Drawing.Point(1, 64);
             this.pnl_QHubBtn.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_QHubBtn.Name = "pnl_QHubBtn";
-            this.pnl_QHubBtn.Size = new System.Drawing.Size(230, 48);
+            this.pnl_QHubBtn.Size = new System.Drawing.Size(212, 48);
             this.pnl_QHubBtn.TabIndex = 1;
             // 
             // btn_consultation
@@ -263,19 +300,19 @@ namespace IdeasAi
             this.btn_consultation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_consultation.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_consultation.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.btn_consultation.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.btn_consultation.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(89)))));
             this.btn_consultation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_consultation.Font = new System.Drawing.Font("Cascadia Code Light", 10F);
             this.btn_consultation.ForeColor = System.Drawing.Color.Black;
-            this.btn_consultation.Image = global::IdeasAi.Properties.Resources.delete;
+            this.btn_consultation.Image = global::IdeasAi.Properties.Resources.qhub;
             this.btn_consultation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_consultation.Location = new System.Drawing.Point(0, 0);
             this.btn_consultation.Margin = new System.Windows.Forms.Padding(2);
             this.btn_consultation.Name = "btn_consultation";
             this.btn_consultation.Padding = new System.Windows.Forms.Padding(2);
-            this.btn_consultation.Size = new System.Drawing.Size(230, 48);
+            this.btn_consultation.Size = new System.Drawing.Size(212, 48);
             this.btn_consultation.TabIndex = 8;
-            this.btn_consultation.Text = "   QHub";
+            this.btn_consultation.Text = "    QHub";
             this.btn_consultation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_consultation.UseVisualStyleBackColor = false;
             this.btn_consultation.Click += new System.EventHandler(this.btn_consultation_Click);
@@ -285,7 +322,7 @@ namespace IdeasAi
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(1, 49);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(230, 15);
+            this.panel4.Size = new System.Drawing.Size(212, 15);
             this.panel4.TabIndex = 7;
             // 
             // pnl_HomeBtn
@@ -296,7 +333,7 @@ namespace IdeasAi
             this.pnl_HomeBtn.Location = new System.Drawing.Point(1, 1);
             this.pnl_HomeBtn.Margin = new System.Windows.Forms.Padding(20);
             this.pnl_HomeBtn.Name = "pnl_HomeBtn";
-            this.pnl_HomeBtn.Size = new System.Drawing.Size(230, 48);
+            this.pnl_HomeBtn.Size = new System.Drawing.Size(212, 48);
             this.pnl_HomeBtn.TabIndex = 0;
             // 
             // btn_home
@@ -306,94 +343,22 @@ namespace IdeasAi
             this.btn_home.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_home.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_home.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.btn_home.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.btn_home.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(89)))));
             this.btn_home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_home.Font = new System.Drawing.Font("Cascadia Code Light", 10F);
             this.btn_home.ForeColor = System.Drawing.Color.Black;
+            this.btn_home.Image = global::IdeasAi.Properties.Resources.home;
+            this.btn_home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_home.Location = new System.Drawing.Point(0, 0);
             this.btn_home.Margin = new System.Windows.Forms.Padding(2);
             this.btn_home.Name = "btn_home";
             this.btn_home.Padding = new System.Windows.Forms.Padding(2);
-            this.btn_home.Size = new System.Drawing.Size(230, 48);
+            this.btn_home.Size = new System.Drawing.Size(212, 48);
             this.btn_home.TabIndex = 4;
-            this.btn_home.Text = "Home";
+            this.btn_home.Text = "    Home";
             this.btn_home.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_home.UseVisualStyleBackColor = false;
             this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
-            // 
-            // btn_exit
-            // 
-            this.btn_exit.BackColor = System.Drawing.Color.Transparent;
-            this.btn_exit.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btn_exit.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btn_exit.FlatAppearance.BorderSize = 2;
-            this.btn_exit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.btn_exit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_exit.Font = new System.Drawing.Font("Cascadia Code Light", 10F);
-            this.btn_exit.ForeColor = System.Drawing.Color.Black;
-            this.btn_exit.Location = new System.Drawing.Point(0, 369);
-            this.btn_exit.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Padding = new System.Windows.Forms.Padding(5);
-            this.btn_exit.Size = new System.Drawing.Size(232, 50);
-            this.btn_exit.TabIndex = 9;
-            this.btn_exit.Text = "Exit";
-            this.btn_exit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_exit.UseVisualStyleBackColor = false;
-            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
-            // 
-            // pnl_header
-            // 
-            this.pnl_header.BackColor = System.Drawing.Color.Transparent;
-            this.pnl_header.Controls.Add(this.panel1);
-            this.pnl_header.Controls.Add(this.lbl_appTitle);
-            this.pnl_header.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_header.Location = new System.Drawing.Point(30, 25);
-            this.pnl_header.Margin = new System.Windows.Forms.Padding(2);
-            this.pnl_header.Name = "pnl_header";
-            this.pnl_header.Padding = new System.Windows.Forms.Padding(2);
-            this.pnl_header.Size = new System.Drawing.Size(232, 150);
-            this.pnl_header.TabIndex = 3;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btn_showOrHide);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(2, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(228, 38);
-            this.panel1.TabIndex = 1;
-            // 
-            // btn_showOrHide
-            // 
-            this.btn_showOrHide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(126)))));
-            this.btn_showOrHide.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_showOrHide.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btn_showOrHide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_showOrHide.Location = new System.Drawing.Point(190, 0);
-            this.btn_showOrHide.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_showOrHide.Name = "btn_showOrHide";
-            this.btn_showOrHide.Size = new System.Drawing.Size(38, 38);
-            this.btn_showOrHide.TabIndex = 0;
-            this.btn_showOrHide.UseVisualStyleBackColor = false;
-            this.btn_showOrHide.Click += new System.EventHandler(this.btn_showOrHide_Click);
-            // 
-            // lbl_appTitle
-            // 
-            this.lbl_appTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_appTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_appTitle.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lbl_appTitle.Font = new System.Drawing.Font("Cascadia Code", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_appTitle.ForeColor = System.Drawing.Color.Black;
-            this.lbl_appTitle.Location = new System.Drawing.Point(2, 57);
-            this.lbl_appTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_appTitle.Name = "lbl_appTitle";
-            this.lbl_appTitle.Size = new System.Drawing.Size(228, 91);
-            this.lbl_appTitle.TabIndex = 0;
-            this.lbl_appTitle.Text = "Ideas.ai";
-            this.lbl_appTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnl_formHeader
             // 
@@ -428,11 +393,11 @@ namespace IdeasAi
             this.pnl_fillContent.Controls.Add(this.pnlb_content);
             this.pnl_fillContent.Controls.Add(this.pnl_contentHeader);
             this.pnl_fillContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_fillContent.Location = new System.Drawing.Point(336, 0);
+            this.pnl_fillContent.Location = new System.Drawing.Point(320, 0);
             this.pnl_fillContent.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_fillContent.Name = "pnl_fillContent";
             this.pnl_fillContent.Padding = new System.Windows.Forms.Padding(0, 0, 20, 20);
-            this.pnl_fillContent.Size = new System.Drawing.Size(944, 678);
+            this.pnl_fillContent.Size = new System.Drawing.Size(960, 678);
             this.pnl_fillContent.TabIndex = 7;
             // 
             // pnlb_content
@@ -444,17 +409,17 @@ namespace IdeasAi
             this.pnlb_content.Location = new System.Drawing.Point(0, 94);
             this.pnlb_content.Name = "pnlb_content";
             this.pnlb_content.Padding = new System.Windows.Forms.Padding(2);
-            this.pnlb_content.Size = new System.Drawing.Size(924, 564);
+            this.pnlb_content.Size = new System.Drawing.Size(940, 564);
             this.pnlb_content.TabIndex = 5;
             // 
             // pnl_content
             // 
-            this.pnl_content.BackColor = System.Drawing.Color.Gray;
+            this.pnl_content.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(237)))));
             this.pnl_content.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_content.Location = new System.Drawing.Point(2, 2);
             this.pnl_content.Margin = new System.Windows.Forms.Padding(12);
             this.pnl_content.Name = "pnl_content";
-            this.pnl_content.Size = new System.Drawing.Size(918, 558);
+            this.pnl_content.Size = new System.Drawing.Size(934, 558);
             this.pnl_content.TabIndex = 4;
             // 
             // pnl_contentHeader
@@ -467,28 +432,28 @@ namespace IdeasAi
             this.pnl_contentHeader.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_contentHeader.Name = "pnl_contentHeader";
             this.pnl_contentHeader.Padding = new System.Windows.Forms.Padding(0, 20, 0, 10);
-            this.pnl_contentHeader.Size = new System.Drawing.Size(924, 94);
+            this.pnl_contentHeader.Size = new System.Drawing.Size(940, 94);
             this.pnl_contentHeader.TabIndex = 4;
             // 
             // pnl_darkModeCont
             // 
             this.pnl_darkModeCont.Controls.Add(this.pnl_btnCont);
             this.pnl_darkModeCont.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnl_darkModeCont.Location = new System.Drawing.Point(858, 20);
+            this.pnl_darkModeCont.Location = new System.Drawing.Point(836, 20);
             this.pnl_darkModeCont.Name = "pnl_darkModeCont";
-            this.pnl_darkModeCont.Padding = new System.Windows.Forms.Padding(0, 15, 0, 15);
-            this.pnl_darkModeCont.Size = new System.Drawing.Size(66, 64);
+            this.pnl_darkModeCont.Padding = new System.Windows.Forms.Padding(10, 30, 0, 0);
+            this.pnl_darkModeCont.Size = new System.Drawing.Size(104, 64);
             this.pnl_darkModeCont.TabIndex = 8;
             // 
             // pnl_btnCont
             // 
             this.pnl_btnCont.BackColor = System.Drawing.Color.Gray;
             this.pnl_btnCont.Controls.Add(this.btn_toggleDarkMode);
-            this.pnl_btnCont.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_btnCont.Location = new System.Drawing.Point(0, 15);
+            this.pnl_btnCont.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnl_btnCont.Location = new System.Drawing.Point(37, 30);
             this.pnl_btnCont.Name = "pnl_btnCont";
             this.pnl_btnCont.Padding = new System.Windows.Forms.Padding(3);
-            this.pnl_btnCont.Size = new System.Drawing.Size(66, 34);
+            this.pnl_btnCont.Size = new System.Drawing.Size(67, 34);
             this.pnl_btnCont.TabIndex = 9;
             this.pnl_btnCont.Click += new System.EventHandler(this.btn_toggleDarkMode_Click);
             // 
@@ -499,7 +464,7 @@ namespace IdeasAi
             this.btn_toggleDarkMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_toggleDarkMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_toggleDarkMode.Image = global::IdeasAi.Properties.Resources.lightModeBtn;
-            this.btn_toggleDarkMode.Location = new System.Drawing.Point(35, 3);
+            this.btn_toggleDarkMode.Location = new System.Drawing.Point(36, 3);
             this.btn_toggleDarkMode.Margin = new System.Windows.Forms.Padding(2);
             this.btn_toggleDarkMode.Name = "btn_toggleDarkMode";
             this.btn_toggleDarkMode.Size = new System.Drawing.Size(28, 28);
@@ -510,6 +475,7 @@ namespace IdeasAi
             // pnlb_pageTitle
             // 
             this.pnlb_pageTitle.BackColor = System.Drawing.Color.Black;
+            this.pnlb_pageTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlb_pageTitle.Controls.Add(this.pnl_pageTitle);
             this.pnlb_pageTitle.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlb_pageTitle.Location = new System.Drawing.Point(0, 20);
@@ -520,56 +486,58 @@ namespace IdeasAi
             // 
             // pnl_pageTitle
             // 
-            this.pnl_pageTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl_pageTitle.Controls.Add(this.panel2);
+            this.pnl_pageTitle.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnl_pageTitle.Controls.Add(this.lbl_currentPage);
+            this.pnl_pageTitle.Controls.Add(this.pnl_helpbtn);
             this.pnl_pageTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_pageTitle.Location = new System.Drawing.Point(2, 2);
             this.pnl_pageTitle.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_pageTitle.Name = "pnl_pageTitle";
-            this.pnl_pageTitle.Size = new System.Drawing.Size(345, 60);
+            this.pnl_pageTitle.Size = new System.Drawing.Size(343, 58);
             this.pnl_pageTitle.TabIndex = 6;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(192)))), ((int)(((byte)(195)))));
-            this.panel2.Controls.Add(this.btn_howToUse);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(264, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(20, 10, 10, 10);
-            this.panel2.Size = new System.Drawing.Size(79, 58);
-            this.panel2.TabIndex = 5;
-            // 
-            // btn_howToUse
-            // 
-            this.btn_howToUse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(126)))));
-            this.btn_howToUse.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btn_howToUse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_howToUse.Image = global::IdeasAi.Properties.Resources.questionMark;
-            this.btn_howToUse.Location = new System.Drawing.Point(20, 10);
-            this.btn_howToUse.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_howToUse.Name = "btn_howToUse";
-            this.btn_howToUse.Size = new System.Drawing.Size(39, 38);
-            this.btn_howToUse.TabIndex = 5;
-            this.btn_howToUse.UseVisualStyleBackColor = false;
-            this.btn_howToUse.Click += new System.EventHandler(this.btn_howToUse_Click);
             // 
             // lbl_currentPage
             // 
-            this.lbl_currentPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(192)))), ((int)(((byte)(195)))));
+            this.lbl_currentPage.BackColor = System.Drawing.Color.Transparent;
             this.lbl_currentPage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_currentPage.Font = new System.Drawing.Font("Cascadia Code", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_currentPage.ForeColor = System.Drawing.Color.Black;
             this.lbl_currentPage.Location = new System.Drawing.Point(0, 0);
             this.lbl_currentPage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_currentPage.Name = "lbl_currentPage";
-            this.lbl_currentPage.Padding = new System.Windows.Forms.Padding(12);
-            this.lbl_currentPage.Size = new System.Drawing.Size(343, 58);
+            this.lbl_currentPage.Padding = new System.Windows.Forms.Padding(20, 12, 12, 12);
+            this.lbl_currentPage.Size = new System.Drawing.Size(276, 58);
             this.lbl_currentPage.TabIndex = 3;
             this.lbl_currentPage.Text = "Page 1";
-            this.lbl_currentPage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_currentPage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pnl_helpbtn
+            // 
+            this.pnl_helpbtn.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_helpbtn.Controls.Add(this.btn_howToUse);
+            this.pnl_helpbtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnl_helpbtn.Location = new System.Drawing.Point(276, 0);
+            this.pnl_helpbtn.Margin = new System.Windows.Forms.Padding(2);
+            this.pnl_helpbtn.Name = "pnl_helpbtn";
+            this.pnl_helpbtn.Padding = new System.Windows.Forms.Padding(10);
+            this.pnl_helpbtn.Size = new System.Drawing.Size(67, 58);
+            this.pnl_helpbtn.TabIndex = 5;
+            this.pnl_helpbtn.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_helpbtn_Paint);
+            // 
+            // btn_howToUse
+            // 
+            this.btn_howToUse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(143)))), ((int)(((byte)(177)))));
+            this.btn_howToUse.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_howToUse.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn_howToUse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_howToUse.Image = global::IdeasAi.Properties.Resources.help;
+            this.btn_howToUse.Location = new System.Drawing.Point(10, 10);
+            this.btn_howToUse.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_howToUse.Name = "btn_howToUse";
+            this.btn_howToUse.Size = new System.Drawing.Size(47, 38);
+            this.btn_howToUse.TabIndex = 5;
+            this.btn_howToUse.UseVisualStyleBackColor = false;
+            this.btn_howToUse.Click += new System.EventHandler(this.btn_howToUse_Click);
             // 
             // pnl_sideContent
             // 
@@ -579,33 +547,58 @@ namespace IdeasAi
             this.pnl_sideContent.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_sideContent.Name = "pnl_sideContent";
             this.pnl_sideContent.Padding = new System.Windows.Forms.Padding(20);
-            this.pnl_sideContent.Size = new System.Drawing.Size(336, 678);
+            this.pnl_sideContent.Size = new System.Drawing.Size(320, 678);
             this.pnl_sideContent.TabIndex = 6;
             // 
             // pnl_menuSectBorder
             // 
-            this.pnl_menuSectBorder.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_menuSectBorder.BackColor = System.Drawing.Color.Black;
+            this.pnl_menuSectBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_menuSectBorder.Controls.Add(this.pnl_menuSect);
             this.pnl_menuSectBorder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_menuSectBorder.Location = new System.Drawing.Point(20, 20);
             this.pnl_menuSectBorder.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_menuSectBorder.Name = "pnl_menuSectBorder";
             this.pnl_menuSectBorder.Padding = new System.Windows.Forms.Padding(2);
-            this.pnl_menuSectBorder.Size = new System.Drawing.Size(296, 638);
+            this.pnl_menuSectBorder.Size = new System.Drawing.Size(280, 638);
             this.pnl_menuSectBorder.TabIndex = 5;
             // 
             // pnl_menuSect
             // 
-            this.pnl_menuSect.BackColor = System.Drawing.Color.Gray;
+            this.pnl_menuSect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(237)))));
             this.pnl_menuSect.Controls.Add(this.pnl_pageTabCont);
             this.pnl_menuSect.Controls.Add(this.pnl_header);
             this.pnl_menuSect.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_menuSect.Location = new System.Drawing.Point(2, 2);
             this.pnl_menuSect.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_menuSect.Name = "pnl_menuSect";
-            this.pnl_menuSect.Padding = new System.Windows.Forms.Padding(30, 25, 30, 10);
-            this.pnl_menuSect.Size = new System.Drawing.Size(292, 634);
+            this.pnl_menuSect.Padding = new System.Windows.Forms.Padding(30, 25, 30, 20);
+            this.pnl_menuSect.Size = new System.Drawing.Size(274, 632);
             this.pnl_menuSect.TabIndex = 0;
+            // 
+            // pnl_header
+            // 
+            this.pnl_header.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_header.Controls.Add(this.pbx_logo);
+            this.pnl_header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_header.Location = new System.Drawing.Point(30, 25);
+            this.pnl_header.Margin = new System.Windows.Forms.Padding(2);
+            this.pnl_header.Name = "pnl_header";
+            this.pnl_header.Padding = new System.Windows.Forms.Padding(2);
+            this.pnl_header.Size = new System.Drawing.Size(214, 184);
+            this.pnl_header.TabIndex = 3;
+            // 
+            // pbx_logo
+            // 
+            this.pbx_logo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pbx_logo.Image = global::IdeasAi.Properties.Resources.app_logo;
+            this.pbx_logo.Location = new System.Drawing.Point(2, 2);
+            this.pbx_logo.Name = "pbx_logo";
+            this.pbx_logo.Size = new System.Drawing.Size(210, 143);
+            this.pbx_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbx_logo.TabIndex = 1;
+            this.pbx_logo.TabStop = false;
+            this.pbx_logo.Click += new System.EventHandler(this.btn_showOrHide_Click);
             // 
             // tmr_animation
             // 
@@ -617,7 +610,7 @@ namespace IdeasAi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.pnl_mFormContent);
             this.Controls.Add(this.pnl_formHeader);
@@ -629,14 +622,13 @@ namespace IdeasAi
             this.Text = "Ideas.ai";
             this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
             this.pnl_pageTabCont.ResumeLayout(false);
+            this.pnl_sectFooter.ResumeLayout(false);
             this.pnl_pageTabs.ResumeLayout(false);
             this.pnl_mindmapBtn.ResumeLayout(false);
             this.pnl_workspaceBtn.ResumeLayout(false);
             this.pnl_notebookBtn.ResumeLayout(false);
             this.pnl_QHubBtn.ResumeLayout(false);
             this.pnl_HomeBtn.ResumeLayout(false);
-            this.pnl_header.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.pnl_mFormContent.ResumeLayout(false);
             this.pnl_fillContent.ResumeLayout(false);
             this.pnlb_content.ResumeLayout(false);
@@ -645,30 +637,28 @@ namespace IdeasAi
             this.pnl_btnCont.ResumeLayout(false);
             this.pnlb_pageTitle.ResumeLayout(false);
             this.pnl_pageTitle.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.pnl_helpbtn.ResumeLayout(false);
             this.pnl_sideContent.ResumeLayout(false);
             this.pnl_menuSectBorder.ResumeLayout(false);
             this.pnl_menuSect.ResumeLayout(false);
+            this.pnl_header.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_logo)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel pnl_header;
-        private System.Windows.Forms.Label lbl_appTitle;
         private System.Windows.Forms.Panel pnl_pageTabCont;
         private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Panel pnl_formHeader;
         private System.Windows.Forms.Panel pnl_mFormContent;
         private System.Windows.Forms.Panel pnl_content;
         private System.Windows.Forms.Panel pnl_contentHeader;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnl_helpbtn;
         private System.Windows.Forms.Button btn_howToUse;
         private System.Windows.Forms.Label lbl_currentPage;
         private System.Windows.Forms.Panel pnl_menuSectBorder;
         private System.Windows.Forms.Panel pnl_menuSect;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn_showOrHide;
         private System.Windows.Forms.Panel pnl_fillContent;
         private System.Windows.Forms.Panel pnl_sideContent;
         private System.Windows.Forms.Panel pnl_pageTitle;
@@ -693,6 +683,9 @@ namespace IdeasAi
         private System.Windows.Forms.Panel pnl_darkModeCont;
         private System.Windows.Forms.Panel pnl_btnCont;
         private System.Windows.Forms.Button btn_toggleDarkMode;
+        private System.Windows.Forms.Panel pnl_header;
+        private System.Windows.Forms.Panel pnl_sectFooter;
+        private System.Windows.Forms.PictureBox pbx_logo;
     }
 }
 

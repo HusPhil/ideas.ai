@@ -308,7 +308,7 @@ namespace IdeasAi.pages
 
 
         //GETTERS
-        public ref KryptonTextBox getTxbDocsTitle()
+        public ref TextBox getTxbDocsTitle()
         {
             return ref txb_docsTitle;
         }
