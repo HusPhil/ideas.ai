@@ -86,7 +86,7 @@ namespace IdeasAi.pages
                     {
                         Panel pnl_idea = new Panel();
                         pnl_idea.BorderStyle = BorderStyle.FixedSingle;
-                        pnl_idea.BackColor = Color.Transparent;
+                        pnl_idea.BackColor = ColorTranslator.FromHtml((string)mainForm.decors["Themes"]["LightTheme"]["secondary100"]);
                         pnl_idea.Size = new Size(panelWidth, 200);
                         pnl_idea.Padding = new Padding(0, 10, 0, 10);
 

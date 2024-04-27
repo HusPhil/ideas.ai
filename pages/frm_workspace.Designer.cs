@@ -35,29 +35,29 @@
             this.txb_textEditor = new System.Windows.Forms.RichTextBox();
             this.pnl_btns = new System.Windows.Forms.Panel();
             this.lbl_lastDateSaved = new System.Windows.Forms.Label();
-            this.btn_docOptions = new System.Windows.Forms.Button();
             this.pnl_docConts = new System.Windows.Forms.Panel();
             this.btn_new = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_openFile = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_docsDel = new System.Windows.Forms.Button();
             this.pnl_confirmDel = new System.Windows.Forms.Panel();
             this.btn_confirm = new System.Windows.Forms.Button();
-            this.btn_createMindmap = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.btn_organizeIdea = new System.Windows.Forms.Button();
             this.pln_splitCont = new System.Windows.Forms.Panel();
             this.spl_workspace = new System.Windows.Forms.Splitter();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnl_quickSearchRes = new System.Windows.Forms.Panel();
             this.txb_qsearchRes = new System.Windows.Forms.TextBox();
-            this.pbx_loading = new System.Windows.Forms.PictureBox();
             this.pnl_quickSearch = new System.Windows.Forms.Panel();
             this.pnl_txbCont = new System.Windows.Forms.Panel();
             this.txb_QSearch = new System.Windows.Forms.RichTextBox();
-            this.btn_QSearch = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_docOptions = new System.Windows.Forms.Button();
+            this.btn_docsDel = new System.Windows.Forms.Button();
+            this.btn_createMindmap = new System.Windows.Forms.Button();
+            this.btn_organizeIdea = new System.Windows.Forms.Button();
+            this.pbx_loading = new System.Windows.Forms.PictureBox();
+            this.btn_QSearch = new System.Windows.Forms.Button();
             this.pnl_textEditor.SuspendLayout();
             this.pnl_textEditCont.SuspendLayout();
             this.pnl_btns.SuspendLayout();
@@ -66,10 +66,10 @@
             this.pln_splitCont.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnl_quickSearchRes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbx_loading)).BeginInit();
             this.pnl_quickSearch.SuspendLayout();
             this.pnl_txbCont.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_loading)).BeginInit();
             this.SuspendLayout();
             // 
             // txb_docsTitle
@@ -164,20 +164,6 @@
             this.lbl_lastDateSaved.Text = "Last Modified: N/A";
             this.lbl_lastDateSaved.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btn_docOptions
-            // 
-            this.btn_docOptions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(229)))), ((int)(((byte)(135)))));
-            this.btn_docOptions.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_docOptions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_docOptions.Image = global::IdeasAi.Properties.Resources.docOptions;
-            this.btn_docOptions.Location = new System.Drawing.Point(595, 10);
-            this.btn_docOptions.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_docOptions.Name = "btn_docOptions";
-            this.btn_docOptions.Size = new System.Drawing.Size(37, 42);
-            this.btn_docOptions.TabIndex = 18;
-            this.btn_docOptions.UseVisualStyleBackColor = false;
-            this.btn_docOptions.Click += new System.EventHandler(this.btn_docOptions_Click);
-            // 
             // pnl_docConts
             // 
             this.pnl_docConts.Controls.Add(this.btn_new);
@@ -245,22 +231,6 @@
             this.panel2.Size = new System.Drawing.Size(10, 42);
             this.panel2.TabIndex = 21;
             // 
-            // btn_docsDel
-            // 
-            this.btn_docsDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(229)))), ((int)(((byte)(135)))));
-            this.btn_docsDel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_docsDel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn_docsDel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_docsDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_docsDel.Image = global::IdeasAi.Properties.Resources.delete;
-            this.btn_docsDel.Location = new System.Drawing.Point(887, 10);
-            this.btn_docsDel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_docsDel.Name = "btn_docsDel";
-            this.btn_docsDel.Size = new System.Drawing.Size(37, 42);
-            this.btn_docsDel.TabIndex = 16;
-            this.btn_docsDel.UseVisualStyleBackColor = false;
-            this.btn_docsDel.Click += new System.EventHandler(this.btn_docsDel_Click);
-            // 
             // pnl_confirmDel
             // 
             this.pnl_confirmDel.BackColor = System.Drawing.Color.Transparent;
@@ -291,26 +261,6 @@
             this.btn_confirm.Click += new System.EventHandler(this.btn_confirm_Click);
             this.btn_confirm.Leave += new System.EventHandler(this.btn_confirm_Leave);
             // 
-            // btn_createMindmap
-            // 
-            this.btn_createMindmap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(229)))), ((int)(((byte)(135)))));
-            this.btn_createMindmap.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btn_createMindmap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_createMindmap.Font = new System.Drawing.Font("Cascadia Code", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_createMindmap.ForeColor = System.Drawing.Color.Black;
-            this.btn_createMindmap.Image = global::IdeasAi.Properties.Resources.mindmap;
-            this.btn_createMindmap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_createMindmap.Location = new System.Drawing.Point(145, 10);
-            this.btn_createMindmap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_createMindmap.Name = "btn_createMindmap";
-            this.btn_createMindmap.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btn_createMindmap.Size = new System.Drawing.Size(124, 42);
-            this.btn_createMindmap.TabIndex = 5;
-            this.btn_createMindmap.Text = "Mindmap";
-            this.btn_createMindmap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_createMindmap.UseVisualStyleBackColor = false;
-            this.btn_createMindmap.Click += new System.EventHandler(this.btn_createMindmap_Click);
-            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Transparent;
@@ -319,26 +269,6 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(10, 42);
             this.panel6.TabIndex = 19;
-            // 
-            // btn_organizeIdea
-            // 
-            this.btn_organizeIdea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(229)))), ((int)(((byte)(135)))));
-            this.btn_organizeIdea.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btn_organizeIdea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_organizeIdea.Font = new System.Drawing.Font("Cascadia Code", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_organizeIdea.ForeColor = System.Drawing.Color.Black;
-            this.btn_organizeIdea.Image = global::IdeasAi.Properties.Resources.organize;
-            this.btn_organizeIdea.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_organizeIdea.Location = new System.Drawing.Point(0, 10);
-            this.btn_organizeIdea.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_organizeIdea.Name = "btn_organizeIdea";
-            this.btn_organizeIdea.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btn_organizeIdea.Size = new System.Drawing.Size(135, 42);
-            this.btn_organizeIdea.TabIndex = 3;
-            this.btn_organizeIdea.Text = "Organize";
-            this.btn_organizeIdea.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_organizeIdea.UseVisualStyleBackColor = false;
-            this.btn_organizeIdea.Click += new System.EventHandler(this.btn_organizeIdea_Click);
             // 
             // pln_splitCont
             // 
@@ -404,20 +334,6 @@
             this.txb_qsearchRes.Size = new System.Drawing.Size(240, 464);
             this.txb_qsearchRes.TabIndex = 3;
             // 
-            // pbx_loading
-            // 
-            this.pbx_loading.BackColor = System.Drawing.Color.Transparent;
-            this.pbx_loading.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pbx_loading.Image = ((System.Drawing.Image)(resources.GetObject("pbx_loading.Image")));
-            this.pbx_loading.Location = new System.Drawing.Point(0, 59);
-            this.pbx_loading.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pbx_loading.Name = "pbx_loading";
-            this.pbx_loading.Size = new System.Drawing.Size(240, 27);
-            this.pbx_loading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbx_loading.TabIndex = 9;
-            this.pbx_loading.TabStop = false;
-            this.pbx_loading.Visible = false;
-            // 
             // pnl_quickSearch
             // 
             this.pnl_quickSearch.BackColor = System.Drawing.Color.Transparent;
@@ -441,7 +357,7 @@
             this.pnl_txbCont.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnl_txbCont.Name = "pnl_txbCont";
             this.pnl_txbCont.Padding = new System.Windows.Forms.Padding(11, 12, 11, 0);
-            this.pnl_txbCont.Size = new System.Drawing.Size(189, 42);
+            this.pnl_txbCont.Size = new System.Drawing.Size(194, 42);
             this.pnl_txbCont.TabIndex = 6;
             this.pnl_txbCont.Click += new System.EventHandler(this.txb_QSearch_Click);
             // 
@@ -456,31 +372,12 @@
             this.txb_QSearch.Multiline = false;
             this.txb_QSearch.Name = "txb_QSearch";
             this.txb_QSearch.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.txb_QSearch.Size = new System.Drawing.Size(165, 28);
+            this.txb_QSearch.Size = new System.Drawing.Size(170, 28);
             this.txb_QSearch.TabIndex = 2;
             this.txb_QSearch.Tag = "";
             this.txb_QSearch.Text = "Quick search";
             this.txb_QSearch.Click += new System.EventHandler(this.txb_QSearch_Click);
             this.txb_QSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_QSearch_KeyDown);
-            // 
-            // btn_QSearch
-            // 
-            this.btn_QSearch.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_QSearch.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_QSearch.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn_QSearch.FlatAppearance.BorderSize = 3;
-            this.btn_QSearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
-            this.btn_QSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btn_QSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_QSearch.Image = global::IdeasAi.Properties.Resources.quickSearch;
-            this.btn_QSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_QSearch.Location = new System.Drawing.Point(189, 12);
-            this.btn_QSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_QSearch.Name = "btn_QSearch";
-            this.btn_QSearch.Size = new System.Drawing.Size(51, 42);
-            this.btn_QSearch.TabIndex = 0;
-            this.btn_QSearch.UseVisualStyleBackColor = false;
-            this.btn_QSearch.Click += new System.EventHandler(this.btn_QSearch_Click);
             // 
             // panel3
             // 
@@ -493,6 +390,107 @@
             this.panel3.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
             this.panel3.Size = new System.Drawing.Size(1297, 44);
             this.panel3.TabIndex = 9;
+            // 
+            // btn_docOptions
+            // 
+            this.btn_docOptions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(229)))), ((int)(((byte)(135)))));
+            this.btn_docOptions.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_docOptions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_docOptions.Image = global::IdeasAi.Properties.Resources.docOptions;
+            this.btn_docOptions.Location = new System.Drawing.Point(595, 10);
+            this.btn_docOptions.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_docOptions.Name = "btn_docOptions";
+            this.btn_docOptions.Size = new System.Drawing.Size(37, 42);
+            this.btn_docOptions.TabIndex = 18;
+            this.btn_docOptions.UseVisualStyleBackColor = false;
+            this.btn_docOptions.Click += new System.EventHandler(this.btn_docOptions_Click);
+            // 
+            // btn_docsDel
+            // 
+            this.btn_docsDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(229)))), ((int)(((byte)(135)))));
+            this.btn_docsDel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_docsDel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn_docsDel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_docsDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_docsDel.Image = global::IdeasAi.Properties.Resources.delete;
+            this.btn_docsDel.Location = new System.Drawing.Point(887, 10);
+            this.btn_docsDel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_docsDel.Name = "btn_docsDel";
+            this.btn_docsDel.Size = new System.Drawing.Size(37, 42);
+            this.btn_docsDel.TabIndex = 16;
+            this.btn_docsDel.UseVisualStyleBackColor = false;
+            this.btn_docsDel.Click += new System.EventHandler(this.btn_docsDel_Click);
+            // 
+            // btn_createMindmap
+            // 
+            this.btn_createMindmap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(229)))), ((int)(((byte)(135)))));
+            this.btn_createMindmap.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_createMindmap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_createMindmap.Font = new System.Drawing.Font("Cascadia Code", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_createMindmap.ForeColor = System.Drawing.Color.Black;
+            this.btn_createMindmap.Image = global::IdeasAi.Properties.Resources.mindmap;
+            this.btn_createMindmap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_createMindmap.Location = new System.Drawing.Point(145, 10);
+            this.btn_createMindmap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_createMindmap.Name = "btn_createMindmap";
+            this.btn_createMindmap.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btn_createMindmap.Size = new System.Drawing.Size(124, 42);
+            this.btn_createMindmap.TabIndex = 5;
+            this.btn_createMindmap.Text = "Mindmap";
+            this.btn_createMindmap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_createMindmap.UseVisualStyleBackColor = false;
+            this.btn_createMindmap.Click += new System.EventHandler(this.btn_createMindmap_Click);
+            // 
+            // btn_organizeIdea
+            // 
+            this.btn_organizeIdea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(229)))), ((int)(((byte)(135)))));
+            this.btn_organizeIdea.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_organizeIdea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_organizeIdea.Font = new System.Drawing.Font("Cascadia Code", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_organizeIdea.ForeColor = System.Drawing.Color.Black;
+            this.btn_organizeIdea.Image = global::IdeasAi.Properties.Resources.organize;
+            this.btn_organizeIdea.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_organizeIdea.Location = new System.Drawing.Point(0, 10);
+            this.btn_organizeIdea.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_organizeIdea.Name = "btn_organizeIdea";
+            this.btn_organizeIdea.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btn_organizeIdea.Size = new System.Drawing.Size(135, 42);
+            this.btn_organizeIdea.TabIndex = 3;
+            this.btn_organizeIdea.Text = "Organize";
+            this.btn_organizeIdea.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_organizeIdea.UseVisualStyleBackColor = false;
+            this.btn_organizeIdea.Click += new System.EventHandler(this.btn_organizeIdea_Click);
+            // 
+            // pbx_loading
+            // 
+            this.pbx_loading.BackColor = System.Drawing.Color.Transparent;
+            this.pbx_loading.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pbx_loading.Image = ((System.Drawing.Image)(resources.GetObject("pbx_loading.Image")));
+            this.pbx_loading.Location = new System.Drawing.Point(0, 59);
+            this.pbx_loading.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbx_loading.Name = "pbx_loading";
+            this.pbx_loading.Size = new System.Drawing.Size(240, 27);
+            this.pbx_loading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbx_loading.TabIndex = 9;
+            this.pbx_loading.TabStop = false;
+            this.pbx_loading.Visible = false;
+            // 
+            // btn_QSearch
+            // 
+            this.btn_QSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btn_QSearch.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_QSearch.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn_QSearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.btn_QSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(89)))));
+            this.btn_QSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_QSearch.Image = global::IdeasAi.Properties.Resources.quickSearch;
+            this.btn_QSearch.Location = new System.Drawing.Point(194, 12);
+            this.btn_QSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_QSearch.Name = "btn_QSearch";
+            this.btn_QSearch.Size = new System.Drawing.Size(46, 42);
+            this.btn_QSearch.TabIndex = 0;
+            this.btn_QSearch.UseVisualStyleBackColor = false;
+            this.btn_QSearch.Click += new System.EventHandler(this.btn_QSearch_Click);
             // 
             // frm_workspace
             // 
@@ -519,11 +517,11 @@
             this.panel1.ResumeLayout(false);
             this.pnl_quickSearchRes.ResumeLayout(false);
             this.pnl_quickSearchRes.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbx_loading)).EndInit();
             this.pnl_quickSearch.ResumeLayout(false);
             this.pnl_txbCont.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_loading)).EndInit();
             this.ResumeLayout(false);
 
         }

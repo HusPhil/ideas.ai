@@ -39,6 +39,10 @@ namespace IdeasAi.pages
             ModalManager.ShowModal(mainForm, this, new mdl_howToUse(mainForm, "Mindmap", frm_mindmap.howToUse));
         }
 
-       
+        private void btn_getStarted_Click(object sender, EventArgs e)
+        {
+            mainForm.loadForm(mainForm.frm_consultation, mainForm.getPnlContent());
+            mainForm.setActiveBtn(mainForm.getBtnConsult(), mainForm.getPnlPageTabs());
+        }
     }
 }

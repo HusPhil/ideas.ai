@@ -73,7 +73,7 @@
             this.pnl_header.Controls.Add(this.label1);
             this.pnl_header.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_header.Location = new System.Drawing.Point(7, 6);
-            this.pnl_header.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_header.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_header.Name = "pnl_header";
             this.pnl_header.Padding = new System.Windows.Forms.Padding(27, 25, 0, 25);
             this.pnl_header.Size = new System.Drawing.Size(986, 95);
@@ -99,7 +99,7 @@
             this.pnl_body.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_body.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.pnl_body.Location = new System.Drawing.Point(7, 101);
-            this.pnl_body.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_body.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_body.Name = "pnl_body";
             this.pnl_body.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.pnl_body.Size = new System.Drawing.Size(986, 115);
@@ -124,7 +124,7 @@
             this.panel3.Controls.Add(this.lbl_features);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(7, 216);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(333, 6, 333, 6);
             this.panel3.Size = new System.Drawing.Size(986, 58);
@@ -161,7 +161,7 @@
             this.pnl_cards.Controls.Add(this.tbl_cardsCont);
             this.pnl_cards.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_cards.Location = new System.Drawing.Point(7, 274);
-            this.pnl_cards.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_cards.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_cards.Name = "pnl_cards";
             this.pnl_cards.Padding = new System.Windows.Forms.Padding(40, 12, 40, 12);
             this.pnl_cards.Size = new System.Drawing.Size(986, 233);
@@ -208,7 +208,7 @@
             this.btn_MindmapInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_MindmapInfo.Font = new System.Drawing.Font("Cascadia Code", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_MindmapInfo.Location = new System.Drawing.Point(0, 167);
-            this.btn_MindmapInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_MindmapInfo.Margin = new System.Windows.Forms.Padding(4);
             this.btn_MindmapInfo.Name = "btn_MindmapInfo";
             this.btn_MindmapInfo.Size = new System.Drawing.Size(213, 28);
             this.btn_MindmapInfo.TabIndex = 6;
@@ -263,7 +263,7 @@
             this.btn_WorkspaceInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_WorkspaceInfo.Font = new System.Drawing.Font("Cascadia Code", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_WorkspaceInfo.Location = new System.Drawing.Point(0, 167);
-            this.btn_WorkspaceInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_WorkspaceInfo.Margin = new System.Windows.Forms.Padding(4);
             this.btn_WorkspaceInfo.Name = "btn_WorkspaceInfo";
             this.btn_WorkspaceInfo.Size = new System.Drawing.Size(211, 28);
             this.btn_WorkspaceInfo.TabIndex = 5;
@@ -319,7 +319,7 @@
             this.btn_NotebookInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_NotebookInfo.Font = new System.Drawing.Font("Cascadia Code", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_NotebookInfo.Location = new System.Drawing.Point(0, 167);
-            this.btn_NotebookInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_NotebookInfo.Margin = new System.Windows.Forms.Padding(4);
             this.btn_NotebookInfo.Name = "btn_NotebookInfo";
             this.btn_NotebookInfo.Size = new System.Drawing.Size(211, 28);
             this.btn_NotebookInfo.TabIndex = 5;
@@ -375,7 +375,7 @@
             this.btn_QhubInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_QhubInfo.Font = new System.Drawing.Font("Cascadia Code", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_QhubInfo.Location = new System.Drawing.Point(0, 167);
-            this.btn_QhubInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_QhubInfo.Margin = new System.Windows.Forms.Padding(4);
             this.btn_QhubInfo.Name = "btn_QhubInfo";
             this.btn_QhubInfo.Size = new System.Drawing.Size(211, 28);
             this.btn_QhubInfo.TabIndex = 4;
@@ -414,7 +414,7 @@
             this.pnl_footer.Controls.Add(this.btn_getStarted);
             this.pnl_footer.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnl_footer.Location = new System.Drawing.Point(7, 501);
-            this.pnl_footer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_footer.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_footer.Name = "pnl_footer";
             this.pnl_footer.Padding = new System.Windows.Forms.Padding(400, 6, 400, 6);
             this.pnl_footer.Size = new System.Drawing.Size(986, 55);
@@ -428,12 +428,13 @@
             this.btn_getStarted.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_getStarted.Font = new System.Drawing.Font("Cascadia Code", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_getStarted.Location = new System.Drawing.Point(400, 6);
-            this.btn_getStarted.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_getStarted.Margin = new System.Windows.Forms.Padding(4);
             this.btn_getStarted.Name = "btn_getStarted";
             this.btn_getStarted.Size = new System.Drawing.Size(186, 43);
             this.btn_getStarted.TabIndex = 0;
             this.btn_getStarted.Text = "Get Started";
             this.btn_getStarted.UseVisualStyleBackColor = false;
+            this.btn_getStarted.Click += new System.EventHandler(this.btn_getStarted_Click);
             // 
             // frm_home
             // 
