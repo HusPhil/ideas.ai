@@ -39,8 +39,8 @@
             this.txb_setNoteTitle = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.tmr_animation = new System.Windows.Forms.Timer(this.components);
             this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -161,17 +161,6 @@
             this.panel5.Size = new System.Drawing.Size(425, 46);
             this.panel5.TabIndex = 4;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(20, 10);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 30);
-            this.pictureBox1.Size = new System.Drawing.Size(34, 34);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -184,6 +173,17 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Settings";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(20, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 30);
+            this.pictureBox1.Size = new System.Drawing.Size(34, 34);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // panel1
             // 

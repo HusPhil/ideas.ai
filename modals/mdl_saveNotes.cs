@@ -63,5 +63,6 @@ namespace IdeasAi.modals
             this.Hide();
         }
 
+       
     }
 }
