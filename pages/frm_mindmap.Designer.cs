@@ -201,7 +201,7 @@ namespace IdeasAi.pages
             // 
             // btn_zoomOut
             // 
-            this.btn_zoomOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(126)))));
+            this.btn_zoomOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(229)))), ((int)(((byte)(135)))));
             this.btn_zoomOut.Dock = System.Windows.Forms.DockStyle.Left;
             this.btn_zoomOut.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(28)))));
             this.btn_zoomOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -215,7 +215,7 @@ namespace IdeasAi.pages
             // 
             // btn_zoomIn
             // 
-            this.btn_zoomIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(126)))));
+            this.btn_zoomIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(229)))), ((int)(((byte)(135)))));
             this.btn_zoomIn.Dock = System.Windows.Forms.DockStyle.Left;
             this.btn_zoomIn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(28)))));
             this.btn_zoomIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -229,7 +229,7 @@ namespace IdeasAi.pages
             // 
             // btn_reset
             // 
-            this.btn_reset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(126)))));
+            this.btn_reset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(229)))), ((int)(((byte)(135)))));
             this.btn_reset.Dock = System.Windows.Forms.DockStyle.Left;
             this.btn_reset.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(28)))));
             this.btn_reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -255,7 +255,7 @@ namespace IdeasAi.pages
             // 
             // btn_saveAsImage
             // 
-            this.btn_saveAsImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(126)))));
+            this.btn_saveAsImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(229)))), ((int)(((byte)(135)))));
             this.btn_saveAsImage.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_saveAsImage.Enabled = false;
             this.btn_saveAsImage.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(28)))));
@@ -362,7 +362,7 @@ namespace IdeasAi.pages
             // 
             // btn_generateMindmap
             // 
-            this.btn_generateMindmap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(126)))));
+            this.btn_generateMindmap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(229)))), ((int)(((byte)(135)))));
             this.btn_generateMindmap.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_generateMindmap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_generateMindmap.Font = new System.Drawing.Font("Cascadia Code", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -6,7 +6,7 @@ using IdeasAi.modals;
 
 namespace IdeasAi.pages
 {
-    public partial class frm_notebook: Form
+    public partial class frm_notebook : Form
     {
         public const string howToUse = @"
         This is how to use the notebook kineme:
@@ -30,7 +30,7 @@ namespace IdeasAi.pages
 
             showAllIdeas();
 
-            
+
 
         }
         private void frm_notebook_SizeChanged(object sender, EventArgs e)
@@ -106,9 +106,11 @@ namespace IdeasAi.pages
                         btn_edit.Dock = DockStyle.Right;
                         btn_edit.FlatStyle = FlatStyle.Flat;
                         btn_edit.FlatAppearance.BorderSize = 0;
+                        btn_edit.FlatAppearance.MouseOverBackColor = ColorTranslator.FromHtml((string)mainForm.decors["Themes"]["LightTheme"]["accent100"]);
+                        btn_edit.FlatAppearance.MouseDownBackColor = ColorTranslator.FromHtml((string)mainForm.decors["Themes"]["LightTheme"]["accent200"]);
                         btn_edit.Margin = new Padding(0, 0, 20, 0);
 
-                        
+
 
                         if (db.GetType() == typeof(DBManager_Note))
                         {
@@ -134,7 +136,7 @@ namespace IdeasAi.pages
 
                         Panel pnl_btns = new Panel();
                         pnl_btns.Dock = DockStyle.Bottom;
-                        pnl_btns.Height = 10 + (titleLabel.Height/2);
+                        pnl_btns.Height = 10 + (titleLabel.Height / 2);
                         pnl_btns.Margin = new Padding(0, 0, 0, 20);
 
                         Button btn_view = new Button();
@@ -142,6 +144,8 @@ namespace IdeasAi.pages
                         btn_view.Click += (sender, e) => displayNote_click(idea, db);
                         btn_view.Dock = DockStyle.Fill;
                         btn_view.FlatStyle = FlatStyle.Flat;
+                        btn_view.FlatAppearance.MouseDownBackColor = ColorTranslator.FromHtml((string)mainForm.decors["Themes"]["LightTheme"]["accent200"]);
+                        btn_view.FlatAppearance.MouseOverBackColor = ColorTranslator.FromHtml((string)mainForm.decors["Themes"]["LightTheme"]["accent100"]);
                         btn_view.BackColor = ColorTranslator.FromHtml((string)mainForm.decors["Themes"]["LightTheme"]["accent"]);
                         pnl_btns.Controls.Add(btn_view);
                         pnl_idea.Controls.Add(pnl_btns);
@@ -177,7 +181,7 @@ namespace IdeasAi.pages
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 mainForm.addNotification("error", "Failed to display ideas!", $"{ex.Message}");
                 Console.WriteLine("Failed to display ideas! " + $"{ex.Message}");
@@ -202,7 +206,7 @@ namespace IdeasAi.pages
 
         public void setActiveBtn(object btn, TableLayoutPanel pnl)
         {
-            if(btn is Button)
+            if (btn is Button)
             {
                 if ((Button)btn != btn_activeTab)
                 {
@@ -211,17 +215,17 @@ namespace IdeasAi.pages
                     btn_activeTab.BackColor = ColorTranslator.FromHtml((string)mainForm.decors["Themes"]["LightTheme"]["secondary"]);
                 }
             }
-            
+
         }
         private void removeActiveBtn(TableLayoutPanel pnl)
         {
-            if(btn_activeTab != null)
+            if (btn_activeTab != null)
             {
-            btn_activeTab.BackColor = Color.Transparent;
+                btn_activeTab.BackColor = Color.Transparent;
 
             }
         }
-        
+
         private void btn_showMoreNotes_click(DBObjectManager idea)
         {
             this.saver_obj = idea;
@@ -248,7 +252,7 @@ namespace IdeasAi.pages
         private void btn_docsTab_Click(object sender, EventArgs e)
         {
             mainForm.frm_notebook.displaySavedIdeas(mainForm.dbManager_Docs);
-            this.setActiveBtn(sender, tbpnl_tabs); 
+            this.setActiveBtn(sender, tbpnl_tabs);
 
         }
         private void btn_delete_Click(object sender, EventArgs e)
@@ -301,7 +305,7 @@ namespace IdeasAi.pages
             {
                 mainForm.frm_consultation.saver_obj.Content = dom.Content;
                 mainForm.frm_consultation.saver_obj.Title = dom.Title;
-                
+
                 mainForm.loadForm(mainForm.frm_consultation, mainForm.getPnlContent());
                 mainForm.setActiveBtn(mainForm.getBtnConsult(), mainForm.getPnlPageTabs());
                 mainForm.frm_consultation.displayResult(dom.Content);
@@ -309,7 +313,7 @@ namespace IdeasAi.pages
                 mainForm.frm_consultation.getPrintBtn().Enabled = !false;
                 mainForm.frm_consultation.getToWorkspaceBtn().Enabled = !false;
 
-            
+
 
             }
             else if (db.GetType().Equals(typeof(DBManager_Docs)))
@@ -318,7 +322,7 @@ namespace IdeasAi.pages
                 mainForm.setActiveBtn(mainForm.getBtnWorkspace(), mainForm.getPnlPageTabs());
                 mainForm.frm_workspace.getSaverObj().UUID = dom.UUID;
                 mainForm.frm_workspace.getTxbEditor().Text = dom.Content;
-                mainForm.frm_workspace.getTxbDocsTitle().Text = dom.Title; 
+                mainForm.frm_workspace.getTxbDocsTitle().Text = dom.Title;
                 mainForm.frm_workspace.getLblLastDateSaved().Text = $"Last Modified: {dom.DateCreated.ToString("yyyy-MM-dd hh:mm tt")}"; ;
             }
         }

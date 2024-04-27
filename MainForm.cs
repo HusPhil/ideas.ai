@@ -202,7 +202,7 @@ namespace IdeasAi
                 btn_active = (Button)btn;
                 btn_active.Parent.Controls.Add(pb_active);
                 btn_active.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["LightTheme"]["accent"]);
-                lbl_currentPage.Text = btn_active.Text;
+                lbl_currentPage.Text = btn_active.Text.Trim();
             }
         }
         private void removeActiveBtn()
@@ -399,6 +399,8 @@ namespace IdeasAi
             frm_mindmap.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["DarkTheme"]["primary100"]);
             frm_mindmap.spl_mindmap.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["DarkTheme"]["primary100"]);
 
+            pnl_pageTitle.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["DarkTheme"]["primary100"]);
+
             pnl_btnCont.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["DarkTheme"]["primary100"]);
             btn_toggleDarkMode.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["LightTheme"]["primary100"]);
             btn_toggleDarkMode.Image = Resources.darkModeBtn;
@@ -418,6 +420,8 @@ namespace IdeasAi
             frm_workspace.spl_workspace.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["LightTheme"]["primary100"]);
             frm_mindmap.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["LightTheme"]["primary100"]);
             frm_mindmap.spl_mindmap.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["LightTheme"]["primary100"]);
+
+            pnl_pageTitle.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["LightTheme"]["primary100"]);
 
             pnl_btnCont.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["DarkTheme"]["primary"]);
             btn_toggleDarkMode.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["DarkTheme"]["primary100"]);
@@ -440,34 +444,36 @@ namespace IdeasAi
         }
         private void tmr_animation_Tick(object sender, EventArgs e)
         {
+            int maxW = 320;
+            int minW = 170;
             if(showMode)
             {
-                if (pnl_sideContent.Width >= 320)
+                if (pnl_sideContent.Width >= maxW)
                 {
                     tmr_animation.Stop();
-                    pnl_sideContent.Width = 320;
+                    pnl_sideContent.Width = maxW;
                     pnl_sideContent.Width += 1;
                     sliding = false;
                     pnl_sideContent.Width -= 1;
                 }
                 else
                 {
-                    pnl_sideContent.Width += 20;
+                    pnl_sideContent.Width += 35;
                 }
             }
             else
             {
-                if (pnl_sideContent.Width <= 170)
+                if (pnl_sideContent.Width <= minW)
                 {
                     tmr_animation.Stop();
-                    pnl_sideContent.Width = 150;
+                    pnl_sideContent.Width = minW;
                     pnl_sideContent.Width += 1;
                     sliding = false;
                     pnl_sideContent.Width -= 1;
                 }
                 else
                 {
-                    pnl_sideContent.Width -= 20;
+                    pnl_sideContent.Width -= 35;
                 }
             }
             
@@ -501,6 +507,11 @@ namespace IdeasAi
         public ref Button getBtnMindmap()
         {
             return ref btn_mindmap; 
+        }
+
+        private void pnl_helpbtn_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
