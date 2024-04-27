@@ -90,6 +90,12 @@ namespace IdeasAi.modals
             return ref txb_setNoteTitle;
         }
 
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            mainForm.modalBG.Hide();
+            this.Hide();
+        }
 
+       
     }
 }

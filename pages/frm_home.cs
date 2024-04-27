@@ -38,5 +38,7 @@ namespace IdeasAi.pages
         {
             ModalManager.ShowModal(mainForm, this, new mdl_howToUse(mainForm, "Mindmap", frm_mindmap.howToUse));
         }
+
+       
     }
 }

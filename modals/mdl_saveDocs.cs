@@ -114,5 +114,7 @@ namespace IdeasAi.modals
                 Hide();
             }
         }
+
+       
     }
 }

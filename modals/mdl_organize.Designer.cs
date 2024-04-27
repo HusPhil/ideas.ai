@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mdl_organize));
             this.pnl_footer = new System.Windows.Forms.Panel();
             this.pnl_buttons = new System.Windows.Forms.Panel();
             this.btn_save = new System.Windows.Forms.Button();
@@ -41,11 +42,13 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.pnl_header = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnl_footer.SuspendLayout();
             this.pnl_buttons.SuspendLayout();
             this.pnl_selectMode.SuspendLayout();
             this.pnl_body.SuspendLayout();
             this.pnl_header.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_footer
@@ -145,10 +148,10 @@
             // 
             // btn_exit
             // 
-            this.btn_exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(239)))), ((int)(((byte)(140)))));
+            this.btn_exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(143)))), ((int)(((byte)(177)))));
             this.btn_exit.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_exit.Location = new System.Drawing.Point(475, 3);
+            this.btn_exit.Location = new System.Drawing.Point(485, 3);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(22, 20);
             this.btn_exit.TabIndex = 1;
@@ -203,24 +206,36 @@
             // pnl_header
             // 
             this.pnl_header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(192)))), ((int)(((byte)(195)))));
+            this.pnl_header.Controls.Add(this.pictureBox1);
             this.pnl_header.Controls.Add(this.btn_exit);
             this.pnl_header.Controls.Add(this.label1);
             this.pnl_header.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_header.Location = new System.Drawing.Point(10, 10);
             this.pnl_header.Name = "pnl_header";
+            this.pnl_header.Padding = new System.Windows.Forms.Padding(5, 3, 0, 0);
             this.pnl_header.Size = new System.Drawing.Size(510, 56);
             this.pnl_header.TabIndex = 0;
             // 
             // label1
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Right;
             this.label1.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Location = new System.Drawing.Point(50, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(510, 56);
+            this.label1.Size = new System.Drawing.Size(460, 53);
             this.label1.TabIndex = 2;
             this.label1.Text = "Organize your Ideas!";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(5, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 53);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // mdl_organize
             // 
@@ -245,6 +260,7 @@
             this.pnl_selectMode.ResumeLayout(false);
             this.pnl_body.ResumeLayout(false);
             this.pnl_header.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -264,5 +280,6 @@
         private System.Windows.Forms.Button btn_go;
         private System.Windows.Forms.Panel pnl_header;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
