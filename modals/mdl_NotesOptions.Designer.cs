@@ -126,7 +126,6 @@
             this.panel2.Padding = new System.Windows.Forms.Padding(46, 50, 46, 50);
             this.panel2.Size = new System.Drawing.Size(425, 245);
             this.panel2.TabIndex = 5;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // txb_setNoteTitle
             // 
@@ -146,7 +145,6 @@
             // 
             this.tmr_animation.Enabled = true;
             this.tmr_animation.Interval = 1;
-            this.tmr_animation.Tick += new System.EventHandler(this.tmr_animation_Tick);
             // 
             // panel5
             // 
