@@ -153,7 +153,6 @@ C:\Users\Admin\Desktop\Project_AOOP\bin\Debug\System.Memory.dll
 C:\Users\Admin\Desktop\Project_AOOP\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\Admin\Desktop\Project_AOOP\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\Admin\Desktop\Project_AOOP\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\Admin\Desktop\Project_AOOP\bin\Debug\ComponentFactory.Krypton.Toolkit.pdb
 C:\Users\Admin\Desktop\Project_AOOP\bin\Debug\EntityFramework.xml
 C:\Users\Admin\Desktop\Project_AOOP\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Admin\Desktop\Project_AOOP\bin\Debug\Markdig.xml

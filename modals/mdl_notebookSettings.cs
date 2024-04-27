@@ -176,5 +176,7 @@ namespace IdeasAi.modals
             }
             this.Close();
         }
+
+       
     }
 }

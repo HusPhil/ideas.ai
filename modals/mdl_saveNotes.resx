@@ -117,9 +117,30 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="tmr_animation.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAPSSURBVGhD7VlNSFRRFJ7CkKISx5p33zgqmEVYhmJJDfre
+        zKhhmZXm5Iy1DIIWtQlbRZuQoE2bWrhokQhRUEgFSUVSwuRYIJJR4QwZhbSKNv2QdbvnzbnP+2aezojj
+        /MR88PHw3HPu/c67f+eNlhxyyCF5sNk8kiSrDySi/CCySo1UZllb0G5Xq9E980CIOhAr3EiJqO/QPfMg
+        ycoHM9HRlGV1A4ZkFtgMfOYii0qcdjRrWKgtY8DW+RQX6XDstqJZQ1YkIMsNx9gGfss260U0WWjYF6Rh
+        P62u8mjigTPBo5SG/C/QJbMB4k0TYDZ0yWxkVQKEKL3aHcCeaMquBNgZ/wsEwhNNWTYDKBCIplwCKUUu
+        gXQjGxNYwQq4y6yEmBHFA7HdNAFg5VY3ZbHXLJbaVeiaehDScFIUxWl2jO6sMSagk6jn0TX1YJdWX6wo
+        5bfZRdZ3qY2WlbmifBmJOoiuqQcb/Lgohi2JHmzSwRPgvHX1ELUXC4kQ9Sy6pgNqHnxCCkn8ZW//FDZq
+        EMXfv95Oix26L6MSYGX3anRNDyoqWvLZUnooJtF/5eAfUThw+GYHLS2dE++pb6Jfx7si7SH/LA13pW8m
+        ZLl2Ddu4z7g4eMt3+w7r4oODR2h5+dyycdY10i9jKF5n9znsLj0oLGwqYHvgJRdZUuKiQ/3t9NW9Tlqx
+        ya2Lr6320E+ByD2gM+S/QemFldhV+kBI/Ua2Jya5WDh1tmyee/M1Ozx0esQbLf4OfarmYRfpB3zvit/G
+        nFXb3HRqOEb8EH3fko+hyYVkV9rYkhjjNT4n/A12dtrsR9cYEOIuY74hHrO90kMnH3UaxYf9T+hHr3YC
+        LWUsU0iSq1XsaD6CH4bEoKjIuc4mqyc2l7tOzwS7AgbxIV+AvvauBb9kjBUDcTPG4SiGLAga8hYw4WMR
+        8f5xOt1diE1JH0uDOJVWa916NGuA04a3sfP/J5rjgi0XK0vgDDzRpGE5xjIti0WI7QlyQpL22CA2cmco
+        IyY+ccdCU3yYBfEfqIBwxos+idAmK93QjyQ1eMzaYSa0gRB8PNEHl2D8H8TEIDQZaprenlbqMNQ0cRln
+        BowVLICPJfpxG7rMDzEITYYEookuSQXvW9SS8HhiEJr+7wSWk6IWbkNJ80M82uAoA5vYaar4bcKni4dS
+        nNs1kQtBu74xUCQUZ/BpyDv6/sZH2/Y2x/gtB/c1Ni8iAUk9YNYJ0LmrUe/o+e0OU5/l4OOB9sQTAEDt
+        Af9VFJdTqmcA7ht486L4hBOIhthBuomSFgd2M46adZZyskoWJeWQw9JhsfwDn6xTwPTnxscAAAAASUVO
+        RK5CYII=
+</value>
+  </data>
   <metadata name="sqLiteCommand1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>149, 17</value>
   </metadata>

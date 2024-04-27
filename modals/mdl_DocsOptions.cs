@@ -80,5 +80,11 @@ namespace IdeasAi.modals
                 Hide();
             }
         }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            mainForm.modalBG.Hide();
+            this.Hide();
+        }
     }
 }
