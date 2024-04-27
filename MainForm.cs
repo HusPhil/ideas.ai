@@ -10,6 +10,7 @@ using System.Web.UI.Design;
 using System.IO;
 using Newtonsoft.Json.Linq;
 using IdeasAi.Properties;
+using System.Text.RegularExpressions;
 
 namespace IdeasAi
 {
@@ -117,7 +118,23 @@ namespace IdeasAi
                 settings = JObject.Parse(settingsJson);
             }
         }
-        
+
+        public static string ConvertMarkdownToPlainText(string markdown)
+        {
+            // Remove Markdown bold formatting
+            string plainText = Regex.Replace(markdown, @"\*\*(.*?)\*\*", "$1");
+
+            // Remove Markdown italic formatting
+            plainText = Regex.Replace(plainText, @"\*(.*?)\*", "$1");
+
+            // Replace line breaks
+            plainText = Regex.Replace(plainText, "<br>", "\n");
+
+            // You can add more rules to handle other Markdown formatting
+
+            return plainText;
+        }
+
         //CAN BE MODIFIED, ADD TO MODAL SETTER CLASS
         public void setModalBackground(Form callerForm)
         {

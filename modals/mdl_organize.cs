@@ -55,7 +55,7 @@ namespace IdeasAi.modals
                         .Build();
 
                     grammarChecker.Content = await grammarChecker.GetResponse(mainForm.settings);
-                    txb_preview.Text = Markdown.ToPlainText(grammarChecker.Content);
+                    txb_preview.Text = MainForm.ConvertMarkdownToPlainText(grammarChecker.Content);
 
                     break;
                 case "Summarizer":
@@ -66,7 +66,7 @@ namespace IdeasAi.modals
                         .Build();
                     
                     summarizer.Content = await summarizer.GetResponse(mainForm.settings);
-                    txb_preview.Text = Markdown.ToPlainText(summarizer.Content);
+                    txb_preview.Text = MainForm.ConvertMarkdownToPlainText(summarizer.Content);
 
                     break;
                 case "Expand Ideas":
@@ -76,7 +76,7 @@ namespace IdeasAi.modals
                         .WithInput(txb_preview.Text)
                         .Build();
                     expander.Content = await expander.GetResponse(mainForm.settings);
-                    txb_preview.Text = Markdown.ToPlainText(expander.Content);
+                    txb_preview.Text = MainForm.ConvertMarkdownToPlainText(expander.Content);
 
                     break;
                 case "Categorize Ideas":
@@ -86,7 +86,7 @@ namespace IdeasAi.modals
                         .WithInput(txb_preview.Text)
                         .Build();
                     categorizer.Content = await categorizer.GetResponse(mainForm.settings);
-                    txb_preview.Text = Markdown.ToPlainText(categorizer.Content);
+                    txb_preview.Text = MainForm.ConvertMarkdownToPlainText(categorizer.Content);
 
                     break;
                 case "SCAMPER Technique":
@@ -96,7 +96,7 @@ namespace IdeasAi.modals
                         .WithInput(txb_preview.Text)
                         .Build();
                     scamper.Content = await scamper.GetResponse(mainForm.settings);
-                    txb_preview.Text =  Markdown.ToPlainText(scamper.Content);
+                    txb_preview.Text =  MainForm.ConvertMarkdownToPlainText(scamper.Content);
 
                     break;
             }

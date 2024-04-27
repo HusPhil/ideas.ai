@@ -142,7 +142,7 @@ namespace IdeasAi.PageForms
         {
             mainForm.frm_workspace.saver_obj.UUID = Guid.NewGuid();
             mainForm.frm_workspace.getTxbDocsTitle().Text = saver_obj.Title;
-            mainForm.frm_workspace.getTxbEditor().Text = frm_workspace.ConvertMarkdownToPlainText(saver_obj.Content);
+            mainForm.frm_workspace.getTxbEditor().Text = MainForm.ConvertMarkdownToPlainText(saver_obj.Content);
 
             mainForm.loadForm(mainForm.frm_workspace, mainForm.getPnlContent());
             mainForm.setActiveBtn(mainForm.getBtnWorkspace(), mainForm.getPnlPageTabs());

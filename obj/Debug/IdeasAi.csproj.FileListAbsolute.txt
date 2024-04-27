@@ -85,7 +85,6 @@ C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\System.Data.SQLite.Linq.dll
 C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\System.Memory.dll
 C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\System.Numerics.Vectors.dll
 C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\ComponentFactory.Krypton.Toolkit.pdb
 C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\EntityFramework.xml
 C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\EntityFramework.SqlServer.xml
 C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\Markdig.xml
