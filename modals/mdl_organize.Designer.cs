@@ -59,7 +59,7 @@
             this.pnl_footer.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnl_footer.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.pnl_footer.Location = new System.Drawing.Point(13, 423);
-            this.pnl_footer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_footer.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_footer.Name = "pnl_footer";
             this.pnl_footer.Size = new System.Drawing.Size(681, 39);
             this.pnl_footer.TabIndex = 0;
@@ -72,7 +72,7 @@
             this.pnl_buttons.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnl_buttons.Font = new System.Drawing.Font("Cascadia Code", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnl_buttons.Location = new System.Drawing.Point(503, 0);
-            this.pnl_buttons.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_buttons.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_buttons.Name = "pnl_buttons";
             this.pnl_buttons.Padding = new System.Windows.Forms.Padding(20, 6, 20, 4);
             this.pnl_buttons.Size = new System.Drawing.Size(176, 37);
@@ -82,12 +82,13 @@
             // 
             this.btn_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(229)))), ((int)(((byte)(135)))));
             this.btn_save.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_save.Enabled = false;
             this.btn_save.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_save.Font = new System.Drawing.Font("Cascadia Code", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_save.ForeColor = System.Drawing.Color.Black;
             this.btn_save.Location = new System.Drawing.Point(20, 6);
-            this.btn_save.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_save.Margin = new System.Windows.Forms.Padding(4);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(60, 27);
             this.btn_save.TabIndex = 1;
@@ -104,7 +105,7 @@
             this.btn_go.Font = new System.Drawing.Font("Cascadia Code", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_go.ForeColor = System.Drawing.Color.Black;
             this.btn_go.Location = new System.Drawing.Point(96, 6);
-            this.btn_go.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_go.Margin = new System.Windows.Forms.Padding(4);
             this.btn_go.Name = "btn_go";
             this.btn_go.Size = new System.Drawing.Size(60, 27);
             this.btn_go.TabIndex = 0;
@@ -119,7 +120,7 @@
             this.pnl_selectMode.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnl_selectMode.ForeColor = System.Drawing.SystemColors.Control;
             this.pnl_selectMode.Location = new System.Drawing.Point(0, 0);
-            this.pnl_selectMode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_selectMode.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_selectMode.Name = "pnl_selectMode";
             this.pnl_selectMode.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.pnl_selectMode.Size = new System.Drawing.Size(179, 37);
@@ -147,7 +148,7 @@
             "Categorize Ideas",
             "SCAMPER Technique"});
             this.cb_modeSelector.Location = new System.Drawing.Point(7, 6);
-            this.cb_modeSelector.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_modeSelector.Margin = new System.Windows.Forms.Padding(4);
             this.cb_modeSelector.Name = "cb_modeSelector";
             this.cb_modeSelector.Size = new System.Drawing.Size(165, 25);
             this.cb_modeSelector.TabIndex = 0;
@@ -158,7 +159,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel3.Location = new System.Drawing.Point(13, 403);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(681, 20);
             this.panel3.TabIndex = 2;
@@ -171,7 +172,7 @@
             this.pnl_body.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_body.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.pnl_body.Location = new System.Drawing.Point(13, 101);
-            this.pnl_body.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_body.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_body.Name = "pnl_body";
             this.pnl_body.Padding = new System.Windows.Forms.Padding(20, 18, 20, 18);
             this.pnl_body.Size = new System.Drawing.Size(681, 302);
@@ -183,11 +184,11 @@
             this.txb_preview.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txb_preview.Font = new System.Drawing.Font("Cascadia Code", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txb_preview.Location = new System.Drawing.Point(20, 18);
-            this.txb_preview.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txb_preview.Margin = new System.Windows.Forms.Padding(4);
             this.txb_preview.Name = "txb_preview";
             this.txb_preview.Size = new System.Drawing.Size(639, 264);
             this.txb_preview.TabIndex = 5;
-            this.txb_preview.Text = "This is Preview";
+            this.txb_preview.Text = "Paste your ideas here to be organized..";
             // 
             // panel4
             // 
@@ -195,7 +196,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel4.Location = new System.Drawing.Point(13, 81);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(681, 20);
             this.panel4.TabIndex = 4;
@@ -207,7 +208,7 @@
             this.pnl_header.Controls.Add(this.label1);
             this.pnl_header.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_header.Location = new System.Drawing.Point(13, 12);
-            this.pnl_header.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_header.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_header.Name = "pnl_header";
             this.pnl_header.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
             this.pnl_header.Size = new System.Drawing.Size(681, 69);
@@ -267,7 +268,7 @@
             this.Controls.Add(this.pnl_footer);
             this.Controls.Add(this.pnl_header);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "mdl_organize";
             this.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.ShowInTaskbar = false;

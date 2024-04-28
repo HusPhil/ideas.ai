@@ -100,7 +100,7 @@ namespace IdeasAi.modals
 
                     break;
             }
-
+            btn_save.Enabled = true;
             mainForm.removeForm(loader, pnl_body);
         }
 
@@ -111,7 +111,12 @@ namespace IdeasAi.modals
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            mainForm.frm_workspace.getTxbEditor().Text += cb_modeSelector.SelectedItem.ToString() + ":\n" + txb_preview.Text;
+            mainForm.frm_workspace.getTxbEditor().Text += "\n\n" + cb_modeSelector.SelectedItem.ToString() + ":\n" + txb_preview.Text;
+            mainForm.frm_workspace.getTxbEditor().SelectionStart = mainForm.frm_workspace.getTxbEditor().TextLength;
+            mainForm.frm_workspace.getTxbEditor().ScrollToCaret();
+            btn_save.Enabled = false;
+
+            this.Hide();
         }
 
         public ref RichTextBox getTxbPreview()

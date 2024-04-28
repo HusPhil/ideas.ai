@@ -32,15 +32,15 @@
             this.lbl_title = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnl_container = new System.Windows.Forms.Panel();
             this.lbl_content = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnl_container.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_title
@@ -85,26 +85,44 @@
             this.label2.Text = "Learn About";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(7, 12);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 37);
+            this.pictureBox1.Size = new System.Drawing.Size(69, 78);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // pnl_container
             // 
+            this.pnl_container.AutoScroll = true;
+            this.pnl_container.AutoSize = true;
+            this.pnl_container.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnl_container.Controls.Add(this.lbl_content);
             this.pnl_container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_container.Location = new System.Drawing.Point(13, 104);
             this.pnl_container.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_container.Name = "pnl_container";
+            this.pnl_container.Padding = new System.Windows.Forms.Padding(8);
             this.pnl_container.Size = new System.Drawing.Size(653, 270);
             this.pnl_container.TabIndex = 5;
             // 
             // lbl_content
             // 
-            this.lbl_content.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_content.Location = new System.Drawing.Point(0, 0);
+            this.lbl_content.AutoEllipsis = true;
+            this.lbl_content.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbl_content.Font = new System.Drawing.Font("Cascadia Code", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_content.Location = new System.Drawing.Point(8, 8);
             this.lbl_content.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_content.Name = "lbl_content";
-            this.lbl_content.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.lbl_content.Size = new System.Drawing.Size(653, 270);
+            this.lbl_content.Size = new System.Drawing.Size(637, 32);
             this.lbl_content.TabIndex = 3;
             this.lbl_content.Text = "label1";
+            this.lbl_content.Click += new System.EventHandler(this.lbl_content_Click);
             // 
             // button1
             // 
@@ -133,18 +151,6 @@
             this.panel2.Size = new System.Drawing.Size(653, 44);
             this.panel2.TabIndex = 4;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(7, 12);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 37);
-            this.pictureBox1.Size = new System.Drawing.Size(69, 78);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
             // mdl_howToUse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -152,8 +158,8 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(679, 430);
             this.Controls.Add(this.pnl_container);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "mdl_howToUse";
@@ -164,10 +170,11 @@
             this.Load += new System.EventHandler(this.mdl_howToUse_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnl_container.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

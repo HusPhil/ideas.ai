@@ -10,9 +10,30 @@ namespace IdeasAi.pages
 {
     public partial class frm_mindmap : Form
     {
-        public const string howToUse = @"
-        This is how to use the MINDMAP kineme:
-        firrst: you have to 
+        public const string howToUse = @"Users can create their own mindmap with the use of asterisks using the format:
+
+    @startmindmap
+    * Main Topic
+    **  SubTopic 
+    * Details
+    ** Additional Details
+    @endmindmap
+
+Remember:
+- To add space between asterisk/s and word
+- It should be enclosed by @statements (start and end mindmap)
+
+On the lower part: 
+    
+    -Click 'Generate' button to create mindmap with inputted details.
+
+    -Click Theme dropdown menu to choose desired style from various theme.
+
+    -Add title by editing text inside the box, between theme and view dropdown.
+
+    -Click 'View' dropdown menu to switch your preferred view style.
+
+    -Click 'Save' button to save the mindmap as image in your computer.
 
         ";
         private MainForm mainForm;

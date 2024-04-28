@@ -14,10 +14,23 @@ namespace IdeasAi.pages
 {
     public partial class frm_workspace : Form
     {
-        public const string howToUse = @"
-        This is how to use the WORKSAPCE kineme:
-        firrst: you have to kineme              EDI WOW SAYOI
+        public const string howToUse = @"Click 'Organize' button to arrange your ideas.
 
+Click 'Mindmap' button to generate your own mindmap derived from the ideas inputted  
+inside the workspace.
+
+A 'search bar' is located on the right side of the tab. 
+
+It assists in providing other information to cater user's needs.
+
+'File button' is located on the lower right side, when clicked shows options: 
+    - Select 'New' to create new file to work in.
+    - Click Save to: 
+        * Select 'Save to Notebook' to save the current file your working on, 
+         which will be located in the Notebook tab, inside the Documents.
+        * Select 'Save as a File' to save the file directly to your computer.
+        * Select 'Open' to open other files from your computer folder to workspace.
+        * Select 'Cancel' to exit the process.
         ";
         public DBObjectManager saver_obj;
         MainForm mainForm;

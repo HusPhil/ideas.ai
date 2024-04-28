@@ -8,9 +8,26 @@ namespace IdeasAi.pages
 {
     public partial class frm_notebook : Form
     {
-        public const string howToUse = @"
-        This is how to use the notebook kineme:
-        firrst: you have to kineme              E
+        public const string howToUse = @"NOTES - This contains the generated ideas saved directly to the Notebook 
+without other modification applied.
+
+DOCUMENTS - This contains the ideas created by the user in the Workspace tab.
+
+Click 'View' to see the content of the file in the Notes and Documents.
+
+Click the vertical three Dots on the right side of file for more options.
+    -Change Note or Document Title by typing New title to the box.
+    -Select 'Save' to store the recent changes 
+    -Select 'Delete' to remove the file from the Notes
+
+In lower left side:
+Click the '+' add button to add new notebook.
+
+Organize your ideas by topic by creating a new notebook for each category.
+Select from the dropdown menu to switch between notebooks.
+
+On the lower right side:
+Click delete to remove unnecessary notebook.
         ";
         public string currentNotebook;
         public DBObjectManager saver_obj;

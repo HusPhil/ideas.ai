@@ -94,6 +94,7 @@ namespace IdeasAi
 
             btn_active = btn_mindmap;
             lbl_currentPage.Text = btn_active.Text;
+            btn_howToUse.Enabled = false;
 
             loadForm(frm_home, pnl_content);
             setActiveBtn((object)btn_home, pnl_pageTabs);
@@ -119,13 +120,6 @@ namespace IdeasAi
             }
         }
 
-        public static void Log(string message,
-                            [System.Runtime.CompilerServices.CallerFilePath] string sourceFilePath = "",
-                            [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0)
-        {
-            string fileName = System.IO.Path.GetFileName(sourceFilePath);
-            Console.WriteLine($"[{fileName}:{sourceLineNumber}] {message}");
-        }
         public static string ConvertMarkdownToPlainText(string markdown)
         {
             // Remove Markdown bold formatting
@@ -257,6 +251,7 @@ namespace IdeasAi
         }
         private void btn_home_Click(object sender, EventArgs e)
         {
+            btn_howToUse.Enabled = false;
             setActiveBtn(sender, pnl_pageTabs);
 
 
@@ -264,6 +259,7 @@ namespace IdeasAi
         }
         private void btn_consultation_Click(object sender, EventArgs e)
         {
+            btn_howToUse.Enabled = true;
             setActiveBtn(sender, pnl_pageTabs);
 
 
@@ -271,11 +267,13 @@ namespace IdeasAi
         }
         private void btn_workspace_Click(object sender, EventArgs e)
         {
+            btn_howToUse.Enabled = true;
             setActiveBtn(sender, pnl_pageTabs);
             loadForm(frm_workspace, pnl_content);
         }        
         private void btn_notebook_Click(object sender, EventArgs e)
         {
+            btn_howToUse.Enabled = true;
             InitializeConfigs();
             frm_notebook.showAllIdeas();
             setActiveBtn(sender, pnl_pageTabs);
@@ -284,6 +282,7 @@ namespace IdeasAi
         }
         private void btn_mindmap_Click(object sender, EventArgs e)
         {
+            btn_howToUse.Enabled = true;
             setActiveBtn(sender, pnl_pageTabs);
             loadForm(frm_mindmap, pnl_content);
         }
@@ -581,6 +580,16 @@ namespace IdeasAi
         private void pbx_logo_MouseLeave(object sender, EventArgs e)
         {
             pbx_logo.BorderStyle = BorderStyle.None;
+        }
+
+        private void btn_appExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btn_appMax_Click(object sender, EventArgs e)
+        {
+            ToggleFullScreen();
         }
     }
 }

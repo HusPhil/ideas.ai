@@ -27,6 +27,8 @@ namespace IdeasAi.modals
             var ownerForm = mainForm;
             this.Location = ModalManager.CenterLocation(ownerForm.Width, ownerForm.Height, this.Width, this.Height, ownerForm.Location.X, ownerForm.Location.Y);
 
+            var size = TextRenderer.MeasureText(lbl_content.Text, lbl_content.Font);
+            lbl_content.Size = new Size(size.Width, size.Height + 150);
            
 
         }
@@ -35,6 +37,11 @@ namespace IdeasAi.modals
         {
             mainForm.modalBG.Hide();
             this.Close();
+        }
+
+        private void lbl_content_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

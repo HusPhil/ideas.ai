@@ -13,10 +13,16 @@ namespace IdeasAi.PageForms
 {
     public partial class frm_consultation : Form
     {
-        public const string howToUse = @"
-        This is how to use the consultation kineme:
-        firrst: you have to kineme              EDI WOW SAYOI
+        public const string howToUse = @"Provide question to the prompt.
 
+The program will generate ideas related to the topic inputted.
+
+Click 'Save' button to save the generated idea into PDF file that can be accessed offline.
+
+Click 'Print' button to directly print the generated idea from the program.
+
+Click 'Workspace' button to save the generated idea into the program itself, 
+ and can be accessed in the workspace tab.
         ";
         private MainForm mainForm;
 
