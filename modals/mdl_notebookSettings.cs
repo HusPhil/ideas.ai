@@ -120,6 +120,8 @@ namespace IdeasAi.modals
                 mainForm.addNotification("error", "Failed to create!", $"{ex.Message}");
 
             }
+            txb_saveDBPath.Clear();
+            btn_createNew.Enabled = false;
             this.Close();
         }
 

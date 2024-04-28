@@ -293,29 +293,29 @@ namespace IdeasAi
         }
         private void btn_howToUse_Click(object sender, EventArgs e)
         {
-            var currentActivBtn = btn_active.Text;
+            var currentActivBtn = btn_active.Text.Trim();
             var contentToDisplay = "";
 
-            if (currentActivBtn == btn_home.Text)
+            if (currentActivBtn == btn_home.Text.Trim())
             {
                 contentToDisplay = frm_home.howToUse;
             }
-            else if (currentActivBtn == btn_notebook.Text)
+            else if (currentActivBtn == btn_notebook.Text.Trim())
             {
                 contentToDisplay = frm_notebook.howToUse;
 
             }
-            else if (currentActivBtn == btn_workspace.Text)
+            else if (currentActivBtn == btn_workspace.Text.Trim())
             {
                 contentToDisplay = frm_workspace.howToUse;
 
             }
-            else if (currentActivBtn == btn_mindmap.Text)
+            else if (currentActivBtn == btn_mindmap.Text.Trim())
             {
                 contentToDisplay = frm_mindmap.howToUse;
 
             }
-            else if (currentActivBtn == btn_consultation.Text)
+            else if (currentActivBtn == btn_consultation.Text.Trim())
             {
                 contentToDisplay = frm_consultation.howToUse;
 
