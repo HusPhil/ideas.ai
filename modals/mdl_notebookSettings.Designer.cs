@@ -28,11 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mdl_notebookSettings));
             this.pnl_header = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_exit = new System.Windows.Forms.Button();
-            this.lbl_title = new System.Windows.Forms.Label();
             this.pnl_content = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.btn_browse = new System.Windows.Forms.Button();
@@ -48,78 +44,39 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.btn_exit = new System.Windows.Forms.Button();
+            this.lbl_title = new System.Windows.Forms.Label();
             this.pnl_header.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnl_content.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_header
             // 
-            this.pnl_header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(192)))), ((int)(((byte)(195)))));
+            this.pnl_header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
             this.pnl_header.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl_header.Controls.Add(this.pictureBox1);
+            this.pnl_header.Controls.Add(this.panel8);
             this.pnl_header.Controls.Add(this.lbl_title);
             this.pnl_header.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_header.Location = new System.Drawing.Point(13, 35);
+            this.pnl_header.Location = new System.Drawing.Point(13, 12);
             this.pnl_header.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnl_header.Name = "pnl_header";
-            this.pnl_header.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.pnl_header.Size = new System.Drawing.Size(510, 62);
             this.pnl_header.TabIndex = 3;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(192)))), ((int)(((byte)(195)))));
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(7, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.pictureBox1.Size = new System.Drawing.Size(80, 60);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btn_exit
-            // 
-            this.btn_exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(143)))), ((int)(((byte)(177)))));
-            this.btn_exit.CausesValidation = false;
-            this.btn_exit.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_exit.Location = new System.Drawing.Point(494, 5);
-            this.btn_exit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Size = new System.Drawing.Size(29, 26);
-            this.btn_exit.TabIndex = 6;
-            this.btn_exit.Text = "X";
-            this.btn_exit.UseVisualStyleBackColor = false;
-            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
-            // 
-            // lbl_title
-            // 
-            this.lbl_title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(192)))), ((int)(((byte)(195)))));
-            this.lbl_title.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lbl_title.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_title.Location = new System.Drawing.Point(85, 0);
-            this.lbl_title.Name = "lbl_title";
-            this.lbl_title.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.lbl_title.Size = new System.Drawing.Size(423, 60);
-            this.lbl_title.TabIndex = 0;
-            this.lbl_title.Text = "Add New Notebook";
-            this.lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnl_content
             // 
             this.pnl_content.Controls.Add(this.panel7);
             this.pnl_content.Controls.Add(this.panel6);
             this.pnl_content.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_content.Location = new System.Drawing.Point(13, 97);
+            this.pnl_content.Location = new System.Drawing.Point(13, 74);
             this.pnl_content.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnl_content.Name = "pnl_content";
-            this.pnl_content.Size = new System.Drawing.Size(510, 278);
+            this.pnl_content.Size = new System.Drawing.Size(510, 301);
             this.pnl_content.TabIndex = 4;
             this.pnl_content.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_content_Paint);
             // 
@@ -128,8 +85,8 @@
             this.panel7.Controls.Add(this.btn_browse);
             this.panel7.Controls.Add(this.btn_createNew);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel7.Location = new System.Drawing.Point(0, 163);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel7.Location = new System.Drawing.Point(0, 186);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
             this.panel7.Padding = new System.Windows.Forms.Padding(107, 6, 107, 12);
             this.panel7.Size = new System.Drawing.Size(510, 81);
@@ -152,7 +109,7 @@
             // 
             // btn_createNew
             // 
-            this.btn_createNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(126)))));
+            this.btn_createNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(229)))), ((int)(((byte)(135)))));
             this.btn_createNew.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_createNew.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_createNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -168,11 +125,11 @@
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(192)))), ((int)(((byte)(195)))));
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(0, 244);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Location = new System.Drawing.Point(0, 267);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
             this.panel6.Padding = new System.Windows.Forms.Padding(133, 12, 133, 37);
             this.panel6.Size = new System.Drawing.Size(510, 34);
@@ -244,8 +201,8 @@
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(13, 97);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Location = new System.Drawing.Point(13, 74);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(510, 18);
             this.panel2.TabIndex = 7;
@@ -256,8 +213,8 @@
             this.panel1.Controls.Add(this.txb_noteName);
             this.panel1.Controls.Add(this.lbl_notebookName);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(13, 115);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(13, 92);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(107, 0, 107, 6);
             this.panel1.Size = new System.Drawing.Size(510, 63);
@@ -267,7 +224,7 @@
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(107, 20);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(296, 12);
             this.panel3.TabIndex = 3;
@@ -279,8 +236,8 @@
             this.panel4.Controls.Add(this.lbl_savePath);
             this.panel4.Controls.Add(this.txb_saveDBPath);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(13, 178);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Location = new System.Drawing.Point(13, 155);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(107, 6, 165, 0);
             this.panel4.Size = new System.Drawing.Size(510, 63);
@@ -290,10 +247,51 @@
             // 
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(107, 22);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(238, 10);
             this.panel5.TabIndex = 6;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.btn_exit);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel8.Location = new System.Drawing.Point(447, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Padding = new System.Windows.Forms.Padding(15);
+            this.panel8.Size = new System.Drawing.Size(61, 60);
+            this.panel8.TabIndex = 16;
+            // 
+            // btn_exit
+            // 
+            this.btn_exit.BackColor = System.Drawing.Color.Transparent;
+            this.btn_exit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_exit.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.btn_exit.Location = new System.Drawing.Point(15, 15);
+            this.btn_exit.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_exit.Name = "btn_exit";
+            this.btn_exit.Size = new System.Drawing.Size(31, 30);
+            this.btn_exit.TabIndex = 5;
+            this.btn_exit.Text = "X";
+            this.btn_exit.UseVisualStyleBackColor = false;
+            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
+            // 
+            // lbl_title
+            // 
+            this.lbl_title.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_title.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_title.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_title.Image = global::IdeasAi.Properties.Resources.addNotebook;
+            this.lbl_title.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_title.Location = new System.Drawing.Point(0, 0);
+            this.lbl_title.Name = "lbl_title";
+            this.lbl_title.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.lbl_title.Size = new System.Drawing.Size(508, 60);
+            this.lbl_title.TabIndex = 0;
+            this.lbl_title.Text = "     Add New Notebook";
+            this.lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // mdl_notebookSettings
             // 
@@ -302,7 +300,6 @@
             this.ClientSize = new System.Drawing.Size(536, 387);
             this.ControlBox = false;
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnl_content);
@@ -311,18 +308,18 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "mdl_notebookSettings";
             this.Opacity = 0D;
-            this.Padding = new System.Windows.Forms.Padding(13, 35, 13, 12);
+            this.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.ShowInTaskbar = false;
             this.Text = "mdl_noteSettings";
             this.Load += new System.EventHandler(this.mdl_notebookSettings_Load);
             this.pnl_header.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnl_content.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -338,7 +335,6 @@
         private System.Windows.Forms.Label lbl_savePath;
         private System.Windows.Forms.TextBox txb_saveDBPath;
         private System.Windows.Forms.Button btn_browsePath;
-        private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
@@ -346,6 +342,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button btn_exit;
     }
 }

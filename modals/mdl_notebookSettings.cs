@@ -30,6 +30,7 @@ namespace IdeasAi.modals
 
         private void mdl_notebookSettings_Load(object sender, EventArgs e)
         {
+            btn_createNew.Enabled = false;
             var ownerForm = mainForm;
             this.Location = ModalManager.CenterLocation(ownerForm.Width, ownerForm.Height, this.Width, this.Height, ownerForm.Location.X, ownerForm.Location.Y);
         }

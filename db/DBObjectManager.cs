@@ -47,10 +47,6 @@ namespace IdeasAi.db
             get { return _content; }
             set
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    throw new ArgumentNullException("Content cannot be null or empty.");
-                }
                 _content = value;
             }
         }

@@ -33,8 +33,8 @@ namespace IdeasAi.pages
             this.pnl_tabSelect = new System.Windows.Forms.Panel();
             this.tbpnl_tabs = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lbl_currentNotebook = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbl_currentNotebook = new System.Windows.Forms.Label();
             this.btn_notesTab = new System.Windows.Forms.Button();
             this.btn_docsTab = new System.Windows.Forms.Button();
             this.pnl_footer = new System.Windows.Forms.Panel();
@@ -99,6 +99,17 @@ namespace IdeasAi.pages
             this.panel2.Size = new System.Drawing.Size(272, 40);
             this.panel2.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox1.Image = global::IdeasAi.Properties.Resources.notebook;
+            this.pictureBox1.Location = new System.Drawing.Point(48, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(41, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
             // lbl_currentNotebook
             // 
             this.lbl_currentNotebook.AutoEllipsis = true;
@@ -112,17 +123,6 @@ namespace IdeasAi.pages
             this.lbl_currentNotebook.Text = "label";
             this.lbl_currentNotebook.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lbl_currentNotebook.Click += new System.EventHandler(this.lbl_currentNotebook_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Image = global::IdeasAi.Properties.Resources.notebook;
-            this.pictureBox1.Location = new System.Drawing.Point(48, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(41, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
             // 
             // btn_notesTab
             // 
@@ -205,7 +205,6 @@ namespace IdeasAi.pages
             this.btn_delete.TabIndex = 4;
             this.btn_delete.UseVisualStyleBackColor = false;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
-            this.btn_delete.Leave += new System.EventHandler(this.btn_delete_Leave);
             // 
             // pnl_delDialog
             // 

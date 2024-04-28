@@ -226,29 +226,36 @@ namespace IdeasAi.pages
         {
             if (e.Control && e.KeyCode == Keys.S)
             {
-                saver_obj.Content = saver_obj.Content;
-                saver_obj.Title = txb_docsTitle.Text;
-                saver_obj.DateCreated = DateTime.Now;
-
-                if (!mainForm.dbManager_Docs.recordExist(saver_obj.UUID))
+                try
                 {
-                    mainForm.dbManager_Docs.saveObject(saver_obj);
-                    mainForm.loadForm(mainForm.frm_notebook, mainForm.getPnlContent());
-                    mainForm.setActiveBtn(mainForm.getBtnNotebook(), mainForm.getPnlPageTabs());
-                    mainForm.frm_notebook.setActiveBtn(mainForm.frm_notebook.getBtnDocsTab(), mainForm.frm_notebook.getTbpnlTabs());
-                    mainForm.frm_notebook.displaySavedIdeas(mainForm.dbManager_Docs);
-                }
-                else
-                {
-                    mainForm.dbManager_Docs.modifyField(saver_obj.UUID, "Content", saver_obj.Content);
-                    mainForm.dbManager_Docs.modifyField(saver_obj.UUID, "Title", saver_obj.Title);
-                    mainForm.dbManager_Docs.modifyField(saver_obj.UUID, "Date_modified", saver_obj.DateCreated);
+                    saver_obj.Content = saver_obj.Content;
+                    saver_obj.Title = txb_docsTitle.Text;
+                    saver_obj.DateCreated = DateTime.Now;
 
-                    Console.WriteLine("already exist");
+                    if (!mainForm.dbManager_Docs.recordExist(saver_obj.UUID))
+                    {
+                        mainForm.dbManager_Docs.saveObject(saver_obj);
+                        mainForm.loadForm(mainForm.frm_notebook, mainForm.getPnlContent());
+                        mainForm.setActiveBtn(mainForm.getBtnNotebook(), mainForm.getPnlPageTabs());
+                        mainForm.frm_notebook.setActiveBtn(mainForm.frm_notebook.getBtnDocsTab(), mainForm.frm_notebook.getTbpnlTabs());
+                        mainForm.frm_notebook.displaySavedIdeas(mainForm.dbManager_Docs);
+                    }
+                    else
+                    {
+                        mainForm.dbManager_Docs.modifyField(saver_obj.UUID, "Content", saver_obj.Content);
+                        mainForm.dbManager_Docs.modifyField(saver_obj.UUID, "Title", saver_obj.Title);
+                        mainForm.dbManager_Docs.modifyField(saver_obj.UUID, "Date_modified", saver_obj.DateCreated);
+
+                        Console.WriteLine("already exist");
+                    }
+                    e.SuppressKeyPress = true;
+                    lbl_lastDateSaved.Text = $"Last Modified: {DateTime.Now.ToString("yyyy-MM-dd hh:mm tt")}";
+                    mainForm.addNotification("success", "Successfully saved!", $"{saver_obj.Title}");
                 }
-                e.SuppressKeyPress = true;
-                lbl_lastDateSaved.Text = $"Last Modified: {DateTime.Now.ToString("yyyy-MM-dd hh:mm tt")}";
-                mainForm.addNotification("success", "Successfully saved!", $"{saver_obj.Title}");
+                catch(Exception ex)
+                {
+                    mainForm.addNotification("error", "Failed to save!", $"Can't save document with no content! {ex.Message}");
+                }
 
             }
             else if (e.Control && e.KeyCode == Keys.Q)
@@ -286,7 +293,15 @@ namespace IdeasAi.pages
         }
         private void txb_textEditor_TextChanged(object sender, EventArgs e)
         {
-            saver_obj.Content = txb_textEditor.Text;
+            try
+            {
+                saver_obj.Content = txb_textEditor.Text;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine($"can't save with null content! {ex.Message}");
+
+            }
 
         }
         private void txb_QSearch_Click(object sender, EventArgs e)

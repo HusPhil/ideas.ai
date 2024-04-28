@@ -293,11 +293,10 @@ namespace IdeasAi.pages
                 mainForm.addNotification("error", "Deleting notebook failed!", $"{ex.Message}");
 
             }
-            finally
-            {
+           
                 chb_delFile.Checked = false;
                 pnl_delDialog.Visible = false;
-            }
+            
         }
         private void displayNote_click(DBObjectManager dom, DatabaseManager db)
         {

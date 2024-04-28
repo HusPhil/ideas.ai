@@ -339,6 +339,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\saveIcon.png" />
+    <None Include="Resources\organizeModal.png" />
+    <None Include="Resources\editIdea.png" />
+    <None Include="Resources\addNotebook.png" />
+    <None Include="Resources\notice.png" />
     <None Include="Resources\chrome.png" />
     <None Include="Resources\profNeko.png" />
     <None Include="Resources\noteIcon.png" />

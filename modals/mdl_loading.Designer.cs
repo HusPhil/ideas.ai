@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.lbl_loadingInfo = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_loadingInfo
             // 
-            this.lbl_loadingInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(192)))), ((int)(((byte)(195)))));
+            this.lbl_loadingInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
             this.lbl_loadingInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_loadingInfo.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbl_loadingInfo.Font = new System.Drawing.Font("Cascadia Code", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -48,6 +48,16 @@
             this.lbl_loadingInfo.TabIndex = 1;
             this.lbl_loadingInfo.Text = "Getting There...";
             this.lbl_loadingInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(13, 78);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(30);
+            this.panel1.Size = new System.Drawing.Size(576, 257);
+            this.panel1.TabIndex = 2;
             // 
             // pictureBox1
             // 
@@ -60,16 +70,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(13, 78);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(30);
-            this.panel1.Size = new System.Drawing.Size(576, 257);
-            this.panel1.TabIndex = 2;
             // 
             // mdl_loading
             // 
@@ -88,8 +88,8 @@
             this.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.Text = "mdl_loading";
             this.Load += new System.EventHandler(this.mdl_loading_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

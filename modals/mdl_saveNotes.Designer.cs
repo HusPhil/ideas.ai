@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mdl_saveNotes));
             this.lbl_title = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -40,37 +39,35 @@
             this.lbl_noteTitle = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.sqLiteCommand1 = new System.Data.SQLite.SQLiteCommand();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_title
             // 
-            this.lbl_title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(192)))), ((int)(((byte)(195)))));
-            this.lbl_title.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lbl_title.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_title.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_title.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_title.Location = new System.Drawing.Point(46, 0);
-            this.lbl_title.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_title.Image = global::IdeasAi.Properties.Resources.saveIcon;
+            this.lbl_title.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_title.Location = new System.Drawing.Point(0, 0);
             this.lbl_title.Name = "lbl_title";
-            this.lbl_title.Size = new System.Drawing.Size(377, 47);
+            this.lbl_title.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.lbl_title.Size = new System.Drawing.Size(565, 58);
             this.lbl_title.TabIndex = 0;
-            this.lbl_title.Text = "Do you want to Save this in Notebook?";
+            this.lbl_title.Text = "    Do you want to Save this in Notebook?";
             this.lbl_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(192)))), ((int)(((byte)(195)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.lbl_title);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(10, 10);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(13, 12);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.panel1.Size = new System.Drawing.Size(425, 49);
+            this.panel1.Size = new System.Drawing.Size(567, 60);
             this.panel1.TabIndex = 2;
             // 
             // panel2
@@ -82,21 +79,21 @@
             this.panel2.Controls.Add(this.btn_save);
             this.panel2.Controls.Add(this.lbl_noteTitle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(10, 59);
-            this.panel2.Margin = new System.Windows.Forms.Padding(60, 65, 60, 65);
+            this.panel2.Location = new System.Drawing.Point(13, 72);
+            this.panel2.Margin = new System.Windows.Forms.Padding(80, 80, 80, 80);
             this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(46, 50, 46, 50);
-            this.panel2.Size = new System.Drawing.Size(425, 241);
+            this.panel2.Padding = new System.Windows.Forms.Padding(61, 62, 61, 62);
+            this.panel2.Size = new System.Drawing.Size(567, 298);
             this.panel2.TabIndex = 3;
             // 
             // txb_setNoteTitle
             // 
             this.txb_setNoteTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txb_setNoteTitle.Location = new System.Drawing.Point(46, 75);
-            this.txb_setNoteTitle.Margin = new System.Windows.Forms.Padding(2);
+            this.txb_setNoteTitle.Location = new System.Drawing.Point(61, 89);
+            this.txb_setNoteTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txb_setNoteTitle.Multiline = true;
             this.txb_setNoteTitle.Name = "txb_setNoteTitle";
-            this.txb_setNoteTitle.Size = new System.Drawing.Size(333, 31);
+            this.txb_setNoteTitle.Size = new System.Drawing.Size(445, 38);
             this.txb_setNoteTitle.StateActive.Content.Font = new System.Drawing.Font("Cascadia Code", 12F);
             this.txb_setNoteTitle.StateActive.Content.Padding = new System.Windows.Forms.Padding(8, 2, 2, 2);
             this.txb_setNoteTitle.TabIndex = 10;
@@ -110,10 +107,10 @@
             this.btn_cancel.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cancel.Font = new System.Drawing.Font("Cascadia Code", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancel.Location = new System.Drawing.Point(46, 161);
-            this.btn_cancel.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_cancel.Location = new System.Drawing.Point(61, 198);
+            this.btn_cancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.Size = new System.Drawing.Size(333, 28);
+            this.btn_cancel.Size = new System.Drawing.Size(444, 34);
             this.btn_cancel.TabIndex = 9;
             this.btn_cancel.Text = "Cancel";
             this.btn_cancel.UseVisualStyleBackColor = false;
@@ -122,31 +119,31 @@
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(46, 183);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
+            this.panel4.Location = new System.Drawing.Point(61, 226);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(333, 8);
+            this.panel4.Size = new System.Drawing.Size(445, 10);
             this.panel4.TabIndex = 8;
             // 
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(46, 67);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Location = new System.Drawing.Point(61, 79);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(333, 8);
+            this.panel3.Size = new System.Drawing.Size(445, 10);
             this.panel3.TabIndex = 5;
             // 
             // btn_save
             // 
-            this.btn_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(126)))));
+            this.btn_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(229)))), ((int)(((byte)(135)))));
             this.btn_save.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_save.Font = new System.Drawing.Font("Cascadia Code", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Location = new System.Drawing.Point(46, 129);
-            this.btn_save.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_save.Location = new System.Drawing.Point(61, 159);
+            this.btn_save.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(333, 28);
+            this.btn_save.Size = new System.Drawing.Size(444, 34);
             this.btn_save.TabIndex = 2;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = false;
@@ -155,15 +152,14 @@
             // lbl_noteTitle
             // 
             this.lbl_noteTitle.AutoSize = true;
-            this.lbl_noteTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(126)))));
-            this.lbl_noteTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_noteTitle.BackColor = System.Drawing.Color.Transparent;
             this.lbl_noteTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbl_noteTitle.Font = new System.Drawing.Font("Cascadia Code", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_noteTitle.ForeColor = System.Drawing.Color.Black;
-            this.lbl_noteTitle.Location = new System.Drawing.Point(46, 50);
-            this.lbl_noteTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 8);
+            this.lbl_noteTitle.Location = new System.Drawing.Point(61, 62);
+            this.lbl_noteTitle.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.lbl_noteTitle.Name = "lbl_noteTitle";
-            this.lbl_noteTitle.Size = new System.Drawing.Size(147, 17);
+            this.lbl_noteTitle.Size = new System.Drawing.Size(192, 17);
             this.lbl_noteTitle.TabIndex = 3;
             this.lbl_noteTitle.Text = "Give this note a title:";
             // 
@@ -172,46 +168,36 @@
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(192)))), ((int)(((byte)(195)))));
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(10, 282);
+            this.panel5.Location = new System.Drawing.Point(13, 348);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(425, 18);
+            this.panel5.Size = new System.Drawing.Size(567, 22);
             this.panel5.TabIndex = 4;
             // 
             // sqLiteCommand1
             // 
             this.sqLiteCommand1.CommandText = null;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(5, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 47);
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            // 
             // mdl_saveNotes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(445, 310);
+            this.ClientSize = new System.Drawing.Size(593, 382);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "mdl_saveNotes";
             this.Opacity = 0D;
-            this.Padding = new System.Windows.Forms.Padding(10);
+            this.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.ShowInTaskbar = false;
             this.Text = "frm_modal";
             this.Load += new System.EventHandler(this.frm_modal_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -229,6 +215,5 @@
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txb_setNoteTitle;
         private System.Windows.Forms.Panel panel5;
         private System.Data.SQLite.SQLiteCommand sqLiteCommand1;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -440,7 +440,7 @@
             this.pnl_txbCont.Location = new System.Drawing.Point(0, 12);
             this.pnl_txbCont.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnl_txbCont.Name = "pnl_txbCont";
-            this.pnl_txbCont.Padding = new System.Windows.Forms.Padding(11, 12, 11, 0);
+            this.pnl_txbCont.Padding = new System.Windows.Forms.Padding(11, 10, 11, 0);
             this.pnl_txbCont.Size = new System.Drawing.Size(194, 42);
             this.pnl_txbCont.TabIndex = 6;
             this.pnl_txbCont.Click += new System.EventHandler(this.txb_QSearch_Click);
@@ -451,12 +451,12 @@
             this.txb_QSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txb_QSearch.Font = new System.Drawing.Font("Cascadia Code SemiLight", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txb_QSearch.ForeColor = System.Drawing.Color.Silver;
-            this.txb_QSearch.Location = new System.Drawing.Point(11, 12);
+            this.txb_QSearch.Location = new System.Drawing.Point(11, 10);
             this.txb_QSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txb_QSearch.Multiline = false;
             this.txb_QSearch.Name = "txb_QSearch";
             this.txb_QSearch.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.txb_QSearch.Size = new System.Drawing.Size(170, 28);
+            this.txb_QSearch.Size = new System.Drawing.Size(170, 30);
             this.txb_QSearch.TabIndex = 2;
             this.txb_QSearch.Tag = "";
             this.txb_QSearch.Text = "Quick search";

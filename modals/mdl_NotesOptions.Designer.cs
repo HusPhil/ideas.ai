@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mdl_NotesOptions));
             this.lbl_noteTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_delete = new System.Windows.Forms.Button();
@@ -39,34 +38,33 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.btn_exit = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_noteTitle
             // 
             this.lbl_noteTitle.AutoSize = true;
-            this.lbl_noteTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(126)))));
-            this.lbl_noteTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_noteTitle.BackColor = System.Drawing.Color.Transparent;
             this.lbl_noteTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbl_noteTitle.Font = new System.Drawing.Font("Cascadia Code", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_noteTitle.ForeColor = System.Drawing.Color.Black;
             this.lbl_noteTitle.Location = new System.Drawing.Point(61, 62);
             this.lbl_noteTitle.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.lbl_noteTitle.Name = "lbl_noteTitle";
-            this.lbl_noteTitle.Size = new System.Drawing.Size(98, 19);
+            this.lbl_noteTitle.Size = new System.Drawing.Size(96, 17);
             this.lbl_noteTitle.TabIndex = 3;
             this.lbl_noteTitle.Text = "Note title:";
             // 
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(61, 81);
+            this.panel3.Location = new System.Drawing.Point(61, 79);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(445, 10);
@@ -98,7 +96,7 @@
             // 
             // btn_save
             // 
-            this.btn_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(126)))));
+            this.btn_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(229)))), ((int)(((byte)(135)))));
             this.btn_save.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btn_save.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btn_save.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -132,7 +130,7 @@
             // txb_setNoteTitle
             // 
             this.txb_setNoteTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txb_setNoteTitle.Location = new System.Drawing.Point(61, 91);
+            this.txb_setNoteTitle.Location = new System.Drawing.Point(61, 89);
             this.txb_setNoteTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txb_setNoteTitle.Multiline = true;
             this.txb_setNoteTitle.Name = "txb_setNoteTitle";
@@ -145,7 +143,7 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(192)))), ((int)(((byte)(195)))));
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
             this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(13, 340);
@@ -156,7 +154,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(192)))), ((int)(((byte)(195)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(13, 12);
@@ -167,55 +165,57 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(192)))), ((int)(((byte)(195)))));
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.pictureBox1);
-            this.panel5.Controls.Add(this.btn_exit);
+            this.panel5.Controls.Add(this.panel6);
             this.panel5.Controls.Add(this.label2);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
-            this.panel5.Padding = new System.Windows.Forms.Padding(7, 0, 27, 0);
             this.panel5.Size = new System.Drawing.Size(567, 62);
             this.panel5.TabIndex = 4;
             // 
-            // pictureBox1
+            // panel6
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(7, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(68, 60);
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
+            this.panel6.Controls.Add(this.btn_exit);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel6.Location = new System.Drawing.Point(504, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Padding = new System.Windows.Forms.Padding(15);
+            this.panel6.Size = new System.Drawing.Size(61, 60);
+            this.panel6.TabIndex = 15;
             // 
             // btn_exit
             // 
-            this.btn_exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(143)))), ((int)(((byte)(177)))));
+            this.btn_exit.BackColor = System.Drawing.Color.Transparent;
+            this.btn_exit.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_exit.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_exit.Location = new System.Drawing.Point(532, 4);
+            this.btn_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.btn_exit.Location = new System.Drawing.Point(15, 15);
             this.btn_exit.Margin = new System.Windows.Forms.Padding(4);
             this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Size = new System.Drawing.Size(29, 25);
-            this.btn_exit.TabIndex = 4;
+            this.btn_exit.Size = new System.Drawing.Size(31, 30);
+            this.btn_exit.TabIndex = 5;
             this.btn_exit.Text = "X";
             this.btn_exit.UseVisualStyleBackColor = false;
             this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
             // label2
             // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label2.Enabled = false;
-            this.label2.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(75, 0);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Cascadia Code", 12F);
+            this.label2.Image = global::IdeasAi.Properties.Resources.editIdea;
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(463, 60);
+            this.label2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.label2.Size = new System.Drawing.Size(565, 60);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Edit Note";
+            this.label2.Text = "    Edit Note";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // mdl_NotesOptions
@@ -240,7 +240,7 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -257,7 +257,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button btn_exit;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
