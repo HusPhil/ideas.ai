@@ -111,11 +111,12 @@
             // 
             // btn_close
             // 
-            this.btn_close.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(143)))), ((int)(((byte)(177)))));
+            this.btn_close.BackColor = System.Drawing.Color.Transparent;
             this.btn_close.BackgroundImage = global::IdeasAi.Properties.Resources.close;
             this.btn_close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_close.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_close.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn_close.FlatAppearance.BorderSize = 0;
             this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_close.Location = new System.Drawing.Point(304, 0);
             this.btn_close.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

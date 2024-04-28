@@ -16,9 +16,39 @@ namespace IdeasAi.db
     public abstract class DatabaseManager
     {
         MainForm mainForm;
-        public string dbFilePath;
-        public const string ConfigFilePath = "configs/settings.json";
-        protected string table { get; set; }
+        private const string ConfigFilePath = "configs/settings.json";
+        private string _dbFilePath;
+
+        // Public property for accessing the file path with encapsulation
+        public string dbFilePath
+        {
+            get { return _dbFilePath; }
+            set
+            {
+                // Add validation logic if needed
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("File path cannot be null or empty.");
+                }
+
+                _dbFilePath = value;
+            }
+        }
+        protected string _table { get; set; }
+        protected string table
+        {
+            get { return _table; }
+            set {
+                if (value.Equals("Note") || value.Equals("Document"))
+                {
+                    _table = value;
+                }
+                else
+                {
+                    throw new ArgumentException("No such database table exist.");
+                }
+            }
+        }
         public DatabaseManager(MainForm mainForm)
         {
             this.mainForm = mainForm;

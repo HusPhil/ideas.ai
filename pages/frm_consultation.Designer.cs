@@ -43,6 +43,7 @@
             this.txb_Consult = new System.Windows.Forms.RichTextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btn_send = new System.Windows.Forms.Button();
+            this.btn_searchMode = new System.Windows.Forms.Button();
             this.btn_toWorkspace = new System.Windows.Forms.Button();
             this.btn_print = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
@@ -90,6 +91,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.btn_searchMode);
             this.panel3.Controls.Add(this.btn_toWorkspace);
             this.panel3.Controls.Add(this.panel7);
             this.panel3.Controls.Add(this.btn_print);
@@ -99,7 +101,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 552);
             this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(0, 12, 0, 10);
+            this.panel3.Padding = new System.Windows.Forms.Padding(0, 12, 15, 10);
             this.panel3.Size = new System.Drawing.Size(930, 64);
             this.panel3.TabIndex = 11;
             // 
@@ -210,6 +212,25 @@
             this.btn_send.UseVisualStyleBackColor = false;
             this.btn_send.Click += new System.EventHandler(this.btn_send_Click);
             // 
+            // btn_searchMode
+            // 
+            this.btn_searchMode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(229)))), ((int)(((byte)(135)))));
+            this.btn_searchMode.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_searchMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn_searchMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_searchMode.Font = new System.Drawing.Font("Cascadia Code", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_searchMode.Image = global::IdeasAi.Properties.Resources.chrome;
+            this.btn_searchMode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_searchMode.Location = new System.Drawing.Point(801, 12);
+            this.btn_searchMode.Name = "btn_searchMode";
+            this.btn_searchMode.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btn_searchMode.Size = new System.Drawing.Size(114, 42);
+            this.btn_searchMode.TabIndex = 15;
+            this.btn_searchMode.Text = "Google";
+            this.btn_searchMode.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_searchMode.UseVisualStyleBackColor = false;
+            this.btn_searchMode.Click += new System.EventHandler(this.btn_searchMode_Click);
+            // 
             // btn_toWorkspace
             // 
             this.btn_toWorkspace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(229)))), ((int)(((byte)(135)))));
@@ -310,5 +331,6 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel pnl_wbCont;
+        private System.Windows.Forms.Button btn_searchMode;
     }
 }

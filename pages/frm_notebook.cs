@@ -30,7 +30,7 @@ namespace IdeasAi.pages
 
             showAllIdeas();
 
-
+            
 
         }
         private void frm_notebook_SizeChanged(object sender, EventArgs e)
@@ -355,6 +355,16 @@ namespace IdeasAi.pages
         public ref ComboBox getCbDBSelector()
         {
             return ref cb_dbSelector;
+        }
+
+        private void lbl_currentNotebook_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_delete_Leave(object sender, EventArgs e)
+        {
+            pnl_delDialog.Visible = false;
         }
     }
 }

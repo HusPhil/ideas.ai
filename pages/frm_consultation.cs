@@ -182,6 +182,10 @@ namespace IdeasAi.PageForms
             return ref btn_toWorkspace;
         }
 
+        private void btn_searchMode_Click(object sender, EventArgs e)
+        {
+            wb_container.Navigate("google.com");
+        }
     }
 
 }

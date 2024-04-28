@@ -174,7 +174,7 @@ namespace IdeasAi.pages
         {
             saver_obj.UUID = Guid.NewGuid();
             txb_docsTitle.Text = "Untitled Docs";
-            txb_textEditor.Text = "";
+            txb_textEditor.Text = "Type your ideas...";
             lbl_lastDateSaved.Text = "Last Modified: N/A";
             saver_obj.Content = txb_textEditor.Text;
             saver_obj.Title = txb_docsTitle.Text;

@@ -32,9 +32,11 @@ namespace IdeasAi.pages
         {
             this.pnl_tabSelect = new System.Windows.Forms.Panel();
             this.tbpnl_tabs = new System.Windows.Forms.TableLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lbl_currentNotebook = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_notesTab = new System.Windows.Forms.Button();
             this.btn_docsTab = new System.Windows.Forms.Button();
-            this.lbl_currentNotebook = new System.Windows.Forms.Label();
             this.pnl_footer = new System.Windows.Forms.Panel();
             this.pnl_noteSettings = new System.Windows.Forms.Panel();
             this.btn_delete = new System.Windows.Forms.Button();
@@ -47,16 +49,14 @@ namespace IdeasAi.pages
             this.btn_notebookSettings = new System.Windows.Forms.Button();
             this.pnl_container = new System.Windows.Forms.FlowLayoutPanel();
             this.lbl_nothingFound = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnl_tabSelect.SuspendLayout();
             this.tbpnl_tabs.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnl_footer.SuspendLayout();
             this.pnl_noteSettings.SuspendLayout();
             this.pnl_delDialog.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_tabSelect
@@ -87,6 +87,42 @@ namespace IdeasAi.pages
             this.tbpnl_tabs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tbpnl_tabs.Size = new System.Drawing.Size(870, 46);
             this.tbpnl_tabs.TabIndex = 3;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.lbl_currentNotebook);
+            this.panel2.Location = new System.Drawing.Point(299, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(272, 40);
+            this.panel2.TabIndex = 0;
+            // 
+            // lbl_currentNotebook
+            // 
+            this.lbl_currentNotebook.AutoEllipsis = true;
+            this.lbl_currentNotebook.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lbl_currentNotebook.Font = new System.Drawing.Font("Cascadia Code", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_currentNotebook.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_currentNotebook.Location = new System.Drawing.Point(89, 0);
+            this.lbl_currentNotebook.Name = "lbl_currentNotebook";
+            this.lbl_currentNotebook.Size = new System.Drawing.Size(183, 40);
+            this.lbl_currentNotebook.TabIndex = 5;
+            this.lbl_currentNotebook.Text = "label";
+            this.lbl_currentNotebook.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_currentNotebook.Click += new System.EventHandler(this.lbl_currentNotebook_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox1.Image = global::IdeasAi.Properties.Resources.notebook;
+            this.pictureBox1.Location = new System.Drawing.Point(48, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(41, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // btn_notesTab
             // 
@@ -132,19 +168,6 @@ namespace IdeasAi.pages
             this.btn_docsTab.UseVisualStyleBackColor = false;
             this.btn_docsTab.Click += new System.EventHandler(this.btn_docsTab_Click);
             // 
-            // lbl_currentNotebook
-            // 
-            this.lbl_currentNotebook.AutoEllipsis = true;
-            this.lbl_currentNotebook.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_currentNotebook.Font = new System.Drawing.Font("Cascadia Code", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_currentNotebook.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbl_currentNotebook.Location = new System.Drawing.Point(41, 0);
-            this.lbl_currentNotebook.Name = "lbl_currentNotebook";
-            this.lbl_currentNotebook.Size = new System.Drawing.Size(167, 40);
-            this.lbl_currentNotebook.TabIndex = 5;
-            this.lbl_currentNotebook.Text = "label";
-            this.lbl_currentNotebook.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // pnl_footer
             // 
             this.pnl_footer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -182,6 +205,7 @@ namespace IdeasAi.pages
             this.btn_delete.TabIndex = 4;
             this.btn_delete.UseVisualStyleBackColor = false;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            this.btn_delete.Leave += new System.EventHandler(this.btn_delete_Leave);
             // 
             // pnl_delDialog
             // 
@@ -295,28 +319,6 @@ namespace IdeasAi.pages
             this.lbl_nothingFound.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_nothingFound.Visible = false;
             // 
-            // panel2
-            // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.lbl_currentNotebook);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Location = new System.Drawing.Point(331, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(208, 40);
-            this.panel2.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = global::IdeasAi.Properties.Resources.notebook;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(41, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
             // frm_notebook
             // 
             this.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -332,13 +334,13 @@ namespace IdeasAi.pages
             this.SizeChanged += new System.EventHandler(this.frm_notebook_SizeChanged);
             this.pnl_tabSelect.ResumeLayout(false);
             this.tbpnl_tabs.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnl_footer.ResumeLayout(false);
             this.pnl_noteSettings.ResumeLayout(false);
             this.pnl_delDialog.ResumeLayout(false);
             this.pnl_delDialog.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

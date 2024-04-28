@@ -119,6 +119,13 @@ namespace IdeasAi
             }
         }
 
+        public static void Log(string message,
+                            [System.Runtime.CompilerServices.CallerFilePath] string sourceFilePath = "",
+                            [System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = 0)
+        {
+            string fileName = System.IO.Path.GetFileName(sourceFilePath);
+            Console.WriteLine($"[{fileName}:{sourceLineNumber}] {message}");
+        }
         public static string ConvertMarkdownToPlainText(string markdown)
         {
             // Remove Markdown bold formatting

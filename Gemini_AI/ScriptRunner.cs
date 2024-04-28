@@ -12,47 +12,6 @@ namespace IdeasAi.Gemini_AI
 {
     internal class ScriptRunner
     {
-        
-        public static string runScript(string scriptName, string prompt)
-        {
-            string jsonString = File.ReadAllText("configs/settings.json");
-
-            var appSettings = JObject.Parse(jsonString);
-            ReplaceEnvironmentVariables(appSettings);
-
-            var pythonModule = (string)appSettings["Python_Module"];
-            var apiKey = (string)appSettings["API_KEY"];
-
-            var psi = new ProcessStartInfo();
-            psi.FileName = pythonModule;
-            psi.Arguments = $"\"{scriptName}\" \"{prompt.Replace("\"", "'")}\" \"{apiKey}\"";
-
-            psi.UseShellExecute = false;
-            psi.CreateNoWindow = true;
-            psi.RedirectStandardError = true;
-            psi.RedirectStandardOutput = true;
-            psi.StandardOutputEncoding = System.Text.Encoding.UTF8;
-
-            var result = "ERROR";
-            var error = "NONE";
-            //Console.WriteLine(prompt);
-            using (var process = Process.Start(psi))
-            {
-                result = process.StandardOutput.ReadToEnd();
-                error = process.StandardError.ReadToEnd();
-                
-            }
-            //Console.WriteLine("result: " + result);
-            //Console.WriteLine(error);
-
-            
-
-            return result;
-
-
-
-        }
-
         public static async Task<string> RunScriptAsync(string scriptName, string prompt, JObject appConfig)
         {
             

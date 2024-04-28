@@ -44,5 +44,10 @@ namespace IdeasAi.pages
             mainForm.loadForm(mainForm.frm_consultation, mainForm.getPnlContent());
             mainForm.setActiveBtn(mainForm.getBtnConsult(), mainForm.getPnlPageTabs());
         }
+
+        private void frm_home_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

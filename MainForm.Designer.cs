@@ -31,6 +31,7 @@ namespace IdeasAi
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.pnl_formHeader = new System.Windows.Forms.Panel();
             this.pnl_mFormContent = new System.Windows.Forms.Panel();
             this.pnl_fillContent = new System.Windows.Forms.Panel();
@@ -61,6 +62,8 @@ namespace IdeasAi
             this.pnl_sectFooter = new System.Windows.Forms.Panel();
             this.pnl_header = new System.Windows.Forms.Panel();
             this.tmr_animation = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btn_toggleDarkMode = new System.Windows.Forms.Button();
             this.btn_howToUse = new System.Windows.Forms.Button();
             this.btn_mindmap = new System.Windows.Forms.Button();
@@ -70,6 +73,8 @@ namespace IdeasAi
             this.btn_home = new System.Windows.Forms.Button();
             this.btn_exit = new System.Windows.Forms.Button();
             this.pbx_logo = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnl_formHeader.SuspendLayout();
             this.pnl_mFormContent.SuspendLayout();
             this.pnl_fillContent.SuspendLayout();
             this.pnlb_content.SuspendLayout();
@@ -92,18 +97,23 @@ namespace IdeasAi
             this.pnl_HomeBtn.SuspendLayout();
             this.pnl_sectFooter.SuspendLayout();
             this.pnl_header.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_formHeader
             // 
             this.pnl_formHeader.AccessibleRole = System.Windows.Forms.AccessibleRole.ToolBar;
             this.pnl_formHeader.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.pnl_formHeader.Controls.Add(this.label1);
+            this.pnl_formHeader.Controls.Add(this.panel1);
             this.pnl_formHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_formHeader.Location = new System.Drawing.Point(0, 0);
             this.pnl_formHeader.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_formHeader.Name = "pnl_formHeader";
-            this.pnl_formHeader.Size = new System.Drawing.Size(1280, 42);
+            this.pnl_formHeader.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.pnl_formHeader.Size = new System.Drawing.Size(1280, 50);
             this.pnl_formHeader.TabIndex = 5;
             this.pnl_formHeader.DoubleClick += new System.EventHandler(this.pnl_formHeader_DoubleClick);
             this.pnl_formHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_formHeader_MouseDown);
@@ -116,10 +126,10 @@ namespace IdeasAi
             this.pnl_mFormContent.Controls.Add(this.pnl_fillContent);
             this.pnl_mFormContent.Controls.Add(this.pnl_sideContent);
             this.pnl_mFormContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_mFormContent.Location = new System.Drawing.Point(0, 42);
+            this.pnl_mFormContent.Location = new System.Drawing.Point(0, 50);
             this.pnl_mFormContent.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_mFormContent.Name = "pnl_mFormContent";
-            this.pnl_mFormContent.Size = new System.Drawing.Size(1280, 678);
+            this.pnl_mFormContent.Size = new System.Drawing.Size(1280, 670);
             this.pnl_mFormContent.TabIndex = 6;
             // 
             // pnl_fillContent
@@ -132,7 +142,7 @@ namespace IdeasAi
             this.pnl_fillContent.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_fillContent.Name = "pnl_fillContent";
             this.pnl_fillContent.Padding = new System.Windows.Forms.Padding(0, 0, 20, 20);
-            this.pnl_fillContent.Size = new System.Drawing.Size(960, 678);
+            this.pnl_fillContent.Size = new System.Drawing.Size(960, 670);
             this.pnl_fillContent.TabIndex = 7;
             // 
             // pnlb_content
@@ -144,7 +154,7 @@ namespace IdeasAi
             this.pnlb_content.Location = new System.Drawing.Point(0, 94);
             this.pnlb_content.Name = "pnlb_content";
             this.pnlb_content.Padding = new System.Windows.Forms.Padding(2);
-            this.pnlb_content.Size = new System.Drawing.Size(940, 564);
+            this.pnlb_content.Size = new System.Drawing.Size(940, 556);
             this.pnlb_content.TabIndex = 5;
             // 
             // pnl_content
@@ -154,7 +164,7 @@ namespace IdeasAi
             this.pnl_content.Location = new System.Drawing.Point(2, 2);
             this.pnl_content.Margin = new System.Windows.Forms.Padding(12);
             this.pnl_content.Name = "pnl_content";
-            this.pnl_content.Size = new System.Drawing.Size(934, 558);
+            this.pnl_content.Size = new System.Drawing.Size(934, 550);
             this.pnl_content.TabIndex = 4;
             // 
             // pnl_contentHeader
@@ -201,7 +211,7 @@ namespace IdeasAi
             this.pnlb_pageTitle.Location = new System.Drawing.Point(0, 20);
             this.pnlb_pageTitle.Name = "pnlb_pageTitle";
             this.pnlb_pageTitle.Padding = new System.Windows.Forms.Padding(2);
-            this.pnlb_pageTitle.Size = new System.Drawing.Size(349, 64);
+            this.pnlb_pageTitle.Size = new System.Drawing.Size(280, 64);
             this.pnlb_pageTitle.TabIndex = 7;
             // 
             // pnl_pageTitle
@@ -213,7 +223,7 @@ namespace IdeasAi
             this.pnl_pageTitle.Location = new System.Drawing.Point(2, 2);
             this.pnl_pageTitle.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_pageTitle.Name = "pnl_pageTitle";
-            this.pnl_pageTitle.Size = new System.Drawing.Size(343, 58);
+            this.pnl_pageTitle.Size = new System.Drawing.Size(274, 58);
             this.pnl_pageTitle.TabIndex = 6;
             // 
             // lbl_currentPage
@@ -226,7 +236,7 @@ namespace IdeasAi
             this.lbl_currentPage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_currentPage.Name = "lbl_currentPage";
             this.lbl_currentPage.Padding = new System.Windows.Forms.Padding(20, 12, 12, 12);
-            this.lbl_currentPage.Size = new System.Drawing.Size(276, 58);
+            this.lbl_currentPage.Size = new System.Drawing.Size(207, 58);
             this.lbl_currentPage.TabIndex = 3;
             this.lbl_currentPage.Text = "Page 1";
             this.lbl_currentPage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -236,7 +246,7 @@ namespace IdeasAi
             this.pnl_helpbtn.BackColor = System.Drawing.Color.Transparent;
             this.pnl_helpbtn.Controls.Add(this.btn_howToUse);
             this.pnl_helpbtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnl_helpbtn.Location = new System.Drawing.Point(276, 0);
+            this.pnl_helpbtn.Location = new System.Drawing.Point(207, 0);
             this.pnl_helpbtn.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_helpbtn.Name = "pnl_helpbtn";
             this.pnl_helpbtn.Padding = new System.Windows.Forms.Padding(10);
@@ -252,7 +262,7 @@ namespace IdeasAi
             this.pnl_sideContent.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_sideContent.Name = "pnl_sideContent";
             this.pnl_sideContent.Padding = new System.Windows.Forms.Padding(20);
-            this.pnl_sideContent.Size = new System.Drawing.Size(320, 678);
+            this.pnl_sideContent.Size = new System.Drawing.Size(320, 670);
             this.pnl_sideContent.TabIndex = 6;
             // 
             // pnl_menuSectBorder
@@ -265,7 +275,7 @@ namespace IdeasAi
             this.pnl_menuSectBorder.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_menuSectBorder.Name = "pnl_menuSectBorder";
             this.pnl_menuSectBorder.Padding = new System.Windows.Forms.Padding(2);
-            this.pnl_menuSectBorder.Size = new System.Drawing.Size(280, 638);
+            this.pnl_menuSectBorder.Size = new System.Drawing.Size(280, 630);
             this.pnl_menuSectBorder.TabIndex = 5;
             // 
             // pnl_menuSect
@@ -277,7 +287,7 @@ namespace IdeasAi
             this.pnl_menuSect.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_menuSect.Name = "pnl_menuSect";
             this.pnl_menuSect.Padding = new System.Windows.Forms.Padding(30, 25, 30, 20);
-            this.pnl_menuSect.Size = new System.Drawing.Size(274, 632);
+            this.pnl_menuSect.Size = new System.Drawing.Size(274, 624);
             this.pnl_menuSect.TabIndex = 0;
             // 
             // pnl_sideContentHolder
@@ -288,7 +298,7 @@ namespace IdeasAi
             this.pnl_sideContentHolder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_sideContentHolder.Location = new System.Drawing.Point(30, 25);
             this.pnl_sideContentHolder.Name = "pnl_sideContentHolder";
-            this.pnl_sideContentHolder.Size = new System.Drawing.Size(214, 587);
+            this.pnl_sideContentHolder.Size = new System.Drawing.Size(214, 579);
             this.pnl_sideContentHolder.TabIndex = 0;
             // 
             // pnl_pageTabCont
@@ -300,7 +310,7 @@ namespace IdeasAi
             this.pnl_pageTabCont.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_pageTabCont.Name = "pnl_pageTabCont";
             this.pnl_pageTabCont.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.pnl_pageTabCont.Size = new System.Drawing.Size(214, 345);
+            this.pnl_pageTabCont.Size = new System.Drawing.Size(214, 337);
             this.pnl_pageTabCont.TabIndex = 2;
             // 
             // pnl_pageTabs
@@ -413,7 +423,7 @@ namespace IdeasAi
             // 
             this.pnl_sectFooter.Controls.Add(this.btn_exit);
             this.pnl_sectFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnl_sectFooter.Location = new System.Drawing.Point(0, 525);
+            this.pnl_sectFooter.Location = new System.Drawing.Point(0, 517);
             this.pnl_sectFooter.Name = "pnl_sectFooter";
             this.pnl_sectFooter.Size = new System.Drawing.Size(214, 62);
             this.pnl_sectFooter.TabIndex = 10;
@@ -435,6 +445,28 @@ namespace IdeasAi
             this.tmr_animation.Enabled = true;
             this.tmr_animation.Interval = 1;
             this.tmr_animation.Tick += new System.EventHandler(this.tmr_animation_Tick);
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Font = new System.Drawing.Font("Cascadia Code", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.Location = new System.Drawing.Point(73, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(330, 50);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Ideas.AI - Your Creative Playground";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(20, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(8);
+            this.panel1.Size = new System.Drawing.Size(53, 50);
+            this.panel1.TabIndex = 1;
             // 
             // btn_toggleDarkMode
             // 
@@ -622,6 +654,17 @@ namespace IdeasAi
             this.pbx_logo.MouseLeave += new System.EventHandler(this.pbx_logo_MouseLeave);
             this.pbx_logo.MouseHover += new System.EventHandler(this.pbx_logo_MouseHover);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::IdeasAi.Properties.Resources.mini_logo;
+            this.pictureBox1.Location = new System.Drawing.Point(8, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(37, 34);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -632,11 +675,13 @@ namespace IdeasAi
             this.Controls.Add(this.pnl_formHeader);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ideas.ai";
             this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
+            this.pnl_formHeader.ResumeLayout(false);
             this.pnl_mFormContent.ResumeLayout(false);
             this.pnl_fillContent.ResumeLayout(false);
             this.pnlb_content.ResumeLayout(false);
@@ -659,7 +704,9 @@ namespace IdeasAi
             this.pnl_HomeBtn.ResumeLayout(false);
             this.pnl_sectFooter.ResumeLayout(false);
             this.pnl_header.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbx_logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -704,6 +751,9 @@ namespace IdeasAi
         private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Panel pnl_header;
         private System.Windows.Forms.PictureBox pbx_logo;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

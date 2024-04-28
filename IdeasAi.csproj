@@ -339,6 +339,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\chrome.png" />
+    <None Include="Resources\profNeko.png" />
     <None Include="Resources\noteIcon.png" />
     <None Include="Resources\docIcon.png" />
     <None Include="Resources\send.png" />
