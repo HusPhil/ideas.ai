@@ -45,6 +45,7 @@ namespace IdeasAi
         public frm_workspace frm_workspace;
         public frm_notebook frm_notebook;
         public frm_mindmap frm_mindmap;
+        public frm_splash frm_Splash;
         //
         // MODALS
         //
@@ -60,12 +61,16 @@ namespace IdeasAi
 
         public Button btn_active;
 
-        public MainForm()
+        public MainForm(frm_splash FRM_SPLASH)
         {
+
 
             InitializeComponent();
             InitializeConfigs();
 
+
+            this.frm_Splash = FRM_SPLASH; 
+            
             dbManager_Note = new DBManager_Note(this);
             dbManager_Docs = new DBManager_Docs(this);
 
@@ -94,6 +99,7 @@ namespace IdeasAi
             loadForm(frm_home, pnl_content);
             setActiveBtn((object)btn_home, pnl_pageTabs);
             setThemeMode("light");
+
         }
 
         private void InitializeConfigs()

@@ -116,7 +116,6 @@
             // 
             // txb_textEditor
             // 
-            this.txb_textEditor.AcceptsTab = true;
             this.txb_textEditor.BackColor = System.Drawing.Color.White;
             this.txb_textEditor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txb_textEditor.Dock = System.Windows.Forms.DockStyle.Fill;

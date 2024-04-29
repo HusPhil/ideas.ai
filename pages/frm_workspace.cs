@@ -40,7 +40,7 @@ It assists in providing other information to cater user's needs.
             this.mainForm = mainForm;
             saver_obj = new DBObjectManager();
             saver_obj.UUID = Guid.NewGuid();
-            saver_obj.Content = txb_textEditor.Text;
+            saver_obj.Content = txb_textEditor.Rtf;
             saver_obj.Title = txb_docsTitle.Text;
             pbx_loading.Image = null;
             this.DoubleBuffered = true;
@@ -141,7 +141,7 @@ It assists in providing other information to cater user's needs.
         private void btn_save_Click(object sender, EventArgs e)
         {
             saver_obj.Title = txb_docsTitle.Text;
-            saver_obj.Content = txb_textEditor.Text;
+            saver_obj.Content = txb_textEditor.Rtf;
 
             //mainForm.mdl_setter.OpenModal(this, typeof(mdl_saveDocs), mainForm);
             ModalManager.ShowModal(mainForm, this, new mdl_saveDocs(mainForm));
@@ -189,7 +189,7 @@ It assists in providing other information to cater user's needs.
             txb_docsTitle.Text = "Untitled Docs";
             txb_textEditor.Text = "Type your ideas...";
             lbl_lastDateSaved.Text = "Last Modified: N/A";
-            saver_obj.Content = txb_textEditor.Text;
+            saver_obj.Content = txb_textEditor.Rtf;
             saver_obj.Title = txb_docsTitle.Text;
             mainForm.addNotification("info", "New document opened!", "Empty workspace loaded");
         }
@@ -241,7 +241,6 @@ It assists in providing other information to cater user's needs.
             {
                 try
                 {
-                    saver_obj.Content = saver_obj.Content;
                     saver_obj.Title = txb_docsTitle.Text;
                     saver_obj.DateCreated = DateTime.Now;
 
@@ -295,20 +294,44 @@ It assists in providing other information to cater user's needs.
 
                 ModalManager.ShowModal(mainForm, this, mainForm.mdl_organize);
             }
-            else if (e.Control && e.KeyCode == Keys.V)
+            //else if (e.Control && e.KeyCode == Keys.V)
+            //{
+            //    e.SuppressKeyPress = true;
+            //    //txb_textEditor.SelectedText = Clipboard.GetText();
+            //}
+            else if (e.Control && e.KeyCode == Keys.B)
             {
-                e.SuppressKeyPress = true;
-                txb_textEditor.SelectedText = Clipboard.GetText();
+                // Bold the selected text
+                ToggleFontStyle(FontStyle.Bold);
+            }
+            else if (e.Control && e.KeyCode == Keys.T)
+            {
+                // Italicize the selected text
+
+                Console.WriteLine(txb_textEditor.Rtf);
+                ToggleFontStyle(FontStyle.Italic);
             }
 
 
+        }
+        private void ToggleFontStyle(FontStyle fontStyle)
+        {
+            // Get the selected text
+            string selectedText = txb_textEditor.SelectedText;
 
+            if (!string.IsNullOrWhiteSpace(selectedText))
+            {
+                // Apply the specified font style to the selected text
+                Font currentFont = txb_textEditor.SelectionFont;
+                FontStyle newFontStyle = currentFont.Style ^ fontStyle; // Toggle the specified font style
+                txb_textEditor.SelectionFont = new Font(currentFont, newFontStyle);
+            }
         }
         private void txb_textEditor_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                saver_obj.Content = txb_textEditor.Text;
+                saver_obj.Content = txb_textEditor.Rtf;
             }
             catch(Exception ex)
             {

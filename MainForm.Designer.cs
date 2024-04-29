@@ -17,6 +17,7 @@ namespace IdeasAi
         {
             if (disposing && (components != null))
             {
+                frm_Splash.Dispose();
                 components.Dispose();
             }
             base.Dispose(disposing);

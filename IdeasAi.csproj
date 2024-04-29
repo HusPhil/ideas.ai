@@ -6,7 +6,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>IdeasAi</RootNamespace>
     <AssemblyName>IdeasAi</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -252,6 +252,12 @@
     <Compile Include="pages\frm_notebook.Designer.cs">
       <DependentUpon>frm_notebook.cs</DependentUpon>
     </Compile>
+    <Compile Include="pages\frm_splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\frm_splash.Designer.cs">
+      <DependentUpon>frm_splash.cs</DependentUpon>
+    </Compile>
     <Compile Include="pages\frm_workspace.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -302,6 +308,9 @@
     <EmbeddedResource Include="pages\frm_notebook.resx">
       <DependentUpon>frm_notebook.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="pages\frm_splash.resx">
+      <DependentUpon>frm_splash.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="pages\frm_workspace.resx">
       <DependentUpon>frm_workspace.cs</DependentUpon>
     </EmbeddedResource>
@@ -339,6 +348,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\catSplashForm.png" />
     <None Include="Resources\maximize.png" />
     <None Include="Resources\saveIcon.png" />
     <None Include="Resources\organizeModal.png" />

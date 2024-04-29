@@ -103,6 +103,16 @@ namespace IdeasAi.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap catSplashForm {
+            get {
+                object obj = ResourceManager.GetObject("catSplashForm", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap chrome {
             get {
                 object obj = ResourceManager.GetObject("chrome", resourceCulture);

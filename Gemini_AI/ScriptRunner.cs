@@ -52,7 +52,7 @@ namespace IdeasAi.Gemini_AI
             {
                 if (property.Value.Type == JTokenType.String && property.Value.ToString().StartsWith("__") && property.Value.ToString().EndsWith("__"))
                 {
-                    string envVarName = property.Value.ToString().Trim('___');
+                    string envVarName = property.Value.ToString().Trim('_');
                     string envVarValue = Environment.GetEnvironmentVariable(envVarName) ?? string.Empty;
                     property.Value = envVarValue;
                 }
