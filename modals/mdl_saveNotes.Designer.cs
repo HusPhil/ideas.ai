@@ -80,7 +80,7 @@
             this.panel2.Controls.Add(this.lbl_noteTitle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(13, 72);
-            this.panel2.Margin = new System.Windows.Forms.Padding(80, 80, 80, 80);
+            this.panel2.Margin = new System.Windows.Forms.Padding(80);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(61, 62, 61, 62);
             this.panel2.Size = new System.Drawing.Size(567, 298);
@@ -169,7 +169,7 @@
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel5.Location = new System.Drawing.Point(13, 348);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(567, 22);
             this.panel5.TabIndex = 4;

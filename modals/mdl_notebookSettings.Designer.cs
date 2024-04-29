@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.pnl_header = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.btn_exit = new System.Windows.Forms.Button();
             this.pnl_content = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.btn_browse = new System.Windows.Forms.Button();
@@ -44,15 +46,13 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.btn_exit = new System.Windows.Forms.Button();
             this.lbl_title = new System.Windows.Forms.Label();
             this.pnl_header.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.pnl_content.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_header
@@ -67,6 +67,32 @@
             this.pnl_header.Name = "pnl_header";
             this.pnl_header.Size = new System.Drawing.Size(510, 62);
             this.pnl_header.TabIndex = 3;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.btn_exit);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel8.Location = new System.Drawing.Point(447, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Padding = new System.Windows.Forms.Padding(15);
+            this.panel8.Size = new System.Drawing.Size(61, 60);
+            this.panel8.TabIndex = 16;
+            // 
+            // btn_exit
+            // 
+            this.btn_exit.BackColor = System.Drawing.Color.Transparent;
+            this.btn_exit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_exit.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.btn_exit.Location = new System.Drawing.Point(15, 15);
+            this.btn_exit.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_exit.Name = "btn_exit";
+            this.btn_exit.Size = new System.Drawing.Size(31, 30);
+            this.btn_exit.TabIndex = 5;
+            this.btn_exit.Text = "X";
+            this.btn_exit.UseVisualStyleBackColor = false;
+            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
             // pnl_content
             // 
@@ -103,7 +129,7 @@
             this.btn_browse.Name = "btn_browse";
             this.btn_browse.Size = new System.Drawing.Size(296, 31);
             this.btn_browse.TabIndex = 1;
-            this.btn_browse.Text = "Browse";
+            this.btn_browse.Text = "Import";
             this.btn_browse.UseVisualStyleBackColor = true;
             this.btn_browse.Click += new System.EventHandler(this.btn_browse_Click);
             // 
@@ -252,32 +278,6 @@
             this.panel5.Size = new System.Drawing.Size(238, 10);
             this.panel5.TabIndex = 6;
             // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.btn_exit);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel8.Location = new System.Drawing.Point(447, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Padding = new System.Windows.Forms.Padding(15);
-            this.panel8.Size = new System.Drawing.Size(61, 60);
-            this.panel8.TabIndex = 16;
-            // 
-            // btn_exit
-            // 
-            this.btn_exit.BackColor = System.Drawing.Color.Transparent;
-            this.btn_exit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_exit.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.btn_exit.Location = new System.Drawing.Point(15, 15);
-            this.btn_exit.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Size = new System.Drawing.Size(31, 30);
-            this.btn_exit.TabIndex = 5;
-            this.btn_exit.Text = "X";
-            this.btn_exit.UseVisualStyleBackColor = false;
-            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
-            // 
             // lbl_title
             // 
             this.lbl_title.BackColor = System.Drawing.Color.Transparent;
@@ -313,13 +313,13 @@
             this.Text = "mdl_noteSettings";
             this.Load += new System.EventHandler(this.mdl_notebookSettings_Load);
             this.pnl_header.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
             this.pnl_content.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

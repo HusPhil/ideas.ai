@@ -75,11 +75,6 @@ namespace IdeasAi
             frm_mindmap = new frm_mindmap(this);
             frm_workspace = new frm_workspace(this);
 
-            //mdl_notebookSettings = new mdl_notebookSettings(this);
-            //mdl_save = new mdl_saveNotes(this);
-            //mdl_saveDocs = new mdl_saveDocs(this);
-            //mdl_editNotes = new mdl_NotesOptions(this);
-            //mdl_editDocs = new mdl_DocsOptions(this);
             mdl_loading = new mdl_loading(this);
             modalBG = new Form();
             mdl_organize = new mdl_organize(this);

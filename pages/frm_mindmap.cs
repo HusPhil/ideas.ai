@@ -15,8 +15,8 @@ namespace IdeasAi.pages
     @startmindmap
     * Main Topic
     **  SubTopic 
-    * Details
-    ** Additional Details
+    *** Details
+    ***** Additional Details
     @endmindmap
 
 Remember:

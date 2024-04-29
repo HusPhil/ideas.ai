@@ -243,56 +243,6 @@ namespace IdeasAi.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_active_state_30 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-active-state-30", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_light_on {
-            get {
-                object obj = ResourceManager.GetObject("icons8-light-on", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_light_on_ezgif_com_gif_maker {
-            get {
-                object obj = ResourceManager.GetObject("icons8-light-on-ezgif.com-gif-maker", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_rounded_square_35 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-rounded-square-35", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap idea {
-            get {
-                object obj = ResourceManager.GetObject("idea", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap lightModeBtn {
             get {
                 object obj = ResourceManager.GetObject("lightModeBtn", resourceCulture);

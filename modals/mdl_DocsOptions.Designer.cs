@@ -36,9 +36,9 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbl_noteTitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.btn_exit = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.lbl_title = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -89,7 +89,7 @@
             // 
             // btn_delete
             // 
-            this.btn_delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(143)))), ((int)(((byte)(177)))));
+            this.btn_delete.BackColor = System.Drawing.Color.Transparent;
             this.btn_delete.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btn_delete.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -109,7 +109,7 @@
             this.txb_setNoteTitle.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.txb_setNoteTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.txb_setNoteTitle.Font = new System.Drawing.Font("Cascadia Code", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txb_setNoteTitle.Location = new System.Drawing.Point(61, 91);
+            this.txb_setNoteTitle.Location = new System.Drawing.Point(61, 89);
             this.txb_setNoteTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txb_setNoteTitle.Multiline = true;
             this.txb_setNoteTitle.Name = "txb_setNoteTitle";
@@ -121,7 +121,7 @@
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(61, 81);
+            this.panel3.Location = new System.Drawing.Point(61, 79);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(446, 10);
@@ -131,7 +131,6 @@
             // 
             this.lbl_noteTitle.AutoSize = true;
             this.lbl_noteTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_noteTitle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lbl_noteTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbl_noteTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbl_noteTitle.Font = new System.Drawing.Font("Cascadia Code", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -139,7 +138,7 @@
             this.lbl_noteTitle.Location = new System.Drawing.Point(61, 62);
             this.lbl_noteTitle.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.lbl_noteTitle.Name = "lbl_noteTitle";
-            this.lbl_noteTitle.Size = new System.Drawing.Size(98, 19);
+            this.lbl_noteTitle.Size = new System.Drawing.Size(96, 17);
             this.lbl_noteTitle.TabIndex = 3;
             this.lbl_noteTitle.Text = "Docs title:";
             // 
@@ -156,6 +155,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(568, 60);
             this.panel1.TabIndex = 6;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.Controls.Add(this.btn_exit);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel5.Location = new System.Drawing.Point(505, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Padding = new System.Windows.Forms.Padding(15);
+            this.panel5.Size = new System.Drawing.Size(61, 58);
+            this.panel5.TabIndex = 1;
             // 
             // btn_exit
             // 
@@ -183,17 +193,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(568, 29);
             this.flowLayoutPanel1.TabIndex = 15;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Transparent;
-            this.panel5.Controls.Add(this.btn_exit);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(505, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Padding = new System.Windows.Forms.Padding(15);
-            this.panel5.Size = new System.Drawing.Size(61, 58);
-            this.panel5.TabIndex = 1;
             // 
             // lbl_title
             // 

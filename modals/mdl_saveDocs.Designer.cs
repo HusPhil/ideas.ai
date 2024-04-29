@@ -39,8 +39,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -53,7 +53,7 @@
             this.panel2.Controls.Add(this.lbl_noteTitle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(13, 72);
-            this.panel2.Margin = new System.Windows.Forms.Padding(80, 80, 80, 80);
+            this.panel2.Margin = new System.Windows.Forms.Padding(80);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(61, 62, 61, 62);
             this.panel2.Size = new System.Drawing.Size(567, 366);
@@ -177,7 +177,7 @@
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel7.Location = new System.Drawing.Point(13, 402);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(567, 36);
             this.panel7.TabIndex = 6;
@@ -191,20 +191,11 @@
             this.panel4.Controls.Add(this.btn_notebookSave);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(13, 225);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(67, 0, 67, 43);
             this.panel4.Size = new System.Drawing.Size(567, 177);
             this.panel4.TabIndex = 16;
-            // 
-            // panel5
-            // 
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(67, 34);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(433, 10);
-            this.panel5.TabIndex = 16;
             // 
             // panel6
             // 
@@ -214,6 +205,15 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(433, 10);
             this.panel6.TabIndex = 17;
+            // 
+            // panel5
+            // 
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(67, 34);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(433, 10);
+            this.panel5.TabIndex = 16;
             // 
             // mdl_saveDocs
             // 
