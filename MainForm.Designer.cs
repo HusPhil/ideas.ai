@@ -46,6 +46,8 @@ namespace IdeasAi
             this.pnlb_content = new System.Windows.Forms.Panel();
             this.pnl_content = new System.Windows.Forms.Panel();
             this.pnl_contentHeader = new System.Windows.Forms.Panel();
+            this.pnl_addTab = new System.Windows.Forms.Panel();
+            this.btn_addTab = new System.Windows.Forms.Button();
             this.pnl_darkModeCont = new System.Windows.Forms.Panel();
             this.pnl_btnCont = new System.Windows.Forms.Panel();
             this.btn_toggleDarkMode = new System.Windows.Forms.Button();
@@ -88,6 +90,7 @@ namespace IdeasAi
             this.pnl_fillContent.SuspendLayout();
             this.pnlb_content.SuspendLayout();
             this.pnl_contentHeader.SuspendLayout();
+            this.pnl_addTab.SuspendLayout();
             this.pnl_darkModeCont.SuspendLayout();
             this.pnl_btnCont.SuspendLayout();
             this.pnlb_pageTitle.SuspendLayout();
@@ -266,6 +269,7 @@ namespace IdeasAi
             // pnl_contentHeader
             // 
             this.pnl_contentHeader.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_contentHeader.Controls.Add(this.pnl_addTab);
             this.pnl_contentHeader.Controls.Add(this.pnl_darkModeCont);
             this.pnl_contentHeader.Controls.Add(this.pnlb_pageTitle);
             this.pnl_contentHeader.Dock = System.Windows.Forms.DockStyle.Top;
@@ -275,6 +279,35 @@ namespace IdeasAi
             this.pnl_contentHeader.Padding = new System.Windows.Forms.Padding(0, 20, 0, 10);
             this.pnl_contentHeader.Size = new System.Drawing.Size(940, 94);
             this.pnl_contentHeader.TabIndex = 4;
+            // 
+            // pnl_addTab
+            // 
+            this.pnl_addTab.AutoScroll = true;
+            this.pnl_addTab.AutoScrollMinSize = new System.Drawing.Size(1, 1);
+            this.pnl_addTab.Controls.Add(this.btn_addTab);
+            this.pnl_addTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_addTab.Location = new System.Drawing.Point(280, 20);
+            this.pnl_addTab.Name = "pnl_addTab";
+            this.pnl_addTab.Padding = new System.Windows.Forms.Padding(15, 30, 15, 0);
+            this.pnl_addTab.Size = new System.Drawing.Size(556, 64);
+            this.pnl_addTab.TabIndex = 9;
+            this.pnl_addTab.SizeChanged += new System.EventHandler(this.pnl_addTab_SizeChanged);
+            this.pnl_addTab.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.pnl_addTab_ControlAdded);
+            this.pnl_addTab.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.pnl_addTab_ControlAdded);
+            // 
+            // btn_addTab
+            // 
+            this.btn_addTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(229)))), ((int)(((byte)(135)))));
+            this.btn_addTab.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_addTab.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn_addTab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_addTab.Image = global::IdeasAi.Properties.Resources.add;
+            this.btn_addTab.Location = new System.Drawing.Point(15, 30);
+            this.btn_addTab.Name = "btn_addTab";
+            this.btn_addTab.Size = new System.Drawing.Size(45, 34);
+            this.btn_addTab.TabIndex = 1;
+            this.btn_addTab.UseVisualStyleBackColor = false;
+            this.btn_addTab.Click += new System.EventHandler(this.btn_addTab_Click);
             // 
             // pnl_darkModeCont
             // 
@@ -351,6 +384,8 @@ namespace IdeasAi
             this.lbl_currentPage.TabIndex = 3;
             this.lbl_currentPage.Text = "Page 1";
             this.lbl_currentPage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_currentPage.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
+            this.lbl_currentPage.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.pnl_addTab_ControlAdded);
             // 
             // pnl_helpbtn
             // 
@@ -656,7 +691,7 @@ namespace IdeasAi
             this.btn_home.Name = "btn_home";
             this.btn_home.Padding = new System.Windows.Forms.Padding(2);
             this.btn_home.Size = new System.Drawing.Size(212, 48);
-            this.btn_home.TabIndex = 4;
+            this.btn_home.TabIndex = 0;
             this.btn_home.Text = "    Home";
             this.btn_home.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_home.UseVisualStyleBackColor = false;
@@ -676,7 +711,6 @@ namespace IdeasAi
             this.btn_exit.BackColor = System.Drawing.Color.Transparent;
             this.btn_exit.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btn_exit.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btn_exit.FlatAppearance.BorderSize = 2;
             this.btn_exit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(143)))), ((int)(((byte)(177)))));
             this.btn_exit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(143)))), ((int)(((byte)(177)))));
             this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -689,7 +723,8 @@ namespace IdeasAi
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Padding = new System.Windows.Forms.Padding(5);
             this.btn_exit.Size = new System.Drawing.Size(214, 50);
-            this.btn_exit.TabIndex = 9;
+            this.btn_exit.TabIndex = 100;
+            this.btn_exit.TabStop = false;
             this.btn_exit.Text = "    Exit";
             this.btn_exit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_exit.UseVisualStyleBackColor = false;
@@ -730,6 +765,7 @@ namespace IdeasAi
             // 
             // MainForm
             // 
+            this.AcceptButton = this.btn_home;
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -753,6 +789,7 @@ namespace IdeasAi
             this.pnl_fillContent.ResumeLayout(false);
             this.pnlb_content.ResumeLayout(false);
             this.pnl_contentHeader.ResumeLayout(false);
+            this.pnl_addTab.ResumeLayout(false);
             this.pnl_darkModeCont.ResumeLayout(false);
             this.pnl_btnCont.ResumeLayout(false);
             this.pnlb_pageTitle.ResumeLayout(false);
@@ -793,7 +830,6 @@ namespace IdeasAi
         private System.Windows.Forms.Panel pnlb_pageTitle;
         private System.Windows.Forms.Panel pnl_darkModeCont;
         private System.Windows.Forms.Panel pnl_btnCont;
-        private System.Windows.Forms.Button btn_toggleDarkMode;
         private System.Windows.Forms.Panel pnl_menuSect;
         private System.Windows.Forms.Panel pnl_sideContentHolder;
         private System.Windows.Forms.Panel pnl_pageTabCont;
@@ -823,6 +859,9 @@ namespace IdeasAi
         private System.Windows.Forms.Button btn_appMax;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button btn_appExit;
+        public System.Windows.Forms.Button btn_toggleDarkMode;
+        public System.Windows.Forms.Panel pnl_addTab;
+        public System.Windows.Forms.Button btn_addTab;
     }
 }
 

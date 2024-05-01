@@ -304,6 +304,7 @@
     <Compile Include="pages\frm_workspace.Designer.cs">
       <DependentUpon>frm_workspace.cs</DependentUpon>
     </Compile>
+    <Compile Include="pages\PageTab.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">

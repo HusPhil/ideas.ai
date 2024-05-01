@@ -2,6 +2,7 @@
 using IdeasAi.PageForms;
 using System;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace IdeasAi.pages
 {
@@ -41,8 +42,14 @@ namespace IdeasAi.pages
 
         private void btn_getStarted_Click(object sender, EventArgs e)
         {
-            mainForm.loadForm(mainForm.frm_consultation, mainForm.getPnlContent());
-            mainForm.setActiveBtn(mainForm.getBtnConsult(), mainForm.getPnlPageTabs());
+            if (mainForm.tabs.Count <= 0)
+            {
+                mainForm.btn_addTab.PerformClick();
+            }
+            else
+            {
+                mainForm.tabs[mainForm.tabs.Count - 1].container_Click();
+            }
         }
 
         private void frm_home_Load(object sender, EventArgs e)

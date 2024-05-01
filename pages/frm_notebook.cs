@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using IdeasAi.db;
 using IdeasAi.modals;
+using IdeasAi.PageForms;
 
 namespace IdeasAi.pages
 {
@@ -319,16 +320,26 @@ Click delete to remove unnecessary notebook.
         {
             if (db.GetType().Equals(typeof(DBManager_Note)))
             {
-                mainForm.frm_consultation.saver_obj.Content = dom.Content;
-                mainForm.frm_consultation.saver_obj.Title = dom.Title;
+                mainForm.btn_addTab.PerformClick();
+                var tab = mainForm.tabs[mainForm.tabs.Count - 1];
+                tab.page = new frm_consultation(mainForm); 
 
-                mainForm.loadForm(mainForm.frm_consultation, mainForm.getPnlContent());
-                mainForm.setActiveBtn(mainForm.getBtnConsult(), mainForm.getPnlPageTabs());
-                mainForm.frm_consultation.displayResult(dom.Content);
-                mainForm.frm_consultation.getSaveBtn().Enabled = false;
-                mainForm.frm_consultation.getPrintBtn().Enabled = !false;
-                mainForm.frm_consultation.getToWorkspaceBtn().Enabled = !false;
+                tab.page.saver_obj.Content = dom.Content;
+                tab.page.saver_obj.Title = dom.Title;
 
+                tab.page.getSaveBtn().Enabled = false;
+                tab.page.getPrintBtn().Enabled = !false;
+                tab.page.getToWorkspaceBtn().Enabled = !false;
+                tab.page.getTxbInput().Text = dom.Title;
+                
+
+
+                tab.page.displayResult(dom.Content);
+
+
+                
+                tab.title.Text = dom.Title;
+                tab.container_Click();
 
 
             }
