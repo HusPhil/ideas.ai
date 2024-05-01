@@ -35,6 +35,8 @@ Click 'Workspace' button to save the generated idea into the program itself,
             this.mainForm = _mainForm;
             saver_obj = new DBObjectManager();
             OptimizeInternetExplorerVersion();
+
+            wb_container.Focus();
         }
         private void OptimizeInternetExplorerVersion()
         {
@@ -169,8 +171,12 @@ Click 'Workspace' button to save the generated idea into the program itself,
             if (e.Control && e.KeyCode == Keys.V)
             {
                 e.SuppressKeyPress = true;
-
+                
                 txb_Consult.SelectedText = Clipboard.GetText();
+            }
+            else if (e.KeyCode ==  Keys.Enter)
+            {
+                btn_send.PerformClick();
             }
         }
 
@@ -191,6 +197,11 @@ Click 'Workspace' button to save the generated idea into the program itself,
         private void btn_searchMode_Click(object sender, EventArgs e)
         {
             wb_container.Navigate("google.com");
+        }
+
+        private void txb_Consult_Enter(object sender, EventArgs e)
+        {
+            Console.WriteLine("kineme");
         }
     }
 

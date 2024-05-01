@@ -294,21 +294,15 @@ It assists in providing other information to cater user's needs.
 
                 ModalManager.ShowModal(mainForm, this, mainForm.mdl_organize);
             }
-            //else if (e.Control && e.KeyCode == Keys.V)
-            //{
-            //    e.SuppressKeyPress = true;
-            //    //txb_textEditor.SelectedText = Clipboard.GetText();
-            //}
             else if (e.Control && e.KeyCode == Keys.B)
             {
                 // Bold the selected text
                 ToggleFontStyle(FontStyle.Bold);
             }
-            else if (e.Control && e.KeyCode == Keys.T)
+            else if (e.Control && e.KeyCode == Keys.I)
             {
-                // Italicize the selected text
-
-                Console.WriteLine(txb_textEditor.Rtf);
+                //// Italicize the selected text
+                e.SuppressKeyPress = true;
                 ToggleFontStyle(FontStyle.Italic);
             }
 
@@ -319,12 +313,15 @@ It assists in providing other information to cater user's needs.
             // Get the selected text
             string selectedText = txb_textEditor.SelectedText;
 
+            Font currentFont = txb_textEditor.SelectionFont;
+            FontStyle newFontStyle = currentFont.Style ^ fontStyle; // Toggle the specified font style
+            txb_textEditor.SelectionFont = new Font(currentFont, newFontStyle);
+
+
             if (!string.IsNullOrWhiteSpace(selectedText))
             {
                 // Apply the specified font style to the selected text
-                Font currentFont = txb_textEditor.SelectionFont;
-                FontStyle newFontStyle = currentFont.Style ^ fontStyle; // Toggle the specified font style
-                txb_textEditor.SelectionFont = new Font(currentFont, newFontStyle);
+                
             }
         }
         private void txb_textEditor_TextChanged(object sender, EventArgs e)

@@ -39,7 +39,8 @@ namespace IdeasAi.modals
 
         private async void btn_go_Click(object sender, EventArgs e)
         {
-            
+            btn_save.Enabled = false;
+
             string selectedMode = cb_modeSelector.SelectedItem.ToString();
             var loader = new mdl_loading(mainForm);
             

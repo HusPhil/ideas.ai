@@ -45,7 +45,7 @@ namespace IdeasAi
         public frm_workspace frm_workspace;
         public frm_notebook frm_notebook;
         public frm_mindmap frm_mindmap;
-        public frm_splash frm_Splash;
+        public frm_SPLASH frm_Splash;
         //
         // MODALS
         //
@@ -61,7 +61,7 @@ namespace IdeasAi
 
         public Button btn_active;
 
-        public MainForm(frm_splash FRM_SPLASH)
+        public MainForm(frm_SPLASH FRM_SPLASH)
         {
 
 

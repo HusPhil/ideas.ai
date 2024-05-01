@@ -6,7 +6,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>IdeasAi</RootNamespace>
     <AssemblyName>IdeasAi</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -15,6 +15,23 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\husph\Desktop\Ideas.Ai\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <PublisherName>HusPhil</PublisherName>
+    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -37,6 +54,28 @@
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>F94DE533EF343C173EDE3F49A33E8A940D1AAB2B</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>IdeasAi_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>idea.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ComponentFactory.Krypton.Toolkit">
@@ -162,6 +201,7 @@
     <Compile Include="ai_responses\AI_QuickSearch.cs" />
     <Compile Include="ai_responses\AI_Scamper.cs" />
     <Compile Include="ai_responses\AI_Summarizer.cs" />
+    <Compile Include="configs\Configs.cs" />
     <Compile Include="db\DatabaseManager.cs" />
     <Compile Include="db\DBManager_Docs.cs" />
     <Compile Include="db\DBManager_Note.cs" />
@@ -252,11 +292,11 @@
     <Compile Include="pages\frm_notebook.Designer.cs">
       <DependentUpon>frm_notebook.cs</DependentUpon>
     </Compile>
-    <Compile Include="pages\frm_splash.cs">
+    <Compile Include="pages\frm_SPLASH.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="pages\frm_splash.Designer.cs">
-      <DependentUpon>frm_splash.cs</DependentUpon>
+    <Compile Include="pages\frm_SPLASH.Designer.cs">
+      <DependentUpon>frm_SPLASH.cs</DependentUpon>
     </Compile>
     <Compile Include="pages\frm_workspace.cs">
       <SubType>Form</SubType>
@@ -308,8 +348,8 @@
     <EmbeddedResource Include="pages\frm_notebook.resx">
       <DependentUpon>frm_notebook.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="pages\frm_splash.resx">
-      <DependentUpon>frm_splash.cs</DependentUpon>
+    <EmbeddedResource Include="pages\frm_SPLASH.resx">
+      <DependentUpon>frm_SPLASH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pages\frm_workspace.resx">
       <DependentUpon>frm_workspace.cs</DependentUpon>
@@ -328,7 +368,9 @@
     <None Include="configs\settings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="IdeasAi_TemporaryKey.pfx" />
     <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -348,6 +390,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="idea.ico" />
     <None Include="Resources\catSplashForm.png" />
     <None Include="Resources\maximize.png" />
     <None Include="Resources\saveIcon.png" />
@@ -415,7 +458,30 @@
     </Compile>
     <None Include="Resources\menu-dots-vertical.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="IdeasAi.pdb">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

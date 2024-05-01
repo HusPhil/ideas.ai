@@ -333,3 +333,8 @@ C:\Users\Admin\Desktop\Project_AOOP\bin\Debug\configs\decors.json
 C:\Users\Admin\Desktop\Project_AOOP\bin\Debug\configs\settings.json
 C:\Users\Admin\Desktop\Project_AOOP\obj\Debug\IdeasAi.modals.mdl_notebookSettings.resources
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.pages.frm_splash.resources
+C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\IdeasAi.exe.manifest
+C:\MyFiles\Projects\AOOP\IdeasAI\bin\Debug\IdeasAi.application
+C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.TrustInfo.xml
+C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.exe.manifest
+C:\MyFiles\Projects\AOOP\IdeasAI\obj\Debug\IdeasAi.application

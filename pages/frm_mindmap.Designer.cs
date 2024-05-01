@@ -126,10 +126,10 @@ namespace IdeasAi.pages
             this.pnl_titleCont.BackColor = System.Drawing.Color.White;
             this.pnl_titleCont.Controls.Add(this.txb_title);
             this.pnl_titleCont.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_titleCont.Location = new System.Drawing.Point(264, 8);
+            this.pnl_titleCont.Location = new System.Drawing.Point(279, 8);
             this.pnl_titleCont.Name = "pnl_titleCont";
             this.pnl_titleCont.Padding = new System.Windows.Forms.Padding(0, 30, 10, 0);
-            this.pnl_titleCont.Size = new System.Drawing.Size(475, 87);
+            this.pnl_titleCont.Size = new System.Drawing.Size(460, 87);
             this.pnl_titleCont.TabIndex = 18;
             // 
             // txb_title
@@ -141,7 +141,7 @@ namespace IdeasAi.pages
             this.txb_title.ForeColor = System.Drawing.Color.Black;
             this.txb_title.Location = new System.Drawing.Point(0, 30);
             this.txb_title.Name = "txb_title";
-            this.txb_title.Size = new System.Drawing.Size(465, 28);
+            this.txb_title.Size = new System.Drawing.Size(450, 28);
             this.txb_title.TabIndex = 0;
             this.txb_title.Text = "myMindmap";
             this.txb_title.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -277,7 +277,7 @@ namespace IdeasAi.pages
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.cb_themeSelector);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(146, 8);
+            this.panel2.Location = new System.Drawing.Point(161, 8);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(0, 15, 10, 22);
             this.panel2.Size = new System.Drawing.Size(118, 87);
@@ -358,7 +358,7 @@ namespace IdeasAi.pages
             this.pnl_error.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_error.Name = "pnl_error";
             this.pnl_error.Padding = new System.Windows.Forms.Padding(8, 20, 8, 22);
-            this.pnl_error.Size = new System.Drawing.Size(146, 87);
+            this.pnl_error.Size = new System.Drawing.Size(161, 87);
             this.pnl_error.TabIndex = 7;
             // 
             // btn_generateMindmap
@@ -372,7 +372,8 @@ namespace IdeasAi.pages
             this.btn_generateMindmap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_generateMindmap.Location = new System.Drawing.Point(8, 20);
             this.btn_generateMindmap.Name = "btn_generateMindmap";
-            this.btn_generateMindmap.Size = new System.Drawing.Size(130, 45);
+            this.btn_generateMindmap.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_generateMindmap.Size = new System.Drawing.Size(145, 45);
             this.btn_generateMindmap.TabIndex = 3;
             this.btn_generateMindmap.Text = "    Generate";
             this.btn_generateMindmap.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
