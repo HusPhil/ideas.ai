@@ -3,15 +3,12 @@
   "WorkspaceRootPath": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|IdeasAi||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|c:\\myfiles\\projects\\aoop\\ideasai\\pages\\frm_workspace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:pages\\frm_workspace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\pages\\frm_workspace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:pages\\frm_workspace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\pages\\frm_workspace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:pages\\frm_workspace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\pages\\frm_mindmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -20,9 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\pages\\frm_splash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|solutionrelative:pages\\frm_splash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}|IdeasAi.csproj|c:\\myfiles\\projects\\aoop\\ideasai\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|5e9a8ac2-4f34-4521-858f-4c248ba31532"
     }
   ],
   "DocumentGroupContainers": [
@@ -41,18 +35,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "IdeasAi",
-              "DocumentMoniker": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\IdeasAi.csproj",
-              "RelativeDocumentMoniker": "IdeasAi.csproj",
-              "ToolTip": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\IdeasAi.csproj*",
-              "RelativeToolTip": "IdeasAi.csproj*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-05-01T00:28:26.945Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "frm_workspace.cs [Design]",
               "DocumentMoniker": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\pages\\frm_workspace.cs",
               "RelativeDocumentMoniker": "pages\\frm_workspace.cs",
@@ -77,7 +59,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "frm_SPLASH.cs",
               "DocumentMoniker": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\pages\\frm_SPLASH.cs",
               "RelativeDocumentMoniker": "pages\\frm_SPLASH.cs",
@@ -89,7 +71,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "frm_mindmap.cs [Design]",
               "DocumentMoniker": "C:\\MyFiles\\Projects\\AOOP\\IdeasAI\\pages\\frm_mindmap.cs",
               "RelativeDocumentMoniker": "pages\\frm_mindmap.cs",
