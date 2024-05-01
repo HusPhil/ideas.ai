@@ -117,4 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label14.Text" xml:space="preserve">
+    <value>CTRL + S (while in workspace):
+This automaticallly saves the document that you are currently working on.
+
+CTRL + O (while in workspace):
+First, you must select a block of words or a paragraph then hit CTRL + O, this will take the selected text into [Organize] tab where you can organize that text
+
+CTRL + Q (while in worspace):
+The selected text within the text editor in workspace, when you hit CTRL + Q the [Quick Search] feature will search the selected work automatically</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>This one's name is Professor Neko-nya! A pleasure to meet you, I am a teacher here in Ideas.AI, and I love helping students learn all sorts of amazing things-nya! 
+
+When I teach, I like to keep things simple and easy to understand-nya. I use lots of examples and stories to help my students learn, just like a mother cat teaching her kittens how to pounce-nya. I also encourage my students to ask questions and explore their own ideas, because curiosity is the key to unlocking knowledge-nya!
+
+Now let me introduce you to Ideas.AI, an interactive platform designed to assist individuals, particularly students, in generating fresh ideas through artificial intelligence. It facilitates a collaborative environment where users can leverage AI to explore and develop innovative concepts.
+
+
+
+</value>
+  </data>
 </root>

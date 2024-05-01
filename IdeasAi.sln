@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdeasAi", "IdeasAi.csproj", "{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "IdeasAI_Setup", "IdeasAI_Setup\IdeasAI_Setup.vdproj", "{CE09CDE1-F199-4844-91A6-2F5FF0826839}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE09CDE1-F199-4844-91A6-2F5FF0826839}.Debug|Any CPU.ActiveCfg = Debug
+		{CE09CDE1-F199-4844-91A6-2F5FF0826839}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

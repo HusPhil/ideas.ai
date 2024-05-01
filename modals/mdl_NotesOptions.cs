@@ -25,25 +25,18 @@ namespace IdeasAi.modals
             this.mainForm = _mainForm;
             InitializeComponent();
         }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        private void mdl_NotesOptions_Load(object sender, EventArgs e)
         {
             txb_setNoteTitle.Text = mainForm.frm_notebook.saver_obj.Title;
             oldTitle = txb_setNoteTitle.Text;
+
             var ownerForm = mainForm;
-            this.Location = ModalSetter.CenterLocation(ownerForm.Width, ownerForm.Height, this.Width, this.Height, ownerForm.Location.X, ownerForm.Location.Y);
+            this.Location = ModalManager.CenterLocation(ownerForm.Width, ownerForm.Height, this.Width, this.Height, ownerForm.Location.X, ownerForm.Location.Y);
+
+            txb_setNoteTitle.SelectionStart = txb_setNoteTitle.Text.Length; ;
+            txb_setNoteTitle.SelectionLength = 0;
         }
-        private void tmr_animation_Tick(object sender, EventArgs e)
-        {
-            if (Opacity >= 1)
-            {
-                tmr_animation.Stop();
-            }
-            else
-            {
-                Opacity += .05;
-            }
-        }
+
 
         private void btn_save_Click(object sender, EventArgs e)
         {
@@ -97,5 +90,13 @@ namespace IdeasAi.modals
         {
             return ref txb_setNoteTitle;
         }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            mainForm.modalBG.Hide();
+            this.Hide();
+        }
+
+
     }
 }

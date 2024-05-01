@@ -14,6 +14,7 @@ namespace IdeasAi.modals
     public partial class mdl_notif : Form
     {
         MainForm mainForm;
+        bool debugOn;
         int closeCountDown;
         public string notifType;
         public static int instancesCount;
@@ -28,18 +29,18 @@ namespace IdeasAi.modals
             switch (notifType.ToLower())
             {
                 case "success":
-                    pbx_type.Image = Resources.success;
-                    pnl_type.BackColor = Color.DarkGreen;
+                    pbx_type.Image = Resources.notifSuccess;
+                    pnl_type.BackColor = ColorTranslator.FromHtml((string)mainForm.decors["Themes"]["LightTheme"]["accent"]);
                     break;
                 case "info":
                 case "response":
-                    pnl_type.BackColor = Color.CadetBlue;
-                    pbx_type.Image = Resources.info;
+                    pnl_type.BackColor = ColorTranslator.FromHtml((string)mainForm.decors["Themes"]["LightTheme"]["secondary100"]);
+                    pbx_type.Image = Resources.notifInfo;
                     break;
                 case "warning":
                 case "error":
-                    pnl_type.BackColor = Color.DarkRed;
-                    pbx_type.Image = Resources.error_n;
+                    pnl_type.BackColor = ColorTranslator.FromHtml((string)mainForm.decors["Themes"]["LightTheme"]["accent100"]);
+                    pbx_type.Image = Resources.notifError;
                     break;
             }
         }
@@ -98,6 +99,37 @@ namespace IdeasAi.modals
         {
             tmr_close.Start();
             pnl_notifBody.BorderStyle = BorderStyle.None;
+        }
+
+        private void pbx_type_Click(object sender, EventArgs e)
+        {
+            if (debugOn)
+            {
+                lbl_info.Dock = DockStyle.Fill;
+                lbl_type.Visible = false;
+                debugOn = false;
+            }
+            else
+            {
+                lbl_info.Dock = DockStyle.Bottom;
+                lbl_type.Visible = true;
+                debugOn = true;
+            }
+        }
+
+        private void pbx_type_MouseHover(object sender, EventArgs e)
+        {
+            tmr_close.Stop();
+        }
+
+        private void pbx_type_MouseLeave(object sender, EventArgs e)
+        {
+            tmr_close.Start();
+        }
+
+        private void pnl_type_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

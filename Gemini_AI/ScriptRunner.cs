@@ -6,55 +6,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace IdeasAi.Gemini_AI
 {
     internal class ScriptRunner
     {
-        public static string runScript(string scriptName, string prompt)
+        public static async Task<string> RunScriptAsync(string scriptName, string prompt, JObject appConfig)
         {
-            string jsonString = File.ReadAllText("settings.json");
-
-            var appSettings = JsonConvert.DeserializeObject<AppSettings>(jsonString);
-            var pythonModule = appSettings.PythonModule;
-            var apiKey = appSettings.ApiKey;
-
-            var psi = new ProcessStartInfo();
-            psi.FileName = pythonModule;
-            psi.Arguments = $"\"{scriptName}\" \"{prompt.Replace("\"", "'")}\" \"{apiKey}\"";
-
-            psi.UseShellExecute = false;
-            psi.CreateNoWindow = true;
-            psi.RedirectStandardError = true;
-            psi.RedirectStandardOutput = true;
-
-            var result = "ERROR";
-            var error = "NONE";
-            Console.WriteLine(prompt);
-            using (var process = Process.Start(psi))
-            {
-                result = process.StandardOutput.ReadToEnd();
-                error = process.StandardError.ReadToEnd();
-                
-            }
-            Console.WriteLine("result: " + result);
-            //Console.WriteLine(error);
-
             
 
-            return result;
+            ReplaceEnvironmentVariables(appConfig);
 
+            var pythonModule = (string)appConfig["Python_Module"];
+            var apiKey = (string)appConfig["API_KEY"];
 
-
-        }
-
-        public static async Task<string> RunScriptAsync(string scriptName, string prompt)
-        {
-            string jsonString = File.ReadAllText("settings.json");
-
-            var appSettings = JsonConvert.DeserializeObject<AppSettings>(jsonString);
-            var pythonModule = appSettings.PythonModule;
-            var apiKey = appSettings.ApiKey;
+            //Console.WriteLine(pythonModule + "::" + apiKey);
 
             var psi = new ProcessStartInfo();
             psi.FileName = pythonModule;
@@ -64,10 +31,11 @@ namespace IdeasAi.Gemini_AI
             psi.CreateNoWindow = true;
             psi.RedirectStandardError = true;
             psi.RedirectStandardOutput = true;
+            psi.StandardOutputEncoding = System.Text.Encoding.UTF8;
 
             var result = "";
             var error = "";
-            Console.WriteLine(prompt);
+            //Console.WriteLine(prompt);
             using (var process = Process.Start(psi))
             {
                 result = await process.StandardOutput.ReadToEndAsync();
@@ -77,5 +45,19 @@ namespace IdeasAi.Gemini_AI
 
             return result;
         }
+
+        public static void ReplaceEnvironmentVariables(JObject config)
+        {
+            foreach (JProperty property in config.Properties())
+            {
+                if (property.Value.Type == JTokenType.String && property.Value.ToString().StartsWith("__") && property.Value.ToString().EndsWith("__"))
+                {
+                    string envVarName = property.Value.ToString().Trim('_');
+                    string envVarValue = Environment.GetEnvironmentVariable(envVarName) ?? string.Empty;
+                    property.Value = envVarValue;
+                }
+            }
+        }
     }
+
 }

@@ -1,13 +1,7 @@
-﻿using ComponentFactory.Krypton.Toolkit;
-using PlantUml.Net;
+﻿using PlantUml.Net;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,7 +10,32 @@ namespace IdeasAi.pages
 {
     public partial class frm_mindmap : Form
     {
+        public const string howToUse = @"Users can create their own mindmap with the use of asterisks using the format:
 
+    @startmindmap
+    * Main Topic
+    **  SubTopic 
+    *** Details
+    ***** Additional Details
+    @endmindmap
+
+Remember:
+- To add space between asterisk/s and word
+- It should be enclosed by @statements (start and end mindmap)
+
+On the lower part: 
+    
+    -Click 'Generate' button to create mindmap with inputted details.
+
+    -Click Theme dropdown menu to choose desired style from various theme.
+
+    -Add title by editing text inside the box, between theme and view dropdown.
+
+    -Click 'View' dropdown menu to switch your preferred view style.
+
+    -Click 'Save' button to save the mindmap as image in your computer.
+
+        ";
         private MainForm mainForm;
         private const float defaultScaleFactor = 1.0f;
         private float scaleFactor = defaultScaleFactor;
@@ -41,6 +60,10 @@ namespace IdeasAi.pages
                 "**** Additional Details 2.1.1\n" +
                 "@endmindmap";
             
+        }
+        private void frm_mindmap_Load(object sender, EventArgs e)
+        {
+            cb_themeSelector.SelectedIndex = 0;
         }
 
         public async Task<Image> markdownToMindmap(string markdown, bool auto)
@@ -80,21 +103,10 @@ namespace IdeasAi.pages
 
 
         }
-
-        private void btn_zoomIn_Click(object sender, EventArgs e)
+        public async void generateMindmap(string input)
         {
-            scaleFactor += scaleStep;
-            ApplyZoom();
-        }
-
-        private void btn_zoomOut_Click(object sender, EventArgs e)
-        {
-            scaleFactor -= scaleStep;
-            ApplyZoom();
-        }
-
-        private void btn_reset_Click(object sender, EventArgs e)
-        {
+            var cleanedInput = ConvertMarkdownToPlantUML(input);
+            pbx_mindmap.Image = await markdownToMindmap(cleanedInput, false);
             scaleFactor = defaultScaleFactor;
             ApplyZoom();
         }
@@ -116,12 +128,6 @@ namespace IdeasAi.pages
             }
             
         }
-
-        private void frm_mindmap_Load(object sender, EventArgs e)
-        {
-            cb_themeSelector.SelectedIndex = 0;
-        }
-
         private static string AddTheme(string mindmapText, string theme)
         {
             // Define the regex pattern to match the theme declaration
@@ -141,50 +147,6 @@ namespace IdeasAi.pages
 
             return mindmapText;
         }
-
-        private void cb_viewSelector_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (cb_viewSelector.SelectedItem != null)
-                {
-                    string selectedSetting = cb_viewSelector.SelectedItem.ToString();
-                    Console.WriteLine("Selected item: " + selectedSetting);
-
-                    switch (selectedSetting)
-                    {
-                        case "Zoom":
-                            pbx_mindmap.Location = new Point(0);
-                            pbx_mindmap.SizeMode = PictureBoxSizeMode.Zoom;
-                            pbx_mindmap.Dock = DockStyle.None;
-                            pnl_buttons.Visible = true;
-                            break;
-                        case "Center":
-                            pnl_buttons.Visible = !true;
-                            pbx_mindmap.Location = new Point(0);
-                            pbx_mindmap.Dock = DockStyle.Fill;
-                            pbx_mindmap.SizeMode = PictureBoxSizeMode.CenterImage;
-                            break;
-                        case "Stretch":
-                            pnl_buttons.Visible = !true;
-                            pbx_mindmap.Location = new Point(0);
-                            pbx_mindmap.Dock = DockStyle.Fill;
-                            pbx_mindmap.SizeMode = PictureBoxSizeMode.StretchImage;
-                            break;
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("No item selected.");
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("An error occurred: " + ex.Message);
-            }
-
-        }
-
         public static string ConvertMarkdownToPlantUML(string markdown)
         {
             // Define patterns for markdown elements
@@ -212,16 +174,21 @@ namespace IdeasAi.pages
 
             return plantUmlText;
         }
-        public async void generateMindmap(string input)
+        private void btn_zoomIn_Click(object sender, EventArgs e)
         {
-            var cleanedInput = ConvertMarkdownToPlantUML(input);
-            Console.WriteLine(cleanedInput);
-            pbx_mindmap.Image = await markdownToMindmap(cleanedInput, false);
+            scaleFactor += scaleStep;
+            ApplyZoom();
+        }
+        private void btn_zoomOut_Click(object sender, EventArgs e)
+        {
+            scaleFactor -= scaleStep;
+            ApplyZoom();
+        }
+        private void btn_reset_Click(object sender, EventArgs e)
+        {
             scaleFactor = defaultScaleFactor;
             ApplyZoom();
         }
-
-        
         private void btn_generateMindmap_Click(object sender, EventArgs e)
         {
             try
@@ -237,7 +204,6 @@ namespace IdeasAi.pages
                 mainForm.addNotification("error", "Failed to generate!", $"Error: {exception.Message}");
             }
         }
-
         private void btn_saveAsImage_Click(object sender, EventArgs e)
         {
             // Create save file dialog
@@ -288,7 +254,48 @@ namespace IdeasAi.pages
                 }
             }
         }
+        
+        private void cb_viewSelector_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cb_viewSelector.SelectedItem != null)
+                {
+                    string selectedSetting = cb_viewSelector.SelectedItem.ToString();
 
+                    switch (selectedSetting)
+                    {
+                        case "Zoom":
+                            pbx_mindmap.Location = new Point(0);
+                            pbx_mindmap.SizeMode = PictureBoxSizeMode.Zoom;
+                            pbx_mindmap.Dock = DockStyle.None;
+                            pnl_buttons.Visible = true;
+                            break;
+                        case "Center":
+                            pnl_buttons.Visible = !true;
+                            pbx_mindmap.Location = new Point(0);
+                            pbx_mindmap.Dock = DockStyle.Fill;
+                            pbx_mindmap.SizeMode = PictureBoxSizeMode.CenterImage;
+                            break;
+                        case "Stretch":
+                            pnl_buttons.Visible = !true;
+                            pbx_mindmap.Location = new Point(0);
+                            pbx_mindmap.Dock = DockStyle.Fill;
+                            pbx_mindmap.SizeMode = PictureBoxSizeMode.StretchImage;
+                            break;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No item selected.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred: " + ex.Message);
+            }
+
+        }
         private void cb_themeSelector_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -296,7 +303,6 @@ namespace IdeasAi.pages
                 if (cb_themeSelector.SelectedItem != null)
                 {
                     string selectedSetting = cb_themeSelector.SelectedItem.ToString();
-                    Console.WriteLine("Selected item: " + selectedSetting);
 
                     switch (selectedSetting)
                     {
@@ -475,8 +481,9 @@ namespace IdeasAi.pages
                 Console.WriteLine("An error occurred: " + ex.Message);
             }
         }
+
         //Getters
-        public ref KryptonRichTextBox getTxbMarkdownInput()
+        public ref RichTextBox getTxbMarkdownInput()
         {
             return ref txb_markdownInput;
         }
@@ -486,9 +493,5 @@ namespace IdeasAi.pages
 
         }
 
-        private void pbx_mindmap_BackgroundImageChanged(object sender, EventArgs e)
-        {
-            Console.WriteLine("Changed");
-        }
     }
 }

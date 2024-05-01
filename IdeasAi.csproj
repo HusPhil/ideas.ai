@@ -6,7 +6,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{13CCC9AD-75E1-42EC-9BCA-E11EEB737F74}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>IdeasAi</RootNamespace>
     <AssemblyName>IdeasAi</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -15,6 +15,23 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\husph\Desktop\Ideas.Ai\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <PublisherName>HusPhil</PublisherName>
+    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -37,6 +54,28 @@
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>F94DE533EF343C173EDE3F49A33E8A940D1AAB2B</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>IdeasAi_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>idea.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ComponentFactory.Krypton.Toolkit">
@@ -154,34 +193,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ai_responses\Mindmap.cs" />
-    <Compile Include="ai_responses\IdeaOrganizer.cs" />
-    <Compile Include="ai_responses\QuickSearch.cs" />
+    <Compile Include="ai_responses\AI_Categorizer.cs" />
+    <Compile Include="ai_responses\AI_ResponseBuilder.cs" />
+    <Compile Include="ai_responses\AI_Elaborator.cs" />
+    <Compile Include="ai_responses\AI_GrammarChecker.cs" />
+    <Compile Include="ai_responses\AI_Mindmap.cs" />
+    <Compile Include="ai_responses\AI_QuickSearch.cs" />
+    <Compile Include="ai_responses\AI_Scamper.cs" />
+    <Compile Include="ai_responses\AI_Summarizer.cs" />
+    <Compile Include="configs\Configs.cs" />
     <Compile Include="db\DatabaseManager.cs" />
     <Compile Include="db\DBManager_Docs.cs" />
     <Compile Include="db\DBManager_Note.cs" />
     <Compile Include="db\DBObjectManager.cs" />
     <Compile Include="gemini_AI\AI_Response.cs" />
-    <Compile Include="AppSetting.cs" />
     <Compile Include="gemini_AI\ScriptRunner.cs" />
-    <Compile Include="ai_responses\Idea.cs" />
+    <Compile Include="ai_responses\AI_Consultant.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="modals\AnimationUtils.cs" />
     <Compile Include="modals\mdl_DocsOptions.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="modals\mdl_DocsOptions.Designer.cs">
       <DependentUpon>mdl_DocsOptions.cs</DependentUpon>
     </Compile>
+    <Compile Include="modals\mdl_howToUse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modals\mdl_howToUse.Designer.cs">
+      <DependentUpon>mdl_howToUse.cs</DependentUpon>
+    </Compile>
     <Compile Include="modals\mdl_loading.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="modals\mdl_loading.Designer.cs">
       <DependentUpon>mdl_loading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modals\mdl_notebookSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modals\mdl_notebookSettings.Designer.cs">
+      <DependentUpon>mdl_notebookSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="modals\mdl_NotesOptions.cs">
       <SubType>Form</SubType>
@@ -195,6 +252,12 @@
     <Compile Include="modals\mdl_notif.Designer.cs">
       <DependentUpon>mdl_notif.cs</DependentUpon>
     </Compile>
+    <Compile Include="modals\mdl_organize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modals\mdl_organize.Designer.cs">
+      <DependentUpon>mdl_organize.cs</DependentUpon>
+    </Compile>
     <Compile Include="modals\mdl_saveNotes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,7 +270,7 @@
     <Compile Include="modals\mdl_saveDocs.Designer.cs">
       <DependentUpon>mdl_saveDocs.cs</DependentUpon>
     </Compile>
-    <Compile Include="modals\ModalSetter.cs" />
+    <Compile Include="modals\ModalManager.cs" />
     <Compile Include="pages\frm_consultation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +289,15 @@
     <Compile Include="pages\frm_mindmap.Designer.cs">
       <DependentUpon>frm_mindmap.cs</DependentUpon>
     </Compile>
+    <Compile Include="pages\frm_notebook.Designer.cs">
+      <DependentUpon>frm_notebook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pages\frm_SPLASH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pages\frm_SPLASH.Designer.cs">
+      <DependentUpon>frm_SPLASH.cs</DependentUpon>
+    </Compile>
     <Compile Include="pages\frm_workspace.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,14 +312,23 @@
     <EmbeddedResource Include="modals\mdl_DocsOptions.resx">
       <DependentUpon>mdl_DocsOptions.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="modals\mdl_howToUse.resx">
+      <DependentUpon>mdl_howToUse.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="modals\mdl_loading.resx">
       <DependentUpon>mdl_loading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modals\mdl_notebookSettings.resx">
+      <DependentUpon>mdl_notebookSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modals\mdl_NotesOptions.resx">
       <DependentUpon>mdl_NotesOptions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modals\mdl_notif.resx">
       <DependentUpon>mdl_notif.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modals\mdl_organize.resx">
+      <DependentUpon>mdl_organize.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modals\mdl_saveNotes.resx">
       <DependentUpon>mdl_saveNotes.cs</DependentUpon>
@@ -267,6 +348,9 @@
     <EmbeddedResource Include="pages\frm_notebook.resx">
       <DependentUpon>frm_notebook.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="pages\frm_SPLASH.resx">
+      <DependentUpon>frm_SPLASH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="pages\frm_workspace.resx">
       <DependentUpon>frm_workspace.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,13 +359,18 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="db\sqlite.db">
+    <None Include="db\default.db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="settings.json">
+    <None Include="configs\decors.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="configs\settings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="IdeasAi_TemporaryKey.pfx" />
     <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -301,12 +390,43 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\icons\send.png" />
+    <Content Include="idea.ico" />
+    <None Include="Resources\catSplashForm.png" />
+    <None Include="Resources\maximize.png" />
+    <None Include="Resources\saveIcon.png" />
+    <None Include="Resources\organizeModal.png" />
+    <None Include="Resources\editIdea.png" />
+    <None Include="Resources\addNotebook.png" />
+    <None Include="Resources\notice.png" />
+    <None Include="Resources\chrome.png" />
+    <None Include="Resources\profNeko.png" />
+    <None Include="Resources\noteIcon.png" />
+    <None Include="Resources\docIcon.png" />
+    <None Include="Resources\send.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\generate.png" />
+    <None Include="Resources\download.png" />
+    <None Include="Resources\exit.png" />
+    <None Include="Resources\mini_logo.png" />
+    <None Include="Resources\Idea.ai-removebg-preview.png" />
+    <None Include="Resources\home.png" />
+    <None Include="Resources\qhub.png" />
+    <None Include="Resources\notebook.png" />
+    <None Include="Resources\Loading cat.gif" />
+    <None Include="Resources\icons8-sun-18.png" />
+    <None Include="Resources\icons8-do-not-disturb-ios-20.png" />
+    <None Include="Resources\activeState.png" />
+    <None Include="Resources\icons8-rounded-square-24.png" />
+    <None Include="Resources\icons8-rounded-square-35.png" />
+    <None Include="Resources\icons8-active-state-30.png" />
+    <None Include="Resources\idea.gif" />
+    <None Include="Resources\icons8-light-on-ezgif.com-gif-maker.gif" />
+    <None Include="Resources\icons8-light-on.gif" />
+    <None Include="Resources\questionMark.png" />
     <None Include="Resources\quickSearch.png" />
     <None Include="Resources\send2.png" />
     <None Include="Resources\send22.png" />
     <None Include="Resources\send21.png" />
-    <None Include="Resources\send.png" />
     <None Include="Resources\organize.png" />
     <None Include="Resources\mindmap.png" />
     <None Include="Resources\docOptions.png" />
@@ -338,7 +458,30 @@
     </Compile>
     <None Include="Resources\menu-dots-vertical.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="IdeasAi.pdb">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
