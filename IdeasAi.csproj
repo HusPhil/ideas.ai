@@ -360,15 +360,13 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="db\default.db">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="configs\decors.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="configs\settings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="db\default.db" />
     <None Include="IdeasAi_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
@@ -392,6 +390,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="idea.ico" />
+    <None Include="Resources\minimize1.png" />
     <None Include="Resources\catSplashForm.png" />
     <None Include="Resources\maximize.png" />
     <None Include="Resources\saveIcon.png" />

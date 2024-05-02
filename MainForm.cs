@@ -690,5 +690,10 @@ namespace IdeasAi
                 pnl_addTab.Padding = new Padding(15, 0, 15, 5);
             }
         }
+
+        private void btn_appMin_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

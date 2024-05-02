@@ -18,19 +18,19 @@ namespace IdeasAi.pages
         public frm_SPLASH()
         {
             InitializeComponent();
-            //loaders.Add("Tick-tock, we're winding up for an amazing experience!");
-            //loaders.Add("Professor Neko prepares... Your app becomes a masterpiece!");
-            //loaders.Add("Professor Neko's whiskers are twitching...");
-            //loaders.Add("Professor Neko's whiskers are twitching...");
-            //loaders.Add("Professor Neko's whiskers are twitching...");
-            //loaders.Add("Professor Neko's whiskers are twitching...");
-            //loaders.Add("...Your app is almost ready to pounce!");
-            //loaders.Add("...Your app is almost ready to pounce!");
-            //loaders.Add("...Your app is almost ready to pounce!");
-            //loaders.Add("Hold tight while Professor Neko sprinkle some coding fairy dust!");
-            //loaders.Add("Hang in there! We're on the brink of digital awesomeness!");
-            //loaders.Add("Hang in there! We're on the brink of digital awesomeness!");
-            //loaders.Add("Hang in there! We're on the brink of digital awesomeness!");
+            loaders.Add("Tick-tock, we're winding up for an amazing experience!");
+            loaders.Add("Professor Neko prepares... Your app becomes a masterpiece!");
+            loaders.Add("Professor Neko's whiskers are twitching...");
+            loaders.Add("Professor Neko's whiskers are twitching...");
+            loaders.Add("Professor Neko's whiskers are twitching...");
+            loaders.Add("Professor Neko's whiskers are twitching...");
+            loaders.Add("...Your app is almost ready to pounce!");
+            loaders.Add("...Your app is almost ready to pounce!");
+            loaders.Add("...Your app is almost ready to pounce!");
+            loaders.Add("Hold tight while Professor Neko sprinkle some coding fairy dust!");
+            loaders.Add("Hang in there! We're on the brink of digital awesomeness!");
+            loaders.Add("Hang in there! We're on the brink of digital awesomeness!");
+            loaders.Add("Hang in there! We're on the brink of digital awesomeness!");
             counter = 0;
 
             tmr_start.Start();

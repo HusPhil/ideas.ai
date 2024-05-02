@@ -19,7 +19,6 @@ C:\MyFiles\Projects\AOOP\IdeasAI\obj\Release\IdeasAi.Properties.Resources.resour
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Release\IdeasAi.csproj.GenerateResource.cache
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Release\IdeasAi.csproj.CoreCompileInputs.cache
 C:\MyFiles\Projects\AOOP\IdeasAI\bin\Release\gemini_AI\Scripts\gemini.py
-C:\MyFiles\Projects\AOOP\IdeasAI\bin\Release\db\default.db
 C:\MyFiles\Projects\AOOP\IdeasAI\bin\Release\configs\decors.json
 C:\MyFiles\Projects\AOOP\IdeasAI\bin\Release\configs\settings.json
 C:\MyFiles\Projects\AOOP\IdeasAI\bin\Release\IdeasAi.exe.config

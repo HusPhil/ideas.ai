@@ -501,6 +501,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_94B4640154884D3FAEE7A2CDDEEC4A9D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_997638258FD733A76F584F897E21179C"
         "OwnerKey" = "8:_CD7FB1F9BCC14501938095A3D8B0BE75"
         "MsmSig" = "8:_UNDEFINED"
@@ -917,12 +923,6 @@
         {
         "MsmKey" = "8:_F2EDB7AC0075C2464056285C776E8470"
         "OwnerKey" = "8:_CD7FB1F9BCC14501938095A3D8B0BE75"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F4A4BB53BFFE4DE5AD7F8080EB0380DA"
-        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1778,6 +1778,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -3946,6 +3954,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_94B4640154884D3FAEE7A2CDDEEC4A9D"
+            {
+            "SourcePath" = "8:..\\..\\..\\..\\IDEASAI\\db\\default.db"
+            "TargetName" = "8:default.db"
+            "Tag" = "8:"
+            "Folder" = "8:_4A440A97DC574E2EA8FF5F3DFE912CAC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_997638258FD733A76F584F897E21179C"
             {
             "AssemblyRegister" = "3:1"
@@ -5651,26 +5679,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F4A4BB53BFFE4DE5AD7F8080EB0380DA"
-            {
-            "SourcePath" = "8:..\\db\\default.db"
-            "TargetName" = "8:default.db"
-            "Tag" = "8:"
-            "Folder" = "8:_4A440A97DC574E2EA8FF5F3DFE912CAC"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F6B5FA1A6E18982D0DCE196B98CF2560"
             {
             "AssemblyRegister" = "3:1"
@@ -6102,7 +6110,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:IdeasAI_Setup"
         "ProductCode" = "8:{ED6F6C03-DB2B-4B51-9AFA-554FE6F8CE7B}"
-        "PackageCode" = "8:{02EC2CE8-2FAB-448A-AA3B-0632C714C1DB}"
+        "PackageCode" = "8:{6A911979-38D8-471D-8A67-66137D20490C}"
         "UpgradeCode" = "8:{9D884E5C-89FC-449A-9041-B3FB6CEB62B2}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"
