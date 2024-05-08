@@ -452,9 +452,6 @@
     <None Include="Resources\loadingv2.gif" />
     <None Include="Resources\loading.gif" />
     <None Include="bin\Debug\out.png" />
-    <Content Include="gemini_AI\Scripts\gemini.py">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Compile Include="pages\frm_notebook.cs">
       <SubType>Form</SubType>
     </Compile>

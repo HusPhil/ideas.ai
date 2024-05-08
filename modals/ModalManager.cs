@@ -38,6 +38,9 @@ namespace IdeasAi.modals
             return new Point((cont_width / 2) - (item_height / 2), (cont_height / 2) - (item_height / 2));
         }
         public static Point CenterLocation(int cont_width, int cont_height, int item_width, int item_height, int offsetX, int offsetY)
+        {
+            return new Point(offsetX + (cont_width / 2) - (item_width / 2), offsetY + (cont_height / 2) - (item_height / 2));
+        }
     }
 
 

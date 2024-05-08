@@ -79,14 +79,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IdeasAi.exe" size="2246624">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IdeasAi.exe" size="2253280">
       <assemblyIdentity name="IdeasAi" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+UAaBg/AMm76X03Xr0E1ltiPK7NhdPM+bcLb6nlaA0s=</dsig:DigestValue>
+        <dsig:DigestValue>dDtkOsHUoU8yUflGPuPDWmvzA/5k+Te+zeyIzSGlyE0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -306,15 +306,6 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="gemini_AI\Scripts\gemini.py" size="1861">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>+O+rwjNdWSPwwFw3y/13lOCw+aWB4b7HjIeLkAu71gc=</dsig:DigestValue>
-    </hash>
-  </file>
   <file name="idea.ico" size="20502">
     <hash>
       <dsig:Transforms>
@@ -339,7 +330,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>0urrOu+qC7Cuw8NVzWtrqCg0oETOoCGiDOLaGObww6Y=</dsig:DigestValue>
+      <dsig:DigestValue>oTBpmu8LxxJl1eENIOHxn+QPNSxH/eaLmLacFDaCAM0=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">

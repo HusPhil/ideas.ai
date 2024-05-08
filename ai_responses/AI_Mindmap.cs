@@ -36,7 +36,7 @@ namespace IdeasAi.ai_responses
                 "Most importantly, never use indentation." +
                 $"The input supplied: {this.Input.Replace("\"", "'")}.";
 
-            string response = await ScriptRunner.RunScriptAsync("Gemini_AI\\Scripts\\gemini.py", prompt, appConfig);
+            string response = await ScriptRunner.GetResponseAsync(prompt);
             this.DateCreated = DateTime.Now;
             if (response.Contains("ERROR"))
             {

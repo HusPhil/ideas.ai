@@ -18,7 +18,7 @@ namespace IdeasAi.ai_responses
                 "Don't supply information that may overwhelm the reader." +
                 $"The question supplied: {this.Input.Replace("\"", "'")}.";
 
-            string response = await ScriptRunner.RunScriptAsync("Gemini_AI\\Scripts\\gemini.py", prompt, appConfig);
+            string response = await ScriptRunner.GetResponseAsync(prompt);
             this.DateCreated = DateTime.Now;
             if (response.Contains("ERROR"))
             {
