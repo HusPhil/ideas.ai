@@ -69,3 +69,4 @@ C:\MyFiles\Projects\AOOP\IdeasAI\obj\Release\IdeasAi.application
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Release\IdeasAi.csproj.Up2Date
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Release\IdeasAi.exe
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Release\IdeasAi.pdb
+C:\MyFiles\Projects\AOOP\IdeasAI\bin\Release\db\default.db

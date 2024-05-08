@@ -143,8 +143,6 @@ namespace IdeasAi
 
             return plainText;
         }
-
-        //CAN BE MODIFIED, ADD TO MODAL SETTER CLASS
         public void setModalBackground(Form callerForm)
         {
             modalBG.Owner = this;

@@ -14,6 +14,12 @@ namespace IdeasAi.db
 
         public override void saveObject(DBObjectManager obj)
         {
+            
+            if (recordExist(obj.UUID))
+            {
+                throw new Exception("Record already exist");
+            }
+
             using (SQLiteConnection connection = new SQLiteConnection($"Data Source={dbFilePath};Version=3;"))
             {
                 connection.Open();
