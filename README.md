@@ -1,6 +1,5 @@
-# BATANGAS STATE UNIVERSITY 💡
-
-## IDEA: Interactive Development and Exploration Assistant 🤖
+# IDEA: Interactive Development and Exploration Assistant 🤖
+## Ideas.ai: Your Creative Playground
 💡 **IDEA.ai is an interactive platform designed to assist individuals, particularly students, in generating fresh ideas through artificial intelligence.** 🤖 It facilitates a collaborative environment where users can leverage AI to explore and develop innovative concepts. 🌐
 [Download the App here!](https://drive.google.com/drive/u/1/folders/1JvOqooKC-B-Qq9rbWJcoc64LmKh7Swrz)
 
