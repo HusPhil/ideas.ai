@@ -1,7 +1,7 @@
 # BATANGAS STATE UNIVERSITY 💡
 
 ## IDEA: Interactive Development and Exploration Assistant 🤖
-[Download Installer](IdeasAI_Setup/Release)
+[Download Installer](IdeasAI_Setup/Release/setup.exe)
 
 
 **Leveraging AI for Idea Generation** 🌟
