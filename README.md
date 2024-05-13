@@ -1,8 +1,7 @@
 # BATANGAS STATE UNIVERSITY 💡
 
 ## IDEA: Interactive Development and Exploration Assistant 🤖
-
-[download](https://github.com/HusPhil/ideas.ai/tree/stable/IdeasAI_Setup.zip)
+[Download the App here!](https://drive.google.com/drive/u/1/folders/1JvOqooKC-B-Qq9rbWJcoc64LmKh7Swrz)
 
 
 **Leveraging AI for Idea Generation** 🌟
