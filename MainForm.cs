@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 using IdeasAi.PageForms;
-using IdeasAi.pages;
+
 using IdeasAi.modals;
 using IdeasAi.db;
 using System.Web.UI.Design;
@@ -11,6 +11,8 @@ using System.IO;
 using Newtonsoft.Json.Linq;
 using IdeasAi.Properties;
 using System.Text.RegularExpressions;
+using IdeasAi.pages;
+using System.Collections.Generic;
 
 namespace IdeasAi
 {
@@ -20,6 +22,9 @@ namespace IdeasAi
         private bool showMode = true;
         public bool sliding = false;
         PictureBox pb_active;
+
+        //tabs
+        public List<PageTab> tabs;
 
         // json configs
         public JObject decors;
@@ -41,7 +46,7 @@ namespace IdeasAi
 
         // PAGE FORMS
         public frm_home frm_home;
-        public frm_consultation frm_consultation;
+        //public frm_consultation frm_consultation;
         public frm_workspace frm_workspace;
         public frm_notebook frm_notebook;
         public frm_mindmap frm_mindmap;
@@ -75,7 +80,7 @@ namespace IdeasAi
             dbManager_Docs = new DBManager_Docs(this);
 
             frm_home = new frm_home(this);
-            frm_consultation = new frm_consultation(this);
+            //frm_consultation = new frm_consultation(this);
             frm_notebook =  new frm_notebook(this);
             frm_mindmap = new frm_mindmap(this);
             frm_workspace = new frm_workspace(this);
@@ -95,6 +100,8 @@ namespace IdeasAi
             btn_active = btn_mindmap;
             lbl_currentPage.Text = btn_active.Text;
             btn_howToUse.Enabled = false;
+
+            tabs = new List<PageTab>();
 
             loadForm(frm_home, pnl_content);
             setActiveBtn((object)btn_home, pnl_pageTabs);
@@ -136,8 +143,6 @@ namespace IdeasAi
 
             return plainText;
         }
-
-        //CAN BE MODIFIED, ADD TO MODAL SETTER CLASS
         public void setModalBackground(Form callerForm)
         {
             modalBG.Owner = this;
@@ -255,21 +260,35 @@ namespace IdeasAi
             btn_howToUse.Enabled = false;
             setActiveBtn(sender, pnl_pageTabs);
 
+            if (tabs.Count > 0)
+            {
+                tabs[tabs.Count - 1].removeActive();
+
+            }
 
             loadForm(frm_home, pnl_content);
         }
         private void btn_consultation_Click(object sender, EventArgs e)
         {
+            Console.WriteLine(tabs.Count);
             btn_howToUse.Enabled = true;
-            setActiveBtn(sender, pnl_pageTabs);
-
-
-            loadForm(frm_consultation, pnl_content);
+            if(tabs.Count <= 0)
+            {
+                btn_addTab.PerformClick();
+            }
+            else
+            {
+                tabs[tabs.Count - 1].container_Click();
+            }
         }
         private void btn_workspace_Click(object sender, EventArgs e)
         {
             btn_howToUse.Enabled = true;
             setActiveBtn(sender, pnl_pageTabs);
+            if (tabs.Count > 0)
+            {
+                tabs[tabs.Count - 1].removeActive();
+            }
             loadForm(frm_workspace, pnl_content);
         }        
         private void btn_notebook_Click(object sender, EventArgs e)
@@ -278,6 +297,10 @@ namespace IdeasAi
             InitializeConfigs();
             frm_notebook.showAllIdeas();
             setActiveBtn(sender, pnl_pageTabs);
+            if (tabs.Count > 0)
+            {
+                tabs[tabs.Count - 1].removeActive();
+            }
             loadForm(frm_notebook, pnl_content);
 
         }
@@ -285,6 +308,10 @@ namespace IdeasAi
         {
             btn_howToUse.Enabled = true;
             setActiveBtn(sender, pnl_pageTabs);
+            if (tabs.Count > 0)
+            {
+                tabs[tabs.Count - 1].removeActive();
+            }
             loadForm(frm_mindmap, pnl_content);
         }
         private void btn_exit_Click(object sender, EventArgs e)
@@ -399,7 +426,6 @@ namespace IdeasAi
             this.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["DarkTheme"]["primary"]);
             this.pnl_menuSect.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["DarkTheme"]["primary100"]);
             frm_home.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["DarkTheme"]["primary100"]);
-            frm_consultation.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["DarkTheme"]["primary100"]);
             frm_notebook.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["DarkTheme"]["primary100"]);
             frm_workspace.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["DarkTheme"]["primary100"]);
             frm_workspace.spl_workspace.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["DarkTheme"]["primary100"]);
@@ -412,6 +438,11 @@ namespace IdeasAi
             btn_toggleDarkMode.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["LightTheme"]["primary100"]);
             btn_toggleDarkMode.Image = Resources.darkModeBtn;
 
+            foreach(var tab in tabs)
+            {
+                tab.page.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["DarkTheme"]["primary100"]);
+            }
+
         }
         private void toggleLightMode()
         {
@@ -421,7 +452,6 @@ namespace IdeasAi
             this.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["LightTheme"]["primary"]);
             this.pnl_menuSect.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["LightTheme"]["primary100"]);
             frm_home.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["LightTheme"]["primary100"]);
-            frm_consultation.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["LightTheme"]["primary100"]);
             frm_notebook.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["LightTheme"]["primary100"]);
             frm_workspace.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["LightTheme"]["primary100"]);
             frm_workspace.spl_workspace.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["LightTheme"]["primary100"]);
@@ -433,6 +463,11 @@ namespace IdeasAi
             pnl_btnCont.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["DarkTheme"]["primary"]);
             btn_toggleDarkMode.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["DarkTheme"]["primary100"]);
             btn_toggleDarkMode.Image = Resources.lightModeBtn;
+
+            foreach (var tab in tabs)
+            {
+                tab.page.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["LightTheme"]["primary100"]);
+            }
 
         }
         private void sideBarExpand()
@@ -591,6 +626,72 @@ namespace IdeasAi
         private void btn_appMax_Click(object sender, EventArgs e)
         {
             ToggleFullScreen();
+        }
+
+        private void btn_addTab_Click(object sender, EventArgs e)
+        {
+            Panel tabPnl = new Panel();
+            tabPnl.Dock = DockStyle.Left;
+            tabPnl.Size = new Size(180, 34);
+            tabPnl.BackColor = ColorTranslator.FromHtml((string)decors["Themes"]["LightTheme"]["accent100"]);
+            tabPnl.BorderStyle = BorderStyle.FixedSingle;
+
+            Button btnClose = new Button();
+            btnClose.Dock = DockStyle.Right;
+            btnClose.Text = "X";
+            btnClose.Size = new Size(40, 34); // Adjusted button size to match panel height
+            btnClose.FlatStyle = FlatStyle.Flat;
+            btnClose.FlatAppearance.BorderSize = 0;
+            
+
+            Label title = new Label();
+            title.Font = new System.Drawing.Font("Cascadia Code", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title.AutoEllipsis = true;
+            title.Padding = new Padding(5,6,5,0);
+            title.Dock = DockStyle.Fill;
+
+            tabPnl.Controls.Add(title);
+            tabPnl.Controls.Add(btnClose);
+
+            var pageTab = new PageTab(this, tabPnl, new frm_consultation(this), title, btnClose);
+
+            tabs.Add(pageTab);
+            
+
+            pnl_addTab.Controls.Add(tabPnl);
+        }
+
+
+
+        
+
+        private void pnl_addTab_ControlAdded(object sender, ControlEventArgs e)
+        {
+            pnl_addTab.Padding = new Padding(15,30,15,0);
+
+            if (pnl_addTab.HorizontalScroll.Visible)
+            {
+                pnl_addTab.Padding = new Padding(15, 3, 15, 12);
+            }
+            else
+            {
+            }
+        }
+
+        private void pnl_addTab_SizeChanged(object sender, EventArgs e)
+        {
+            pnl_addTab.Padding = new Padding(15, 30, 15, 0);
+
+
+            if (pnl_addTab.HorizontalScroll.Visible)
+            {
+                pnl_addTab.Padding = new Padding(15, 0, 15, 5);
+            }
+        }
+
+        private void btn_appMin_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

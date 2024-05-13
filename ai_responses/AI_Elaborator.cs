@@ -15,7 +15,7 @@ namespace IdeasAi.ai_responses
             var prompt = "Expand my ideas. " +
                 $"The context supplied: {this.Input.Replace("\"", "'")}.";
 
-            string response = await ScriptRunner.RunScriptAsync("Gemini_AI\\Scripts\\gemini.py", prompt, appConfig);
+            string response = await ScriptRunner.GetResponseAsync(prompt);
             this.DateCreated = DateTime.Now;
             Console.WriteLine(response);
             if (response.Contains("ERROR"))

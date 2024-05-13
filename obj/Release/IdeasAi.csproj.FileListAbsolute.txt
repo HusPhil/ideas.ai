@@ -18,8 +18,6 @@ C:\MyFiles\Projects\AOOP\IdeasAI\obj\Release\IdeasAi.pages.frm_workspace.resourc
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Release\IdeasAi.Properties.Resources.resources
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Release\IdeasAi.csproj.GenerateResource.cache
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Release\IdeasAi.csproj.CoreCompileInputs.cache
-C:\MyFiles\Projects\AOOP\IdeasAI\bin\Release\gemini_AI\Scripts\gemini.py
-C:\MyFiles\Projects\AOOP\IdeasAI\bin\Release\db\default.db
 C:\MyFiles\Projects\AOOP\IdeasAI\bin\Release\configs\decors.json
 C:\MyFiles\Projects\AOOP\IdeasAI\bin\Release\configs\settings.json
 C:\MyFiles\Projects\AOOP\IdeasAI\bin\Release\IdeasAi.exe.config
@@ -70,3 +68,4 @@ C:\MyFiles\Projects\AOOP\IdeasAI\obj\Release\IdeasAi.application
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Release\IdeasAi.csproj.Up2Date
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Release\IdeasAi.exe
 C:\MyFiles\Projects\AOOP\IdeasAI\obj\Release\IdeasAi.pdb
+C:\MyFiles\Projects\AOOP\IdeasAI\bin\Release\db\default.db

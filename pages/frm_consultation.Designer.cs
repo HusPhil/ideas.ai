@@ -323,8 +323,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.WebBrowser wb_container;
-        private System.Windows.Forms.Button btn_send;
-        private System.Windows.Forms.RichTextBox txb_Consult;
         private System.Windows.Forms.Panel pnl_txbCont;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btn_save;
@@ -337,5 +335,7 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel pnl_wbCont;
         private System.Windows.Forms.Button btn_searchMode;
+        public System.Windows.Forms.Button btn_send;
+        public System.Windows.Forms.RichTextBox txb_Consult;
     }
 }

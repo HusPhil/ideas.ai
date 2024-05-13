@@ -29,6 +29,8 @@ namespace IdeasAi.pages
             loaders.Add("...Your app is almost ready to pounce!");
             loaders.Add("Hold tight while Professor Neko sprinkle some coding fairy dust!");
             loaders.Add("Hang in there! We're on the brink of digital awesomeness!");
+            loaders.Add("Hang in there! We're on the brink of digital awesomeness!");
+            loaders.Add("Hang in there! We're on the brink of digital awesomeness!");
             counter = 0;
 
             tmr_start.Start();

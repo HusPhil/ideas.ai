@@ -7,6 +7,7 @@ using IdeasAi.pages;
 using Microsoft.Win32;
 using IdeasAi.db;
 using IdeasAi.ai_responses;
+using System.Drawing;
 
 
 namespace IdeasAi.PageForms
@@ -35,6 +36,15 @@ Click 'Workspace' button to save the generated idea into the program itself,
             this.mainForm = _mainForm;
             saver_obj = new DBObjectManager();
             OptimizeInternetExplorerVersion();
+
+            if (mainForm.btn_toggleDarkMode.Dock == DockStyle.Right)
+            {
+                this.BackColor = ColorTranslator.FromHtml((string)mainForm.decors["Themes"]["LightTheme"]["primary100"]);
+            }
+            else
+            {
+                this.BackColor = ColorTranslator.FromHtml((string)mainForm.decors["Themes"]["DarkTheme"]["primary100"]);
+            }
 
             wb_container.Focus();
         }
@@ -88,9 +98,9 @@ Click 'Workspace' button to save the generated idea into the program itself,
                     </html>
                     ";
 
-            wb_container.DocumentText = htmlContent;
+            this.wb_container.DocumentText = htmlContent;
         }
-        public async void loadConsultation()
+        public async void loadConsultation(mdl_loading loader)
         {
             btn_send.Enabled = false;
             btn_save.Enabled = false;
@@ -125,7 +135,7 @@ Click 'Workspace' button to save the generated idea into the program itself,
             finally
             {
                 btn_send.Enabled = true;
-                mainForm.mdl_loading.Close();
+                loader.Close();
                 mainForm.modalBG.Hide();
 
             }
@@ -134,13 +144,17 @@ Click 'Workspace' button to save the generated idea into the program itself,
         private void btn_send_Click(object sender, EventArgs e)
         {
             mainForm.setModalBackground(this);
-            mainForm.mdl_loading.state = MainForm.state_loadConsultation;
+            var loader = new mdl_loading(mainForm, this);
+            loader.state = MainForm.state_loadConsultation;
             mainForm.mdl_loading.getLblLoadInfo().Text = "Generating an answer..";
-            ModalManager.ShowModal(mainForm, this, mainForm.mdl_loading);
+            ModalManager.ShowModal(mainForm, this, loader);
         }
         private void btn_save_Click(object sender, EventArgs e)
         {
-            ModalManager.ShowModal(mainForm, this, new mdl_saveNotes(mainForm));
+            var saveLoader = new mdl_saveNotes(mainForm);
+            saveLoader.saver_obj = saver_obj;
+
+            ModalManager.ShowModal(mainForm, this, saveLoader);
         }
         private void btn_print_Click(object sender, EventArgs e)
         {
@@ -185,6 +199,10 @@ Click 'Workspace' button to save the generated idea into the program itself,
         {
             return ref btn_save;
         }
+        public ref RichTextBox getTxbInput()
+        {
+            return ref txb_Consult;
+        }
         public ref Button getPrintBtn()
         {
             return ref btn_print;
@@ -203,6 +221,7 @@ Click 'Workspace' button to save the generated idea into the program itself,
         {
             Console.WriteLine("kineme");
         }
+
     }
 
 }

@@ -1,4 +1,5 @@
 ﻿using IdeasAi.ai_responses;
+using IdeasAi.PageForms;
 using System;
 using System.CodeDom;
 using System.Collections.Generic;
@@ -16,10 +17,21 @@ namespace IdeasAi.modals
     public partial class mdl_loading : Form
     {
         MainForm mainForm;
+        frm_consultation senderForm;
         public int state;
+
         public mdl_loading(MainForm mainForm)
         {
             this.mainForm = mainForm;
+            InitializeComponent();
+            this.ShowInTaskbar = false;
+        }
+
+        public mdl_loading(MainForm mainForm, frm_consultation sender)
+        {
+            this.mainForm = mainForm;
+            this.senderForm = sender;
+            
             InitializeComponent();
             this.ShowInTaskbar = false;
         }
@@ -37,7 +49,7 @@ namespace IdeasAi.modals
                     mainForm.frm_workspace.loadMindmap();
                     break;
                 case MainForm.state_loadConsultation:
-                    mainForm.frm_consultation.loadConsultation();
+                    this.senderForm.loadConsultation(this);
                     break;
             }
         }
