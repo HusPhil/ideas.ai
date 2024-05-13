@@ -41,6 +41,12 @@ Lack of idea generation techniques (Heong et al., 2013).
 
 ---
 
+## SDG 4 - Quality Education
+
+🚀 **IDEA.ai promotes Quality Education (SDG 4) by using AI to enhance critical thinking and creativity among students.** 🎓 It offers a platform for collaborative idea generation, breaking down learning barriers and fostering personalized learning experiences. **By democratizing idea generation and encouraging lifelong learning, IDEA.ai advances the goals of SDG 4.** 🌟
+
+---
+
 ## Significance of the Developed System 🌟
 
 ### The Students 👩‍🎓👨‍🎓
