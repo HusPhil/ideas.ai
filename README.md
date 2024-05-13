@@ -1,6 +1,6 @@
 # IDEA: Interactive Development and Exploration Assistant 🤖
 ## Ideas.ai: Your Creative Playground
-💡 **IDEA.ai is an interactive platform designed to assist individuals, particularly students, in generating fresh ideas through artificial intelligence.** 🤖 It facilitates a collaborative environment where users can leverage AI to explore and develop innovative concepts. 🌐
+💡 **Ideas.ai is an interactive platform designed to assist individuals, particularly students, in generating fresh ideas through artificial intelligence.** 🤖 It facilitates a collaborative environment where users can leverage AI to explore and develop innovative concepts. 🌐
 [Download the App here!](https://drive.google.com/drive/u/1/folders/1JvOqooKC-B-Qq9rbWJcoc64LmKh7Swrz)
 
 
@@ -43,7 +43,7 @@ Lack of idea generation techniques (Heong et al., 2013).
 
 ## SDG 4 - Quality Education
 
-🚀 **IDEA.ai promotes Quality Education (SDG 4) by using AI to enhance critical thinking and creativity among students.** 🎓 It offers a platform for collaborative idea generation, breaking down learning barriers and fostering personalized learning experiences. **By democratizing idea generation and encouraging lifelong learning, IDEA.ai advances the goals of SDG 4.** 🌟
+🚀 **Ideas.ai promotes Quality Education (SDG 4) by using AI to enhance critical thinking and creativity among students.** 🎓 It offers a platform for collaborative idea generation, breaking down learning barriers and fostering personalized learning experiences. **By democratizing idea generation and encouraging lifelong learning, ideas.ai advances the goals of SDG 4.** 🌟
 
 ---
 
