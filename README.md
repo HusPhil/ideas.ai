@@ -2,8 +2,8 @@
 
 ## IDEA: Interactive Development and Exploration Assistant 🤖
 
-<a href="IdeasAI_Setup/Release/setup.exe" download>Download Installer</a>
 
+[Download User Manual](IdeasAI_Setup/Release/setup.exe "setup.exe")
 
 
 **Leveraging AI for Idea Generation** 🌟
