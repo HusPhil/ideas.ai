@@ -98,9 +98,4 @@ Gemini, developed by Google DeepMind, stands out as a groundbreaking multimodal 
 The developed system shows the transformational potential of an AI-driven system whose purpose is to help students develop ideas within educational contexts. QHub, Notebook, Workspace, and Mindmap show how AI can be effectively incorporated into educational processes to encourage students in critical and creative thinking.
 
 The developed system improves system speed, user experience, and utilizes AI technology, opening the door for dynamic and engaging learning environments.
-
----
-
-## How does the developed system help the student in generating ideas? ❓
-
 Thank You! 🙏
