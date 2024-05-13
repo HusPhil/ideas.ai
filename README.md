@@ -73,15 +73,19 @@ Gemini, developed by Google DeepMind, stands out as a groundbreaking multimodal 
 ## Features 🛠️
 
 - **QHub**
+  - This is the "Ask a Question" feature that serves a two-fold purpose. First, it allows the users to consult on the AI Model and get a tailored response based on the prompt. And the other purpose is to use Google, enabling users to ask specific questions which can cover up for the limitations of the generated AI Responses.
 - **Notebook**
+  - The "Idea Storage" feature is like a digital notebook tailored for brainstorming and development. It lets users capture, organize, and revisit ideas alongside AI-generated insights. This central hub prevents idea loss, supports comparison with AI outputs, and promotes a productive environment for ongoing projects.
 - **Workspace**
-- **Mind Map**
+  - The program incorporates a crucial "Workspace" feature designed to be a digital playground for expanding ideas. This serves as a central hub for users to brainstorm, refine, and develop their initial concepts. Workspace allows users to write down their ideas in various formats such as text and mind maps. They can freely add notes, organize their thoughts, and connect related concepts.
+- **MindMap**
+  - The program offers an "Automatic Mind Map" feature designed to streamline brainstorming and visualize ideas by transforming raw concepts into a clear, structured format. It supports studies on information overload by assisting in information organization. To use it, users input notes or documents into the system, and AI algorithms generate a tailored mind map, aiding in understanding, retention, and decision-making. Users can then manage study materials, streamline learning, and achieve academic success.
 
 ---
 
 ## Conclusion 🎉
 
-The developed system shows the transformational potential of an AI-driven system whose purpose is to help students develop ideas within educational contexts. QHub, Notebook, workspace, and Mindmap show how AI can be effectively incorporated into educational processes to encourage students in critical and creative thinking.
+The developed system shows the transformational potential of an AI-driven system whose purpose is to help students develop ideas within educational contexts. QHub, Notebook, Workspace, and Mindmap show how AI can be effectively incorporated into educational processes to encourage students in critical and creative thinking.
 
 The developed system improves system speed, user experience, and utilizes AI technology, opening the door for dynamic and engaging learning environments.
 
